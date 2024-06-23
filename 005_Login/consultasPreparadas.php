@@ -170,7 +170,7 @@ try{
                             $semaforo=10;  //SE CIERRA EL PASO PARA QUE ENTRE AQUI DE NUEVO
                         }
                         $_SESSION["semaforo"]=1;
-                        header("location:busquedaPHP-TABLAFIND.php");
+                        header("location:../001_Busqueda/busquedaPHP-TABLAFIND.php");
                     }
                 }
             }
@@ -189,7 +189,7 @@ try{
                 {
                 session_start();  //INICIAR LA SESION SIEMPRE//
                 $_SESSION["semaforo"]=2;
-                header("location:inserccionPHP.php");
+                header("location:../002_Inserccion/inserccionPHP.php");
                 mysqli_stmt_close($resultado); 
                 }
             }
@@ -237,7 +237,7 @@ try{
                         $_SESSION["ahorros"]=$conAhorros;
                     }
                     $_SESSION["semaforo"]=1;
-                    header("location:actualizacionPHP.php");
+                    header("location:../003_Actualizacion/actualizacionPHP.php");
                     mysqli_stmt_close($resultado); 
                     }
                 }
@@ -253,7 +253,7 @@ try{
                     $_SESSION["profesion"]="";
                     $_SESSION["ahorros"]="";
                     $_SESSION["semaforo"]=2;
-                    header("location:actualizacionPHP.php");
+                    header("location:../003_Actualizacion/actualizacionPHP.php");
                     mysqli_stmt_close($resultado); 
                 }
                 if(!strcmp($actualizacion,"ACTUALIZAR"))
@@ -305,7 +305,7 @@ try{
                         $_SESSION["ahorros"]=$conAhorros;
                     }
                     $_SESSION["semaforo"]=1;
-                    header("location:eliminacionPHP.php");
+                    header("location:../004_Eliminacion/eliminacionPHP.php");
                     mysqli_stmt_close($resultado); 
                     }
                 }
@@ -321,7 +321,7 @@ try{
                     $_SESSION["profesion"]="";
                     $_SESSION["ahorros"]="";
                     $_SESSION["semaforo"]=2;
-                    header("location:eliminacionPHP.php");
+                    header("location:../004_Eliminacion/eliminacionPHP.php");
                     mysqli_stmt_close($resultado); 
                 }
                 if(!strcmp($eliminacion,"ELIMINAR"))
@@ -350,7 +350,7 @@ try{
                     }else
                     {
                         $_SESSION["semaforo"]=3;
-                        header("location:eliminacionPHP.php");
+                        header("location:../004_Eliminacion/eliminacionPHP.php");
                         mysqli_stmt_close($resultado); 
                     }                
                 }

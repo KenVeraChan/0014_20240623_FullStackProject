@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:login.php");
+            header("Location:../005_Login/login.php");
         }
 ?>
 <!DOCTYPE html>
@@ -40,17 +40,17 @@
                     text-decoration: none;
                     padding-top: 12px;
                     '
-            href='salidaPagina.php'><strong>CERRAR SESION</strong></a> ");
+            href='../005_Login/salidaPagina.php'><strong>CERRAR SESION</strong></a> ");
 ?>
     <div class="cabecera"><h2><strong>Busqueda de Empleados en la Empresa</strong></h2></div> 
-    <div><input type="submit" class="bloque_opciones" value="OPCIONES" onclick="llamada()""></div>
-    <div><input type="submit" class="bloque_opciones" value="BÚSQUEDA" onclick="location.href='busquedaPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="INSERCCIÓN" onclick="location.href='inserccionPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="ACTUALIZACIÓN" onclick="location.href='actualizacionPHP.php'"></div>  
-    <div><input type="submit" class="bloque_opciones" value="ELIMINACIÓN" onclick="location.href='eliminacionPHP.php'"></div>   
+    <div><input type="submit" class="bloque_opciones" value="OPCIONES" onclick="llamada()"></div>
+    <div><input type="submit" class="bloque_opciones" value="BÚSQUEDA" onclick="location.href='../001_Busqueda/busquedaPHP.php'"></div>
+    <div><input type="submit" class="bloque_opciones" value="INSERCCIÓN" onclick="location.href='../002_Inserccion/inserccionPHP.php'"></div>
+    <div><input type="submit" class="bloque_opciones" value="ACTUALIZACIÓN" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"></div>  
+    <div><input type="submit" class="bloque_opciones" value="ELIMINACIÓN" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"></div>   
     <div class="consulta">
    <!-- BUSQUEDAS TABLA 1 -->
-   <form class="tabla" action="consultasPreparadas.php" method="get">
+   <form class="tabla" action="../005_Login/consultasPreparadas.php" method="get">
            <p class="separacion"></p>
            <label class="celda">ID CONTACTO:<input type="text" class="celdas" name="id"></label> <!--ID-->
            <p class="separacion"></p>

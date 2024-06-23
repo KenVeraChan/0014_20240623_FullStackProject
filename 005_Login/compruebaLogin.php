@@ -30,7 +30,8 @@
                 //La variable SUPERGLOBAL $_SESSION["nombre_elegido"]
                 //permite usarse en cualquier parte del código de cualquier página creada PHP
                 $_SESSION["usuario"]=$_POST["login"];
-                header("location:ConsultaContactos.php");
+                header("location:../000_ConsultaContactos/ConsultaContactos.php");
+                //Se pone el doble punto para partir del directorio RAIZ
             }else{
                 //Se le redirige a la misma pagina propia de LOGIN
                 header("location:login.php");
