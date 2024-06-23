@@ -1,0 +1,169 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+@media all and (min-width: 300px) and (max-width: 480px) 
+{
+   /** DISPOSITIVOS TABLETS **/
+   /*** CONTENEDOR PRINCIPAL DE LA PAGINA ***/
+   #container{
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    width: 400px;
+    height: 653px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgba(0, 0, 19, 0.89); /*COLOR BASE*/
+    position: absolute;
+    z-index: -1;
+    }   
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: auto;
+        height: 240px;
+        border: 1px;
+        border-style: solid;
+        border-color: black;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoEmpresa{
+            margin-left: 19%;
+            width: 225px;   /*ICONO CUADRADO*/
+            height: 80px;
+            background-image: url("../images/Sfer4D-IconoEmpresa-280a480.jpg");
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #tabla{
+            float: left;
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 100%;
+            height: 100px;
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            width: 395px;   /*ICONO CUADRADO*/
+            height: 10px;  
+            background-color: rgba(24, 36, 1, 0.87);
+            /* background-color: rgba(6, 6, 34, 0.87); */
+        }
+        .LlenobotonesPrincipal{
+            float: left;
+            margin-left: 4%;
+            width: 110px;
+            height: 35px;
+        }
+        .boton{
+            float: left;
+            font-size: 60%;
+            width: 100px;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 3px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+    /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+
+    #catalogo{
+        margin-left: 60px;   /*PORQUE ES CAMBIO DE TAMAÑO PANTALLA*/
+        width:285px;
+        height: 250px;
+        background-color: rgb(104, 104, 5);
+    }
+    .productos{
+        width: 90px;
+        height: 120px;
+        margin-left: 4px;
+        margin-top:3px;
+        background-color: rgb(48, 80, 0);
+        float: left;
+    }
+    .cajaProducto{
+        width: 88px;
+        height: 88px;
+        margin-left: 1px;
+        margin-top: 1px;
+        background-color: rgb(3, 5, 105);
+    }
+    .imgBloques{
+        margin-top:5px;
+        width: 88px;
+        height: 78px;
+    }
+    .cajaProductoTitulo{
+        width: 88px;
+        height: 15px;
+        margin-left: 1px;
+        margin-top: 1px; 
+        background-color: rgba(22, 18, 75, 0.541);
+        font-size: x-small;
+        color:rgb(208, 223, 10);
+        text-align: center;
+    }
+    .enlaceProducto{
+        width: 88px;
+        height: 14px;
+        margin-left: 1px;
+        margin-top: 1px; 
+        background-color: rgb(12, 78, 34);  
+    }
+    .enlaceProducto>a{
+        float: right;
+        text-align: center;
+        font-size: xx-small;
+        color: rgb(175, 175, 26);
+    }
+
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        float:left;
+        width:99%;
+        height: 140px;
+        background-color: rgba(163, 180, 9, 0.596);   
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        border: 3px;
+        border-style: solid;
+        border-color:rgba(24, 36, 1, 0.87);
+        background-color: rgba(72, 80, 1, 0.596);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:smaller;
+        text-align: center;
+    }
+    .pie
+    {
+        float: left;
+        width:32.6%;
+        height: 46px;
+        border: 1px;
+        border-style: solid;
+        border-color:rgba(0, 0, 0, 0.87);
+        background-color: rgba(94, 65, 3, 0.596);   
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size: small;
+        text-align: center; 
+    }
+    .parrafo{
+        color: transparent; /* Para que aparezca el texto invisible, a la espera del cambio */
+    }
+}

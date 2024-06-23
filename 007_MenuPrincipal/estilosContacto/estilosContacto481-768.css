@@ -1,0 +1,241 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) 
+{
+   /** DISPOSITIVOS TABLETS **/
+   /*** CONTENEDOR PRINCIPAL DE LA PAGINA ***/
+   #container{
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    width: 550px;
+    height:1008px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgba(0, 0, 19, 0.89); /*COLOR BASE*/
+    position: absolute;
+    z-index: -1;
+    }
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: auto;
+        height: 280px;
+        border: 1px;
+        border-style: solid;
+        border-color: black;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoEmpresa{
+            margin-left: 20%;
+            width: 343px;   /*ICONO CUADRADO*/
+            height: 100px;
+            background-image: url("../images/Sfer4D-IconoEmpresa.jpg");
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #tabla{
+            float: left;
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 545px;
+            height: 170px;
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            width: 545px;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(6, 6, 34, 0.87);
+        }
+        .LlenobotonesPrincipal{
+            float: left;
+            margin-left: 4%;
+            width: 150px;
+            height: 60px;
+        }
+        .boton{
+            margin-left: 15px;
+            margin-top: 10px;
+            width: 120px;
+            height: 40px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 3px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+/**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+/****  CSS DEL FORMULARIO DE LA PAGINA WEB  ****/
+#contacto{
+    float: left;
+    width: 550px;
+    height: 580px;
+    background-color: rgba(12, 5, 105, 0.596);
+   
+}
+#formulario{
+    float: left;
+    padding-top: 10px;
+    margin-left: 10%;
+    width: 440px;
+    height: 555px;
+    margin-top: 10px;
+    background-color: rgba(2, 1, 46, 0.89);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgb(255, 255, 255) 5px 5px 20px 3px;
+}
+.identificadores{
+    float: left;
+    width: 185px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.rellenoComentario{
+    float: left;
+    margin-top: 25px;
+    margin-left: -90px;
+    width: 305px;
+    height: 50px;
+    font-size: x-small;
+    text-align: left;
+    background-color: rgba(203, 206, 68, 0.89);
+}
+
+.dato{
+    margin-left: 5px;
+    margin-bottom: -12px;
+    margin-top: 7px;
+    height: 10px;
+    width: 60px;
+    color: rgb(173, 173, 2);
+    font-size:small;
+    text-align: left;
+}
+.relleno{
+    margin-left: 70px;
+    width: 120px;
+    height: 11px;
+    font-size:smaller;
+    text-align: center;
+    background-color: rgba(203, 206, 68, 0.89);
+}
+.datoRadio{
+    float: left;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    color: rgb(173, 173, 2);
+    font-size:small;
+}
+#listado{
+    margin-top: 5px;
+    margin-left: 70px;
+    width: 123px;
+    height: 15px;
+    font-size:x-small;
+    text-align: center;
+    background-color: rgba(203, 206, 68, 0.89);  
+}
+#listado:hover{
+    color: rgb(227, 243, 9);
+    background-color: black;
+    transition: all .3s;
+}
+.envio{
+    float: left;
+    margin-left: 245px;
+    margin-top: 15px;
+    width:180px;
+}
+#enviar{
+    margin-left: 90px;
+    height: 20px;
+    width: 90px;
+    font-size:smaller;
+    text-align: center;
+    background-color: rgb(173, 173, 2);
+    border-radius: 10px;
+    border-color: black;
+}
+#enviar:hover{
+    color: rgb(227, 243, 9);
+    background-color: black;
+    transition: all .3s;
+}
+.relleno:hover{
+    color: rgb(227, 243, 9);
+    background-color: black;
+    transition: all .3s;
+}
+.titulomapa{
+    float: left;
+    margin-top: 20px;
+    margin-left: 175px;
+    margin-bottom:20px;
+    width: 120px;
+    text-align: center;
+    font-size: x-small;
+    color: rgb(3, 5, 51);
+    border-radius: 10px;
+    background-color: darkgrey;
+    box-shadow: rgb(255, 255, 255) 0px 0px 20px 5px;
+}
+.mapa{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 420px;
+    height: 180px;
+}
+
+/****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        float: left;
+        width:99%;
+        height: 140px;
+        background-color: rgba(163, 180, 9, 0.596);   
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(24, 36, 1, 0.87);
+        background-color: rgba(72, 80, 1, 0.596);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:smaller;
+        text-align: center;
+    }
+    .pie
+    {
+        float: left;
+        width:32.9%;
+        height: 50px;
+        border: 1px;
+        border-style: solid;
+        border-color:rgba(0, 0, 0, 0.87);
+        background-color: rgba(94, 65, 3, 0.596);  
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:medium;
+        text-align: center; 
+    }
+    .parrafo{
+        color: transparent; /* Para que aparezca el texto invisible, a la espera del cambio */
+    }
+}

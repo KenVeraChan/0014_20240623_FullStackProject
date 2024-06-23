@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto con la corporación Sfer4D</title>
+        <link href="estilosContacto/estilosContacto1281-7800.css" rel="stylesheet">
+        <link href="estilosContacto/estilosContacto1025-1280.css" rel="stylesheet">
+        <link href="estilosContacto/estilosContacto769-1024.css" rel="stylesheet">
+        <link href="estilosContacto/estilosContacto481-768.css" rel="stylesheet">
+        <link href="estilosContacto/estilosContacto300-480.css" rel="stylesheet">
+        <link href="estilosContacto/estilosContacto100-299.css" rel="stylesheet">
+        <link rel="stylesheet" media="(max-width: 7800px)" href="estilosContacto/estilosContacto1281-7800.css">
+        <link rel="stylesheet" media="(max-width: 1280px)" href="estilosContacto/estilosContacto1025-1280.css">
+        <link rel="stylesheet" media="(max-width: 1024px)" href="estilosContacto/estilosContacto769-1024.css">
+        <link rel="stylesheet" media="(max-width: 768px)" href="estilosContacto/estilosContacto481-768.css">
+        <link rel="stylesheet" media="(max-width: 480px)" href="estilosContacto/estilosContacto300-480.css"> 
+        <link rel="stylesheet" media="(max-width: 299px)" href="estilosContacto/estilosContacto100-299.css">    
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="scripts/scriptsContacto.js"></script>
+    </head>
+    <body onload="cargaPagina()" onresize="tamPagina()">
+        <div id="container">
+            <header id="cabeceraPrincipal">
+                <div id="iconoEmpresa"></div>
+                <table id="tabla">
+                    <tr><td class="VaciobotonesPrincipal"></td></tr>
+                    <tr id="cajaBotonera">
+                        <td class="LlenobotonesPrincipal">
+                            <button class="boton" style="color:rgba(230, 230, 11, 0.719)"> HISTORIA DE LA EMPRESA</button>
+                        </td>
+        
+                        <td class="LlenobotonesPrincipal">
+                            <button class="boton" style="color:rgba(230, 230, 11, 0.719)"> CATÁLOGO PRODUCTOS</button>
+                        </td>
+                        
+                        <td class="LlenobotonesPrincipal">
+                            <button class="boton" style="color:rgba(230, 230, 11, 0.719)"> CATÁLOGO SERVICIOS</button>
+                        </td>
+                        
+                        <td class="LlenobotonesPrincipal">
+                            <button class="boton" style="color:rgba(230, 230, 11, 0.719)"> PROYECTOS EN CURSO</button>
+                        </td>
+                        
+                        <td class="LlenobotonesPrincipal">
+                            <button class="boton" style="color:rgba(230, 230, 11, 0.719)"> CONTACTO</button>
+                        </td>
+                        
+                        <td class="LlenobotonesPrincipal">
+                            <button class="boton" style="color:rgba(230, 230, 11, 0.719)"> TRABAJA CON NOSOTROS</button>
+                        </td>
+                    </tr>
+                    <tr><td class="VaciobotonesPrincipal"></td></tr>
+                </table>
+            </header>
+           
+            <section id="contacto"> 
+              <div id="formulario">
+                    <form id="cajas" method="post" action="">
+                       <div class="identificadores"><div class="dato">Nombre:</div><input class="relleno" type="text"></div>
+                       <div class="identificadores"><div class="dato">Apellidos:</div><input class="relleno" type="text"></div>
+                       <div class="identificadores"><div class="dato">Dirección:</div><input class="relleno" type="text"></div>
+                       <div class="identificadores"><div class="dato">Correo:</div><input class="relleno" type="email"></div>
+                       <div class="identificadores"><div class="dato">Teléfono:</div><input class="relleno" type="tel"></div>
+                       <div class="identificadores"><div class="dato">Edad:</div></div>
+                        <select name="consultas" id="listado">
+                            <option value="1">De 18-25 años</option>
+                            <option value="2">De 26-35 años</option>
+                            <option value="3">De 36-45 años</option>
+                            <option value="4">De 46-55 años</option>
+                            <option value="5">De 56-65 años</option>
+                            <option value="5">De 66-75 años</option>
+                            <option value="5">De 76-85 años</option>
+                            <option value="5">De 86-95 años</option>
+                            <option value="5">De 96-105 años</option>
+                        </select>
+                       <div class="identificadores"><div class="dato">Sexo:</div></div>
+                       <div class="datoRadio"><label><input type="radio" name="sexualidad" value="15" checked> Hombre</label></div>
+                       <div class="datoRadio"><label><input type="radio" name="sexualidad" value="30"> Mujer</label></div>
+                       <div class="datoRadio"><label><input type="radio" name="sexualidad" value="45"> Otro</label></div>
+                       <div class="identificadores"><div class="dato">Fecha Cita:</div><input class="relleno" type="date"></div>
+                       <div class="identificadores"><div class="dato">Tipo de Petición:</div></div>
+                        <select name="consultas" id="listado">
+                            <option value="1">Consultas</option>
+                            <option value="2">Quejas</option>
+                            <option value="3">Entrega Pedidos</option>
+                            <option value="4">Sugerencias</option>
+                            <option value="5">Otros</option>
+                        </select>
+                       <div class="comentar"></div>
+                       <div class="identificadores"><div class="dato">Comentarios:</div></div>
+                       <textarea class="rellenoComentario" rows="4" cols="10"></textarea>
+                       <div class="envio"><input id="enviar" type="submit"></div>
+                    </form>
+                    <div class="titulomapa">VISITANOS</div>
+                    <div class="mapa"></div>
+              </div>                
+            </section>
+
+            <footer id="piePrincipal">
+                <div id="zocalo">
+                    -------- Fundadores --------
+                    <br><strong>William Wissangel</strong></br>
+                    <strong>Sharyllín Rousher</strong>
+                    <br>---- Correo Electrónico ----</br>
+                    <strong>sfer4D_corporation@outlook.com</strong>
+                </div>
+                <div class="pie">
+                    ----- Asociado -----
+                    <strong>BioGenTech Corp</strong>
+                </div>
+                <div class="pie">
+                    ----- Competidor -----
+                    <strong>Techeimer Corp</strong>
+                </div>
+                <div class="pie">
+                    ----- Inversor -----
+                    <strong>Medigraria Corp</strong>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
