@@ -7,7 +7,7 @@
     /*TITULO PAGINA Y CABECERA*/
     width: 100%;
     height: 60px;
-    background-color: rgb(120, 4, 21);
+    background-color: rgb(247, 145, 43);
     text-align:center;
     text-shadow: 5px;
     text-justify: kashida;
@@ -17,7 +17,7 @@
     /*FONDO PAGINA SECCION*/ 
     width: 100%;
     height: 720px;
-    background-color: rgb(85, 4, 21); 
+    background-color: rgb(204,102, 0); 
     text-align: center;
     text-shadow: 5px;
     text-justify: kashida;
@@ -30,7 +30,7 @@
     padding-right: 20px;
     width: 500px;
     height: 330px;
-    background-color: rgb(121, 25, 25);
+    background-color: rgb(255, 162, 91);
 }
 .bloque_opciones{
     /*SE ELIGEN TODOS LOS HIJOS DE LA CLASE BLOQUE OPCIONES*/
@@ -41,11 +41,11 @@
     margin-top: 10px;
     text-align: center;
     padding-top: 7px;
-    background-color:rgb(100, 10, 10);
+    background-color:rgb(226, 101, 5);
     color:black;
     border-radius: 30px 30px 30px 30px;
     box-shadow: rgb(255,255,255) 3px 3px 3px;
-    background: -webkit-linear-gradient(top, #FFFFFF,  #8D0000);
+    background: -webkit-linear-gradient(top, #FFFFFF,  #FFAB00);
     transition-property: background-color;
 }
 .celda{

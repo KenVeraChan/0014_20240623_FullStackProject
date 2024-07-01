@@ -54,7 +54,7 @@ try{
                                 $_SESSION["matrizEmpleados"][$i][$j]=null;
                             }
                         }
-                    $j=0; //Reinicio de la variable siguiente fila
+                        $j=0; //Reinicio de la variable siguiente fila
                     }
                 ///FASE DE COMPROBACION///
                 for($semaforo=0;$semaforo<count($datos_FORM);$semaforo++)
@@ -196,6 +196,7 @@ try{
             ///COMPROBACIÓN DE ACTUALIZACION/// 
             if(strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & (!strcmp($actualizacion,"ACTUALIZAR") || !strcmp($carga,"CARGAR")|| !strcmp($borrar,"BORRAR")) & strcmp($eliminacion,"ELIMINAR"))
             {
+                session_start();  //INICIAR LA SESION SIEMPRE//
                 if(!strcmp($carga,"CARGAR"))
                 {
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA
@@ -225,25 +226,32 @@ try{
                     $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros);                    
                     //----- PASO 6 -----//
                     //Leer los valores. Para ello se utilizará la función mysqli_stmt_fetch //
-                    session_start();  //INICIAR LA SESION SIEMPRE//
                     while(mysqli_stmt_fetch($resultado))
+                        {
+                            $_SESSION["id"]=$conID;
+                            $_SESSION["nombre"]=$conNombre;
+                            $_SESSION["apellidos"]=$conApellidos;
+                            $_SESSION["direccion"]=$conDireccion;
+                            $_SESSION["poblacion"]=$conPoblacion;
+                            $_SESSION["profesion"]=$conProfesion;
+                            $_SESSION["ahorros"]=$conAhorros;
+                        }
+                    if(is_null($conID))
                     {
-                        $_SESSION["id"]=$conID;
-                        $_SESSION["nombre"]=$conNombre;
-                        $_SESSION["apellidos"]=$conApellidos;
-                        $_SESSION["direccion"]=$conDireccion;
-                        $_SESSION["poblacion"]=$conPoblacion;
-                        $_SESSION["profesion"]=$conProfesion;
-                        $_SESSION["ahorros"]=$conAhorros;
+                        //Si comprueba que mysqli_stmt_fetch en SQL da NULL ejecuta esto
+                        //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
+                        $_SESSION["semaforo"]=2;    
                     }
-                    $_SESSION["semaforo"]=1;
+                    else
+                    {
+                        $_SESSION["semaforo"]=1; 
+                    }
                     header("location:../003_Actualizacion/actualizacionPHP.php");
                     mysqli_stmt_close($resultado); 
-                    }
+                }
                 }
                 if(!strcmp($borrar,"BORRAR"))
                 {
-                    session_start();  //INICIAR LA SESION SIEMPRE//
                     //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
                     $_SESSION["id"]="";
                     $_SESSION["nombre"]="";
@@ -304,7 +312,14 @@ try{
                         $_SESSION["profesion"]=$conProfesion;
                         $_SESSION["ahorros"]=$conAhorros;
                     }
-                    $_SESSION["semaforo"]=1;
+                    if(is_null($conID))
+                    {
+                        $_SESSION["semaforo"]=2;
+                    }
+                    else
+                    {
+                        $_SESSION["semaforo"]=1;
+                    }
                     header("location:../004_Eliminacion/eliminacionPHP.php");
                     mysqli_stmt_close($resultado); 
                     }
@@ -320,6 +335,7 @@ try{
                     $_SESSION["poblacion"]="";
                     $_SESSION["profesion"]="";
                     $_SESSION["ahorros"]="";
+                    //Limpieza del formulario
                     $_SESSION["semaforo"]=2;
                     header("location:../004_Eliminacion/eliminacionPHP.php");
                     mysqli_stmt_close($resultado); 
@@ -349,7 +365,18 @@ try{
                         echo "Error al ejecutar la consulta";
                     }else
                     {
-                        $_SESSION["semaforo"]=3;
+                        session_start();  //INICIAR LA SESION SIEMPRE//
+                        //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
+                        //Se limpian los datos del formulario tras eliminar el usuario
+                        $_SESSION["id"]="";
+                        $_SESSION["nombre"]="";
+                        $_SESSION["apellidos"]="";
+                        $_SESSION["direccion"]="";
+                        $_SESSION["poblacion"]="";
+                        $_SESSION["profesion"]="";
+                        $_SESSION["ahorros"]="";
+                        //Limpieza del formulario
+                        $_SESSION["semaforo"]=2;
                         header("location:../004_Eliminacion/eliminacionPHP.php");
                         mysqli_stmt_close($resultado); 
                     }                

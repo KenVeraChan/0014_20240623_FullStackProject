@@ -129,7 +129,6 @@
         }
         function limpiar()
         {
-            //CELDAS QUE SE COLOREAN PARA INDICAR QUE SON LAS MOSTRADAS
         document.getElementsByClassName("celdas")[0].value = "";
         document.getElementsByClassName("celdas")[1].value = "";
         document.getElementsByClassName("celdas")[2].value = "";

@@ -12,7 +12,7 @@ function tablaActualizacion()
     //BOTON DE ACTUALIZAR(0)--CARGAR(1)--LIMPIAR(2)//
     for(let i=0;i<3;i++)
     {
-        botonForm[i].addEventListener("mouseenter",function(){
+            botonForm[i].addEventListener("mouseenter",function(){
             botonForm[i].style.transitionDuration = "0.5s";
             botonForm[i].style.backgroundColor="rgb(12,184,203)";
         })
@@ -22,9 +22,6 @@ function tablaActualizacion()
         })
     }
     botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
-    botonForm[1].addEventListener("onclick",function(){
-        alert("hola");
-    })
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
         {
@@ -37,15 +34,4 @@ function tablaActualizacion()
         }
     //TITULO PAGINA Y CABECERA
     elemento3[0].style.color="black";
-    //CELDAS QUE SE COLOREAN PARA INDICAR QUE SON LAS MOSTRADAS
-    for(i=0;i<5;i++)
-        {
-            elemento5[i].style.background= "rgb(165,187,230)";
-        if(i<2)
-            {
-                elemento6[i].style.background= "rgb(165,187,230)";
-            }
-        }
-        elemento5[0].style.background= "white";
 }
-

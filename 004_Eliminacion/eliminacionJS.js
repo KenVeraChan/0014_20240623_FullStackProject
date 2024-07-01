@@ -14,32 +14,33 @@ function tablaEliminacion()
         {
             botonForm[i].addEventListener("mouseenter",function(){
             botonForm[i].style.transitionDuration = "0.5s";
-            botonForm[i].style.backgroundColor="rgb(155,22,13)";
+            botonForm[i].style.backgroundColor="rgb(245,173,30)";
         })
         botonForm[i].addEventListener("mouseleave",function(){
             botonForm[i].style.transitionDuration = "0.5s";
             botonForm[i].style.backgroundColor="white";
         })
     }
+    botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
         {
         elemento1[i].addEventListener('mouseenter',function(){
-            elemento1[i].style.background= "-webkit-linear-gradient(top, #8D0000,#FFFFFF)";
+            elemento1[i].style.background= "-webkit-linear-gradient(top, #FFAB00,#FFFFFF)";
                 })
         elemento1[i].addEventListener('mouseleave',function(){
-            elemento1[i].style.background= "-webkit-linear-gradient(top,#FFFFFF, #8D0000)";
+            elemento1[i].style.background= "-webkit-linear-gradient(top,#FFFFFF, #FFAB00)";
                 })
         }
     //TITULO PAGINA Y CABECERA
-    elemento3[0].style.color="white";
+    elemento3[0].style.color="black";
     //CELDAS QUE SE COLOREAN PARA INDICAR QUE SON LAS MOSTRADAS
     for(i=0;i<5;i++)
         {
-            elemento5[i].style.background= "rgb(230,166,166)";
+            elemento5[i].style.background= "rgb(230,209,166)";
         if(i<2)
             {
-                elemento6[i].style.background= "rgb(230,166,166)";
+                elemento6[i].style.background= "rgb(230,209,166)";
             }
         }
         elemento5[0].style.background= "white";
