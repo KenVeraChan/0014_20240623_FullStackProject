@@ -21,7 +21,6 @@ function tablaEliminacion()
             botonForm[i].style.backgroundColor="white";
         })
     }
-    botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
         {
@@ -34,14 +33,18 @@ function tablaEliminacion()
         }
     //TITULO PAGINA Y CABECERA
     elemento3[0].style.color="black";
-    //CELDAS QUE SE COLOREAN PARA INDICAR QUE SON LAS MOSTRADAS
-    for(i=0;i<5;i++)
-        {
-            elemento5[i].style.background= "rgb(230,209,166)";
-        if(i<2)
+    //Se bloquean todas las celdas salvo la primera que es el ID para no interatuar con las demás
+        for(i=0;i<5;i++)
             {
-                elemento6[i].style.background= "rgb(230,209,166)";
+                if(i==0)
+                    {
+                        //No hace nada porque no puede bloquear la celda del ID
+                        elemento6[i].disabled=true;
+                        elemento6[i+1].disabled=true;
+                    }
+                else
+                {
+                    elemento5[i].disabled=true;
+                }
             }
-        }
-        elemento5[0].style.background= "white";
 }

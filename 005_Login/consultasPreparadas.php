@@ -267,6 +267,7 @@ try{
                 if(!strcmp($actualizacion,"ACTUALIZAR"))
                 {
                     //TRAS CARGAR LOS DATOS SE DESBLOQUEARAN TODAS LAS CASILLAS PARA CAMBIAR ALGO Y SE ACTUALIZARA
+                    
                 }
             }
             ///COMPROBACIÓN DE ELIMINACION/// 

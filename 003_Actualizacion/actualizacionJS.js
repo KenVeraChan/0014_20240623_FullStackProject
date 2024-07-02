@@ -21,7 +21,6 @@ function tablaActualizacion()
             botonForm[i].style.backgroundColor="white";
         })
     }
-    botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
         {

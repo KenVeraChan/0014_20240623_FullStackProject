@@ -110,13 +110,16 @@
         </form>
     </div>
     <script>
+    var botonForm= document.getElementsByClassName("boton");
         if(<?php echo($_SESSION["semaforo"])?>==1)
         {
             rellenar();
+            botonForm[0].disabled=false;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
         }
         if(<?php echo($_SESSION["semaforo"])?>==2)
         {
             limpiar();
+            botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
         }
         function rellenar()
         {

@@ -109,13 +109,16 @@
         </form>
     </div>
     <script>
+    var botonForm= document.getElementsByClassName("boton");
         if(<?php echo($_SESSION["semaforo"])?>==1)
         {
             rellenar();
+            botonForm[0].disabled=false;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
         }
         if(<?php echo($_SESSION["semaforo"])?>==2)
         {
             limpiar();
+            botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
         }
         function rellenar()
         {
@@ -126,6 +129,22 @@
         document.getElementsByClassName("desplegable")[0].value = "<?php echo($_SESSION["poblacion"]);?>";
         document.getElementsByClassName("desplegable")[1].value = "<?php echo($_SESSION["profesion"]);?>";
         document.getElementsByClassName("celdas")[4].value = "<?php echo($_SESSION["ahorros"]);?>";
+        var elemento5= document.getElementsByClassName("celdas");
+        var elemento6= document.getElementsByClassName("desplegable");
+            //Se bloquean todas las celdas salvo la primera que es el ID para no interatuar con las demás
+            for(i=0;i<5;i++)
+                {
+                    if(i==0)
+                        {
+                            //No hace nada porque no puede bloquear la celda del ID
+                            elemento6[i].disabled=false;
+                            elemento6[i+1].disabled=false;
+                        }
+                    else
+                    {
+                        elemento5[i].disabled=false;
+                    }
+                }
         }
         function limpiar()
         {
@@ -136,6 +155,22 @@
         document.getElementsByClassName("desplegable")[0].value = "";
         document.getElementsByClassName("desplegable")[1].value = "";
         document.getElementsByClassName("celdas")[4].value = "";
+        var elemento5= document.getElementsByClassName("celdas");
+        var elemento6= document.getElementsByClassName("desplegable");
+            //Se bloquean todas las celdas salvo la primera que es el ID para no interatuar con las demás
+            for(i=0;i<5;i++)
+                {
+                    if(i==0)
+                        {
+                            //No hace nada porque no puede bloquear la celda del ID
+                            elemento6[i].disabled=true;
+                            elemento6[i+1].disabled=true;
+                        }
+                    else
+                    {
+                        elemento5[i].disabled=true;
+                    }
+                }
         }
     </script>
 </body>
