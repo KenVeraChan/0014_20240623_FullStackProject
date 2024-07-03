@@ -120,6 +120,9 @@
             limpiar();
             botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
         }
+        if(<?php echo($_SESSION["semaforo"])?>==3)
+        {
+        }
         function rellenar()
         {
         document.getElementsByClassName("celdas")[0].value = "<?php echo($_SESSION["id"]);?>";
@@ -131,6 +134,9 @@
         document.getElementsByClassName("celdas")[4].value = "<?php echo($_SESSION["ahorros"]);?>";
         var elemento5= document.getElementsByClassName("celdas");
         var elemento6= document.getElementsByClassName("desplegable");
+        document.getElementsByClassName("celdas")[0].disabled=true;
+        //Se bloquea el elemento de ID para que el usuario no pueda modificiarlo
+        //ya que es un dato inherente al registro
             //Se bloquean todas las celdas salvo la primera que es el ID para no interatuar con las demás
             for(i=0;i<5;i++)
                 {
@@ -157,6 +163,9 @@
         document.getElementsByClassName("celdas")[4].value = "";
         var elemento5= document.getElementsByClassName("celdas");
         var elemento6= document.getElementsByClassName("desplegable");
+        var elemento1= document.getElementsByClassName("celdas")[0].disabled=false;
+        //Se bloquea el elemento de ID para que el usuario no pueda modificiarlo
+        //ya que es un dato inherente al registro
             //Se bloquean todas las celdas salvo la primera que es el ID para no interatuar con las demás
             for(i=0;i<5;i++)
                 {
