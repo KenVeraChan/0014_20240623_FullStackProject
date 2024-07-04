@@ -14,8 +14,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla de Empleados</title>
-    <link rel="stylesheet" href="busquedaCSS-TABLAFIND.css">
-    <script src="busquedaJS-TABLAFIND.js"></script>
+    <link rel="stylesheet" href="actualizacionCSS-TABLAUPDATE.css">
+    <script src="actualizacionJS-TABLAUPDATE.js"></script>
 </head>
 <body onload="tablaBusqueda()">
 <?php
@@ -42,7 +42,7 @@
                     '
             href='../005_Login/salidaPagina.php'><strong>CERRAR SESION</strong></a> ");
 ?>
-    <div class="cabecera"><h2><strong>Busqueda de Empleados en la Empresa</strong></h2></div> 
+    <div class="cabecera"><h2><strong>Actualización de un Empleado de la Empresa</strong></h2></div> 
     <div><input type="submit" class="bloque_opciones" value="OPCIONES" onclick="llamada()"></div>
     <div><input type="submit" class="bloque_opciones" value="BÚSQUEDA" onclick="location.href='../001_Busqueda/busquedaPHP.php'"></div>
     <div><input type="submit" class="bloque_opciones" value="INSERCCIÓN" onclick="location.href='../002_Inserccion/inserccionPHP.php'"></div>
@@ -62,14 +62,14 @@
                     <td><strong>AHORROS</strong></td>
                   </tr>";
             //Se va rellenando la tabla espontáneamente segun los registros encontrados en la BBDD
-            for ($i=0;$i<100;$i++)
+            for ($i=0;$i<10;$i++)
             {
                 echo "<tr>";
                 for($j=0;$j<7;$j++)
                 {
-                    if(isset($_SESSION["matrizEmpleados"][$i][$j]))
+                    if(isset($_SESSION["datosActualizar"][$i][$j]))
                     {
-                        echo "<td class='uno' style='background-color:rgb(235,245,148)'>".$_SESSION["matrizEmpleados"][$i][$j]."</td>";
+                        echo "<td class='uno' style='background-color:rgb(235,245,148)'>".$_SESSION["datosActualizar"][$i][$j]."</td>";
                     }
                 }
                 echo "</tr>";

@@ -110,6 +110,8 @@
         </form>
     </div>
     <script>
+    window.addEventListener('load',()=>
+    {
     var botonForm= document.getElementsByClassName("boton");
         if(<?php echo($_SESSION["semaforo"])?>==1)
         {
@@ -142,6 +144,7 @@
         document.getElementsByClassName("desplegable")[1].value = "";
         document.getElementsByClassName("celdas")[4].value = "";
         }
+    });
     </script>
 </body>
 </html>

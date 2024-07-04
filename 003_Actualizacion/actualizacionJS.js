@@ -33,4 +33,22 @@ function tablaActualizacion()
         }
     //TITULO PAGINA Y CABECERA
     elemento3[0].style.color="black";
+    //CAJAS DE DATOS Y DESPLEGABLES
+    var i=0;
+    //LA PRIMERA CELDA NO PUEDE ESTAR BLOQUEADA
+    //CON EL ID SE PODRÁN ACTUALIZAR LOS DATOS DEL FORMULARIO
+    elemento5[0].disabled=false;
+    elemento5[0].value="";
+    for(i=1; i<5;i++)
+        {
+            elemento5[i].value="";
+            elemento5[i].disabled=true;
+        }
+    for(i=0; i<2;i++)
+        {
+            elemento6[i].value="";
+            elemento6[i].disabled=true;
+        }
+    //SE BLOQUEA EL ACCESO A LA ACTUALIZACION SI NO HAY DATOS EN EL FORMULARIO
+    botonForm[0].disabled=true;
 }
