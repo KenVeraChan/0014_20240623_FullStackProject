@@ -15,42 +15,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Contactos</title>
-    <link rel="stylesheet" href="estilosCabecera.css">
+    <link rel="stylesheet" href="estilosConsultaConctactos.css">
     <script src="cargaPaginas.js"></script>
 </head>
 <body onload="cargarPagina()">
-       <?php
-            echo("<div style=' 
-                            float: right;
-                            position: relative;
-                            background-color: transparent;
-                            text-align: center;
-                            color: black;
-                            width: 300px;
-                            height: 25px;
-                            padding-top: 10px;
-                            '>Hola BIENVENIDO/A: ".$_SESSION["usuario"]."</div>
-                <a style=' 
-                            float: right;
-                            background-color: transparent;
-                            text-align: center;
-                            font-size: 90%;
-                            color: black;
-                            width: 120px;
-                            height: 25px;
-                            text-decoration: none;
-                            padding-top: 12px;
-                            '
-                  href='salidaPagina.php'><strong>CERRAR SESION</strong></a> ");
-       ?>
-    <div class="cabecera"><h2><strong>Candidatos a la plantilla Sfer4D Corporation</strong></h2></div> 
-    <div><input type="submit" class="bloque_opciones" value="OPCIONES" onclick="llamada()""></div>
-    <div><input type="submit" class="bloque_opciones" value="BÚSQUEDA" onclick="location.href='../001_Busqueda/busquedaPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="INSERCCIÓN" onclick="location.href='../002_Inserccion/inserccionPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="ACTUALIZACIÓN" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"></div>  
-    <div><input type="submit" class="bloque_opciones" value="ELIMINACIÓN" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"></div>   
+    <header id="cabeceraPrincipal">
+        <div id="iconoEmpresa"></div>
+        <table id="tabla">
+            <tr><td class="VaciobotonesPrincipal"></td></tr>
+            <tr id="cajaBotonera">
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BÚSQUEDA PARTICULAR</button>
+                </td>
+
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> INSERCCIÓN PARTICULAR</button>
+                </td>
+                
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> ACTUALIZACIÓN PARTICULAR</button>
+                </td>
+                
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> ELIMINACIÓN PARTICULAR</button>
+                </td>
+                
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="muestraTablaPaginada()"> CARGA VISTA GENERAL</button>
+                </td>
+                
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)"> VOLVER</button>
+                </td>
+            </tr>
+            <tr><td class="VaciobotonesPrincipal"></td></tr>
+        </table>
+    </header>
+
+    <div id="areaSesion">
+    <table style="width:100%">
+        <tr>
+            <td class="accion"></td>
+            <td class="accion"> 
+                <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+            </td>
+            <td class="accion">
+                <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+            </td>
+            <td class="accion"></td>
+        </tr>
+    </table>
+    </div>
     <div class="consulta">
-        <!-- SIN CONTENIDO AUN -->
+            <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
+    </div>
+    <div class="piePagina">
+        <footer id="piePrincipal">
+            <div id="zocalo">
+                -------- Fundadores --------
+                <br><strong>William Wissangel</strong></br>
+                <strong>Sharyllín Rousher</strong>
+                <br>---- Correo Electrónico ----</br>
+                <strong>sfer4D_corporation@outlook.com</strong>
+            </div>
+            <div class="pie">
+                ----- Asociado -----
+                <strong>BioGenTech Corp</strong>
+            </div>
+            <div class="pie">
+                ----- Competidor -----
+                <strong>Techeimer Corp</strong>
+            </div>
+            <div class="pie">
+                ----- Inversor -----
+                <strong>Medigraria Corp</strong>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
