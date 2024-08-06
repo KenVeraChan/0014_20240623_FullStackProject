@@ -19,7 +19,7 @@
     //Se utiliza un objeto para poder guardar lo que se CARGA respecto a lo que 
     // luego se compara a fin de ver qué elemento o elementos son los que cambian
     // y efectuar los considerables cambios
-    class UsuarioCompararActualizar
+    class UsuarioCompararActualizar implements JsonSerializable
     {
         private $RegID;
         private $RegNombre;
@@ -39,68 +39,55 @@
             $this->RegProfesion=$RegProfesion;
             $this->RegAhorros=$RegAhorros;
         }
-        //GETTER Y SETTER DEL ID USUARIO
-        function IDgetter()
+        //GETTER DEL ID USUARIO
+        public function IDgetter()
         {
             return $this->RegID;
         }
-        function IDsetter($RegID):void
-        {
-            $this->RegID=$RegID;
-        }
-        //GETTER Y SETTER DEL NOMBRE USUARIO
-        function NOMBREgetter()
+        //GETTER DEL NOMBRE USUARIO
+        public function NOMBREgetter()
         {
             return $this->RegNombre;
         }
-        function NOMBREsetter($RegNombre):void
-        {
-            $this->RegNombre=$RegNombre;
-        }
-        //GETTER Y SETTER DEL APELLIDO USUARIO
-        function APELLIDOgetter()
+        //GETTER DEL APELLIDO USUARIO
+        public function APELLIDOgetter()
         {
             return $this->RegApellidos;
         }
-        function APELLIDOsetter($RegApellidos):void
-        {
-            $this->RegApellidos=$RegApellidos;
-        }
-        //GETTER Y SETTER DE LA DIRECCION USUARIO
-        function DIRECCIONgetter()
+        //GETTER DE LA DIRECCION USUARIO
+        public function DIRECCIONgetter()
         {
             return $this->RegDireccion;
         }
-        function DIRECCIONsetter($RegDireccion):void
-        {
-            $this->RegDireccion=$RegDireccion;
-        }
-        //GETTER Y SETTER DE LA POBLACION USUARIO
-        function POBLACIONgetter()
+        //GETTER DE LA POBLACION USUARIO
+        public function POBLACIONgetter()
         {
             return $this->RegPoblacion;
         }
-        function POBLACIONsetter($RegPoblacion):void
-        {
-            $this->RegPoblacion=$RegPoblacion;
-        }
-        //GETTER Y SETTER DE LA POBLACION USUARIO
-        function PROFESIONgetter()
+        //GETTER DE LA POBLACION USUARIO
+        public function PROFESIONgetter()
         {
             return $this->RegProfesion;
         }
-        function PROFESIONsetter($RegProfesion):void
-        {
-            $this->RegProfesion=$RegProfesion;
-        }
-        //GETTER Y SETTER DE LA POBLACION USUARIO
-        function AHORROSgetter()
+        //GETTER DE LA POBLACION USUARIO
+        public function AHORROSgetter()
         {
             return $this->RegAhorros;
         }
-        function AHORROSsetter($RegAhorros):void
+        public function ConvertirArray()
         {
-            $this->RegAhorros=$RegAhorros;
+            $array= array($this->RegID,
+                          $this->RegNombre,
+                          $this->RegApellidos,
+                          $this->RegDireccion,
+                          $this->RegPoblacion,
+                          $this->RegProfesion,
+                          $this->RegAhorros);
+            return $array;
+        }
+        public function jsonSerialize()
+        {
+            return get_object_vars($this);
         }
     }
 ?>

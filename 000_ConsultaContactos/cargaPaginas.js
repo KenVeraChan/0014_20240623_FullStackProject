@@ -26,6 +26,7 @@ function llamada()
 //MUESTRA LA TABLA EN FORMA PAGINADA PARA VER COMO QUEDA LA MISMA TRAS LOS CAMBIOS
 function muestraTablaPaginada() 
 {
+    //Nota: con getElementById se necesita declarar dentro del método
     var botonForm= document.getElementById("imagenPortada");
     botonForm.style.transitionDuration = "1s";
     botonForm.style.opacity = "0.25";

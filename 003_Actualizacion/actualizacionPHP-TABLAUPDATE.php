@@ -1,12 +1,15 @@
 <?php
-        //INICIA LA SESION DE ENTRADA
-        session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
-                          //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-        if(!isset($_SESSION["usuario"]))
-        {
-            //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/login.php");
-        }
+    //INICIA LA SESION DE ENTRADA
+    session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
+                        //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    if(!isset($_SESSION["usuario"]))
+    {
+        //Si es falso que no se ha registrado nada en la sesion
+        header("Location:../005_Login/login.php");
+    }
+    //JSON: JavaScript Object Notation
+    $LECTURA=json_decode($_SESSION["L"],true); //Para descarga como una matriz asociativa
+    $ESCRITURA=json_decode($_SESSION["E"],true); //Para descarga como una matriz asociativa
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,21 +65,29 @@
                     <td><strong>AHORROS</strong></td>
                   </tr>";
             //Se va rellenando la tabla espontáneamente segun los registros encontrados en la BBDD
-            for ($i=0;$i<10;$i++)
-            {
-                echo "<tr>";
-                for($j=0;$j<7;$j++)
-                {
-                    if(isset($_SESSION["datosActualizar"][$i][$j]))
-                    {
-                        echo "<td class='uno' style='background-color:rgb(235,245,148)'>".$_SESSION["datosActualizar"][$i][$j]."</td>";
-                    }
-                }
-                echo "</tr>";
-                $j=0; //Reinicio de la variable siguiente fila
-            }
+            echo "<tr style='background-color:rgb(239,255,90)'>
+                    <td><strong>".$LECTURA["RegID"]."</strong></td>
+                    <td><strong>".$LECTURA["RegNombre"]."</strong></td>
+                    <td><strong>".$LECTURA["RegApellidos"]."</strong></td>
+                    <td><strong>".$LECTURA["RegDireccion"]."</strong></td>
+                    <td><strong>".$LECTURA["RegPoblacion"]."</strong></td>
+                    <td><strong>".$LECTURA["RegProfesion"]."</strong></td>
+                    <td><strong>".$LECTURA["RegAhorros"]."</strong></td>
+                  </tr>";
+            echo "<tr style='background-color:rgb(239,255,90)'>
+                    <td><strong>".$LECTURA["RegID"]."</strong></td>
+                    <td><strong>".$ESCRITURA["RegNombre"]."</strong></td>
+                    <td><strong>".$ESCRITURA["RegApellidos"]."</strong></td>
+                    <td><strong>".$ESCRITURA["RegDireccion"]."</strong></td>
+                    <td><strong>".$ESCRITURA["RegPoblacion"]."</strong></td>
+                    <td><strong>".$ESCRITURA["RegProfesion"]."</strong></td>
+                    <td><strong>".$ESCRITURA["RegAhorros"]."</strong></td>
+                    </tr>";
         echo "</table>" 
         ?>
+        <form action="../003_Actualizacion/actualizacionPHP-Actualizado.php" method="GET">
+            <input type="submit" name="modificar" value="MODIFICAR" style="width:100px; height:20px; margin-top:30px; margin-left:72%">
+        </form>
     </div>
     <script>
         function tablaColor()

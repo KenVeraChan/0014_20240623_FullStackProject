@@ -7,10 +7,18 @@
 </head>
 <body>
 <?php
-include("conexionPHP.php");
-//Se incluye el fichero de creación de un objeto para  guardar
+include "conexionPHP.php";
+// Al hacerse la conexion mediante MYSQLI se llamarán a los métodos de la conexion 
+// para poder efecturala (doble técnica: usar POO creado de la CONEXION y uso MYSQLI en vez de PDO)
+$BD_servidor=ConexionPHP::getBD_Servidor();
+$BD_usuario=ConexionPHP::getBD_Usuario();
+$BD_contrasenia=ConexionPHP::getBD_Contrasenia();
+$BD_nombre=ConexionPHP::getBD_Nombre();
+$BD_tabla=ConexionPHP::getBD_TablaEmpleados();
+
+//Se incluye el fichero de creación de un objeto para guardar
 // el dato CARGADO y compararlo con el ACTUALIZADO
-include("actualizacionMetodosPHP.php");
+include "../003_Actualizacion/actualizacionMetodosPHP.php";
 try{   
     //METODO 2: EMPLEANDO EN TODO ESTE FICHERO --> DE MYSQLI PARA LAS CONSULTAS PREPARADAS
     //CREANDO VARIABLES RECIBIDAS DE LOS BOTONES DE ACCION
@@ -244,6 +252,14 @@ try{
                                 $_SESSION["poblacion"]=$conPoblacion;
                                 $_SESSION["profesion"]=$conProfesion;
                                 $_SESSION["ahorros"]=$conAhorros;
+                                $LEIDOS= new UsuarioCompararActualizar($_SESSION["id"],
+                                                                       $_SESSION["nombre"], 
+                                                                       $_SESSION["apellidos"],
+                                                                       $_SESSION["direccion"],
+                                                                       $_SESSION["poblacion"],
+                                                                       $_SESSION["profesion"],
+                                                                       $_SESSION["ahorros"]);
+                            $_SESSION["L"]=json_encode($LEIDOS);
                             }
                         if(is_null($conID))
                         {
@@ -278,66 +294,15 @@ try{
                 }
                 if(!strcmp($actualizacion,"ACTUALIZAR"))
                 {
+                    session_start();
                     //PARTE 1: SE GENERA UNA CARGA DE DATOS ORIGINALES DEL USUARIO
-                    $sql_2="SELECT * FROM $BD_tabla WHERE $datos_CONSULTA[0]=?";
-                    $resultado_2=mysqli_prepare($conexion,$sql_2);
-                    $okey_2=mysqli_stmt_bind_param($resultado_2,"i",$id);
-                    $okey_2=mysqli_stmt_execute($resultado_2);
-                    $okey_2=mysqli_stmt_bind_result($resultado_2,$con_ID,$con_Nombre,$con_Apellidos,$con_Direccion,$con_Poblacion,$con_Profesion,$con_Ahorros);                    
-                    while(mysqli_stmt_fetch($resultado_2))
-                    {
-                        $datos_COMPARACION[0]=$con_ID;
-                        $datos_COMPARACION[1]=$con_Nombre;
-                        $datos_COMPARACION[2]=$con_Apellidos;
-                        $datos_COMPARACION[3]=$con_Direccion;
-                        $datos_COMPARACION[4]=$con_Poblacion;
-                        $datos_COMPARACION[5]=$con_Profesion;
-                        $datos_COMPARACION[6]=$con_Ahorros;
-                    }
-                    mysqli_stmt_close($resultado_2); 
-                    //PARTE 2: SE GUADAN LOS DATOS MODIFICADOS PARA SU ACTUALIZACION
-                    //DADO QUE LA OTRA MATRIZ YA SE HA COMPLETADO, SE PROCEDE CON ESTA OTRA MATRIZ
-                    //SE RELLENA EL ARRAY DE LOS DATOS RECIBIDOR POR EL FORMULARIO PARA ACTUALIZAR
-                        $datos_ACTUALIZACION[0]=$id;
-                        $datos_ACTUALIZACION[1]=$nom;
-                        $datos_ACTUALIZACION[2]=$ape;
-                        $datos_ACTUALIZACION[3]=$dir;
-                        $datos_ACTUALIZACION[4]=$pob;
-                        $datos_ACTUALIZACION[5]=$prof;
-                        $datos_ACTUALIZACION[6]=$aho;
-                    session_start();  //INICIAR LA SESION SIEMPRE//
-                    //INICIALIZACION DE VARIABLE ARRAY
-                    for ($i=0;$i<2;$i++)
-                    {
-                        for($j=0;$j<7;$j++)
-                            {
-                                if(isset($_SESSION["datosActualizar"][$i][$j]))
-                                {
-                                    //Se igualan a NULL porque si fuera un espacio en blanco crearía fila vacía
-                                    $_SESSION["datosActualizar"][$i][$j]=null;
-                                }
-                            }
-                        $j=0; //Reinicio de la variable siguiente fila
-                    }
-                    //SE GUARDA EN UN ARRAYA BIDIMENSIONAL DE SESSION LOS DOS ARRAYS 
-                    //ARRAY DE DATOS PARA ACTUALIZAR: $datos_Actualizacion y $datos_Comparacion
-                    for($i=0;$i<2;$i++)
-                    {
-                        for($j=0;$j<count($datos_COMPARACION);$j++)
-                        {
-                            if($i==0)
-                            {
-                                $_SESSION["datosActualizar"][$i][$j]=$datos_COMPARACION[$j];
-                            }
-                            else if($i==1)
-                            {
-                                $_SESSION["datosActualizar"][$i][$j]=$datos_ACTUALIZACION[$j];
-                            }
-                        }
-                        $j=0;
-                    }
+                    //Invocando otro objeto diferente
+                    //Emplea el constructor de la clase mencionada para guardar los datos en una variable objeto
+                    $ESCRITOS= new UsuarioCompararActualizar($id,$nom,$ape,$dir,$pob,$prof,$aho);
                     $_SESSION["semaforo"]=3; //Activada señal para la ACTUALIZACIÓN
-                    header("location:../003_Actualizacion/actualizacionPHP-TABLAUPDATE.php");                }
+                    $_SESSION["E"]= json_encode($ESCRITOS);
+                    header("location:../003_Actualizacion/actualizacionPHP-TABLAUPDATE.php");      
+                }
             }
             ///COMPROBACIÓN DE ELIMINACION/// 
             if(strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & (!strcmp($eliminacion,"ELIMINAR") || !strcmp($carga_elim,"CARGA") || !strcmp($borrar_elim,"BORRA")))
@@ -456,7 +421,6 @@ try{
     {
         echo "No se ha podido establecer conexión con la base de datos!";
     }
-
 }catch(mysqli_sql_exception $error2){
     echo "No se ha podido realizar la conexión!";
 }
