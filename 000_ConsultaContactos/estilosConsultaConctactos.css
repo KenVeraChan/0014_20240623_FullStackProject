@@ -3,96 +3,251 @@
     margin-left: 0px;
     margin-right: 0px;
 }
-@media all and (min-width: 1281px) and (max-width: 7800px) 
+@media all and (min-width: 769px) and (max-width: 7800px) 
 {
-    /** DISPOSITIVOS ORDENADOR **/
+     /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #areaSesion{
+        float: left;
         margin-top: 0px;
-        padding-bottom: 10px;
         width: 100%;
-        height: 40px;
+        height: 50px;
         background-color:  rgba(0, 0, 19, 0.89);
         text-align: center;
         box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
         text-align: right;
         color: yellow;
     }
-    .accion{
-        width: 2%;
-        margin:2px;
-        float: left;
-    }
-    .accion:nth-child(2){
-        width: 53%;
-    }
-    .accion:nth-child(3)
-    {
-        margin-top: 12px;
-        width: 40%;
-    }
     #bienvenido{
-        float: center;
-        font-size:large;
+        float: right;
+        font-size: medium;
         background-color: transparent;
-        text-align: center;
+        text-align: right;
         color: rgb(221, 221, 3);
-        width: 300px;
-        height: 25px;
-        padding-top: 10px;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
     }
     #cerrarSesion{
-        float: center;
+        float: right;
         background-color: transparent;
         text-align: center;
-        font-size: 90%;
+        font-size: 60%;
+        margin-top: 3px;
         color: rgb(221, 221, 3);
         width: 120px;
-        height: 25px;
+        height: 20px;
         text-decoration: none;
-        padding-top: 12px;
     }
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 100px;
+        height: 227px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoEmpresa{
             float: left;
-            width: 343px;   /*ICONO CUADRADO*/
+            position: relative;
+            width: 350px;   /*ICONO CUADRADO*/
             height: 100px;
+            box-shadow: rgb(150,150,150) 1px -5px 10px 10px;
             background-image: url("../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg");
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
         .VaciobotonesPrincipal{
             float: left;
+            position: relative;
             width: 100%;   /*ICONO CUADRADO*/
             height: 13px;  
             background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
         .LlenobotonesPrincipal{
-            float: left;
-            width: 150px;
+            width: 450px;
             height: 60px;
-            border: 1px;
-            border-style: solid;
-            border-color: black;
+            padding-bottom: 5px;
         }
         .bloque_opciones{
-            margin-left: 12px;
+            margin-left: 20%;
             margin-top: 10px;
-            width: 120px;
-            height: 40px;
+            float: left;
+            width: 60%;
+            height: 50px;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
+            font-size: medium;
             border-radius: 10px;
             box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
         }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
     /*********** FIN CSS DE LA CABECERA ********/
 
-    /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        width: 100%;
+        height: 720px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color:yellow; 
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+}
+@media all and (min-width: 481px) and (max-width: 768px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: yellow;
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(221, 221, 3);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: rgb(221, 221, 3);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 227px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoEmpresa{
+            float: left;
+            position: relative;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 80px;
+            box-shadow: rgb(150,150,150) 1px -5px 10px 10px;
+            background-image: url("../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg");
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 20%;
+            margin-top: 10px;
+            float: left;
+            width: 60%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 70%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     #elecciones{
         margin-left:45%;
@@ -117,63 +272,131 @@
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
     {
-        width:99.5%;
-        height: 175px;
-        background-color: rgba(163, 180, 9, 0.596);   
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color:yellow; 
     }
     #zocalo
     {
         float: left;
         width:100%;
-        height: 120px; 
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(24, 36, 1, 0.87);
-        background-color: rgba(72, 80, 1, 0.596);
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:oblique;
-        font-size:large;
+        font-size:small;
         text-align: center;
     }
     .pie
     {
-        float: left;
-        width:32.8%;
-        height: 50px;
-        border: 1px;
-        border-style: solid;
-        border-color:rgba(0, 0, 0, 0.87);
-        background-color: rgba(94, 65, 3, 0.596);  
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:normal;
-        font-size:large;
+        font-size:small;
         text-align: center; 
     }
-    .parrafo{
-        float: left;
-        margin-left: 10%;
-        width: 65%;
-        height: 65px;
-        font-style:normal;
-        font-size:small;
-        text-align: left;
-        color: transparent; /* Para que aparezca el texto invisible, a la espera del cambio */
-    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-
-@media all and (min-width: 1025px) and (max-width: 1280px) 
-{
-   /** DISPOSITIVOS ORDENADOR **/
-   /************ CSS DE LA CABECERA ********/
-
-
-
-
-
-
+@media all and (min-width: 300px) and (max-width: 480px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: yellow;
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(221, 221, 3);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: rgb(221, 221, 3);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 227px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoEmpresa{
+            float: left;
+            position: relative;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 80px;
+            box-shadow: rgb(150,150,150) 1px -5px 10px 10px;
+            background-image: url("../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg");
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 15%;
+            margin-top: 10px;
+            float: left;
+            width: 80%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 50%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
     /*********** FIN CSS DE LA CABECERA ********/
 
-    /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     #elecciones{
         margin-left:45%;
@@ -181,89 +404,198 @@
     .consulta{
         width: 100%;
         height: 720px;
-        background-color: rgb(85, 4, 21);
+        background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
         text-justify: kashida;
         padding-top: 20px;
     }
-    .bloque_opciones
-    {
-        /*SE ELIGEN TODOS LOS HIJOS DE LA CLASE BLOQUE OPCIONES*/
-        position: relative;
-        width: 130px;
-        height: 36px;
-        float:right;
-        margin-right: 10px;
-        margin-top: 10px;
-        text-align: center;
-        color: rgb(161, 80, 51);
-        padding-top: 7px;
-        background-color:rgb(161, 80, 51);
-        transition-property: background-color;
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
     }
-    .bloque_opciones:nth-child(1)
-    {
-        /*SE ELIGE EL PRIMER HIJO DE LA CLASE BLOQUE OPCIONES*/
-        position: relative;
-        width: 130px;
-        height: 36px;
-        float:right;
-        margin-right: 10px;
-        margin-top: 10px;
-        text-align: center;
-        color: black;
-        padding-top: 7px;
-        background-color: rgb(233, 78, 78);
-    }
-
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
     {
-        margin-top:1px;
-        width:99.5%;
-        height: 175px;
-        background-color: rgba(163, 180, 9, 0.596);   
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color:yellow; 
     }
     #zocalo
     {
         float: left;
         width:100%;
-        height: 120px; 
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(24, 36, 1, 0.87);
-        background-color: rgba(72, 80, 1, 0.596);
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:oblique;
-        font-size:large;
+        font-size:small;
         text-align: center;
     }
     .pie
     {
-        float: left;
-        margin-left: 1%;
-        width:32.1%;
-        height: 50px;
-        border: 1px;
-        border-style: solid;
-        border-color:rgba(0, 0, 0, 0.87);
-        background-color: rgba(94, 65, 3, 0.596);   
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:normal;
-        font-size:large;
+        font-size:small;
         text-align: center; 
     }
-    .parrafo{
-        float: left;
-        margin-left: 10%;
-        width: 65%;
-        height: 65px;
-        font-style:normal;
-        font-size:small;
-        text-align: left;
-        color: transparent; /* Para que aparezca el texto invisible, a la espera del cambio */
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: yellow;
     }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(221, 221, 3);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: rgb(221, 221, 3);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 227px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoEmpresa{
+            position: relative;
+            margin-left: 10%;
+            width: 80%;   /*ICONO CUADRADO*/
+            height: 70%;
+            box-shadow: rgb(150,150,150) 1px -5px 10px 10px;
+            background-image: url("../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg");
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 15%;
+            margin-top: 10px;
+            float: left;
+            width: 80%;
+            height: 60%;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 20%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        width: 100%;
+        height: 720px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color:yellow; 
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:xx-small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }

@@ -20,52 +20,42 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+    <div id="areaSesion">
+        <table style="width:100%">
+            <tr>
+                    <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+                    <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+            </tr>
+        </table>
+    </div>        
+        <div class="VaciobotonesPrincipal"></div>
         <table id="tabla">
-            <tr><td class="VaciobotonesPrincipal"></td></tr>
-            <tr id="cajaBotonera">
+            <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BÚSQUEDA PARTICULAR</button>
                 </td>
-
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> INSERCCIÓN PARTICULAR</button>
                 </td>
-                
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> ACTUALIZACIÓN PARTICULAR</button>
                 </td>
-                
+            </tr>
+            <tr class="cajaBotonera">    
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> ELIMINACIÓN PARTICULAR</button>
                 </td>
-                
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="muestraTablaPaginada()"> CARGA VISTA GENERAL</button>
                 </td>
-                
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)"> VOLVER</button>
                 </td>
             </tr>
-            <tr><td class="VaciobotonesPrincipal"></td></tr>
         </table>
+        <div class="VaciobotonesPrincipal"></div>
     </header>
-
-    <div id="areaSesion">
-    <table style="width:100%">
-        <tr>
-            <td class="accion"></td>
-            <td class="accion"> 
-                <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
-            </td>
-            <td class="accion">
-                <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
-            </td>
-            <td class="accion"></td>
-        </tr>
-    </table>
-    </div>
     <div class="consulta">
             <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
@@ -79,16 +69,10 @@
                 <strong>sfer4D_corporation@outlook.com</strong>
             </div>
             <div class="pie">
-                ----- Asociado -----
-                <strong>BioGenTech Corp</strong>
-            </div>
-            <div class="pie">
-                ----- Competidor -----
-                <strong>Techeimer Corp</strong>
-            </div>
-            <div class="pie">
-                ----- Inversor -----
-                <strong>Medigraria Corp</strong>
+                Asociado: <strong>BioGenTech Corp</strong><br>
+                Competidor: <strong>Techeimer Corp</strong><br>
+                Inversor: <strong>Medigraria Corporation</strong><br>
+                Registro 2024: <strong>Registro C4321</strong>
             </div>
         </footer>
     </div>
