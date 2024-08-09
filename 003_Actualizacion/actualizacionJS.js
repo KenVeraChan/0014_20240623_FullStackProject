@@ -6,8 +6,26 @@ var elemento5= document.getElementsByClassName("celdas");
 var elemento6= document.getElementsByClassName("desplegable");
 var botonForm= document.getElementsByClassName("boton");
 
-function tablaActualizacion()
+function cargarPagina()
 {
+    //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
+    //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
+    for(let i=0;i<elemento1.length;i++)
+        {
+        //BOTON DE OPCIONES VISIBLE
+        elemento1[i].style.visibility="visible";
+        elemento1[i].style.borderRadius= "10px";
+        elemento1[i].style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento1[i].addEventListener('mouseenter',function(){
+            elemento1[i].style.background= "rgb(0, 153, 164)";
+            elemento1[i].style.color="rgba(0, 0, 19, 0.89)";
+                })
+        elemento1[i].addEventListener('mouseleave',function(){
+            elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+            elemento1[i].style.color="rgb(0, 228, 228)";
+                })
+        } 
    //EFECTO COLOR DEL BOTONES DEL FORMULARIO//
     //BOTON DE ACTUALIZAR(0)--CARGAR(1)--LIMPIAR(2)//
     for(let i=0;i<3;i++)
@@ -21,18 +39,8 @@ function tablaActualizacion()
             botonForm[i].style.backgroundColor="white";
         })
     }
-    //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
-    for(let i=0;i<elemento1.length;i++)
-        {
-        elemento1[i].addEventListener('mouseenter',function(){
-            elemento1[i].style.background= "-webkit-linear-gradient(top,#008084,#FFFFFF)";
-                })
-        elemento1[i].addEventListener('mouseleave',function(){
-            elemento1[i].style.background= "-webkit-linear-gradient(top,#FFFFFF, #008084)";
-                })
-        }
     //TITULO PAGINA Y CABECERA
-    elemento3[0].style.color="black";
+    //elemento3[0].style.color="black";
     //CAJAS DE DATOS Y DESPLEGABLES
     var i=0;
     //LA PRIMERA CELDA NO PUEDE ESTAR BLOQUEADA

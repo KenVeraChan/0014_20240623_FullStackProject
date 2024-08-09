@@ -6,33 +6,41 @@ var elemento5= document.getElementsByClassName("celdas");
 var elemento6= document.getElementsByClassName("desplegable");
 var botonForm= document.getElementsByClassName("boton");
 
-function tablaEliminacion()
+function cargarPagina()
 {
+    //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
+    //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
+    for(let i=0;i<elemento1.length;i++)
+        {
+        //BOTON DE OPCIONES VISIBLE
+        elemento1[i].style.visibility="visible";
+        elemento1[i].style.borderRadius= "10px";
+        elemento1[i].style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento1[i].addEventListener('mouseenter',function(){
+            elemento1[i].style.background= "rgb(155, 0, 0)";
+            elemento1[i].style.color="rgba(0, 0, 19, 0.89)";
+                })
+        elemento1[i].addEventListener('mouseleave',function(){
+            elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+            elemento1[i].style.color="rgb(155, 0, 0)";
+                })
+        } 
    //EFECTO COLOR DEL BOTONES DEL FORMULARIO ELIMINAR//
     //BOTON DE ACTUALIZAR(0)--CARGAR(1)--LIMPIAR(2)//
     for(let i=0;i<3;i++)
         {
             botonForm[i].addEventListener("mouseenter",function(){
             botonForm[i].style.transitionDuration = "0.5s";
-            botonForm[i].style.backgroundColor="rgb(245,173,30)";
+            botonForm[i].style.backgroundColor="rgb(235, 0, 0)";
         })
         botonForm[i].addEventListener("mouseleave",function(){
             botonForm[i].style.transitionDuration = "0.5s";
             botonForm[i].style.backgroundColor="white";
         })
     }
-    //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
-    for(let i=0;i<elemento1.length;i++)
-        {
-        elemento1[i].addEventListener('mouseenter',function(){
-            elemento1[i].style.background= "-webkit-linear-gradient(top, #FFAB00,#FFFFFF)";
-                })
-        elemento1[i].addEventListener('mouseleave',function(){
-            elemento1[i].style.background= "-webkit-linear-gradient(top,#FFFFFF, #FFAB00)";
-                })
-        }
     //TITULO PAGINA Y CABECERA
-    elemento3[0].style.color="black";
+    //elemento3[0].style.color="black";
     //CAJAS DE DATOS Y DESPLEGABLES
     var i=0;
     //LA PRIMERA CELDA NO PUEDE ESTAR BLOQUEADA

@@ -16,77 +16,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Empleados</title>
+    <title>Actualización de Empleados</title>
     <link rel="stylesheet" href="actualizacionCSS-TABLAUPDATE.css">
     <script src="actualizacionJS-TABLAUPDATE.js"></script>
 </head>
-<body onload="tablaBusqueda()">
-<?php
-    echo("<div style=' 
-                    float: right;
-                    position: relative;
-                    background-color: transparent;
-                    text-align: center;
-                    color: black;
-                    width: 300px;
-                    height: 25px;
-                    padding-top: 10px;
-                    '>Hola BIENVENIDO/A: ".$_SESSION["usuario"]."</div>
-        <a style=' 
-                    float: right;
-                    background-color: transparent;
-                    text-align: center;
-                    font-size: 90%;
-                    color: black;
-                    width: 120px;
-                    height: 25px;
-                    text-decoration: none;
-                    padding-top: 12px;
-                    '
-            href='../005_Login/salidaPagina.php'><strong>CERRAR SESION</strong></a> ");
-?>
-    <div class="cabecera"><h2><strong>Actualización de un Empleado de la Empresa</strong></h2></div> 
-    <div><input type="submit" class="bloque_opciones" value="OPCIONES" onclick="llamada()"></div>
-    <div><input type="submit" class="bloque_opciones" value="BÚSQUEDA" onclick="location.href='../001_Busqueda/busquedaPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="INSERCCIÓN" onclick="location.href='../002_Inserccion/inserccionPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="ACTUALIZACIÓN" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"></div>  
-    <div><input type="submit" class="bloque_opciones" value="ELIMINACIÓN" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"></div>   
-    <div class="consulta">
+<body onload="cargarPagina()">
+    <header id="cabeceraPrincipal">
+        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+    <div id="areaSesion">
+        <table style="width:100%">
+            <tr>
+                    <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+                    <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+            </tr>
+        </table>
+    </div>        
+        <div class="VaciobotonesPrincipal"></div>
+        <table id="tabla">
+            <tr class="cajaBotonera">
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BÚSQUEDA PARTICULAR</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> INSERCCIÓN PARTICULAR</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> ACTUALIZACIÓN PARTICULAR</button>
+                </td>
+            </tr>
+            <tr class="cajaBotonera">    
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> ELIMINACIÓN PARTICULAR</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="muestraTablaPaginada()"> CARGA VISTA GENERAL</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)"> VOLVER</button>
+                </td>
+            </tr>
+        </table>
+        <div class="VaciobotonesPrincipal"></div>
+    </header>  
+    <div class="consulta" style="background-image: url(../000_ConsultaContactos/images/DIGITALIZACION.jpg); background-repeat: no-repeat; background-size:cover">
         <?php
             echo "<br>";
-            echo "<table style='margin-top: 60px; width:80%; margin-left: 10%'>";
-            echo "<tr style='background-color:rgb(239,255,90)'>
-                    <td><strong>ID</strong></td>
-                    <td><strong>NOMBRE</strong></td>
-                    <td><strong>APELLIDOS</strong></td>
-                    <td><strong>DIRECCIÓN</strong></td>
-                    <td><strong>POBLACIÓN</strong></td>
-                    <td><strong>PROFESIÓN</strong></td>
-                    <td><strong>AHORROS</strong></td>
+            echo "<div id='capsula'>";
+            echo "<table class='tablaContenidos'>";
+            echo "<tr class='filaActual' style='background-color:rgba(0, 0, 19, 0.89);
+                             font-size: medium;
+                             color: rgb(0,230,230)'>
+                    <td class='huno'><strong>ID</strong></td>
+                    <td class='huno'><strong>NOMBRE</strong></td>
+                    <td class='huno'><strong>APELLIDOS</strong></td>
+                    <td class='huno'><strong>DIRECCIÓN</strong></td>
+                    <td class='huno'><strong>POBLACIÓN</strong></td>
+                    <td class='huno'><strong>PROFESIÓN</strong></td>
+                    <td class='huno'><strong>AHORROS</strong></td>
                   </tr>";
             //Se va rellenando la tabla espontáneamente segun los registros encontrados en la BBDD
-            echo "<tr style='background-color:rgb(239,255,90)'>
-                    <td><strong>".$LECTURA["RegID"]."</strong></td>
-                    <td><strong>".$LECTURA["RegNombre"]."</strong></td>
-                    <td><strong>".$LECTURA["RegApellidos"]."</strong></td>
-                    <td><strong>".$LECTURA["RegDireccion"]."</strong></td>
-                    <td><strong>".$LECTURA["RegPoblacion"]."</strong></td>
-                    <td><strong>".$LECTURA["RegProfesion"]."</strong></td>
-                    <td><strong>".$LECTURA["RegAhorros"]."</strong></td>
+            echo "<tr class='filaActual' style='background-color:rgba(0, 0, 19, 0.89)'>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegID"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegNombre"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegApellidos"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegDireccion"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegPoblacion"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegProfesion"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegAhorros"]."</td>
                   </tr>";
-            echo "<tr style='background-color:rgb(239,255,90)'>
-                    <td><strong>".$LECTURA["RegID"]."</strong></td>
-                    <td><strong>".$ESCRITURA["RegNombre"]."</strong></td>
-                    <td><strong>".$ESCRITURA["RegApellidos"]."</strong></td>
-                    <td><strong>".$ESCRITURA["RegDireccion"]."</strong></td>
-                    <td><strong>".$ESCRITURA["RegPoblacion"]."</strong></td>
-                    <td><strong>".$ESCRITURA["RegProfesion"]."</strong></td>
-                    <td><strong>".$ESCRITURA["RegAhorros"]."</strong></td>
+            echo "<tr class='filaActual' style='background-color:rgba(0, 0, 19, 0.89)'>
+                    <td class='uno' onmouseenter='prueba()'>".$LECTURA["RegID"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$ESCRITURA["RegNombre"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$ESCRITURA["RegApellidos"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$ESCRITURA["RegDireccion"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$ESCRITURA["RegPoblacion"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$ESCRITURA["RegProfesion"]."</td>
+                    <td class='uno' onmouseenter='prueba()'>".$ESCRITURA["RegAhorros"]."</td>
                     </tr>";
-        echo "</table>" 
+        echo "</table></div>" 
         ?>
         <form action="../003_Actualizacion/actualizacionPHP-Actualizado.php" method="GET">
-            <input type="submit" name="modificar" value="MODIFICAR" style="width:100px; height:20px; margin-top:30px; margin-left:72%">
+            <input type="submit" class="botones" name="modificar" value="MODIFICAR">
         </form>
     </div>
     <script>
@@ -103,5 +113,22 @@
             })        
         }
     </script>
+    <div class="piePagina">
+        <footer id="piePrincipal">
+            <div id="zocalo">
+                -------- Fundadores --------
+                <br><strong>William Wissangel</strong></br>
+                <strong>Sharyllín Rousher</strong>
+                <br>---- Correo Electrónico ----</br>
+                <strong>sfer4D_corporation@outlook.com</strong>
+            </div>
+            <div class="pie">
+                Asociado: <strong>BioGenTech Corp</strong><br>
+                Competidor: <strong>Techeimer Corp</strong><br>
+                Inversor: <strong>Medigraria Corporation</strong><br>
+                Registro 2024: <strong>Registro C4321</strong>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

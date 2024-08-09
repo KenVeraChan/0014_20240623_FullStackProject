@@ -36,10 +36,9 @@ function cargarPagina()
         botonForm[0].style.backgroundColor="white";
     })
     //TITULO PAGINA Y CABECERA
-    elemento3[0].style.color="black";
+    //elemento3[0].style.color="black";
     //CAJAS DE DATOS Y DESPLEGABLES
-    var i=0;
-    for(i=0; i<4;i++)
+    for(let i=0; i<4;i++)
         {
             elemento5[i].placeholder="Bloqueado";
             elemento5[i].disabled=true;

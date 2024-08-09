@@ -8,49 +8,57 @@
             header("Location:../005_Login/login.php");
         }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualización de Empleados</title>
+    <title>Actualizacion de Empleados</title>
     <link rel="stylesheet" href="actualizacionCSS.css">
     <script src="actualizacionJS.js"></script>
 </head>
-<body onload="tablaActualizacion()">
-<?php
-    echo("<div style=' 
-                    float: right;
-                    position: relative;
-                    background-color: transparent;
-                    text-align: center;
-                    color: black;
-                    width: 300px;
-                    height: 25px;
-                    padding-top: 10px;
-                    '>Hola BIENVENIDO/A: ".$_SESSION["usuario"]."</div>
-        <a style=' 
-                    float: right;
-                    background-color: transparent;
-                    text-align: center;
-                    font-size: 90%;
-                    color: black;
-                    width: 120px;
-                    height: 25px;
-                    text-decoration: none;
-                    padding-top: 12px;
-                    '
-            href='../005_Login/salidaPagina.php'><strong>CERRAR SESION</strong></a> ");
-?>
-    <div class="cabecera"><h2><strong>Actualizaciones de un empleado</strong></h2></div> 
-    <div><input type="submit" class="bloque_opciones" value="OPCIONES" onclick="llamada()"></div>
-    <div><input type="submit" class="bloque_opciones" value="BÚSQUEDA" onclick="location.href='../001_Busqueda/busquedaPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="INSERCCIÓN" onclick="location.href='../002_Inserccion/inserccionPHP.php'"></div>
-    <div><input type="submit" class="bloque_opciones" value="ACTUALIZACIÓN" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"></div>  
-    <div><input type="submit" class="bloque_opciones" value="ELIMINACIÓN" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"></div>   
+<body onload="cargarPagina()">
+    <header id="cabeceraPrincipal">
+        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+    <div id="areaSesion">
+        <table style="width:100%">
+            <tr>
+                    <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+                    <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+            </tr>
+        </table>
+    </div>        
+        <div class="VaciobotonesPrincipal"></div>
+        <table id="tabla">
+            <tr class="cajaBotonera">
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BÚSQUEDA PARTICULAR</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> INSERCCIÓN PARTICULAR</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> ACTUALIZACIÓN PARTICULAR</button>
+                </td>
+            </tr>
+            <tr class="cajaBotonera">    
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> ELIMINACIÓN PARTICULAR</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="muestraTablaPaginada()"> CARGA VISTA GENERAL</button>
+                </td>
+                <td class="LlenobotonesPrincipal">
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)"> VOLVER</button>
+                </td>
+            </tr>
+        </table>
+        <div class="VaciobotonesPrincipal"></div>
+    </header> 
     <div class="consulta">
     <!-- ACTUALIZACIONES TABLA 3 -->
-        <form class="tabla" action="../005_Login/consultasPreparadas.php" method="get">
+        <form class="tablaAcciones" action="../005_Login/consultasPreparadas.php" method="get">
            <p class="separacion"></p>
            <label class="celda">ID CONTACTO:<input type="text" class="celdas" name="id"></label> <!--ID-->
            <p class="separacion"></p>
@@ -107,6 +115,24 @@
            <input type="submit" value="CARGAR" name="carga" class="boton"><!--AHORROS-->
            <input type="submit" value="BORRAR" name="borrado" class="boton"> <!--AHORROS-->
         </form>
+        <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
+    </div>
+    <div class="piePagina">
+        <footer id="piePrincipal">
+            <div id="zocalo">
+                -------- Fundadores --------
+                <br><strong>William Wissangel</strong></br>
+                <strong>Sharyllín Rousher</strong>
+                <br>---- Correo Electrónico ----</br>
+                <strong>sfer4D_corporation@outlook.com</strong>
+            </div>
+            <div class="pie">
+                Asociado: <strong>BioGenTech Corp</strong><br>
+                Competidor: <strong>Techeimer Corp</strong><br>
+                Inversor: <strong>Medigraria Corporation</strong><br>
+                Registro 2024: <strong>Registro C4321</strong>
+            </div>
+        </footer>
     </div>
     <script>
         //HAY QUE ESPERAR A QUE LA PAGINA SE CARGE COMPLETAMENTE PARA RECIBIR INFORMACIÓN

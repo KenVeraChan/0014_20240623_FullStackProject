@@ -136,7 +136,6 @@
            <input type="submit" value="BUSCAR" name="busqueda" class="boton"> <!--AHORROS-->
         </form>
         <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
-
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
