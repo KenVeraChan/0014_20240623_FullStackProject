@@ -33,21 +33,21 @@
         <table id="tabla">
             <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BÚSQUEDA PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> INSERCCIÓN PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> ACTUALIZACIÓN PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> CONFIGURAR CADIDATO</button>
                 </td>
             </tr>
             <tr class="cajaBotonera">    
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> ELIMINACIÓN PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="muestraTablaPaginada()"> CARGA VISTA GENERAL</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="muestraTablaPaginada()"> CONTRATACIÓN OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color: rgb(0, 226, 0)"> VOLVER</button>
@@ -55,6 +55,16 @@
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
+        <div class="letreroOK" style=
+               "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: rgb(0, 226, 0);
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
     </header>
     <div class="consulta">
     <!-- INSERCCIONES TABLA 2 -->
@@ -109,7 +119,7 @@
                 </select>
            </label> <!--PROFESION-->
            <p class="separacion"></p>
-           <label class="celda">AHORROS:<input type="text" class="celdas" name="aho"></label> <!--AHORROS-->
+           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label> <!--AHORROS-->
            <p class="separacion"></p>
            <input type="submit" value="INSERTAR" name="inserccion" class="boton"> <!--AHORROS-->
         </form>
@@ -136,6 +146,7 @@
         if(<?php echo($_SESSION["semaforo"])?>==2)
         {
             limpiar();
+            letreroConfirmadoInsertado();
         }
         function limpiar()
         {
@@ -147,6 +158,25 @@
         document.getElementsByClassName("desplegable")[1].value = "";
         document.getElementsByClassName("celdas")[4].value = "";
         }
+        function letreroConfirmadoInsertado()
+        {
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.innerHTML="Candidato añadido a la BBDD";
+            letrero.style.paddingTop="10px";
+            letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="0px";
+
+            document.addEventListener("mousemove",function(){
+            let temporizador=setTimeout(function(){
+                var letrero= document.getElementsByClassName("letreroOK")[0];
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginTop="-50px";
+            },3500);
+            })
+            clearTimeout(temporizador);
+        }
     </script>
+    <?php $_SESSION["semaforo"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER ?>
 </body>
 </html>

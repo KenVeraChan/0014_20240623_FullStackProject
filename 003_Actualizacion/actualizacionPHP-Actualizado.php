@@ -34,7 +34,7 @@ try{
                 $okey=mysqli_stmt_bind_param($resultado,"sssssii",$nom,$ape,$dir,$pob,$prof,$aho,$nuevoID);
                 $okey=mysqli_stmt_execute($resultado);
                 mysqli_stmt_close($resultado); 
-                $_SESSION["semaforo"]=2;
+                $_SESSION["semaforo"]=3;
                 header("location:../003_Actualizacion/actualizacionPHP.php");   
             }
         }

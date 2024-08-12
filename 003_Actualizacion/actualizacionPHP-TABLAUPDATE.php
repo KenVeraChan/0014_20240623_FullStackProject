@@ -35,21 +35,21 @@
         <table id="tabla">
             <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BÚSQUEDA PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> INSERCCIÓN PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> ACTUALIZACIÓN PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> CONFIGURAR CANDIDATO</button>
                 </td>
             </tr>
             <tr class="cajaBotonera">    
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> ELIMINACIÓN PARTICULAR</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="muestraTablaPaginada()"> CARGA VISTA GENERAL</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="muestraTablaPaginada()"> CONTRATACION OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color: rgb(0, 228, 228)"> VOLVER</button>

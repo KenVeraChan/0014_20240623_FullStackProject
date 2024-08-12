@@ -42,6 +42,7 @@ try{
     $pob=$_GET["pob"];
     $prof=$_GET["prof"];
     $aho=$_GET["aho"];
+    $contrat="PENDIENTE";
     //SE CREA UN ARRAY UNIDIMENSIONAL DE VALORES PARA FACILITAR EL CODIGO
     $datos_FORM=array($id,$nom,$ape,$dir,$pob,$prof,$aho);
     $datos_CONSULTA=array("ID","NOMBRE","APELLIDOS","DIRECCION","POBLACION","PROFESION","AHORROS");
@@ -192,9 +193,9 @@ try{
             ///COMPROBACIÓN DE INSERCCION/// 
             if(strcmp($busqueda,"BUSCAR") & !strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & strcmp($eliminacion,"ELIMINAR"))
             {
-                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS) VALUES(?,?,?,?,?,?,?)";
+                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
                 $resultado=mysqli_prepare($conexion,$sql);
-                $okey=mysqli_stmt_bind_param($resultado,"isssssi",$id,$nom,$ape,$dir, $pob, $prof,$aho);
+                $okey=mysqli_stmt_bind_param($resultado,"isssssis",$id,$nom,$ape,$dir, $pob, $prof,$aho,$contrat);
                 $okey=mysqli_stmt_execute($resultado);
                 if($okey==false)
                 {
@@ -239,7 +240,7 @@ try{
                         //----- PASO 5 -----//
                         // Asociar variables al resultado de la consulta. //
                         //Esto se consigue con la función mysqli_stmt_bind_result() //
-                        $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros);                    
+                        $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros,$conContrato);                    
                         //----- PASO 6 -----//
                         //Leer los valores. Para ello se utilizará la función mysqli_stmt_fetch //
                         session_start();  //INICIAR LA SESION SIEMPRE//
@@ -299,7 +300,6 @@ try{
                     //Invocando otro objeto diferente
                     //Emplea el constructor de la clase mencionada para guardar los datos en una variable objeto
                     $ESCRITOS= new UsuarioCompararActualizar($id,$nom,$ape,$dir,$pob,$prof,$aho);
-                    $_SESSION["semaforo"]=3; //Activada señal para la ACTUALIZACIÓN
                     $_SESSION["E"]= json_encode($ESCRITOS);
                     header("location:../003_Actualizacion/actualizacionPHP-TABLAUPDATE.php");      
                 }
@@ -333,7 +333,7 @@ try{
                     //----- PASO 5 -----//
                     // Asociar variables al resultado de la consulta. //
                     //Esto se consigue con la función mysqli_stmt_bind_result() //
-                    $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros);                    
+                    $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros,$conContrato);                    
                     //----- PASO 6 -----//
                     //Leer los valores. Para ello se utilizará la función mysqli_stmt_fetch //
                     session_start();  //INICIAR LA SESION SIEMPRE//
@@ -409,8 +409,8 @@ try{
                         $_SESSION["poblacion"]="";
                         $_SESSION["profesion"]="";
                         $_SESSION["ahorros"]="";
-                        //Limpieza del formulario
-                        $_SESSION["semaforo"]=2;
+                        //Limpieza del formulario tras ELIMINAR AL CANDIDATO
+                        $_SESSION["semaforo"]=3;
                         header("location:../004_Eliminacion/eliminacionPHP.php");
                         mysqli_stmt_close($resultado); 
                     }                

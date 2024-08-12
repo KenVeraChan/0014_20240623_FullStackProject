@@ -226,7 +226,7 @@
     }
     #bienvenido{
         float: right;
-        font-size: small;
+        font-size: medium;
         background-color: transparent;
         text-align: right;
         color: rgb(221, 221, 3);

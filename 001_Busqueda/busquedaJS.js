@@ -214,3 +214,27 @@ function opciones()
             }
         }
 }
+
+
+/*
+function desplaza()
+{
+    var elemento8= document.getElementById("canvas")
+    var elemento7= document.getElementById("canvas").getContext('2d');
+    var movimiento=0;
+    elemento8.style.color="yellow";
+    elemento7.fillText("HOLA MUNDO",4,10);
+
+
+    desplazamiento(movimiento);
+}
+function desplazamiento(movimiento)
+{    //DESPLAZA LA CINTA DE INFORMACION HASTA 240
+    if(movimiento<240)
+    {
+    document.getElementById("canvas").getContext('2d').translate((4+movimiento),10);
+    movimiento=movimiento+1;
+    setInterval(desplazamiento(movimiento),1000);
+    }
+}
+*/
