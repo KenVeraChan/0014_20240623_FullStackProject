@@ -47,7 +47,7 @@
                     <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="muestraTablaPaginada()"> CONTRATACIÓN OFICIAL</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACIÓN OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color: rgb(0, 226, 0)"> VOLVER</button>

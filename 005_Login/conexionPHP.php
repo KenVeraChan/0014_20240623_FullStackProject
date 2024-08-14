@@ -50,6 +50,10 @@ class ConexionPHP
     public static function getConexionEmpleados()
     {
         //Creará conexión con la base de datos de los EMPLEADOS
+        $ConexionBaseEmpleados= new PDO('mysql:host='.self::$BD_servidor.';dbname='.self::$BD_nombre,self::$BD_usuario, self::$BD_contrasenia);
+        $ConexionBaseEmpleados->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $ConexionBaseEmpleados->exec("SET CHARACTER SET UTF8");
+        return $ConexionBaseEmpleados;
     }
     public static function getConexionJefes()
     {

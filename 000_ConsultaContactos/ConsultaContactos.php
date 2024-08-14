@@ -33,30 +33,31 @@
         <table id="tabla">
             <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'">CONFIGURAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'">CONFIGURAR CANDIDATO</button>
                 </td>
             </tr>
             <tr class="cajaBotonera">    
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="muestraTablaPaginada()">CONTRATACIÓN OFICIAL</button>
+                    <button class="bloque_opciones" style="color: orangered">CONTRATACION OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: orangered"> VOLVER</button>
                 </td>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
     </header>
     <div class="consulta">
+            <div class="tablaBBDD"><?php include "../006_Paginacion/indexCRUD.php";?></div>
             <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">

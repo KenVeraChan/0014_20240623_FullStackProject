@@ -7,7 +7,7 @@
     <title>SISTEMA DE LOGIN</title>
 </head>
 <body>
-    <h1>ACCESO JEFES PRIVADO CORPORATIVO</h1>
+    <h1>ACCESO JEFES Y RRHH DE SFER4D CORPORATION</h1>
     <form action="compruebaLogin.php" method="POST">
         <table>
             <tr><td class="izq">Login: </td><td class="der"><input type="text" name="login"></td></tr>
