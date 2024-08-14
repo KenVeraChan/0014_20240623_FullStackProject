@@ -1,10 +1,7 @@
 var elemento1= document.getElementsByClassName("bloque_opciones");
-var elemento2= document.getElementsByClassName("tabla");
 var elemento3= document.getElementsByClassName("cabecera");
-var elemento4= document.getElementsByClassName("consulta");
-var elemento5= document.getElementsByClassName("celdas");
-var elemento6= document.getElementsByClassName("desplegable");
-var botonForm= document.getElementsByClassName("boton");
+var botonForm= document.getElementsByClassName("botones");
+var elemento4= document.getElementsByClassName("uno");
 
 function cargarPagina()
 {
@@ -26,10 +23,20 @@ function cargarPagina()
             elemento1[i].style.color="rgb(0, 228, 228)";
                 })
         } 
-   //EFECTO COLOR DEL BOTONES DEL FORMULARIO//
-    //BOTON DE ACTUALIZAR(0)--CARGAR(1)--LIMPIAR(2)//
+    //CELDAS DE LA TABLA IMPROVISADA DE LOS DATOS
+    for(let i=0;i<elemento4.length;i++)
+    {  
+        elemento4[i].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento4[i].style.fontsize= "small";
+        elemento4[i].style.color="rgb(0,230,230)";
+    }
+    
+    //TITULO PAGINA Y CABECERA
+    //elemento3[0].style.color="black";
+       //EFECTO COLOR DEL BOTONES DEL FORMULARIO//
+    //BOTON DE ACTUALIZAR(0)//
     for(let i=0;i<3;i++)
-    {
+        {
             botonForm[i].addEventListener("mouseenter",function(){
             botonForm[i].style.transitionDuration = "0.5s";
             botonForm[i].style.backgroundColor="rgb(12,184,203)";
@@ -38,25 +45,20 @@ function cargarPagina()
             botonForm[i].style.transitionDuration = "0.5s";
             botonForm[i].style.backgroundColor="white";
         })
-    }
-    //TITULO PAGINA Y CABECERA
-    //elemento3[0].style.color="black";
-    //CAJAS DE DATOS Y DESPLEGABLES
-    var i=0;
-    //LA PRIMERA CELDA NO PUEDE ESTAR BLOQUEADA
-    //CON EL ID SE PODRÁN ACTUALIZAR LOS DATOS DEL FORMULARIO
-    elemento5[0].disabled=false;
-    elemento5[0].value="";
-    for(i=1; i<5;i++)
-        {
-            elemento5[i].value="";
-            elemento5[i].disabled=true;
         }
-    for(i=0; i<2;i++)
+}
+function prueba()
+{
+    //Metodo para interactuar con las celdas de la tabla representada
+    for(let i=0;i<elemento4.length;i++)
         {
-            elemento6[i].value="";
-            elemento6[i].disabled=true;
+    elemento4[i].addEventListener('mouseenter',function(){
+        elemento4[i].style.background= "rgb(0,212,212)";
+        elemento4[i].style.color="rgba(0, 0, 19, 0.89)";
+            })
+    elemento4[i].addEventListener('mouseleave',function(){
+        elemento4[i].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento4[i].style.color="rgb(0,230,230)";
+            })
         }
-    //SE BLOQUEA EL ACCESO A LA ACTUALIZACION SI NO HAY DATOS EN EL FORMULARIO
-    botonForm[0].disabled=true;
 }

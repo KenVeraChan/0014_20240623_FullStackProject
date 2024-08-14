@@ -1,0 +1,55 @@
+#tablaPaginacion{
+    position: relative;
+    margin-top: 25px;
+    margin-left: 10%;
+    width: 1116px;
+    height: 100px;
+}
+#tablaPaginacion:hover{
+    /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+    box-shadow: rgb(105, 41, 3) 5px 5px 20px 10px;
+}
+.accionamientos:hover{
+    box-shadow: rgb(189, 73, 6) 5px 5px 20px 10px;
+}
+
+.cajaT{
+    background-color: rgb(184, 88, 9);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 150px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(1){
+    width: 30px;
+}
+.caja{
+    float: left;
+    background-color:rgb(235, 165, 73);
+    text-align: center;
+    width: 150px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaID{
+    float: left;
+    background-color: rgb(184, 88, 9);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 30px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.mencion{
+    background-color: rgb(184, 88, 9);
+    width: 180px;
+    margin-left: 11%;
+    text-align: center;
+    margin-bottom: 0px;
+    color: rgb(255, 255, 255);
+}

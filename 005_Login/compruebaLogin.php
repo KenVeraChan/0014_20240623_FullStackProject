@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN COMPROBADO</title>
-</head>
-<body>
-    
 <?php
-    //METODO 1: EMPLEANDO EN TODO ESTE FICHERO --> PDO PARA LA CONEXION
-    require("conexionPHP.php");
+    require "conexionPHP.php";
     try{
-        $base= new PDO('mysql:host='.$BD_servidor.';dbname='.$BD_nombre,$BD_usuario,$BD_contrasenia);
-        $base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql="SELECT * FROM $BD_tabla_2 WHERE USUARIO= :login AND CONTRASENIA= :password"; //uso de marcadores
-        $resultado=$base->prepare($sql);
+        $base= ConexionPHP::getConexionJefes();  //Conexion establecida desde la clase ConexionPHP
+        $BBDDJefes=ConexionPHP::getBD_TablaJefes(); //Solicita nombre BBDD de los JEFES
+        $sql="SELECT * FROM $BBDDJefes WHERE USUARIO= :login AND CONTRASENIA= :password"; //uso de marcadores
+        $resultado=$base->prepare($sql);  
         $login=htmlentities(addslashes($_POST["login"]));
         $password=htmlentities(addslashes($_POST["password"]));
                 //htmlentities() lo que hace es: Convert all applicable characters to HTML entities
@@ -30,7 +20,8 @@
                 //La variable SUPERGLOBAL $_SESSION["nombre_elegido"]
                 //permite usarse en cualquier parte del código de cualquier página creada PHP
                 $_SESSION["usuario"]=$_POST["login"];
-                header("location:ConsultaContactos.php");
+                header("location:../000_ConsultaContactos/ConsultaContactos.php");
+                //Se pone el doble punto para partir del directorio RAIZ
             }else{
                 //Se le redirige a la misma pagina propia de LOGIN
                 header("location:login.php");
@@ -40,6 +31,3 @@
         die("Error: ".$e->getMessage()."  ".$e->getLine());
     }
 ?>
-
-</body>
-</html>

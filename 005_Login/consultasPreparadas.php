@@ -7,28 +7,45 @@
 </head>
 <body>
 <?php
-include("conexionPHP.php");
+include "conexionPHP.php";
+// Al hacerse la conexion mediante MYSQLI se llamarán a los métodos de la conexion 
+// para poder efecturala (doble técnica: usar POO creado de la CONEXION y uso MYSQLI en vez de PDO)
+$BD_servidor=ConexionPHP::getBD_Servidor();
+$BD_usuario=ConexionPHP::getBD_Usuario();
+$BD_contrasenia=ConexionPHP::getBD_Contrasenia();
+$BD_nombre=ConexionPHP::getBD_Nombre();
+$BD_tabla=ConexionPHP::getBD_TablaEmpleados();
+
+//Se incluye el fichero de creación de un objeto para guardar
+// el dato CARGADO y compararlo con el ACTUALIZADO
+include "../003_Actualizacion/actualizacionMetodosPHP.php";
 try{   
     //METODO 2: EMPLEANDO EN TODO ESTE FICHERO --> DE MYSQLI PARA LAS CONSULTAS PREPARADAS
     //CREANDO VARIABLES RECIBIDAS DE LOS BOTONES DE ACCION
-    $busqueda=$_GET["busqueda"];
-    $inserccion=$_GET["inserccion"];
-    $actualizacion=$_GET["actualizacion"];
-    $carga=$_GET["carga"];
-    $borrar=$_GET["borrado"];
-    $eliminacion=$_GET["eliminacion"];
-    $carga_elim=$_GET["carga_eliminacion"];
-    $borrar_elim=$_GET["borrado_eliminacion"];
+
+    $busqueda=$_GET["busqueda"] ?? null;
+    $inserccion=$_GET["inserccion"] ?? null;
+    $actualizacion=$_GET["actualizacion"] ?? null;
+    $carga=$_GET["carga"] ?? null;
+    $borrar=$_GET["borrado"] ?? null;
+    $eliminacion=$_GET["eliminacion"] ?? null;
+    $carga_elim=$_GET["carga_eliminacion"] ?? null;
+    $borrar_elim=$_GET["borrado_eliminacion"] ?? null;
+    //Se inicia la matriz que luego se rellenara
+    $datos_ACTUALIZACION=array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
+    //Se inicia el ARRAY para ser rellenado despues
+    $datos_COMPARACION=array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
     //CREANDO VARIABLES RECIBIDAS DEL FORMULARIO
-    $id=$_GET["id"];
-    $nom=$_GET["nom"];
-    $ape=$_GET["ape"];
-    $dir=$_GET["dir"];
-    $pob=$_GET["pob"];
-    $prof=$_GET["prof"];
-    $aho=$_GET["aho"];
+    $id=$_GET["id"] ?? null;
+    $nom=$_GET["nom"] ?? null;
+    $ape=$_GET["ape"] ?? null;
+    $dir=$_GET["dir"] ?? null;
+    $pob=$_GET["pob"] ?? null;
+    $prof=$_GET["prof"] ?? null;
+    $aho=$_GET["aho"] ?? null;
+    $contrat="PENDIENTE";
     //SE CREA UN ARRAY UNIDIMENSIONAL DE VALORES PARA FACILITAR EL CODIGO
-    $datos_FORM=array($id,$nom,$ape,$dir,$pob,$prof,$aho);
+    $datos_FORM=array($id,$nom,$ape,$dir,$pob,$prof,$aho) ?? null;
     $datos_CONSULTA=array("ID","NOMBRE","APELLIDOS","DIRECCION","POBLACION","PROFESION","AHORROS");
     $datos_CONSULTA_DINERO=array(0,1000,25000,50000,75000,100000,125000,20000000);
     //CONEXION PROCESO
@@ -37,7 +54,7 @@ try{
     try{
         mysqli_select_db($conexion,$BD_nombre);
             ///COMPROBACION DE BUSQUEDA///
-            if(!strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & strcmp($eliminacion,"ELIMINAR"))
+            if(isset($busqueda))
             {
                 $semaforo=0;   //señal de qué selector esta implicado tras los CONDICIONALES
                 $puntero=0;    //señal para la seleccion del tipo de AHORRO en el desplegable
@@ -54,7 +71,7 @@ try{
                                 $_SESSION["matrizEmpleados"][$i][$j]=null;
                             }
                         }
-                    $j=0; //Reinicio de la variable siguiente fila
+                        $j=0; //Reinicio de la variable siguiente fila
                     }
                 ///FASE DE COMPROBACION///
                 for($semaforo=0;$semaforo<count($datos_FORM);$semaforo++)
@@ -170,16 +187,16 @@ try{
                             $semaforo=10;  //SE CIERRA EL PASO PARA QUE ENTRE AQUI DE NUEVO
                         }
                         $_SESSION["semaforo"]=1;
-                        header("location:busquedaPHP-TABLAFIND.php");
+                        header("location:../001_Busqueda/busquedaPHP-TABLAFIND.php");
                     }
                 }
             }
             ///COMPROBACIÓN DE INSERCCION/// 
-            if(strcmp($busqueda,"BUSCAR") & !strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & strcmp($eliminacion,"ELIMINAR"))
+            if(isset($inserccion))
             {
-                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS) VALUES(?,?,?,?,?,?,?)";
+                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
                 $resultado=mysqli_prepare($conexion,$sql);
-                $okey=mysqli_stmt_bind_param($resultado,"isssssi",$id,$nom,$ape,$dir, $pob, $prof,$aho);
+                $okey=mysqli_stmt_bind_param($resultado,"isssssis",$id,$nom,$ape,$dir, $pob, $prof,$aho,$contrat);
                 $okey=mysqli_stmt_execute($resultado);
                 if($okey==false)
                 {
@@ -189,12 +206,12 @@ try{
                 {
                 session_start();  //INICIAR LA SESION SIEMPRE//
                 $_SESSION["semaforo"]=2;
-                header("location:inserccionPHP.php");
+                header("location:../002_Inserccion/inserccionPHP.php");
                 mysqli_stmt_close($resultado); 
                 }
             }
             ///COMPROBACIÓN DE ACTUALIZACION/// 
-            if(strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & (!strcmp($actualizacion,"ACTUALIZAR") || !strcmp($carga,"CARGAR")|| !strcmp($borrar,"BORRAR")) & strcmp($eliminacion,"ELIMINAR"))
+            if(isset($actualizacion) || isset($carga) || isset($borrar))
             {
                 if(!strcmp($carga,"CARGAR"))
                 {
@@ -218,27 +235,49 @@ try{
                     if($okey==false)
                     {
                         echo "Error al ejecutar la consulta";
-                    }else{
-                    //----- PASO 5 -----//
-                    // Asociar variables al resultado de la consulta. //
-                    //Esto se consigue con la función mysqli_stmt_bind_result() //
-                    $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros);                    
-                    //----- PASO 6 -----//
-                    //Leer los valores. Para ello se utilizará la función mysqli_stmt_fetch //
-                    session_start();  //INICIAR LA SESION SIEMPRE//
-                    while(mysqli_stmt_fetch($resultado))
-                    {
-                        $_SESSION["id"]=$conID;
-                        $_SESSION["nombre"]=$conNombre;
-                        $_SESSION["apellidos"]=$conApellidos;
-                        $_SESSION["direccion"]=$conDireccion;
-                        $_SESSION["poblacion"]=$conPoblacion;
-                        $_SESSION["profesion"]=$conProfesion;
-                        $_SESSION["ahorros"]=$conAhorros;
                     }
-                    $_SESSION["semaforo"]=1;
-                    header("location:actualizacionPHP.php");
-                    mysqli_stmt_close($resultado); 
+                    else
+                    {
+                        //----- PASO 5 -----//
+                        // Asociar variables al resultado de la consulta. //
+                        //Esto se consigue con la función mysqli_stmt_bind_result() //
+                        $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros,$conContrato);                    
+                        //----- PASO 6 -----//
+                        //Leer los valores. Para ello se utilizará la función mysqli_stmt_fetch //
+                        session_start();  //INICIAR LA SESION SIEMPRE//
+                        while(mysqli_stmt_fetch($resultado))
+                            {
+                                $_SESSION["id"]=$conID;
+                                $_SESSION["nombre"]=$conNombre;
+                                $_SESSION["apellidos"]=$conApellidos;
+                                $_SESSION["direccion"]=$conDireccion;
+                                $_SESSION["poblacion"]=$conPoblacion;
+                                $_SESSION["profesion"]=$conProfesion;
+                                $_SESSION["ahorros"]=$conAhorros;
+                                $LEIDOS= new UsuarioCompararActualizar($_SESSION["id"],
+                                                                       $_SESSION["nombre"], 
+                                                                       $_SESSION["apellidos"],
+                                                                       $_SESSION["direccion"],
+                                                                       $_SESSION["poblacion"],
+                                                                       $_SESSION["profesion"],
+                                                                       $_SESSION["ahorros"]);
+                            $_SESSION["L"]=json_encode($LEIDOS);
+                            }
+                        if(is_null($conID))
+                        {
+                            //Si comprueba que mysqli_stmt_fetch en SQL da NULL ejecuta esto
+                            //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
+                            //Si es NULL se guarda un 2
+                            $_SESSION["semaforo"]=2;    
+                        }
+                        else
+                        {
+                            //Si no es NULL se guarda un 1
+                            $_SESSION["semaforo"]=1; 
+                            //Y se guarda en la matriz de comparacion para la posterior actualizacion
+                        }
+                        header("location:../003_Actualizacion/actualizacionPHP.php");
+                        mysqli_stmt_close($resultado); 
                     }
                 }
                 if(!strcmp($borrar,"BORRAR"))
@@ -253,16 +292,21 @@ try{
                     $_SESSION["profesion"]="";
                     $_SESSION["ahorros"]="";
                     $_SESSION["semaforo"]=2;
-                    header("location:actualizacionPHP.php");
-                    mysqli_stmt_close($resultado); 
+                    header("location:../003_Actualizacion/actualizacionPHP.php");
                 }
                 if(!strcmp($actualizacion,"ACTUALIZAR"))
                 {
-                    //TRAS CARGAR LOS DATOS SE DESBLOQUEARAN TODAS LAS CASILLAS PARA CAMBIAR ALGO Y SE ACTUALIZARA
+                    session_start();
+                    //PARTE 1: SE GENERA UNA CARGA DE DATOS ORIGINALES DEL USUARIO
+                    //Invocando otro objeto diferente
+                    //Emplea el constructor de la clase mencionada para guardar los datos en una variable objeto
+                    $ESCRITOS= new UsuarioCompararActualizar($id,$nom,$ape,$dir,$pob,$prof,$aho);
+                    $_SESSION["E"]= json_encode($ESCRITOS);
+                    header("location:../003_Actualizacion/actualizacionPHP-TABLAUPDATE.php");      
                 }
             }
             ///COMPROBACIÓN DE ELIMINACION/// 
-            if(strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & (!strcmp($eliminacion,"ELIMINAR") || !strcmp($carga_elim,"CARGA") || !strcmp($borrar_elim,"BORRA")))
+            if(isset($eliminacion)|| isset($carga_elim) || isset($borrar_elim))
             {
                 if(!strcmp($carga_elim,"CARGA"))
                 {
@@ -290,7 +334,7 @@ try{
                     //----- PASO 5 -----//
                     // Asociar variables al resultado de la consulta. //
                     //Esto se consigue con la función mysqli_stmt_bind_result() //
-                    $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros);                    
+                    $okey=mysqli_stmt_bind_result($resultado,$conID,$conNombre,$conApellidos,$conDireccion,$conPoblacion,$conProfesion,$conAhorros,$conContrato);                    
                     //----- PASO 6 -----//
                     //Leer los valores. Para ello se utilizará la función mysqli_stmt_fetch //
                     session_start();  //INICIAR LA SESION SIEMPRE//
@@ -304,8 +348,15 @@ try{
                         $_SESSION["profesion"]=$conProfesion;
                         $_SESSION["ahorros"]=$conAhorros;
                     }
-                    $_SESSION["semaforo"]=1;
-                    header("location:eliminacionPHP.php");
+                    if(is_null($conID))
+                    {
+                        $_SESSION["semaforo"]=2;
+                    }
+                    else
+                    {
+                        $_SESSION["semaforo"]=1;
+                    }
+                    header("location:../004_Eliminacion/eliminacionPHP.php");
                     mysqli_stmt_close($resultado); 
                     }
                 }
@@ -320,9 +371,9 @@ try{
                     $_SESSION["poblacion"]="";
                     $_SESSION["profesion"]="";
                     $_SESSION["ahorros"]="";
+                    //Limpieza del formulario
                     $_SESSION["semaforo"]=2;
-                    header("location:eliminacionPHP.php");
-                    mysqli_stmt_close($resultado); 
+                    header("location:../004_Eliminacion/eliminacionPHP.php");
                 }
                 if(!strcmp($eliminacion,"ELIMINAR"))
                 {
@@ -349,25 +400,34 @@ try{
                         echo "Error al ejecutar la consulta";
                     }else
                     {
+                        session_start();  //INICIAR LA SESION SIEMPRE//
+                        //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
+                        //Se limpian los datos del formulario tras eliminar el usuario
+                        $_SESSION["id"]="";
+                        $_SESSION["nombre"]="";
+                        $_SESSION["apellidos"]="";
+                        $_SESSION["direccion"]="";
+                        $_SESSION["poblacion"]="";
+                        $_SESSION["profesion"]="";
+                        $_SESSION["ahorros"]="";
+                        //Limpieza del formulario tras ELIMINAR AL CANDIDATO
                         $_SESSION["semaforo"]=3;
-                        header("location:eliminacionPHP.php");
+                        header("location:../004_Eliminacion/eliminacionPHP.php");
                         mysqli_stmt_close($resultado); 
                     }                
                 }
             }
-
+            else
+            {
+                echo "POR FAVOR! Cargue de nuevo la página en el sector en el que se encontraba. Gracias";
+            }
     }catch(mysqli_sql_exception $error1)
     {
         echo "No se ha podido establecer conexión con la base de datos!";
     }
-
 }catch(mysqli_sql_exception $error2){
     echo "No se ha podido realizar la conexión!";
 }
-
-
-
-
 ?>
 </body>
 </html>

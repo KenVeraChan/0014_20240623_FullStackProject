@@ -1,4 +1,4 @@
 Se cogerán datos de la carpeta de: 
-1) <<0013_20240424_PHP>> para unir lo trabajado en el CRUD
-2) <<0004_20230928_FrontEnd_PaginaWeb_HTML5>> para el resto de la página web
+1) Las carpetas con la extensión PENDIENTE FUSION no formarán parte del proyecto,
+   tan sólo se extraerá el contenido y amoldará al proyecto general.
 

@@ -6,8 +6,26 @@ var elemento5= document.getElementsByClassName("celdas");
 var elemento6= document.getElementsByClassName("desplegable");
 var botonForm= document.getElementsByClassName("boton");
 
-function tablaBusqueda()
+function cargarPagina()
 {
+    //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
+    //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
+    for(let i=0;i<elemento1.length;i++)
+        {
+        //BOTON DE OPCIONES VISIBLE
+        elemento1[i].style.visibility="visible";
+        elemento1[i].style.borderRadius= "10px";
+        elemento1[i].style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento1[i].addEventListener('mouseenter',function(){
+            elemento1[i].style.background= "yellow";
+            elemento1[i].style.color="rgba(0, 0, 19, 0.89)";
+                })
+        elemento1[i].addEventListener('mouseleave',function(){
+            elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+            elemento1[i].style.color="rgba(230, 230, 11, 0.719)";
+                })
+        }
      //EFECTO COLOR DEL BOTON: BUSCAR, DEL CUADRO DEL FORMULARIO//
      botonForm[0].addEventListener("mouseenter",function(){
         botonForm[0].style.transitionDuration = "0.5s";
@@ -17,22 +35,10 @@ function tablaBusqueda()
         botonForm[0].style.transitionDuration = "0.5s";
         botonForm[0].style.backgroundColor="white";
     })
-    //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
-    //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
-    for(let i=0;i<elemento1.length;i++)
-        {
-            elemento1[i].addEventListener('mouseenter',function(){
-                elemento1[i].style.background= "-webkit-linear-gradient(top, #B2C600, #FFFFFF)";
-                })
-            elemento1[i].addEventListener('mouseleave',function(){
-                elemento1[i].style.background= "-webkit-linear-gradient(top,#FFFFFF,#B2C600)";
-                })
-        }
     //TITULO PAGINA Y CABECERA
-    elemento3[0].style.color="black";
+    //elemento3[0].style.color="black";
     //CAJAS DE DATOS Y DESPLEGABLES
-    var i=0;
-    for(i=0; i<4;i++)
+    for(let i=0; i<4;i++)
         {
             elemento5[i].placeholder="Bloqueado";
             elemento5[i].disabled=true;
@@ -208,3 +214,27 @@ function opciones()
             }
         }
 }
+
+
+/*
+function desplaza()
+{
+    var elemento8= document.getElementById("canvas")
+    var elemento7= document.getElementById("canvas").getContext('2d');
+    var movimiento=0;
+    elemento8.style.color="yellow";
+    elemento7.fillText("HOLA MUNDO",4,10);
+
+
+    desplazamiento(movimiento);
+}
+function desplazamiento(movimiento)
+{    //DESPLAZA LA CINTA DE INFORMACION HASTA 240
+    if(movimiento<240)
+    {
+    document.getElementById("canvas").getContext('2d').translate((4+movimiento),10);
+    movimiento=movimiento+1;
+    setInterval(desplazamiento(movimiento),1000);
+    }
+}
+*/
