@@ -9,7 +9,7 @@
     <?php
         session_start();
         session_destroy();
-        header("location:login.php");
+        header("location:../005_Login/0051_LoginRRHH/loginRRHH.php");
     ?>
 </body>
 </html>

@@ -5,7 +5,7 @@
     if(!isset($_SESSION["usuario"]))
     {
         //Si es falso que no se ha registrado nada en la sesion
-        header("Location:../005_Login/login.php");
+        header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
     }
     //JSON: JavaScript Object Notation
     $LECTURA=json_decode($_SESSION["L"],true); //Para descarga como una matriz asociativa
@@ -22,12 +22,12 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../../003_Actualizacion/0031_ActualizacionTABLAUPDATE/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
                     <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
-                    <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+                    <a href="../../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
             </tr>
         </table>
     </div>        
@@ -35,30 +35,30 @@
         <table id="tabla">
             <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'"> CONFIGURAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'"> CONFIGURAR CANDIDATO</button>
                 </td>
             </tr>
             <tr class="cajaBotonera">    
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'"> VOLVER</button>
                 </td>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
     </header>  
-    <div class="consulta" style="background-image: url(../000_ConsultaContactos/images/DIGITALIZACION.jpg); background-repeat: no-repeat; background-size:cover">
+    <div class="consulta" style="background-image: url(../../003_Actualizacion/0031_ActualizacionTABLAUPDATE/images/DIGITALIZACION.jpg); background-repeat: no-repeat; background-size:cover">
         <?php
             echo "<br>";
             echo "<div id='capsula'>";
@@ -95,7 +95,7 @@
                     </tr>";
         echo "</table></div>" 
         ?>
-        <form action="../003_Actualizacion/actualizacionPHP-Actualizado.php" method="GET">
+        <form action="../../003_Actualizacion/actualizacionPHP-Actualizado.php" method="GET">
             <input type="submit" class="botones" name="modificar" value="MODIFICAR">
         </form>
     </div>

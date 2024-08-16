@@ -5,7 +5,7 @@ include "../005_Login/conexionPHP.php";
 $BD_servidor=ConexionPHP::getBD_Servidor();
 $BD_usuario=ConexionPHP::getBD_Usuario();
 $BD_contrasenia=ConexionPHP::getBD_Contrasenia();
-$BD_nombre=ConexionPHP::getBD_Nombre();
+$BD_nombre=ConexionPHP::getBD_NombreEMPLEADOS();
 $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
 $modificar=$_GET["modificar"];
 try{  

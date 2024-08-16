@@ -1,7 +1,7 @@
 <?php
     require "conexionPHP.php";
     try{
-        $base= ConexionPHP::getConexionJefes();  //Conexion establecida desde la clase ConexionPHP
+        $base= ConexionPHP::getConexionJEFES_RRHH();  //Conexion establecida desde la clase ConexionPHP
         $BBDDJefes=ConexionPHP::getBD_TablaJefes(); //Solicita nombre BBDD de los JEFES
         $sql="SELECT * FROM $BBDDJefes WHERE USUARIO= :login AND CONTRASENIA= :password"; //uso de marcadores
         $resultado=$base->prepare($sql);  
@@ -17,14 +17,19 @@
             {
                 //Antes de redirigir al usuario se declarará la variable global session_start()
                 session_start();  //se inicia la sesion
+                //Para generar el letrero de entrada CORRECTA
+                $_SESSION["logeando"]=1;
                 //La variable SUPERGLOBAL $_SESSION["nombre_elegido"]
                 //permite usarse en cualquier parte del código de cualquier página creada PHP
                 $_SESSION["usuario"]=$_POST["login"];
-                header("location:../000_ConsultaContactos/ConsultaContactos.php");
+                header("location:../000_ConsultaContactos/ConsultaContactos.php"); //CAMBIAR!!!!
                 //Se pone el doble punto para partir del directorio RAIZ
             }else{
                 //Se le redirige a la misma pagina propia de LOGIN
-                header("location:login.php");
+                header("location: ../005_Login/0051_LoginRRHH/loginRRHH.php");
+                session_start();
+                //Para generar el letrero de entrada FALLIDA
+                $_SESSION["logeando"]=0;
             }
 
     }catch(Exception $e){

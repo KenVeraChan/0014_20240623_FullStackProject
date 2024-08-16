@@ -35,7 +35,4 @@ function cargarPagina()
         botonForm[0].style.transitionDuration = "0.5s";
         botonForm[0].style.backgroundColor="white";
     })
-    //TITULO PAGINA Y CABECERA
-    elemento3[0].innerHTML="<h2><strong>Registro de nuevos empleados en la Empresa</strong></h2>";
-    elemento3[0].style.color="black";
 }

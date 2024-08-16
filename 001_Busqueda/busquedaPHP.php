@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/login.php");
+            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");
         }
 ?>
 
@@ -20,7 +20,7 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../001_Busqueda/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -50,7 +50,7 @@
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)"> VOLVER</button>
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> VOLVER</button>
                 </td>
             </tr>
         </table>
@@ -135,7 +135,7 @@
             <p class="separacion"></p> 
            <input type="submit" value="BUSCAR" name="busqueda" class="boton"> <!--AHORROS-->
         </form>
-        <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
+        <img id="imagenPortada" src="../001_Busqueda/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">

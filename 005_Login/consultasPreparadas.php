@@ -13,7 +13,7 @@ include "conexionPHP.php";
 $BD_servidor=ConexionPHP::getBD_Servidor();
 $BD_usuario=ConexionPHP::getBD_Usuario();
 $BD_contrasenia=ConexionPHP::getBD_Contrasenia();
-$BD_nombre=ConexionPHP::getBD_Nombre();
+$BD_nombre=ConexionPHP::getBD_NombreEMPLEADOS();
 $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
 
 //Se incluye el fichero de creación de un objeto para guardar
@@ -31,9 +31,9 @@ try{
     $carga_elim=$_GET["carga_eliminacion"];
     $borrar_elim=$_GET["borrado_eliminacion"];
     //Se inicia la matriz que luego se rellenara
-    $datos_ACTUALIZACION=array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
+    $datos_ACTUALIZACION= array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
     //Se inicia el ARRAY para ser rellenado despues
-    $datos_COMPARACION=array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
+    $datos_COMPARACION= array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
     //CREANDO VARIABLES RECIBIDAS DEL FORMULARIO
     $id=$_GET["id"];
     $nom=$_GET["nom"];
@@ -53,7 +53,7 @@ try{
     try{
         mysqli_select_db($conexion,$BD_nombre);
             ///COMPROBACION DE BUSQUEDA///
-            if(!strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & strcmp($eliminacion,"ELIMINAR"))
+            if(isset($busqueda))
             {
                 $semaforo=0;   //señal de qué selector esta implicado tras los CONDICIONALES
                 $puntero=0;    //señal para la seleccion del tipo de AHORRO en el desplegable
@@ -186,12 +186,12 @@ try{
                             $semaforo=10;  //SE CIERRA EL PASO PARA QUE ENTRE AQUI DE NUEVO
                         }
                         $_SESSION["semaforo"]=1;
-                        header("location:../001_Busqueda/busquedaPHP-TABLAFIND.php");
+                        header("location:../001_Busqueda/0011_BusquedaTABLAFIND/busquedaPHP-TABLAFIND.php");
                     }
                 }
             }
             ///COMPROBACIÓN DE INSERCCION/// 
-            if(strcmp($busqueda,"BUSCAR") & !strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & strcmp($eliminacion,"ELIMINAR"))
+            if(isset($inserccion))
             {
                 $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
                 $resultado=mysqli_prepare($conexion,$sql);
@@ -210,9 +210,9 @@ try{
                 }
             }
             ///COMPROBACIÓN DE ACTUALIZACION/// 
-            if(strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & (!strcmp($actualizacion,"ACTUALIZAR") || !strcmp($carga,"CARGAR")|| !strcmp($borrar,"BORRAR")) & strcmp($eliminacion,"ELIMINAR"))
+            if(isset($actualizacion) || isset($carga) || isset($borrar))
             {
-                if(!strcmp($carga,"CARGAR"))
+                if(isset($carga))
                 {
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA
                     //SE INVOCA UNA VARIABLE DE TIPO GLOBAL PARA RECIBIR LO QUE SE QUIERE CARGAR CON EL ID
@@ -279,7 +279,7 @@ try{
                         mysqli_stmt_close($resultado); 
                     }
                 }
-                if(!strcmp($borrar,"BORRAR"))
+                if(isset($borrar))
                 {
                     session_start();  //INICIAR LA SESION SIEMPRE//
                     //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
@@ -293,7 +293,7 @@ try{
                     $_SESSION["semaforo"]=2;
                     header("location:../003_Actualizacion/actualizacionPHP.php");
                 }
-                if(!strcmp($actualizacion,"ACTUALIZAR"))
+                if(isset($actualizacion))
                 {
                     session_start();
                     //PARTE 1: SE GENERA UNA CARGA DE DATOS ORIGINALES DEL USUARIO
@@ -301,13 +301,13 @@ try{
                     //Emplea el constructor de la clase mencionada para guardar los datos en una variable objeto
                     $ESCRITOS= new UsuarioCompararActualizar($id,$nom,$ape,$dir,$pob,$prof,$aho);
                     $_SESSION["E"]= json_encode($ESCRITOS);
-                    header("location:../003_Actualizacion/actualizacionPHP-TABLAUPDATE.php");      
+                    header("location:../003_Actualizacion/0031_ActualizacionTABLAUPDATE/actualizacionPHP-TABLAUPDATE.php");      
                 }
             }
             ///COMPROBACIÓN DE ELIMINACION/// 
-            if(strcmp($busqueda,"BUSCAR") & strcmp($inserccion,"INSERTAR") & strcmp($actualizacion,"ACTUALIZAR") & (!strcmp($eliminacion,"ELIMINAR") || !strcmp($carga_elim,"CARGA") || !strcmp($borrar_elim,"BORRA")))
+            if(isset($eliminacion) || isset($carga_elim) || isset($borrar_elim))
             {
-                if(!strcmp($carga_elim,"CARGA"))
+                if(isset($carga_elim))
                 {
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA
                     //SE INVOCA UNA VARIABLE DE TIPO GLOBAL PARA RECIBIR LO QUE SE QUIERE CARGAR CON EL ID
@@ -359,7 +359,7 @@ try{
                     mysqli_stmt_close($resultado); 
                     }
                 }
-                if(!strcmp($borrar_elim,"BORRA"))
+                if(isset($borrar_elim))
                 {
                     session_start();  //INICIAR LA SESION SIEMPRE//
                     //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
@@ -374,7 +374,7 @@ try{
                     $_SESSION["semaforo"]=2;
                     header("location:../004_Eliminacion/eliminacionPHP.php");
                 }
-                if(!strcmp($eliminacion,"ELIMINAR"))
+                if(isset($eliminacion))
                 {
                     //TRAS CARGAR LOS DATOS SE DESBLOQUEARAN TODAS LAS CASILLAS PARA CAMBIAR ALGO Y SE ACTUALIZARA
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA

@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/login.php");
+            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");
         }
 ?>
 
@@ -20,12 +20,12 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../004_Eliminacion/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
                     <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
-                    <a href="../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+                    <a href="../005_Login/0051_LoginRRHH/loginRRHH.php"><strong>CERRAR SESION</strong></a>
             </tr>
         </table>
     </div>        
@@ -50,7 +50,7 @@
                     <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(155, 0, 0)"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> VOLVER</button>
                 </td>
             </tr>
         </table>
@@ -125,7 +125,7 @@
            <input type="submit" value="CARGA" name="carga_eliminacion" class="boton"><!--AHORROS-->
            <input type="submit" value="BORRA" name="borrado_eliminacion" class="boton"> <!--AHORROS-->
         </form>
-        <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
+        <img id="imagenPortada" src="../004_Eliminacion/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
