@@ -49,10 +49,10 @@
                     <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'"> MENU Y BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>
@@ -96,7 +96,7 @@
         echo "</table></div>" 
         ?>
         <form action="../../003_Actualizacion/actualizacionPHP-Actualizado.php" method="GET">
-            <input type="submit" class="botones" name="modificar" value="MODIFICAR">
+            <input type="submit" class="botones" name="modificar" value="Confirme Modificar">
         </form>
     </div>
     <script>

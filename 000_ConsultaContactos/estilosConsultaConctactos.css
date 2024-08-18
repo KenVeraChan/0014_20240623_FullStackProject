@@ -117,7 +117,7 @@
         width:90%; 
         height:300px;
         margin-top: 50px;
-        margin-left: -1200px;
+        margin-left: -1500px;
         z-index: 1;
     }
     .tablaBBDD #tablaPaginacion
@@ -205,9 +205,14 @@
         #iconoAdorno{
             float: left;
             width: 100%;   /*ICONO CUADRADO*/
-            height: 80px;
+            height: 100px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 100px;   
         }
         .VaciobotonesPrincipal{
             float: left;
@@ -272,7 +277,7 @@
         width:90%; 
         height:300px;
         margin-top: 50px;
-        margin-left: 2%;
+        margin-left: -1500px;
         z-index: 1;
     }
     .tablaBBDD #tablaPaginacion
@@ -364,6 +369,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -426,7 +436,7 @@
         width:90%; 
         height:300px;
         margin-top: 50px;
-        margin-left: 2%;
+        margin-left: -1500px;
         z-index: 1;
     }
     .tablaBBDD #tablaPaginacion
@@ -519,6 +529,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -581,7 +596,7 @@
         width:90%; 
         height:300px;
         margin-top: 50px;
-        margin-left: 2%;
+        margin-left: -1500px;
         z-index: 1;
     }
     .tablaBBDD #tablaPaginacion

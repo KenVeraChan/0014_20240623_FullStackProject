@@ -248,6 +248,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -448,6 +453,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -541,10 +551,11 @@
     }
     .boton{
         float: left;
-        margin-top: 35px;
+        margin-top: 27px;
         margin-left: 26px;
         width: 100px;
         height: 25px;
+        font-size: small;
         background-color: rgb(255, 255, 255);
         z-index: 1;
     }
@@ -646,6 +657,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -740,7 +756,7 @@
     }
     .boton{
         float: left;
-        margin-top: 35px;
+        margin-top: 27px;
         margin-left: 26px;
         width: 140px;
         height: 25px;

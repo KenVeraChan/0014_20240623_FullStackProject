@@ -13,13 +13,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Contactos</title>
-    <link rel="stylesheet" href="estilosConsultaConctactos.css">
-    <script src="cargaPaginas.js"></script>
+    <title>Tareas Pendientes Generadas</title>
+    <link rel="stylesheet" href="tareasPendientes.css">
+    <script src="tareasPendientes.js"></script>
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../000_ConsultaContactos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../008_ObjetivosEmpresa/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -32,32 +32,32 @@
         <table id="tabla">
             <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'">CONFIGURAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../003_Actualizacion/actualizacionPHP.php'">CONFIGURAR CANDIDATO</button>
                 </td>
             </tr>
             <tr class="cajaBotonera">    
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="muestraTabla()">MENU Y BBDD</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'">MENU Y BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
     </header>
     <div class="consulta">
-            <div class="tablaBBDD"><?php include "../006_Paginacion/indexCRUD.php";?></div>
-            <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
+            <div class="tablaBBDD"><?php include "../008_ObjetivosEmpresa/tablaPend.php";?></div>
+            <img id="imagenPortada" src="../008_ObjetivosEmpresa/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">

@@ -120,10 +120,10 @@
          margin-left: 10%;
     }
     .botones{
-        width:100px; 
+        width:150px; 
         height:25px; 
         margin-top:30px; 
-        margin-left:72%;
+        margin-left:60%;
     }
 
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
@@ -210,6 +210,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -285,10 +290,10 @@
     }
     .botones
     {
-        width:100px; 
+        width:150px; 
         height:25px; 
         margin-top:30px; 
-        margin-left:72%;
+        margin-left:160px;
     }
     /*********** FIN CSS DEL CUERPO ********/
 
@@ -375,6 +380,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -449,10 +459,10 @@
     }
     .botones
     {
-        width:100px; 
+        width:150px; 
         height:25px; 
         margin-top:30px; 
-        margin-left:50%;
+        margin-left:100px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -539,6 +549,11 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
@@ -610,11 +625,12 @@
         width: 80px;
         background-color: rgb(0, 227, 243);
     }
-    .botones{
-        width:100px; 
+    .botones
+    {
+        width:150px; 
         height:25px; 
         margin-top:30px; 
-        margin-left:25%;
+        margin-left:20px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

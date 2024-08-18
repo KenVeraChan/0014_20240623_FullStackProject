@@ -10,12 +10,12 @@ function cargarPagina()
         elemento1[i].style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
         elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
         elemento1[i].addEventListener('mouseenter',function(){
-            elemento1[i].style.background= "rgb(255,170,0)";
+            elemento1[i].style.background= "rgb(147, 0, 183)";
             elemento1[i].style.color="rgba(0, 0, 19, 0.89)";
                 })
         elemento1[i].addEventListener('mouseleave',function(){
             elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
-            elemento1[i].style.color="orangered";
+            elemento1[i].style.color="rgb(204, 0, 255)";
                 })
         }
         muestraTabla();   //Llamada a la muestr de la tabla de la BBDD
@@ -28,7 +28,4 @@ function muestraTabla()
     botonForm.style.transitionDuration = "1s";
     botonForm.style.opacity = "0.25";
     //Carga de la tabla de la BBDD
-    var baseDatos=document.getElementsByClassName("tablaBBDD")[0];
-    baseDatos.style.transitionDuration="1.5s";
-    baseDatos.style.marginLeft="2%";
 }

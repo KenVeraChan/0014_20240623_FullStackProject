@@ -23,11 +23,14 @@
         <div class="VaciobotonesPrincipal"></div>
             <form action="../../005_Login/compruebaLogin.php" method="POST" id="formularioLogin">
                 <table>
-                    <tr><div>AREA DE RECURSOS HUMANOS</div></tr>
+                    <tr><div>RECURSOS HUMANOS</div></tr>
                     <tr><br></tr>
-                    <tr><td class="izq">Login: </td><td class="der"><input type="text" name="login" placeholder="Usuario"></td></tr>
-                    <tr><td class="izq">Password: </td><td class="der"><input type="password" name="password" placeholder="Contraseña"></td></tr>
-                    <tr><td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td></tr>
+                    <tr><td class="izq">Login: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
+                    <tr><td class="izq">Password: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
+                    <tr>
+                        <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
+                        <td><a href="../../007_Menus/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
+                    </tr>
                 </table>
             </form> 
         <img id="imagenPortada" src="../0051_LoginRRHH/images/SERVIDOR.jpg" alt="Imagen servidor">    

@@ -25,7 +25,7 @@
         <table style="width:100%">
             <tr>
                     <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
-                    <a href="../005_Login/0051_LoginRRHH/loginRRHH.php"><strong>CERRAR SESION</strong></a>
+                    <a href="../005_Login/0051_LoginRRHH/loginRRHH.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
             </tr>
         </table>
     </div>        
@@ -47,10 +47,10 @@
                     <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
+                    <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> MENU Y BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: rgb(155, 0, 0)" onclick="location.href='../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>

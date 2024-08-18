@@ -16,14 +16,14 @@
         text-align: center;
         box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #bienvenido{
         float: right;
         font-size: medium;
         background-color: transparent;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         margin-top: 8px;
         margin-right: 20px;
         width: 100%;
@@ -35,7 +35,7 @@
         text-align: center;
         font-size: 60%;
         margin-top: 3px;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         width: 120px;
         height: 20px;
         text-decoration: none;
@@ -110,60 +110,21 @@
         width: 100%;
         height: 100%;
     }
-    .tablaAcciones{
-        position:absolute;
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:90%; 
+        height:300px;
         margin-top: 50px;
-        margin-left: 20%;
-        padding-left: 30px;
-        padding-right: 20px;
-        width: 500px;
-        height: 330px;
-        background-color: rgba(26, 26, 68, 0.89);
-        box-shadow: rgb(0, 228, 228) 5px 5px 20px 10px;
-        z-index: 1;
-    }
-    .tablaAcciones:hover{
-        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
-        box-shadow: rgb(0, 102, 102) 5px 5px 20px 10px;
-    }
-    .celda{
-        float: left;
-        font-size: medium;
-        color: rgb(0, 228, 228);
-        width: 480px;
-        height:10px;
-        text-align:left;
-        margin-top: 12px;
-        z-index: 1;
-    }
-    .celdas{
-        float:right;
-        width: 350px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .boton{
-        float: left;
-        margin-top: 25px;
         margin-left: 20px;
-        width: 100px;
-        height: 25px;
-        background-color: rgb(255, 255, 255);
         z-index: 1;
     }
-    .separacion{
-        height: 12px;
-        z-index: 1;
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 930px;
+        background-color: transparent;
     }
-    .desplegable{
-        float:right;
-        width: 358px;
-        height:18px;
-        background-color: white;
-        z-index: 1;
-    }
-
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -175,7 +136,7 @@
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #zocalo
     {
@@ -212,14 +173,14 @@
         text-align: center;
         box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #bienvenido{
         float: right;
-        font-size: small;
+        font-size: medium;
         background-color: transparent;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         margin-top: 8px;
         margin-right: 20px;
         width: 100%;
@@ -230,7 +191,7 @@
         background-color: transparent;
         text-align: center;
         font-size: 60%;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         width: 120px;
         height: 20px;
         text-decoration: none;
@@ -244,14 +205,14 @@
         #iconoAdorno{
             float: left;
             width: 100%;   /*ICONO CUADRADO*/
-            height: 80px;
+            height: 100px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
         #iconoEmpresa{
             float: left;
             width: 300px;   /*ICONO CUADRADO*/
-            height: 80px;   
+            height: 100px;   
         }
         .VaciobotonesPrincipal{
             float: left;
@@ -295,7 +256,6 @@
         margin-left:45%;
     }
     .consulta{
-        position: relative;
         width: 100%;
         height: 720px;
         background-color: rgba(0, 0, 19, 0.89);
@@ -308,78 +268,34 @@
         position: relative;
         margin-top: -37px;
         width: 100%;
-        height: 100%;
+        height: 110%;
     }
-    .tablaAcciones{
-        position:absolute;
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:300px;
         margin-top: 50px;
-        margin-left: 17%;
-        padding-left: 30px;
-        padding-right: 20px;
-        width: 300px;
-        height: 570px;
-        background-color: rgba(26, 26, 68, 0.89);
-        box-shadow: rgb(0, 228, 228) 5px 5px 20px 10px;
+        margin-left: 20px;
         z-index: 1;
     }
-    .tablaAcciones:hover{
-        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
-        box-shadow: rgb(0, 109, 109) 5px 5px 20px 10px;
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1117px;
+        background-color: transparent;
     }
-    .celda{
-        float: left;
-        margin: 30px;
-        font-size: medium;
-        color: rgb(0, 228, 228);
-        width: 260px;
-        height:10px;
-        text-align:left;
-        margin-top: 12px;
-        z-index: 1;
-    }
-    .celdas{
-        float:left;
-        margin: 5px;
-        margin-left: 0px;
-        width: 260px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .boton{
-        float: left;
-        margin-top: 35px;
-        margin-left: 26px;
-        width: 100px;
-        height: 25px;
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .desplegable{
-        float:left;
-        margin: 10px;
-        margin-left: 0px;
-        width: 260px;
-        height:18px;
-        background-color: white;
-        z-index: 1;
-    }
-    /*********** FIN CSS DEL CUERPO ********/
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
     {
         position:relative;
-        margin-top: -35px;
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #zocalo
     {
@@ -417,14 +333,14 @@
         text-align: center;
         box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #bienvenido{
         float: right;
         font-size: small;
         background-color: transparent;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         margin-top: 8px;
         margin-right: 20px;
         width: 100%;
@@ -435,7 +351,7 @@
         background-color: transparent;
         text-align: center;
         font-size: 60%;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         width: 120px;
         height: 20px;
         text-decoration: none;
@@ -443,7 +359,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 310px;
+        height: 227px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -472,14 +388,14 @@
             padding-bottom: 5px;
         }
         .bloque_opciones{
-            margin-left: 20%;
+            margin-left: 15%;
             margin-top: 10px;
             float: left;
-            width: 60%;
+            width: 80%;
             height: 50px;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
-            font-size: 40%;
+            font-size: 50%;
             border-radius: 10px;
             box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
         }
@@ -509,67 +425,24 @@
         padding-top: 20px;
     }
     #imagenPortada{
-        margin-top: -37px;
+        margin-top: 0px;
         width: 100%;
         height: 100%;
     }
-    .tablaAcciones{
-        position:absolute;
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:80%; 
+        height:300px;
         margin-top: 50px;
-        margin-left: 5%;
-        padding-left: 2px;
-        padding-right: 20px;
-        width: 240px;
-        height: 570px;
-        background-color: rgba(26, 26, 68, 0.89);
-        box-shadow: rgb(0, 228, 228) 5px 5px 20px 10px;
+        margin-left: 20px;
         z-index: 1;
     }
-    .tablaAcciones:hover{
-        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
-        box-shadow: rgb(0, 109, 109) 5px 5px 20px 10px;
-    }
-    .celda{
-        float: left;
-        margin: 30px;
-        font-size: medium;
-        color: rgb(0, 228, 228);
-        width: 200px;
-        height:10px;
-        text-align:left;
-        margin-top: 12px;
-        z-index: 1;
-    }
-    .celdas{
-        float:left;
-        margin: 5px;
-        margin-left: 0px;
-        width: 200px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .boton{
-        float: left;
-        margin-top: 27px;
-        margin-left: 26px;
-        width: 100px;
-        height: 25px;
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .desplegable{
-        float:left;
-        margin: 10px;
-        margin-left: 0px;
-        width: 200px;
-        height:18px;
-        background-color: white;
-        z-index: 1;
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1117px;
+        background-color: transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -582,7 +455,7 @@
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #zocalo
     {
@@ -620,14 +493,14 @@
         text-align: center;
         box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #bienvenido{
         float: right;
         font-size: small;
         background-color: transparent;
         text-align: right;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         margin-top: 8px;
         margin-right: 20px;
         width: 100%;
@@ -638,7 +511,7 @@
         background-color: transparent;
         text-align: center;
         font-size: 60%;
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
         width: 120px;
         height: 20px;
         text-decoration: none;
@@ -646,7 +519,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 310px;
+        height: 227px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -675,11 +548,11 @@
             padding-bottom: 5px;
         }
         .bloque_opciones{
-            margin-left: 20%;
+            margin-left: 15%;
             margin-top: 10px;
             float: left;
-            width: 60%;
-            height: 50px;
+            width: 80%;
+            height: 60%;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
             font-size: 20%;
@@ -712,69 +585,24 @@
         padding-top: 20px;
     }
     #imagenPortada{
-        margin-top: -37px;
+        margin-top: 0px;
         width: 100%;
         height: 100%;
     }
-    .tablaAcciones{
-        position:absolute;
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:80%; 
+        height:300px;
         margin-top: 50px;
-        margin-left: 5%;
-        padding-left: 2px;
-        padding-right: 20px;
-        width: 180px;
-        height: 570px;
-        background-color: rgba(26, 26, 68, 0.89);
-        box-shadow: rgb(0, 228, 228) 5px 5px 20px 10px;
+        margin-left: 20px;
         z-index: 1;
     }
-    .tablaAcciones:hover{
-        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
-        box-shadow: rgb(0, 109, 109) 5px 5px 20px 10px;
-    }
-    .celda{
-        float: left;
-        margin: 30px;
-        font-size: xx-small;
-        color: rgb(0, 228, 228);
-        width: 100px;
-        height:10px;
-        text-align:left;
-        margin-top: 12px;
-        z-index: 1;
-    }
-    .celdas{
-        float:left;
-        margin: 5px;
-        margin-left: 0px;
-        font-size: xx-small;
-        width: 140px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .boton{
-        float: left;
-        margin-top: 27px;
-        margin-left: 26px;
-        width: 140px;
-        height: 25px;
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .desplegable{
-        float:left;
-        margin: 10px;
-        margin-left: 0px;
-        font-size: xx-small;
-        width: 140px;
-        height:18px;
-        background-color: white;
-        z-index: 1;
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1117px;
+        background-color: transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -783,11 +611,10 @@
     #piePrincipal
     {
         position:relative;
-        margin-top: -35px;
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
-        color: rgb(0, 228, 228);
+        color: rgb(204, 0, 255);
     }
     #zocalo
     {
