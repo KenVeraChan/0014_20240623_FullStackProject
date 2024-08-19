@@ -46,7 +46,7 @@
                     <button class="bloque_opciones" style="color: orangered" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="muestraTabla()">MENU Y BBDD</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="muestraTabla()">MOSTRAR BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color: orangered" onclick="location.href='../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>

@@ -30,7 +30,7 @@
     text-align: center;
     color: rgb(255, 255, 255);
     float: left;
-    width: 55px;
+    width: 90px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -41,7 +41,7 @@
     text-align: center;
     color: rgb(255, 255, 255);
     float: left;
-    width: 200px;
+    width: 55px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -52,7 +52,7 @@
     text-align: center;
     color: rgb(255, 255, 255);
     float: left;
-    width: 160px;
+    width: 200px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -63,7 +63,7 @@
     text-align: center;
     color: rgb(255, 255, 255);
     float: left;
-    width: 90px;
+    width: 160px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -96,7 +96,18 @@
     text-align: center;
     color: rgb(255, 255, 255);
     float: left;
-    width: 210px;
+    width: 120px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(8)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 180px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -105,17 +116,16 @@
     float: left;
     background-color:rgb(161, 119, 189);
     text-align: center;
-    width: 55px;
+    width: 90px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
 }
-.caja:nth-child(2)
-{
+.caja:nth-child(2){
     float: left;
     background-color:rgb(161, 119, 189);
     text-align: center;
-    width: 200px;
+    width: 55px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -125,7 +135,7 @@
     float: left;
     background-color:rgb(161, 119, 189);
     text-align: center;
-    width: 160px;
+    width: 200px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -135,7 +145,7 @@
     float: left;
     background-color:rgb(161, 119, 189);
     text-align: center;
-    width: 90px;
+    width: 160px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
@@ -165,12 +175,22 @@
     float: left;
     background-color:rgb(161, 119, 189);
     text-align: center;
-    width: 210px;
+    width: 120px;
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
 }
 .caja:nth-child(8)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 180px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(9)
 {
     float: left;
     text-align: center;

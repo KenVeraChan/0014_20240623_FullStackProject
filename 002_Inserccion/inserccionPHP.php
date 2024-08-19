@@ -47,7 +47,7 @@
                     <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> MENU Y BBDD</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> MOSTRAR BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color: rgb(0, 226, 0)" onclick="location.href='../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>

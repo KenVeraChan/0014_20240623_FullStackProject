@@ -29,7 +29,6 @@ try{
                 $aho=$ESCRITURA["RegAhorros"];
 
                 $sql="UPDATE $BD_tabla SET NOMBRE=?,APELLIDOS=?,DIRECCION=?,POBLACION=?,PROFESION=?,AHORROS=? WHERE ID=?";
-                echo "checkpoint";
                 $resultado=mysqli_prepare($conexion,$sql);
                 $okey=mysqli_stmt_bind_param($resultado,"sssssii",$nom,$ape,$dir,$pob,$prof,$aho,$nuevoID);
                 $okey=mysqli_stmt_execute($resultado);

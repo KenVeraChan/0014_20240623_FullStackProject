@@ -29,7 +29,7 @@
                     <tr><td class="izq">Password: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
                     <tr>
                         <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
-                        <td><a href="../../007_Menus/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
+                        <td><a href="../../007_Menus/0071_MenuJefesRRHH/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>
                 </table>
             </form> 

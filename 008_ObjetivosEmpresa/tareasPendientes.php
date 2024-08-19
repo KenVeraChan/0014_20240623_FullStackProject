@@ -5,7 +5,8 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");        }
+            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");
+        }
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +57,60 @@
         <div class="VaciobotonesPrincipal"></div>
     </header>
     <div class="consulta">
-            <div class="tablaBBDD"><?php include "../008_ObjetivosEmpresa/tablaPend.php";?></div>
-            <img id="imagenPortada" src="../008_ObjetivosEmpresa/images/SERVIDOR.jpg" alt="Imagen servidor">
+        <?php $_SESSION["semaforo"]=1; include "controlPend.php"; ?>
+        <div class="tablaBBDD">
+            <table id="tablaPaginacion">
+                <tr class="cabecera">
+                    <td class="cajaT">ID</td>
+                    <td class="cajaT">TAREA</td>
+                    <td class="cajaT">DEPARTAMENTO</td>
+                    <td class="cajaT">TECNICOS</td>
+                    <td class="cajaT">COSTES</td>
+                    <td class="cajaT">FECHA</td>
+                    <td class="cajaT">RESOLUCION</td>
+                </tr>
+
+                <?php
+                    foreach($registro as $persona):
+                ?>
+                <tr class="cabecera">
+                    <td class="caja"><?php echo($persona->ID);?></td>
+                    <td class="caja"><?php echo($persona->TAREA);?></td>
+                    <td class="caja"><?php echo($persona->DEPARTAMENTO);?></td>
+                    <td class="caja"><?php echo($persona->TECNICOS);?></td>
+                    <td class="caja"><?php echo($persona->COSTES);?></td>
+                    <td class="caja"><?php echo($persona->FECHA);?></td>
+                    <td class="caja"><?php echo($persona->RESOLUCION);?></td>
+                    <td class="caja">
+                        <a href="../008_ObjetivosEmpresa/0081_ConfirmacionObjetivos/actualizarTareasPend.php?id=<?php echo($persona->ID);?>">
+                            <input class="botonera" type="submit" value="Actualizar">
+                        </a>
+                    </td>
+                </tr>
+                <?php
+                    endforeach;
+                ?>
+            </table>
+            <?php
+                    echo "</table>";
+                    echo "<br><br>";
+                    //ZONA DE PAGINACION//
+                    $filasSQLBoton=$filasSQL/$tamPagina;
+                    echo"<br><br>";
+                    echo"<form method='GET' style='margin-left:100px width:800px'><table style='width:750px'><tr>";
+                    for($i=0;$i<(round($filasSQLBoton,0,PHP_ROUND_HALF_UP)+1);$i++)
+                    {
+                        echo"<td><input 
+                                type='submit'
+                                name='cargaPagina'
+                                class='accionamientos' 
+                                value='$i'></td>";
+                    }
+                    echo "<td class='nota'> Hay: ".$filasSQL." regitros detectados</td>";
+                    echo "</tr></table></form>";
+            ?>
+        </div>
+        <img id="imagenPortada" src="../008_ObjetivosEmpresa/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
