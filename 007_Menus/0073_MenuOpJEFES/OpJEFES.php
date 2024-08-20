@@ -5,7 +5,8 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");        }
+            header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
+        }
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +15,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú de Operaciones de RRHH</title>
-    <link rel="stylesheet" href="OpRRHH.css">
-    <script src="OpRRHH.js"></script>
+    <link rel="stylesheet" href="OpJEFES.css">
+    <script src="OpJEFES.js"></script>
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
@@ -33,22 +34,22 @@
         <div class="cajaPortadora">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">BUSCAR CANDIDATO</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">PEDIDOS CLIENTES</button></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../002_Inserccion/inserccionPHP.php'"> RECLUTAR CANDIDATO</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../002_Inserccion/inserccionPHP.php'">CONTROL TAREAS</button></td>
+                </tr>                
+                <tr class="cajaBotonera">    
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'">------</button></td>
                 </tr>
                 <tr class="cajaBotonera">    
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'">CONFIGURAR CANDIDATO</button></td>
-                </tr>
-                <tr class="cajaBotonera">    
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">------</button></td>
                 </tr>
                 <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'">MOSTRAR BBDD</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'">------</button></td>
                 </tr>   
                 <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">------</button></td>
                 </tr>
             </table>
         </div>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION["loginRRHH"]=1;   //Se identifica el sector de RRHH intentando ENTRAR en el LOGIN
+$_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +14,16 @@
     <script src="loginRRHH.js"></script>
 </head>
 <body onload="cargarPagina()">
-            <div class="letreroOK" style=
-                "position:absolute;
-                    width:100%; 
-                    height: 30px; 
-                    text-align: center;
-                    color: rgb(204, 0, 255);
-                    margin-top:-40px;
-                    background-color: rgba(0, 0, 19, 0.89);
-                    box-shadow: none">
-            </div>
+        <div class="letreroOK" style=
+            "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: rgb(204, 0, 255);
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../0051_LoginRRHH/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>     
         <div class="VaciobotonesPrincipal"></div>
@@ -29,11 +35,11 @@
                     <tr><td class="izq">Password: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
                     <tr>
                         <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
-                        <td><a href="../../007_Menus/0071_MenuJefesRRHH/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
+                        <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>
                 </table>
             </form> 
-        <img id="imagenPortada" src="../0051_LoginRRHH/images/SERVIDOR.jpg" alt="Imagen servidor">    
+        <img id="imagenPortada" src="../0051_LoginRRHH/images/RRHH.jpg" alt="Imagen Oficina de RRHH">    
     </header>
     <div class="piePagina">
         <footer id="piePrincipal">
@@ -53,14 +59,27 @@
         </footer>
     </div>
     <script>
-        if(<?php session_start(); echo($_SESSION["logeando"])?>==0)
+        if(<?php echo $_SESSION["logeando"]?>==0)
         {
-            letreroConfirmadaEntrada();
+            //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA
+            letreroConfirmadaEntrada(1);
         }
-        function letreroConfirmadaEntrada()
+        if(<?php echo $_SESSION["semaforo"]?>==1)
         {
+            //En el caso de que un JEFE quiera acceder al área de RRHH y lo tiene prohibido
+            letreroConfirmadaEntrada(2);
+        }
+        function letreroConfirmadaEntrada(seleccion)
+        {        
             var letrero= document.getElementsByClassName("letreroOK")[0];
-            letrero.innerHTML="Lo siento. Ususario o contraseña INCORRECTOS";
+            if(seleccion==1)
+            {
+                letrero.innerHTML="Lo siento. Ususario o contraseña INCORRECTOS"; 
+            }
+            if(seleccion==2)
+            {
+                letrero.innerHTML="Lo siento. Su ROL de JEFE no le permite el acceso al área de RRHH";   
+            }
             letrero.style.paddingTop="10px";
             letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
             letrero.style.transitionDuration = "1s";
@@ -76,6 +95,7 @@
             clearTimeout(temporizador);
         }
     </script>
-    <?php $_SESSION["logeando"]=1; //Para el BORRADO IMPERIOSO DEL BUFFER ?>
+    <?php $_SESSION["logeando"]=1; //Para el BORRADO IMPERIOSO DEL BUFFER 
+          $_SESSION["semaforo"]=0; //Asi no se saca ningun letrero?>
 </body>
 </html>

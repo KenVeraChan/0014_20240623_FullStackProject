@@ -8,8 +8,18 @@
 <body>
     <?php
         session_start();
-        session_destroy();
-        header("location:../005_Login/0051_LoginRRHH/loginRRHH.php");
+        if($_SESSION["loginRRHH"]==1)
+        {
+            session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN RRHH
+            header("location:../005_Login/0051_LoginRRHH/loginRRHH.php");
+            //Se pone el doble punto para partir del directorio RAIZ
+        }
+        if($_SESSION["loginJEFES"]==1)
+        {
+            session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN JEFES
+            header("location:../005_Login/0052_LoginJEFES/loginJEFES.php");
+            //Se pone el doble punto para partir del directorio RAIZ
+        }
     ?>
 </body>
 </html>
