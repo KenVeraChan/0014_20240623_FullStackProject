@@ -38,13 +38,8 @@
         //ESTE CODIGO PARA ACTUALIZAR TODA LA TAREA EN LA BBDD 
         if(isset($_POST["actualizar"]))
         {
-            $tarea=$_POST["tarea"];
-            $departamento=$_POST["departamento"];
-            $tecnicos=$_POST["tecnicos"];
-            $costes=$_POST["costes"];
-            $fecha=$_POST["fecha"];
             $resolucion=$_POST["resolucion"];
-            $base=$conexion->query("UPDATE $BD_tabla SET TAREA='$tarea',DEPARTAMENTO='$departamento',TECNICOS='$tecnicos' ,COSTES='$costes' ,FECHA='$fecha' ,RESOLUCION='$resolucion' WHERE ID=$id");
+            $base=$conexion->query("UPDATE $BD_tabla SET RESOLUCION='$resolucion' WHERE ID=$id");
         }
     }
 ?>

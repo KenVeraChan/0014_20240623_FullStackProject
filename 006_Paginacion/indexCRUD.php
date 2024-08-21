@@ -41,7 +41,6 @@
                 <td class="cajaT">Salario Anterior</td>
                 <td class="cajaT">Contratacion final</td>
             </tr>
-
             <?php
                 foreach($registro as $persona):
             ?>

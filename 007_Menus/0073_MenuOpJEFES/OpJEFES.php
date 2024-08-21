@@ -34,22 +34,22 @@
         <div class="cajaPortadora">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">PEDIDOS CLIENTES</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">PEDIDOS CLIENTES</button></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../002_Inserccion/inserccionPHP.php'">CONTROL TAREAS</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">CONTROL TAREAS</button></td>
                 </tr>                
                 <tr class="cajaBotonera">    
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'">------</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
                 </tr>
                 <tr class="cajaBotonera">    
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">------</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
                 </tr>
                 <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'">------</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
                 </tr>   
                 <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">------</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
                 </tr>
             </table>
         </div>

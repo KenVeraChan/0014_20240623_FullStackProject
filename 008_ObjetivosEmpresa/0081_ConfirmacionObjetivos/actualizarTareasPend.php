@@ -104,12 +104,19 @@
                         <tr>
                             <td class="caja">ACTUAL: </td>
                             <td class="caja"><?php echo($id)?></td>
-                            <td class="caja"><input type="text" name="tarea" style="width:190px; text-align:center" value="<?php echo($dos)?>"></td>
-                            <td class="caja"><input type="text" name="departamento" style="width:150px; text-align:center" value="<?php echo($tres)?>"></td>
-                            <td class="caja"><input type="text" name="tecnicos" style="width:80px; text-align:center" value="<?php echo($cuatro)?>"></td>
-                            <td class="caja"><input type="text" name="costes" style="width:80px; text-align:center" value="<?php echo($cinco)?>"></td>
-                            <td class="caja"><input type="date" name="fecha" style="width:110px; text-align:center" value="<?php echo($seis)?>"></td>
-                            <td class="caja"><input type="text" name="resolucion" style="width:160px; text-align:center" value="<?php echo($siete)?>"></td>
+                            <td class="caja"><?php echo($dos)?></td>
+                            <td class="caja"><?php echo($tres)?></td>
+                            <td class="caja"><?php echo($cuatro)?></td>
+                            <td class="caja"><?php echo($cinco)?></td>
+                            <td class="caja"><?php echo($seis)?></td>
+                            <td class="caja">
+                            <select name="resolucion" style="width:160px; text-align:center">
+                                <option value="APROBADO">APROBADO</option>
+                                <option value="DENEGADO">DENEGADO</option>
+                                <option value="READMITIDO">READMITIDO</option>
+                                <option value="CANCELADO">CANCELADO</option>
+                            </select>
+                            </td>
                         </tr>
                         <tr style="height:40px">
                         </tr>
