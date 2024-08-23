@@ -62,6 +62,7 @@
                         <td class="cajaT">RESOLUCION</td>
                     </tr>
                 <?php
+                    require "../../005_Login/conexionPHP.php";
                     $_SESSION["cediendo"]=1;  //Se cede el paso del código de búsqueda PHP
                     require "gestionTareas.php";
                     foreach($registro as $persona):
@@ -79,10 +80,15 @@
                 ?>
                 </table>
             </div>
+            <?php
+            $_SESSION["cediendo"]=2;  //Se cede el paso del código de búsqueda PHP
+            require "gestionTareas.php";
+            ?>
             <div class="tablaBBDD2">
                 <table id="tablaEstadisticas">
                     <tr class="cabecera">
                         <td class="cajaE"><strong>DEPARTAMENTOS</strong></td>
+                        <td class="cajaS"><strong>Nº TAREAS</strong></td>
                         <td class="cajaS"><strong>INGRESOS</strong></td>
                         <td class="cajaS"><strong>COSTES</strong></td>
                         <td class="cajaS"><strong>BENEFICIOS</strong></td>
@@ -90,66 +96,75 @@
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">I+D+I</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][0];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][0];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][0];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][0];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][0];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">MARKETING</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][1];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][1];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][1];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][1];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][1];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">PRODUCCION</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][2];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][2];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][2];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][2];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][2];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">RR.HH.</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][3];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][3];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][3];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][3];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][3];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">FINANZAS</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][4];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][4];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][4];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][4];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][4];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">LOGISTICA</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][5];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][5];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][5];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][5];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][5];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">DIRECTIVO</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][6];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][6];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][6];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][6];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][6];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">ADMINISTRACION</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][7];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][7];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][7];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][7];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][7];?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">COMERCIAL</td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
-                        <td class="cajaS"></td>
+                        <td class="cajaS"><?php echo $_SESSION["TAREAS"][8];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["INGRESOS"][8];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["COSTES"][8];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][8];?></td>
+                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][8];?></td>
                     </tr>
                 </table>
             </div>

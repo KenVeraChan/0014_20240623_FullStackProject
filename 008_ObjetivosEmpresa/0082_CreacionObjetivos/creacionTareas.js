@@ -1,4 +1,5 @@
 var elemento1= document.getElementsByClassName("bloque_opciones");
+var negativo= document.getElementsByClassName("cajaS");
 
 function cargarPagina()
 {
@@ -51,4 +52,19 @@ function cargaCuadro()
         baseDatos2.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";});
     baseDatos2.addEventListener('mouseleave',function(){
         baseDatos2.style.boxShadow= "none";});
+
+    //Carga la consideracion de la tabla
+    beneficioNegativo();
+}
+function beneficioNegativo()
+{
+    //NO FUNCIONA, PENDIENTE DE CORREGIR Y TERMINAR
+    for(let i=0;i<10;i++)
+    {
+       if(parseInt(negativo[8+i*5].value)<0)
+        {
+            negativo[8+i*5].style.background= "rgba(236, 63, 63, 0.89)";
+        }
+    }
+    alert (negativo[18].value);
 }
