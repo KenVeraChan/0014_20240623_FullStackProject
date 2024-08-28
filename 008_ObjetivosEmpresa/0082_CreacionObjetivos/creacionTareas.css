@@ -3,12 +3,26 @@
     margin-left: 0px;
     margin-right: 0px;
 }
-.base{
+.base{ /*para la tabla de estadisticas*/
     position: absolute;
     background-color: transparent;
-    width:100%;
+    width:95%;
     height: 700px;
-    margin-left: -2000px;
+    margin-left: -2500px;
+}
+.base2{ /*para la añadidura de tareas*/
+    position: absolute;
+    background-color: transparent;
+    width:95%;
+    height: 700px;
+    margin-left: -2500px;
+}
+.base3{ /*para el tratamiento de candidatos*/
+    position: absolute;
+    background-color: transparent;
+    width:95%;
+    height: 700px;
+    margin-left: -2500px;
 }
 #tablaPaginacion
 {
@@ -219,6 +233,91 @@
         width: 778px;
         background-color: transparent;
     }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:40%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 15%;
+        padding-left: 180px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 200px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 12px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -388,6 +487,91 @@
         width: 778px;
         background-color: transparent;
     }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:40%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 15%;
+        padding-left: 180px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 200px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 12px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
@@ -553,6 +737,91 @@
     {
         width: 778px;
         background-color: transparent;
+    }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:35%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 2%;
+        padding-left: 180px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 250px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 12px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -720,6 +989,91 @@
     {
         width: 778px;
         background-color: transparent;
+    }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:10%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 2%;
+        padding-left: 180px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 100px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 12px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

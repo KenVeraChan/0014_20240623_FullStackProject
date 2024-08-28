@@ -1,5 +1,6 @@
 <?php
-if($_SESSION["cediendo"]==1)
+require "../../005_Login/conexionPHP.php";
+function cargandoTareas()
 {
     //CODIGO DE CARGA DE LOS DATOS DE LA BBDD
     $conexion=ConexionPHP::getConexionJEFES_RRHH();
@@ -11,12 +12,9 @@ if($_SESSION["cediendo"]==1)
     $filasSQL=$conexion->query("SELECT * FROM $BD_tabla")->rowCount();  
     //Contar numero de filas afectadas por la sentencia SQL
     $base->closeCursor();  //Cierra la conexion y la consulta
-}
-if($_SESSION["cediendo"]==2)
-{
+    $_SESSION["registro"]=$registro;
+
     //BUSQUEDAS PARA LA TABLA DE LAS ESTADISTICAS
-    $conexion=ConexionPHP::getConexionJEFES_RRHH();
-    $BD_tabla=ConexionPHP::getBD_TablaJefesTareas();
     //CREA MATRIZ DE DEPARTAMENTOS PARA FACILITAR LA ENORME CONSULTA
     $departamentos=array("I+D+I","Marketing","Produccion","RRHH","Finanzas","Logistica","Directivo","Administracion","Comercial");    //CONDIGO DE LA CONSULTA GENERADA
     for($i=0;$i<count($departamentos);$i++)
@@ -66,6 +64,37 @@ if($_SESSION["cediendo"]==2)
     $ConsultaDepart->closeCursor(); //Cierra la conexion y consulta TAREAS
     $ConsultaIngresos->closeCursor(); //Cierra la conexion y consulta INGRESOS
     $ConsultaCostes->closeCursor(); //Cierra la conexion y consulta COSTES
+}
+if(isset($_GET["inserccion"]))
+{
+    //CODIGO DE CARGA DE LOS DATOS DE LA BBDD
+    $conexion=ConexionPHP::getConexionJEFES_RRHH();
+    $BD_tabla=ConexionPHP::getBD_TablaJefesTareas();
+    //VARIABLES DEL FORMULARIO
+    $tarea=$_GET["nombreTarea"];
+    $departamento=$_GET["departamento"];
+    $tecnicos=$_GET["tecnicos"];
+    $costes=$_GET["costes"];  
+    $fecha=$_GET["fecha"];  
+    $resolucion=$_GET["resolucion"]; 
+    
+    $sql="INSERT INTO ".$BD_tabla."(TAREA,DEPARTAMENTO,TECNICOS,COSTES,FECHA,RESOLUCION) VALUES('$tarea','$departamento','$tecnicos','$costes','$fecha','$resolucion')";
+    $base=$conexion->query($sql);
+    $base->closeCursor();  //Cierra la conexion y la consulta
+    session_start();
+    $_SESSION["semaforo"]=1; //Para la generacion del letrero de subida OKEY
+    header("Location:../0082_CreacionObjetivos/creacionTareas.php");
+}
 
+function inspecionCandidatos()
+{
+    //CODIGO DE CARGA DE LOS DATOS DE LA BBDD
+    $conexion=ConexionPHP::getConexionEMPLEADOS();
+    $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
+    //RESTO DE CARGAS DE LA PAGINA WEB
+    $base=$conexion->query("SELECT * FROM $BD_tabla");
+    $registroCandidatos=$base->fetchAll(PDO::FETCH_OBJ);
+    $base->closeCursor();  //Cierra la conexion y la consulta
+    $_SESSION["candidatos"]=$registroCandidatos;
 }
 ?>

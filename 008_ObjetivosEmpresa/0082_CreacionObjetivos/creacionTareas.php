@@ -7,7 +7,7 @@
             //Si es falso que no se ha registrado nada en la sesion
             header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
         }
-        $_SESSION["cediendo"]=0; //Se reinicia la variable para la carga del codigo PHP
+        require "gestionTareas.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,16 @@
     <script src="creacionTareas.js"></script>
 </head>
 <body onload="cargarPagina()">
+        <div class="letreroOK" style=
+               "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: white;
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../../008_ObjetivosEmpresa/0082_CreacionObjetivos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
         <div id="areaSesion">
@@ -34,13 +44,13 @@
         <table id="tabla">
             <tr class="cajaBotonera">
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: white" onclick="cargaCuadro();">CARGAR TAREAS</button>
+                    <button class="bloque_opciones" style="color: white" name="cargaTareas" onclick="cargaCuadroTareas();">CARGAR TAREAS</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: white" onclick="location.href=''"> AÑADIR TAREAS</button>
+                    <button class="bloque_opciones" style="color: white" name="introTareas" onclick="cargaIntroTareas()"> AÑADIR TAREAS</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: white" onclick="location.href=''"> EVALUAR CANDIDATOS</button>
+                    <button class="bloque_opciones" style="color: white" name="inspeCandidatos" onclick="cargaCuadroAspirantes();"> EVALUAR CANDIDATOS</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
                     <button class="bloque_opciones" style="color: white" onclick="location.href=''">VOLVER</button>
@@ -62,9 +72,8 @@
                         <td class="cajaT">RESOLUCION</td>
                     </tr>
                 <?php
-                    require "../../005_Login/conexionPHP.php";
-                    $_SESSION["cediendo"]=1;  //Se cede el paso del código de búsqueda PHP
-                    require "gestionTareas.php";
+                    cargandoTareas();
+                    $registro=$_SESSION["registro"];
                     foreach($registro as $persona):
                 ?>
                     <tr class="cabecera">
@@ -80,10 +89,6 @@
                 ?>
                 </table>
             </div>
-            <?php
-            $_SESSION["cediendo"]=2;  //Se cede el paso del código de búsqueda PHP
-            require "gestionTareas.php";
-            ?>
             <div class="tablaBBDD2">
                 <table id="tablaEstadisticas">
                     <tr class="cabecera">
@@ -169,6 +174,91 @@
                 </table>
             </div>
         </div>
+        <div class="base2">
+            <div class="tablaBBDD3">
+                <table id="tablaIntroTareas">
+                    <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0082_CreacionObjetivos/gestionTareas.php" method="get">
+                        <p class="separacion"></p>
+                        <label class="celda">NOMBRE TAREA:<input type="text" class="celdas" name="nombreTarea"></label> <!--ID-->
+                        <p class="separacion"></p>
+                        <label class="celda">DEPARTAMENTO:
+                        <select name="departamento" class="desplegable">
+                                    <option style="width: 180px;"></option>
+                                    <option style="width: 180px;">I+D+I</option>
+                                    <option style="width: 180px;">MARKETING</option>
+                                    <option style="width: 180px;">PRODUCCION</option>
+                                    <option style="width: 180px;">RR.HH.</option>
+                                    <option style="width: 180px;">FINANZAS</option>
+                                    <option style="width: 180px;">LOGISTICAS</option>
+                                    <option style="width: 180px;">DIRECTIVO</option>
+                                    <option style="width: 180px;">ADMINISTRACION</option>
+                                    <option style="width: 180px;">COMERCIAL</option>
+                                </select>
+                        </label> <!--DEPARTAMENTO-->                        
+                        <p class="separacion"></p>
+                        <label class="celda">TECNICOS:<input type="number" class="celdas" name="tecnicos"min="1" max="100"></label>  
+                        </label> <!--TECNICOS-->
+                        <p class="separacion"></p>
+                        <label class="celda">COSTES:<input type="text" class="celdas" name="costes"></label>
+                        <p class="separacion"></p>
+                        <label class="celda">FECHA:<input type="date" class="desplegable" name="fecha"></label>
+                            <p class="separacion"></p>
+                        <label class="celda">RESOLUCIÓN:
+                            <select name="resolucion" class="desplegable">
+                                    <option></option>
+                                    <option>APROBADO</option>
+                                    <option>CANCELADO</option>
+                                    <option>PENDIENTE</option>
+                                    <option>READMITIDO</option>
+                                </select>
+                        </label>
+                        <p class="separacion"></p>                  
+                        <input type="submit" value="INSERTAR" name="inserccion" class="boton">
+                    </form>
+                </table>
+            </div>    
+        </div>
+        <div class="base3">
+            <div class="tablaBBDD4">
+                <table id="tablaCandidatura">
+                    <tr class="cabecera">
+                        <td class="cajaT">NOMBRE</td>
+                        <td class="cajaT">APELLIDOS</td>
+                        <td class="cajaT">DIRECCIÓN</td>
+                        <td class="cajaT">POBLACIÓN</td>
+                        <td class="cajaT">PROFESIÓN</td>
+                        <td class="cajaT">SALARIO ANTERIOR</td>
+                        <td class="cajaT">CONTRATACIÓN</td>
+                    </tr>
+                <?php
+                    inspecionCandidatos();
+                    $registroCandidatos= $_SESSION["candidatos"];
+                    foreach($registroCandidatos as $cadidato):
+                ?>
+                    <tr class="cabecera">
+                        <td class="caja"><?php echo($cadidato->NOMBRE);?></td>
+                        <td class="caja"><?php echo($cadidato->APELLIDOS);?></td>
+                        <td class="caja"><?php echo($cadidato->DIRECCION);?></td>
+                        <td class="caja"><?php echo($cadidato->POBLACION);?></td>
+                        <td class="caja"><?php echo($cadidato->PROFESION);?></td>
+                        <td class="caja"><?php echo($cadidato->AHORROS);?></td>
+                        
+                        <?php if($cadidato->CONTRATACION=="PENDIENTE"):?>
+                        <td class="caja"><input type="submit" class="cajaPendidente" style="text-align:center; color:white; background-color:rgb(125,132,17); width:200px" value="<?php echo($cadidato->CONTRATACION);?>"></td>
+                        <?php endif; ?>
+                        <?php if($cadidato->CONTRATACION=="APROBADA"):?>
+                        <td class="caja" style="text-align:center; color:white; background-color:rgb(13,101,37); font-size:86%"><?php echo($cadidato->CONTRATACION);?></td>
+                        <?php endif; ?>
+                        <?php if($cadidato->CONTRATACION=="DENEGADA"):?>
+                        <td class="caja" style="text-align:center; color:white; background-color:rgb(121,15,15); width:200px; font-size:86%"><?php echo($cadidato->CONTRATACION);?></td>
+                        <?php endif; ?>
+                    </tr>
+                <?php
+                    endforeach;
+                ?>
+                </table>
+            </div>
+        </div>
         <img id="imagenPortada" src="../../008_ObjetivosEmpresa/0082_CreacionObjetivos/images/REUNIONES.jpg" alt="Imagen Reuniones">
     </div>
     <div class="piePagina">
@@ -188,5 +278,12 @@
             </div>
         </footer>
     </div>
+    <script>
+        if(<?php echo($_SESSION["semaforo"])?>==1)
+        {
+            letreroConfirmadoInsertado();
+            <?php $_SESSION["semaforo"]=0; ?>
+        }
+    </script>
 </body>
 </html>

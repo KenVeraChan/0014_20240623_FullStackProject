@@ -31,8 +31,18 @@ function muestraTabla()
     botonForm.style.opacity = "0.25";
     //Carga de la tabla de la BBDD
 }
-function cargaCuadro()
+function cargaCuadroTareas()
 {
+    //Se aparta el cuadro de estadisticas primero
+    var bases=document.getElementsByClassName("base2")[0];
+    bases.style.transitionDuration="0.25s";
+    bases.style.marginLeft="-1500px";
+    //Se aparta el cuadro de inspeccion de candidatos segundo
+    var bases=document.getElementsByClassName("base3")[0];
+    bases.style.transitionDuration="0.25s";
+    bases.style.marginLeft="-1500px";
+
+    //Se muestra el cuadro de las estadisticas
     var bases=document.getElementsByClassName("base")[0];
     bases.style.transitionDuration="0.25s";
     bases.style.marginLeft="4%";
@@ -67,4 +77,71 @@ function beneficioNegativo()
         }
     }
     alert (negativo[18].value);
+}
+function cargaIntroTareas()
+{
+    //Se aparta el cuadro de estadisticas primero
+    var bases=document.getElementsByClassName("base")[0];
+    bases.style.transitionDuration="0.25s";
+    bases.style.marginLeft="-2500px";
+    //Se aparta el cuadro de inspeccion de candidatos segundo
+    var bases=document.getElementsByClassName("base3")[0];
+    bases.style.transitionDuration="0.25s";
+    bases.style.marginLeft="-2500px";
+
+
+    //Se muestra la tabla de intro datos de las tareas
+    var bases=document.getElementsByClassName("base2")[0];
+    bases.style.transitionDuration="1.25s";
+    bases.style.marginLeft="4%";
+
+    var botonForm= document.getElementsByClassName("boton");
+    //EFECTO COLOR DEL BOTON: INSERTAR, DEL CUADRO DEL FORMULARIO//
+    botonForm[0].addEventListener("mouseenter",function(){
+        botonForm[0].style.transitionDuration = "0.5s";
+        botonForm[0].style.backgroundColor="rgb(16,11,60)";
+        botonForm[0].style.color="white";
+
+    })
+    botonForm[0].addEventListener("mouseleave",function(){
+        botonForm[0].style.transitionDuration = "0.5s";
+        botonForm[0].style.backgroundColor="white";
+        botonForm[0].style.color="black";
+    })
+}
+function cargaCuadroAspirantes()
+{
+    //Se aparta el cuadro de estadisticas primero
+    var bases=document.getElementsByClassName("base")[0];
+    bases.style.transitionDuration="0.25s";
+    bases.style.marginLeft="-2500px";
+    //Se aparta el cuadro de inserccion tareas segundo
+    var bases=document.getElementsByClassName("base2")[0];
+    bases.style.transitionDuration="0.25s";
+    bases.style.marginLeft="-2500px";
+
+    //Se muestra la tabla de inspeccion de candidatos
+    var bases=document.getElementsByClassName("base3")[0];
+    bases.style.transitionDuration="1.25s";
+    bases.style.marginLeft="4%";
+}
+
+//LETRERO DE OKEY
+function letreroConfirmadoInsertado()
+{
+    var letrero= document.getElementsByClassName("letreroOK")[0];
+    letrero.innerHTML="Tarea añadida a la BBDD de los DEPARTAMENTOS";
+    letrero.style.paddingTop="10px";
+    letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+    letrero.style.transitionDuration = "1s";
+    letrero.style.marginTop="0px";
+
+    document.addEventListener("mousemove",function(){
+    let temporizador=setTimeout(function(){
+        var letrero= document.getElementsByClassName("letreroOK")[0];
+        letrero.style.transitionDuration = "1s";
+        letrero.style.marginTop="-50px";
+    },3500);
+    })
+    clearTimeout(temporizador);
 }
