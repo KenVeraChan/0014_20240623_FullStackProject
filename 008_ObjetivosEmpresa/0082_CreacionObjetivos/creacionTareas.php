@@ -53,7 +53,7 @@
                     <button class="bloque_opciones" style="color: white" name="inspeCandidatos" onclick="cargaCuadroAspirantes();"> EVALUAR CANDIDATOS</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: white" onclick="location.href=''">VOLVER</button>
+                    <button class="bloque_opciones" style="color: white" onclick="location.href='../../007_Menus/0073_MenuOpJEFES/OpJEFES.php'">VOLVER</button>
                 </td>
             </tr>
         </table>
@@ -105,7 +105,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][0];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][0];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][0];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][0];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][0],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">MARKETING</td>
@@ -113,7 +113,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][1];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][1];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][1];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][1];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][1],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">PRODUCCION</td>
@@ -121,7 +121,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][2];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][2];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][2];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][2];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][2],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">RR.HH.</td>
@@ -129,7 +129,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][3];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][3];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][3];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][3];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][3],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">FINANZAS</td>
@@ -137,7 +137,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][4];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][4];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][4];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][4];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][4],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">LOGISTICA</td>
@@ -145,7 +145,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][5];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][5];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][5];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][5];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][5],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">DIRECTIVO</td>
@@ -153,7 +153,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][6];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][6];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][6];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][6];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][6],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">ADMINISTRACION</td>
@@ -161,7 +161,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][7];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][7];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][7];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][7];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][7],3);?></td>
                     </tr>
                     <tr class="cabecera">
                         <td class="cajaE">COMERCIAL</td>
@@ -169,7 +169,7 @@
                         <td class="cajaS"><?php echo $_SESSION["INGRESOS"][8];?></td>
                         <td class="cajaS"><?php echo $_SESSION["COSTES"][8];?></td>
                         <td class="cajaS"><?php echo $_SESSION["BENEFICIOS"][8];?></td>
-                        <td class="cajaS"><?php echo $_SESSION["GANANCIAS"][8];?></td>
+                        <td class="cajaS"><?php echo number_format($_SESSION["GANANCIAS"][8],3);?></td>
                     </tr>
                 </table>
             </div>
@@ -233,24 +233,28 @@
                 <?php
                     inspecionCandidatos();
                     $registroCandidatos= $_SESSION["candidatos"];
-                    foreach($registroCandidatos as $cadidato):
+                    foreach($registroCandidatos as $candidato):
                 ?>
                     <tr class="cabecera">
-                        <td class="caja"><?php echo($cadidato->NOMBRE);?></td>
-                        <td class="caja"><?php echo($cadidato->APELLIDOS);?></td>
-                        <td class="caja"><?php echo($cadidato->DIRECCION);?></td>
-                        <td class="caja"><?php echo($cadidato->POBLACION);?></td>
-                        <td class="caja"><?php echo($cadidato->PROFESION);?></td>
-                        <td class="caja"><?php echo($cadidato->AHORROS);?></td>
+                        <td class="caja"><?php echo($candidato->NOMBRE);?></td>
+                        <td class="caja"><?php echo($candidato->APELLIDOS);?></td>
+                        <td class="caja"><?php echo($candidato->DIRECCION);?></td>
+                        <td class="caja"><?php echo($candidato->POBLACION);?></td>
+                        <td class="caja"><?php echo($candidato->PROFESION);?></td>
+                        <td class="caja"><?php echo($candidato->AHORROS);?></td>
                         
-                        <?php if($cadidato->CONTRATACION=="PENDIENTE"):?>
-                        <td class="caja"><input type="submit" class="cajaPendidente" style="text-align:center; color:white; background-color:rgb(125,132,17); width:200px" value="<?php echo($cadidato->CONTRATACION);?>"></td>
+                        <?php if($candidato->CONTRATACION=="PENDIENTE"):?>  <!-- Redireccionamiento a otra página de aceptación o denegación de la candidatura -->
+                        <td class="caja">
+                            <div class="caja" style="width:95px; text-align:center; padding-top: 3px; color:white; background-color:rgb(125,132,17); font-size:86%; float:left"><?php echo($candidato->CONTRATACION);?></div>
+                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=1"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(13,101,37); width:40px; float:left; position:relative; font-size:86%" value="OK!"></a>
+                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=0"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(121,15,15); width:63px; float:left; position:relative; font-size:86%" value="NO OK!"></a>
+                        </td>
+                            <?php endif; ?>
+                        <?php if($candidato->CONTRATACION=="APROBADA"):?>
+                        <td class="caja" style="text-align:center; color:white; background-color:rgb(13,101,37); font-size:86%; padding-top: 3px"><?php echo($candidato->CONTRATACION);?></td>
                         <?php endif; ?>
-                        <?php if($cadidato->CONTRATACION=="APROBADA"):?>
-                        <td class="caja" style="text-align:center; color:white; background-color:rgb(13,101,37); font-size:86%"><?php echo($cadidato->CONTRATACION);?></td>
-                        <?php endif; ?>
-                        <?php if($cadidato->CONTRATACION=="DENEGADA"):?>
-                        <td class="caja" style="text-align:center; color:white; background-color:rgb(121,15,15); width:200px; font-size:86%"><?php echo($cadidato->CONTRATACION);?></td>
+                        <?php if($candidato->CONTRATACION=="DENEGADA"):?>
+                        <td class="caja" style="text-align:center; color:white; background-color:rgb(121,15,15); width:200px; font-size:86%; padding-top: 3px"><?php echo($candidato->CONTRATACION);?></td>
                         <?php endif; ?>
                     </tr>
                 <?php
@@ -281,9 +285,17 @@
     <script>
         if(<?php echo($_SESSION["semaforo"])?>==1)
         {
-            letreroConfirmadoInsertado();
-            <?php $_SESSION["semaforo"]=0; ?>
+            letreroConfirmado(1);
+        }
+        if(<?php echo($_SESSION["semaforo"])?>==2)
+        {
+            letreroConfirmado(2);
+        }
+        if(<?php echo($_SESSION["semaforo"])?>==3)
+        {
+            letreroConfirmado(3);
         }
     </script>
+    <?php $_SESSION["semaforo"]=0; //Reiniciar variable ?> 
 </body>
 </html>

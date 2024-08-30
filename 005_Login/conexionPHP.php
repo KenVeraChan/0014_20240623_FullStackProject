@@ -11,6 +11,7 @@ class ConexionPHP
     private static $BD_tablaEmpleados="contactos_empresa"; //TABLA Empleados
     private static $BD_tablaJefes="login"; //TABLA Jefes Y RRHH
     private static $BD_tablaJefesTareas="gestionpeticiones"; //TABLA Jefes Y RRHH
+    private static $BD_tablaJefesGannt="diagrama_gannt"; //TABLA Jefes Gannt
     private static $BD_tablaClientes="clientes"; //TABLA Clientes
 
     private static $BD_charset="utf8";
@@ -50,6 +51,10 @@ class ConexionPHP
     public static function getBD_TablaJefesTareas()
     {
         return self::$BD_tablaJefesTareas;
+    }
+    public static function getBD_TablaJefesGannt()
+    {
+        return self::$BD_tablaJefesGannt;
     }
     public static function getBD_TablaEmpleados()
     {

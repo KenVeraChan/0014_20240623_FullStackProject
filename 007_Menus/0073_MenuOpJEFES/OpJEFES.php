@@ -34,23 +34,14 @@
         <div class="cajaPortadora">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">PEDIDOS CLIENTES</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">CONTROL PEDIDOS CLIENTES</button></td>
                 </tr>
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">CONTROL TAREAS</button></td>
-                </tr>                
-                <tr class="cajaBotonera">    
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
-                </tr>
-                <tr class="cajaBotonera">    
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
-                </tr>
-                <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
                 </tr>   
-                <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href=''">------</button></td>
-                </tr>
+                <tr class="cajaBotonera">
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php'">CONTROL DE PROYECTOS</button></td>
+                </tr>                
             </table>
         </div>
         <div class="VaciobotonesPrincipal"></div>

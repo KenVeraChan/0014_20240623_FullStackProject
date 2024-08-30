@@ -97,4 +97,30 @@ function inspecionCandidatos()
     $base->closeCursor();  //Cierra la conexion y la consulta
     $_SESSION["candidatos"]=$registroCandidatos;
 }
+
+//GESTION DE CANDIDATOS ACEPTADOS O DENEGADOS A PLANTILLA
+if(isset($_GET["id"]))  //PRIMERO COMPRUEBA QUE SE LE HA DADO AL ACCIONAMIENTO DEL BOTON CUYO VALOR INTERNO LO LLEVA EL ID
+{
+    //CODIGO DE CARGA DE LOS DATOS DE LA BBDD
+    $conexion=ConexionPHP::getConexionEMPLEADOS();
+    $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
+    //VARIABLE UNICA DE LA CONSULTA ES EL ID
+    if($_GET["validez"]==1)
+    {
+        $sql="UPDATE ".$BD_tabla." SET CONTRATACION='APROBADA' WHERE ID=".$_GET["id"];
+        $base=$conexion->query($sql);
+        $base->closeCursor();  //Cierra la conexion y la consulta
+        session_start();
+        $_SESSION["semaforo"]=2; //Para la generacion del letrero de CANDIDATO ACEPTADO
+    }
+    if($_GET["validez"]==0)
+    {
+        $sql="UPDATE ".$BD_tabla." SET CONTRATACION='DENEGADA' WHERE ID=".$_GET["id"];
+        $base=$conexion->query($sql);
+        $base->closeCursor();  //Cierra la conexion y la consulta
+        session_start();
+        $_SESSION["semaforo"]=3; //Para la generacion del letrero de CANDIDATO DENEGADO
+    }
+    header("Location:../0082_CreacionObjetivos/creacionTareas.php");
+}
 ?>
