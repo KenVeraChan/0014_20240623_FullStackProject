@@ -173,17 +173,63 @@
     .tableroDiagrama{
         position: absolute;
         overflow: scroll;
-        width:85%; 
-        height:300px;
+        width:75%; 
+        height:200px;
         margin-top: 80px;
-        margin-left: 40px;
+        margin-left: 70px;
         z-index: 1;
     }
     .tableroDiagrama #lineaTiempo
     {
-        width: 2100px;
+        width: 500px;
         background-color: transparent;
     }
+    .tableroDiagrama:nth-child(2){
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:370px;
+        margin-top: 300px;
+        margin-left: 70px;
+    }
+    .tableroDiagrama:nth-child(2) #lineaTiempo
+    {
+        width: 500px;
+        background-color: transparent;
+    }
+    .tablaAcciones{
+        background-color: #8d8b08;
+        width: 600px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 550px;
+        height:10px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 40px;
+        margin-left: 5%;
+        width: 110px;
+        height: 25px;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -334,15 +380,60 @@
         position: absolute;
         overflow: scroll;
         width:85%; 
-        height:300px;
+        height:200px;
         margin-top: 80px;
         margin-left: 40px;
         z-index: 1;
     }
     .tableroDiagrama #lineaTiempo
     {
-        width: 2100px;
+        width: 500px;
         background-color: transparent;
+    }
+    .tableroDiagrama:nth-child(2){
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:370px;
+        margin-top: 300px;
+        margin-left: 40px;
+    }
+    .tableroDiagrama:nth-child(2) #lineaTiempo
+    {
+        width: 500px;
+        background-color: transparent;
+    }
+    .tablaAcciones{
+        background-color: #8d8b08;
+        width: 600px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 550px;
+        height:10px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 40px;
+        margin-left: 5%;
+        width: 110px;
+        height: 25px;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -494,15 +585,60 @@
         position: absolute;
         overflow: scroll;
         width:85%; 
-        height:300px;
+        height:200px;
         margin-top: 80px;
         margin-left: 40px;
         z-index: 1;
     }
     .tableroDiagrama #lineaTiempo
     {
-        width: 2100px;
+        width: 500px;
         background-color: transparent;
+    }
+    .tableroDiagrama:nth-child(2){
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:370px;
+        margin-top: 300px;
+        margin-left: 40px;
+    }
+    .tableroDiagrama:nth-child(2) #lineaTiempo
+    {
+        width: 500px;
+        background-color: transparent;
+    }
+    .tablaAcciones{
+        background-color: #8d8b08;
+        width: 600px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 550px;
+        height:10px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 40px;
+        margin-left: 5%;
+        width: 110px;
+        height: 25px;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -655,15 +791,60 @@
         position: absolute;
         overflow: scroll;
         width:85%; 
-        height:300px;
+        height:200px;
         margin-top: 80px;
         margin-left: 20px;
         z-index: 1;
     }
     .tableroDiagrama #lineaTiempo
     {
-        width: 2100px;
+        width: 500px;
         background-color: transparent;
+    }
+    .tableroDiagrama:nth-child(2){
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:370px;
+        margin-top: 300px;
+        margin-left: 20px;
+    }
+    .tableroDiagrama:nth-child(2) #lineaTiempo
+    {
+        width: 500px;
+        background-color: transparent;
+    }
+    .tablaAcciones{
+        background-color: #8d8b08;
+        width: 600px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 550px;
+        height:10px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 40px;
+        margin-left: 5%;
+        width: 110px;
+        height: 25px;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

@@ -73,9 +73,27 @@
                     <?php } $z++; //Cierre del for interno?>
                 </tr>
                 <?php }  //Cierre del foreach externo?>
-                <tr>
-                    <td>T2</td>
-                </tr>
+            </table>
+        </div>
+        <div class="tableroDiagrama" style="position:absolute">
+            <table id="formularioInterno">
+                <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0082_CreacionObjetivos/gestionTareas.php" method="get">
+                    <p class="separacion"></p>
+                    <label class="celda">NOMBRE PROYECTO:<input type="text" class="celdas" name="nombreTarea"></label> <!--ID-->                        
+                    <p class="separacion"></p>
+                    <label class="celda">FECHA INICIO:<input type="date" class="celdas" name="fecha"></label>
+                    <p class="separacion"></p>
+                    <label class="celda">DURACIÓN:<input type="number" class="celdas" name="tecnicos"min="1" max="20"></label>  
+                    <p class="separacion"></p>
+                    <label class="celda">COSTES:<input type="number" class="celdas" name="tecnicos"min="-10000" max="10000"></label>
+                    <p class="separacion"></p>                  
+                    <label class="celda">
+                    <input type="submit" value="INSERTAR" name="INSERTAR" class="boton">
+                    <input type="submit" value="ACTUALIZAR" name="ACTUALIZAR" class="boton">
+                    <input type="submit" value="CARGAR" name="CARGAR" class="boton">
+                    <input type="submit" value="VOLVER" name="VOLVER" class="boton">
+                    </label>
+                </form>
             </table>
         </div>
         <img id="imagenPortada" src="../../008_ObjetivosEmpresa/0083_ControlProyectos/images/REUNIONES.jpg" alt="Imagen Reuniones">
