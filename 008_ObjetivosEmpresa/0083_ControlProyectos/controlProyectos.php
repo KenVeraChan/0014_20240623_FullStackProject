@@ -43,17 +43,36 @@
         <div class="VaciobotonesPrincipal"></div>
     </header>
     <div class="consulta">
+        <div id="tituloGeneral"><strong>DIAGRAMA DE GANNT DE LOS PROYECTOS EMPRESARIALES</strong></div>
         <div class="tableroDiagrama" style="position:absolute">
             <table id="lineaTiempo">
-                <tr>
-                    <td style="width:40px; height:10px; background-color:red">TAREAS</td>
-                    <?php for($i=0;$i<31;$i++): ?>
-                        <td style="margin-left:0px; width:30px; height:10px; background-color:aqua"><strong><?php echo(date('d-m-Y',strtotime('+'.$i.'day',strtotime($_SESSION["fechaInicio"]))));?></strong></td>
-                    <?php endfor; ?>
+                <tr> <!-- CABECERA DE LA TABLA IMPROVISADA -->
+                    <td class="tablaCabecera">TAREAS</td>
+                    <?php for($i=0;$i<$_SESSION["fechaIntervalo"]+1;$i++): ?>
+                        <td class="tablaCabecera"><strong><?php echo(str_replace("-","/",date('d-m-Y',strtotime('+'.$i.'day',strtotime($_SESSION["fechaInicio"])))));?></strong></td>
+                    <?php endfor; //str_replace(): reemplaza guiones por barras oblicuas de una cadena
+                                  //date():        convierte una cadena de fecha en un formato específico de dd-mm-yyyy
+                                  //strtotime():   convierte una cadena string sacada de una consulta MySQL en un formato date (fecha) legible
+                    ?>
+                </tr> <!-- TODAS LAS FILAS DE LA TABLA IMPROVISADA -->
+                <?php $z=0; $i=0; foreach($_SESSION["registro"] as $filaGannt){?>
+                <tr> 
+                <td class="filasTareas"><?php echo($filaGannt->PROYECTO);?></td>
+                    <?php for($i=0;$i<=$_SESSION["fechaIntervalo"];$i++){ ?>
+                        <?php //Este IF comprueba si la $_SESSION["fechaInicio"] incrementada coincide con el inicio de la tarea, en cuyo caso inscribe día con tarea ocupada
+                            if(strcmp(strtotime('+'.$i.'day',strtotime($_SESSION["fechaInicio"])),strtotime($_SESSION["registro"][$z]->INICIO))==0 && $z<$_SESSION["filas"])
+                                { ?>
+                                    <?php for($j=0;$j<($_SESSION["registro"][$z]->DURACION);$j++)
+                                          { //Mete en los días de la duración de la tarea, el sombreado de ocupación por tarea en ejecución ?>
+                                        <td class="filasConOcup"><?php echo "Día ".($j+1)?></td> 
+                                    <?php $i++;} ?>
+                        <?php   } // Cierre del if interno?>
+                        <?php if($i<=$_SESSION["fechaIntervalo"]){ //Para controlar la añadidura de días sin tareas dentro?>
+                        <td class="filasSinOcup">----</td>
+                        <?php } ?>
+                    <?php } $z++; //Cierre del for interno?>
                 </tr>
-                <tr>
-                    <td>T1<?php echo(date('d-m-Y',strtotime($_SESSION["fechaFin"])));?></td>
-                </tr>
+                <?php }  //Cierre del foreach externo?>
                 <tr>
                     <td>T2</td>
                 </tr>

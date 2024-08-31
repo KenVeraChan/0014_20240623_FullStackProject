@@ -3,7 +3,60 @@
     margin-left: 0px;
     margin-right: 0px;
 }
-
+.tablaCabecera{
+    margin-left:0px; 
+    width:30px; 
+    height:10px; 
+    font-size: small;
+    color: white;
+    border: solid;
+    border-color: white;
+    background-color:  rgba(0, 0, 19, 0.89);  
+}
+.tablaCabecera:nth-child(1)
+{
+    color: rgb(255, 251, 0); 
+    border: solid;
+    border-color: rgb(255, 251, 0);  
+}
+.filasTareas{
+    margin-left:0px; 
+    width:30px; 
+    height:10px; 
+    font-size: small;
+    color: rgb(251, 255, 0);
+    border: solid;
+    border-color: rgb(251, 255, 0);
+    background-color:  rgba(0, 0, 19, 0.89); 
+}
+.filasConOcup{
+    margin-left:0px; 
+    width:30px; 
+    height:10px; 
+    font-size: large;
+    text-shadow: 0 0 30px #fcf700;
+    color: rgb(255, 255, 255);
+    border: solid;
+    border-color: rgb(251, 255, 0);
+    background-color:  rgba(0, 0, 19, 0.89); 
+    background: repeating-linear-gradient(
+        -45deg,
+        rgb(179, 182, 4),
+        rgb(179, 182, 4) 1px,
+        transparent 5px,
+        transparent 8px
+    );
+}
+.filasSinOcup{
+    margin-left:0px; 
+    width:30px; 
+    height:10px; 
+    font-size: small;
+    color: transparent; 
+    border: solid;
+    border-color: rgb(202, 202, 202);
+    background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 19, 0.89));
+}
 @media all and (min-width: 769px) and (max-width: 7800px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
@@ -107,19 +160,28 @@
         width: 100%;
         height: 100%;
     }
+    #tituloGeneral{
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 10%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: x-large;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
     .tableroDiagrama{
         position: absolute;
-        margin-left: 2%;
         overflow: scroll;
         width:85%; 
-        height:500px;
+        height:300px;
         margin-top: 80px;
         margin-left: 40px;
         z-index: 1;
     }
     .tableroDiagrama #lineaTiempo
     {
-        width: 1200px;
+        width: 2100px;
         background-color: transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
@@ -196,7 +258,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 240px;
+        height: 163px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -257,6 +319,30 @@
         position: relative;
         width: 100%;
         height: 110%;
+    }
+    #tituloGeneral{
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 7%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: large;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:300px;
+        margin-top: 80px;
+        margin-left: 40px;
+        z-index: 1;
+    }
+    .tableroDiagrama #lineaTiempo
+    {
+        width: 2100px;
+        background-color: transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -332,7 +418,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 240px;
+        height: 163px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -394,7 +480,30 @@
         width: 100%;
         height: 100%;
     }
-
+    #tituloGeneral{
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 3%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: medium;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:300px;
+        margin-top: 80px;
+        margin-left: 40px;
+        z-index: 1;
+    }
+    .tableroDiagrama #lineaTiempo
+    {
+        width: 2100px;
+        background-color: transparent;
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
@@ -470,7 +579,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 230px;
+        height: 143px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -531,6 +640,30 @@
         margin-top: 0px;
         width: 100%;
         height: 100%;
+    }
+    #tituloGeneral{
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 10%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: small;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        overflow: scroll;
+        width:85%; 
+        height:300px;
+        margin-top: 80px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tableroDiagrama #lineaTiempo
+    {
+        width: 2100px;
+        background-color: transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
