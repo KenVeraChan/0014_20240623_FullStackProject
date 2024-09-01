@@ -5,7 +5,7 @@ require "../../005_Login/conexionPHP.php";
     ///////////////////////////////////////////
     $conexion=ConexionPHP::getConexionJEFES_RRHH();
     $BD_tabla=ConexionPHP::getBD_TablaJefesGannt();
-    
+
     ///////////////////////////////////////////    
     ////// CARGA LA FECHA MAS ANTIGUA /////////
     ///////////////////////////////////////////
@@ -108,4 +108,91 @@ require "../../005_Login/conexionPHP.php";
         $baseFecha->closeCursor();  //Cierra la conexion y la consulta
         return $fechaFinalGanntTrazado;
     }
+    /////////////////////////////////////////////////////////////////////////////////
+    ///// CONTROL DE LA INSERCCION, ACTUALIZACIÓN, CARGA Y BORRADO DE PROYECTOS /////
+    /////////////////////////////////////////////////////////////////////////////////
+
+    if(isset($_GET["INSERTA"]) || isset($_GET["ACTUALIZA"]) || isset($_GET["CARGA"]) || isset($_GET["ELIMINA"]) || isset($_GET["VOLVER"]))
+    {
+        session_start();
+        $id=$_GET["idProyecto"];
+        $proyecto=$_GET["nombreProyecto"];
+        $duracion=$_GET["duracionProyecto"];
+        $fecha=$_GET["fechaProyecto"]; //date_format($_GET["fechaProyecto"],"Y-m-d");
+        $coste=$_GET["costesProyecto"];
+
+        if(isset($_GET["INSERTA"]))
+        {
+            if(isset($proyecto) && isset($duracion) && isset($fecha) && isset($coste))
+            {
+            $base=$conexion->query("INSERT INTO $BD_tabla (PROYECTO,DURACION,INICIO,COSTE)VALUES('$proyecto','$duracion','$fecha','$coste')");
+            $base->closeCursor();
+            $_SESSION["semaphore"]=1; 
+            //Y se guarda en la matriz de comparacion para la posterior actualizacion
+            header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");
+            }
+            else{
+                //ALGUNO DE LOS DATOS PARA ACTUALIZAR NO SE HA INTRODUCIDO CORRECTAMENTE O NO EXISTE --> SALE ERROR
+                $_SESSION["semaphore"]=5; 
+                header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");
+            }
+        }
+        if(isset($_GET["ACTUALIZA"]))
+        {
+            if(isset($proyecto) && isset($duracion) && isset($fecha) && isset($coste) && !empty($fecha) && $duracion!=0)
+            {
+                //INTORDUCIDO TODO CORRECTAMENTE
+                $base=$conexion->query("UPDATE $BD_tabla SET PROYECTO= '$proyecto' ,DURACION= '$duracion' ,INICIO= '$fecha' ,COSTE='$coste' WHERE ID='$id'");
+                $base->closeCursor();
+                $_SESSION["semaphore"]=2; 
+                header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");  
+            }
+            else{
+                //ALGUNO DE LOS DATOS PARA ACTUALIZAR NO SE HA INTRODUCIDO CORRECTAMENTE O NO EXISTE --> SALE ERROR
+                $_SESSION["semaphore"]=5; 
+                header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");
+            }
+        }
+        if(isset($_GET["CARGA"]))
+        {
+            $base=$conexion->query("SELECT * FROM $BD_tabla WHERE ID='$id'");
+            $cargando=$base->fetchAll(PDO::FETCH_OBJ);
+            $numeroFilasBBDD=$base->rowCount(); 
+            if($numeroFilasBBDD!=0)
+            {
+                foreach($cargando as $proyectoCarga)
+                {
+                    $_SESSION["idProyecto"]=$proyectoCarga->ID;
+                    $_SESSION["nombreProyecto"]=$proyectoCarga->PROYECTO;
+                    $_SESSION["duracionProyecto"]=$proyectoCarga->DURACION;
+                    $_SESSION["inicioProyecto"]=$proyectoCarga->INICIO;
+                    $_SESSION["costeProyecto"]=$proyectoCarga->COSTE;
+                }
+                $base->closeCursor();  //Cierra la conexion y la consulta
+                $_SESSION["semaphore"]=3; 
+                header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");
+            }
+            else
+            {
+                //NO EXISTE EL PROYECTO SOLICITADO PARA MOSTRAR EN LA BBDD DEL SERVIDOR
+                $base->closeCursor();  //Cierra la conexion y la consulta
+                $_SESSION["semaphore"]=6; 
+                header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");
+            }
+            }
+        if(isset($_GET["ELIMINA"]))
+        {
+            //BORRA EL FORMULARIO NO TOCA LA BBDD
+            $base=$conexion->query("DELETE FROM $BD_tabla WHERE ID='$id'");
+            $base->closeCursor();  //Cierra la conexion y la consulta
+            $_SESSION["semaphore"]=4; 
+            header("location:../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php");
+        }
+        if(isset($_GET["VOLVER"]))
+        {
+            //REGRESA AL MENU DE JEFES Y SUS OPERACIONES
+            header("location:../../007_Menus/0073_MenuOpJEFES/OpJEFES.php");
+        }
+    }
+
 ?>

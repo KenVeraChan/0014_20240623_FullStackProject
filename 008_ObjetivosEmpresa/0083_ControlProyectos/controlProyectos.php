@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creando Tareas</title>
+    <title>Tratamiento proyectos</title>
     <link rel="stylesheet" href="controlProyectos.css">
     <script src="controlProyectos.js"></script>
 </head>
@@ -72,25 +72,28 @@
                         <?php } ?>
                     <?php } $z++; //Cierre del for interno?>
                 </tr>
-                <?php }  //Cierre del foreach externo?>
+                <?php } //Cierre del foreach externo ?>
             </table>
         </div>
         <div class="tableroDiagrama" style="position:absolute">
             <table id="formularioInterno">
-                <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0082_CreacionObjetivos/gestionTareas.php" method="get">
+                <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0083_ControlProyectos/gestionProyectos.php" method="get">
                     <p class="separacion"></p>
-                    <label class="celda">NOMBRE PROYECTO:<input type="text" class="celdas" name="nombreTarea"></label> <!--ID-->                        
+                    <label class="celda">ID PROYECTO:<input type="text" class="celdas" name="idProyecto"></label> <!--ID-->                        
                     <p class="separacion"></p>
-                    <label class="celda">FECHA INICIO:<input type="date" class="celdas" name="fecha"></label>
+                    <label class="celda">NOMBRE PROYECTO:<input type="text" class="celdas" name="nombreProyecto"></label>                         
                     <p class="separacion"></p>
-                    <label class="celda">DURACIÓN:<input type="number" class="celdas" name="tecnicos"min="1" max="20"></label>  
+                    <label class="celda">FECHA INICIO:<input type="date" class="celdas" name="fechaProyecto"></label>
                     <p class="separacion"></p>
-                    <label class="celda">COSTES:<input type="number" class="celdas" name="tecnicos"min="-10000" max="10000"></label>
+                    <label class="celda">DURACIÓN:<input type="number" class="celdas" name="duracionProyecto" min="1" max="20"></label>  
+                    <p class="separacion"></p>
+                    <label class="celda">COSTES:<input type="number" class="celdas" name="costesProyecto"min="-10000" max="10000"></label>
                     <p class="separacion"></p>                  
                     <label class="celda">
-                    <input type="submit" value="INSERTAR" name="INSERTAR" class="boton">
-                    <input type="submit" value="ACTUALIZAR" name="ACTUALIZAR" class="boton">
-                    <input type="submit" value="CARGAR" name="CARGAR" class="boton">
+                    <input type="submit" value="INSERTA" name="INSERTA" class="boton">
+                    <input type="submit" value="ACTUALIZA" name="ACTUALIZA" class="boton">
+                    <input type="submit" value="CARGA" name="CARGA" class="boton">
+                    <input type="submit" value="ELIMINA" name="ELIMINA" class="boton">
                     <input type="submit" value="VOLVER" name="VOLVER" class="boton">
                     </label>
                 </form>
@@ -116,19 +119,59 @@
         </footer>
     </div>
     <script>
-        if(<?php echo($_SESSION["semaforo"])?>==1)
+        if(<?php echo($_SESSION["semaphore"])?>==1)
         {
+            //ACCION DE INSERCCION DEL PROYECTO EN LA BBDD
             letreroConfirmado(1);
         }
-        if(<?php echo($_SESSION["semaforo"])?>==2)
+        if(<?php echo($_SESSION["semaphore"])?>==2)
         {
+            //ACCION DE ACTUALIZAR EL PROYECTO EN LA BBDD
             letreroConfirmado(2);
         }
-        if(<?php echo($_SESSION["semaforo"])?>==3)
+        if(<?php echo($_SESSION["semaphore"])?>==3)
         {
+            //ACCION DE CARGAR UN PROYECTO EN EL FORMULARIO PARA VISUALIZARLO
+            rellenar();
             letreroConfirmado(3);
         }
+        if(<?php echo($_SESSION["semaphore"])?>==4)
+        {
+            //ACCION DE CARGAR UN PROYECTO EN EL FORMULARIO PARA VISUALIZARLO
+            limpiar();
+            letreroConfirmado(4);
+        }
+        if(<?php echo($_SESSION["semaphore"])?>==5)
+        {
+            //ACCION DE CARGAR UN PROYECTO EN EL FORMULARIO PARA VISUALIZARLO
+            limpiar();
+            letreroConfirmado(5);
+        }
+        if(<?php echo($_SESSION["semaphore"])?>==6)
+        {
+            //ACCION DE CARGAR UN PROYECTO EN EL FORMULARIO PARA VISUALIZARLO
+            limpiar();
+            letreroConfirmado(6);
+        }
+    //PARA LA CARGA DE LOS DATOS EN EL FORMULARIO
+    function rellenar()
+    {
+        document.getElementsByClassName("celdas")[0].value = "<?php echo($_SESSION["idProyecto"]);?>";
+        document.getElementsByClassName("celdas")[1].value = "<?php echo($_SESSION["nombreProyecto"]);?>";
+        document.getElementsByClassName("celdas")[2].value = "<?php echo($_SESSION["inicioProyecto"]);?>";
+        document.getElementsByClassName("celdas")[3].value = "<?php echo($_SESSION["duracionProyecto"]);?>";
+        document.getElementsByClassName("celdas")[4].value = "<?php echo($_SESSION["costeProyecto"]);?>";
+    }
+    //PARA LA LIMPIEZA DE LOS DATOS CARGADOS EN EL FORMULARIO
+    function limpiar()
+    {
+        document.getElementsByClassName("celdas")[0].value = "";
+        document.getElementsByClassName("celdas")[1].value = "";
+        document.getElementsByClassName("celdas")[2].value = "";
+        document.getElementsByClassName("celdas")[3].value = "";
+        document.getElementsByClassName("celdas")[4].value = "";
+    }
     </script>
-    <?php $_SESSION["semaforo"]=0; //Reiniciar variable ?> 
+    <?php $_SESSION["semaphore"]=0; //Reiniciar variable ?> 
 </body>
 </html>

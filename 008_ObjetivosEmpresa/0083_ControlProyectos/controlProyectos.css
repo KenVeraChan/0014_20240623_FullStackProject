@@ -221,10 +221,12 @@
     }
     .boton{
         float: left;
-        margin-top: 40px;
-        margin-left: 5%;
-        width: 110px;
-        height: 25px;
+        margin-top: 25px;
+        margin-left: 3%;
+        width: 90px;
+        height: 30px;
+        text-align: center;
+        font-size: 80%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
@@ -427,10 +429,12 @@
     }
     .boton{
         float: left;
-        margin-top: 40px;
-        margin-left: 5%;
-        width: 110px;
+        margin-top: 25px;
+        margin-left: 3%;
+        width: 90px;
         height: 25px;
+        text-align: center;
+        font-size: 70%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
@@ -632,10 +636,12 @@
     }
     .boton{
         float: left;
-        margin-top: 40px;
-        margin-left: 5%;
-        width: 110px;
+        margin-top: 25px;
+        margin-left: 3%;
+        width: 90px;
         height: 25px;
+        text-align: center;
+        font-size: 70%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
@@ -838,10 +844,12 @@
     }
     .boton{
         float: left;
-        margin-top: 40px;
-        margin-left: 5%;
-        width: 110px;
+        margin-top: 25px;
+        margin-left: 3%;
+        width: 90px;
         height: 25px;
+        text-align: center;
+        font-size: 70%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
