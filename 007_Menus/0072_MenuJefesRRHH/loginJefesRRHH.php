@@ -13,7 +13,7 @@
         <div class="VaciobotonesPrincipal"></div>
         <div class="elecciones" style="margin-top:80px" onclick="location.href='../../005_Login/0052_LoginJEFES/loginJEFES.php'">JEFES</div>
         <div class="elecciones" style="margin-top:170px" onclick="location.href='../../005_Login/0051_LoginRRHH/loginRRHH.php'">RR.HH.</div>
-        <div class="elecciones" style="margin-top:260px">VOLVER</div>
+        <div class="elecciones" style="margin-top:260px" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER</div>
         <img id="imagenPortada" src="../../007_Menus/0072_MenuJefesRRHH/images/SERVIDOR.jpg" alt="Imagen servidor">    
     </header>
     <div class="piePagina">

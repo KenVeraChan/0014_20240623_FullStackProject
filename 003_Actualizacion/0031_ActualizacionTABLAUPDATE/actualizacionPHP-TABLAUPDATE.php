@@ -72,7 +72,7 @@
                     <td class='huno'><strong>DIRECCIÓN</strong></td>
                     <td class='huno'><strong>POBLACIÓN</strong></td>
                     <td class='huno'><strong>PROFESIÓN</strong></td>
-                    <td class='huno'><strong>AHORROS</strong></td>
+                    <td class='huno'><strong>SALAR. ANT.</strong></td>
                   </tr>";
             //Se va rellenando la tabla espontáneamente segun los registros encontrados en la BBDD
             echo "<tr class='filaActual' style='background-color:rgba(0, 0, 19, 0.89)'>

@@ -72,7 +72,7 @@
                     <td><strong>DIRECCIÓN</strong></td>
                     <td><strong>POBLACIÓN</strong></td>
                     <td><strong>PROFESIÓN</strong></td>
-                    <td><strong>AHORROS</strong></td>
+                    <td><strong>SALAR. ANT.</strong></td>
                   </tr>";
             //Se cuentan las filas antes de comenzar a exponer la tabla
                 $matriz=$_SESSION["matrizEmpleados"];

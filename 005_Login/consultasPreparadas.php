@@ -45,7 +45,7 @@ try{
     $contrat="PENDIENTE";
     //SE CREA UN ARRAY UNIDIMENSIONAL DE VALORES PARA FACILITAR EL CODIGO
     $datos_FORM=array($id,$nom,$ape,$dir,$pob,$prof,$aho);
-    $datos_CONSULTA=array("ID","NOMBRE","APELLIDOS","DIRECCION","POBLACION","PROFESION","AHORROS");
+    $datos_CONSULTA=array("ID","NOMBRE","APELLIDOS","DIRECCION","POBLACION","PROFESION","SALAR_ANT");
     $datos_CONSULTA_DINERO=array(0,1000,25000,50000,75000,100000,125000,20000000);
     //CONEXION PROCESO
     $conexion=mysqli_connect($BD_servidor,$BD_usuario,$BD_contrasenia);
@@ -193,7 +193,7 @@ try{
             ///COMPROBACIÓN DE INSERCCION/// 
             if(isset($inserccion))
             {
-                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
+                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,SALAR_ANT,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
                 $resultado=mysqli_prepare($conexion,$sql);
                 $okey=mysqli_stmt_bind_param($resultado,"isssssis",$id,$nom,$ape,$dir, $pob, $prof,$aho,$contrat);
                 $okey=mysqli_stmt_execute($resultado);

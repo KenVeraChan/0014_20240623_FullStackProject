@@ -5,7 +5,7 @@
         $conexion=ConexionPHP::getConexionJEFES_RRHH();
         $BD_tabla=ConexionPHP::getBD_TablaJefesTareas();
             //ESTE CODIGO PARA LA CARGA DE LOS DATOS EN LA TABLA DESDE LA BBDD
-        $tamPagina=3;
+        $tamPagina=15;
         if(isset($_GET["cargaPagina"]))
             {
                 $paginaInicial=($_GET["cargaPagina"])* $tamPagina;

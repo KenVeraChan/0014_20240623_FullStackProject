@@ -28,4 +28,7 @@ function muestraTabla()
     botonForm.style.transitionDuration = "1s";
     botonForm.style.opacity = "0.25";
     //Carga de la tabla de la BBDD
+    var baseDatos=document.getElementsByClassName("tablaBBDD")[0];
+    baseDatos.style.transitionDuration="1.5s";
+    baseDatos.style.marginLeft="2%";
 }
