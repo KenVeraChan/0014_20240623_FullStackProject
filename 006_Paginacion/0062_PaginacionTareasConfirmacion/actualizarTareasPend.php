@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");
+            header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
         }
 ?>
 
@@ -20,7 +20,7 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../0081_ConfirmacionObjetivos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../../006_Paginacion/0062_PaginacionTareasConfirmacion/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -50,7 +50,7 @@
                     <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'">MENU Y BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
+                    <button class="bloque_opciones" style="color: rgb(204, 0, 255)" onclick="location.href='../../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>
@@ -68,7 +68,7 @@
         </div>
     </header>
     <div class="consulta">
-            <?php $_SESSION["semaforo"]=2; include "../../008_ObjetivosEmpresa/controlPend.php"; ?>
+            <?php $_SESSION["semaforo"]=2; include "../../006_Paginacion/0061_PaginacionTareas/controlPend.php"; ?>
         <div class="tablaBBDD">
             <div id="tablaPaginacion">
                 <table id="tabla">
@@ -129,7 +129,7 @@
                     </form>
             </div>
         </div>
-      <img id="imagenPortada" src="../0081_ConfirmacionObjetivos/images/DIGITALIZACION.jpg" alt="Imagen servidor">
+      <img id="imagenPortada" src="../../006_Paginacion/0062_PaginacionTareasConfirmacion/images/DIGITALIZACION.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
@@ -151,7 +151,7 @@
     <?php 
         if(isset($_POST["actualizar"]))
         {
-            $_SESSION["semaforo"]=3; include "../../008_ObjetivosEmpresa/controlPend.php"; 
+            $_SESSION["semaforo"]=3; include "../../006_Paginacion/0061_PaginacionTareas/controlPend.php"; 
         }
         else{
             $_SESSION["semaforo"]=0; //Limpieza de BUFFER imperiosa

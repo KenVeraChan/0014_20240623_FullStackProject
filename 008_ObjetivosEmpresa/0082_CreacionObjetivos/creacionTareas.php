@@ -241,7 +241,7 @@
                         <td class="caja"><?php echo($candidato->DIRECCION);?></td>
                         <td class="caja"><?php echo($candidato->POBLACION);?></td>
                         <td class="caja"><?php echo($candidato->PROFESION);?></td>
-                        <td class="caja"><?php echo($candidato->AHORROS);?></td>
+                        <td class="caja"><?php echo($candidato->SALAR_ANT);?></td>
                         
                         <?php if($candidato->CONTRATACION=="PENDIENTE"):?>  <!-- Redireccionamiento a otra página de aceptación o denegación de la candidatura -->
                         <td class="caja">

@@ -3,60 +3,6 @@
     margin-left: 0px;
     margin-right: 0px;
 }
-.tablaCabecera{
-    margin-left:0px; 
-    width:30px; 
-    height:10px; 
-    font-size: small;
-    color: white;
-    border: solid;
-    border-color: white;
-    background-color:  rgba(0, 0, 19, 0.89);  
-}
-.tablaCabecera:nth-child(1)
-{
-    color: rgb(255, 251, 0); 
-    border: solid;
-    border-color: rgb(255, 251, 0);  
-}
-.filasTareas{
-    margin-left:0px; 
-    width:30px; 
-    height:10px; 
-    font-size: small;
-    color: rgb(251, 255, 0);
-    border: solid;
-    border-color: rgb(251, 255, 0);
-    background-color:  rgba(0, 0, 19, 0.89); 
-}
-.filasConOcup{
-    margin-left:0px; 
-    width:30px; 
-    height:10px; 
-    font-size: large;
-    text-shadow: 0 0 30px #fcf700;
-    color: rgb(255, 255, 255);
-    border: solid;
-    border-color: rgb(251, 255, 0);
-    background-color:  rgba(0, 0, 19, 0.89); 
-    background: repeating-linear-gradient(
-        -45deg,
-        rgb(179, 182, 4),
-        rgb(179, 182, 4) 1px,
-        transparent 5px,
-        transparent 8px
-    );
-}
-.filasSinOcup{
-    margin-left:0px; 
-    width:30px; 
-    height:10px; 
-    font-size: small;
-    color: transparent; 
-    border: solid;
-    border-color: rgb(202, 202, 202);
-    background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 19, 0.89));
-}
 @media all and (min-width: 769px) and (max-width: 7800px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
@@ -147,32 +93,13 @@
         position: absolute;
         overflow: scroll;
         width:75%; 
-        height:200px;
+        height:600px;
         margin-top: 80px;
         margin-left: 70px;
         z-index: 1;
     }
-    .tableroDiagrama #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tableroDiagrama:nth-child(2){
-        position: absolute;
-        overflow: scroll;
-        width:85%; 
-        height:370px;
-        margin-top: 300px;
-        margin-left: 70px;
-    }
-    .tableroDiagrama:nth-child(2) #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tablaAcciones{
-        background-color: #8d8b08;
-        width: 600px;
+    #formularioInterno{
+        height:300px; 
     }
     .celda{
         float: left;
@@ -192,11 +119,37 @@
         background-color: white;
         z-index: 1;
     }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:right;
+        width: 357px;
+        height:15px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 50px;
+        width: 130px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 15px;
+    }
     .boton{
         float: left;
-        margin-top: 25px;
-        margin-left: 3%;
-        width: 90px;
+        margin-top: 33px;
+        margin-left: 40px;
+        width: 100px;
         height: 30px;
         text-align: center;
         font-size: 80%;
@@ -204,7 +157,10 @@
         background-color: rgb(255, 255, 255);
         z-index: 1;
     }
-
+    .boton:nth-child(1)
+    {
+        margin-left: 170px;
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -338,28 +294,6 @@
         margin-left: 40px;
         z-index: 1;
     }
-    .tableroDiagrama #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tableroDiagrama:nth-child(2){
-        position: absolute;
-        overflow: scroll;
-        width:85%; 
-        height:370px;
-        margin-top: 300px;
-        margin-left: 40px;
-    }
-    .tableroDiagrama:nth-child(2) #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tablaAcciones{
-        background-color: #8d8b08;
-        width: 600px;
-    }
     .celda{
         float: left;
         font-size: medium;
@@ -378,17 +312,47 @@
         background-color: white;
         z-index: 1;
     }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:right;
+        width: 357px;
+        height:15px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 40px;
+        width: 130px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 15px;
+    }
     .boton{
         float: left;
-        margin-top: 25px;
-        margin-left: 3%;
-        width: 90px;
-        height: 25px;
+        margin-top: 33px;
+        margin-left: 40px;
+        width: 100px;
+        height: 30px;
         text-align: center;
-        font-size: 70%;
+        font-size: 80%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
+    }
+    .boton:nth-child(1)
+    {
+        margin-left: 170px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -523,28 +487,6 @@
         margin-left: 40px;
         z-index: 1;
     }
-    .tableroDiagrama #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tableroDiagrama:nth-child(2){
-        position: absolute;
-        overflow: scroll;
-        width:85%; 
-        height:370px;
-        margin-top: 300px;
-        margin-left: 40px;
-    }
-    .tableroDiagrama:nth-child(2) #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tablaAcciones{
-        background-color: #8d8b08;
-        width: 600px;
-    }
     .celda{
         float: left;
         font-size: medium;
@@ -563,17 +505,47 @@
         background-color: white;
         z-index: 1;
     }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:right;
+        width: 357px;
+        height:15px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 30px;
+        width: 130px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 15px;
+    }
     .boton{
         float: left;
-        margin-top: 25px;
-        margin-left: 3%;
-        width: 90px;
-        height: 25px;
+        margin-top: 33px;
+        margin-left: 40px;
+        width: 100px;
+        height: 30px;
         text-align: center;
-        font-size: 70%;
+        font-size: 80%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
+    }
+    .boton:nth-child(1)
+    {
+        margin-left: 170px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -709,28 +681,6 @@
         margin-left: 20px;
         z-index: 1;
     }
-    .tableroDiagrama #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tableroDiagrama:nth-child(2){
-        position: absolute;
-        overflow: scroll;
-        width:85%; 
-        height:370px;
-        margin-top: 300px;
-        margin-left: 20px;
-    }
-    .tableroDiagrama:nth-child(2) #lineaTiempo
-    {
-        width: 500px;
-        background-color: transparent;
-    }
-    .tablaAcciones{
-        background-color: #8d8b08;
-        width: 600px;
-    }
     .celda{
         float: left;
         font-size: medium;
@@ -749,17 +699,47 @@
         background-color: white;
         z-index: 1;
     }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:right;
+        width: 357px;
+        height:15px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 20px;
+        width: 130px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 15px;
+    }
     .boton{
         float: left;
-        margin-top: 25px;
-        margin-left: 3%;
-        width: 90px;
-        height: 25px;
+        margin-top: 33px;
+        margin-left: 40px;
+        width: 100px;
+        height: 30px;
         text-align: center;
-        font-size: 70%;
+        font-size: 80%;
         color:rgb(214, 214, 3);
         background-color: rgb(255, 255, 255);
         z-index: 1;
+    }
+    .boton:nth-child(1)
+    {
+        margin-left: 170px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

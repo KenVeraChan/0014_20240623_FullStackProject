@@ -38,7 +38,7 @@
                 <td class="cajaT">Direccion</td>
                 <td class="cajaT">Poblacion</td>
                 <td class="cajaT">Profesion</td>
-                <td class="cajaT">Salario Anterior</td>
+                <td class="cajaT">Salar. Ant.</td>
                 <td class="cajaT">Contratacion final</td>
             </tr>
             <?php

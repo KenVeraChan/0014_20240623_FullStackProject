@@ -61,6 +61,7 @@ function cargarPagina()
 }
 function cargaImagen(num)
 {
+    var cajaImagen= document.getElementById("imagenCargada");
     if(num==1)
     {   /* CARGA LA IMAGEN ANTERIOR */
         

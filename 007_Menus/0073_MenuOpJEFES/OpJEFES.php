@@ -41,7 +41,10 @@
                 </tr>   
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php'">CONTROL DE PROYECTOS</button></td>
-                </tr>                
+                </tr>  
+                <tr class="cajaBotonera">
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php'">CONTROL DE LA INTERFAZ</button></td>  <!-- SLIDER IMAGENES DEL SECTOR PÚBLICO Y LAS IMAGENES DE PRODUCTOS Y SERVICIOS -->
+                </tr>               
             </table>
         </div>
         <div class="VaciobotonesPrincipal"></div>

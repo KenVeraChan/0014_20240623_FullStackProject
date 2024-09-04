@@ -49,7 +49,7 @@
                     <button class="bloque_opciones" style="color: orangered" onclick="muestraTabla()">MOSTRAR BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>

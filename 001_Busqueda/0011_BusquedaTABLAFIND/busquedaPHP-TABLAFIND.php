@@ -50,7 +50,7 @@
                     <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'"> MENU Y BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button>
+                    <button class="bloque_opciones" style="color:rgba(230, 230, 11, 0.719)" onclick="location.href='../../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>

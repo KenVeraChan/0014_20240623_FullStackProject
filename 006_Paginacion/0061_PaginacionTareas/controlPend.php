@@ -1,7 +1,7 @@
 <?php
     if($_SESSION["semaforo"]==1)
     {
-        include "../005_Login/conexionPHP.php";
+        include "../../005_Login/conexionPHP.php";
         $conexion=ConexionPHP::getConexionJEFES_RRHH();
         $BD_tabla=ConexionPHP::getBD_TablaJefesTareas();
             //ESTE CODIGO PARA LA CARGA DE LOS DATOS EN LA TABLA DESDE LA BBDD
