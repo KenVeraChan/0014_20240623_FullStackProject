@@ -1,3 +1,6 @@
+<?php
+session_start();   //Uso de la variable GLOBAL
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,17 +29,25 @@
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0091_PaginaPrincipal/images/DIGITALIZACION.jpg); background-repeat: no-repeat; background-size:cover">
         
     <table id="seccionSlider">
+      <form action="consultasSlider.php" method="GET">
         <tr id="bandaSlider">
-            <td class="bandasPasaSlider" onclick="cargaImagen(1)">
-
-            </td>
-            <td id="imagenCargada">
-
-            </td>
-            <td class="bandasPasaSlider" onclick="cargaImagen(2)">
-
-            </td>
+            <td class="bandasPasaSlider"><input type="submit" class="pasaIzquierda" name="pasaIzquierda" value=""></td>
+            <?php
+                $i=$_SESSION["PUNTERO"]; 
+                if($_SESSION["senalImagen"]!=0): 
+            ?>  <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en controlSlider -->
+                <td class="imagenCargada" style="background-image: url('../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["NOMBRE"][$i];?>');"></td>
+            <?php
+                endif;
+                if($_SESSION["senalImagen"]==0):
+            ?>  
+                <img class="espacioIimagen" src="../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/OtraTierra.jpg" width="auto" height="200px" name="cargaImagenes" alt="Imagen cargada del servidor BBDD">
+            <?php
+                endif;
+            ?>
+            <td class="bandasPasaSlider"><input type="submit" class="pasaDerecha" name="pasaDerecha" value=""></td>
         </tr>
+        </form>
     </table>
     <table id="seccionPrincipal">
             <td class="noticia">
@@ -110,5 +121,12 @@
             </div>
         </footer>
     </div>
+    <?php echo "senalImagen: ".$_SESSION["senalImagen"]."<br>"."aleatorio: ".$_SESSION["aleatorio"]."<br>".$_SESSION["PUNTERO"]?>
+    <script> 
+    var arrayID= <?php echo(json_encode($_SESSION["ID"])); ?>;
+    var arrayNOMBRE= <?php echo(json_encode($_SESSION["NOMBRE"])); ?>;
+    receptorID(arrayID);      //Se guarda en el script de ID
+    receptorNOMBRE(arrayNOMBRE);   //Se guarda en el script del NOMBRE
+    </script>
 </body>
 </html>

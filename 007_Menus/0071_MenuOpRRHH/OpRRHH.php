@@ -48,7 +48,7 @@
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../000_ConsultaContactos/ConsultaContactos.php'">MOSTRAR BBDD</button></td>
                 </tr>   
                 <tr class="cajaBotonera">   
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/tareasPendientes.php'">TAREAS PENDIENTES</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button></td>
                 </tr>
             </table>
         </div>

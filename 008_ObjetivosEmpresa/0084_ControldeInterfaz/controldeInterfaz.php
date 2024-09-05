@@ -7,6 +7,14 @@
         //Si es falso que no se ha registrado nada en la sesion
         header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
     }
+    //Ignorar el WARNING de la primera ejecución de esta página web y que no considere WARNING el $_SESSION["senalImagen"]
+    set_error_handler(function(int $errno, string $errstr) {
+        if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
+            return false;
+        } else {
+            return true;
+        }
+    }, E_WARNING);
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +86,7 @@
                         <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../0084_ControldeInterfaz/UploadImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen cargada del servidor BBDD"></label>
                     <?php
                         endif;
-                    ?>                    
+                    ?>                   
                     <p class="separacion"></p>                  
                 </form>
             </table>

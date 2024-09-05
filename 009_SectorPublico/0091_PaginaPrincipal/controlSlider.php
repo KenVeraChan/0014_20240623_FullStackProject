@@ -1,45 +1,74 @@
 <?php
-require "../../005_Login/conexionPHP.php";
-$conexion=ConexionPHP::getConexionCLIENTES();
-$BD_tabla=ConexionPHP::getBD_TablaSlider();
-
-/////REVISION PARA CARGA DE IMAGENES PENDIENTE DE TERMINAR EL CODIGO ////
-/////////// MARTES 03 SEPTIEMBRE 2024 A LAS 18:15 HORAS //////
-
-
-//FICHERO PRINCIPAL DE INICIO DE EJECUCIÓN BACKEND
-//Recepción de los datos de la imagen
-//Variable global $_FILES y las propiedades de la imagen
-$nombreImagen=$_FILES["imagen"]["name"];
-$tipoImagen=$_FILES["imagen"]["type"];
-$tamanioImagen=$_FILES["imagen"]["size"];
-if(isset($_POST["carga"]))
+if(isset($_GET["pasaDerecha"]))
 {
-    require "../MODELO/lecturaImagen.php";
-}
-else
-{
-    if($tamanioImagen<=3000000)   //LIMITANDO el Tamanio a 3MG
+    while($cierre==0)
     {
-        if($tipoImagen=="image/jpeg" || $tipoImagen=="image/jpg" || $tipoImagen=="image/png" || $tipoImagen=="image/gif")
+        //SI SE PIDE CARGAR UNA IMAGEN SE PROCEDE CON LA CONSULTA DE LA CARGA DE LA IMAGEN
+        $filasID=$consulta->rowCount();
+        if($filasID==0 && $cierre==0)
         {
-            //Se le comunica al servidor a dónde se quieren subir las imagenes, LA RUTA
-            $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/UploadImages/';
-            //Como siempre se añaden las descargas a la carpeta TEMPORAL, se le indica al servidor de moverlas a la carpeta señalada
-            move_uploaded_file($_FILES["imagen"]["tmp_name"],$carpeta_destino.$nombreImagen);
-            //Mover la imagen del directorio temporal al directorio seleccionado
+            //Continua la busqueda de la siguiente imagen del SLIDER no nula
         }
-        else
+        if($i==1 && $cierre==0)
         {
-            echo "El formato de la imagen que se pretendia subir no es de tipo: jpeg,png,gif";
+            $i=20; //Reinicia la busqueda desde el ID mas grande
         }
+        if($filasID!=0 && $cierre==0)
+        {
+            //Descarga la imagen del SLIDER y termina
+            $resultado=$consulta->fetchAll(PDO::FETCH_ASSOC);
+            foreach($resultado as $foto)
+            {      
+                $_SESSION["nombreImagen"]=$foto["NOMBRE"];
+            }
+            //TERMINA
+            $cierre=1; //Para terminar el bucle
+        }
+        $consulta->closeCursor();  //Cierra la conexion y la consulta
+        $i--;
     }
-    else{
-        echo "El tamanio de la imagen supera la de <strong>1MB</strong>";
-    }
-    //Se invoca al area de instancias en donde estan todos los ficheros del CONTROLADOR
-    require "../MODELO/consultasImagen.php";
+    $_SESSION["senalImagen"]=1;  //Imagen cargada desde la carpeta del servidor
+    $_SESSION["aleatorio"]=$i;   //Imagen SLIDER encontrada y siguiente
+    header("location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
 }
-
-
+if(isset($_GET["pasaIzquierda"]))
+{
+    //Carga según el ID pero la cinta de imágenes hacia un ID MENOR CADA VEZ
+    if($id<1)
+    {
+        $id=20;  //CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO
+    }
+    else
+    {
+        for($i=$id;$i<20;$i++)
+        {
+            //SI SE PIDE CARGAR UNA IMAGEN SE PROCEDE CON LA CONSULTA DE LA CARGA DE LA IMAGEN
+            $consulta=$conexion->query("SELECT NOMBRE FROM $BD_tabla WHERE ID='$i' AND DESTINO='SLIDER'");
+            $filasID=$consulta->rowCount();
+            if($filasID==0 && $cierre==0)
+            {
+                //Continua la busqueda de la siguiente imagen del SLIDER no nula
+            }
+            if($i==20 && $cierre==0)
+            {
+                $i=0; //Reinicia la busqueda desde el ID mas grande
+            }
+            if($filasID!=0 && $cierre==0)
+            {
+                //Descarga la imagen del SLIDER y termina
+                $resultado=$consulta->fetchAll(PDO::FETCH_ASSOC);
+                foreach($resultado as $foto)
+                {      
+                    $_SESSION["nombreImagen"]=$foto["NOMBRE"];
+                }
+                //TERMINA
+                $cierre=1; //Para terminar el bucle
+            }
+            $consulta->closeCursor();  //Cierra la conexion y la consulta
+        }
+        $_SESSION["senalImagen"]=1;  //Imagen cargada desde la carpeta del servidor
+        $_SESSION["aleatorio"]=$i;   //Imagen SLIDER encontrada y siguiente
+        header("location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
+    }
+}
 ?>

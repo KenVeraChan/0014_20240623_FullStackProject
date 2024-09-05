@@ -11,8 +11,14 @@ $tipoImagen=$_FILES["imagen"]["type"];
 $tamanioImagen=$_FILES["imagen"]["size"];
 $destino=$_POST["destinoImagen"];
 //Se le comunica al servidor a dónde se quieren subir las imagenes, LA RUTA
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/008_ObjetivosEmpresa/0084_ControldeInterfaz/UploadImages/';
+
+//CASO 1: SI SON IMAGENES DEL SLIDER DEL MENU PRINCIPAL
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/sliderImages/';
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
+
+//CASO 2: SI SON IMAGENES DE PRODUCTOS
+
+//CASO 3: SI SON IMAGENES DE SERVICIOS
 
 if(isset($_POST["CARGA"]))
 {
@@ -66,5 +72,9 @@ if(isset($_POST["INSERTA"]))
         $_SESSION["senalImagen"]=3;  //Imagen subida al servidor de la BBDD
         header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
     }
+}
+if(isset($_POST["VOLVER"]))
+{
+    header("location:../../007_Menus/0073_MenuOpJEFES/OpJEFES.php");
 }
 ?>

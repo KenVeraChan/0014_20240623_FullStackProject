@@ -58,16 +58,102 @@ function cargarPagina()
                         }  
                 })
         }
+        cargaImagen(0,0);  //Carga la primera imagen en el SLIDER
 }
-function cargaImagen(num)
+function receptorID(arrayID)
 {
-    var cajaImagen= document.getElementById("imagenCargada");
-    if(num==1)
-    {   /* CARGA LA IMAGEN ANTERIOR */
-        
+    var matrizID=arrayID;
+    return matrizID;
+}
+function receptorNOMBRE(arrayNOMBRE)
+{
+    var matrizNOMBRE=arrayNOMBRE;
+    return matrizNOMBRE;
+}
+function cargaImagen(numero)
+{
+    var posicion;
+    //NUMERO DE ENTRADA ZERO:
+    if(numero==0)
+    {
+        var letrero=document.getElementsByClassName("espacioIimagen")[0];
+        letrero.style.transitionDuration = "1s";
+        letrero.style.marginLeft="0px";
+        posicion=0;  //Valor inicial al cargar la pagina
     }
-    if(num==2)
-    {  /* CARGA LA IMAGEN SIGUIENTE */
-
+    //NUMERO DE ENTRADA NEGATIVO:
+    if(numero<0)
+    {
+        posicion--;  //Decrementa al anterior SLIDER
+        if(posicion==0)  //Caso de que el primer SLIDER ESTE PRESENTE
+        {
+            //QUITA EL PRIMER SLIDER 0
+            var letrero=document.getElementsByClassName("imagenCargada")[1]; //El primer SLIDER
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginLeft="-3000px";  
+            //PONE EL ULTIMO SLIDER
+            var letrero=document.getElementsByClassName("imagenCargada")[0]; //El ultimo SLIDER
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginLeft="0px"; 
+        }
+        if(posicion<0)  //Caso de que el último SLIDER ESTE PRESENTE
+        {
+            //QUITA ESE ULTIMO SLIDER
+            var letrero=document.getElementsByClassName("imagenCargada")[0]; //El ultimo SLIDER
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginLeft="-3000px";
+            //PONE EL PENÚLTIMO SLIDER   
+            var letrero=document.getElementsByClassName("imagenCargada")[receptorID.length-1]; //El ultimo SLIDER
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginLeft="0px"; 
+        }
+        if(posicion>0 && posicion<=(receptorID.length-1))
+        {
+            //QUITA EL SLIDER ANTERIOR
+            var letrero=document.getElementsByClassName("imagenCargada")[posicion];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginLeft="-3000px";
+            //QUITA EL SLIDER ANTERIOR AL ANTERIOR
+            var letrero=document.getElementsByClassName("imagenCargada")[posicion-1];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginLeft="0px";
+        }
     }
+    if(numero>0)
+        {
+            posicion++; //Incrementa el siguiente SLIDER
+            if(posicion==0)  //Caso de que el primer SLIDER ESTE PRESENTE
+            {
+                //QUITA EL PRIMER SLIDER 0
+                var letrero=document.getElementsByClassName("imagenCargada")[0]; //El primer SLIDER
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginLeft="-3000px";  
+                //PONE EL ULTIMO SLIDER
+                var letrero=document.getElementsByClassName("imagenCargada")[1]; //El ultimo SLIDER
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginLeft="0px"; 
+            }
+            if(posicion==(receptorID.length-1))  //Caso de que el último SLIDER ESTE PRESENTE
+            {
+                //QUITA ESE ULTIMO SLIDER
+                var letrero=document.getElementsByClassName("imagenCargada")[receptorID.length-1]; //El ultimo SLIDER
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginLeft="-3000px";
+                //PONE EL PENÚLTIMO SLIDER   
+                var letrero=document.getElementsByClassName("imagenCargada")[0]; //El ultimo SLIDER
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginLeft="0px"; 
+            }
+            if(posicion>0 && posicion<(receptorID.length-1))
+            {
+                //QUITA EL SLIDER ANTERIOR
+                var letrero=document.getElementsByClassName("imagenCargada")[posicion];
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginLeft="-3000px";
+                //QUITA EL SLIDER ANTERIOR AL ANTERIOR
+                var letrero=document.getElementsByClassName("imagenCargada")[posicion+1];
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginLeft="0px";
+            }
+        }
 }
