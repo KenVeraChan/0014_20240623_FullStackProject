@@ -36,6 +36,18 @@ if(isset($_POST["CARGA"]))
     }
     $consulta->closeCursor();  //Cierra la conexion y la consulta
     $_SESSION["senalImagen"]=1;  //Imagen cargada desde la carpeta del servidor
+    if($_SESSION["destinoImagen"]=="SLIDER")
+    {
+        $_SESSION["destinoCargado"]=1;   //URL DE LAS IMAGENES DEL SLIDER
+    }
+    if($_SESSION["destinoImagen"]=="PRODUCTOS")
+    {
+        $_SESSION["destinoCargado"]=2;   //URL DE LAS IMAGENES DE LOS PRODUCTOS
+    }
+    if($_SESSION["destinoImagen"]=="SERVICIOS")
+    {
+        $_SESSION["destinoCargado"]=3;   //URL DE LAS IMAGENES DE LOS SERVICIOS
+    }
     header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
 }
 if(isset($_POST["INSERTA"]))

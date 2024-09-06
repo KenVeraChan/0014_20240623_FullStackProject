@@ -8,13 +8,7 @@
         header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
     }
     //Ignorar el WARNING de la primera ejecución de esta página web y que no considere WARNING el $_SESSION["senalImagen"]
-    set_error_handler(function(int $errno, string $errstr) {
-        if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
-            return false;
-        } else {
-            return true;
-        }
-    }, E_WARNING);
+    error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 ?>
 
 <!DOCTYPE html>
@@ -54,13 +48,13 @@
         <div class="tableroDiagrama" style="position:absolute">
             <table id="formularioInterno">
                 <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0084_ControldeInterfaz/gestionInterfaz.php" method="post" enctype="multipart/form-data">
-                    <label class="celda">ID PROYECTO:<input type="text" class="celdas" name="idImagen"></label> <!--ID-->                        
+                    <label class="celda">ID PROYECTO:<input type="text" class="celdas" name="idImagen" placeholder="Para cargar IMAGEN introducir ID únicamente"></label> <!--ID-->                        
                     <p class="separacion"></p>
-                    <label class="celda">NOMBRE IMAGEN:<input type="text" class="celdas" name="nombreProyecto"></label>                         
+                    <label class="celda">NOMBRE IMAGEN:<input type="text" class="celdas" name="nombreProyecto" disabled="true"></label>                         
                     <p class="separacion"></p>
-                    <label class="celda">TAMAÑO IMAGEN:<input type="text" class="celdas" name="nombreProyecto"></label>
+                    <label class="celda">TAMAÑO IMAGEN:<input type="text" class="celdas" name="nombreProyecto" disabled="true"></label>
                     <p class="separacion"></p>
-                    <label class="celda">TIPO IMAGEN:<input type="text" class="celdas" name="nombreProyecto"></label>  
+                    <label class="celda">TIPO IMAGEN:<input type="text" class="celdas" name="nombreProyecto" disabled="true"></label>  
                     <p class="separacion"></p>
                     <label class="celda">DESTINO:
                         <select type="text" class="desplegable" name="destinoImagen">
@@ -81,11 +75,21 @@
                     <p class="separacion"></p>
                     <p class="separacion"></p>
                     <?php
-                        if($_SESSION["senalImagen"]==1):
+                        if($_SESSION["senalImagen"]==1)
+                        {
+                            if($_SESSION["destinoCargado"]==1)
+                            {
                     ?>
-                        <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../0084_ControldeInterfaz/UploadImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen cargada del servidor BBDD"></label>
+                        <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SLIDER cargada del servidor BBDD"></label>
                     <?php
-                        endif;
+                         } 
+                        if($_SESSION["destinoCargado"]==2)
+                        {
+                    ?>
+                        <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../0084_ControldeInterfaz/UploadImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen PRODUCTOS cargada del servidor BBDD"></label>
+                    <?php
+                            } 
+                        };
                     ?>                   
                     <p class="separacion"></p>                  
                 </form>
