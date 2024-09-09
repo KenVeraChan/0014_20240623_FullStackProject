@@ -67,6 +67,7 @@
                     <label class="celda">
                     <input type="submit" value="INSERTA" name="INSERTA" class="boton">
                     <input type="submit" value="CARGA" name="CARGA" class="boton">
+                    <input type="submit" value="BORRA" name="BORRA" class="boton">
                     <input type="submit" value="VOLVER" name="VOLVER" class="boton">
                     </label>
                     <p class="separacion"></p>
@@ -80,15 +81,21 @@
                             if($_SESSION["destinoCargado"]==1)
                             {
                     ?>
-                        <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SLIDER cargada del servidor BBDD"></label>
-                    <?php
-                         } 
-                        if($_SESSION["destinoCargado"]==2)
-                        {
-                    ?>
-                        <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../0084_ControldeInterfaz/UploadImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen PRODUCTOS cargada del servidor BBDD"></label>
-                    <?php
+                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SLIDER cargada del servidor BBDD"></label>
+                        <?php
                             } 
+                            if($_SESSION["destinoCargado"]==2)
+                            {
+                        ?>
+                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0093_PaginaProductos/productImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen PRODUCTOS cargada del servidor BBDD"></label>
+                        <?php
+                            }
+                            if($_SESSION["destinoCargado"]==3)
+                            {
+                        ?>
+                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0094_PaginaServicios/servicesImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SERVICIOS cargada del servidor BBDD"></label>
+                        <?php
+                            }
                         };
                     ?>                   
                     <p class="separacion"></p>                  
@@ -130,6 +137,26 @@
         {
             //NO SE HA ESPECIFICADO EL DESTINO APLICABLE DE LA IMAGEN SUBIDA A LA CARPETA DEL SERVIDOR
             letreroConfirmado(3);
+        }
+        if(<?php echo($_SESSION["senalImagen"])?>==4)
+        {
+            //ERROR: EL FORMATO DE LA IMAGEN QUE SE PRETENDÍA SUBIR NO ES DE TIPO: JPG,JPEG,PNG,GIF
+            letreroConfirmado(4);
+        }
+        if(<?php echo($_SESSION["senalImagen"])?>==5)
+        {
+            //ERROR: EL TAMAÑO DE LA IMAGEN EXCEDE LO PERMITIDO DE 3MB
+            letreroConfirmado(5);
+        }
+        if(<?php echo($_SESSION["senalImagen"])?>==6)
+        {
+            //NO SE HA ESPECIFICADO EL DESTINO APLICABLE DE LA IMAGEN SUBIDA A LA CARPETA DEL SERVIDOR
+            letreroConfirmado(6);
+        }
+        if(<?php echo($_SESSION["senalImagen"])?>==7)
+        {
+            //Imagen eliminada de la BBDD y de la carpeta del servidor en donde se almacenó
+            letreroConfirmado(7);
         }
     //PARA LA CARGA DE LOS DATOS EN EL FORMULARIO
     function rellenar()

@@ -11,7 +11,7 @@ function cargarPagina()
     //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
-    {
+        {
         //BOTON DE OPCIONES VISIBLE
         elemento1[i].style.visibility="visible";
         elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
@@ -25,9 +25,6 @@ function cargarPagina()
             elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
             elemento1[i].style.color="yellow";
                 })
-    }
-    for(let i=0;i<elemento2.length;i++)
-    {
         elemento2[i].addEventListener('mouseenter',function(){
             elemento2[i].style.transitionDuration = "0.5s";
             elemento2[i].style.background= "rgb(12,22,111)";
@@ -42,7 +39,6 @@ function cargarPagina()
                     break;
                     case 3: elemento3[i].innerHTML=  "<strong>-- Rotor de antigravedad manual para maqinaria pesada.</strong><br><strong>-- Mapeador tridimensional de estructuras hasta 10 km de radio.</strong><br><strong>-- Proyectores de holografía HD sin pantalla física requerida.</strong><br><strong>-- Perforadores de laser para tuneladoras veloces.</strong>";
                     break;
-                    default: break;
                     }            
                 })
         elemento2[i].addEventListener('mouseleave',function(){
@@ -59,8 +55,18 @@ function cargarPagina()
                     break;
                     case 3: elemento3[i].innerHTML= "";
                     break;
-                    default: break;
                         }  
                 })
-    }
+        }
+        cargaImagen(0,0);  //Carga la primera imagen en el SLIDER
+}
+function receptorID(arrayID)
+{
+    var matrizID=arrayID;
+    return matrizID;
+}
+function receptorNOMBRE(arrayNOMBRE)
+{
+    var matrizNOMBRE=arrayNOMBRE;
+    return matrizNOMBRE;
 }

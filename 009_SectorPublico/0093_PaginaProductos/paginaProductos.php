@@ -13,16 +13,16 @@ require "consultasSlider.php";
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../../009_SectorPublico/0091_PaginaPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
+        <div id="iconoAdorno"><img src="../../003_Actualizacion/0031_ActualizacionTABLAUPDATE/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
         <div class="VaciobotonesPrincipal"></div>
         <table id="tabla">
             <tr class="cajaBotonera">
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">INICIO</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.php'">HISTORIA</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php'">PRODUCTOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php'">SERVICIOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">PROYECTOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php'">PRIVADO</div>
+                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">HISTORIA</div>
+                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../002_Inserccion/inserccionPHP.php'">PRODUCTOS</div>
+                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'">SERVICIOS</div>
+                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">PROYECTOS</div>
+                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php'">PRIVADO</div>
+                </td>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
@@ -34,7 +34,7 @@ require "consultasSlider.php";
             <td class="bandasPasaSlider"><input type="submit" class="pasaIzquierda" name="pasaIzquierda" value=""></td>
             <?php
                 $i=$_SESSION["PUNTERO"]; 
-            ?>  <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en consultasSlider -->
+            ?>  <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en controlSlider -->
             <td class="imagenCargada" style="background-image: url('../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["NOMBRE"][$i];?>');"></td>
             <td class="bandasPasaSlider"><input type="submit" class="pasaDerecha" name="pasaDerecha" value=""></td>
         </tr>

@@ -38,44 +38,12 @@
             text-align: center;
             font-size: medium;
         }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 100px;
-        }
         #tabla{
             float: left;
             width:100%;
         }
     /*********** FIN CSS DE LA CABECERA ********/
-    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-        width:100%;
-        height: 200px;
-    }
-    .bandasPasaSlider{
-        width: 60px;
-    }
-    .imagenCargada 
-    {
-        background-color: transparent;
-        max-width: fit-content;
-        background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 300px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 300px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-    }
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         position: relative;
         width: 100%;
@@ -86,98 +54,154 @@
         text-justify: kashida;
         padding-top: 20px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -15px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .tablaContenidos{
-         margin-top: 60px; 
-         width:80%; 
-         margin-left: 10%;
-    }
-    .botones{
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:60%;
-    }
-    #seccionSlider{
+    #seccionHistoria{
         margin-top: 10px;
-        padding-left: 0px;
         width:100%;
-        height: 300px;
+        height: 650px;
         border: 2px;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    #seccionPrincipal{
-        margin-top: 20px;
-        padding-left: 13%;
-        width:100%;
-        height: 257px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
+    /******* FIN PANEL DE HISTORIA ********/
+   /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+
+   #historia{
+    margin-left:7%  /*SE GENERALIZA EL CUERPO*/
     }
-    .noticia{
-        float: left;
-        margin-top: 3px;
-        margin-left: 2%;
-        width:20%;
-        height: 350px;
-        border: 2px;
-        text-align: center;
-        color: rgb(165, 165, 19);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
+    #titular{
+    position: absolute;
+    margin-top: 30px;
+    width: 100%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 2);
+    text-align: center;
+    font-size: x-large;
+    margin-bottom: 30px;
     }
-    .noticia:nth-child(1){
-        margin-left: 0%;
+    .navegacion{
+    width: 100%;
+    height: 170px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(158, 158, 13);
+    font-size: xx-large;
+    margin-top: 40px;
+    text-align: center;
     }
-    .fila:nth-child(1){
-        position: relative;
-        width: 100%;
-        height: 50px;
+    .navegacion > ul
+    {
+    position: absolute;
+    margin-top: 30px;
+    width: 830px;
+    margin-left: 12px;
+    list-style: none;
+    font-size: large;
+    text-decoration: none;
     }
-    .imgBloques{
-        width:40%;
+    .anios{
+    width: 100px;
+    margin-top: 25px;
+    margin-left: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.651);
+    font-size: medium;
+    background-color: rgba(2, 1, 46, 0.425);
+    border-radius: 10px;
+    border:solid;
     }
-    .fila:nth-child(2){
-        position: relative;
-        width: 100%;
-        height: 20px; 
-        text-align: center;
-        font-size: medium;  
+    .anios:nth-child(1)
+    {
+        margin-left: 5%;
     }
-    .fila:nth-child(3){
-        position: relative;
-        padding-top: 10px;
-        width: 100%;
-        height: 220px;  
-        font-size: small;
+    .menu{
+    width: 60%;
     }
-    .textoBloque{
-        margin-left: 2%;
-        position: relative;
-        float: left;
-        height: 20%;
-        width:100%;
+    .menu>li{
+    position: relative;
+    display: inline-block;
+    margin-left: 5%;
+    font-size: x-large;
+    list-style: none;
     }
-    .tablaInterna{
-        float: left;
-        width: 100%;
-        height: 50%;
+
+    .menu > li > a{
+    display: block;
+    padding: 5px 2px;
+    font-family: 'open sans';
+    text-decoration: none;
+    list-style: none;
     }
+    .menu li a:hover{
+    color: yellow;
+    transition: all .3s;
+    }
+    .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgba(2, 1, 77, 0.625);
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 180px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 140px;
+    text-align: center;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: large;
+    }
+    .menu li:hover .decada{
+    display: block;
+    visibility: visible;
+    list-style: none;
+    opacity: 1;
+    }
+    #argumentos
+    {
+    margin-left: 19%;
+    float: left;
+    width: 60%;
+    height: 400px;
+    background-color: rgba(2, 1, 77, 0.425);
+    }
+    #contenido{
+        height: 200px;
+    }
+    #trama
+    {
+    text-align: left;
+    font-size: 130%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 200px;
+    color: white;
+    }
+    #tiempo
+    {
+    height: 40px;
+    text-align: center;
+    }
+    #fecha{
+    color:white;
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-size: x-large;
+    background-color: rgb(3, 3, 49);
+    }
+    #argumento{
+    height: 40px;
+    }
+
+/****** FIN CSS DEL CUERPO DE LA PAGINA ******/
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -258,11 +282,6 @@
             text-align: center;
             font-size: small;
         }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 100px;
-        }
         #tabla{
             float: left;
             width:100%;
@@ -270,34 +289,6 @@
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-    width:100%;
-    height: 200px;
-    }
-    .bandasPasaSlider{
-        width: 60px;
-    }
-    .imagenCargada 
-    {
-    background-color: transparent;
-    max-width: fit-content;
-    background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 180px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-        background-size: 100% 100%;
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 180px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-        background-size: 100% 100%;
-    }
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         position: relative;
@@ -309,24 +300,7 @@
         text-justify: kashida;
         padding-top: 20px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .botones
-    {
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:160px;
-    }
-    #seccionSlider{
+    #seccionHistoria{
         margin-top: 10px;
         width:100%;
         height: 180px;
@@ -334,67 +308,6 @@
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
-    }
-    #seccionPrincipal{
-        margin-top: 20px;
-        padding-left: 13%;
-        width:100%;
-        height: 257px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .noticia{
-        float: left;
-        margin-top: 3px;
-        margin-left: 2%;
-        width:20%;
-        height: 320px;
-        border: 2px;
-        text-align: center;
-        color: rgb(165, 165, 19);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
-    }
-    .noticia:nth-child(1){
-        margin-left: 0%;
-    }
-    .fila:nth-child(1){
-        position: relative;
-        width: 100%;
-        height: 50px;
-    }
-    .imgBloques{
-        width:40%;
-    }
-    .fila:nth-child(2){
-        position: relative;
-        width: 100%;
-        height: 20px; 
-        text-align: center;
-        font-size: x-small;  
-    }
-    .fila:nth-child(3){
-        position: relative;
-        padding-top: 10px;
-        width: 100%;
-        height: 220px;  
-        font-size: x-small;
-    }
-    .textoBloque{
-        margin-left: 2%;
-        position: relative;
-        float: left;
-        height: 20%;
-        width:100%;
-    }
-    .tablaInterna{
-        float: left;
-        width: 100%;
-        height: 50%;
     }
     /*********** FIN CSS DEL CUERPO ********/
 
@@ -477,11 +390,6 @@
             text-align: center;
             font-size: small;
         }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 100px;
-        }
         #tabla{
             float: left;
             width:100%;
@@ -489,35 +397,6 @@
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-    width:100%;
-    height: 100px;
-    }
-    .bandasPasaSlider{
-        width: 30px;
-        height: 100px;
-    }
-    .imagenCargada 
-    {
-    background-color: transparent;
-    max-width: fit-content;
-    background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 100px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-        background-size: 120% 100%;
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 100px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-        background-size: 120% 100%;
-    }
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
@@ -528,92 +407,14 @@
         text-justify: kashida;
         padding-top: 20px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .botones
-    {
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:100px;
-    }
-    #seccionSlider{
-        margin-top: 40px;
+    #seccionHistoria{
+        margin-top: 10px;
         width:100%;
         height: 120px;
         border: 2px;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
-    }
-    #seccionPrincipal{
-        margin-top: 20px;
-        padding-left: 13%;
-        width:100%;
-        height: 257px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .noticia{
-        float: left;
-        margin-top: 3px;
-        margin-left: 2%;
-        width:20%;
-        height: 300px;
-        border: 2px;
-        text-align: center;
-        color: rgb(165, 165, 19);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
-    }
-    .noticia:nth-child(1){
-        margin-left: 0%;
-    }
-    .fila:nth-child(1){
-        position: relative;
-        width: 100%;
-        height: 50px;
-    }
-    .imgBloques{
-        width:40%;
-    }
-    .fila:nth-child(2){
-        position: relative;
-        width: 100%;
-        height: 20px; 
-        text-align: center;
-        font-size: 45%;  
-    }
-    .fila:nth-child(3){
-        position: relative;
-        padding-top: 10px;
-        width: 100%;
-        height: 220px;  
-        font-size: 45%;
-    }
-    .textoBloque{
-        margin-left: 2%;
-        position: relative;
-        float: left;
-        height: 20%;
-        width:100%;
-    }
-    .tablaInterna{
-        float: left;
-        width: 100%;
-        height: 50%;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -696,11 +497,6 @@
             text-align: center;
             font-size: x-small;
         }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 100px;
-        }
         #tabla{
             float: left;
             width:100%;
@@ -708,34 +504,6 @@
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-        width:100%;
-        height: 50px;
-    }
-    .bandasPasaSlider{
-        width: 20px;
-    }
-    .imagenCargada 
-    {
-    background-color: transparent;
-    max-width: fit-content;
-    background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 90px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-        background-size: 120% 100%;
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 90px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-        background-size: 120% 100%;
-    }
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
@@ -746,94 +514,14 @@
         text-justify: kashida;
         padding-top: 20px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .botones
-    {
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:20px;
-    }
-    #seccionSlider{
-        position:absolute;
-        margin-top: 150px;
+    #seccionHistoria{
+        margin-top: 10px;
         width:100%;
         height: 90px;
         border: 2px;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
-    }
-    #seccionPrincipal{
-        position:absolute;
-        margin-top: 280px;
-        padding-left: 8%;
-        width:100%;
-        height: 265px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .noticia{
-        float: left;
-        margin-top: 3px;
-        margin-left: 2%;
-        width:20%;
-        height: 245px;
-        border: 2px;
-        text-align: center;
-        color: rgb(165, 165, 19);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
-    }
-    .noticia:nth-child(1){
-        margin-left: 0%;
-    }
-    .fila:nth-child(1){
-        position: relative;
-        width: 100%;
-        height: 50px;
-    }
-    .imgBloques{
-        width:50%;
-    }
-    .fila:nth-child(2){
-        position: relative;
-        width: 100%;
-        height: 20px; 
-        text-align: center;
-        font-size: 15%;  
-    }
-    .fila:nth-child(3){
-        position: relative;
-        padding-top: 12px;
-        width: 100%;
-        height: 70px;  
-        font-size: 2%;
-    }
-    .textoBloque{
-        margin-left: 2%;
-        position: relative;
-        float: left;
-        height: 20%;
-        width:100%;
-    }
-    .tablaInterna{
-        float: left;
-        width: 100%;
-        height: 50%;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
