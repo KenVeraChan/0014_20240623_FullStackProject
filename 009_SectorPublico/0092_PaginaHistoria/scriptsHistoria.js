@@ -29,6 +29,7 @@ function cargarPagina()
 /************* 1) DISEÑO DEL SELECTOR DE FECHAS *************/
 /************************************************************/
     //ARRAY DE LA HISTORIA QUE SE IMPLEMENTARA
+
     var historia = new Array(
         ["La corporación Sfer4D tiene sus inicios históricos hacia el final de la guerra mundial por la supervivencia contra una enemigo común no humano. En los edificios arrasados de la antigua empresa tecnológica: <strong>Techeimer</strong>. En plena crisis el fundador <strong>William Wissangel</strong>, quien asumió el mando militar de una operación, la última, que logró hallar las debilidades de aquel enemigo, que por entonces estaba ganando. La tecnología militar era bastante inferior a la del enemigo, pero sus estrategias discretas de combate resultaron eficientes para la resistencia que quedó dividida en varios sectores de las primeras naciones que sufrieron los primeros golpes de la conquista."],
         ["La empresa comienza con uno de sus proyectos propios: <strong>GREENOVATIO</strong> para devolver la vida verde al planeta. Financió y comenzó a vivir sus primeros reconocimientos tras estas primeras acciones altruistas."],
@@ -52,11 +53,17 @@ function cargarPagina()
         ["Sfer4D empieza a diseñar androides con fisiología humana para poder movilizarse entre pasillos, salas y almacenes con productos inflamables, corrosivos y tóxicos que formaban parte del diseño de otros productos. Los empleados que trabajaban en esos subniveles, fueron trasladados para que no sufrieran los posibles daños en la manipulación de tales productos. Las plantas inferiores, quedaron bajo el control de la automatización cuyas órdenes las recibía de un servidor local sin acceso al exterior."],
         ["Debido a la demanda de material médico y software de procesamiento de datos, así como prediccion de los resultados pfrecidos, Sfer4D se mete en el desarrollo de la nanotecnología con los nanobots a fin de poder cubrir las necesidades de las operaciones médicas que exigieran de tanta precisión como eficacia en sus resultados. Sharyllín Rousher expone en la segunda quincena del mes, su proyecto beta ante varios cirujanos que comprobaron como en un conducto del tamaño de una arteria artificial, los nanobots lograron realizar una limpieza de varios componentes orgánicos que obstruían la circulación de un fluido natural cuyo caudal debía quedar estabilizado."],
         ["Sfer4D logra diseñar un fluido artificial con nanobots, insoluble con cualquier disolución orgánica e inorgánica, debido a su firme red covalente que imita el mismo enlace que lleva su nombre."],
-        ["Con la nanotecnología desarrollada, Sfer4D logra implementar en sus dispositivos de mapeo tridimensional la capacidad de trazar holográficamente, micro espacios delimitados por estructuras orgánicas de diferentes índoles, generando en la visión artificial proporcionada, los datos moleculares de las diferentes estructuras que fuera detectando en sus cámaras de emisión."]);
+        ["Con la nanotecnología desarrollada, Sfer4D logra implementar en sus dispositivos de mapeo tridimensional la capacidad de trazar holográficamente, micro espacios delimitados por estructuras orgánicas de diferentes índoles, generando en la visión artificial proporcionada, los datos moleculares de las diferentes estructuras que fuera detectando en sus cámaras de emisión."]
+        ["Sfer4D consigue actualizar Vis4C para el diseño de una inteligencia artificial autónoma. Se crea la polémica en el diseño de los frameworks útiles para la maquinaria y el software de la corporación no de uso particular y empresarial ajeno"]
+        ["La inteligencia artificial descubre un nuevo material de constucción, pendiente de ponerse a pruebas técnicas. Se forja la ley orgánica para limitar el acceso a la inteligencia artificial para actualizar la documentación universal de los materiales de construcción"]
+        ["Se aprueba y certifica el material artificial diseñado por primera vez por una inteligencia artificial. Los ingenieros mecánicos del mundo entero se suman al estudio de dichos materiales para encontrar fallas en condiciones hositles y agresivas."]
+        ["Colonización completa en MANPERTOS y aprobación de la creación de la defensa orbital con las infraestructuras elípticas orbitales. Se descubre un sistema planetario a 25 años luz de distancia con posibles formas de vida tras descubrirse ondas de radio y señales enviadas al espacio profundo desde el tercero de los planetas contabilzados. Se confirma la existencia de vida hacia finales de año y se pone en marcha el primer satélite automatizado para escanear ese planeta desde una distancia de casi medio año luz de distancia."]
+        ["Se consigue emplear el plasma de las llamas de fuego para almacenar energía de hasta 300 julios que luego se consumen a los pocos segundos. En diciembre se logra almacenar una energía capaz de mantener una bombilla encendida una semana de manera ininterrumpida."]
+        ["Primera puerta dimensional diseñada de forma virtual para destinarlos a estudios reales con múltiples aplicaciones. Se diseña la primera infraestructura en Manpertos. La energía forjada por el plasma retroalimenta la potencia necesaria para que la puerta dimensional alcance un mayor tiempo abierta y con alcances de teletransporte más lejanos."]);
 
     function identificador(valor)
     {
-        if(valor>-1 && valor<23)
+        if(valor>-1 && valor<29)
         {
             //DE DONDE SE EXTRAE LA INFORMACION
             let leer=document.getElementsByClassName("pulsador")[valor].innerHTML;
@@ -66,14 +73,11 @@ function cargarPagina()
             //DONDE ESCRIBE EL ARGUMENTO DE LA HISTORIA
             var redactar=document.getElementById("trama");
             redactar.innerHTML=historia[valor];
-            configuracion();
-            }
-    }
-    function configuracion()
-    {
-        //Ejecutandolo aqui dentro se asegura uno, que el documento ha terminado de cargar
-        $("#fecha").css({"text-align":"center"});
-        $("#fecha").css({"color":"rgb(192, 189, 8)"});
-        $("#contenido").css({"text-align": "center"});
-        $("#contenido").css({"font-size":"x-small"});
+
+            //Ejecutandolo aqui dentro se asegura uno, que el documento ha terminado de cargar
+            $("#fecha").css({"text-align":"center"});
+            $("#fecha").css({"color":"rgb(192, 189, 8)"});
+            $("#contenido").css({"text-align": "center"});
+            $("#contenido").css({"font-size":"x-small"});
+        }
     }

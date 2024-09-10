@@ -1,6 +1,6 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
-require "consultasHistoria.php";
+$_SESSION["contador"]=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,26 +30,25 @@ require "consultasHistoria.php";
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0092_PaginaHistoria/images/HISTORIAEMPRESA.jpg); background-size: 100% 100%;">
         <section id="seccionHistoria">
             <div id="titular">MENU DE FECHAS HISTÓRICAS</div> 
-            <nav class="navegacion">
                 <ul class="menu">
                     <li><a href="#" class="anios">DÉCADA DE 1970</a>
                         <ul class="decada">  
-                            <li><a href="#" class="pulsador" onclick="identificador(0)">Marzo 1972</a></li>         <!--Fundación local de Sfer4D en Voldinthon-->   
-                            <li><a href="#" class="pulsador" onclick="identificador(1)">Diciembre 1972</a></li>     <!--proyecto GREENOVATIO-->
-                            <li><a href="#" class="pulsador" onclick="identificador(2)">Octubre 1974</a></li>       <!--Estandares Vis4C para competir internacionalmente-->
-                            <li><a href="#" class="pulsador" onclick="identificador(3)">Enero 1975</a></li>         <!--Reconocimiento mundial de Sfer4D-->
-                            <li><a href="#" class="pulsador" onclick="identificador(4)">Junio 1975</a></li>         <!--Casi caída de beneficios por muchas inversiones-->
-                            <li><a href="#" class="pulsador" onclick="identificador(5)">Septiembre 1975</a></li>    <!--Nueva sede en Shunay-->
+                                <li><a href="consultasHistoria.php?id=0" class="pulsador">Marzo 1972</a></li>         <!--Fundación local de Sfer4D en Voldinthon-->   
+                                <li><a href="consultasHistoria.php?id=1" class="pulsador">Diciembre 1972</a></li>     <!--proyecto GREENOVATIO-->
+                                <li><a href="consultasHistoria.php?id=2" class="pulsador">Octubre 1974</a></li>       <!--Estandares Vis4C para competir internacionalmente-->
+                                <li><a href="consultasHistoria.php?id=3" class="pulsador">Enero 1975</a></li>         <!--Reconocimiento mundial de Sfer4D-->
+                                <li><a href="consultasHistoria.php?id=4" class="pulsador">Junio 1975</a></li>         <!--Casi caída de beneficios por muchas inversiones-->
+                                <li><a href="consultasHistoria.php?id=5" class="pulsador">Septiembre 1975</a></li>    <!--Nueva sede en Shunay-->
                         </ul>
                     </li>
                     <li><a href="#" class="anios">DÉCADA DE 1980</a>
                         <ul class="decada">
-                            <li><a href="#" class="pulsador" onclick="identificador(6)">Agosto 1980</a></li>        <!--Contratos vinculantes con BioGenTech-->
-                            <li><a href="#" class="pulsador" onclick="identificador(7)">Septiembre 1980</a></li>    <!--Ampliación subterranea profunda de la sede en Shunay-->
-                            <li><a href="#" class="pulsador" onclick="identificador(8)">Octubre 1980</a></li>       <!--Primera inteligencia artificial del mundo únicamente para uso empresarial propia-->
-                            <li><a href="#" class="pulsador" onclick="identificador(9)">Diciembre 1980</a></li>     <!--Diseño de dispositivos para los mapeos tridimensionales holográficos destinados a la construcción-->
-                            <li><a href="#" class="pulsador" onclick="identificador(10)">Febrero 1981</a></li>       <!--Sfer4D interviene en el campo de la ingeniería de caminos para estructuras férreas abandonadas en SkyGital-->
-                            <li><a href="#" class="pulsador" onclick="identificador(11)">Octubre 1981</a></li>       <!--Sfer4D diseña su primer procesador atmosférico para habitar las zonas térmicamente hostiles: polos y desiertos-->
+                            <li><a href="consultasHistoria.php?id=6" class="pulsador">Agosto 1980</a></li>        <!--Contratos vinculantes con BioGenTech-->
+                            <li><a href="consultasHistoria.php?id=7" class="pulsador">Septiembre 1980</a></li>    <!--Ampliación subterranea profunda de la sede en Shunay-->
+                            <li><a href="consultasHistoria.php?id=8" class="pulsador">Octubre 1980</a></li>       <!--Primera inteligencia artificial del mundo únicamente para uso empresarial propia-->
+                            <li><a href="consultasHistoria.php?id=9" class="pulsador">Diciembre 1980</a></li>     <!--Diseño de dispositivos para los mapeos tridimensionales holográficos destinados a la construcción-->
+                            <li><a href="consultasHistoria.php?id=10" class="pulsador">Febrero 1981</a></li>       <!--Sfer4D interviene en el campo de la ingeniería de caminos para estructuras férreas abandonadas en SkyGital-->
+                            <li><a href="consultasHistoria.php?id=11" class="pulsador">Octubre 1981</a></li>       <!--Sfer4D diseña su primer procesador atmosférico para habitar las zonas térmicamente hostiles: polos y desiertos-->
                             <li><a href="#" class="pulsador" onclick="identificador(12)">Diciembre 1981</a></li>     <!--Atentado en Sfer4D, los terroristas quisieron hacer creer a la opinión pública que los responsables fueron sus competidores Techeimer-->
                             <li><a href="#" class="pulsador" onclick="identificador(13)">Enero 1982</a></li>         <!--Sfer4D pirde acciones en el mercado internacional por el rechazo tras el atentado del que se creyó que fueron ellos mismos-->
                             <li><a href="#" class="pulsador" onclick="identificador(14)">Marzo 1982</a></li>         <!--Sfer4D queda inmpune de los cargos públicos por el atentado en su sede tras comprobarse el robo de mercancía y pruebas de terceros-->
@@ -71,14 +70,27 @@ require "consultasHistoria.php";
                             <li><a href="#" class="pulsador" onclick="identificador(22)">Febrero 2001</a></li>       <!--Sfer4D mejora el dispositivo mapeador tridimensional con una alcanzabilidad de 2000 m de espacio ocupado-->
                         </ul>
                     </li>
-                </ul>
-            </nav>  
+                    <li><a href="#" class="anios">DÉCADA DE 2010</a>
+                        <ul class="decada">
+                            <li><a href="#" class="pulsador" onclick="identificador(23)">Julio 2011</a></li>     <!--Sfer4D consigue actualizar Vis4C para el diseño de una inteligencia artificial autónoma-->
+                            <li><a href="#" class="pulsador" onclick="identificador(24)">Octubre 2014</a></li>       <!--La inteligencia artificial descubre un nuevo material de constucción, pendiente de ponerse a pruebas técnicas-->
+                            <li><a href="#" class="pulsador" onclick="identificador(25)">Diciembre 2018</a></li>       <!-- Se aprueba y certifica el material artificial diseñado por primera vez por una inteligencia artificial-->
+                        </ul>
+                    </li>
+                    <li><a href="#" class="anios">DÉCADA DE 2020</a>
+                        <ul class="decada">
+                            <li><a href="#" class="pulsador" onclick="identificador(26)">Enero 2020</a></li>     <!-- Colonización completa en MANPERTOS y aprobación de la creación de la defensa orbital con las infraestructuras elípticas orbitales. Se descubre un sistema planetario a 25 años luz de distancia con posibles formas de vida tras descubrirse ondas de radio y señales enviadas al espacio profundo desde el tercero de los planetas contabilzados-->
+                            <li><a href="#" class="pulsador" onclick="identificador(27)">Octubre 2022</a></li>       <!-- Se consigue emplear el plasma de las llamas de fuego para almacenar energía de hasta 300 julios que luego se consumen a los pocos segundos-->
+                            <li><a href="#" class="pulsador" onclick="identificador(28)">Mayo 2023</a></li>       <!-- Primera puerta dimensional diseñada de forma virtual para destinarlos a estudios reales con múltiples aplicaciones. Se diseña la primera infraestructura en Manpertos.-->
+                        </ul>
+                    </li>
+                </ul> 
             <div id="argumentos">
                 <div id="fecha">
                     <div id="tiempo"></div>
                 </div>
                 <div id="contenido">
-                    <div id="trama"></div>
+                    <div id="trama"><?php echo($_SESSION["SUCESO"][$_SESSION["acontecimiento"]]);?></div>
                 </div>
             </div>            
         </section>
@@ -100,5 +112,8 @@ require "consultasHistoria.php";
             </div>
         </footer>
     </div>
+    <?php 
+    echo("ESTO ES: ".$_SESSION["ID"][0]."<br>".$_SESSION["FECHA"][0]."<br>".$_SESSION["DECADA"][0]."<br>".$_SESSION["SUCESO"][0]);
+    ?>
 </body>
 </html>

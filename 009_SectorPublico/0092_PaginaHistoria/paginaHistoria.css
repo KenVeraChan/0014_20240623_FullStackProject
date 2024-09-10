@@ -66,10 +66,12 @@
     /******* FIN PANEL DE HISTORIA ********/
    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
 
-   #historia{
+   #historia
+   {
     margin-left:7%  /*SE GENERALIZA EL CUERPO*/
     }
-    #titular{
+    #titular
+    {
     position: absolute;
     margin-top: 30px;
     width: 100%;
@@ -79,29 +81,10 @@
     font-size: x-large;
     margin-bottom: 30px;
     }
-    .navegacion{
-    width: 100%;
-    height: 170px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(158, 158, 13);
-    font-size: xx-large;
-    margin-top: 40px;
-    text-align: center;
-    }
-    .navegacion > ul
+    .anios
     {
-    position: absolute;
-    margin-top: 30px;
-    width: 830px;
-    margin-left: 12px;
-    list-style: none;
-    font-size: large;
-    text-decoration: none;
-    }
-    .anios{
     width: 100px;
     margin-top: 25px;
-    margin-left: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.651);
     font-size: medium;
@@ -109,21 +92,23 @@
     border-radius: 10px;
     border:solid;
     }
-    .anios:nth-child(1)
+    .menu
     {
-        margin-left: 5%;
+        padding-left: 0px;
+        margin-top: 80px;
     }
-    .menu{
-    width: 60%;
-    }
-    .menu>li{
+    .menu>li
+    {
+    margin-left: 4%;
     position: relative;
     display: inline-block;
-    margin-left: 5%;
     font-size: x-large;
     list-style: none;
     }
-
+    .menu>li:nth-child(1)
+    {
+        margin-left: 0%;
+    }
     .menu > li > a{
     display: block;
     padding: 5px 2px;
@@ -167,9 +152,10 @@
     #argumentos
     {
     margin-left: 19%;
+    margin-top: 50px;
     float: left;
     width: 60%;
-    height: 400px;
+    height: 360px;
     background-color: rgba(2, 1, 77, 0.425);
     }
     #contenido{

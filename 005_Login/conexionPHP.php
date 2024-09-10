@@ -14,7 +14,7 @@ class ConexionPHP
     private static $BD_tablaJefesGannt="diagrama_gannt"; //TABLA Jefes Gannt
     private static $BD_tablaClientes="clientes"; //TABLA Pedidos Clientes
     private static $BD_tablaSlider="imagenesslider"; //TABLA Slider de imágenes sector público
-
+    private static $BD_tablaHistoria="historias";  //TABLA HISTORIAS de los acontecimientos históricos empresariales sector público
     private static $BD_charset="utf8";
 
     public function ConexionPHP()
@@ -68,6 +68,10 @@ class ConexionPHP
     public static function getBD_TablaSlider()
     {
        return self::$BD_tablaSlider; 
+    }
+    public static function getBD_TablaHistoria()
+    {
+       return self::$BD_tablaHistoria; 
     }
     public static function getBD_Charset()
     {
