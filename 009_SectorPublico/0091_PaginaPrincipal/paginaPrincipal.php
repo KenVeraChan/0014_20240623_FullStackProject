@@ -14,7 +14,7 @@ require "consultasSlider.php";
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0091_PaginaPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
-        <div class="VaciobotonesPrincipal"></div>
+        <div class="VaciobotonesPrincipal"><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" id="areaPrivada">Area Privada</a></div>
         <table id="tabla">
             <tr class="cajaBotonera">
                 <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">INICIO</div>
@@ -22,7 +22,7 @@ require "consultasSlider.php";
                 <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php'">PRODUCTOS</div>
                 <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php'">SERVICIOS</div>
                 <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">PROYECTOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php'">PRIVADO</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php'">CLIENTES</div>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>

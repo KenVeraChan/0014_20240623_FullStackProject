@@ -17,12 +17,12 @@ require "consultasSlider.php";
         <div class="VaciobotonesPrincipal"></div>
         <table id="tabla">
             <tr class="cajaBotonera">
-                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">HISTORIA</div>
-                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../002_Inserccion/inserccionPHP.php'">PRODUCTOS</div>
-                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'">SERVICIOS</div>
-                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">PROYECTOS</div>
-                    <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php'">PRIVADO</div>
-                </td>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">INICIO</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../001_Busqueda/busquedaPHP.php'">HISTORIA</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../002_Inserccion/inserccionPHP.php'">PRODUCTOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../003_Actualizacion/actualizacionPHP.php'">SERVICIOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../004_Eliminacion/eliminacionPHP.php'">PROYECTOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php'">CLIENTES</div>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>

@@ -1,7 +1,6 @@
 <?php
-    session_start();  //Inicia la sesión
-    //$idHistoria=$_GET["id"];
     require "../../005_Login/conexionPHP.php";
+    error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
     //error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
     $conexion=ConexionPHP::getConexionCLIENTES();   //Ahora se necesita la conexión con la BBDD de los clientes
     $BD_tabla=ConexionPHP::getBD_TablaHistoria();
@@ -20,7 +19,12 @@
             $i++;
         }
     }
-    $_SESSION["acontecimiento"]=$idHistoria;
-    //REGRESA A LA PAGINA DE HISTORIA EMPRESARIAL
-    //header("location:../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.php");
+    if(isset($_GET["id"]) && $_GET["id"]>=0 && $_GET["id"]<=count($_SESSION["ID"]))
+    {
+        session_start();
+        $_SESSION["fechado"]=$_SESSION["FECHA"][$_GET["id"]];
+        $_SESSION["acontecimiento"]=$_SESSION["SUCESO"][$_GET["id"]];
+        //REGRESA A LA PAGINA DE HISTORIA EMPRESARIAL
+        header("location:../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.php");
+    }
 ?>
