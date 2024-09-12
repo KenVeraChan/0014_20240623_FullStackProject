@@ -7,14 +7,14 @@ function cargarPagina()
     botonForm.style.opacity = "0.25";
     //Carga de la tabla de la BBDD
     var baseDatos=document.getElementsByClassName("elecciones");
-    baseDatos[0].style.transitionDuration="0.3s";
-    baseDatos[0].style.marginLeft= "35%";
+    baseDatos[0].style.transitionDuration="1.3s";
+    baseDatos[0].style.marginLeft= "0%";
 
-    baseDatos[1].style.transitionDuration="0.6s";
-    baseDatos[1].style.marginLeft= "35%";
+    baseDatos[1].style.transitionDuration="1.6s";
+    baseDatos[1].style.marginLeft= "0%";
 
-    baseDatos[2].style.transitionDuration="0.9s";
-    baseDatos[2].style.marginLeft= "35%";
+    baseDatos[2].style.transitionDuration="1.9s";
+    baseDatos[2].style.marginLeft= "0%";
 
     for(let i=0;i<baseDatos.length;i++)
     {

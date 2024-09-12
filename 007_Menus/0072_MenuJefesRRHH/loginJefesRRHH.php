@@ -9,11 +9,25 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
+        <table id="tablaBotones">
+            <tr class="filaBoton">
+                <td>
+                    <div class="elecciones" onclick="location.href='../../005_Login/0052_LoginJEFES/loginJEFES.php'">JEFES</div>
+                </td>
+            </tr>
+            <tr class="filaBoton">
+                <td>
+                    <div class="elecciones" onclick="location.href='../../005_Login/0051_LoginRRHH/loginRRHH.php'">RR.HH.</div>
+                </td>
+            </tr>
+            <tr class="filaBoton">
+                <td>
+                    <div class="elecciones" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER</div>
+                </td>
+            </tr>
+        </table>
         <div id="iconoAdorno"><img class="imagenIcono" src="../../007_Menus/0072_MenuJefesRRHH/images/Sfer4D-IconoEmpresa.jpg" alt="iconoEmpresa"></div>     
         <div class="VaciobotonesPrincipal"></div>
-        <div class="elecciones" style="margin-top:80px" onclick="location.href='../../005_Login/0052_LoginJEFES/loginJEFES.php'">JEFES</div>
-        <div class="elecciones" style="margin-top:170px" onclick="location.href='../../005_Login/0051_LoginRRHH/loginRRHH.php'">RR.HH.</div>
-        <div class="elecciones" style="margin-top:260px" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER</div>
         <img id="imagenPortada" src="../../007_Menus/0072_MenuJefesRRHH/images/SERVIDOR.jpg" alt="Imagen servidor">    
     </header>
     <div class="piePagina">

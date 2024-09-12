@@ -10,7 +10,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 500px;
+        height: 1500px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -22,7 +22,6 @@
         }
         .VaciobotonesPrincipal{
             float: left;
-            position: absolute;
             width: 100%;   /*ICONO CUADRADO*/
             height: 13px;  
             background-color: rgba(0, 0, 19, 0.89);
@@ -37,17 +36,33 @@
         width: 100%;
         height: 100%;
     }
-    .elecciones{
+    #tablaBotones
+    {
+        margin-left: 40%;
         position: absolute;
-        margin-left: -35%;
+        margin-top: 200px;
+        height: 600px;
+        width: 200px;
+    }
+    .filaBoton{
+        height: 300px;
+        width: 200px;
+        background-color: aqua;
+    }
+    .elecciones{
+        margin-left: -1200%;
+        padding-top: 150px;
         text-align: center;
-        font-size: large;
-        padding-top: 20px;
+        font-size: x-large;
         color: rgb(204, 0, 255);
         width:300px; 
-        height:50px; 
+        height:200px; 
         background-color:rgba(0, 0, 19, 0.89);
         z-index: 1;
+    }
+    .elecciones:nth-child(1)
+    {
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -56,7 +71,7 @@
     #piePrincipal
     {
         position:relative;
-        margin-top: -15px;
+        margin-top: 0px;
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
