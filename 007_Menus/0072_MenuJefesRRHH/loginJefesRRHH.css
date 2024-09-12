@@ -43,13 +43,13 @@
         margin-top: 200px;
         height: 600px;
         width: 200px;
+        z-index: 1;
     }
     .filaBoton{
         height: 300px;
         width: 200px;
-        background-color: aqua;
     }
-    .elecciones{
+    #eleccionesJEFE{
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
@@ -58,11 +58,35 @@
         width:300px; 
         height:200px; 
         background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+        background-size: 100% 100%;
         z-index: 1;
     }
-    .elecciones:nth-child(1)
-    {
-        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+    #eleccionesRRHH{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:300px; 
+        height:200px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesVOLVER{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:300px; 
+        height:200px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
+        background-size: 100% 100%;
+        z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -106,7 +130,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 500px;
+        height: 1500px;        
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -133,16 +157,56 @@
         width: 100%;
         height: 100%;
     }
-    .elecciones{
+    #tablaBotones
+    {
+        margin-left: 40%;
         position: absolute;
-        margin-left: 25%;
+        margin-top: 200px;
+        height: 450px;
+        width: 200px;
+        z-index: 1;
+    }
+    .filaBoton{
+        height: 150px;
+        width: 200px;
+    }
+    #eleccionesJEFE{
+        margin-left: -1200%;
+        padding-top: 150px;
         text-align: center;
-        font-size: large;
-        padding-top: 10px;
+        font-size: x-large;
         color: rgb(204, 0, 255);
-        width:300px; 
-        height:50px; 
+        width:200px; 
+        height:150px; 
         background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesRRHH{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:200px; 
+        height:150px;
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesVOLVER{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:200px; 
+        height:150px;
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
+        background-size: 100% 100%;
         z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
@@ -188,7 +252,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 500px;
+        height: 1500px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -219,16 +283,56 @@
         width: 100%;
         height: 100%;
     }
-    .elecciones{
+    #tablaBotones
+    {
+        margin-left: 40%;
         position: absolute;
-        margin-left: 1%;
+        margin-top: 200px;
+        height: 270px;
+        width: 120px;
+        z-index: 1;
+    }
+    .filaBoton{
+        height: 100px;
+        width: 120px;
+    }
+    #eleccionesJEFE{
+        margin-left: -1200%;
+        padding-top: 150px;
         text-align: center;
-        font-size: medium;
-        padding-top: 10px;
+        font-size: x-large;
         color: rgb(204, 0, 255);
-        width:150px; 
-        height:40px; 
+        width:120px; 
+        height:90px; 
         background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesRRHH{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:120px; 
+        height:90px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesVOLVER{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:120px; 
+        height:90px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
+        background-size: 100% 100%;
         z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
@@ -274,7 +378,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 500px;
+        height: 1500px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -305,16 +409,56 @@
         width: 100%;
         height: 100%;
     }
-    .elecciones{
+    #tablaBotones
+    {
+        margin-left: 40%;
         position: absolute;
-        margin-left: 1%;
+        margin-top: 200px;
+        height: 270px;
+        width: 120px;
+        z-index: 1;
+    }
+    .filaBoton{
+        height: 100px;
+        width: 120px;
+    }
+    #eleccionesJEFE{
+        margin-left: -1200%;
+        padding-top: 150px;
         text-align: center;
-        font-size: x-small;
-        padding-top: 15px;
+        font-size: x-large;
         color: rgb(204, 0, 255);
-        width:100px; 
-        height:40px;
+        width:120px; 
+        height:90px; 
         background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesRRHH{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:120px; 
+        height:90px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    #eleccionesVOLVER{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(204, 0, 255);
+        width:120px; 
+        height:90px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
+        background-size: 100% 100%;
         z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/

@@ -6,25 +6,63 @@ function cargarPagina()
     botonForm.style.transitionDuration = "1s";
     botonForm.style.opacity = "0.25";
     //Carga de la tabla de la BBDD
-    var baseDatos=document.getElementsByClassName("elecciones");
-    baseDatos[0].style.transitionDuration="1.3s";
-    baseDatos[0].style.marginLeft= "0%";
-
-    baseDatos[1].style.transitionDuration="1.6s";
-    baseDatos[1].style.marginLeft= "0%";
-
-    baseDatos[2].style.transitionDuration="1.9s";
-    baseDatos[2].style.marginLeft= "0%";
-
-    for(let i=0;i<baseDatos.length;i++)
+    if(window.screen.width>768)
     {
-    baseDatos[i].addEventListener('mouseenter',function(){
-            baseDatos[i].style.background="rgb(204, 0, 255)";
-            baseDatos[i].style.color="rgba(0, 0, 19, 0.89)";
-    })
-    baseDatos[i].addEventListener('mouseleave',function(){
-            baseDatos[i].style.background="rgba(0, 0, 19, 0.89)";
-            baseDatos[i].style.color="rgb(204, 0, 255)";
-    })
+        var entradaJEFES=document.getElementById("eleccionesJEFE");
+        entradaJEFES.style.transitionDuration="1.3s";
+        entradaJEFES.style.marginLeft= "0%";
+    
+        var entradaRRHH=document.getElementById("eleccionesRRHH");
+        entradaRRHH.style.transitionDuration="1.6s";
+        entradaRRHH.style.marginLeft= "0%";
+    
+        var entradaVOLVER=document.getElementById("eleccionesVOLVER");
+        entradaVOLVER.style.transitionDuration="1.9s";
+        entradaVOLVER.style.marginLeft= "0%";
     }
+    if(window.screen.width<768)
+        {
+            var entradaJEFES=document.getElementById("eleccionesJEFE");
+            entradaJEFES.style.transitionDuration="1.3s";
+            entradaJEFES.style.marginLeft= "-50%";
+        
+            var entradaRRHH=document.getElementById("eleccionesRRHH");
+            entradaRRHH.style.transitionDuration="1.6s";
+            entradaRRHH.style.marginLeft= "-50%";
+        
+            var entradaVOLVER=document.getElementById("eleccionesVOLVER");
+            entradaVOLVER.style.transitionDuration="1.9s";
+            entradaVOLVER.style.marginLeft= "-50%";
+        }
+
+
+    //REACCION DEL BOTON DE JEFES
+    entradaJEFES.addEventListener('mouseenter',function(){
+        entradaJEFES.style.transitionDuration="1s";
+        entradaJEFES.style.textShadow="white 1px 0 40px";
+    })
+    entradaJEFES.addEventListener('mouseleave',function(){
+        entradaJEFES.style.transitionDuration="1s";
+        entradaJEFES.style.textShadow="none";
+    })
+
+    //REACCION DEL BOTON DE RRHH
+    entradaRRHH.addEventListener('mouseenter',function(){
+        entradaRRHH.style.transitionDuration="1s";
+        entradaRRHH.style.textShadow="white 1px 0 40px";
+    })
+    entradaRRHH.addEventListener('mouseleave',function(){
+        entradaRRHH.style.transitionDuration="1s";
+        entradaRRHH.style.textShadow="none";
+    })
+
+    //REACCION DEL BOTON DE VUELTA
+    entradaVOLVER.addEventListener('mouseenter',function(){
+        entradaVOLVER.style.transitionDuration="1s";
+        entradaVOLVER.style.textShadow="white 1px 0 40px";
+    })
+    entradaVOLVER.addEventListener('mouseleave',function(){
+        entradaVOLVER.style.transitionDuration="1s";
+        entradaVOLVER.style.textShadow="none";
+    })
 }

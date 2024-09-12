@@ -12,17 +12,17 @@
         <table id="tablaBotones">
             <tr class="filaBoton">
                 <td>
-                    <div class="elecciones" onclick="location.href='../../005_Login/0052_LoginJEFES/loginJEFES.php'">JEFES</div>
+                    <div id="eleccionesJEFE" onclick="location.href='../../005_Login/0052_LoginJEFES/loginJEFES.php'">JEFES</div>
                 </td>
             </tr>
             <tr class="filaBoton">
                 <td>
-                    <div class="elecciones" onclick="location.href='../../005_Login/0051_LoginRRHH/loginRRHH.php'">RR.HH.</div>
+                    <div id="eleccionesRRHH" onclick="location.href='../../005_Login/0051_LoginRRHH/loginRRHH.php'">RR.HH.</div>
                 </td>
             </tr>
             <tr class="filaBoton">
                 <td>
-                    <div class="elecciones" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER</div>
+                    <div id="eleccionesVOLVER" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER</div>
                 </td>
             </tr>
         </table>
