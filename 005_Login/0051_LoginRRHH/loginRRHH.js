@@ -25,7 +25,7 @@ function cargarPagina()
         //Carga de la tabla de la BBDD
         var baseDatos=document.getElementById("formularioLogin");
         baseDatos.style.transitionDuration="0.5s";
-        baseDatos.style.marginLeft= "10%";
+        baseDatos.style.marginLeft= "15%";
     }
     //Efecto de la tabla login
     var boton=document.getElementsByName("enviar")[0];

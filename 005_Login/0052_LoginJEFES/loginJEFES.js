@@ -5,7 +5,7 @@ function cargarPagina()
     var botonForm= document.getElementById("imagenPortada");
     botonForm.style.transitionDuration = "1s";
     botonForm.style.opacity = "0.25";
-    if(window.screen.width>700)
+        if(window.screen.width>700)
         {
         //Carga de la tabla de la BBDD
         var baseDatos=document.getElementById("formularioLogin");
@@ -17,14 +17,14 @@ function cargarPagina()
             //Carga de la tabla de la BBDD
             var baseDatos=document.getElementById("formularioLogin");
             baseDatos.style.transitionDuration="0.5s";
-            baseDatos.style.marginLeft= "17%";
+            baseDatos.style.marginLeft= "20%";
         }
         else if(window.screen.width<520)
         {
             //Carga de la tabla de la BBDD
             var baseDatos=document.getElementById("formularioLogin");
             baseDatos.style.transitionDuration="0.5s";
-            baseDatos.style.marginLeft= "5%";
+            baseDatos.style.marginLeft= "15%";
         }
 
     //Efecto de la tabla login
