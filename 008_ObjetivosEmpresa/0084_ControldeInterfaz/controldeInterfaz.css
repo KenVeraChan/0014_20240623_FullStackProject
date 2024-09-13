@@ -69,7 +69,7 @@
     .consulta{
         position: relative;
         width: 100%;
-        height: 720px;
+        height: 1300px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -82,6 +82,7 @@
     }
     #tituloGeneral{
         position: absolute;
+        padding-top: 60px;
         margin-top: 20px;
         margin-left: 10%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -92,9 +93,10 @@
     }
     .tableroDiagrama{
         position: absolute;
+        padding-top: 120px;
         overflow: scroll;
         width:75%; 
-        height:600px;
+        height:1000px;
         margin-top: 80px;
         margin-left: 70px;
         z-index: 1;
@@ -138,13 +140,13 @@
     #imagen{
         float:left;
         margin-left: 50px;
-        width: 130px;
+        width: 600px;
         height:21px;
         background-color: white;
         z-index: 1; 
     }
     .separacion{
-        height: 15px;
+        height: 60px;
     }
     .boton{
         float: left;
@@ -265,7 +267,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 720px;
+        height: 1300px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -278,6 +280,7 @@
     }
     #tituloGeneral{
         position: absolute;
+        padding-top: 60px;
         margin-top: 20px;
         margin-left: 7%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -289,8 +292,9 @@
     .tableroDiagrama{
         position: absolute;
         overflow: scroll;
+        padding-top: 120px;
         width:85%; 
-        height:200px;
+        height:1000px;
         margin-top: 80px;
         margin-left: 40px;
         z-index: 1;
@@ -331,13 +335,13 @@
     #imagen{
         float:left;
         margin-left: 40px;
-        width: 130px;
+        width: 600px;
         height:21px;
         background-color: white;
         z-index: 1; 
     }
     .separacion{
-        height: 15px;
+        height: 60px;
     }
     .boton{
         float: left;
@@ -458,7 +462,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 720px;
+        height: 1300px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -471,6 +475,7 @@
     }
     #tituloGeneral{
         position: absolute;
+        padding-top: 60px;
         margin-top: 20px;
         margin-left: 3%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -482,8 +487,9 @@
     .tableroDiagrama{
         position: absolute;
         overflow: scroll;
+        padding-top: 120px;
         width:85%; 
-        height:200px;
+        height:700px;
         margin-top: 80px;
         margin-left: 40px;
         z-index: 1;
@@ -524,13 +530,13 @@
     #imagen{
         float:left;
         margin-left: 30px;
-        width: 130px;
+        width: 600px;
         height:21px;
         background-color: white;
         z-index: 1; 
     }
     .separacion{
-        height: 15px;
+        height: 60px;
     }
     .boton{
         float: left;
@@ -652,7 +658,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 720px;
+        height: 1300px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -665,6 +671,7 @@
     }
     #tituloGeneral{
         position: absolute;
+        padding-top: 60px;
         margin-top: 20px;
         margin-left: 10%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -676,8 +683,9 @@
     .tableroDiagrama{
         position: absolute;
         overflow: scroll;
+        padding-top: 120px;
         width:85%; 
-        height:200px;
+        height:700px;
         margin-top: 80px;
         margin-left: 20px;
         z-index: 1;
@@ -718,13 +726,13 @@
     #imagen{
         float:left;
         margin-left: 20px;
-        width: 130px;
+        width: 600px;
         height:21px;
         background-color: white;
         z-index: 1; 
     }
     .separacion{
-        height: 15px;
+        height: 60px;
     }
     .boton{
         float: left;

@@ -36,11 +36,11 @@ function cargaCuadroTareas()
     //Se aparta el cuadro de estadisticas primero
     var bases=document.getElementsByClassName("base2")[0];
     bases.style.transitionDuration="0.25s";
-    bases.style.marginLeft="-1500px";
+    bases.style.marginLeft="-9500px";
     //Se aparta el cuadro de inspeccion de candidatos segundo
     var bases=document.getElementsByClassName("base3")[0];
     bases.style.transitionDuration="0.25s";
-    bases.style.marginLeft="-1500px";
+    bases.style.marginLeft="-9500px";
 
     //Se muestra el cuadro de las estadisticas
     var bases=document.getElementsByClassName("base")[0];
@@ -83,11 +83,11 @@ function cargaIntroTareas()
     //Se aparta el cuadro de estadisticas primero
     var bases=document.getElementsByClassName("base")[0];
     bases.style.transitionDuration="0.25s";
-    bases.style.marginLeft="-2500px";
+    bases.style.marginLeft="-9500px";
     //Se aparta el cuadro de inspeccion de candidatos segundo
     var bases=document.getElementsByClassName("base3")[0];
     bases.style.transitionDuration="0.25s";
-    bases.style.marginLeft="-2500px";
+    bases.style.marginLeft="-9500px";
 
 
     //Se muestra la tabla de intro datos de las tareas
@@ -114,11 +114,11 @@ function cargaCuadroAspirantes()
     //Se aparta el cuadro de estadisticas primero
     var bases=document.getElementsByClassName("base")[0];
     bases.style.transitionDuration="0.25s";
-    bases.style.marginLeft="-2500px";
+    bases.style.marginLeft="-9500px";
     //Se aparta el cuadro de inserccion tareas segundo
     var bases=document.getElementsByClassName("base2")[0];
     bases.style.transitionDuration="0.25s";
-    bases.style.marginLeft="-2500px";
+    bases.style.marginLeft="-9500px";
 
     //Se muestra la tabla de inspeccion de candidatos
     var bases=document.getElementsByClassName("base3")[0];

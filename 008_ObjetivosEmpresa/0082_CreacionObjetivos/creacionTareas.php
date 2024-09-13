@@ -61,7 +61,7 @@
     </header>
     <div class="consulta">
         <div class="base">
-            <div class="tablaBBDD">
+            <div class="tablaBBDD"> <!-- CARGA DE TAREAS: TABLA 1 DE DESCRIPCIÓN DE TAREAS -->
                 <table id="tablaPaginacion">
                     <tr class="cabecera">
                         <td class="cajaT">TAREA</td>
@@ -89,7 +89,7 @@
                 ?>
                 </table>
             </div>
-            <div class="tablaBBDD2">
+            <div class="tablaBBDD2">   <!-- CARGA DE TAREAS: TABLA 2 DE ESTADISTICAS -->
                 <table id="tablaEstadisticas">
                     <tr class="cabecera">
                         <td class="cajaE"><strong>DEPARTAMENTOS</strong></td>
@@ -175,7 +175,7 @@
             </div>
         </div>
         <div class="base2">
-            <div class="tablaBBDD3">
+            <div class="tablaBBDD3">   <!-- INTRODUCCION DE TAREAS: TABLA 3 DE FORMULARIO -->
                 <table id="tablaIntroTareas">
                     <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0082_CreacionObjetivos/gestionTareas.php" method="get">
                         <p class="separacion"></p>
@@ -219,7 +219,7 @@
             </div>    
         </div>
         <div class="base3">
-            <div class="tablaBBDD4">
+            <div class="tablaBBDD4">  <!-- EVALUACION DE CANDIDATOS: TABLA 4 DE PERSONAL PARA PLANTILLA -->
                 <table id="tablaCandidatura">
                     <tr class="cabecera">
                         <td class="cajaT">NOMBRE</td>

@@ -72,7 +72,9 @@
                     </label>
                     <p class="separacion"></p>
                     <p class="separacion"></p>
+                    <p class="separacion"></p>
                     <input type="file" id="imagen" name="imagen">
+                    <p class="separacion"></p>
                     <p class="separacion"></p>
                     <p class="separacion"></p>
                     <?php
