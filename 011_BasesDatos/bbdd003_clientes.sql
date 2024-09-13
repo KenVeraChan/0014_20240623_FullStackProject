@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2024 a las 19:15:44
+-- Tiempo de generación: 13-09-2024 a las 17:33:51
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -116,6 +116,27 @@ INSERT INTO `imagenesslider` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `CONTENIDO`, `D
 (17, 'TimeTravel.jpg', 'image/jpeg', '173503', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
 (18, 'ViajeManpertos.jpg', 'image/jpeg', '85457', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `loginclientes`
+--
+
+CREATE TABLE `loginclientes` (
+  `ID` int(3) NOT NULL,
+  `USUARIO` varchar(40) DEFAULT NULL,
+  `CONTRASENIA` varchar(40) DEFAULT NULL,
+  `TELEFONO` int(12) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `loginclientes`
+--
+
+INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`) VALUES
+(1, 'Juan', 'zetas', 983223309),
+(2, 'Laura', 'tintosginos', 983002110);
+
 --
 -- Índices para tablas volcadas
 --
@@ -133,6 +154,12 @@ ALTER TABLE `imagenesslider`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `loginclientes`
+--
+ALTER TABLE `loginclientes`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -147,6 +174,12 @@ ALTER TABLE `historias`
 --
 ALTER TABLE `imagenesslider`
   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT de la tabla `loginclientes`
+--
+ALTER TABLE `loginclientes`
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
