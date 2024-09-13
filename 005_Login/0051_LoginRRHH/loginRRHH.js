@@ -11,7 +11,7 @@ function cargarPagina()
     //Carga de la tabla de la BBDD
     var baseDatos=document.getElementById("formularioLogin");
     baseDatos.style.transitionDuration="0.5s";
-    baseDatos.style.marginLeft= "35%";
+    baseDatos.style.marginLeft= "25%";
     }
     else if(window.screen.width<700 && window.screen.width>520)
     {
@@ -27,6 +27,28 @@ function cargarPagina()
         baseDatos.style.transitionDuration="0.5s";
         baseDatos.style.marginLeft= "15%";
     }
+    //Carga de la tabla de las INDICACIONES DE JEFES
+    if(window.screen.width>700)
+        {
+            //Carga de la tabla de la BBDD
+            var tablaIndicaciones=document.getElementById("indicaciones");
+            tablaIndicaciones.style.transitionDuration="0.5s";
+            tablaIndicaciones.style.marginLeft= "25%";
+        }
+        else if(window.screen.width<700 && window.screen.width>520)
+        {
+            //Carga de la tabla de la BBDD
+            var tablaIndicaciones=document.getElementById("indicaciones");
+            tablaIndicaciones.style.transitionDuration="0.5s";
+            tablaIndicaciones.style.marginLeft= "20%";
+        }
+        else if(window.screen.width<520)
+        {
+            //Carga de la tabla de la BBDD
+            var tablaIndicaciones=document.getElementById("indicaciones");
+            tablaIndicaciones.style.transitionDuration="0.5s";
+            tablaIndicaciones.style.marginLeft= "10%";
+        }
     //Efecto de la tabla login
     var boton=document.getElementsByName("enviar")[0];
     boton.addEventListener('mouseenter',function(){

@@ -11,7 +11,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 950px;
+        height: 1400px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -51,7 +51,7 @@
     #imagenPortada{
         position: relative;
         width: 100%;
-        height: 950px;
+        height: 1285px;
     }
     #formularioLogin{
         position: absolute;
@@ -63,15 +63,23 @@
         padding-top: 20px;
         color: rgb(204, 0, 255);
         width:310px; 
-        height:150px; 
+        height:190px; 
         background-color:rgba(0, 0, 19, 0.89);
         z-index: 1;
     }
     .izq{
         text-align: left;
+        height: 10px;
+    }
+    #izqTitulo{
+        text-align: center;
+        padding-left: 100px;
+        width:200px;
+        height: 10px;
     }
     .der{
-        padding-left: 15px;
+        margin-left: 0px;
+        width: 100px;
     }
     .logear{
         margin-top: 10px;
@@ -79,6 +87,19 @@
         text-align: center;
         font-family:'Times New Roman', Times, serif;
         color: rgb(204, 0, 255);
+    }
+    #indicaciones{
+        position: absolute;
+        text-align: center;
+        margin-top: 550px;
+        margin-left:-35%;
+        padding-left: 10px;
+        font-size: large;
+        padding-top: 20px;
+        color: rgb(204, 0, 255);
+        width:500px; 
+        height:450px; 
+        background-color: rgba(0, 0, 46, 0.89);
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -122,7 +143,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 950px;
+        height: 1400px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -167,7 +188,7 @@
     #imagenPortada{
         position: relative;
         width: 100%;
-        height: 950px;
+        height: 1285px;
     }
     #formularioLogin{
         position: absolute;
@@ -178,13 +199,19 @@
         font-size: large;
         padding-top: 20px;
         color: rgb(204, 0, 255);
-        width:310px; 
-        height:150px; 
+        width:300px; 
+        height:180px;  
         background-color:rgba(0, 0, 19, 0.89);
         z-index: 1;
     }
     .izq{
         text-align: left;
+        height: 10px;
+    }
+    #izqTitulo{
+        text-align: center;
+        width:200px;
+        height: 10px;
     }
     .der{
         padding-left: 15px;
@@ -195,6 +222,19 @@
         text-align: center;
         font-family:'Times New Roman', Times, serif;
         color: rgb(204, 0, 255);
+    }
+    #indicaciones{
+        position: absolute;
+        text-align: left;
+        margin-top: 550px;
+        margin-left:-35%;
+        padding-left: 10px;
+        font-size: large;
+        padding-top: 20px;
+        color: rgb(204, 0, 255);
+        width:350px; 
+        height:450px; 
+        background-color: rgba(0, 0, 46, 0.89);
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -239,7 +279,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 950px;
+        height: 1400px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -284,7 +324,7 @@
     #imagenPortada{
         position: relative;
         width: 100%;
-        height: 950px;
+        height: 1285px;
     }
     #formularioLogin{
         position: absolute;
@@ -296,12 +336,18 @@
         padding-top: 20px;
         color: rgb(204, 0, 255);
         width:230px; 
-        height:150px; 
+        height:180px;; 
         background-color:rgba(0, 0, 19, 0.89);
         z-index: 1;
     }
     .izq{
         text-align: left;
+        height: 10px;
+    }
+    #izqTitulo{
+        text-align: center;
+        width:200px;
+        height: 10px;
     }
     .der{
         padding-left: 10px;
@@ -309,6 +355,19 @@
     }
     .cajaForm{
         width: 100px;
+    }
+    #indicaciones{
+        position: absolute;
+        text-align: center;
+        margin-top: 550px;
+        margin-left:-35%;
+        padding-left: 10px;
+        font-size: large;
+        padding-top: 20px;
+        color: rgb(204, 0, 255);
+        width:230px; 
+        height:450px; 
+        background-color: rgba(0, 0, 46, 0.89);
     }
     .logear{
         margin-top: 10px;
@@ -360,7 +419,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 950px;
+        height: 1400px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -405,7 +464,7 @@
     #imagenPortada{
         position: relative;
         width: 100%;
-        height: 950px;
+        height: 1285px;
     }
     #formularioLogin{
         position: absolute;
@@ -424,6 +483,11 @@
     .izq{
         text-align: left;
     }
+    #izqTitulo{
+        text-align: center;
+        width:200px;
+        height: 10px;
+    }
     .der{
         padding-left: 10px;
         width: 30px;
@@ -437,6 +501,19 @@
         text-align: center;
         font-family:'Times New Roman', Times, serif;
         color: rgb(204, 0, 255);
+    }
+    #indicaciones{
+        position: absolute;
+        text-align: center;
+        margin-top: 550px;
+        margin-left:-35%;
+        padding-left: 10px;
+        font-size: medium;
+        padding-top: 20px;
+        color: rgb(204, 0, 255);
+        width:230px; 
+        height:450px; 
+        background-color: rgba(0, 0, 46, 0.89);
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

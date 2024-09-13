@@ -1,7 +1,8 @@
 <?php
 session_start();
-$_SESSION["loginJEFES"]=1;  //Se identifica el sector de RRHH intentando ENTRAR en el LOGIN
-$_SESSION["loginRRHH"]=0;   //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+$_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+$_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
+$_SESSION["loginCLIENTES"]=1;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +11,8 @@ $_SESSION["loginRRHH"]=0;   //Se corrobora que el sector de JEFES no es donde se
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN Jefes</title>
-    <link rel="stylesheet" href="loginJEFES.css">
-    <script src="loginJEFES.js"></script>
+    <link rel="stylesheet" href="loginCLIENTES.css">
+    <script src="loginCLIENTES.js"></script>
 </head>
 <body onload="cargarPagina()">
         <div class="letreroOK" style=
@@ -29,16 +30,25 @@ $_SESSION["loginRRHH"]=0;   //Se corrobora que el sector de JEFES no es donde se
         <div class="VaciobotonesPrincipal"></div>
             <form action="../../005_Login/compruebaLogin.php" method="POST" id="formularioLogin">
                 <table>
-                    <tr><div>AREA DE JEFES</div></tr>
-                    <tr><br></tr>
-                    <tr><td class="izq">Login: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
-                    <tr><td class="izq">Password: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
+                    <tr id="izqTitulo" style="color: rgb(204, 0, 255)">AREA DE CLIENTES</tr>
+                    <tr><td class="izq"></td></tr>
+                    <tr><td class="izq" style="color: rgb(204, 0, 255);">LOGIN: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
+                    <tr><td class="izq"></td></tr>
+                    <tr><td class="izq" style="color: rgb(204, 0, 255);">PASSWORD: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
+                    <tr><td class="izq"></td></tr>
                     <tr>
                         <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
-                        <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
+                        <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" name="enviar" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>
                 </table>
             </form> 
+                <table id="indicaciones">
+                    <tr><td class="der" style="color: rgb(204, 0, 255)">FUNCIONES DESEMPEÑADAS</td></tr>
+                    <tr><td class="der"></td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Compras de PRODUCTOS tecnológicos de la empresa</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Compras de SERVICIOS tecnológicos de la empresa</td></tr>
+                    <tr><td class="der"></td></tr>
+                </table>
         <img id="imagenPortada" src="../0052_LoginJEFES/images/JEFES.jpg" alt="Imagen Despacho JEFES">    
     </header>
     <div class="piePagina">
@@ -74,11 +84,11 @@ $_SESSION["loginRRHH"]=0;   //Se corrobora que el sector de JEFES no es donde se
             var letrero= document.getElementsByClassName("letreroOK")[0];
             if(seleccion==1)
             {
-                letrero.innerHTML="Lo siento. Ususario o contraseña INCORRECTOS"; 
+                letrero.innerHTML="Lo siento. Ususario o contraseña del cliente INCORRECTOS"; 
             }
             if(seleccion==2)
             {
-                letrero.innerHTML="Lo siento. Su ROL de RRHH no le permite el acceso al área de JEFES";   
+                letrero.innerHTML="BIEN DISEÑADO TODO OKEY";   
             }
             letrero.style.paddingTop="10px";
             letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

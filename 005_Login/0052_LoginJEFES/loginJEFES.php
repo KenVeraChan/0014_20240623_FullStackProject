@@ -1,7 +1,8 @@
 <?php
 session_start();
-$_SESSION["loginJEFES"]=1;  //Se identifica el sector de RRHH intentando ENTRAR en el LOGIN
-$_SESSION["loginRRHH"]=0;   //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+$_SESSION["loginJEFES"]=1;      //Se identifica el sector de RRHH intentando ENTRAR en el LOGIN
+$_SESSION["loginRRHH"]=0;       //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+$_SESSION["loginCLIENTES"]=0;   //Se identifica que no ha sido un individuo del sector de CLIENTES
 ?>
 
 <!DOCTYPE html>
@@ -29,16 +30,27 @@ $_SESSION["loginRRHH"]=0;   //Se corrobora que el sector de JEFES no es donde se
         <div class="VaciobotonesPrincipal"></div>
             <form action="../../005_Login/compruebaLogin.php" method="POST" id="formularioLogin">
                 <table>
-                    <tr><div>AREA DE JEFES</div></tr>
-                    <tr><br></tr>
-                    <tr><td class="izq">Login: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
-                    <tr><td class="izq">Password: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
+                    <tr id="izqTitulo" style="color: rgb(204, 0, 255)">AREA DE JEFES</tr>
+                    <tr><td class="izq"></td></tr>
+                    <tr><td class="izq" style="color: rgb(204, 0, 255);">LOGIN: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
+                    <tr><td class="izq"></td></tr>
+                    <tr><td class="izq" style="color: rgb(204, 0, 255);">PASSWORD: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
+                    <tr><td class="izq"></td></tr>
                     <tr>
                         <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
-                        <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="returned"><strong>VOLVER</strong></a></td>
+                        <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" name="enviar" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>
                 </table>
             </form> 
+                <table id="indicaciones">
+                    <tr><td class="der" style="color: rgb(204, 0, 255)">FUNCIONES DESEMPEÑADAS</td></tr>
+                    <tr><td class="der"></td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Comprobar la SOLICITUD de los pedidos de los clientes</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Control de las TAREAS generadas en la empresa</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Control de los PROYECTOS empresariales</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Control de la INTERFAZ de la empresa</td></tr>
+                    <tr><td class="der"></td></tr>
+                </table>
         <img id="imagenPortada" src="../0052_LoginJEFES/images/JEFES.jpg" alt="Imagen Despacho JEFES">    
     </header>
     <div class="piePagina">
