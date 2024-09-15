@@ -5,6 +5,7 @@
 var elemento1= document.getElementsByClassName("bloque_opciones");
 var elemento2= document.getElementsByClassName("noticia");
 var elemento3= document.getElementsByClassName("parrafo");
+var elemento4= document.getElementsByClassName("areaPrivada");
 
 function cargarPagina()
 {
@@ -12,18 +13,6 @@ function cargarPagina()
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
     {
-        //BOTON DE AREA PRIVADA ZONA SUPERIOR DERECHA
-        var elemento4= document.getElementById("areaPrivada");
-        elemento4.addEventListener('mouseenter',function(){
-            elemento4.style.transitionDuration = "0.5s";
-            elemento4.style.textShadow="white 1px 0 40px";
-            elemento4.style.color= "white";
-                })
-        elemento4.addEventListener('mouseleave',function(){
-            elemento4.style.transitionDuration = "0.5s";
-            elemento4.style.textShadow="none";
-            elemento4.style.color="yellow";
-                })
         //BOTON DE OPCIONES VISIBLE
         elemento1[i].style.visibility="visible";
         elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
@@ -36,6 +25,22 @@ function cargarPagina()
             elemento1[i].style.transitionDuration = "0.5s";
             elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
             elemento1[i].style.color="yellow";
+                })
+    }
+    for(let i=0;i<elemento4.length;i++)
+    {
+        //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
+        elemento4[i].addEventListener('mouseenter',function(){
+            elemento4[i].style.transitionDuration = "0.5s";
+            elemento4[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
+            elemento4[i].style.bordeRadius="25px 0px 25px 0px";
+            elemento4[i].style.boxShadow="white 1px 0 40px";
+                })
+        elemento4[i].addEventListener('mouseleave',function(){
+            elemento4[i].style.transitionDuration = "0.5s";
+            elemento4[i].style.border="none";
+            elemento4[i].style.bordeRadius="none";
+            elemento4[i].style.boxShadow="none";
                 })
     }
     for(let i=0;i<elemento2.length;i++)

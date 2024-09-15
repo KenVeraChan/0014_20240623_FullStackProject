@@ -144,7 +144,7 @@
             }
             if($numeroRegistroClientes>0)
             {
-                $_SESSION["logeando"]=1;  //Datos BIEN metidos  cambiar el header
+                $_SESSION["logeando"]=1;  //Datos BIEN metidos  cambiar el header (SEGUIR DESDE AQUI)
                 $_SESSION["semaforo"]=1;  //No saca ningun letrero
                 header("location: ../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
             }

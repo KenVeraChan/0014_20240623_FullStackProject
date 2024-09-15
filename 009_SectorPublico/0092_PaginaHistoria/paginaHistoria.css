@@ -100,13 +100,15 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
-        #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width: 90px; 
-            float:right; 
-            margin-top:-40px; 
+        .areaPrivada{ 
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 90px; 
+            margin-top:-60px; 
         }
         .bloque_opciones{
             position: relative;
@@ -260,13 +262,15 @@
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
-        #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width:90px; 
-            float:right; 
-            margin-top:-40px; 
+        .areaPrivada{ 
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 90px; 
+            margin-top:-60px; 
         }
         .bloque_opciones{
             position: relative;
@@ -421,19 +425,15 @@
             width: 300px;   /*ICONO CUADRADO*/
             height: 80px;   
         }
-        .LlenobotonesPrincipal{
-            width: 450px;
-            height: 60px;
-            padding-bottom: 5px;
+        .areaPrivada{
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
         }
-        #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width:75px; 
-            float:right; 
-            font-size: small;
-            margin-top:0px; 
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 80px; 
+            margin-top:-60px; 
         }
         .bloque_opciones{
             position: relative;
@@ -592,19 +592,15 @@
             width: 200px;   /*ICONO CUADRADO*/
             height: 80px;   
         }
-        .LlenobotonesPrincipal{
-            width: 10px;
-            height: 60px;
-            padding-bottom: 5px;
+        .areaPrivada{
+            float:right;
+            margin-right: 5px; 
+            margin-top:-60px; 
         }
-        #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width:75px; 
-            float:right; 
-            font-size: small;
-            margin-top:0px; 
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 50px; 
+            margin-top:-60px; 
         }
         .bloque_opciones{
             position: relative;
@@ -763,19 +759,15 @@
               width: 200px;   /*ICONO CUADRADO*/
               height: 80px;   
           }
-          .LlenobotonesPrincipal{
-              width: 10px;
-              height: 60px;
-              padding-bottom: 5px;
-          }
-          #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width:75px; 
-            float:right; 
-            font-size: small;
-            margin-top:0px; 
+        .areaPrivada{
+            float:right;
+            margin-right: 5px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 50px; 
+            margin-top:-60px; 
         }
           .bloque_opciones{
               position: relative;
@@ -925,7 +917,7 @@
         #iconoAdorno{
             float: left;
             width: 100%;   /*ICONO CUADRADO*/
-            height: 80px;
+            height: 140px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
@@ -934,10 +926,15 @@
             width: 100%;   /*ICONO CUADRADO*/
             height: 80px;   
         }
-        .LlenobotonesPrincipal{
-            width: 450px;
-            height: 60px;
-            padding-bottom: 5px;
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
         }
         .bloque_opciones{
             position: relative;
@@ -950,14 +947,15 @@
             text-align: center;
             font-size: x-small;
         }
-        #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width:75px; 
-            float:right; 
-            font-size: small;
-            margin-top:0px; 
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
         }
     /*********** FIN CSS DE LA CABECERA ********/
 
@@ -1104,7 +1102,7 @@
         #iconoAdorno{
             float: left;
             width: 100%;   /*ICONO CUADRADO*/
-            height: 80px;
+            height: 140px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
@@ -1113,19 +1111,15 @@
             width: 100%;   /*ICONO CUADRADO*/
             height: 80px;   
         }
-        .LlenobotonesPrincipal{
-            width: 450px;
-            height: 60px;
-            padding-bottom: 5px;
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
         }
-        #areaPrivada{
-            color:yellow; 
-            text-decoration:none; 
-            height: 20px; 
-            width:60px; 
-            float:right; 
-            font-size: x-small;
-            margin-top:1px; 
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
         }
         .bloque_opciones{
             position: relative;
