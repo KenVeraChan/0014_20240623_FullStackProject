@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2024 a las 17:33:51
+-- Tiempo de generación: 16-09-2024 a las 14:09:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -136,6 +136,28 @@ CREATE TABLE `loginclientes` (
 INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`) VALUES
 (1, 'Juan', 'zetas', 983223309),
 (2, 'Laura', 'tintosginos', 983002110);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `ID` int(3) DEFAULT NULL,
+  `NOMBRE` varchar(30) DEFAULT NULL,
+  `STOCK` int(4) DEFAULT NULL,
+  `COSTE` float DEFAULT NULL,
+  `SECTOR` varchar(15) NOT NULL,
+  `DETALLES` varchar(800) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`ID`, `NOMBRE`, `STOCK`, `COSTE`, `SECTOR`, `DETALLES`) VALUES
+(1, 'Robot estandar de línea', 210, 201.23, 'PRODUCTOS', 'Carga máxima de 300 kg, espacio volumétrico de 5 metros de radio esférico y velocidad máxima de movimiento 10 metros por segundo');
 
 --
 -- Índices para tablas volcadas
