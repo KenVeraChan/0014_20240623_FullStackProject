@@ -5,13 +5,14 @@
 var elemento1= document.getElementsByClassName("bloque_opciones");
 var elemento2= document.getElementsByClassName("noticia");
 var elemento3= document.getElementsByClassName("parrafo");
+var elemento4= document.getElementsByClassName("areaPrivada");
 
 function cargarPagina()
 {
     //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
     //OPCIONES-BUSQUEDA-INSERCCION-ACTUALIZACION-ELIMINACION //
     for(let i=0;i<elemento1.length;i++)
-        {
+    {
         //BOTON DE OPCIONES VISIBLE
         elemento1[i].style.visibility="visible";
         elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
@@ -25,20 +26,40 @@ function cargarPagina()
             elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
             elemento1[i].style.color="yellow";
                 })
+    }
+    for(let i=0;i<elemento4.length;i++)
+    {
+        //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
+        elemento4[i].addEventListener('mouseenter',function(){
+            elemento4[i].style.transitionDuration = "0.5s";
+            elemento4[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
+            elemento4[i].style.bordeRadius="25px 0px 25px 0px";
+            elemento4[i].style.boxShadow="white 1px 0 40px";
+                })
+        elemento4[i].addEventListener('mouseleave',function(){
+            elemento4[i].style.transitionDuration = "0.5s";
+            elemento4[i].style.border="none";
+            elemento4[i].style.bordeRadius="none";
+            elemento4[i].style.boxShadow="none";
+                })
+    }
+    for(let i=0;i<elemento2.length;i++)
+    {
         elemento2[i].addEventListener('mouseenter',function(){
             elemento2[i].style.transitionDuration = "0.5s";
             elemento2[i].style.background= "rgb(12,22,111)";
             elemento2[i].style.color="white";
                 switch(i)   //RATON ENTRANDO EN LOS BLOQUES INFORMATIVOS PARA MOSTRAR EL CONTENIDO
                     {
-                    case 0: elemento3[i].innerHTML="<strong>-- Conseguido el metal con propiedades plásticas.</strong><br><strong>-- Primera vez que se alcanza la temperatura de: -274ºC.</strong><br><strong>-- El hidrógeno como combustible provoca mayores lluvias continentales e inundaciones imprevistas.</strong>";
+                    case 0: elemento3[i].innerHTML="<strong> Materiales de construcción: terrestre y espacial, no de obra civil</strong>";
                     break;
-                    case 1: elemento3[i].innerHTML="<strong>-- Techeimer se extiende por el continente de Wellis para su revolución industrial en nanotecnología</strong><br><strong>-- La empresa Ampergya sube sus impuestos energéticos.</strong><br><strong>-- La inteligencia artificial recomienda no buscar más formas de vida en el espacio por ver al ser humano una especie débil.</strong>";
+                    case 1: elemento3[i].innerHTML="<strong> Productos de diseño industrial, programación robótica y automatización de maquinaria de producción</strong>";
                     break;
-                    case 2: elemento3[i].innerHTML= "<strong>-- Diseño de Software destinado a la Aeronáutica.</strong><br><strong>-- Desarrollo de agricultura vertical.</strong><br><strong>-- Servicios de domótica particular y para entidades empresariales.</strong><br><strong>-- FemtoTecnología para estudiar microorganismos hostiles.</strong>";
+                    case 2: elemento3[i].innerHTML= "<strong> Material de uso en laboratorio, tratamiento de productos químicos y biológicos del peligrosidad de nivel medio</strong>";
                     break;
-                    case 3: elemento3[i].innerHTML=  "<strong>-- Rotor de antigravedad manual para maqinaria pesada.</strong><br><strong>-- Mapeador tridimensional de estructuras hasta 10 km de radio.</strong><br><strong>-- Proyectores de holografía HD sin pantalla física requerida.</strong><br><strong>-- Perforadores de laser para tuneladoras veloces.</strong>";
+                    case 3: elemento3[i].innerHTML=  "<strong> Productos de diseño de aeronaves y materiales de alta resistencia y baja densidad para movilidad en espacios hostiles, así como elementos de investigación espacial</strong>";
                     break;
+                    default: break;
                     }            
                 })
         elemento2[i].addEventListener('mouseleave',function(){
@@ -55,18 +76,8 @@ function cargarPagina()
                     break;
                     case 3: elemento3[i].innerHTML= "";
                     break;
+                    default: break;
                         }  
                 })
-        }
-        cargaImagen(0,0);  //Carga la primera imagen en el SLIDER
-}
-function receptorID(arrayID)
-{
-    var matrizID=arrayID;
-    return matrizID;
-}
-function receptorNOMBRE(arrayNOMBRE)
-{
-    var matrizNOMBRE=arrayNOMBRE;
-    return matrizNOMBRE;
+    }
 }
