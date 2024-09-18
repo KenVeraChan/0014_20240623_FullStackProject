@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2024 a las 14:09:03
+-- Tiempo de generación: 18-09-2024 a las 13:54:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -140,24 +140,29 @@ INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Estructura de tabla para la tabla `ventas`
 --
 
-CREATE TABLE `productos` (
-  `ID` int(3) DEFAULT NULL,
+CREATE TABLE `ventas` (
+  `ID` int(3) NOT NULL,
   `NOMBRE` varchar(30) DEFAULT NULL,
   `STOCK` int(4) DEFAULT NULL,
   `COSTE` float DEFAULT NULL,
   `SECTOR` varchar(15) NOT NULL,
+  `AREA` varchar(30) NOT NULL,
+  `FOTOGRAFIA` varchar(30) NOT NULL,
   `DETALLES` varchar(800) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Volcado de datos para la tabla `ventas`
 --
 
-INSERT INTO `productos` (`ID`, `NOMBRE`, `STOCK`, `COSTE`, `SECTOR`, `DETALLES`) VALUES
-(1, 'Robot estandar de línea', 210, 201.23, 'PRODUCTOS', 'Carga máxima de 300 kg, espacio volumétrico de 5 metros de radio esférico y velocidad máxima de movimiento 10 metros por segundo');
+INSERT INTO `ventas` (`ID`, `NOMBRE`, `STOCK`, `COSTE`, `SECTOR`, `AREA`, `FOTOGRAFIA`, `DETALLES`) VALUES
+(1, 'Robot estandar de línea', 210, 201.23, 'PRODUCTOS', 'INDUSTRIA', 'ROBOT', 'Carga máxima de 300 kg, espacio volumétrico de 5 metros de radio esférico y velocidad máxima de movimiento 10 metros por segundo'),
+(2, 'Tunelado para montes', 1, 450.56, 'SERVICIOS', '', 'TUNELADORA', 'Perforación de terreno para prolongación de ferrocarriles o carreteras'),
+(3, 'Instrumentos de laboratorio', 500, 20.31, 'PRODUCTOS', 'BIOINGENIERIA', 'INSTRUMENTACION', 'Laboratorio de pruebas nivel C'),
+(4, 'TRANSPORTE ELECTRICO', 200, 50.2, 'PRODUCTOS', 'CONSTRUCCION', 'TRANSPORTE ELECTRICO', 'Camión con motor eléctrico para transporte de material de construccion con peso máximo permitido de 9000kg');
 
 --
 -- Índices para tablas volcadas
@@ -182,6 +187,12 @@ ALTER TABLE `loginclientes`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -202,6 +213,12 @@ ALTER TABLE `imagenesslider`
 --
 ALTER TABLE `loginclientes`
   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
