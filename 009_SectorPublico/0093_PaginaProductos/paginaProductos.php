@@ -1,5 +1,6 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
+$_SESSION["concesion"];   //Semaforo de concesion de activacion del catalogo
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,93 +31,140 @@ session_start();   //Uso de la variable GLOBAL
         <div class="VaciobotonesPrincipal"></div>
     </header>  
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0093_PaginaProductos/images/PRODUCTOS.jpg); background-size: 100% 100%;">    
-    <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/CONSTRUCCION.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">CONSTRUCCION</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/INDUSTRIA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">INDUSTRIA</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>    
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/BIOINGENIERIA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">BIOINGENIERÍA</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table> 
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/AERONAUTICA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">AERONÁUTICA</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>  
-            </td>
-    </table>
-    <table class="seccionDET">   <!-- SEGUNDA BANDA DE DETALLE DE LAS VENTAS ELEGIDAS -->
-            <td class="noticiaDET">
-                <table class="tablaInternaDET">
-                    <tr class="filaDET">
-                        <td><img class="imgBloquesDET" src="images/CONSTRUCCION.png"></td>
-                    </tr>
-                    <tr class="filaDET">
-                        <td><div style="margin-left:2%">CONSTRUCCION</div></td>
-                    </tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                    <tr><td><input type="submit" class="filaDET" value="NOM_PROD" name="NOM_PROD"></td></tr>
-                </table>
-            </td>
-            <td class="noticiaDET">
-                <table class="tablaInternaDET">
-                    <tr class="filaDET">
-                        <td><img class="imgBloquesDET" src="images/DINERO.png"></td>
-                    </tr>
-                    <tr class="filaDET">
-                        <td><div style="margin-left:2%">Gestión del capital</div></td>
-                    </tr>
-                    <tr class="filaDET">
-                        <td><p class="parrafoDET"></p></td>
-                    </tr>
-                </table>    
-            </td>
-    </table>
+    <form action="../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php" method="GET">
+        <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
+                <td class="noticia">
+                    <table class="tablaInterna">
+                        <tr class="fila">
+                            <td><img class="imgBloques" src="images/CONSTRUCCION.png"></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><div style="margin-left:2%">CONSTRUCCION</div></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><p class="parrafo"></p></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><input type="submit" class="acceder" name="CONSTRUCCION" value="CATALOGO"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="noticia">
+                    <table class="tablaInterna">
+                        <tr class="fila">
+                            <td><img class="imgBloques" src="images/INDUSTRIA.png"></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><div style="margin-left:2%">INDUSTRIA</div></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><p class="parrafo"></p></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><input type="submit" class="acceder" name="INDUSTRIA" value="CATALOGO"></td>
+                        </tr>
+                    </table>    
+                </td>
+                <td class="noticia">
+                    <table class="tablaInterna">
+                        <tr class="fila">
+                            <td><img class="imgBloques" src="images/BIOINGENIERIA.png"></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><div style="margin-left:2%">BIOINGENIERÍA</div></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><p class="parrafo"></p></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><input type="submit" class="acceder" name="BIOINGENIERIA" value="CATALOGO"></td>
+                        </tr>
+                    </table> 
+                </td>
+                <td class="noticia">
+                    <table class="tablaInterna">
+                        <tr class="fila">
+                            <td><img class="imgBloques" src="images/AERONAUTICA.png"></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><div style="margin-left:2%">AERONÁUTICA</div></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><p class="parrafo"></p></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><input type="submit" class="acceder" name="AERONAUTICA" value="CATALOGO"></td>
+                        </tr>
+                    </table>  
+                </td>
+        </table>
+    </form>
+    <?php  if($_SESSION["concesion"]==1){ ?>    <!-- EN EL CASO DE QUE SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
+            <table class="seccionDET">   <!-- SEGUNDA BANDA DE DETALLE DE LAS VENTAS ELEGIDAS -->        
+                <td class="noticiaDET">
+                    <table class="tablaInternaDET">
+                        <tr class="filaDET">
+                            <td><img class="imgBloquesDET" src="images/<?php echo($_SESSION["AREA"][0]);?>.png"></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><div style="margin-left:2%"><?php echo($_SESSION["AREA"][0]);?></div></td>
+                        </tr>
+                        <?php $i=0; for($i=0;$i<count($_SESSION["FOTOGRAFIA"]);$i++){?>
+                        <tr class="filaDET">
+                            <td>
+                                <input type="submit" class="botonAc" value="<?php echo($_SESSION["FOTOGRAFIA"][$i]);?>" name="NOM_PROD">
+                            </td>
+                        </tr>
+                        <?php }; ?>
+                    </table>
+                </td>
+                <td class="noticiaDET">
+                    <table class="tablaInternaDET">
+                        <tr class="filaDET">
+                            <td><img class="imgBloquesDET" src="images/DINERO.png"></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><div style="margin-left:2%">Gestión del capital</div></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><p class="parrafoDET"></p></td>
+                        </tr>
+                    </table>   
+                </td>
+            </table>
+    <?php } ?>
+    <?php  if($_SESSION["concesion"]==0){ ?>  <!-- EN EL CASO DE QUE NO SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
+            <table class="seccionDET">   <!-- SEGUNDA BANDA DE DETALLE DE LAS VENTAS ELEGIDAS -->        
+                <td class="noticiaDET">
+                    <table class="tablaInternaDET">
+                        <tr class="filaDET">
+                            <td><img class="imgBloquesDET" src="images/CONSTRUCCION.png"></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><div style="margin-left:2%">CONSTRUCCION</div></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td>
+                                <input type="submit" class="botonAc" value="ROBOT" name="ROBOT">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="noticiaDET">
+                    <table class="tablaInternaDET">
+                        <tr class="filaDET">
+                            <td><img class="imgBloquesDET" src="images/DINERO.png"></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><div style="margin-left:2%">Gestión del capital</div></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><p class="parrafoDET"></p></td>
+                        </tr>
+                    </table>   
+                </td>
+            </table>
+    <?php } ?> 
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
@@ -135,5 +183,50 @@ session_start();   //Uso de la variable GLOBAL
             </div>
         </footer>
     </div>
+    <script>
+        function cargaApartado(numero)
+            {
+                switch(numero)
+                {   //En función del apartado al que se le haya hecho cliqueado se enviará una señal al fichero PHP
+                    case 1: //Elegido CONSTRUCCION
+                            <?php
+                                session_start(); 
+                                $_SESSION["CONSTRUCCION"]=1;
+                                $_SESSION["INDUSTRIA"]=0;
+                                $_SESSION["BIOINGENIERIA"]=0;
+                                $_SESSION["AERONAUTICA"]=0;
+                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
+                            ?> break;
+                    case 2: //Elegido INDUSTRIA
+                            <?php 
+                                session_start(); 
+                                $_SESSION["CONSTRUCCION"]=0;
+                                $_SESSION["INDUSTRIA"]=1;
+                                $_SESSION["BIOINGENIERIA"]=0;
+                                $_SESSION["AERONAUTICA"]=0;
+                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
+                            ?> break;
+                    case 3: //Elegido BIOINGENIERIA
+                            <?php
+                                session_start();  
+                                $_SESSION["CONSTRUCCION"]=0;
+                                $_SESSION["INDUSTRIA"]=0;
+                                $_SESSION["BIOINGENIERIA"]=1;
+                                $_SESSION["AERONAUTICA"]=0;
+                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
+                            ?> break;
+                    case 4: //Elegido AERONAUTICA
+                            <?php
+                                session_start();  
+                                $_SESSION["CONSTRUCCION"]=0;
+                                $_SESSION["INDUSTRIA"]=0;
+                                $_SESSION["BIOINGENIERIA"]=0;
+                                $_SESSION["AERONAUTICA"]=1;
+                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
+                            ?> break;
+                    default: break;
+                }
+            }
+    </script>
 </body>
 </html>

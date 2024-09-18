@@ -6,6 +6,7 @@ var elemento1= document.getElementsByClassName("bloque_opciones");
 var elemento2= document.getElementsByClassName("noticia");
 var elemento3= document.getElementsByClassName("parrafo");
 var elemento4= document.getElementsByClassName("areaPrivada");
+var elemento5= document.getElementsByClassName("acceder");
 
 function cargarPagina()
 {
@@ -43,6 +44,7 @@ function cargarPagina()
             elemento4[i].style.boxShadow="none";
                 })
     }
+    //PARA LOS PANELES DEL MOSTRADOR 
     for(let i=0;i<elemento2.length;i++)
     {
         elemento2[i].addEventListener('mouseenter',function(){
@@ -80,4 +82,18 @@ function cargarPagina()
                         }  
                 })
     }
+    //BOTONES DEL CATALOGO DE OPCIONES
+    for(let i=0;i<elemento5.length;i++)
+        {
+            elemento5[i].addEventListener('mouseenter',function(){
+                elemento5[i].style.transitionDuration = "0.5s";
+                elemento5[i].style.background= "rgb(211,218,19)";
+                elemento5[i].style.color="rgb(12,12,68)";          
+                    })
+            elemento5[i].addEventListener('mouseleave',function(){
+                elemento5[i].style.transitionDuration = "0.5s";
+                elemento5[i].style.background= "rgb(2, 2, 27)";
+                elemento5[i].style.color="rgb(211,218,19)";  
+                    })
+        }
 }
