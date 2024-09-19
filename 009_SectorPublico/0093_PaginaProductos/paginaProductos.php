@@ -109,13 +109,18 @@ $_SESSION["concesion"];   //Semaforo de concesion de activacion del catalogo
                         <tr class="filaDET">
                             <td><div style="margin-left:2%"><?php echo($_SESSION["AREA"][0]);?></div></td>
                         </tr>
-                        <?php $i=0; for($i=0;$i<count($_SESSION["FOTOGRAFIA"]);$i++){?>
+                        <?php $i=0; for($i=0;$i<count($_SESSION["FOTOGRAFIA"]);$i++)
+                                    {
+                                        if(isset($_SESSION["FOTOGRAFIA"][$i]))
+                                        {
+                                        ?>
                         <tr class="filaDET">
                             <td>
-                                <input type="submit" class="botonAc" value="<?php echo($_SESSION["FOTOGRAFIA"][$i]);?>" name="NOM_PROD">
+                                <input type="submit" class="botonAc" value="<?php echo($_SESSION["FOTOGRAFIA"][$i]);?>" name="<?php echo($_SESSION["FOTOGRAFIA"][$i]);?>">
                             </td>
                         </tr>
-                        <?php }; ?>
+                                  <?php }
+                                   }; ?>
                     </table>
                 </td>
                 <td class="noticiaDET">

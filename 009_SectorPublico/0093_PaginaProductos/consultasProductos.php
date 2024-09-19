@@ -1,9 +1,30 @@
 <?php
 session_start();
 require "../../005_Login/conexionPHP.php";
-//error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
+error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 $conexionProductos=ConexionPHP::getConexionCLIENTES();
 $BD_tabla=ConexionPHP::getBD_TablaVentas();
+
+//REINICIO DE TODAS LAS VARIABLES BORRANDO HASTA EL ÚLTIMO ELEMENTO DEL QUE MAYOR TENGA ENTRADAS EN LA TABLA SQL
+//La consulta SQL generada funciona: creando una primera consulta para agrupar por departamentos la cantidad de productos en ellos y luego de haber sido generado
+// se hace una consulta sobre esa tabla abstracta que devuelve el valor maximo de entre todos los productos habidos en los agrupados departamentos de la tabla
+    $consultaVentas=$conexionProductos->query("SELECT MAX(CONSULTA.PRODDEPART) AS MAXIMO FROM (SELECT AREA,COUNT(*) AS PRODDEPART FROM VENTAS WHERE SECTOR='PRODUCTOS' GROUP BY AREA) AS CONSULTA");
+    $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
+    foreach($resultadoVentas as $cargaVentas)
+    {
+        $longitudCantidad=$cargaVentas->MAXIMO;
+    }
+    for($i=0;$i<$longitudCantidad;$i++)
+    {
+        $_SESSION["ID"][$i]="";
+        $_SESSION["NOMBRE"][$i]="";
+        $_SESSION["STOCK"][$i]="";
+        $_SESSION["SECTOR"][$i]="";
+        $_SESSION["AREA"][$i]="";
+        $_SESSION["FOTOGRAFIA"][$i]="";
+        $_SESSION["DETALLES"][$i]="";
+    }
+    $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
 
 //CASO DE QUE EL AREA SEA DE CONSTRUCCION
 if(isset($_GET["CONSTRUCCION"]))
