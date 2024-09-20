@@ -1,6 +1,7 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
-$_SESSION["concesion"];   //Semaforo de concesion de activacion del catalogo
+error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
+$_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,16 +85,16 @@ $_SESSION["concesion"];   //Semaforo de concesion de activacion del catalogo
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="images/AERONAUTICA.png"></td>
+                            <td><img class="imgBloques" src="images/AEROESPACIAL.png"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">AERONÁUTICA</div></td>
+                            <td><div style="margin-left:2%">AEROESPACIAL</div></td>
                         </tr>
                         <tr class="fila">
                             <td><p class="parrafo"></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="AERONAUTICA" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="AEROESPACIAL" value="CATALOGO"></td>
                         </tr>
                     </table>  
                 </td>
@@ -111,7 +112,7 @@ $_SESSION["concesion"];   //Semaforo de concesion de activacion del catalogo
                         </tr>
                         <?php $i=0; for($i=0;$i<count($_SESSION["FOTOGRAFIA"]);$i++)
                                     {
-                                        if(isset($_SESSION["FOTOGRAFIA"][$i]))
+                                        if(!empty($_SESSION["FOTOGRAFIA"][$i]))  //Comprueba si la variable de la celda del ARRAY NO está vacío
                                         {
                                         ?>
                         <tr class="filaDET">
@@ -188,50 +189,5 @@ $_SESSION["concesion"];   //Semaforo de concesion de activacion del catalogo
             </div>
         </footer>
     </div>
-    <script>
-        function cargaApartado(numero)
-            {
-                switch(numero)
-                {   //En función del apartado al que se le haya hecho cliqueado se enviará una señal al fichero PHP
-                    case 1: //Elegido CONSTRUCCION
-                            <?php
-                                session_start(); 
-                                $_SESSION["CONSTRUCCION"]=1;
-                                $_SESSION["INDUSTRIA"]=0;
-                                $_SESSION["BIOINGENIERIA"]=0;
-                                $_SESSION["AERONAUTICA"]=0;
-                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
-                            ?> break;
-                    case 2: //Elegido INDUSTRIA
-                            <?php 
-                                session_start(); 
-                                $_SESSION["CONSTRUCCION"]=0;
-                                $_SESSION["INDUSTRIA"]=1;
-                                $_SESSION["BIOINGENIERIA"]=0;
-                                $_SESSION["AERONAUTICA"]=0;
-                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
-                            ?> break;
-                    case 3: //Elegido BIOINGENIERIA
-                            <?php
-                                session_start();  
-                                $_SESSION["CONSTRUCCION"]=0;
-                                $_SESSION["INDUSTRIA"]=0;
-                                $_SESSION["BIOINGENIERIA"]=1;
-                                $_SESSION["AERONAUTICA"]=0;
-                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
-                            ?> break;
-                    case 4: //Elegido AERONAUTICA
-                            <?php
-                                session_start();  
-                                $_SESSION["CONSTRUCCION"]=0;
-                                $_SESSION["INDUSTRIA"]=0;
-                                $_SESSION["BIOINGENIERIA"]=0;
-                                $_SESSION["AERONAUTICA"]=1;
-                                header("location:../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php");
-                            ?> break;
-                    default: break;
-                }
-            }
-    </script>
 </body>
 </html>

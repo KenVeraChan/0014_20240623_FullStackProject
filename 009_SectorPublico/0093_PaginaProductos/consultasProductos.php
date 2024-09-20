@@ -104,11 +104,11 @@ if(isset($_GET["BIOINGENIERIA"]))
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
         header("location:../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php");
 }
-//CASO DE QUE EL AREA SEA DE AERONAUTICA
-if(isset($_GET["AERONAUTICA"]))
+//CASO DE QUE EL AREA SEA DE AEROESPACIAL
+if(isset($_GET["AEROESPACIAL"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PRODUCTOS
-    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE SECTOR='PRODUCTOS' AND AREA='AERONAUTICA'");
+    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE SECTOR='PRODUCTOS' AND AREA='AEROESPACIAL'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     //DESCARGA DATOS DE LA CONSULTA
     $i=0; //Puntero de recorrido del ARRAY
