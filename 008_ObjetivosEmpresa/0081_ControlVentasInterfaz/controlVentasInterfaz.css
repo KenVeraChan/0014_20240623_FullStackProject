@@ -93,9 +93,8 @@
     }
     .tableroDiagrama{
         position: absolute;
-        padding-top: 120px;
-        overflow: scroll;
-        width:75%; 
+        padding-top: 100px;
+        width: 600px; 
         height:1000px;
         margin-top: 80px;
         margin-left: 70px;
@@ -132,8 +131,9 @@
     }
     .desplegable{
         float:right;
-        width: 357px;
-        height:15px;
+        margin-top: -10px;
+        width: 257px;
+        height:20px;
         background-color: white;
         z-index: 1;  
     }
@@ -151,8 +151,8 @@
     .boton{
         float: left;
         margin-top: 33px;
-        margin-left: 20px;
-        width: 75px;
+        margin-left: 100px;
+        width: 100px;
         height: 30px;
         text-align: center;
         font-size: 80%;
@@ -162,7 +162,7 @@
     }
     .boton:nth-child(1)
     {
-        margin-left: 170px;
+        margin-left: 250px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -291,20 +291,19 @@
     }
     .tableroDiagrama{
         position: absolute;
-        overflow: scroll;
-        padding-top: 120px;
-        width:85%; 
+        padding-top: 100px;
+        width: 400px; 
         height:1000px;
         margin-top: 80px;
-        margin-left: 40px;
+        margin-left: 70px;
         z-index: 1;
     }
     .celda{
         float: left;
         font-size: medium;
         color: rgb(255, 255, 255);
-        width: 550px;
-        height:10px;
+        width: 350px;
+        height: 80px;
         text-align:left;
         margin-top: 8px;
         margin-left: 10%;
@@ -326,9 +325,11 @@
         z-index: 1;  
     }
     .desplegable{
-        float:right;
-        width: 357px;
-        height:15px;
+        float:left;
+        margin-top: -40px;
+        margin-left: 40px;
+        width: 257px;
+        height:20px;
         background-color: white;
         z-index: 1;  
     }
@@ -345,9 +346,9 @@
     }
     .boton{
         float: left;
-        margin-top: 33px;
-        margin-left: 20px;
-        width: 75px;
+        margin-top: 10px;
+        margin-left: 60px;
+        width: 100px;
         height: 30px;
         text-align: center;
         font-size: 80%;
@@ -357,7 +358,7 @@
     }
     .boton:nth-child(1)
     {
-        margin-left: 170px;
+        margin-left: 0px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -486,20 +487,19 @@
     }
     .tableroDiagrama{
         position: absolute;
-        overflow: scroll;
-        padding-top: 120px;
-        width:85%; 
-        height:700px;
+        padding-top: 100px;
+        width: 150px; 
+        height:1000px;
         margin-top: 80px;
-        margin-left: 40px;
+        margin-left: 15%;
         z-index: 1;
     }
     .celda{
         float: left;
         font-size: medium;
         color: rgb(255, 255, 255);
-        width: 550px;
-        height:10px;
+        width: 230px;
+        height: 80px;
         text-align:left;
         margin-top: 8px;
         margin-left: 10%;
@@ -521,9 +521,11 @@
         z-index: 1;  
     }
     .desplegable{
-        float:right;
-        width: 357px;
-        height:15px;
+        float:left;
+        margin-top: -40px;
+        margin-left: 30px;
+        width: 200px;
+        height:20px;
         background-color: white;
         z-index: 1;  
     }
@@ -540,9 +542,9 @@
     }
     .boton{
         float: left;
-        margin-top: 33px;
+        margin-top: 10px;
         margin-left: 20px;
-        width: 75px;
+        width: 100px;
         height: 30px;
         text-align: center;
         font-size: 80%;
@@ -552,7 +554,7 @@
     }
     .boton:nth-child(1)
     {
-        margin-left: 170px;
+        margin-left: 0px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -673,7 +675,7 @@
         position: absolute;
         padding-top: 60px;
         margin-top: 20px;
-        margin-left: 10%;
+        margin-left: 2%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size: small;
         color:#fcf700;
@@ -682,23 +684,22 @@
     }
     .tableroDiagrama{
         position: absolute;
-        overflow: scroll;
-        padding-top: 120px;
-        width:85%; 
-        height:700px;
+        padding-top: 100px;
+        width: 120px; 
+        height:1000px;
         margin-top: 80px;
-        margin-left: 20px;
+        margin-left: 5%;
         z-index: 1;
     }
     .celda{
         float: left;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
-        width: 550px;
-        height:10px;
+        width: 200px;
+        height: 80px;
         text-align:left;
         margin-top: 8px;
-        margin-left: 10%;
+        margin-left: 5%;
         z-index: 1;
     }
     .celdas{
@@ -717,9 +718,12 @@
         z-index: 1;  
     }
     .desplegable{
-        float:right;
-        width: 357px;
-        height:15px;
+        float:left;
+        margin-top: -40px;
+        margin-left: 10px;
+        width: 180px;
+        height:18px;
+        font-size: small;
         background-color: white;
         z-index: 1;  
     }
@@ -737,7 +741,7 @@
     .boton{
         float: left;
         margin-top: 33px;
-        margin-left: 20px;
+        margin-left: 15px;
         width: 75px;
         height: 30px;
         text-align: center;
@@ -748,7 +752,7 @@
     }
     .boton:nth-child(1)
     {
-        margin-left: 170px;
+        margin-left: 10px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

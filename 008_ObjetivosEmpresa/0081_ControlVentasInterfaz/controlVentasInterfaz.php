@@ -17,8 +17,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tratamiento proyectos</title>
-    <link rel="stylesheet" href="controldeInterfaz.css">
-    <script src="../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.js"></script>
+    <link rel="stylesheet" href="controlVentasInterfaz.css">
+    <script src="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.js"></script>
 </head>
 <body onload="cargarPagina()">
         <div class="letreroOK" style=
@@ -32,7 +32,7 @@
                 box-shadow: none">
         </div>
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../../008_ObjetivosEmpresa/0084_ControldeInterfaz/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
         <div id="areaSesion">
             <table style="width:100%">
                 <tr>
@@ -44,67 +44,33 @@
         <div class="VaciobotonesPrincipal"></div>
     </header>
     <div class="consulta">
-        <div id="tituloGeneral"><strong>IMÁGENES PARA LA INTERFAZ DE LAS PÁGINAS WEB</strong></div>
+        <div id="tituloGeneral"><strong>GESTIÓN DE PRECIOS DE PRODUCTOS SERVICIOS Y PROYECTOS</strong></div>
         <div class="tableroDiagrama" style="position:absolute">
             <table id="formularioInterno">
-                <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0084_ControldeInterfaz/gestionInterfaz.php" method="post" enctype="multipart/form-data">
-                    <label class="celda">ID PROYECTO:<input type="text" class="celdas" name="idImagen" placeholder="Para cargar IMAGEN introducir ID únicamente"></label> <!--ID-->                        
-                    <p class="separacion"></p>
-                    <label class="celda">NOMBRE IMAGEN:<input type="text" class="celdas" name="nombreProyecto" disabled="true"></label>                         
-                    <p class="separacion"></p>
-                    <label class="celda">TAMAÑO IMAGEN:<input type="text" class="celdas" name="nombreProyecto" disabled="true"></label>
-                    <p class="separacion"></p>
-                    <label class="celda">TIPO IMAGEN:<input type="text" class="celdas" name="nombreProyecto" disabled="true"></label>  
-                    <p class="separacion"></p>
-                    <label class="celda">DESTINO:
+                <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/gestionVentasInterfaz.php" method="post" enctype="multipart/form-data">
+                    <label class="celda">DESTINO DE ALMACENAJE:</label>
                         <select type="text" class="desplegable" name="destinoImagen">
-                            <option></option>
+                        <option></option>
                             <option>SLIDER</option>
                             <option>PRODUCTOS</option>
                             <option>SERVICIOS</option>
+                            <option>PROYECTOS</option>
+                            <option>NOVEDADES</option>
+                            <option>CATEGORIA PRODUCTOS</option>
+                            <option>CATEGORIA SERVICIOS</option>
+                            <option>CATEGORIA PROYECTOS</option>
                         </select>    
-                    </label>
                     <label class="celda">
-                    <input type="submit" value="INSERTA" name="INSERTA" class="boton">
                     <input type="submit" value="CARGA" name="CARGA" class="boton">
-                    <input type="submit" value="BORRA" name="BORRA" class="boton">
                     <input type="submit" value="VOLVER" name="VOLVER" class="boton">
                     </label>
                     <p class="separacion"></p>
-                    <p class="separacion"></p>
-                    <p class="separacion"></p>
-                    <input type="file" id="imagen" name="imagen">
-                    <p class="separacion"></p>
-                    <p class="separacion"></p>
-                    <p class="separacion"></p>
-                    <?php
-                        if($_SESSION["senalImagen"]==1)
-                        {
-                            if($_SESSION["destinoCargado"]==1)
-                            {
-                    ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SLIDER cargada del servidor BBDD"></label>
-                        <?php
-                            } 
-                            if($_SESSION["destinoCargado"]==2)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0093_PaginaProductos/productImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen PRODUCTOS cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                            if($_SESSION["destinoCargado"]==3)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0094_PaginaServicios/servicesImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SERVICIOS cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                        };
-                    ?>                   
+                    <p class="separacion"></p>                   
                     <p class="separacion"></p>                  
                 </form>
             </table>
         </div>
-        <img id="imagenPortada" src="../../008_ObjetivosEmpresa/0084_ControldeInterfaz/images/REUNIONES.jpg" alt="Imagen Reuniones">
+        <img id="imagenPortada" src="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/images/REUNIONES.jpg" alt="Imagen Reuniones">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
