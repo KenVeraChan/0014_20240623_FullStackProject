@@ -14,8 +14,7 @@ class ConexionPHP
     private static $BD_tablaJefesTareas="gestionpeticiones"; //TABLA Jefes Y RRHH
     private static $BD_tablaJefesGannt="diagrama_gannt"; //TABLA Jefes Gannt
     private static $BD_tablaClientes="clientes"; //TABLA Pedidos Clientes
-    private static $BD_tablaVentas="ventas"; //TABLA Ventas para los Clientes
-    private static $BD_tablaSlider="imagenesslider"; //TABLA Slider de imágenes sector público
+    private static $BD_tablaInterfazImagenes="imagenesinterfazweb"; //TABLA IMAGENES: SLIDER, PRODUCTOS, SERVICIOS Y PROYECTOS
     private static $BD_tablaHistoria="historias";  //TABLA HISTORIAS de los acontecimientos históricos empresariales sector público
     private static $BD_charset="utf8";
 
@@ -71,17 +70,13 @@ class ConexionPHP
     {
         return self::$BD_tablaClientes;
     }
-    public static function getBD_TablaSlider()
+    public static function getBD_TablaInterfazImagenes()
     {
-       return self::$BD_tablaSlider; 
+       return self::$BD_tablaInterfazImagenes; 
     }
     public static function getBD_TablaHistoria()
     {
        return self::$BD_tablaHistoria; 
-    }
-    public static function getBD_TablaVentas()
-    {
-        return self::$BD_tablaVentas;
     }
     public static function getBD_Charset()
     {

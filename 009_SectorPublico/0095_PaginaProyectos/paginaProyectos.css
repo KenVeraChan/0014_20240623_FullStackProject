@@ -29,21 +29,11 @@
             background-color: rgba(0, 0, 19, 0.89);
             box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
-        .areaPrivada{ 
-            float:right;
-            margin-right: 20px; 
-            margin-top:-60px; 
-        }
-        .areaPrivada:nth-child(2){ 
-            float:right;
-            margin-right: 90px; 
-            margin-top:-60px; 
-        }
         .bloque_opciones{
             position: relative;
             padding-top: 10px;
             float: left;
-            width: 16.5%;
+            width: 20%;
             height: 30px;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
@@ -90,7 +80,7 @@
     .consulta{
         position: relative;
         width: 100%;
-        height: 2100px;
+        height: 720px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -128,7 +118,7 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal{
+    #seccionPrincipal{
         margin-top: 20px;
         padding-left: 13%;
         width:100%;
@@ -161,7 +151,6 @@
         height: 50px;
     }
     .imgBloques{
-        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
         width:40%;
     }
     .fila:nth-child(2){
@@ -197,7 +186,7 @@
     #piePrincipal
     {
         position:relative;
-        margin-top: 0px;
+        margin-top: -15px;
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
@@ -225,22 +214,27 @@
         text-align: center; 
     }
 }
-@media all and (min-width: 481px) and (max-width: 769px) 
+@media all and (min-width: 481px) and (max-width: 768px) 
 {
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 165px;
+        height: 145px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
             float: left;
             width: 100%;   /*ICONO CUADRADO*/
-            height: 100px;
+            height: 80px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 80px;   
         }
         .VaciobotonesPrincipal{
             float: left;
@@ -250,21 +244,16 @@
             background-color: rgba(0, 0, 19, 0.89);
             box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
-        .areaPrivada{
-            float:right;
-            margin-right: 20px; 
-            margin-top:-60px; 
-        }
-        .areaPrivada:nth-child(2){ 
-            float:right;
-            margin-right: 80px; 
-            margin-top:-60px; 
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
         }
         .bloque_opciones{
             position: relative;
             padding-top: 10px;
             float: left;
-            width: 16.5%;
+            width: 20%;
             height: 30px;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
@@ -314,7 +303,7 @@
     .consulta{
         position: relative;
         width: 100%;
-        height: 2100px;
+        height: 720px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -347,7 +336,7 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal{
+    #seccionPrincipal{
         margin-top: 20px;
         padding-left: 13%;
         width:100%;
@@ -380,7 +369,6 @@
         height: 50px;
     }
     .imgBloques{
-        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
         width:40%;
     }
     .fila:nth-child(2){
@@ -445,14 +433,14 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 300px) and (max-width: 481px)
+@media all and (min-width: 300px) and (max-width: 480px)
 {   
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 280px;
+        height: 255px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -474,15 +462,10 @@
             height: 13px;  
             background-color: rgba(0, 0, 39, 0.89);
         }
-        .areaPrivada{
-            float:right;
-            margin-right: 5px; 
-            margin-top:-60px; 
-        }
-        .areaPrivada:nth-child(2){ 
-            float:right;
-            margin-right: 50px; 
-            margin-top:-60px; 
+        .LlenobotonesPrincipal{
+            width: 10px;
+            height: 60px;
+            padding-bottom: 5px;
         }
         .bloque_opciones{
             position: relative;
@@ -500,8 +483,7 @@
             width: 50%;
             height: 100px;
         }
-        #tabla
-        {
+        #tabla{
             float: left;
             width:100%;
         }
@@ -540,7 +522,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 2100px;
+        height: 720px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -565,7 +547,7 @@
         margin-left:100px;
     }
     #seccionSlider{
-        margin-top: 40px;
+        margin-top: 10px;
         width:100%;
         height: 120px;
         border: 2px;
@@ -573,7 +555,7 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal{
+    #seccionPrincipal{
         margin-top: 20px;
         padding-left: 13%;
         width:100%;
@@ -606,7 +588,6 @@
         height: 50px;
     }
     .imgBloques{
-        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
         width:40%;
     }
     .fila:nth-child(2){
@@ -684,7 +665,7 @@
         #iconoAdorno{
             float: left;
             width: 100%;   /*ICONO CUADRADO*/
-            height: 140px;
+            height: 80px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
@@ -700,15 +681,10 @@
             height: 13px;  
             background-color: rgba(0, 0, 39, 0.89);
         }
-        .areaPrivada{
-            float:right;
-            margin-right: 15%; 
-            margin-top: -55px;
-        }
-        .areaPrivada:nth-child(2){ 
-            float:right;
-            margin-right: 60%; 
-            margin-top: -55px; 
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
         }
         .bloque_opciones{
             position: relative;
@@ -764,7 +740,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 2100px;
+        height: 720px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -789,8 +765,7 @@
         margin-left:20px;
     }
     #seccionSlider{
-        position:absolute;
-        margin-top: 150px;
+        margin-top: 10px;
         width:100%;
         height: 90px;
         border: 2px;
@@ -798,9 +773,8 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal{
-        position: relative;
-        margin-top: 60px;
+    #seccionPrincipal{
+        margin-top: 20px;
         padding-left: 8%;
         width:100%;
         height: 265px;
@@ -808,9 +782,6 @@
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
-    }
-    .seccionPrincipal:nth-child(2){
-        margin-top: 280px;
     }
     .noticia{
         float: left;
@@ -835,7 +806,6 @@
         height: 50px;
     }
     .imgBloques{
-        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
         width:50%;
     }
     .fila:nth-child(2){

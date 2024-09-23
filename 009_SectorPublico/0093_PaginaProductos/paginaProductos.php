@@ -37,7 +37,7 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="images/CONSTRUCCION.png"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(1);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">CONSTRUCCION</div></td>
@@ -53,7 +53,7 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="images/INDUSTRIA.png"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(2);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">INDUSTRIA</div></td>
@@ -69,7 +69,7 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="images/BIOINGENIERIA.png"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(3);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">BIOINGENIERÍA</div></td>
@@ -85,7 +85,7 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="images/AEROESPACIAL.png"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(4);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">AEROESPACIAL</div></td>
@@ -105,19 +105,19 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
                 <td class="noticiaDET">
                     <table class="tablaInternaDET">
                         <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="images/<?php echo($_SESSION["AREA"][0]);?>.png"></td>
+                            <td><img class="imgBloquesDET" src="productCategory/<?php echo($_SESSION["SECTORPROD"][0]);?>.png"></td>
                         </tr>
                         <tr class="filaDET">
-                            <td><div style="margin-left:2%"><?php echo($_SESSION["AREA"][0]);?></div></td>
+                            <td><div style="margin-left:2%"><?php echo($_SESSION["SECTORPROD"][0]);?></div></td>
                         </tr>
-                        <?php $i=0; for($i=0;$i<count($_SESSION["FOTOGRAFIA"]);$i++)
+                        <?php $i=0; for($i=0;$i<count($_SESSION["NOMBREPROD"]);$i++)
                                     {
-                                        if(!empty($_SESSION["FOTOGRAFIA"][$i]))  //Comprueba si la variable de la celda del ARRAY NO está vacío
+                                        if(!empty($_SESSION["NOMBREPROD"][$i]))  //Comprueba si la variable de la celda del ARRAY NO está vacío
                                         {
                                         ?>
                         <tr class="filaDET">
                             <td>
-                                <input type="submit" class="botonAc" value="<?php echo($_SESSION["FOTOGRAFIA"][$i]);?>" name="<?php echo($_SESSION["FOTOGRAFIA"][$i]);?>">
+                                <input type="submit" class="botonAc" value="<?php echo $_SESSION["NOMBREPROD"][$i];?>" name="<?php echo($_SESSION["NOMBREPROD"][$i]);?>">
                             </td>
                         </tr>
                                   <?php }
@@ -144,7 +144,7 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
                 <td class="noticiaDET">
                     <table class="tablaInternaDET">
                         <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="images/CONSTRUCCION.png"></td>
+                            <td><img class="imgBloquesDET" src="productCategory/CONSTRUCCION.png"></td>
                         </tr>
                         <tr class="filaDET">
                             <td><div style="margin-left:2%">CONSTRUCCION</div></td>
@@ -191,3 +191,54 @@ $_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
     </div>
 </body>
 </html>
+<?php
+require "../../005_Login/conexionPHP.php";
+error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
+$conexionProductos=ConexionPHP::getConexionCLIENTES();
+$BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
+//DESCARGA DE LAS FOTOGRAFIAS DE LAS CATEGORÍAS DE PRODUCTOS
+$consVentas=$conexionProductos->query("SELECT NOMBRE FROM $BD_tabla WHERE DESTINO='CATEGORIA PRODUCTOS'");
+$resulVentas=$consVentas->fetchAll(PDO::FETCH_OBJ);
+$k=0; //inicio de la variable puntero al array generado de almacenaje
+foreach($resulVentas as $carVentas)
+{
+    if(isset($carVentas->NOMBRE))
+    {
+        $_SESSION["CATEGORIAPROD"][$k]=$carVentas->NOMBRE;
+        $k++;
+    }
+}
+$consultaVentas->closeCursor();
+function extraccionCategoria($eleccion)
+{
+    switch($eleccion)
+    {
+        case 1:
+            {
+                $valor=array_search("CONSTRUCCION.png",$_SESSION["CATEGORIAPROD"],true);
+                break;
+            }
+        case 2:
+            {
+                $valor=array_search("INDUSTRIA.png",$_SESSION["CATEGORIAPROD"],true);
+                break;
+            }
+        case 3:
+            {
+                $valor=array_search("BIOINGENIERIA.png",$_SESSION["CATEGORIAPROD"],true);
+                break;
+            }
+        case 4:
+            {
+                $valor=array_search("AEROESPACIAL.png",$_SESSION["CATEGORIAPROD"],true);
+                break;
+            }
+        default:
+            {
+                $valor=0;
+                break;
+            }
+    }
+    return $_SESSION["CATEGORIAPROD"][$valor];
+}
+?>

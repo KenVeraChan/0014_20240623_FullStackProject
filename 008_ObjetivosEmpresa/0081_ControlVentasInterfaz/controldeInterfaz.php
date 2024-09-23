@@ -62,11 +62,6 @@
                             <option>SLIDER</option>
                             <option>PRODUCTOS</option>
                             <option>SERVICIOS</option>
-                            <option>PROYECTOS</option>
-                            <option>NOVEDADES</option>
-                            <option>CATEGORIA PRODUCTOS</option>
-                            <option>CATEGORIA SERVICIOS</option>
-                            <option>CATEGORIA PROYECTOS</option>
                         </select>    
                     </label>
                     <label class="celda">
@@ -101,36 +96,6 @@
                             {
                         ?>
                             <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0094_PaginaServicios/servicesImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen SERVICIOS cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                            if($_SESSION["destinoCargado"]==4)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0095_PaginaProyectos/projectsImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen PROYECTOS cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                            if($_SESSION["destinoCargado"]==5)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0091_PaginaPrincipal/newsImages/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen NOVEDADES cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                            if($_SESSION["destinoCargado"]==6)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0093_PaginaProductos/productCategory/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen CATEGORIA DE PRODUCTOS cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                            if($_SESSION["destinoCargado"]==7)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0094_PaginaServicios/servicesCategory/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen CATEGORIA DE SERVICIOS cargada del servidor BBDD"></label>
-                        <?php
-                            }
-                            if($_SESSION["destinoCargado"]==8)
-                            {
-                        ?>
-                            <label class="celda">CARGA IMAGEN:<img class="espacioIimagen" src="../../009_SectorPublico/0095_PaginaProyectos/projectsCategory/<?php echo $_SESSION["nombreImagen"];?>" name="cargaImagenes" alt="Imagen CATEGORIA DE PROYECTOS cargada del servidor BBDD"></label>
                         <?php
                             }
                         };

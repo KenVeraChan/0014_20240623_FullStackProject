@@ -3,12 +3,13 @@ session_start();
 require "../../005_Login/conexionPHP.php";
 error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 $conexionProductos=ConexionPHP::getConexionCLIENTES();
-$BD_tabla=ConexionPHP::getBD_TablaVentas();
+$BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
 
-//REINICIO DE TODAS LAS VARIABLES BORRANDO HASTA EL ÚLTIMO ELEMENTO DEL QUE MAYOR TENGA ENTRADAS EN LA TABLA SQL
-//La consulta SQL generada funciona: creando una primera consulta para agrupar por departamentos la cantidad de productos en ellos y luego de haber sido generado
-// se hace una consulta sobre esa tabla abstracta que devuelve el valor maximo de entre todos los productos habidos en los agrupados departamentos de la tabla
-    $consultaVentas=$conexionProductos->query("SELECT MAX(CONSULTA.PRODDEPART) AS MAXIMO FROM (SELECT AREA,COUNT(*) AS PRODDEPART FROM VENTAS WHERE SECTOR='PRODUCTOS' GROUP BY AREA) AS CONSULTA");
+    //PRIMERO REINICIO DE TODAS LAS VARIABLES
+    //REINICIO DE TODAS LAS VARIABLES BORRANDO HASTA EL ÚLTIMO ELEMENTO DEL QUE MAYOR TENGA ENTRADAS EN LA TABLA SQL
+    //La consulta SQL generada funciona: creando una primera consulta para agrupar por departamentos la cantidad de productos en ellos y luego de haber sido generado
+    // se hace una consulta sobre esa tabla abstracta que devuelve el valor maximo de entre todos los productos habidos en los agrupados departamentos de la tabla
+    $consultaVentas=$conexionProductos->query("SELECT MAX(CONSULTA.PRODDEPART) AS MAXIMO FROM (SELECT SECTOR,COUNT(*) AS PRODDEPART FROM $BD_tabla WHERE DESTINO='PRODUCTOS' GROUP BY SECTOR) AS CONSULTA");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     foreach($resultadoVentas as $cargaVentas)
     {
@@ -16,13 +17,12 @@ $BD_tabla=ConexionPHP::getBD_TablaVentas();
     }
     for($i=0;$i<$longitudCantidad;$i++)
     {
-        $_SESSION["ID"][$i]="";
-        $_SESSION["NOMBRE"][$i]="";
-        $_SESSION["STOCK"][$i]="";
-        $_SESSION["SECTOR"][$i]="";
-        $_SESSION["AREA"][$i]="";
-        $_SESSION["FOTOGRAFIA"][$i]="";
-        $_SESSION["DETALLES"][$i]="";
+        //SE LIMPIAN LAS SIGUIENTES VARIABLES QUE FUERON USADAS EN EL SLIDER Y SE VUELVE A USAR AQUI
+        $_SESSION["NOMBREPROD"][$i]="";
+        $_SESSION["SECTORPROD"][$i]="";
+        $_SESSION["STOCKPROD"][$i]="";
+        $_SESSION["COSTEPROD"][$i]="";
+        $_SESSION["DETALLESPROD"][$i]="";
     }
     $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
 
@@ -30,20 +30,18 @@ $BD_tabla=ConexionPHP::getBD_TablaVentas();
 if(isset($_GET["CONSTRUCCION"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PRODUCTOS
-    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE SECTOR='PRODUCTOS' AND AREA='CONSTRUCCION'");
+    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PRODUCTOS' AND SECTOR='CONSTRUCCION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     //DESCARGA DATOS DE LA CONSULTA
     $i=0; //Puntero de recorrido del ARRAY
         foreach($resultadoVentas as $cargaVentas)
         {
-            if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
+            if(isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["ID"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRE"][$i]=$cargaVentas->NOMBRE;
-                $_SESSION["STOCK"][$i]=$cargaVentas->STOCK;
-                $_SESSION["SECTOR"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["AREA"][$i]=$cargaVentas->AREA;
-                $_SESSION["FOTOGRAFIA"][$i]=$cargaVentas->FOTOGRAFIA;
+                $_SESSION["NOMBREPROD"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROD"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROD"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROD"][$i]=$cargaVentas->COSTE;
                 $_SESSION["DETALLES"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
@@ -56,7 +54,7 @@ if(isset($_GET["CONSTRUCCION"]))
 if(isset($_GET["INDUSTRIA"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PRODUCTOS
-    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE SECTOR='PRODUCTOS' AND AREA='INDUSTRIA'");
+    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PRODUCTOS' AND SECTOR='INDUSTRIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     //DESCARGA DATOS DE LA CONSULTA
     $i=0; //Puntero de recorrido del ARRAY
@@ -64,12 +62,10 @@ if(isset($_GET["INDUSTRIA"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["ID"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRE"][$i]=$cargaVentas->NOMBRE;
-                $_SESSION["STOCK"][$i]=$cargaVentas->STOCK;
-                $_SESSION["SECTOR"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["AREA"][$i]=$cargaVentas->AREA;
-                $_SESSION["FOTOGRAFIA"][$i]=$cargaVentas->FOTOGRAFIA;
+                $_SESSION["NOMBREPROD"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROD"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROD"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROD"][$i]=$cargaVentas->COSTE;
                 $_SESSION["DETALLES"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
@@ -82,7 +78,7 @@ if(isset($_GET["INDUSTRIA"]))
 if(isset($_GET["BIOINGENIERIA"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PRODUCTOS
-    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE SECTOR='PRODUCTOS' AND AREA='BIOINGENIERIA'");
+    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PRODUCTOS' AND SECTOR='BIOINGENIERIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     //DESCARGA DATOS DE LA CONSULTA
     $i=0; //Puntero de recorrido del ARRAY
@@ -90,12 +86,10 @@ if(isset($_GET["BIOINGENIERIA"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["ID"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRE"][$i]=$cargaVentas->NOMBRE;
-                $_SESSION["STOCK"][$i]=$cargaVentas->STOCK;
-                $_SESSION["SECTOR"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["AREA"][$i]=$cargaVentas->AREA;
-                $_SESSION["FOTOGRAFIA"][$i]=$cargaVentas->FOTOGRAFIA;
+                $_SESSION["NOMBREPROD"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROD"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROD"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROD"][$i]=$cargaVentas->COSTE;
                 $_SESSION["DETALLES"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
@@ -108,7 +102,7 @@ if(isset($_GET["BIOINGENIERIA"]))
 if(isset($_GET["AEROESPACIAL"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PRODUCTOS
-    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE SECTOR='PRODUCTOS' AND AREA='AEROESPACIAL'");
+    $consultaVentas=$conexionProductos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PRODUCTOS' AND SECTOR='AEROESPACIAL'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     //DESCARGA DATOS DE LA CONSULTA
     $i=0; //Puntero de recorrido del ARRAY
@@ -116,12 +110,10 @@ if(isset($_GET["AEROESPACIAL"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["ID"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRE"][$i]=$cargaVentas->NOMBRE;
-                $_SESSION["STOCK"][$i]=$cargaVentas->STOCK;
-                $_SESSION["SECTOR"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["AREA"][$i]=$cargaVentas->AREA;
-                $_SESSION["FOTOGRAFIA"][$i]=$cargaVentas->FOTOGRAFIA;
+                $_SESSION["NOMBREPROD"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROD"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROD"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROD"][$i]=$cargaVentas->COSTE;
                 $_SESSION["DETALLES"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }

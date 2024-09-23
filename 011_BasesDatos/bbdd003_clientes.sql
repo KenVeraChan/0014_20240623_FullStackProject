@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2024 a las 13:54:10
+-- Tiempo de generación: 23-09-2024 a las 05:34:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -91,30 +91,61 @@ INSERT INTO `historias` (`ID`, `FECHA`, `DECADA`, `SUCESO`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagenesslider`
+-- Estructura de tabla para la tabla `imagenesinterfazweb`
 --
 
-CREATE TABLE `imagenesslider` (
-  `ID` int(3) NOT NULL,
+CREATE TABLE `imagenesinterfazweb` (
+  `ID` int(4) NOT NULL,
   `NOMBRE` varchar(150) DEFAULT NULL,
   `TIPO` varchar(15) DEFAULT NULL,
-  `TAMANIO` text NOT NULL,
-  `CONTENIDO` varchar(200) DEFAULT NULL,
-  `DESTINO` varchar(20) NOT NULL
+  `TAMANIO` text DEFAULT NULL,
+  `DESTINO` varchar(20) DEFAULT NULL,
+  `SECTOR` varchar(15) DEFAULT NULL,
+  `STOCK` int(4) NOT NULL,
+  `COSTE` float NOT NULL,
+  `DETALLES` varchar(800) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `imagenesslider`
+-- Volcado de datos para la tabla `imagenesinterfazweb`
 --
 
-INSERT INTO `imagenesslider` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `CONTENIDO`, `DESTINO`) VALUES
-(12, 'AutumnMeetings.jpg', 'image/jpeg', '120854', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
-(13, 'Cubits.jpg', 'image/jpeg', '153692', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
-(14, 'FutureUniversity.jpg', 'image/jpeg', '132528', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
-(15, 'MettingIT.jpg', 'image/jpeg', '120457', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
-(16, 'OtraTierra.jpg', 'image/jpeg', '24782', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
-(17, 'TimeTravel.jpg', 'image/jpeg', '173503', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER'),
-(18, 'ViajeManpertos.jpg', 'image/jpeg', '85457', 'C:xampphtdocsCARPETA-PHP\0014_20240623_FullStackProject/009_SectorPublico/0091_PaginaPrincipal/sliderImages/', 'SLIDER');
+INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`, `SECTOR`, `STOCK`, `COSTE`, `DETALLES`) VALUES
+(1, 'AutumnMeetings.jpg', 'image/jpeg', '120854', 'SLIDER', '', 0, 0, 'Reuniones de otoño'),
+(2, 'Cubits.jpg', 'image/jpeg', '153692', 'SLIDER', '', 0, 0, 'Orientación futurista'),
+(3, 'FutureUniversity.jpg', 'image/jpeg', '132528', 'SLIDER', '', 0, 0, 'Implicaciones en las universidades'),
+(4, 'MettingIT.jpg', 'image/jpeg', '120457', 'SLIDER', '', 0, 0, 'Brainstorming'),
+(5, 'OtraTierra.jpg', 'image/jpeg', '24782', 'SLIDER', '', 0, 0, 'La Tierra vista desde la Tierra'),
+(6, 'TimeTravel.jpg', 'image/jpeg', '173503', 'SLIDER', '', 0, 0, 'Primeros viajes en el tiempo'),
+(7, 'ViajeManpertos.jpg', 'image/jpeg', '85457', 'SLIDER', '', 0, 0, 'Colonización de Manpertos'),
+(8, 'NOVEDADES.png', 'image/png', '4812', 'NOVEDADES', '', 0, 0, ''),
+(9, 'NOTICIAS.png', 'image/png', '22206', 'NOVEDADES', '', 0, 0, ''),
+(10, 'SERVICIOS.png', 'image/png', '36775', 'NOVEDADES', '', 0, 0, ''),
+(11, 'PRODUCTOS.png', 'image/png', '23924', 'NOVEDADES', '', 0, 0, ''),
+(12, 'SERVIDORES.png', 'image/png', '21307', 'NOVEDADES', '', 0, 0, ''),
+(13, 'DINERO.png', 'image/png', '194365', 'NOVEDADES', '', 0, 0, ''),
+(14, 'INVESTIGACION.png', 'image/png', '15517', 'NOVEDADES', '', 0, 0, ''),
+(15, 'BASURA.png', 'image/png', '18139', 'NOVEDADES', '', 0, 0, ''),
+(16, 'BARCO.png', 'image/png', '30567', 'NOVEDADES', '', 0, 0, ''),
+(17, 'ANTENA.png', 'image/png', '42120', 'NOVEDADES', '', 0, 0, ''),
+(18, 'PLANETA.png', 'image/png', '128253', 'NOVEDADES', '', 0, 0, ''),
+(19, 'NATURALEZA.png', 'image/png', '42905', 'NOVEDADES', '', 0, 0, ''),
+(20, 'PIZARRA.png', 'image/png', '20969', 'NOVEDADES', '', 0, 0, ''),
+(21, 'HIELO.png', 'image/png', '18928', 'NOVEDADES', '', 0, 0, ''),
+(22, 'EDIFICIO.png', 'image/png', '17935', 'NOVEDADES', '', 0, 0, ''),
+(23, 'ROBOT.png', 'image/png', '17802', 'NOVEDADES', '', 0, 0, ''),
+(24, 'AEROESPACIAL.png', 'image/png', '57672', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
+(25, 'BIOINGENIERIA.png', 'image/png', '22865', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
+(26, 'CONSTRUCCION.png', 'image/png', '19724', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
+(27, 'INDUSTRIA.png', 'image/png', '14305', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
+(28, 'HERRAMIENTAS.png', 'image/png', '65193', 'PRODUCTOS', 'INDUSTRIA', 7000, 45.67, ''),
+(29, 'INSTRUMENTACION.png', 'image/png', '19315', 'PRODUCTOS', 'BIOINGENIERIA', 500, 20.31, ''),
+(30, 'PANEL SOLAR.png', 'image/png', '20366', 'PRODUCTOS', 'AEROESPACIAL', 100, 4560.21, ''),
+(31, 'ROBOT.png', 'image/png', '15660', 'PRODUCTOS', 'INDUSTRIA', 210, 201.23, ''),
+(32, 'SOFTWARE.png', 'image/png', '50945', 'PRODUCTOS', 'INDUSTRIA', 1000, 454, ''),
+(34, 'TUNELADORA.png', 'image/png', '11428', 'SERVICIOS', '', 210, 201.23, ''),
+(35, 'TRANSPORTE ELECTRICO.png', 'image/png', '287078', 'PRODUCTOS', 'CONSTRUCCION', 200, 50.2, ''),
+(36, 'PUENTES.png', 'image/png', '91271', 'SERVICIOS', '', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -137,33 +168,6 @@ INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`) VALUES
 (1, 'Juan', 'zetas', 983223309),
 (2, 'Laura', 'tintosginos', 983002110);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ventas`
---
-
-CREATE TABLE `ventas` (
-  `ID` int(3) NOT NULL,
-  `NOMBRE` varchar(30) DEFAULT NULL,
-  `STOCK` int(4) DEFAULT NULL,
-  `COSTE` float DEFAULT NULL,
-  `SECTOR` varchar(15) NOT NULL,
-  `AREA` varchar(30) NOT NULL,
-  `FOTOGRAFIA` varchar(30) NOT NULL,
-  `DETALLES` varchar(800) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`ID`, `NOMBRE`, `STOCK`, `COSTE`, `SECTOR`, `AREA`, `FOTOGRAFIA`, `DETALLES`) VALUES
-(1, 'Robot estandar de línea', 210, 201.23, 'PRODUCTOS', 'INDUSTRIA', 'ROBOT', 'Carga máxima de 300 kg, espacio volumétrico de 5 metros de radio esférico y velocidad máxima de movimiento 10 metros por segundo'),
-(2, 'Tunelado para montes', 1, 450.56, 'SERVICIOS', '', 'TUNELADORA', 'Perforación de terreno para prolongación de ferrocarriles o carreteras'),
-(3, 'Instrumentos de laboratorio', 500, 20.31, 'PRODUCTOS', 'BIOINGENIERIA', 'INSTRUMENTACION', 'Laboratorio de pruebas nivel C'),
-(4, 'TRANSPORTE ELECTRICO', 200, 50.2, 'PRODUCTOS', 'CONSTRUCCION', 'TRANSPORTE ELECTRICO', 'Camión con motor eléctrico para transporte de material de construccion con peso máximo permitido de 9000kg');
-
 --
 -- Índices para tablas volcadas
 --
@@ -175,21 +179,15 @@ ALTER TABLE `historias`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `imagenesslider`
+-- Indices de la tabla `imagenesinterfazweb`
 --
-ALTER TABLE `imagenesslider`
+ALTER TABLE `imagenesinterfazweb`
   ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `loginclientes`
 --
 ALTER TABLE `loginclientes`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `ventas`
---
-ALTER TABLE `ventas`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -203,22 +201,16 @@ ALTER TABLE `historias`
   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT de la tabla `imagenesslider`
+-- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
-ALTER TABLE `imagenesslider`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+ALTER TABLE `imagenesinterfazweb`
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`
 --
 ALTER TABLE `loginclientes`
   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

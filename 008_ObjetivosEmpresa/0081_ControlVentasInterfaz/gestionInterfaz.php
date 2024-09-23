@@ -31,38 +31,6 @@ if(strcmp($destino,"SERVICIOS")==0)
 $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0094_PaginaServicios/servicesImages/';
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
-if(strcmp($destino,"PROYECTOS")==0)
-{
-//CASO 4: SI SON IMAGENES DE PROYECTOS OFERTADOS
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0095_PaginaProyectos/projectsImages/';
-$_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
-}
-if(strcmp($destino,"NOVEDADES")==0)
-{
-//CASO 5: SI SON IMAGENES DE LAS NOVEDADES DE LA PAGINA INICIAL DE LA WEB
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/newsImages/';
-$_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
-}
-if(strcmp($destino,"CATEGORIA PRODUCTOS")==0)
-{
-//CASO 6: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS PRODUCTOS EN VENTA
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0093_PaginaProductos/productCategory/';
-$_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
-}
-if(strcmp($destino,"CATEGORIA SERVICIOS")==0)
-{
-//CASO 7: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS SERVICIOS OFERTADOS
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0094_PaginaServicios/servicesCategory/';
-$_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
-}
-if(strcmp($destino,"CATEGORIA PROYECTOS")==0)
-{
-//CASO 8: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS PROYECTOS EN CURSO
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0095_PaginaProyectos/projectsCategory/';
-$_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
-}
-
-//AHORA EL PROCESO DE CARGA, INSERCCION O ELIMINACION DE LA IMAGEN SUBIDA
 
 if(isset($_POST["CARGA"]))
 {
@@ -95,26 +63,6 @@ if(isset($_POST["CARGA"]))
         {
             $_SESSION["destinoCargado"]=3;   //URL DE LAS IMAGENES DE LOS SERVICIOS
         }
-        if($_SESSION["destinoImagen"]=="PROYECTOS")
-        {
-            $_SESSION["destinoCargado"]=4;   //URL DE LAS IMAGENES DE LOS SERVICIOS
-        }
-        if($_SESSION["destinoImagen"]=="NOVEDADES")
-        {
-            $_SESSION["destinoCargado"]=5;   //URL DE LAS IMAGENES DE LOS SERVICIOS
-        }
-        if($_SESSION["destinoImagen"]=="CATEGORIA PRODUCTOS")
-        {
-            $_SESSION["destinoCargado"]=6;   //URL DE LAS IMAGENES DE LOS SERVICIOS
-        }
-        if($_SESSION["destinoImagen"]=="CATEGORIA SERVICIOS")
-        {
-            $_SESSION["destinoCargado"]=7;   //URL DE LAS IMAGENES DE LOS SERVICIOS
-        }
-        if($_SESSION["destinoImagen"]=="CATEGORIA PROYECTOS")
-        {
-            $_SESSION["destinoCargado"]=8;   //URL DE LAS IMAGENES DE LOS SERVICIOS
-        }
     }
     else
     {
@@ -134,7 +82,7 @@ if(isset($_POST["INSERTA"]))
                 move_uploaded_file($_FILES["imagen"]["tmp_name"],$carpeta_destino.$nombreImagen);
                 //Mover la imagen del directorio temporal al directorio seleccionado
                 //AHORA SE SUBE AL SERVIDOR LA IMAGEN PARA LUEGO SER CARGADA SI PROCEDIERA
-                $consulta=$conexion->query("INSERT INTO $BD_tabla (NOMBRE,TIPO,TAMANIO,DESTINO,SECTOR,STOCK,COSTE,DETALLES)VALUES('$nombreImagen','$tipoImagen','$tamanioImagen','$destino','',0,0,'')");
+                $consulta=$conexion->query("INSERT INTO $BD_tabla (NOMBRE,TIPO,TAMANIO,CONTENIDO,DESTINO)VALUES('$nombreImagen','$tipoImagen','$tamanioImagen','$carpeta_destino','$destino')");
                 $consulta->closeCursor();
                 $_SESSION["senalImagen"]=2;  //Imagen subida al servidor de la BBDD
                 header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");

@@ -38,227 +38,30 @@ require "consultasSlider.php";
             <?php
                 $i=$_SESSION["PUNTERO"]; 
             ?>  <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en consultasSlider -->
-            <td class="imagenCargada" style="background-image: url('../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["NOMBRE"][$i];?>');"></td>
+            <td class="imagenCargada" style="background-image: url('../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["NOMBRESLIDER"][$i];?>');"></td>
             <td class="bandasPasaSlider"><input type="submit" class="pasaDerecha" name="pasaDerecha" value=""></td>
         </tr>
         </form>
-    </table>     
-    <table class="seccionPrincipal">   <!-- PRIMERA BANDA DE NOVEDADES EN PAGINA WEB -->
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/NOVEDADES.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Novedades Actuales</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/NOTICIAS.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Noticias Internacionales</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>    
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/SERVICIOS.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Servicios Destacados</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table> 
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/PRODUCTOS.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Productos Destacados</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>  
-            </td>
     </table>
-    <table class="seccionPrincipal">   <!-- SEGUNDA BANDA DE NOVEDADES EN PAGINA WEB -->
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/SERVIDORES.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Problemática Servidores</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/DINERO.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Gestión del capital</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>    
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/INVESTIGACION.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Nuevas medicinas</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table> 
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/BASURA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Gestión de Residuos</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>  
-            </td>
-    </table>
-    <table class="seccionPrincipal">   <!-- TERCERA BANDA DE NOVEDADES EN PAGINA WEB -->
-            <td class="noticia">
-                <table class="tablaInterna">
-                        <tr class="fila">
-                            <td><img class="imgBloques" src="images/BARCO.png"></td>
+    <?php for($j=0;$j<4;$j++){ ?>     
+        <table class="seccionPrincipal">   <!-- PRIMERA BANDA DE NOVEDADES EN PAGINA WEB -->
+            <?php for($i=1;$i<5;$i++){ ?>
+                <td class="noticia">    
+                    <table class="tablaInterna">
+                        <tr class="fila">   <!-- COMO SON CUATRO PANELES SE USARÁ $j PARA CADA UNO E $i PARA LAS CELDAS DEL INTERIOR DE CADA PANEL-->
+                            <td><img class="imgBloques" src="newsImages/<?php $fila=$i+4*$j; echo extraccionNovedad($fila);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">Transporte eléctrico</div></td>
+                            <td><div class="textoTitulo" style="margin-left:2%"></div></td>
                         </tr>
                         <tr class="fila">
                             <td><p class="parrafo"></p></td>
                         </tr>
                     </table>
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/ANTENA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Emisiones desconocidas</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>    
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/PLANETA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Biodiversidad</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table> 
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/NATURALEZA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Proyecto Greenovatio</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>  
-            </td>
-    </table>
-    <table class="seccionPrincipal">   <!-- CUARTA BANDA DE NOVEDADES EN PAGINA WEB -->
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/PIZARRA.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Implicada en la educación</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/HIELO.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Urbanización en áreas polares</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>    
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/EDIFICIO.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Acciones en bolsa</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table> 
-            </td>
-            <td class="noticia">
-                <table class="tablaInterna">
-                    <tr class="fila">
-                        <td><img class="imgBloques" src="images/ROBOT.png"></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><div style="margin-left:2%">Autonomía robótica inesperada</div></td>
-                    </tr>
-                    <tr class="fila">
-                        <td><p class="parrafo"></p></td>
-                    </tr>
-                </table>  
-            </td>
-    </table>
+                </td>
+            <?php } ?>
+        </table>
+    <?php } ?>
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">

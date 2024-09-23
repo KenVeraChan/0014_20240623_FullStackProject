@@ -213,7 +213,7 @@
         .filaDET:nth-child(2)
         {
             position: relative;
-            margin-top: 70px;
+            margin-top: 90px;
             margin-left: 70px;
             float: left;
             width: 100%;
@@ -236,7 +236,7 @@
             text-align: center;
         }
         .imgBloquesDET{
-            margin-left: 50px;
+            margin-left: 40px;
             width:90px;
         }
         .parrafoDET
