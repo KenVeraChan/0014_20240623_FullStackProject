@@ -37,58 +37,79 @@ function letreroConfirmado(tipoLetrero)
     var letrero= document.getElementsByClassName("letreroOK")[0];
     if(tipoLetrero==1)
         {
-            //LETRERO DE PROYECTO AÑADIDO A LA BBDD
-            letrero.innerHTML="IMAGEN CARGADA DE LA CARPETA DEL SERVIDOR";
+            //LETRERO DE CARGA IMÁGENES SLIDER
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: SLIDER";
             letrero.style.color="rgb(19,229,61)";
         }
     if(tipoLetrero==2)
         {
-            //LETRERO DE PROYECTO ACTUALIZADO A LA BBDD
-            letrero.innerHTML="IMAGEN SUBIDA A LA CARPETA SLIDER DEL SERVIDOR";
+            //LETRERO DE CARGA IMÁGENES PRODUCTOS
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: PRODUCTOS";
             letrero.style.color="rgb(19,229,61)";
         }
     if(tipoLetrero==3)
         {
-            //LETRERO DE PROYECTO ACTUALIZADO A LA BBDD
-            letrero.innerHTML="ERROR: NO SE PUEDE SUBIR LA IMAGEN SIN ESPECIFICAR EL DESTINO DE LA MISMA";
-            letrero.style.color="rgb(229,19,19)";
+            //LETRERO DE CARGA IMÁGENES SERVICIOS
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: SERVICIOS";
+            letrero.style.color="rgb(19,229,61)";
         }
     if(tipoLetrero==4)
         {
-            //LETRERO DE FALLO DE TIPO SUBIDA IMAGEN ERRONEO
-            letrero.innerHTML="ERROR: EL FORMATO DE LA IMAGEN QUE SE PRETENDÍA SUBIR NO ES DE TIPO: JPG,JPEG,PNG,GIF";
-            letrero.style.color="rgb(229,19,19)";
+            //LETRERO DE CARGA IMÁGENES PROYECTOS
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: PROYECTOS";
+            letrero.style.color="rgb(19,229,61)";
         }
     if(tipoLetrero==5)
         {
-            //LETRERO DE FALLO DE EXCESO DEL TAMANIO DE LA IMAGEN
-            letrero.innerHTML="ERROR: EL TAMAÑO DE LA IMAGEN EXCEDE LO PERMITIDO DE 3MB";
-            letrero.style.color="rgb(229,19,19)";
+            //LETRERO DE CARGA IMÁGENES NOVEDADES
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: NOVEDADES";
+            letrero.style.color="rgb(19,229,61)";
         }
     if(tipoLetrero==6)
         {
-            //LETRERO DE FALLO DE EXCESO DEL TAMANIO DE LA IMAGEN
-            letrero.innerHTML="LO SIENTO!, NO EXISTE NINGUNA IMAGEN QUE TENGA ESE ID INTRODUCIDO";
-            letrero.style.color="rgb(229,19,19)";
+            //LETRERO DE CARGA IMÁGENES CATEGORIA PRODUCTOS
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: CATEGORIA PRODUCTOS";
+            letrero.style.color="rgb(19,229,61)";
         }
     if(tipoLetrero==7)
         {
-            //LETRERO DE FALLO DE EXCESO DEL TAMANIO DE LA IMAGEN
-            letrero.innerHTML="IMAGEN ELIMINADA EXITOSAMENTE DE LA BBDD Y DEL DIRECTORIO DEL SERVIDOR EN DONDE SE ALMACENÓ";
-            letrero.style.color="rgb(247,174,3)";
+            //LETRERO DE CARGA IMÁGENES CATEGORIA SERVICIOS
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: CATEGORIA SERVICIOS";
+            letrero.style.color="rgb(19,229,61)";
         }
-    letrero.style.paddingTop="10px";
-    letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
-    letrero.style.transitionDuration = "1s";
-    letrero.style.marginTop="0px";
-
-    document.addEventListener("mousemove",function(){
-    let temporizador=setTimeout(function(){
-        var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(tipoLetrero==8)
+        {
+            //LETRERO DE CARGA IMÁGENES CATEGORIA CATEGORIA PROYECTOS
+            letrero.innerHTML="IMÁGENES CARGADAS DESDE LA CARPETA DEL SERVIDOR: CATEGORIA PROYECTOS";
+            letrero.style.color="rgb(19,229,61)";
+        }
+    if(tipoLetrero==9)
+        {
+            //LETRERO DE QUE NO SE HA CARGADO NINGUNA IMAGEN AL NO EXISTIR NINGUNA QUE MOSTRAR
+            letrero.innerHTML="NO EXISTEN IMÁGENES DE ESTA CATEGORÍA EN LA CARPETA DEL SERVIDOR";
+            letrero.style.color="rgb(239,4,4)";
+        }
+    if(tipoLetrero==10)
+        {
+            //LETRERO DE NO SE HA INTRODUCIDO UNA ELECCION EN EL DESPLEGABLE
+            letrero.innerHTML="ERROR! DEBE ELEGIR UNA OPCIÓN ANTES DE ACCIONAR EL BOTÓN DE CARGA";
+            letrero.style.color="rgb(239,4,4)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<11)
+    {
+        letrero.style.paddingTop="10px";
+        letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
         letrero.style.transitionDuration = "1s";
-        letrero.style.marginTop="-50px";
-    },3500);
-    })
-    clearTimeout(temporizador);
+        letrero.style.marginTop="0px";
+    
+        document.addEventListener("mousemove",function(){
+        let temporizador=setTimeout(function(){
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="-50px";
+        },3500);
+        })
+        clearTimeout(temporizador);
+    }
 }
 

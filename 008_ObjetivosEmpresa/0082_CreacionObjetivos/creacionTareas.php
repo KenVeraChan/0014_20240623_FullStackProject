@@ -282,20 +282,7 @@
             </div>
         </footer>
     </div>
-    <script>
-        if(<?php echo($_SESSION["semaforo"])?>==1)
-        {
-            letreroConfirmado(1);
-        }
-        if(<?php echo($_SESSION["semaforo"])?>==2)
-        {
-            letreroConfirmado(2);
-        }
-        if(<?php echo($_SESSION["semaforo"])?>==3)
-        {
-            letreroConfirmado(3);
-        }
-    </script>
+    <script>letreroConfirmado(<?php echo($_SESSION["semaforo"])?>);</script>
     <?php $_SESSION["semaforo"]=0; //Reiniciar variable ?> 
 </body>
 </html>

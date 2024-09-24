@@ -49,8 +49,8 @@
             <table id="formularioInterno">
                 <form class="tablaAcciones" action="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/gestionVentasInterfaz.php" method="post" enctype="multipart/form-data">
                     <label class="celda">DESTINO DE ALMACENAJE:</label>
-                        <select type="text" class="desplegable" name="destinoImagen">
-                        <option></option>
+                        <select type="text" class="desplegable" name="eleccionSector">
+                            <option></option>
                             <option>SLIDER</option>
                             <option>PRODUCTOS</option>
                             <option>SERVICIOS</option>
@@ -61,13 +61,43 @@
                             <option>CATEGORIA PROYECTOS</option>
                         </select>    
                     <label class="celda">
-                    <input type="submit" value="CARGA" name="CARGA" class="boton">
-                    <input type="submit" value="VOLVER" name="VOLVER" class="boton">
+                    <input type="submit" value="CARGA" name="DOWNLOAD" class="boton">
+                    <input type="submit" value="VOLVER" name="EXIT" class="boton">
                     </label>
                     <p class="separacion"></p>
                     <p class="separacion"></p>                   
                     <p class="separacion"></p>                  
                 </form>
+            </table>
+        </div>
+        <div class="tableroMostrador">
+            <table id="tablaMostrador">
+                <tr class="filaBBDD">
+                    <td class="BBDD">ID</td>
+                    <td class="BBDD">NOMBRE</td>
+                    <td class="BBDD">TIPO</td>
+                    <td class="BBDD">TAMANIO</td>
+                    <td class="BBDD">DESTINO</td>
+                    <td class="BBDD">SECTOR</td>
+                    <td class="BBDD">STOCK</td>
+                    <td class="BBDD">COSTE</td>
+                    <td class="BBDD">DETALLES</td>
+                </tr>
+                <?php for($i=0;$i<$_SESSION["LIMITE"];$i++){?>
+                    <?php if(strcmp($_SESSION["idDown"][$i],"")!=0){?>
+                        <tr class="filaBBDD">
+                            <td class="BBDD"><?php echo $_SESSION["idDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["nombreDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["tipoDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["tamanioDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["destinoDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["sectorDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["stockDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["costeDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["detallesDown"][$i];?></td>
+                        </tr>
+                    <?php }?>
+                <?php } //cierra el FOR del exterior que pone todas las filas con el mismo DESTINO?>
             </table>
         </div>
         <img id="imagenPortada" src="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/images/REUNIONES.jpg" alt="Imagen Reuniones">
@@ -89,53 +119,7 @@
             </div>
         </footer>
     </div>
-    <script>
-        if(<?php echo($_SESSION["senalImagen"])?>==1)
-        {
-            //Imagen cargada desde la carpeta del servidor
-            rellenar();
-            letreroConfirmado(1);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==2)
-        {
-            //Imagen subida al servidor de la BBDD
-            letreroConfirmado(2);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==3)
-        {
-            //NO SE HA ESPECIFICADO EL DESTINO APLICABLE DE LA IMAGEN SUBIDA A LA CARPETA DEL SERVIDOR
-            letreroConfirmado(3);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==4)
-        {
-            //ERROR: EL FORMATO DE LA IMAGEN QUE SE PRETENDÍA SUBIR NO ES DE TIPO: JPG,JPEG,PNG,GIF
-            letreroConfirmado(4);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==5)
-        {
-            //ERROR: EL TAMAÑO DE LA IMAGEN EXCEDE LO PERMITIDO DE 3MB
-            letreroConfirmado(5);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==6)
-        {
-            //NO SE HA ESPECIFICADO EL DESTINO APLICABLE DE LA IMAGEN SUBIDA A LA CARPETA DEL SERVIDOR
-            letreroConfirmado(6);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==7)
-        {
-            //Imagen eliminada de la BBDD y de la carpeta del servidor en donde se almacenó
-            letreroConfirmado(7);
-        }
-    //PARA LA CARGA DE LOS DATOS EN EL FORMULARIO
-    function rellenar()
-    {
-        document.getElementsByClassName("celdas")[0].value = "<?php echo($_SESSION["idImagen"]);?>";
-        document.getElementsByClassName("celdas")[1].value = "<?php echo($_SESSION["nombreImagen"]);?>";
-        document.getElementsByClassName("celdas")[2].value = "<?php echo($_SESSION["tamanioImagen"]);?>";
-        document.getElementsByClassName("celdas")[3].value = "<?php echo($_SESSION["tipoImagen"]);?>";
-        document.getElementsByClassName("desplegable")[0].value = "<?php echo($_SESSION["destinoImagen"]);?>";
-    }
-    </script>
+    <script>letreroConfirmado(<?php echo($_SESSION["senalImagen"])?>);</script>
     <?php $_SESSION["senalImagen"]=0; //Reiniciar variable ?> 
 </body>
 </html>
