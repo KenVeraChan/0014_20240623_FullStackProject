@@ -14,7 +14,7 @@ if(isset($_POST["DOWNLOAD"]) && isset($destino))
     if(strcmp($destino,"SLIDER")==0)
     {
     //CASO 1: SI SON IMAGENES DEL SLIDER DEL MENU PRINCIPAL
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/sliderImages/';
+    $carpeta_destino="../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=1;  //Imagenes cargadas desde la carpeta del servidor SLIDER
     }
@@ -22,49 +22,49 @@ if(isset($_POST["DOWNLOAD"]) && isset($destino))
     if(strcmp($destino,"PRODUCTOS")==0)
     {
     //CASO 2: SI SON IMAGENES DE PRODUCTOS
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0093_PaginaProductos/productImages/';
+    $carpeta_destino="../../009_SectorPublico/0093_PaginaProductos/productImages/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=2;  //Imagenes cargadas desde la carpeta del servidor PRODUCTOS
     }
     if(strcmp($destino,"SERVICIOS")==0)
     {
     //CASO 3: SI SON IMAGENES DE SERVICIOS
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0094_PaginaServicios/servicesImages/';
+    $carpeta_destino="../../009_SectorPublico/0094_PaginaServicios/servicesImages/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=3;  //Imagenes cargadas desde la carpeta del servidor SERVICIOS
     }
     if(strcmp($destino,"PROYECTOS")==0)
     {
     //CASO 4: SI SON IMAGENES DE PROYECTOS
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0095_PaginaProyectos/projectsImages/';
+    $carpeta_destino="../../009_SectorPublico/0095_PaginaProyectos/projectsImages/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=4;  //Imagenes cargadas desde la carpeta del servidor PROYECTOS
     }
     if(strcmp($destino,"NOVEDADES")==0)
     {
     //CASO 5: SI SON IMAGENES DE NOVEDADES
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/newsImages/';
+    $carpeta_destino="../../009_SectorPublico/0091_PaginaPrincipal/newsImages/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=5;  //Imagenes cargadas desde la carpeta del servidor NOVEDADES
     }
     if(strcmp($destino,"CATEGORIA PRODUCTOS")==0)
     {
     //CASO 6: SI SON IMAGENES DE CATEGORIA PRODUCTOS
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0093_PaginaProductos/productCategory/';
+    $carpeta_destino="../../009_SectorPublico/0093_PaginaProductos/productCategory/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=6;  //Imagenes cargadas desde la carpeta del servidor CATEGORIA PRODUCTOS
     }
     if(strcmp($destino,"CATEGORIA SERVICIOS")==0)
     {
     //CASO 7: SI SON IMAGENES DE CATEGORIA SERVICIOS
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0094_PaginaServicios/servicesCategory/';
+    $carpeta_destino="../../009_SectorPublico/0094_PaginaServicios/servicesCategory/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=7;  //Imagenes cargadas desde la carpeta del servidor CATEGORIA SERVICIOS
     }
     if(strcmp($destino,"CATEGORIA PROYECTOS")==0)
     {
     //CASO 8: SI SON IMAGENES DE CATEGORIA PROYECTOS
-    $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0095_PaginaProyectos/projectsCategory/';
+    $carpeta_destino="../../009_SectorPublico/0095_PaginaProyectos/projectsCategory/";
     $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
     $_SESSION["senalImagen"]=8;  //Imagenes cargadas desde la carpeta del servidor CATEGORIA PROYECTOS
     }

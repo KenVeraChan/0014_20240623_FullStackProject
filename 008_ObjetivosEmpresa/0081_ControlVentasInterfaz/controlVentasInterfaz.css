@@ -137,6 +137,13 @@
         background-color: white;
         z-index: 1;  
     }
+    .despliegue{
+        margin-top:15px;
+        width: 90%;
+        height:20px;
+        background-color: white;
+        z-index: 1; 
+    }
     #imagen{
         float:left;
         margin-left: 50px;
@@ -170,19 +177,23 @@
         overflow: scroll;
         margin-top: 380px;
         width: 80%; 
-        height:800px;
+        height:850px;
         margin-left: 70px;
         z-index: 1;
         background-color: transparent;
     }
     .tableroMostrador #tablaMostrador
     {
-        width: 1200px;
-        height: 700px;
+        width: 1800px;
+        height: 800px;
         background-color: transparent;
     }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
     .filaBBDD{
-        height: 6px;   
+        height: 70px;   
     }
     .BBDD{
         width:60px;
@@ -331,6 +342,9 @@
         margin-left: 70px;
         z-index: 1;
     }
+    #formularioInterno{
+        height:300px; 
+    }
     .celda{
         float: left;
         font-size: medium;
@@ -392,6 +406,42 @@
     .boton:nth-child(1)
     {
         margin-left: 0px;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 80%; 
+        height:850px;
+        margin-left: 70px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1200px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -527,6 +577,9 @@
         margin-left: 15%;
         z-index: 1;
     }
+    #formularioInterno{
+        height:300px; 
+    }
     .celda{
         float: left;
         font-size: medium;
@@ -588,6 +641,42 @@
     .boton:nth-child(1)
     {
         margin-left: 0px;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 85%; 
+        height:850px;
+        margin-left: 20px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1200px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -724,6 +813,9 @@
         margin-left: 5%;
         z-index: 1;
     }
+    #formularioInterno{
+        height:300px; 
+    }
     .celda{
         float: left;
         font-size: small;
@@ -786,6 +878,42 @@
     .boton:nth-child(1)
     {
         margin-left: 10px;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 85%; 
+        height:850px;
+        margin-left: 15px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1200px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

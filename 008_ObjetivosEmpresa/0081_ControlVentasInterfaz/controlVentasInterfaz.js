@@ -1,4 +1,5 @@
 var elemento1= document.getElementsByClassName("boton");
+var elemento2= document.getElementsByClassName("filaBBDD");
 
 function cargarPagina()
 {
@@ -19,6 +20,18 @@ function cargarPagina()
             elemento1[i].style.color="rgb(214, 214, 3)";
                 })
         }
+    for(let i=0;i<elemento2.length;i++)
+    {
+        //FILAS DE LA TABLA VISIBLE
+        elemento2[i].addEventListener('mouseenter',function(){
+            elemento2[i].style.background= "rgb(214, 214, 3)";
+            elemento2[i].style.color="rgba(0, 0, 19, 0.89)";
+                })
+        elemento2[i].addEventListener('mouseleave',function(){
+            elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
+            elemento2[i].style.color="rgb(214, 214, 3)";
+                })
+    }
         oscureceAmbiente();
 }
 function oscureceAmbiente()
