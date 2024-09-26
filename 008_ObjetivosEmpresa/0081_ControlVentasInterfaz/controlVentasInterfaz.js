@@ -108,7 +108,19 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="ERROR! DEBE ELEGIR UNA OPCIÓN ANTES DE ACCIONAR EL BOTÓN DE CARGA";
             letrero.style.color="rgb(239,4,4)";
         }
-    if(tipoLetrero>0 && tipoLetrero<11)
+    if(tipoLetrero==11)
+        {
+            //LETRERO DE FILA REGISTRADA HA SIDO ACTUALIZADA CORRECTAMENTE
+            letrero.innerHTML="REGISTRO ACTUALIZADO CORRECTAMENTE!";
+            letrero.style.color="rgb(19,229,61)";
+        }
+    if(tipoLetrero==12)
+        {
+            //LETRERO DE SE LE HA DADO A ACTUALIZAR PERO SIN NADA RELLENADO PARA ACTUALIZAR
+            letrero.innerHTML="REGISTRO SIN ACTUALIZAR PORQUE NO SE RELLENÓ NINGÚN DESPLEGABLE!";
+            letrero.style.color="rgb(239,4,4)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<13)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
