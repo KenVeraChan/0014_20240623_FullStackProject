@@ -82,8 +82,8 @@
     }
     #tituloGeneral{
         position: absolute;
-        padding-top: 60px;
-        margin-top: 20px;
+        padding-top: 30px;
+        margin-top: 10px;
         margin-left: 10%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size: x-large;
@@ -93,114 +93,30 @@
     }
     .tableroDiagrama{
         position: absolute;
-        padding-top: 100px;
-        width: 600px; 
-        height:1000px;
-        margin-top: 80px;
-        margin-left: 70px;
-        z-index: 1;
-    }
-    #formularioInterno{
-        height:300px; 
-    }
-    .celda{
-        float: left;
-        font-size: medium;
-        color: rgb(255, 255, 255);
-        width: 550px;
-        height:10px;
-        text-align:left;
-        margin-top: 8px;
-        margin-left: 10%;
-        z-index: 1;
-    }
-    .celdas{
-        float:right;
-        width: 350px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .espacioImagen
-    {
-        float:right;
-        width: 350px;
-        height:250px;
-        background-color: white;
-        z-index: 1;  
-    }
-    .desplegable{
-        float:right;
-        margin-top: -10px;
-        width: 257px;
-        height:20px;
-        background-color: white;
-        z-index: 1;  
-    }
-    #imagen{
-        float:left;
-        margin-left: 50px;
-        width: 600px;
-        height:21px;
-        background-color: white;
-        z-index: 1; 
-    }
-    .separacion{
-        height: 60px;
-    }
-    .boton{
-        float: left;
-        margin-top: 33px;
-        margin-left: 70px;
-        width: 100px;
-        height: 30px;
-        text-align: center;
-        font-size: 80%;
-        color:rgb(214, 214, 3);
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .boton:nth-child(1)
-    {
-        margin-left: 100px;
-    }
-    .tableroMostrador
-    {
-        position: absolute;
         overflow: scroll;
-        margin-top: 380px;
-        width: 80%; 
-        height:850px;
+        padding-top: 20px;
+        width: 90%; 
+        height:1000px;
+        margin-top: 130px;
         margin-left: 70px;
         z-index: 1;
-        background-color: transparent;
     }
-    .tableroMostrador #tablaMostrador
+    .tableroDiagrama #represetnacionBBDD
     {
-        width: 1800px;
-        height: 800px;
-        background-color: transparent;
+        width:85%;
+        height:1200px;
     }
-    .filaBBDD:nth-child(1){
-        height: 20px;  
-        background-color: rgb(15,0,152); 
-    }
-    .filaBBDD{
-        height: 70px;   
-    }
-    .BBDD{
-        width:60px;
-        height: 5px;
-        background-color: rgba(0, 0, 19, 0.89);
-        text-align: center;
-        color: yellow;
+    .celdaInterfaz
+    {
+        background-color: rgba(0, 0, 19, 0.69);
         font-size: medium;
+        color:#fcf700;
     }
-    .BBDD:hover{
-        background-color: rgba(255, 255, 255, 0.89);
-        color: black;
+    .boton
+    {
+        width:80%;
+        color:yellow;
     }
-
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -334,107 +250,6 @@
         margin-top: 80px;
         margin-left: 70px;
         z-index: 1;
-    }
-    #formularioInterno{
-        height:300px; 
-    }
-    .celda{
-        float: left;
-        font-size: medium;
-        color: rgb(255, 255, 255);
-        width: 350px;
-        height: 80px;
-        text-align:left;
-        margin-top: 8px;
-        margin-left: 10%;
-        z-index: 1;
-    }
-    .celdas{
-        float:right;
-        width: 350px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .espacioImagen
-    {
-        float:right;
-        width: 350px;
-        height:250px;
-        background-color: white;
-        z-index: 1;  
-    }
-    .desplegable{
-        float:left;
-        margin-top: -40px;
-        margin-left: 40px;
-        width: 257px;
-        height:20px;
-        background-color: white;
-        z-index: 1;  
-    }
-    #imagen{
-        float:left;
-        margin-left: 40px;
-        width: 600px;
-        height:21px;
-        background-color: white;
-        z-index: 1; 
-    }
-    .separacion{
-        height: 60px;
-    }
-    .boton{
-        float: left;
-        margin-top: 33px;
-        margin-left: 20px;
-        width: 100px;
-        height: 30px;
-        text-align: center;
-        font-size: 80%;
-        color:rgb(214, 214, 3);
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .boton:nth-child(1)
-    {
-        margin-left: 0px;
-    }
-    .tableroMostrador
-    {
-        position: absolute;
-        overflow: scroll;
-        margin-top: 380px;
-        width: 80%; 
-        height:850px;
-        margin-left: 70px;
-        z-index: 1;
-        background-color: transparent;
-    }
-    .tableroMostrador #tablaMostrador
-    {
-        width: 1200px;
-        height: 800px;
-        background-color: transparent;
-    }
-    .filaBBDD:nth-child(1){
-        height: 20px;  
-        background-color: rgb(15,0,152); 
-    }
-    .filaBBDD{
-        height: 70px;   
-    }
-    .BBDD{
-        width:60px;
-        height: 5px;
-        background-color: rgba(0, 0, 19, 0.89);
-        text-align: center;
-        color: yellow;
-        font-size: medium;
-    }
-    .BBDD:hover{
-        background-color: rgba(255, 255, 255, 0.89);
-        color: black;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -570,103 +385,6 @@
         margin-left: 5%;
         z-index: 1;
     }
-    #formularioInterno{
-        height:300px; 
-    }
-    .celda{
-        float: left;
-        font-size: small;
-        color: rgb(255, 255, 255);
-        width: 230px;
-        height: 80px;
-        text-align:left;
-        margin-top: 8px;
-        margin-left: 10%;
-        z-index: 1;
-    }
-    .celdas{
-        float:right;
-        width: 350px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .espacioImagen
-    {
-        float:right;
-        width: 350px;
-        height:250px;
-        background-color: white;
-        z-index: 1;  
-    }
-    .desplegable{
-        float:left;
-        margin-top: -40px;
-        margin-left: 30px;
-        width: 200px;
-        height:20px;
-        background-color: white;
-        z-index: 1;  
-    }
-    #imagen{
-        float:left;
-        margin-left: 30px;
-        width: 600px;
-        height:21px;
-        background-color: white;
-        z-index: 1; 
-    }
-    .separacion{
-        height: 60px;
-    }
-    .boton{
-        float: left;
-        margin-top: 13px;
-        margin-left: 40px;
-        width: 150px;
-        height: 30px;
-        text-align: center;
-        font-size: 90%;
-        color:rgb(214, 214, 3);
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .tableroMostrador
-    {
-        position: absolute;
-        overflow: scroll;
-        margin-top: 380px;
-        width: 85%; 
-        height:850px;
-        margin-left: 20px;
-        z-index: 1;
-        background-color: transparent;
-    }
-    .tableroMostrador #tablaMostrador
-    {
-        width: 1200px;
-        height: 800px;
-        background-color: transparent;
-    }
-    .filaBBDD:nth-child(1){
-        height: 20px;  
-        background-color: rgb(15,0,152); 
-    }
-    .filaBBDD{
-        height: 70px;   
-    }
-    .BBDD{
-        width:60px;
-        height: 5px;
-        background-color: rgba(0, 0, 19, 0.89);
-        text-align: center;
-        color: yellow;
-        font-size: medium;
-    }
-    .BBDD:hover{
-        background-color: rgba(255, 255, 255, 0.89);
-        color: black;
-    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
@@ -801,104 +519,6 @@
         margin-top: 80px;
         margin-left: 5%;
         z-index: 1;
-    }
-    #formularioInterno{
-        height:300px; 
-    }
-    .celda{
-        float: left;
-        font-size: small;
-        color: rgb(255, 255, 255);
-        width: 200px;
-        height: 80px;
-        text-align:left;
-        margin-top: 8px;
-        margin-left: 5%;
-        z-index: 1;
-    }
-    .celdas{
-        float:right;
-        width: 350px;
-        height:12px;
-        background-color: white;
-        z-index: 1;
-    }
-    .espacioImagen
-    {
-        float:right;
-        width: 350px;
-        height:250px;
-        background-color: white;
-        z-index: 1;  
-    }
-    .desplegable{
-        float:left;
-        margin-top: -40px;
-        margin-left: 10px;
-        width: 180px;
-        height:18px;
-        font-size: small;
-        background-color: white;
-        z-index: 1;  
-    }
-    #imagen{
-        float:left;
-        margin-left: 20px;
-        width: 600px;
-        height:21px;
-        background-color: white;
-        z-index: 1; 
-    }
-    .separacion{
-        height: 60px;
-    }
-    .boton{
-        float: left;
-        margin-top: 13px;
-        margin-left: 20px;
-        width: 150px;
-        height: 30px;
-        text-align: center;
-        font-size: 90%;
-        color:rgb(214, 214, 3);
-        background-color: rgb(255, 255, 255);
-        z-index: 1;
-    }
-    .tableroMostrador
-    {
-        position: absolute;
-        overflow: scroll;
-        margin-top: 380px;
-        width: 85%; 
-        height:850px;
-        margin-left: 15px;
-        z-index: 1;
-        background-color: transparent;
-    }
-    .tableroMostrador #tablaMostrador
-    {
-        width: 1200px;
-        height: 800px;
-        background-color: transparent;
-    }
-    .filaBBDD:nth-child(1){
-        height: 20px;  
-        background-color: rgb(15,0,152); 
-    }
-    .filaBBDD{
-        height: 70px;   
-    }
-    .BBDD{
-        width:60px;
-        height: 5px;
-        background-color: rgba(0, 0, 19, 0.89);
-        text-align: center;
-        color: yellow;
-        font-size: medium;
-    }
-    .BBDD:hover{
-        background-color: rgba(255, 255, 255, 0.89);
-        color: black;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
