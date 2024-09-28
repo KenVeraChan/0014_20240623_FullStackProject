@@ -114,13 +114,32 @@
                         </td>
                         <td class="celdaInterfaz" colspan="10">
                             <input type="submit" class="boton" value="ACTUALIZAR" name="ACTUALIZAR">  <!-- carga la ACTUALIZACION -->
-                                <a href="../../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/gestionVentasInterfaz.php?DESTINOS=SLIDER" 
-                                    class="regresar" 
-                                    name="DETALLES" 
-                                    value="SLIDER">VOLVER
+                            <p class="regresar">
+                                <a href="../../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/gestionVentasInterfaz.php?DESTINOS=SLIDER"  
+                                   class="referencia"
+                                   name="DETALLES" 
+                                   value="SLIDER"
+                                   style="text-decoration:none;
+                                          color:rgb(214, 214, 3);">VOLVER
                                 </a>  <!-- carga SLIDER al regresar a la pantalla anterior por DEFECTO-->
+                            </p>
                         </td>
-                    </tr>   
+                    </tr>  
+                    <tr class="filaInterfaz">
+                        <td class="celdaInterfaz" style="height:20px;" colspan="14">
+                                <p style="text-align: center;
+                                          padding-top:10px;
+                                          height:30px;
+                                          background: -webkit-linear-gradient(top, #000011, #000041);">
+                                          IMAGEN REGISTRADA
+                                </p>
+                        </td>
+                    </tr> 
+                    <tr class="filaInterfaz">
+                        <td class="celdaInterfaz" style="height:700px;" colspan="14">
+                                <img src="../<?php echo $_SESSION["rutaImagen"].$_SESSION["nombreDown"][0];?>" alt="Imagen del elemento">
+                        </td>
+                    </tr> 
                 </table>
             </form>
         </div>
