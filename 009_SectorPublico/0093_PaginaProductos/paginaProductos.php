@@ -118,11 +118,15 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                                         ?>
                         <tr class="filaDET">
                             <td>
-                                <input type="submit" class="botonAc" value="<?php echo $_SESSION["NOMBREPROD"][$i];?>" name="<?php echo($_SESSION["NOMBREPROD"][$i]);?>">
+                                <p class="contenedorEnlace">
+                                    <a href="../../009_SectorPublico/0093_PaginaProductos/consultasProductos.php?ID=<?php echo $_SESSION["IDPROD"][$i];?>" class="botonAc">
+                                        <?php echo $_SESSION["NOMBREPROD"][$i];?>
+                                    </a>
+                                </p>    
                             </td>
                         </tr>
-                                  <?php }
-                                   }; ?>
+                                <?php }
+                                }; ?>
                     </table>
                 </td>
                 <td class="noticiaDET">
@@ -192,3 +196,11 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
     </div>
 </body>
 </html>
+<?php echo  "Datos leidos del servidor: "."<br>".
+            $_SESSION["ID_PROD"]."<br>".
+            $_SESSION["NOMBRE_PROD"]."<br>".
+            $_SESSION["SECTOR_PROD"]."<br>".
+            $_SESSION["STOCK_PROD"]."<br>".
+            $_SESSION["COSTE_PROD"]."<br>".
+            $_SESSION["DETALLES_PROD"] 
+?>

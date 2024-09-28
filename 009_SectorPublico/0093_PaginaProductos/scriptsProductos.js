@@ -34,13 +34,13 @@ function cargarPagina()
         elemento4[i].addEventListener('mouseenter',function(){
             elemento4[i].style.transitionDuration = "0.5s";
             elemento4[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
-            elemento4[i].style.bordeRadius="25px 0px 25px 0px";
+            elemento4[i].style.borderRadius="25px 0px 25px 0px";
             elemento4[i].style.boxShadow="white 1px 0 40px";
                 })
         elemento4[i].addEventListener('mouseleave',function(){
             elemento4[i].style.transitionDuration = "0.5s";
             elemento4[i].style.border="none";
-            elemento4[i].style.bordeRadius="none";
+            elemento4[i].style.borderRadius="none";
             elemento4[i].style.boxShadow="none";
                 })
     }
