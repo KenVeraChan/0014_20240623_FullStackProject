@@ -63,7 +63,6 @@
                     <label class="celda">
                     <input type="submit" value="CARGA" name="DOWNLOAD" class="boton">
                     <input type="submit" value="VOLVER" name="EXIT" class="boton">
-                    <input type="submit" value="ACTUALIZAR" name="UPDATE" class="boton">
                     </label>
                     <p class="separacion"></p>
                     <p class="separacion"></p>                   
@@ -80,9 +79,9 @@
                     <td class="BBDD">TAMANIO</td>
                     <td class="BBDD">DESTINO</td>
                                 <?php if(strcmp($_SESSION["destinoDown"][0],"PRODUCTOS")==0 || strcmp($_SESSION["destinoDown"][0],"SERVICIOS")==0 || strcmp($_SESSION["destinoDown"][0],"PROYECTOS")==0){?>
-                                    <td class="BBDD" colspan="2">SECTOR</td>
-                                    <td class="BBDD" colspan="4">STOCK</td>
-                                    <td class="BBDD" colspan="4">COSTE</td>
+                                    <td class="BBDD">SECTOR</td>
+                                    <td class="BBDD">STOCK</td>
+                                    <td class="BBDD">COSTE</td>
                                 <?php }?>  
                                 <?php if(strcmp($_SESSION["destinoDown"][0],"SLIDER")==0){ ?>
                                     <td class="BBDD" colspan="12">FOTOGRAFIA</td>
@@ -91,64 +90,28 @@
                                     <td class="BBDD">FOTOGRAFIA</td>
                                 <?php }?>
                     <td class="BBDD" colspan="2">DETALLES</td>
-                    <td class="BBDD" colspan="2">ACTUALIZAR</td>
+                    <td class="BBDD">ACTUALIZAR</td>
                 </tr>
                 <?php for($i=0;$i<$_SESSION["LIMITE"];$i++){?>
                     <?php if(strcmp($_SESSION["idDown"][$i],"")!=0){?>
                         <tr class="filaBBDD">
-                            <td class="BBDD" name="ID"><?php echo $_SESSION["idDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["idDown"][$i];?></td>
                             <td class="BBDD"><?php echo $_SESSION["nombreDown"][$i];?></td>
                             <td class="BBDD"><?php echo $_SESSION["tipoDown"][$i];?></td>
                             <td class="BBDD"><?php echo $_SESSION["tamanioDown"][$i];?></td>
-                            <td class="BBDD" name="DESTINO"><?php echo $_SESSION["destinoDown"][$i];?></td>
+                            <td class="BBDD"><?php echo $_SESSION["destinoDown"][$i];?></td>
                                 <?php if(strcmp($_SESSION["destinoDown"][0],"PRODUCTOS")==0 || strcmp($_SESSION["destinoDown"][0],"SERVICIOS")==0 || strcmp($_SESSION["destinoDown"][0],"PROYECTOS")==0){?>
                                     <?php if(strcmp($_SESSION["destinoDown"][0],"PRODUCTOS")==0){ //GENERA SELECT DE LOS TIPOS DE SECTOR DE PRODUCTOS ?>        
-                                            <td class="BBDD" colspan="2"><?php echo $_SESSION["sectorDown"][$i];?>
-                                                <label style="font-size:small"><br><br>¿DESEA CAMBIAR?</label>
-                                                    <select type="text" class="despliegue" name="SECTOR">
-                                                        <option></option>
-                                                        <option>AEROESPACIAL</option>
-                                                        <option>BIOINGENIERIA</option>
-                                                        <option>CONSTRUCCION</option>
-                                                        <option>INDUSTRIA</option>
-                                                    </select> 
-                                            </td>    <!-- SE AÑADE LA COLUMNA SECTOR SOLO SI PERTENECE A: PRODUCTOS, SERVICIOS O PROYECTOS. LOS DEMÁS SON LOS SUBCONJUNTOS -->
+                                            <td class="BBDD"><?php echo $_SESSION["sectorDown"][$i];?></td>
                                     <?php } ?>
                                     <?php if(strcmp($_SESSION["destinoDown"][0],"SERVICIOS")==0){ //GENERA SELECT DE LOS TIPOS DE SECTOR DE SERVICIOS ?>        
-                                            <td class="BBDD" colspan="2"><?php echo $_SESSION["sectorDown"][$i];?>
-                                                <label style="font-size:small"><br><br>¿DESEA CAMBIAR?</label>
-                                                    <select type="text" class="despliegue" name="SECTOR">
-                                                        <option></option>
-                                                        <option>ASTRONOMIA</option>
-                                                        <option>ECOLOGIA</option>
-                                                        <option>OCEANOGRAFIA</option>
-                                                        <option>TELECOMUNICACIONES</option>
-                                                        <option>MEDICINA</option>
-                                                        <option>AUTOMATIZACION</option>
-                                                        <option>INFRAESTRUCTURAS</option>
-                                                    </select> 
-                                            </td>    <!-- SE AÑADE LA COLUMNA SECTOR SOLO SI PERTENECE A: PRODUCTOS, SERVICIOS O PROYECTOS. LOS DEMÁS SON LOS SUBCONJUNTOS -->
+                                            <td class="BBDD"><?php echo $_SESSION["sectorDown"][$i];?></td>
                                     <?php } ?>
                                     <?php if(strcmp($_SESSION["destinoDown"][0],"PROYECTOS")==0){ //GENERA SELECT DE LOS TIPOS DE SECTOR DE PROYECTOS ?>        
-                                            <td class="BBDD" colspan="2"><?php echo $_SESSION["sectorDown"][$i];?>
-                                                <label style="font-size:small"><br><br>¿DESEA CAMBIAR?</label>
-                                                    <select type="text" class="despliegue" name="SECTOR">
-                                                        <option></option>
-                                                        <option>INCLUSIÓN VIS4C</option>
-                                                        <option>AGRUCULTURA VERTICAL</option>
-                                                        <option>SATELITES CON IA</option>
-                                                        <option>COLONIZACION SUBMARINA</option>
-                                                    </select> 
-                                            </td>    <!-- SE AÑADE LA COLUMNA SECTOR SOLO SI PERTENECE A: PRODUCTOS, SERVICIOS O PROYECTOS. LOS DEMÁS SON LOS SUBCONJUNTOS -->
+                                            <td class="BBDD"><?php echo $_SESSION["sectorDown"][$i];?></td>
                                     <?php } ?>
-                                            <td class="BBDD" colspan="4"><?php echo $_SESSION["stockDown"][$i];?>
-                                                <label style="font-size:small"><br><br>¿DESEA CAMBIAR?</label>
-                                                <input type="number" class="despliegue" min="0" max="99999" name="STOCK">
-                                            </td>
-                                            <td class="BBDD" colspan="4"><?php echo $_SESSION["costeDown"][$i];?>
-                                                <label style="font-size:small"><br><br>¿DESEA CAMBIAR?</label>
-                                                <input type="number" class="despliegue" min="0" max="99999" step="0.25" name="COSTE">   <!-- EL STEP DEFINE EL PASO INCREMENTAL DEL VALOR PRECIO-->
-                                            </td>
+                                            <td class="BBDD"><?php echo $_SESSION["stockDown"][$i];?></td>
+                                            <td class="BBDD"><?php echo $_SESSION["costeDown"][$i];?></td>
                                 <?php }?>
 
                                 <?php if(strcmp($_SESSION["destinoDown"][0],"SLIDER")==0){ ?>
@@ -157,11 +120,14 @@
                                 <?php if(strcmp($_SESSION["destinoDown"][0],"SLIDER")!=0){ ?>
                                     <td class="BBDD"><img src="<?php echo $_SESSION["rutaImagen"].$_SESSION["nombreDown"][$i];?>" alt="foto introducida" width="90%"></td>
                                 <?php }?>
-                                <td class="BBDD" colspan="2">
-                                <input type="text" class="despliegue" name="DETALLES" value="<?php echo $_SESSION["detallesDown"][$i];?>">
-                            </td>
-                            <td class="BBDD" colspan="2">
-                                <a href="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/0081_01_ControlActualizaciones/controlActualizaciones.php?ID=<?php echo $_SESSION["idDown"][$i];?>" class="despliegue" name="DETALLES" value="ACTUALIZAR">ACTUALIZAR</a>
+                                <td class="BBDD" colspan="2"><?php echo $_SESSION["detallesDown"][$i];?></td>
+                            <td class="BBDD">
+                                <a href="../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/gestionVentasInterfaz.php?ID=<?php echo $_SESSION["idDown"][$i];?>" 
+                                   class="BBDD" 
+                                   name="DETALLES" 
+                                   value="ACTUALIZAR"
+                                   style="text-decoration:none; background-color:transparent">OK
+                                </a>
                             </td>
                         </tr>
                     <?php }?>

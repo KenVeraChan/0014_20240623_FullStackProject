@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tratamiento proyectos</title>
+    <title>Actualizar datos de una imagen</title>
     <link rel="stylesheet" href="controlActualizaciones.css">
     <script src="controlActualizaciones.js"></script>
 </head>
@@ -52,40 +52,75 @@
                         <td class="celdaInterfaz">ID</td>
                         <td class="celdaInterfaz">NOMBRE</td>
                         <td class="celdaInterfaz">DESTINO</td>
-                        <td class="celdaInterfaz">SECTOR</td>
-                        <td class="celdaInterfaz">STOCK</td>
-                        <td class="celdaInterfaz">COSTE</td>
-                        <td class="celdaInterfaz">DETALLES</td>
-                        <td class="celdaInterfaz">ACTUALIZAR</td>    
+                            <?php if(strcmp($_SESSION["destinoDown"][0],"PRODUCTOS")==0 || strcmp($_SESSION["destinoDown"][0],"SERVICIOS")==0 || strcmp($_SESSION["destinoDown"][0],"PROYECTOS")==0){ ?>
+                                <td class="celdaInterfaz">SECTOR</td>
+                                <td class="celdaInterfaz">STOCK</td>
+                                <td class="celdaInterfaz">COSTE</td>
+                            <?php } ?>
+                        <td class="celdaInterfaz" colspan="10">DETALLES</td>
+                        <td class="celdaInterfaz">REGRESAR</td>    
                     </tr>
-                    <?php for($i=0;$i<$_SESSION["LIMITE"];$i++){?>
-                        <tr class="filaInterfaz">
-                            <td class="celdaInterfaz"><?php echo $_SESSION["idDown"][$i];?></td>
-                            <td class="celdaInterfaz"><?php echo $_SESSION["nombreDown"][$i];?></td>
-                            <td class="celdaInterfaz"><?php echo $_SESSION["destinoDown"][$i];?></td>
-                            <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["sectorDown"][$i];?><br>ACTUAL:
-                                <select type="text" class="desplegable" name="SECTOR">
-                                    <option></option>
-                                    <option>SLIDER</option>
-                                    <option>PRODUCTOS</option>
-                                    <option>SERVICIOS</option>
-                                    <option>PROYECTOS</option>
-                                    <option>NOVEDADES</option>
-                                    <option>CATEGORIA PRODUCTOS</option>
-                                    <option>CATEGORIA SERVICIOS</option>
-                                    <option>CATEGORIA PROYECTOS</option>
-                                </select>
+                    <tr class="filaInterfaz">
+                        <td class="celdaInterfaz"><?php echo $_SESSION["idDown"][0];?></td>
+                        <td class="celdaInterfaz"><?php echo $_SESSION["nombreDown"][0];?></td>
+                        <td class="celdaInterfaz"><?php echo $_SESSION["destinoDown"][0];?></td>
+                        <?php if(strcmp($_SESSION["destinoDown"][0],"PRODUCTOS")==0 || strcmp($_SESSION["destinoDown"][0],"SERVICIOS")==0 || strcmp($_SESSION["destinoDown"][0],"PROYECTOS")==0){ ?>
+                            <?php if(strcmp($_SESSION["destinoDown"][0],"PRODUCTOS")==0){ ?>
+                                <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["sectorDown"][0];?><br>ACTUAL:
+                                    <select type="text" class="despliegue" name="SECTOR">
+                                        <option></option>
+                                        <option>AEROESPACIAL</option>
+                                        <option>BIOINGENIERIA</option>
+                                        <option>CONSTRUCCION</option>
+                                        <option>INDUSTRIA</option>
+                                    </select> 
+                                </td>
+                            <?php } ?>
+                            <?php if(strcmp($_SESSION["destinoDown"][0],"SERVICIOS")==0){ ?>
+                                <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["sectorDown"][0];?><br>ACTUAL:
+                                    <select type="text" class="despliegue" name="SECTOR">
+                                        <option></option>
+                                        <option>ASTRONOMIA</option>
+                                        <option>ECOLOGIA</option>
+                                        <option>OCEANOGRAFIA</option>
+                                        <option>TELECOMUNICACIONES</option>
+                                        <option>MEDICINA</option>
+                                        <option>AUTOMATIZACION</option>
+                                        <option>INFRAESTRUCTURAS</option>
+                                    </select> 
+                                </td>
+                            <?php } ?>
+                            <?php if(strcmp($_SESSION["destinoDown"][0],"PROYECTOS")==0){ ?>
+                                <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["sectorDown"][0];?><br>ACTUAL:
+                                    <select type="text" class="despliegue" name="SECTOR">
+                                        <option></option>
+                                        <option>INCLUSIÓN VIS4C</option>
+                                        <option>AGRUCULTURA VERTICAL</option>
+                                        <option>SATELITES CON IA</option>
+                                        <option>COLONIZACION SUBMARINA</option>
+                                    </select> 
+                                </td>
+                            <?php } ?>
+
+                            <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["stockDown"][0];?><br>ACTUAL:
+                                <input type="number" class="despliegue" min="0" max="99999" name="STOCK">
                             </td>
-                            <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["stockDown"][$i];?><br>ACTUAL:
-                            <input type="number" class="despliegue" min="0" max="99999" name="STOCK">
+                            <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["costeDown"][0];?><br>ACTUAL:
+                                <input type="number" class="despliegue" min="0" max="99999" step="0.25" name="COSTE">
                             </td>
-                            <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["costeDown"][$i];?><br>ACTUAL:
-                            <input type="number" class="despliegue" min="0" max="99999" step="0.25" name="COSTE">
-                            </td>
-                            <td class="celdaInterfaz"><?php echo $_SESSION["detallesDown"][$i];?></td>
-                            <td class="celdaInterfaz"><input type="submit" name="<?php echo $_SESSION["idDown"][$i];?>" value="<?php echo $_SESSION["idDown"][$i];?>" class="boton"></td>
-                        </tr>
-                    <?php } ?>    
+                        <?php } ?>
+                        <td class="celdaInterfaz">ANTERIOR: <?php echo $_SESSION["detallesDown"][0];?><br>ACTUAL:
+                                <input type="text" class="despliegue" name="DETALLES">
+                        </td>
+                        <td class="celdaInterfaz" colspan="10">
+                            <input type="submit" class="boton" value="ACTUALIZAR" name="ACTUALIZAR">  <!-- carga la ACTUALIZACION -->
+                                <a href="../../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/gestionVentasInterfaz.php?DESTINOS=SLIDER" 
+                                    class="regresar" 
+                                    name="DETALLES" 
+                                    value="SLIDER">VOLVER
+                                </a>  <!-- carga SLIDER al regresar a la pantalla anterior por DEFECTO-->
+                        </td>
+                    </tr>   
                 </table>
             </form>
         </div>
