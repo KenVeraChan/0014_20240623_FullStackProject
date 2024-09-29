@@ -111,7 +111,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                         <tr class="filaDET">
                             <td><div style="margin-left:2%"><?php echo($_SESSION["SECTORPROD"][0]);?></div></td>
                         </tr>
-                        <?php $i=0; for($i=0;$i<count($_SESSION["NOMBREPROD"]);$i++)
+                        <?php $i=0; for($i=0;$i<$_SESSION["MAX"];$i++)
                                     {
                                         if(!empty($_SESSION["NOMBREPROD"][$i]))  //Comprueba si la variable de la celda del ARRAY NO está vacío
                                         {
@@ -132,13 +132,27 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                 <td class="noticiaDET">
                     <table class="tablaInternaDET">
                         <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="images/DINERO.png"></td>
+                            <td>
+                                <br><img class="imgBloquesDES" src="<?php echo $_SESSION["DESTINO"].$_SESSION["NOMBRE_PROD"];?>" alt="Imagen producto">
+                            </td>
                         </tr>
                         <tr class="filaDET">
-                            <td><div style="margin-left:2%">Gestión del capital</div></td>
+                            <td><di style="margin-left:2%"><br><br><strong>NOMBRE:<br></strong><?php echo substr($_SESSION["NOMBRE_PROD"],0,-4);?><br><br></div></td>
                         </tr>
                         <tr class="filaDET">
-                            <td><p class="parrafoDET"></p></td>
+                            <td><div style="margin-left:2%"><strong>STOCK DISPONIBLE:<br></strong><?php echo $_SESSION["STOCK_PROD"];?><br><br></div></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><div style="margin-left:2%"><strong>COSTE UNIDAD:<br></strong><?php echo $_SESSION["COSTE_PROD"];?><br><br></div></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td><div style="margin-left:2%"><strong>DETALLES PRODUCTO:<br></strong><?php echo $_SESSION["DETALLES_PROD"];?><br><br></div></td>
+                        </tr>
+                        <tr class="filaDET">
+                            <td>
+                                <br><br><img src="../../009_SectorPublico/0093_PaginaProductos/images/CARRITO.png" title="Añadir al carrito de la Compra" alt="Añadir al carrito de la Compra" width="70px" height="70px">
+                                <br><p>AÑADIR AL CARRITO DE LA COMPRA</p>
+                            </td>
                         </tr>
                     </table>   
                 </td>
@@ -196,11 +210,3 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
     </div>
 </body>
 </html>
-<?php echo  "Datos leidos del servidor: "."<br>".
-            $_SESSION["ID_PROD"]."<br>".
-            $_SESSION["NOMBRE_PROD"]."<br>".
-            $_SESSION["SECTOR_PROD"]."<br>".
-            $_SESSION["STOCK_PROD"]."<br>".
-            $_SESSION["COSTE_PROD"]."<br>".
-            $_SESSION["DETALLES_PROD"] 
-?>

@@ -201,28 +201,10 @@
             margin-left: 2%;
             width: 48%;
         }
-        .filaDET:nth-child(1)
-        {
-            position: relative;
-            float: left;
-            margin-top: 15px;
-            margin-left: 40px;
-            width: 30%;
-            height: 20px;
-        }
-        .filaDET:nth-child(2)
-        {
-            position: relative;
-            margin-top: 90px;
-            margin-left: 70px;
-            float: left;
-            width: 100%;
-            height: 20px;
-        }
         .filaDET
         {
             width: 150px;
-            margin-left: 40px;
+            margin-left: 20px;
         }
         .botonAc
         {
@@ -255,8 +237,12 @@
             color: yellow;
         }
         .imgBloquesDET{
-            margin-left: 40px;
-            width:90px;
+            margin-left: 10px;
+            width:100px;
+        }
+        .imgBloquesDES{
+            margin-left: 10px;
+            width:150px;
         }
         .parrafoDET
         {
@@ -501,28 +487,10 @@
         margin-left: 2%;
         width: 48%;
     }
-    .filaDET:nth-child(1)
-    {
-        position: relative;
-        float: left;
-        margin-top: 15px;
-        margin-left: 18px;
-        width: 30%;
-        height: 20px;
-    }
-    .filaDET:nth-child(2)
-    {
-        position: relative;
-        margin-top: 70px;
-        margin-left: 20px;
-        float: left;
-        width: 100%;
-        height: 20px;
-    }
     .filaDET
     {
-        width: 100px;
-        margin-left: 10px;
+        width: 150px;
+        margin-left: 20px;
     }
     .botonAc
     {
@@ -558,6 +526,10 @@
         margin-left: 20px;
         width:90px;
     }
+    .imgBloquesDES{
+        margin-left: 10px;
+        width:120px;
+    }
     .parrafoDET
     {
         float: left;
@@ -567,7 +539,7 @@
     .tablaInternaDET
     {
         float: left;
-        width: 90%;
+        width: 100%;
         height: 50%;
     }
     /*********** FIN CSS DEL CUERPO ********/
@@ -721,28 +693,10 @@
     .imgBloques{
         width:25%;
     }
-    .fila:nth-child(2)
+    .filaDET
     {
-        position: relative;
-        width: 100%;
-        height: 10px; 
-        text-align: center;
-        font-size: x-small;  
-    }
-    .fila:nth-child(3)
-    {
-        position: relative;
-        padding-top: 10px;
-        width: 100%;
-        height: 90px;  
-        font-size: x-small;
-    }
-    .fila:nth-child(4)
-    {
-        position: relative;
-        margin-top: 10px;
-        width: 100%;
-        height: 10px;  
+        width: 150px;
+        margin-left: 20px;
     }
     .acceder
     {
@@ -799,28 +753,10 @@
         margin-left: 5%;
         width: 85%;
     }
-    .filaDET:nth-child(1)
-    {
-        position: relative;
-        float: left;
-        margin-top: 15px;
-        margin-left: 18px;
-        width: 30%;
-        height: 20px;
-    }
-    .filaDET:nth-child(2)
-    {
-        position: relative;
-        margin-top: 70px;
-        margin-left: 30px;
-        float: left;
-        width: 100%;
-        height: 20px;
-    }
     .filaDET
     {
-        width: 100px;
-        margin-left: 10px;
+        width: 150px;
+        margin-left: 20px;
     }
     .botonAc
     {
@@ -854,7 +790,11 @@
     }
     .imgBloquesDET{
         margin-left: 20px;
-        width:90px;
+        width:120px;
+    }
+    .imgBloquesDES{
+        margin-left: 10px;
+        width:150px;
     }
     .parrafoDET
     {
@@ -1059,7 +999,7 @@
     .tablaInterna
     {
         float: left;
-        width: 70%;
+        width: 100%;
         height: 350px;
     }
 /***********************************************/
@@ -1094,25 +1034,11 @@
         margin-left: 5%;
         width: 85%;
     }
-    .filaDET:nth-child(1)
-    {
-        position: relative;
-        float: left;
-        margin-top: 15px;
-        width: 100%;
-        height: 40px;
-    }
-    .filaDET:nth-child(2)
-    {
-        position: relative;
-        margin-top: 70px;
-        float: left;
-        width: 100%;
-        height: 20px;
-    }
     .filaDET
     {
-        width: 100%;
+        width: 80%;
+        margin-left: 20px;
+        font-size: medium;
     }
     .botonAc
     {
@@ -1145,6 +1071,10 @@
     .imgBloquesDET
     {
         width:60%;
+    }
+    .imgBloquesDES{
+        margin-left: 0px;
+        width:70%;
     }
     .parrafoDET
     {
