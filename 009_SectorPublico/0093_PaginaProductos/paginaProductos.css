@@ -72,12 +72,6 @@
         text-justify: kashida;
         padding-top: 20px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -15px;
-        width: 100%;
-        height: 100%;
-    }
     /**********************************************/
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
     /**********************************************/
@@ -256,6 +250,14 @@
             width: 100%;
             height: 50%;
         }
+        .comprar
+        {
+            height: 70px;
+            width: 70px;
+            background-color: transparent;
+            background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+            background-size: 65px;
+        }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -358,12 +360,6 @@
         text-shadow: 5px;
         text-justify: kashida;
         padding-top: 20px;
-    }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
     }
     /**********************************************/
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
@@ -542,6 +538,14 @@
         width: 100%;
         height: 50%;
     }
+    .comprar
+    {
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+        background-size: 65px;
+    }
     /*********** FIN CSS DEL CUERPO ********/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
@@ -650,12 +654,6 @@
         text-shadow: 5px;
         text-justify: kashida;
         padding-top: 20px;
-    }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
     }
      /**********************************************/
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
@@ -808,6 +806,14 @@
         width: 100%;
         height: 50%;
     }
+    .comprar
+    {
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+        background-size: 65px;
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
@@ -915,12 +921,6 @@
         text-shadow: 5px;
         text-justify: kashida;
         padding-top: 20px;
-    }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
     }
     /**********************************************/
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
@@ -1087,6 +1087,14 @@
         float: left;
         width: 100%;
         height: 50%;
+    }
+    .comprar
+    {
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+        background-size: 65px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

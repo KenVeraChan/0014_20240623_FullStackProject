@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2024 a las 05:34:56
+-- Tiempo de generación: 30-09-2024 a las 14:06:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,10 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
+-- Estructura de tabla para la tabla `clientescarrito`
 --
 
-CREATE TABLE `clientes` (
+CREATE TABLE `clientescarrito` (
+  `ID` int(3) DEFAULT NULL,
+  `NOMBRE` varchar(30) DEFAULT NULL,
+  `CANTIDAD` int(3) DEFAULT NULL,
+  `COSTE_UNITARIO` float DEFAULT NULL,
+  `COSTE_TOTAL` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientespedidos`
+--
+
+CREATE TABLE `clientespedidos` (
   `ID` int(3) DEFAULT NULL,
   `NOMBRE` varchar(30) DEFAULT NULL,
   `APELLIDOS` varchar(30) DEFAULT NULL,
@@ -124,25 +138,25 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (11, 'PRODUCTOS.png', 'image/png', '23924', 'NOVEDADES', '', 0, 0, ''),
 (12, 'SERVIDORES.png', 'image/png', '21307', 'NOVEDADES', '', 0, 0, ''),
 (13, 'DINERO.png', 'image/png', '194365', 'NOVEDADES', '', 0, 0, ''),
-(14, 'INVESTIGACION.png', 'image/png', '15517', 'NOVEDADES', '', 0, 0, ''),
+(14, 'INVESTIGACION.png', 'image/png', '15517', 'NOVEDADES', '', 0, 0, 'Productos altamente radiactivos'),
 (15, 'BASURA.png', 'image/png', '18139', 'NOVEDADES', '', 0, 0, ''),
-(16, 'BARCO.png', 'image/png', '30567', 'NOVEDADES', '', 0, 0, ''),
+(16, 'BARCO.png', 'image/png', '30567', 'NOVEDADES', '', 0, 0, 'Transportes transatlanticos eléctricos para cargas pesadas y de transportes a largas distancias'),
 (17, 'ANTENA.png', 'image/png', '42120', 'NOVEDADES', '', 0, 0, ''),
 (18, 'PLANETA.png', 'image/png', '128253', 'NOVEDADES', '', 0, 0, ''),
 (19, 'NATURALEZA.png', 'image/png', '42905', 'NOVEDADES', '', 0, 0, ''),
 (20, 'PIZARRA.png', 'image/png', '20969', 'NOVEDADES', '', 0, 0, ''),
 (21, 'HIELO.png', 'image/png', '18928', 'NOVEDADES', '', 0, 0, ''),
 (22, 'EDIFICIO.png', 'image/png', '17935', 'NOVEDADES', '', 0, 0, ''),
-(23, 'ROBOT.png', 'image/png', '17802', 'NOVEDADES', '', 0, 0, ''),
+(23, 'ROBOT.png', 'image/png', '17802', 'NOVEDADES', '', 0, 0, 'Robot IRB121 para trabajos de hasta 200 kg de peso y volúmenes de trabajo de radio máximo de 3 metros'),
 (24, 'AEROESPACIAL.png', 'image/png', '57672', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
 (25, 'BIOINGENIERIA.png', 'image/png', '22865', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
 (26, 'CONSTRUCCION.png', 'image/png', '19724', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
 (27, 'INDUSTRIA.png', 'image/png', '14305', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
 (28, 'HERRAMIENTAS.png', 'image/png', '65193', 'PRODUCTOS', 'INDUSTRIA', 7000, 45.67, ''),
-(29, 'INSTRUMENTACION.png', 'image/png', '19315', 'PRODUCTOS', 'BIOINGENIERIA', 500, 20.31, ''),
+(29, 'INSTRUMENTACION.png', 'image/png', '19315', 'PRODUCTOS', 'BIOINGENIERIA', 800, 8.25, 'Carga protegida en dislolución'),
 (30, 'PANEL SOLAR.png', 'image/png', '20366', 'PRODUCTOS', 'AEROESPACIAL', 100, 4560.21, ''),
 (31, 'ROBOT.png', 'image/png', '15660', 'PRODUCTOS', 'INDUSTRIA', 210, 201.23, ''),
-(32, 'SOFTWARE.png', 'image/png', '50945', 'PRODUCTOS', 'INDUSTRIA', 1000, 454, ''),
+(32, 'SOFTWARE.png', 'image/png', '50945', 'PRODUCTOS', 'INDUSTRIA', 1000, 454, 'Carga de ficheros'),
 (34, 'TUNELADORA.png', 'image/png', '11428', 'SERVICIOS', '', 210, 201.23, ''),
 (35, 'TRANSPORTE ELECTRICO.png', 'image/png', '287078', 'PRODUCTOS', 'CONSTRUCCION', 200, 50.2, ''),
 (36, 'PUENTES.png', 'image/png', '91271', 'SERVICIOS', '', 0, 0, '');

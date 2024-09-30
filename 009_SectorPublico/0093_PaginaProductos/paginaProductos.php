@@ -18,7 +18,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0093_PaginaProductos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
         <div class="VaciobotonesPrincipal">
             <a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
-            <a href="" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
+            <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
         </div>
         <table id="tabla">
             <tr class="cajaBotonera">
@@ -130,66 +130,38 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                     </table>
                 </td>
                 <td class="noticiaDET">
-                    <table class="tablaInternaDET">
-                        <tr class="filaDET">
-                            <td>
-                                <br><img class="imgBloquesDES" src="<?php echo $_SESSION["DESTINO"].$_SESSION["NOMBRE_PROD"];?>" alt="Imagen producto">
-                            </td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><di style="margin-left:2%"><br><br><strong>NOMBRE:<br></strong><?php echo substr($_SESSION["NOMBRE_PROD"],0,-4);?><br><br></div></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><div style="margin-left:2%"><strong>STOCK DISPONIBLE:<br></strong><?php echo $_SESSION["STOCK_PROD"];?><br><br></div></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><div style="margin-left:2%"><strong>COSTE UNIDAD:<br></strong><?php echo $_SESSION["COSTE_PROD"];?><br><br></div></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><div style="margin-left:2%"><strong>DETALLES PRODUCTO:<br></strong><?php echo $_SESSION["DETALLES_PROD"];?><br><br></div></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td>
-                                <br><br><img src="../../009_SectorPublico/0093_PaginaProductos/images/CARRITO.png" title="Añadir al carrito de la Compra" alt="Añadir al carrito de la Compra" width="70px" height="70px">
-                                <br><p>AÑADIR AL CARRITO DE LA COMPRA</p>
-                            </td>
-                        </tr>
-                    </table>   
+                    <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
+                        <table class="tablaInternaDET">
+                            <tr class="filaDET">
+                                <td>
+                                    <br><img class="imgBloquesDES" src="<?php echo $_SESSION["DESTINO"].$_SESSION["NOMBRE_PROD"];?>" alt="Imagen producto">
+                                </td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td><div name="idPEDIDO" style="margin-left:2%"><br><br><strong>ID:<br></strong><?php echo $_SESSION["ID_PROD"];?><br></div></td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td><div name="nombrePEDIDO" style="margin-left:2%"><br><strong>NOMBRE:<br></strong><?php echo substr($_SESSION["NOMBRE_PROD"],0,-4);?><br><br></div></td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td><div name="stockPEDIDO" style="margin-left:2%"><strong>STOCK DISPONIBLE:<br></strong><?php echo $_SESSION["STOCK_PROD"];?><br><br></div></td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td><div name="costePEDIDO" style="margin-left:2%"><strong>COSTE UNIDAD:<br></strong><?php echo $_SESSION["COSTE_PROD"];?><br><br></div></td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td><div name="detallePEDIDO" style="margin-left:2%"><strong>DETALLES PRODUCTO:<br></strong><?php echo $_SESSION["DETALLES_PROD"];?><br><br></div></td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td>
+                                    <br><br><input type="submit" class="comprar" name="comprar" value="" title="Accionar para añadir a la cesta">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>   
                 </td>
             </table>
     <?php } ?>
-    <?php  if($_SESSION["concesion"]==0){ ?>  <!-- EN EL CASO DE QUE NO SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
-            <table class="seccionDET">   <!-- SEGUNDA BANDA DE DETALLE DE LAS VENTAS ELEGIDAS -->        
-                <td class="noticiaDET">
-                    <table class="tablaInternaDET">
-                        <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="productCategory/CONSTRUCCION.png"></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><div style="margin-left:2%">CONSTRUCCION</div></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td>
-                                <input type="submit" class="botonAc" value="ROBOT" name="ROBOT">
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-                <td class="noticiaDET">
-                    <table class="tablaInternaDET">
-                        <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="images/DINERO.png"></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><div style="margin-left:2%">Gestión del capital</div></td>
-                        </tr>
-                        <tr class="filaDET">
-                            <td><p class="parrafoDET"></p></td>
-                        </tr>
-                    </table>   
-                </td>
-            </table>
-    <?php } ?> 
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
