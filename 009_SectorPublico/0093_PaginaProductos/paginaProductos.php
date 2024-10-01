@@ -1,7 +1,6 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
-error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-$_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
+//error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENTE
 ?>
 <!DOCTYPE html>
@@ -14,6 +13,16 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
     <script src="../../009_SectorPublico/0093_PaginaProductos/scriptsProductos.js"></script>
 </head>
 <body onload="cargarPagina()">
+        <div class="letreroOK" style=
+               "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: white;
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0093_PaginaProductos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
         <div class="VaciobotonesPrincipal">
@@ -154,7 +163,13 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                             </tr>
                             <tr class="filaDET">
                                 <td>
-                                    <br><br><input type="submit" class="comprar" name="comprar" value="" title="Accionar para añadir a la cesta">
+                                    <br><br><input type="submit" class="comprar" name="comprar" value="<?php echo $_SESSION["ID_PROD"];?>" title="Accionar para añadir a la cesta">
+                                </td>
+                            </tr>
+                            <tr class="filaDET">
+                                <td>
+                                    <div style="margin-left:2%"><strong class="cajaCantidad">CANTIDAD</strong></div>
+                                    <input type="number" class="despliegue" min="1" max="9999" name="cantidad">
                                 </td>
                             </tr>
                         </table>
@@ -180,5 +195,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
             </div>
         </footer>
     </div>
+    <script>letreroConfirmado(<?php echo($_SESSION["senalImagen"])?>);</script>
+    <?php $_SESSION["senalImagen"]=0; //Reiniciar variable ?> 
 </body>
 </html>

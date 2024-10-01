@@ -76,8 +76,7 @@
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
     /**********************************************/
         .seccionPrincipal{
-            margin-top: 40px;
-            padding-left: 13%;
+            margin-top: 20px;
             width:100%;
             height: 1200px;
             border: 2px;
@@ -85,6 +84,33 @@
             border-color:rgba(79, 80, 3, 0.87);
             background-color: rgba(2, 1, 46, 0.425);
         }
+        .filaCompra
+        {
+            text-align: center;
+            width: 50%;
+            font-size: medium;
+            color:yellow;
+        }
+        .celdaCompra
+        {
+            text-align: center;
+            width: 50%;
+            height: 20px;
+            font-size: large;
+            color:yellow;
+            background-color: rgba(2, 1, 66, 0.342);
+        }
+        .pulsadorDescarga
+        {
+            height: 70px;
+            width: 70px;
+            background-color: transparent;
+            background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+            background-size: 65px;
+            font-size: x-small;
+            color:transparent;
+        }
+
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -193,7 +219,6 @@
     /**********************************************/
     .seccionPrincipal{
         margin-top: 40px;
-        padding-left: 13%;
         width:100%;
         height: 1200px;
         border: 2px;
@@ -244,7 +269,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 280px;
+        height: 20px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -315,7 +340,6 @@
     /**********************************************/
     .seccionPrincipal{
         margin-top: 40px;
-        padding-left: 3%;
         width:100%;
         height: 1200px;
         border: 2px;
@@ -435,8 +459,7 @@
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
     /**********************************************/
     .seccionPrincipal{
-        margin-top: 240px;
-        padding-left: 3%;
+        margin-top: 20px;
         width:100%;
         height: 1200px;
         border: 2px;

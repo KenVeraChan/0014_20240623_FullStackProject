@@ -1,8 +1,6 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
 error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-$_SESSION["concesion"];  //Semaforo de concesion de activacion del catalogo
-include "consultasCliente.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENTE
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +33,17 @@ include "consultasCliente.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENT
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0096_PaginaGestionCliente/images/CLIENTE.jpg); background-size: 100% 100%;">    
     <form action="../../009_SectorPublico/0093_PaginaProductos/consultasClientes.php" method="GET">
         <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
-
+            <tr class="filaCompra">
+                <td class="celdaCompra">CARRITO DE LA COMPRA</td>
+                <td class="celdaCompra">FECHA ACTUAL: <?php echo date("D d-M-Y H:i:s");?></td>
+                <td class="celdaCompra"><input type="submit" class="pulsadorDescarga" name="descargar"></td>
+            </tr>
+            <tr class="filaCompra">
+                <br><br>
+            </tr>
+            <tr class="filaCompra">
+                <td class="celdaCompra">DEPARTAMENTO DE PRODUCTOS</td>
+            </tr>
         </table>
     </form>
     </div>

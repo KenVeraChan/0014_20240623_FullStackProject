@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "../../005_Login/conexionPHP.php";
 error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 $conexionProductos=ConexionPHP::getConexionCLIENTES();

@@ -116,3 +116,36 @@ function cargarPagina()
                     })
         }
 }
+//LETRERO DE OKEY
+function letreroConfirmado(tipoLetrero)
+{
+    var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(tipoLetrero==1)
+        {
+            //LETRERO DE CARGA IMÁGENES SLIDER
+            letrero.innerHTML="PRODUCTO AÑADIDO AL CARRITO DE LA COMPRA";
+            letrero.style.color="rgb(19,229,61)";
+        }
+    if(tipoLetrero==2)
+        {
+            //LETRERO DE CARGA IMÁGENES SLIDER
+            letrero.innerHTML="NO PUEDE DEJAR SIN SELECCIONAR LA CANTIDAD DE PRODUCTOS PARA COMPRAR!";
+            letrero.style.color="rgb(178,6,6)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<3)
+    {
+        letrero.style.paddingTop="10px";
+        letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        letrero.style.transitionDuration = "1s";
+        letrero.style.marginTop="0px";
+    
+        document.addEventListener("mousemove",function(){
+        let temporizador=setTimeout(function(){
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="-50px";
+        },3500);
+        })
+        clearTimeout(temporizador);
+    }
+}

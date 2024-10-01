@@ -257,6 +257,19 @@
             background-color: transparent;
             background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
             background-size: 65px;
+            font-size: x-small;
+            color:transparent;
+        }
+        .cajaCantidad
+        {
+            margin-left: -4px;
+            font-size: medium;
+        }
+        .despliegue
+        {
+            margin-top: 5px;
+            width: 70px;
+            text-align: center;
         }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -545,6 +558,19 @@
         background-color: transparent;
         background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
         background-size: 65px;
+        font-size: x-small;
+        color:transparent;
+    }
+    .cajaCantidad
+    {
+        margin-left: -4px;
+        font-size: medium;
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        width: 70px;
+        text-align: center;
     }
     /*********** FIN CSS DEL CUERPO ********/
 
@@ -813,6 +839,19 @@
         background-color: transparent;
         background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
         background-size: 65px;
+        font-size: x-small;
+        color:transparent;
+    }
+    .cajaCantidad
+    {
+        margin-left: -4px;
+        font-size: medium;
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        width: 70px;
+        text-align: center;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -1020,7 +1059,7 @@
         margin-top: 3px;
         margin-left: 15%;
         width:65%;
-        height: 650px;
+        height: 690px;
         border: 2px;
         text-align: center;
         color: rgb(165, 165, 19);
@@ -1095,6 +1134,19 @@
         background-color: transparent;
         background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
         background-size: 65px;
+        font-size: x-small;
+        color:transparent;
+    }
+    .cajaCantidad
+    {
+        margin-left: -4px;
+        font-size: medium;
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        width: 70px;
+        text-align: center;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
