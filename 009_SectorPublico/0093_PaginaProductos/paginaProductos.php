@@ -1,7 +1,7 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
 //error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENTE
+include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENTE
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +47,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(1);?>"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoriaProductos(1);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">CONSTRUCCION</div></td>
@@ -63,7 +63,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(2);?>"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoriaProductos(2);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">INDUSTRIA</div></td>
@@ -79,7 +79,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(3);?>"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoriaProductos(3);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">BIOINGENIERÍA</div></td>
@@ -95,7 +95,7 @@ include "consultasMostrador.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALME
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoria(4);?>"></td>
+                            <td><img class="imgBloques" src="productCategory/<?php echo extraccionCategoriaProductos(4);?>"></td>
                         </tr>
                         <tr class="fila">
                             <td><div style="margin-left:2%">AEROESPACIAL</div></td>

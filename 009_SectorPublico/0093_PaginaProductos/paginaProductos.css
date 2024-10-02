@@ -97,7 +97,7 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             border-style: solid;
             border-color:rgba(79, 80, 3, 0.87);
-            background-color: rgb(2, 2, 27);
+            background-color: rgba(0, 0, 19, 0.89);
         }
         .noticia:nth-child(1)
         {
@@ -399,7 +399,7 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
+        background-color: rgba(0, 0, 19, 0.89);
     }
     .noticia:nth-child(1)
     {
@@ -706,7 +706,7 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
+        background-color: rgba(0, 0, 19, 0.89);
     }
     .fila:nth-child(1)
     {
@@ -986,7 +986,7 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
+        background-color: rgba(0, 0, 19, 0.89);
     }
     .fila:nth-child(1)
     {

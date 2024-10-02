@@ -165,35 +165,10 @@
             rellenar();
             letreroConfirmado(1);
         }
-        if(<?php echo($_SESSION["senalImagen"])?>==2)
+        if(<?php echo($_SESSION["senalImagen"])?>!=1)
         {
             //Imagen subida al servidor de la BBDD
-            letreroConfirmado(2);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==3)
-        {
-            //NO SE HA ESPECIFICADO EL DESTINO APLICABLE DE LA IMAGEN SUBIDA A LA CARPETA DEL SERVIDOR
-            letreroConfirmado(3);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==4)
-        {
-            //ERROR: EL FORMATO DE LA IMAGEN QUE SE PRETENDÍA SUBIR NO ES DE TIPO: JPG,JPEG,PNG,GIF
-            letreroConfirmado(4);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==5)
-        {
-            //ERROR: EL TAMAÑO DE LA IMAGEN EXCEDE LO PERMITIDO DE 3MB
-            letreroConfirmado(5);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==6)
-        {
-            //NO SE HA ESPECIFICADO EL DESTINO APLICABLE DE LA IMAGEN SUBIDA A LA CARPETA DEL SERVIDOR
-            letreroConfirmado(6);
-        }
-        if(<?php echo($_SESSION["senalImagen"])?>==7)
-        {
-            //Imagen eliminada de la BBDD y de la carpeta del servidor en donde se almacenó
-            letreroConfirmado(7);
+            letreroConfirmado(<?php echo $_SESSION["senalImagen"]; ?>);
         }
     //PARA LA CARGA DE LOS DATOS EN EL FORMULARIO
     function rellenar()

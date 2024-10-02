@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2024 a las 14:06:40
+-- Tiempo de generación: 02-10-2024 a las 14:44:54
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -30,10 +30,25 @@ SET time_zone = "+00:00";
 CREATE TABLE `clientescarrito` (
   `ID` int(3) DEFAULT NULL,
   `NOMBRE` varchar(30) DEFAULT NULL,
+  `DEPARTAMENTO` varchar(20) NOT NULL,
   `CANTIDAD` int(3) DEFAULT NULL,
   `COSTE_UNITARIO` float DEFAULT NULL,
   `COSTE_TOTAL` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clientescarrito`
+--
+
+INSERT INTO `clientescarrito` (`ID`, `NOMBRE`, `DEPARTAMENTO`, `CANTIDAD`, `COSTE_UNITARIO`, `COSTE_TOTAL`) VALUES
+(28, 'HERRAMIENTAS', 'PRODUCTOS', 1, 45.67, 45.67),
+(29, 'INSTRUMENTACION', 'PRODUCTOS', 8, 8.25, 66),
+(30, 'PANEL SOLAR', 'PRODUCTOS', 2, 4560.21, 9120.42),
+(31, 'ROBOT', 'PRODUCTOS', 10, 201.23, 2012.3),
+(32, 'SOFTWARE', 'PRODUCTOS', 1, 454, 454),
+(31, 'ROBOT', 'PRODUCTOS', 4, 201.23, 804.92),
+(31, 'ROBOT', 'PRODUCTOS', 3, 201.23, 603.69),
+(37, 'PROCESADOR', 'PRODUCTOS', 9, 110.25, 992.25);
 
 -- --------------------------------------------------------
 
@@ -159,7 +174,16 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (32, 'SOFTWARE.png', 'image/png', '50945', 'PRODUCTOS', 'INDUSTRIA', 1000, 454, 'Carga de ficheros'),
 (34, 'TUNELADORA.png', 'image/png', '11428', 'SERVICIOS', '', 210, 201.23, ''),
 (35, 'TRANSPORTE ELECTRICO.png', 'image/png', '287078', 'PRODUCTOS', 'CONSTRUCCION', 200, 50.2, ''),
-(36, 'PUENTES.png', 'image/png', '91271', 'SERVICIOS', '', 0, 0, '');
+(36, 'PUENTES.png', 'image/png', '91271', 'SERVICIOS', '', 0, 0, ''),
+(37, 'PROCESADOR.png', 'image/png', '17120', 'PRODUCTOS', 'INDUSTRIA', 800, 110.25, 'Con el sistema operativo escrito en Vis4C trabaja con octacore'),
+(38, 'ASTRONOMIA.png', 'image/png', '98622', 'CATEGORIA SERVICIOS', '', 0, 0, 'Investigación espacial más allá de Manpertos, dentro del sistema solar'),
+(39, 'AUTOMATIZACION.png', 'image/png', '139979', 'CATEGORIA SERVICIOS', '', 0, 0, 'Auditorías en automatización y mejoras continuas'),
+(40, 'ECOLOGIA.png', 'image/png', '22504', 'CATEGORIA SERVICIOS', '', 0, 0, 'Búsquedas de reemplezamiento ecológico sin interferir en el equilibrio productivo ajeno'),
+(41, 'INFRAESTRUCTURAS.png', 'image/png', '72643', 'CATEGORIA SERVICIOS', '', 0, 0, 'Servicios de tratamiento de caminos terrestres y submarinos'),
+(42, 'MEDICINA.png', 'image/png', '56008', 'CATEGORIA SERVICIOS', '', 0, 0, 'Servicios de investigación microbiológica de alto nivel'),
+(43, 'OCEANOGRAFIA.png', 'image/png', '31565', 'CATEGORIA SERVICIOS', '', 0, 0, 'servicios de investigación submarina y mapeos en suelos oceánicos'),
+(44, 'TELECOMUNICACIONES.png', 'image/png', '129533', 'CATEGORIA SERVICIOS', '', 0, 0, 'mejoras en las transmisiones interplanetarias y de larga distancia espacial'),
+(45, 'EDUCACION.png', 'image/png', '158168', 'CATEGORIA SERVICIOS', '', 0, 0, 'proveedor de tecnología para el perfeccionamiento de la educación');
 
 -- --------------------------------------------------------
 
@@ -218,7 +242,7 @@ ALTER TABLE `historias`
 -- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
 ALTER TABLE `imagenesinterfazweb`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`

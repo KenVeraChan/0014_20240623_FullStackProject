@@ -17,7 +17,7 @@ foreach($resulVentas as $carVentas)
     }
 }
 $consVentas->closeCursor();
-function extraccionCategoria($eleccion)
+function extraccionCategoriaProductos($eleccion)
 {
     switch($eleccion)
     {

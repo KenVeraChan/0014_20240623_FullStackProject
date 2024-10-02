@@ -118,7 +118,7 @@ if(isset($_POST["CARGA"]))
     }
     else
     {
-        $_SESSION["senalImagen"]=6;  //No existe ninguna imagen con ese ID
+        $_SESSION["senalImagen"]=13;  //No existe ninguna imagen con ese ID
     }
     header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
 }
@@ -136,24 +136,63 @@ if(isset($_POST["INSERTA"]))
                 //AHORA SE SUBE AL SERVIDOR LA IMAGEN PARA LUEGO SER CARGADA SI PROCEDIERA
                 $consulta=$conexion->query("INSERT INTO $BD_tabla (NOMBRE,TIPO,TAMANIO,DESTINO,SECTOR,STOCK,COSTE,DETALLES)VALUES('$nombreImagen','$tipoImagen','$tamanioImagen','$destino','',0,0,'')");
                 $consulta->closeCursor();
+                if(strcmp($destino,"SLIDER")==0)
+                {
+                //CASO 1: SI SON IMAGENES DEL SLIDER DEL MENU PRINCIPAL
                 $_SESSION["senalImagen"]=2;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"PRODUCTOS")==0)
+                {
+                //CASO 2: SI SON IMAGENES DE PRODUCTOS
+                $_SESSION["senalImagen"]=3;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"SERVICIOS")==0)
+                {
+                //CASO 3: SI SON IMAGENES DE SERVICIOS
+                $_SESSION["senalImagen"]=4;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"PROYECTOS")==0)
+                {
+                //CASO 4: SI SON IMAGENES DE PROYECTOS OFERTADOS
+                $_SESSION["senalImagen"]=5;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"NOVEDADES")==0)
+                {
+                //CASO 5: SI SON IMAGENES DE LAS NOVEDADES DE LA PAGINA INICIAL DE LA WEB
+                $_SESSION["senalImagen"]=6;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"CATEGORIA PRODUCTOS")==0)
+                {
+                //CASO 6: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS PRODUCTOS EN VENTA
+                $_SESSION["senalImagen"]=7;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"CATEGORIA SERVICIOS")==0)
+                {
+                //CASO 7: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS SERVICIOS OFERTADOS
+                $_SESSION["senalImagen"]=8;  //Imagen subida al servidor de la BBDD
+                }
+                if(strcmp($destino,"CATEGORIA PROYECTOS")==0)
+                {
+                //CASO 8: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS PROYECTOS EN CURSO
+                $_SESSION["senalImagen"]=9;  //Imagen subida al servidor de la BBDD
+                }
                 header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
             }
             else
             {
-                $_SESSION["senalImagen"]=4; //El formato de la imagen no es de tipo JPEG
+                $_SESSION["senalImagen"]=11; //El formato de la imagen no es de tipo JPEG
                 header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
             }
         }
         else{
-            $_SESSION["senalImagen"]=5;  //El tamanio de la imagen excede lo permitido de 3MG
+            $_SESSION["senalImagen"]=12;  //El tamanio de la imagen excede lo permitido de 3MG
             header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
         }
         //Se invoca al area de instancias en donde estan todos los ficheros del CONTROLADOR
     }
-    else    //Si se especifica para qué se usará la imagen: SLIDER, PRODUCTOS, SERVICIOS, deja entrar
+    else    //Si NO se especifica a donde se subirá la imagen: SLIDER, PRODUCTOS, SERVICIOS, NO dejará entrar
     {
-        $_SESSION["senalImagen"]=3;  //Imagen subida al servidor de la BBDD
+        $_SESSION["senalImagen"]=10;  //Imagen NO subida al servidor de la BBDD porque no se ha especificado el DESTINO
         header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");
     }
 }
@@ -162,7 +201,7 @@ if(isset($_POST["BORRA"]))
     $id=$_POST["idImagen"];  //Carga según el ID introducido
     //SI SE PIDE CARGAR UNA IMAGEN SE PROCEDE CON LA CONSULTA DE LA CARGA DE LA IMAGEN
     $consulta=$conexion->query("DELETE FROM $BD_tabla WHERE ID='$id'");  
-    $_SESSION["senalImagen"]=7;  //Imagen eliminada de la BBDD y del directorio del servidor en donde se almaceno
+    $_SESSION["senalImagen"]=14;  //Imagen eliminada de la BBDD y del directorio del servidor en donde se almaceno
     unlink($carpeta_destino.$_SESSION["nombreImagen"]);  //Elimina el fichero tambien de la carpeta de WINDOWS afectada
     header("location:../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php");  //Se regresa a la pagina anterior
 }
