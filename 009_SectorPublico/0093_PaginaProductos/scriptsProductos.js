@@ -52,35 +52,13 @@ function cargarPagina()
             elemento2[i].style.transitionDuration = "0.5s";
             elemento2[i].style.background= "rgb(12,22,111)";
             elemento2[i].style.color="white";
-                switch(i)   //RATON ENTRANDO EN LOS BLOQUES INFORMATIVOS PARA MOSTRAR EL CONTENIDO
-                    {
-                    case 0: elemento3[i].innerHTML="<strong> Materiales de construcción: terrestre y espacial, no de obra civil</strong>";
-                    break;
-                    case 1: elemento3[i].innerHTML="<strong> Productos de diseño industrial, programación robótica y automatización de maquinaria de producción</strong>";
-                    break;
-                    case 2: elemento3[i].innerHTML= "<strong> Material de uso en laboratorio, tratamiento de productos químicos y biológicos del peligrosidad de nivel medio</strong>";
-                    break;
-                    case 3: elemento3[i].innerHTML=  "<strong> Productos de diseño de aeronaves y materiales de alta resistencia y baja densidad para movilidad en espacios hostiles, así como elementos de investigación espacial</strong>";
-                    break;
-                    default: break;
-                    }            
+            elemento3[i].style.visibility="visible";          
                 })
         elemento2[i].addEventListener('mouseleave',function(){
             elemento2[i].style.transitionDuration = "0.5s";
             elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
             elemento2[i].style.color="rgba(230, 230, 11, 0.719)";
-                    switch(i)
-                    {
-                    case 0: elemento3[i].innerHTML="";
-                    break;
-                    case 1: elemento3[i].innerHTML="";
-                    break;
-                    case 2: elemento3[i].innerHTML="";
-                    break;
-                    case 3: elemento3[i].innerHTML= "";
-                    break;
-                    default: break;
-                        }  
+            elemento3[i].style.visibility="hidden"; 
                 })
     }
     //BOTONES DEL CATALOGO DE OPCIONES

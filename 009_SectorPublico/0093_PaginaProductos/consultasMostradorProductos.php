@@ -49,4 +49,23 @@ function extraccionCategoriaProductos($eleccion)
     }
     return $_SESSION["CATEGORIAPROD"][$valor];
 }
+function extraeDetallesProductos($stringNombre)
+{
+    $conexionProductos=ConexionPHP::getConexionCLIENTES();
+    $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
+    $consProductos=$conexionProductos->query("SELECT NOMBRE,DETALLES FROM $BD_tabla WHERE DESTINO='CATEGORIA PRODUCTOS'");
+    $resulProductos=$consProductos->fetchAll(PDO::FETCH_OBJ);
+    $k=0; //Es el puntero que guarda la coleccion de datos extraidos del servidor en referente a NOMBRE y DETALLES
+    foreach($resulProductos as $carProductos)
+    {
+        if(isset($carProductos->NOMBRE))
+        {
+            $_SESSION["NOMPROD"][$k]=substr($carProductos->NOMBRE,0,-4);
+            $_SESSION["DETPROD"][$k]=$carProductos->DETALLES;
+            $k++;
+        }
+    }
+    $consProductos->closeCursor();  //Cierra la consulta realiada
+    return $_SESSION["DETPROD"][array_search($stringNombre,$_SESSION["NOMPROD"],true)];
+}
 ?>

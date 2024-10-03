@@ -53,7 +53,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">ASTRONOMIA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(1,"ASTRONOMIA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("ASTRONOMIA")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="ASTRONOMIA" value="CATALOGO"></td>
@@ -69,7 +69,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">AUTOMATIZACION</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(2,"AUTOMATIZACION")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("AUTOMATIZACION")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="AUTOMATIZACION" value="CATALOGO"></td>
@@ -85,7 +85,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">ECOLOGIA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(3,"ECOLOGIA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("ECOLOGIA")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="ECOLOGIA" value="CATALOGO"></td>
@@ -101,7 +101,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">INFRAESTRUCTURAS</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(4,"INFRAESTRUCTURAS")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("INFRAESTRUCTURAS")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="INFRAESTRUCTURAS" value="CATALOGO"></td>
@@ -117,7 +117,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">MEDICINA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(5,"MEDICINA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("MEDICINA")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="MEDICINA" value="CATALOGO"></td>
@@ -133,7 +133,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">OCEANOGRAFIA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(6,"OCEANOGRAFIA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("OCEANOGRAFIA")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="OCEANOGRAFIA" value="CATALOGO"></td>
@@ -149,7 +149,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">TELECOMUNICACIONES</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(7,"TELECOMUNICACIONES")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("TELECOMUNICACIONES")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="TELECOMUNICACIONES" value="CATALOGO"></td>
@@ -165,7 +165,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">EDUCACION</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios(8,"EDUCACION")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("EDUCACION")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="EDUCACION" value="CATALOGO"></td>
@@ -263,3 +263,10 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
     <?php $_SESSION["senalImagen"]=0; //Reiniciar variable ?> 
 </body>
 </html>
+<?php
+for($i=0;$i<count($_SESSION["NOMSERV"]);$i++)
+{
+    echo $_SESSION["NOMSERV"][$i]."<br>";
+}
+echo $_SESSION["DETSER"][2];
+?>

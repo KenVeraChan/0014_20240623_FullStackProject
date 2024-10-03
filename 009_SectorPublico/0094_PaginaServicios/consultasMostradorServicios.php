@@ -69,7 +69,7 @@ function extraccionCategoriaServicios($eleccion)
     }
     return $_SESSION["CATEGORIASERV"][$valor];
 }
-function extraeDetallesServicios($seleccion,$stringNombre)
+function extraeDetallesServicios($stringNombre)
 {
     $conexionServicios=ConexionPHP::getConexionCLIENTES();
     $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
@@ -86,80 +86,6 @@ function extraeDetallesServicios($seleccion,$stringNombre)
         }
     }
     $consServicios->closeCursor();  //Cierra la consulta realiada
-    switch($seleccion)
-    {
-        case 1:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 2:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 3:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 4:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 5:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 6:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 7:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-        case 8:
-            {
-                $seleccion--;
-                if(strcmp($stringNombre,$_SESSION["NOMSERV"][$seleccion])==0)
-                {
-                    return $_SESSION["DETSERV"][$seleccion];
-                }
-                break;
-            }
-    }
+    return $_SESSION["DETSER"][array_search($stringNombre,$_SESSION["NOMSERV"],true)];
 }
 ?>

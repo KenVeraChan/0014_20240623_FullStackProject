@@ -53,7 +53,7 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">CONSTRUCCION</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo"></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProductos("CONSTRUCCION")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="CONSTRUCCION" value="CATALOGO"></td>
@@ -69,7 +69,7 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">INDUSTRIA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo"></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProductos("INDUSTRIA")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="INDUSTRIA" value="CATALOGO"></td>
@@ -85,7 +85,7 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">BIOINGENIERÍA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo"></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProductos("BIOINGENIERIA")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="BIOINGENIERIA" value="CATALOGO"></td>
@@ -101,7 +101,7 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <td><div style="margin-left:2%">AEROESPACIAL</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo"></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProductos("AEROESPACIAL")?></p></td>
                         </tr>
                         <tr class="fila">
                             <td><input type="submit" class="acceder" name="AEROESPACIAL" value="CATALOGO"></td>
