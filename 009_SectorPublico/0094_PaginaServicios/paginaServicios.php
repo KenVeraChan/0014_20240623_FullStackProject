@@ -179,10 +179,10 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                 <td class="noticiaDET">
                     <table class="tablaInternaDET">
                         <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="servicesCategory/<?php echo($_SESSION["SECTOR_SERV"][0]);?>.png"></td>
+                            <td><img class="imgBloquesDET" src="servicesCategory/<?php echo($_SESSION["SECTORSERV"][0]);?>.png"></td>
                         </tr>
                         <tr class="filaDET">
-                            <td><div style="margin-left:2%"><?php echo($_SESSION["SECTOR_SERV"][0]);?></div></td>
+                            <td><div style="margin-left:2%"><?php echo($_SESSION["SECTORSERV"][0]);?></div></td>
                         </tr>
                         <?php $i=0; for($i=0;$i<$_SESSION["MAX"];$i++)
                                     {
@@ -263,10 +263,3 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
     <?php $_SESSION["senalImagen"]=0; //Reiniciar variable ?> 
 </body>
 </html>
-<?php
-for($i=0;$i<count($_SESSION["NOMSERV"]);$i++)
-{
-    echo $_SESSION["NOMSERV"][$i]."<br>";
-}
-echo $_SESSION["DETSER"][2];
-?>

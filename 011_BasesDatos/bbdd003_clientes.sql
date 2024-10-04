@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2024 a las 14:44:54
+-- Tiempo de generación: 04-10-2024 a las 14:10:05
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -129,7 +129,7 @@ CREATE TABLE `imagenesinterfazweb` (
   `TIPO` varchar(15) DEFAULT NULL,
   `TAMANIO` text DEFAULT NULL,
   `DESTINO` varchar(20) DEFAULT NULL,
-  `SECTOR` varchar(15) DEFAULT NULL,
+  `SECTOR` varchar(40) DEFAULT NULL,
   `STOCK` int(4) NOT NULL,
   `COSTE` float NOT NULL,
   `DETALLES` varchar(800) DEFAULT NULL
@@ -163,18 +163,18 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (21, 'HIELO.png', 'image/png', '18928', 'NOVEDADES', '', 0, 0, ''),
 (22, 'EDIFICIO.png', 'image/png', '17935', 'NOVEDADES', '', 0, 0, ''),
 (23, 'ROBOT.png', 'image/png', '17802', 'NOVEDADES', '', 0, 0, 'Robot IRB121 para trabajos de hasta 200 kg de peso y volúmenes de trabajo de radio máximo de 3 metros'),
-(24, 'AEROESPACIAL.png', 'image/png', '57672', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
-(25, 'BIOINGENIERIA.png', 'image/png', '22865', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
-(26, 'CONSTRUCCION.png', 'image/png', '19724', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
-(27, 'INDUSTRIA.png', 'image/png', '14305', 'CATEGORIA PRODUCTOS', '', 0, 0, ''),
+(24, 'AEROESPACIAL.png', 'image/png', '57672', 'CATEGORIA PRODUCTOS', '', 0, 0, 'Productos de diseño de aeronaves y materiales de alta resistencia y baja densidad para movilidad en espacios hostiles, así como elementos de investigación espacial'),
+(25, 'BIOINGENIERIA.png', 'image/png', '22865', 'CATEGORIA PRODUCTOS', '', 0, 0, 'Material de uso en laboratorio, tratamiento de productos químicos y biológicos del peligrosidad de nivel medio'),
+(26, 'CONSTRUCCION.png', 'image/png', '19724', 'CATEGORIA PRODUCTOS', '', 0, 0, 'Materiales de construcción: terrestre y espacial, no de obra civil'),
+(27, 'INDUSTRIA.png', 'image/png', '14305', 'CATEGORIA PRODUCTOS', '', 0, 0, 'Productos de diseño industrial, programación robótica y automatización de maquinaria de producción'),
 (28, 'HERRAMIENTAS.png', 'image/png', '65193', 'PRODUCTOS', 'INDUSTRIA', 7000, 45.67, ''),
 (29, 'INSTRUMENTACION.png', 'image/png', '19315', 'PRODUCTOS', 'BIOINGENIERIA', 800, 8.25, 'Carga protegida en dislolución'),
 (30, 'PANEL SOLAR.png', 'image/png', '20366', 'PRODUCTOS', 'AEROESPACIAL', 100, 4560.21, ''),
 (31, 'ROBOT.png', 'image/png', '15660', 'PRODUCTOS', 'INDUSTRIA', 210, 201.23, ''),
 (32, 'SOFTWARE.png', 'image/png', '50945', 'PRODUCTOS', 'INDUSTRIA', 1000, 454, 'Carga de ficheros'),
-(34, 'TUNELADORA.png', 'image/png', '11428', 'SERVICIOS', '', 210, 201.23, ''),
+(34, 'TUNELADORA.png', 'image/png', '11428', 'SERVICIOS', 'INFRAESTRUCTURAS', 210, 201.23, ''),
 (35, 'TRANSPORTE ELECTRICO.png', 'image/png', '287078', 'PRODUCTOS', 'CONSTRUCCION', 200, 50.2, ''),
-(36, 'PUENTES.png', 'image/png', '91271', 'SERVICIOS', '', 0, 0, ''),
+(36, 'PUENTES.png', 'image/png', '91271', 'SERVICIOS', 'INFRAESTRUCTURAS', 0, 0, ''),
 (37, 'PROCESADOR.png', 'image/png', '17120', 'PRODUCTOS', 'INDUSTRIA', 800, 110.25, 'Con el sistema operativo escrito en Vis4C trabaja con octacore'),
 (38, 'ASTRONOMIA.png', 'image/png', '98622', 'CATEGORIA SERVICIOS', '', 0, 0, 'Investigación espacial más allá de Manpertos, dentro del sistema solar'),
 (39, 'AUTOMATIZACION.png', 'image/png', '139979', 'CATEGORIA SERVICIOS', '', 0, 0, 'Auditorías en automatización y mejoras continuas'),
@@ -183,7 +183,31 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (42, 'MEDICINA.png', 'image/png', '56008', 'CATEGORIA SERVICIOS', '', 0, 0, 'Servicios de investigación microbiológica de alto nivel'),
 (43, 'OCEANOGRAFIA.png', 'image/png', '31565', 'CATEGORIA SERVICIOS', '', 0, 0, 'servicios de investigación submarina y mapeos en suelos oceánicos'),
 (44, 'TELECOMUNICACIONES.png', 'image/png', '129533', 'CATEGORIA SERVICIOS', '', 0, 0, 'mejoras en las transmisiones interplanetarias y de larga distancia espacial'),
-(45, 'EDUCACION.png', 'image/png', '158168', 'CATEGORIA SERVICIOS', '', 0, 0, 'proveedor de tecnología para el perfeccionamiento de la educación');
+(45, 'EDUCACION.png', 'image/png', '158168', 'CATEGORIA SERVICIOS', '', 0, 0, 'proveedor de tecnología para el perfeccionamiento de la educación'),
+(46, 'MINERIA.png', 'image/png', '139716', 'SERVICIOS', 'ASTRONOMIA', 30, 1233.25, 'Servicios con tecnología punta para minería en terrenos extraterrestres'),
+(47, 'MAPEOS.png', 'image/png', '29599', 'SERVICIOS', 'ASTRONOMIA', 22, 336.5, 'Servicio de mapeo superficial y escaneo subterraneos digitalizados'),
+(48, 'TRAZADORES.png', 'image/png', '20341', 'SERVICIOS', 'ASTRONOMIA', 382, 225.25, 'Trazadores autónomos para búsqueda de materia orgánica espacial'),
+(49, 'SATENEXOS.png', 'image/png', '34485', 'SERVICIOS', 'ASTRONOMIA', 34, 514.5, 'Satélites nexos entre varias redes orbitales sobre planetas en investigación'),
+(50, 'NAVES.png', 'image/png', '15640', 'SERVICIOS', 'ASTRONOMIA', 59, 125.75, 'Peritación de vehículos espaciales con escaneos microscópicos'),
+(51, 'SENSOR.png', 'image/png', '27090', 'SERVICIOS', 'AUTOMATIZACION', 12763, 103.75, 'Servicio de instalación de sensores en cadenas de producción'),
+(52, 'INSTALACIONES.png', 'image/png', '39505', 'SERVICIOS', 'AUTOMATIZACION', 3113, 122.25, 'Servicios de instalación de software embebido en maquinarias industriales'),
+(53, 'ORGANIZACIÓN.png', 'image/png', '20301', 'SERVICIOS', 'AUTOMATIZACION', 121, 422.75, 'Servicios de organización de una planta industrial para minimizar los costes de transporte entre naves'),
+(54, 'REDES.png', 'image/png', '70530', 'SERVICIOS', 'AUTOMATIZACION', 27, 3322.25, 'Servicio de instalación y diseño de redes industriales para maximizar las comunicaciones dentro y fuera del área corporativo'),
+(55, 'ALMACENAJE.png', 'image/png', '69515', 'SERVICIOS', 'AUTOMATIZACION', 74, 111.75, 'Servicio de almacenaje y creación de servidores industriales óptimos para trabajos BIG DATA'),
+(56, 'GRUA.png', 'image/png', '16315', 'SERVICIOS', 'AUTOMATIZACION', 18, 14.25, 'Instalación de grúas puente en naves industriales'),
+(57, 'CULTIVOS.png', 'image/png', '28928', 'SERVICIOS', 'ECOLOGIA', 18112, 71.75, 'Servicio de aporte tecnológico al sistema agrario vertical y en medios hostiles'),
+(58, 'TRACTOR.png', 'image/png', '203727', 'SERVICIOS', 'ECOLOGIA', 36, 151.75, 'Servicios de adaptación de la maquinaria agraria con inteligencia artificial para la automatización de las labores'),
+(59, 'GENETICA.png', 'image/png', '30278', 'SERVICIOS', 'MEDICINA', 126, 301.25, 'Servicios de investigación microbiologica para vacunas y medicamentos'),
+(60, 'DISOLUCIONES.png', 'image/png', '17824', 'SERVICIOS', 'MEDICINA', 403, 114.25, 'Servicio de tratamiento de disoluciones químicas y análsisi de peligrosidad'),
+(61, 'BIENESTAR.png', 'image/png', '19382', 'SERVICIOS', 'MEDICINA', 211, 16.5, 'Productos medicinales para todas las familias'),
+(62, 'PROFUNDIDADES.png', 'image/png', '33351', 'SERVICIOS', 'OCEANOGRAFIA', 14, 1112.25, 'Servicio de investigación de terrenos submarinos para detectar posibles movimientos sísmicos moderados'),
+(63, 'ESTABILIDAD.png', 'image/png', '23718', 'SERVICIOS', 'OCEANOGRAFIA', 833, 1113.75, 'Servicio de investigación de oleajes digitalizados para levntar viviendas en pleno mar'),
+(64, 'CIUDADELAS.png', 'image/png', '18780', 'SERVICIOS', 'OCEANOGRAFIA', 2521, 511.5, 'Estudio del terreno subterraneo para instalar edificaciones de investigación profunda'),
+(65, 'PURIFICADORA.png', 'image/png', '14020', 'SERVICIOS', 'OCEANOGRAFIA', 114, 1111.75, 'Servicio de asistencia en la implementación de tecnología de purificación de aguas del mar'),
+(66, 'GEOESTACIONARIOS.png', 'image/png', '21119', 'SERVICIOS', 'TELECOMUNICACIONES', 201, 112.25, 'Servicios de programación de satélites orbitales de inertes zonas planetarias'),
+(67, 'AERONAVES.png', 'image/png', '22430', 'SERVICIOS', 'TELECOMUNICACIONES', 246, 1112.25, 'Servicios de manejo automatizado de lanzaderas espaciales'),
+(69, 'PIZARRAS.png', 'image/png', '66842', 'SERVICIOS', 'EDUCACION', 432, 171.5, 'Pizarras digitales con holografia tridimensional para la enseñanza'),
+(70, 'TABLETS.png', 'image/png', '9977', 'SERVICIOS', 'EDUCACION', 72, 44.5, 'Dispositivos electrónicos para el aprendizae con bases de datos simuladas para aprender a programar VIS4C');
 
 -- --------------------------------------------------------
 
@@ -242,7 +266,7 @@ ALTER TABLE `historias`
 -- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
 ALTER TABLE `imagenesinterfazweb`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`

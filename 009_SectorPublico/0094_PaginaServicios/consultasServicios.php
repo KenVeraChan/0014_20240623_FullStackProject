@@ -2,14 +2,14 @@
 session_start();
 require "../../005_Login/conexionPHP.php";
 error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-$conexionServcios=ConexionPHP::getConexionCLIENTES();
+$conexionServicios=ConexionPHP::getConexionCLIENTES();
 $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
 
 //CASO DE QUE EL AREA SEA DE ASTRONOMIA
 if(isset($_GET["ASTRONOMIA"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='ASTRONOMIA'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='ASTRONOMIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -36,7 +36,7 @@ if(isset($_GET["ASTRONOMIA"]))
 if(isset($_GET["AUTOMATIZACION"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='AUTOMATIZACION'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='AUTOMATIZACION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -63,7 +63,7 @@ if(isset($_GET["AUTOMATIZACION"]))
 if(isset($_GET["ECOLOGIA"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='ECOLOGIA'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='ECOLOGIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -90,7 +90,7 @@ if(isset($_GET["ECOLOGIA"]))
 if(isset($_GET["INFRAESTRUCTURAS"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='INFRAESTRUCTURAS'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='INFRAESTRUCTURAS'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -117,7 +117,7 @@ if(isset($_GET["INFRAESTRUCTURAS"]))
 if(isset($_GET["MEDICINA"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='MEDICINA'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='MEDICINA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -144,7 +144,7 @@ if(isset($_GET["MEDICINA"]))
 if(isset($_GET["OCEANOGRAFIA"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='OCEANOGRAFIA'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='OCEANOGRAFIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -171,7 +171,7 @@ if(isset($_GET["OCEANOGRAFIA"]))
 if(isset($_GET["TELECOMUNICACIONES"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='TELECOMUNICACIONES'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='TELECOMUNICACIONES'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -198,7 +198,7 @@ if(isset($_GET["TELECOMUNICACIONES"]))
 if(isset($_GET["EDUCACION"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='EDUCACION'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='EDUCACION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -228,7 +228,7 @@ if(!empty($_GET["ID"]))
     $carpeta_destino="../../009_SectorPublico/0094_PaginaServicios/servicesImages/";
     $_SESSION["DESTINO"]=$carpeta_destino;
     //Se realiza la consulta correspondiente
-    $consultaVentas=$conexionServcios->query("SELECT * FROM $BD_tabla WHERE ID='$ID'");
+    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE ID='$ID'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $numeroServicios=$consultaVentas->rowCount();
     foreach($resultadoVentas as $cargaVentas)

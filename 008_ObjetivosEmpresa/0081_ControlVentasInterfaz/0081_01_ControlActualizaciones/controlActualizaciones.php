@@ -87,6 +87,7 @@
                                         <option>MEDICINA</option>
                                         <option>AUTOMATIZACION</option>
                                         <option>INFRAESTRUCTURAS</option>
+                                        <option>EDUCACION</option>
                                     </select> 
                                 </td>
                             <?php } ?>

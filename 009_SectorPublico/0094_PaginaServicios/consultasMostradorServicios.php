@@ -86,6 +86,6 @@ function extraeDetallesServicios($stringNombre)
         }
     }
     $consServicios->closeCursor();  //Cierra la consulta realiada
-    return $_SESSION["DETSER"][array_search($stringNombre,$_SESSION["NOMSERV"],true)];
+    return $_SESSION["DETSERV"][array_search($stringNombre,$_SESSION["NOMSERV"],true)];
 }
 ?>
