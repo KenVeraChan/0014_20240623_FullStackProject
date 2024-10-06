@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2024 a las 14:10:05
+-- Tiempo de generación: 06-10-2024 a las 19:08:04
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -207,7 +207,12 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (66, 'GEOESTACIONARIOS.png', 'image/png', '21119', 'SERVICIOS', 'TELECOMUNICACIONES', 201, 112.25, 'Servicios de programación de satélites orbitales de inertes zonas planetarias'),
 (67, 'AERONAVES.png', 'image/png', '22430', 'SERVICIOS', 'TELECOMUNICACIONES', 246, 1112.25, 'Servicios de manejo automatizado de lanzaderas espaciales'),
 (69, 'PIZARRAS.png', 'image/png', '66842', 'SERVICIOS', 'EDUCACION', 432, 171.5, 'Pizarras digitales con holografia tridimensional para la enseñanza'),
-(70, 'TABLETS.png', 'image/png', '9977', 'SERVICIOS', 'EDUCACION', 72, 44.5, 'Dispositivos electrónicos para el aprendizae con bases de datos simuladas para aprender a programar VIS4C');
+(70, 'TABLETS.png', 'image/png', '9977', 'SERVICIOS', 'EDUCACION', 72, 44.5, 'Dispositivos electrónicos para el aprendizae con bases de datos simuladas para aprender a programar VIS4C'),
+(71, 'PROGRAMACION.png', 'image/png', '16776', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(72, 'AGRICULTURA.png', 'image/png', '26379', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(73, 'COLONIZACION.png', 'image/png', '29643', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(74, 'SUBMARINISMO.png', 'image/png', '279171', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(75, 'ATMOSFERA.png', 'image/png', '12947', 'CATEGORIA PROYECTOS', '', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -266,7 +271,7 @@ ALTER TABLE `historias`
 -- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
 ALTER TABLE `imagenesinterfazweb`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`
