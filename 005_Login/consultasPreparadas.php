@@ -13,7 +13,7 @@ include "conexionPHP.php";
 $BD_servidor=ConexionPHP::getBD_Servidor();
 $BD_usuario=ConexionPHP::getBD_Usuario();
 $BD_contrasenia=ConexionPHP::getBD_Contrasenia();
-$BD_nombre=ConexionPHP::getBD_Nombre();
+$BD_nombre=ConexionPHP::getBD_NombreEMPLEADOS();
 $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
 
 //Se incluye el fichero de creación de un objeto para guardar
@@ -22,31 +22,30 @@ include "../003_Actualizacion/actualizacionMetodosPHP.php";
 try{   
     //METODO 2: EMPLEANDO EN TODO ESTE FICHERO --> DE MYSQLI PARA LAS CONSULTAS PREPARADAS
     //CREANDO VARIABLES RECIBIDAS DE LOS BOTONES DE ACCION
-
-    $busqueda=$_GET["busqueda"] ?? null;
-    $inserccion=$_GET["inserccion"] ?? null;
-    $actualizacion=$_GET["actualizacion"] ?? null;
-    $carga=$_GET["carga"] ?? null;
-    $borrar=$_GET["borrado"] ?? null;
-    $eliminacion=$_GET["eliminacion"] ?? null;
-    $carga_elim=$_GET["carga_eliminacion"] ?? null;
-    $borrar_elim=$_GET["borrado_eliminacion"] ?? null;
+    $busqueda=$_GET["busqueda"];
+    $inserccion=$_GET["inserccion"];
+    $actualizacion=$_GET["actualizacion"];
+    $carga=$_GET["carga"];
+    $borrar=$_GET["borrado"];
+    $eliminacion=$_GET["eliminacion"];
+    $carga_elim=$_GET["carga_eliminacion"];
+    $borrar_elim=$_GET["borrado_eliminacion"];
     //Se inicia la matriz que luego se rellenara
-    $datos_ACTUALIZACION=array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
+    $datos_ACTUALIZACION= array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
     //Se inicia el ARRAY para ser rellenado despues
-    $datos_COMPARACION=array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
+    $datos_COMPARACION= array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
     //CREANDO VARIABLES RECIBIDAS DEL FORMULARIO
-    $id=$_GET["id"] ?? null;
-    $nom=$_GET["nom"] ?? null;
-    $ape=$_GET["ape"] ?? null;
-    $dir=$_GET["dir"] ?? null;
-    $pob=$_GET["pob"] ?? null;
-    $prof=$_GET["prof"] ?? null;
-    $aho=$_GET["aho"] ?? null;
+    $id=$_GET["id"];
+    $nom=$_GET["nom"];
+    $ape=$_GET["ape"];
+    $dir=$_GET["dir"];
+    $pob=$_GET["pob"];
+    $prof=$_GET["prof"];
+    $aho=$_GET["aho"];
     $contrat="PENDIENTE";
     //SE CREA UN ARRAY UNIDIMENSIONAL DE VALORES PARA FACILITAR EL CODIGO
-    $datos_FORM=array($id,$nom,$ape,$dir,$pob,$prof,$aho) ?? null;
-    $datos_CONSULTA=array("ID","NOMBRE","APELLIDOS","DIRECCION","POBLACION","PROFESION","AHORROS");
+    $datos_FORM=array($id,$nom,$ape,$dir,$pob,$prof,$aho);
+    $datos_CONSULTA=array("ID","NOMBRE","APELLIDOS","DIRECCION","POBLACION","PROFESION","SALAR_ANT");
     $datos_CONSULTA_DINERO=array(0,1000,25000,50000,75000,100000,125000,20000000);
     //CONEXION PROCESO
     $conexion=mysqli_connect($BD_servidor,$BD_usuario,$BD_contrasenia);
@@ -187,14 +186,14 @@ try{
                             $semaforo=10;  //SE CIERRA EL PASO PARA QUE ENTRE AQUI DE NUEVO
                         }
                         $_SESSION["semaforo"]=1;
-                        header("location:../001_Busqueda/busquedaPHP-TABLAFIND.php");
+                        header("location:../001_Busqueda/0011_BusquedaTABLAFIND/busquedaPHP-TABLAFIND.php");
                     }
                 }
             }
             ///COMPROBACIÓN DE INSERCCION/// 
             if(isset($inserccion))
             {
-                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,AHORROS,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
+                $sql="INSERT INTO CONTACTOS_EMPRESA(ID,NOMBRE,APELLIDOS,DIRECCION,POBLACION,PROFESION,SALAR_ANT,CONTRATACION) VALUES(?,?,?,?,?,?,?,?)";
                 $resultado=mysqli_prepare($conexion,$sql);
                 $okey=mysqli_stmt_bind_param($resultado,"isssssis",$id,$nom,$ape,$dir, $pob, $prof,$aho,$contrat);
                 $okey=mysqli_stmt_execute($resultado);
@@ -213,7 +212,7 @@ try{
             ///COMPROBACIÓN DE ACTUALIZACION/// 
             if(isset($actualizacion) || isset($carga) || isset($borrar))
             {
-                if(!strcmp($carga,"CARGAR"))
+                if(isset($carga))
                 {
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA
                     //SE INVOCA UNA VARIABLE DE TIPO GLOBAL PARA RECIBIR LO QUE SE QUIERE CARGAR CON EL ID
@@ -280,7 +279,7 @@ try{
                         mysqli_stmt_close($resultado); 
                     }
                 }
-                if(!strcmp($borrar,"BORRAR"))
+                if(isset($borrar))
                 {
                     session_start();  //INICIAR LA SESION SIEMPRE//
                     //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
@@ -294,7 +293,7 @@ try{
                     $_SESSION["semaforo"]=2;
                     header("location:../003_Actualizacion/actualizacionPHP.php");
                 }
-                if(!strcmp($actualizacion,"ACTUALIZAR"))
+                if(isset($actualizacion))
                 {
                     session_start();
                     //PARTE 1: SE GENERA UNA CARGA DE DATOS ORIGINALES DEL USUARIO
@@ -302,13 +301,13 @@ try{
                     //Emplea el constructor de la clase mencionada para guardar los datos en una variable objeto
                     $ESCRITOS= new UsuarioCompararActualizar($id,$nom,$ape,$dir,$pob,$prof,$aho);
                     $_SESSION["E"]= json_encode($ESCRITOS);
-                    header("location:../003_Actualizacion/actualizacionPHP-TABLAUPDATE.php");      
+                    header("location:../003_Actualizacion/0031_ActualizacionTABLAUPDATE/actualizacionPHP-TABLAUPDATE.php");      
                 }
             }
             ///COMPROBACIÓN DE ELIMINACION/// 
-            if(isset($eliminacion)|| isset($carga_elim) || isset($borrar_elim))
+            if(isset($eliminacion) || isset($carga_elim) || isset($borrar_elim))
             {
-                if(!strcmp($carga_elim,"CARGA"))
+                if(isset($carga_elim))
                 {
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA
                     //SE INVOCA UNA VARIABLE DE TIPO GLOBAL PARA RECIBIR LO QUE SE QUIERE CARGAR CON EL ID
@@ -360,7 +359,7 @@ try{
                     mysqli_stmt_close($resultado); 
                     }
                 }
-                if(!strcmp($borrar_elim,"BORRA"))
+                if(isset($borrar_elim))
                 {
                     session_start();  //INICIAR LA SESION SIEMPRE//
                     //TRAS BORRAR LOS DATOS SE BORRAN LAS CASILLAS
@@ -375,7 +374,7 @@ try{
                     $_SESSION["semaforo"]=2;
                     header("location:../004_Eliminacion/eliminacionPHP.php");
                 }
-                if(!strcmp($eliminacion,"ELIMINAR"))
+                if(isset($eliminacion))
                 {
                     //TRAS CARGAR LOS DATOS SE DESBLOQUEARAN TODAS LAS CASILLAS PARA CAMBIAR ALGO Y SE ACTUALIZARA
                     //SI SE QUIEREN CARGAR LOS DATOS POR EL ID BUSCADO SE MOSTRARAN EN LA TABLA
@@ -417,10 +416,7 @@ try{
                     }                
                 }
             }
-            else
-            {
-                echo "POR FAVOR! Cargue de nuevo la página en el sector en el que se encontraba. Gracias";
-            }
+
     }catch(mysqli_sql_exception $error1)
     {
         echo "No se ha podido establecer conexión con la base de datos!";

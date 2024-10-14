@@ -1,0 +1,902 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+@media all and (min-width: 769px) and (max-width: 7800px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 165px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .areaPrivada{ 
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 90px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: medium;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
+    #bandaSlider{
+        width:100%;
+        height: 200px;
+    }
+    .bandasPasaSlider{
+        width: 60px;
+    }
+    .imagenCargada 
+    {
+        background-color: transparent;
+        max-width: fit-content;
+        background-size: 100% 100%;
+    }
+    .pasaIzquierda{
+        width:100%;
+        height: 300px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
+    }
+    .pasaDerecha{
+        width:100%;
+        height: 300px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
+    }
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        position: relative;
+        width: 100%;
+        height: 2100px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        position: relative;
+        margin-top: -15px;
+        width: 100%;
+        height: 100%;
+    }
+    .separacion{
+        height: 12px;
+        z-index: 1;
+    }
+    .tablaContenidos{
+         margin-top: 60px; 
+         width:80%; 
+         margin-left: 10%;
+    }
+    .botones{
+        width:150px; 
+        height:25px; 
+        margin-top:30px; 
+        margin-left:60%;
+    }
+    #seccionSlider{
+        margin-top: 10px;
+        padding-left: 0px;
+        width:100%;
+        height: 300px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal{
+        margin-top: 20px;
+        padding-left: 13%;
+        width:100%;
+        height: 257px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 2%;
+        width:20%;
+        height: 350px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(2, 2, 27);
+    }
+    .noticia:nth-child(1){
+        margin-left: 0%;
+    }
+    .fila:nth-child(1){
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    .imgBloques{
+        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
+        width:40%;
+    }
+    .fila:nth-child(2){
+        position: relative;
+        width: 100%;
+        height: 20px; 
+        text-align: center;
+        font-size: medium;  
+    }
+    .fila:nth-child(3){
+        position: relative;
+        padding-top: 10px;
+        width: 100%;
+        height: 220px;  
+        font-size: small;
+    }
+    .textoBloque{
+        margin-left: 2%;
+        position: relative;
+        float: left;
+        height: 20%;
+        width:100%;
+    }
+    .tablaInterna{
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: 0px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+}
+@media all and (min-width: 481px) and (max-width: 769px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 165px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 80px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: small;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
+    #bandaSlider{
+    width:100%;
+    height: 200px;
+    }
+    .bandasPasaSlider{
+        width: 60px;
+    }
+    .imagenCargada 
+    {
+    background-color: transparent;
+    max-width: fit-content;
+    background-size: 100% 100%;
+    }
+    .pasaIzquierda{
+        width:100%;
+        height: 180px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
+        background-size: 100% 100%;
+    }
+    .pasaDerecha{
+        width:100%;
+        height: 180px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
+        background-size: 100% 100%;
+    }
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        position: relative;
+        width: 100%;
+        height: 2100px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        position: relative;
+        margin-top: -37px;
+        width: 100%;
+        height: 100%;
+    }
+    .separacion{
+        height: 12px;
+        z-index: 1;
+    }
+    .botones
+    {
+        width:150px; 
+        height:25px; 
+        margin-top:30px; 
+        margin-left:160px;
+    }
+    #seccionSlider{
+        margin-top: 10px;
+        width:100%;
+        height: 180px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal{
+        margin-top: 20px;
+        padding-left: 13%;
+        width:100%;
+        height: 257px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 2%;
+        width:20%;
+        height: 320px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(2, 2, 27);
+    }
+    .noticia:nth-child(1){
+        margin-left: 0%;
+    }
+    .fila:nth-child(1){
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    .imgBloques{
+        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
+        width:40%;
+    }
+    .fila:nth-child(2){
+        position: relative;
+        width: 100%;
+        height: 20px; 
+        text-align: center;
+        font-size: x-small;  
+    }
+    .fila:nth-child(3){
+        position: relative;
+        padding-top: 10px;
+        width: 100%;
+        height: 220px;  
+        font-size: x-small;
+    }
+    .textoBloque{
+        margin-left: 2%;
+        position: relative;
+        float: left;
+        height: 20%;
+        width:100%;
+    }
+    .tablaInterna{
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    /*********** FIN CSS DEL CUERPO ********/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 300px) and (max-width: 481px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 280px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 39, 0.89);
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 5px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 50px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: small;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla
+        {
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
+    #bandaSlider{
+    width:100%;
+    height: 100px;
+    }
+    .bandasPasaSlider{
+        width: 30px;
+        height: 100px;
+    }
+    .imagenCargada 
+    {
+    background-color: transparent;
+    max-width: fit-content;
+    background-size: 100% 100%;
+    }
+    .pasaIzquierda{
+        width:100%;
+        height: 100px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
+        background-size: 120% 100%;
+    }
+    .pasaDerecha{
+        width:100%;
+        height: 100px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
+        background-size: 120% 100%;
+    }
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 2100px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        position: relative;
+        margin-top: -37px;
+        width: 100%;
+        height: 100%;
+    }
+    .separacion{
+        height: 12px;
+        z-index: 1;
+    }
+    .botones
+    {
+        width:150px; 
+        height:25px; 
+        margin-top:30px; 
+        margin-left:100px;
+    }
+    #seccionSlider{
+        margin-top: 40px;
+        width:100%;
+        height: 120px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal{
+        margin-top: 20px;
+        padding-left: 13%;
+        width:100%;
+        height: 257px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 2%;
+        width:20%;
+        height: 300px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(2, 2, 27);
+    }
+    .noticia:nth-child(1){
+        margin-left: 0%;
+    }
+    .fila:nth-child(1){
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    .imgBloques{
+        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
+        width:40%;
+    }
+    .fila:nth-child(2){
+        position: relative;
+        width: 100%;
+        height: 20px; 
+        text-align: center;
+        font-size: 45%;  
+    }
+    .fila:nth-child(3){
+        position: relative;
+        padding-top: 10px;
+        width: 100%;
+        height: 220px;  
+        font-size: 45%;
+    }
+    .textoBloque{
+        margin-left: 2%;
+        position: relative;
+        float: left;
+        height: 20%;
+        width:100%;
+    }
+    .tablaInterna{
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 145px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 140px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 39, 0.89);
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: x-small;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
+    #bandaSlider{
+        width:100%;
+        height: 50px;
+    }
+    .bandasPasaSlider{
+        width: 20px;
+    }
+    .imagenCargada 
+    {
+    background-color: transparent;
+    max-width: fit-content;
+    background-size: 100% 100%;
+    }
+    .pasaIzquierda{
+        width:100%;
+        height: 90px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
+        background-size: 120% 100%;
+    }
+    .pasaDerecha{
+        width:100%;
+        height: 90px;
+        background-color: transparent;
+        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
+        background-size: 120% 100%;
+    }
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 2100px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        position: relative;
+        margin-top: -37px;
+        width: 100%;
+        height: 100%;
+    }
+    .separacion{
+        height: 12px;
+        z-index: 1;
+    }
+    .botones
+    {
+        width:150px; 
+        height:25px; 
+        margin-top:30px; 
+        margin-left:20px;
+    }
+    #seccionSlider{
+        position:absolute;
+        margin-top: 150px;
+        width:100%;
+        height: 90px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal{
+        position: relative;
+        margin-top: 60px;
+        padding-left: 8%;
+        width:100%;
+        height: 265px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal:nth-child(2){
+        margin-top: 280px;
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 2%;
+        width:20%;
+        height: 245px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(2, 2, 27);
+    }
+    .noticia:nth-child(1){
+        margin-left: 0%;
+    }
+    .fila:nth-child(1){
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    .imgBloques{
+        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
+        width:50%;
+    }
+    .fila:nth-child(2){
+        position: relative;
+        width: 100%;
+        height: 20px; 
+        text-align: center;
+        font-size: 15%;  
+    }
+    .fila:nth-child(3){
+        position: relative;
+        padding-top: 12px;
+        width: 100%;
+        height: 70px;  
+        font-size: 2%;
+    }
+    .textoBloque{
+        margin-left: 2%;
+        position: relative;
+        float: left;
+        height: 20%;
+        width:100%;
+    }
+    .tablaInterna{
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:xx-small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}

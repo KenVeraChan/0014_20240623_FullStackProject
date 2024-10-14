@@ -1,0 +1,836 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+#tablaPaginacion{
+    position: relative;
+    margin-top: 25px;
+    margin-left: 10%;
+    width: 20px;
+    height: 100px;
+}
+.accionamientos{
+    margin-left: 20px;
+    width: 30px; 
+    height: 23px; 
+    color: white; 
+    background-color: rgb(162, 10, 223);
+    text-align: center;  
+}
+.accionamientos:hover{
+    box-shadow: rgb(162, 10, 223) 5px 5px 20px 10px;
+}
+.actualizar:hover{
+    box-shadow: rgb(162, 10, 223) 5px 5px 20px 10px;
+}
+.cajaT:nth-child(1)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 55px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(2)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 200px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(3)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 160px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(4)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(5)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(6)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(7)
+{
+    background-color: rgb(75, 1, 97);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 210px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(1){
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 55px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(2)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(3)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 160px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(4)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(5)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(6)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(7)
+{
+    float: left;
+    background-color:rgb(161, 119, 189);
+    text-align: center;
+    width: 210px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(8)
+{
+    float: left;
+    text-align: center;
+    width: 90px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.botonera{
+    width: 90px; 
+    height: 23px; 
+    color: white; 
+    background-color: rgb(162, 10, 223);
+    text-align: center;
+}
+.botonera:hover{
+    box-shadow: rgb(162, 10, 223) 5px 5px 20px 10px;  
+}
+.nota{
+    margin-left: 90px;
+    width: 200px; 
+    height: 23px; 
+    color: white; 
+    background-color: rgb(162, 10, 223);
+}
+
+
+@media all and (min-width: 769px) and (max-width: 7800px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: rgb(204, 0, 255);
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(204, 0, 255);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: rgb(204, 0, 255);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 310px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 20%;
+            margin-top: 10px;
+            float: left;
+            width: 60%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: medium;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        position: relative;
+        width: 100%;
+        height: 720px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        position: relative;
+        margin-top: -15px;
+        width: 100%;
+        height: 100%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:90%; 
+        height:600px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1300px;
+        background-color: transparent;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -15px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: rgb(204, 0, 255);
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+}
+@media all and (min-width: 481px) and (max-width: 768px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: rgb(204, 0, 255);
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(204, 0, 255);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: rgb(204, 0, 255);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 310px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 100px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 20%;
+            margin-top: 10px;
+            float: left;
+            width: 60%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 70%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        width: 100%;
+        height: 720px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        position: relative;
+        margin-top: -37px;
+        width: 100%;
+        height: 110%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:600px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1100px;
+        background-color: transparent;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: rgb(204, 0, 255);
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 300px) and (max-width: 480px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: rgb(204, 0, 255);
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(204, 0, 255);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: rgb(204, 0, 255);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 227px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 15%;
+            margin-top: 10px;
+            float: left;
+            width: 80%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 50%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        width: 100%;
+        height: 720px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:80%; 
+        height:600px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1100px;
+        background-color: transparent;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: rgb(204, 0, 255);
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: rgb(204, 0, 255);
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: rgb(204, 0, 255);
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: rgb(204, 0, 255);
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 227px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 15%;
+            margin-top: 10px;
+            float: left;
+            width: 80%;
+            height: 60%;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 20%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        width: 100%;
+        height: 720px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:80%; 
+        height:600px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1100px;
+        background-color: transparent;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: rgb(204, 0, 255);
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:xx-small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}

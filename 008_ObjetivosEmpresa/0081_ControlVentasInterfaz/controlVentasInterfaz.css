@@ -1,0 +1,937 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+@media all and (min-width: 769px) and (max-width: 7800px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 163px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        position: relative;
+        width: 100%;
+        height: 1300px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    #tituloGeneral{
+        position: absolute;
+        padding-top: 60px;
+        margin-top: 20px;
+        margin-left: 10%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: x-large;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        padding-top: 100px;
+        width: 600px; 
+        height:1000px;
+        margin-top: 80px;
+        margin-left: 70px;
+        z-index: 1;
+    }
+    #formularioInterno{
+        height:300px; 
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 550px;
+        height:10px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:right;
+        margin-top: -10px;
+        width: 257px;
+        height:20px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 50px;
+        width: 600px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 60px;
+    }
+    .boton{
+        float: left;
+        margin-top: 33px;
+        margin-left: 70px;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        font-size: 80%;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .boton:nth-child(1)
+    {
+        margin-left: 100px;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 80%; 
+        height:850px;
+        margin-left: 70px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1800px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
+    }
+
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -15px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+}
+@media all and (min-width: 481px) and (max-width: 768px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 163px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 100px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 1300px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        position: relative;
+        width: 100%;
+        height: 110%;
+    }
+    #tituloGeneral{
+        position: absolute;
+        padding-top: 60px;
+        margin-top: 20px;
+        margin-left: 7%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: large;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        padding-top: 100px;
+        width: 400px; 
+        height:1000px;
+        margin-top: 80px;
+        margin-left: 70px;
+        z-index: 1;
+    }
+    #formularioInterno{
+        height:300px; 
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 350px;
+        height: 80px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:left;
+        margin-top: -40px;
+        margin-left: 40px;
+        width: 257px;
+        height:20px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 40px;
+        width: 600px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 60px;
+    }
+    .boton{
+        float: left;
+        margin-top: 33px;
+        margin-left: 20px;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        font-size: 80%;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .boton:nth-child(1)
+    {
+        margin-left: 0px;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 80%; 
+        height:850px;
+        margin-left: 70px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1200px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 300px) and (max-width: 480px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 163px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 1300px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    #tituloGeneral{
+        position: absolute;
+        padding-top: 60px;
+        margin-top: 20px;
+        margin-left: 15%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: small;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        padding-top: 50px;
+        width: 270px; 
+        height:1000px;
+        margin-top: 80px;
+        margin-left: 5%;
+        z-index: 1;
+    }
+    #formularioInterno{
+        height:300px; 
+    }
+    .celda{
+        float: left;
+        font-size: small;
+        color: rgb(255, 255, 255);
+        width: 230px;
+        height: 80px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 10%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:left;
+        margin-top: -40px;
+        margin-left: 30px;
+        width: 200px;
+        height:20px;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 30px;
+        width: 600px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 60px;
+    }
+    .boton{
+        float: left;
+        margin-top: 13px;
+        margin-left: 40px;
+        width: 150px;
+        height: 30px;
+        text-align: center;
+        font-size: 90%;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 85%; 
+        height:850px;
+        margin-left: 20px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1200px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 143px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 1300px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    #tituloGeneral{
+        position: absolute;
+        padding-top: 60px;
+        margin-top: 20px;
+        margin-left: 7%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: small;
+        color:#fcf700;
+        text-align: center;
+        text-shadow: #8d8b08;
+    }
+    .tableroDiagrama{
+        position: absolute;
+        padding-top: 30px;
+        width: 160px; 
+        height:1000px;
+        margin-top: 80px;
+        margin-left: 5%;
+        z-index: 1;
+    }
+    #formularioInterno{
+        height:300px; 
+    }
+    .celda{
+        float: left;
+        font-size: small;
+        color: rgb(255, 255, 255);
+        width: 200px;
+        height: 80px;
+        text-align:left;
+        margin-top: 8px;
+        margin-left: 5%;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 350px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .espacioImagen
+    {
+        float:right;
+        width: 350px;
+        height:250px;
+        background-color: white;
+        z-index: 1;  
+    }
+    .desplegable{
+        float:left;
+        margin-top: -40px;
+        margin-left: 10px;
+        width: 180px;
+        height:18px;
+        font-size: small;
+        background-color: white;
+        z-index: 1;  
+    }
+    #imagen{
+        float:left;
+        margin-left: 20px;
+        width: 600px;
+        height:21px;
+        background-color: white;
+        z-index: 1; 
+    }
+    .separacion{
+        height: 60px;
+    }
+    .boton{
+        float: left;
+        margin-top: 13px;
+        margin-left: 20px;
+        width: 150px;
+        height: 30px;
+        text-align: center;
+        font-size: 90%;
+        color:rgb(214, 214, 3);
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .tableroMostrador
+    {
+        position: absolute;
+        overflow: scroll;
+        margin-top: 380px;
+        width: 85%; 
+        height:850px;
+        margin-left: 15px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .tableroMostrador #tablaMostrador
+    {
+        width: 1200px;
+        height: 800px;
+        background-color: transparent;
+    }
+    .filaBBDD:nth-child(1){
+        height: 20px;  
+        background-color: rgb(15,0,152); 
+    }
+    .filaBBDD{
+        height: 70px;   
+    }
+    .BBDD{
+        width:60px;
+        height: 5px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        color: yellow;
+        font-size: medium;
+    }
+    .BBDD:hover{
+        background-color: rgba(255, 255, 255, 0.89);
+        color: black;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:xx-small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}

@@ -5,8 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/login.php");
-        }
+            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");        }
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,7 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../000_ConsultaContactos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -47,10 +46,10 @@
                     <button class="bloque_opciones" style="color: orangered" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered">CONTRATACION OFICIAL</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="muestraTabla()">MOSTRAR BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: orangered"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: orangered" onclick="location.href='../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>

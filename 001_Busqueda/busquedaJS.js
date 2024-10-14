@@ -35,8 +35,6 @@ function cargarPagina()
         botonForm[0].style.transitionDuration = "0.5s";
         botonForm[0].style.backgroundColor="white";
     })
-    //TITULO PAGINA Y CABECERA
-    //elemento3[0].style.color="black";
     //CAJAS DE DATOS Y DESPLEGABLES
     for(let i=0; i<4;i++)
         {

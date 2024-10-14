@@ -18,6 +18,10 @@ function cargarPagina()
             elemento1[i].style.color="orangered";
                 })
         }
+        muestraTabla();   //Llamada a la muestr de la tabla de la BBDD
+}
+function muestraTabla()
+{
     //MUESTRA LA TABLA EN FORMA PAGINADA PARA VER COMO QUEDA LA MISMA TRAS LOS CAMBIOS
     //Nota: con getElementById se necesita declarar dentro del método
     var botonForm= document.getElementById("imagenPortada");

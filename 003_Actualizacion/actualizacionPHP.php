@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../005_Login/login.php");
+            header("Location:../005_Login/0051_LoginRRHH/loginRRHH.php");
         }
 ?>
 
@@ -20,7 +20,7 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../007_MenuPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../003_Actualizacion/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -47,10 +47,10 @@
                     <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../004_Eliminacion/eliminacionPHP.php'"> DESESTIMAR CANDIDATO</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> CONTRATACION OFICIAL</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../000_ConsultaContactos/ConsultaContactos.php'"> MOSTRAR BBDD</button>
                 </td>
                 <td class="LlenobotonesPrincipal">
-                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)"> VOLVER</button>
+                    <button class="bloque_opciones" style="color: rgb(0, 228, 228)" onclick="location.href='../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button>
                 </td>
             </tr>
         </table>
@@ -125,7 +125,7 @@
            <input type="submit" value="CARGAR" name="carga" class="boton"><!--AHORROS-->
            <input type="submit" value="BORRAR" name="borrado" class="boton"> <!--AHORROS-->
         </form>
-        <img id="imagenPortada" src="../000_ConsultaContactos/images/SERVIDOR.jpg" alt="Imagen servidor">
+        <img id="imagenPortada" src="../003_Actualizacion/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">

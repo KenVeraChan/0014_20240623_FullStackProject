@@ -5,7 +5,7 @@ include "../005_Login/conexionPHP.php";
 $BD_servidor=ConexionPHP::getBD_Servidor();
 $BD_usuario=ConexionPHP::getBD_Usuario();
 $BD_contrasenia=ConexionPHP::getBD_Contrasenia();
-$BD_nombre=ConexionPHP::getBD_Nombre();
+$BD_nombre=ConexionPHP::getBD_NombreEMPLEADOS();
 $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
 $modificar=$_GET["modificar"];
 try{  
@@ -28,8 +28,7 @@ try{
                 $prof=$ESCRITURA["RegProfesion"];
                 $aho=$ESCRITURA["RegAhorros"];
 
-                $sql="UPDATE $BD_tabla SET NOMBRE=?,APELLIDOS=?,DIRECCION=?,POBLACION=?,PROFESION=?,AHORROS=? WHERE ID=?";
-                echo "checkpoint";
+                $sql="UPDATE $BD_tabla SET NOMBRE=?,APELLIDOS=?,DIRECCION=?,POBLACION=?,PROFESION=?,SALAR_ANT=? WHERE ID=?";
                 $resultado=mysqli_prepare($conexion,$sql);
                 $okey=mysqli_stmt_bind_param($resultado,"sssssii",$nom,$ape,$dir,$pob,$prof,$aho,$nuevoID);
                 $okey=mysqli_stmt_execute($resultado);

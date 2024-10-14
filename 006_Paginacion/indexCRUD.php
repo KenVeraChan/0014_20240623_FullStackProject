@@ -12,7 +12,7 @@
     $base= ConexionPHP::getConexionEmpleados();  //Conexion establecida desde la clase ConexionPHP
     $BD_tabla=ConexionPHP::getBD_TablaEmpleados(); //Solicita nombre BBDD de los JEFES
 
-    $tamPagina=3;
+    $tamPagina=15;
     if(isset($_GET["cargaPagina"]))
         {
             $paginaInicial=($_GET["cargaPagina"])* $tamPagina;
@@ -38,10 +38,9 @@
                 <td class="cajaT">Direccion</td>
                 <td class="cajaT">Poblacion</td>
                 <td class="cajaT">Profesion</td>
-                <td class="cajaT">Salario Anterior</td>
+                <td class="cajaT">Salar. Ant.</td>
                 <td class="cajaT">Contratacion final</td>
             </tr>
-
             <?php
                 foreach($registro as $persona):
             ?>
@@ -52,7 +51,7 @@
                 <td class="caja"><?php echo($persona->DIRECCION);?></td>
                 <td class="caja"><?php echo($persona->POBLACION);?></td>
                 <td class="caja"><?php echo($persona->PROFESION);?></td>
-                <td class="caja"><?php echo($persona->AHORROS);?></td>
+                <td class="caja"><?php echo($persona->SALAR_ANT);?></td>
                 <td class="caja"><?php echo($persona->CONTRATACION);?></td>
             </tr>
             <?php
@@ -66,7 +65,7 @@
                 $filasSQLBoton=$filasSQL/$tamPagina;
                 echo "<div class='mencion'>".$filasSQL." regitros detectados</div>";
                 echo"<br><br>";
-                echo"<form method='GET'><table style='width:200px'><tr>";
+                echo"<form method='GET'><table style='width:200px;'><tr>";
                 for($i=0;$i<(round($filasSQLBoton,0,PHP_ROUND_HALF_UP)+1);$i++)
                 {
                     echo"<td><input 

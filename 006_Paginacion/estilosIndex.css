@@ -1,3 +1,10 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
 #tablaPaginacion{
     position: relative;
     margin-top: 25px;
@@ -26,6 +33,18 @@
 .cajaT:nth-child(1){
     width: 30px;
 }
+.cajaT:nth-child(2){
+    width: 130px;
+}
+.cajaT:nth-child(4){
+    width: 240px;
+}
+.cajaT:nth-child(5){
+    width: 100px;
+}
+.cajaT:nth-child(7){
+    width: 80px;
+}
 .caja{
     float: left;
     background-color:rgb(235, 165, 73);
@@ -34,6 +53,18 @@
     height: 20px;
     margin-left: 1px;
     margin-right: 1px;
+}
+.caja:nth-child(2){
+    width: 130px;
+}
+.caja:nth-child(4){
+    width: 240px;
+}
+.caja:nth-child(5){
+    width: 100px;
+}
+.caja:nth-child(7){
+    width: 80px;
 }
 .cajaID{
     float: left;

@@ -1,0 +1,1267 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+    .VaciobotonesPrincipal{
+        float: left;
+        position: relative;
+        width: 100%;   /*ICONO CUADRADO*/
+        height: 13px;  
+        background-color: rgba(0, 0, 19, 0.89);
+        box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+    }
+    #tabla{
+        float: left;
+        width:100%;
+    }
+    /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    .consulta{
+    width: 100%;
+    height: 2100px;
+    background-color: rgba(0, 0, 19, 0.89);
+    text-align: center;
+    text-shadow: 5px;
+    text-justify: kashida;
+    padding-top: 20px;
+    }
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+  
+    #historia
+    {
+     margin-left:7%  /*SE GENERALIZA EL CUERPO*/
+    }
+   /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+   #titular
+   {
+   position: absolute;
+   margin-top: 30px;
+   width: 100%;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: rgb(255, 255, 2);
+   text-align: center;
+   font-size: large;
+   margin-bottom: 30px;
+   }
+   .anios
+   {
+   width: 100px;
+   margin-top: 25px;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.651);
+   background-color: rgba(2, 1, 46, 0.425);
+   border-radius: 10px;
+   border:solid;
+   }
+   /*DISEÑO DEL PIE DE LA PAGINA*/
+   .pie
+   {
+       width: 100%;
+       height: 32px;
+       background-color:  rgba(0, 0, 19, 0.89); 
+       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+       font-style:normal;
+       font-size:small;
+       text-align: center; 
+   }
+   #zocalo
+   {
+       float: left;
+       width:100%;
+       height: 90px; 
+       background-color:  rgba(0, 0, 19, 0.89);
+       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+       font-style:oblique;
+       font-size:small;
+       text-align: center;
+   }
+   #argumento{
+    height: 40px;
+    }
+   #contenido{
+        height: 200px;
+    }
+
+@media all and (min-width: 900px) and (max-width: 7800px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 165px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .areaPrivada{ 
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 90px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: medium;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    #seccionHistoria{
+        margin-top: 10px;
+        width:100%;
+        height: 650px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    /******* FIN PANEL DE HISTORIA ********/
+   /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .anios
+    {
+    font-size: medium;
+    }
+    .menu
+    {
+        padding-left: 0px;
+        margin-top: 80px;
+    }
+    .menu>li
+    {
+    margin-left: 4%;
+    position: relative;
+    display: inline-block;
+    font-size: x-large;
+    list-style: none;
+    }
+    .menu>li:nth-child(1)
+    {
+        margin-left: 0%;
+    }
+    .menu > li > a{
+    display: block;
+    padding: 5px 2px;
+    font-family: 'open sans';
+    text-decoration: none;
+    list-style: none;
+    }
+    .menu li a:hover{
+    color: yellow;
+    transition: all .3s;
+    }
+    .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+    .menu li:hover .decada{
+    display: block;
+    visibility: visible;
+    list-style: none;
+    opacity: 1;
+    }
+    #argumentos
+    {
+    margin-left: 19%;
+    margin-top: 50px;
+    float: left;
+    width: 60%;
+    height: 360px;
+    background-color: rgba(2, 1, 77, 0.425);
+    }
+    #trama
+    {
+    text-align: left;
+    font-size: 130%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 200px;
+    color: white;
+    }
+    #tiempo
+    {
+    height: 40px;
+    text-align: center;
+    }
+    #fecha{
+    color:white;
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-size: x-large;
+    background-color: rgb(3, 3, 49);
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -15px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        font-size:small;
+    }
+}
+@media all and (min-width: 769px) and (max-width: 900px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 165px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .areaPrivada{ 
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 90px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: medium;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    #seccionHistoria{
+        margin-top: 10px;
+        width:100%;
+        height: 650px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    /******* FIN PANEL DE HISTORIA ********/
+   /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .anios
+    {
+    font-size: medium;
+    }
+    .menu
+    {
+        padding-left: 0px;
+        margin-top: 80px;
+    }
+    .menu>li
+    {
+    margin-left: 4%;
+    position: relative;
+    display: inline-block;
+    font-size: x-large;
+    list-style: none;
+    }
+    .menu>li:nth-child(1)
+    {
+        margin-left: 0%;
+    }
+    .menu > li > a{
+    display: block;
+    padding: 5px 2px;
+    font-family: 'open sans';
+    text-decoration: none;
+    list-style: none;
+    }
+    .menu li a:hover{
+    color: yellow;
+    transition: all .3s;
+    }
+    .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+    .menu li:hover .decada{
+    display: block;
+    visibility: visible;
+    list-style: none;
+    opacity: 1;
+    }
+    #argumentos
+    {
+    margin-left: 5%;
+    margin-top: 50px;
+    float: left;
+    width: 90%;
+    height: 330px;
+    background-color: rgba(2, 1, 77, 0.425);
+    }
+    #trama
+    {
+    text-align: left;
+    font-size: 130%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 200px;
+    color: white;
+    }
+    #tiempo
+    {
+    height: 40px;
+    text-align: center;
+    }
+    #fecha{
+    color:white;
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-size: x-large;
+    background-color: rgb(3, 3, 49);
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -15px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+}
+@media all and (min-width: 481px) and (max-width: 769px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 145px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 80px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: small;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #seccionHistoria{
+        margin-top: 10px;
+        width:100%;
+        height: 650px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    /*********** FIN CSS DEL CUERPO ********/
+   /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .anios
+    {
+    font-size: medium;
+    }
+    .menu
+    {
+        padding-left: 0px;
+        margin-top: 80px;
+    }
+    .menu>li
+    {
+    margin-left: 4%;
+    position: relative;
+    display: inline-block;
+    font-size: x-large;
+    list-style: none;
+    }
+    .menu>li:nth-child(1)
+    {
+        margin-left: 0%;
+    }
+    .menu > li > a{
+    display: block;
+    padding: 5px 2px;
+    font-family: 'open sans';
+    text-decoration: none;
+    list-style: none;
+    }
+    .menu li a:hover{
+    color: yellow;
+    transition: all .3s;
+    }
+    .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+    .menu li:hover .decada{
+    display: block;
+    visibility: visible;
+    list-style: none;
+    opacity: 1;
+    }
+    #argumentos
+    {
+    margin-left: 5%;
+    margin-top: 50px;
+    float: left;
+    width: 90%;
+    height: 320px;
+    background-color: rgba(2, 1, 77, 0.425);
+    }
+    #trama
+    {
+    text-align: left;
+    font-size: 110%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 200px;
+    color: white;
+    }
+    #tiempo
+    {
+    height: 40px;
+    text-align: center;
+    font-size: 90%;
+    }
+    #fecha{
+    color:white;
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-size: x-large;
+    background-color: rgb(3, 3, 49);
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 385px) and (max-width: 481px)
+{   
+    
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 255px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 5px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 50px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: small;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #seccionHistoria{
+        margin-top: 30px;
+        width:100%;
+        height: 620px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+  /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+   .anios
+   {
+   font-size: small;
+   }
+   .menu
+   {
+       padding-left: 0px;
+       margin-top: 80px;
+   }
+   .menu>li
+   {
+   margin-left: 4%;
+   position: relative;
+   display: inline-block;
+   font-size: x-large;
+   list-style: none;
+   }
+   .menu>li:nth-child(1)
+   {
+       margin-left: 0%;
+   }
+   .menu > li > a{
+   display: block;
+   padding: 5px 2px;
+   font-family: 'open sans';
+   text-decoration: none;
+   list-style: none;
+   }
+   .menu li a:hover{
+   color: yellow;
+   transition: all .3s;
+   }
+   .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+   .menu li:hover .decada{
+   display: block;
+   visibility: visible;
+   list-style: none;
+   opacity: 1;
+   }
+   #argumentos
+   {
+   margin-left: 5%;
+   margin-top: 20px;
+   float: left;
+   width: 90%;
+   height: 350px;
+   background-color: rgba(2, 1, 77, 0.425);
+   }
+   #trama
+   {
+   text-align: left;
+   font-size: 95%;
+   margin-left: 5%;
+   margin-right: 5%;
+   height: 200px;
+   color: white;
+   }
+   #tiempo
+   {
+   height: 40px;
+   text-align: center;
+   font-size: 90%;
+   }
+   #fecha{
+   color:white;
+   float: left;
+   width: 100%;
+   height: 40px;
+   font-size: x-large;
+   background-color: rgb(3, 3, 49);
+   }
+   /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (Min-width: 300px) and (max-width: 385px)
+{
+        /** DISPOSITIVOS ORDENADOR **/
+      /************ CSS DE LA CABECERA ********/
+      #cabeceraPrincipal
+      {
+          width: 100%;
+          height: 255px;
+          background-color: rgba(0, 0, 19, 0.89);
+      }
+          #iconoAdorno{
+              float: left;
+              width: 100%;   /*ICONO CUADRADO*/
+              height: 80px;
+              /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+              /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+          }
+          #iconoEmpresa{
+              float: left;
+              width: 200px;   /*ICONO CUADRADO*/
+              height: 80px;   
+          }
+        .areaPrivada{
+            float:right;
+            margin-right: 5px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 50px; 
+            margin-top:-60px; 
+        }
+          .bloque_opciones{
+              position: relative;
+              padding-top: 10px;
+              padding-bottom: 5px;
+              float: left;
+              width: 100%;
+              height: 15px;
+              background-color:  rgba(0, 0, 19, 0.89);
+              text-align: center;
+              font-size: small;
+          }
+      /*********** FIN CSS DE LA CABECERA ********/
+  
+       /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+      /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+      #seccionHistoria{
+          margin-top: 30px;
+          width:100%;
+          height: 620px;
+          border: 2px;
+          border-style: solid;
+          border-color:rgba(79, 80, 3, 0.87);
+          background-color: rgba(2, 1, 46, 0.425);
+      }
+      /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+     .anios
+     {
+     font-size: small;
+     }
+     .menu
+     {
+         padding-left: 0px;
+         margin-top: 80px;
+     }
+     .menu>li
+     {
+     margin-left: 4%;
+     position: relative;
+     display: inline-block;
+     font-size: x-large;
+     list-style: none;
+     }
+     .menu>li:nth-child(1)
+     {
+         margin-left: 0%;
+     }
+     .menu > li > a{
+     display: block;
+     padding: 5px 2px;
+     font-family: 'open sans';
+     text-decoration: none;
+     list-style: none;
+     }
+     .menu li a:hover{
+     color: yellow;
+     transition: all .3s;
+     }
+     .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+     .menu li:hover .decada{
+     display: block;
+     visibility: visible;
+     list-style: none;
+     opacity: 1;
+     }
+     #argumentos
+     {
+     margin-left: 5%;
+     margin-top: 20px;
+     float: left;
+     width: 90%;
+     height: 280px;
+     background-color: rgba(2, 1, 77, 0.425);
+     }
+     #trama
+     {
+     text-align: left;
+     font-size: 80%;
+     margin-left: 5%;
+     margin-right: 5%;
+     height: 200px;
+     color: white;
+     }
+     #tiempo
+     {
+     height: 40px;
+     text-align: center;
+     font-size: 90%;
+     }
+     #fecha{
+     color:white;
+     float: left;
+     width: 100%;
+     height: 40px;
+     font-size: 120%;
+     background-color: rgb(3, 3, 49);
+     }
+     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+      /**** CSS DEL PIE DE LA PAGINA ****/
+      /**** CREACION DEL PIE DE LA PAGINA ****/
+      #piePrincipal
+      {
+          position:relative;
+          margin-top: -35px;
+          width:100%;
+          height: 160px;
+          background-color: rgba(0, 0, 0, 0.87);
+          color: yellow;
+      }
+          /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 240px) and (max-width:300px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 145px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 140px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: x-small;
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #seccionHistoria{
+        margin-top: 130px;
+        width:100%;
+        height: 530px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+      .anios
+      {
+      font-size: small;
+      }
+      .menu
+      {
+          padding-left: 0px;
+          margin-top: 80px;
+      }
+      .menu>li
+      {
+      margin-left: 4%;
+      position: relative;
+      display: inline-block;
+      font-size: x-large;
+      list-style: none;
+      }
+      .menu>li:nth-child(1)
+      {
+          margin-left: 0%;
+      }
+      .menu > li > a{
+      display: block;
+      padding: 5px 2px;
+      font-family: 'open sans';
+      text-decoration: none;
+      list-style: none;
+      }
+      .menu li a:hover{
+      color: yellow;
+      transition: all .3s;
+      }
+    .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+      .menu li:hover .decada{
+      display: block;
+      visibility: visible;
+      list-style: none;
+      opacity: 1;
+      }
+      #argumentos
+      {
+      margin-left: 5%;
+      margin-top: 20px;
+      float: left;
+      width: 90%;
+      height: 200px;
+      background-color: rgba(2, 1, 77, 0.425);
+      }
+      #trama
+      {
+      text-align: left;
+      font-size: 55%;
+      margin-left: 5%;
+      margin-right: 5%;
+      height: 200px;
+      color: white;
+      }
+      #tiempo
+      {
+      height: 40px;
+      text-align: center;
+      font-size: 90%;
+      }
+      #fecha{
+      color:white;
+      float: left;
+      width: 100%;
+      height: 40px;
+      font-size: 120%;
+      background-color: rgb(3, 3, 49);
+      }
+      /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        font-size:xx-small;
+    }
+    .pie
+    {
+        font-size:xx-small; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:240px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 145px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 140px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: x-small;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #seccionHistoria{
+        margin-top: 130px;
+        width:100%;
+        height: 570px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+     .anios
+     {
+     font-size: x-small;
+     }
+     .menu
+     {
+         padding-left: 0px;
+         margin-top: 80px;
+     }
+     .menu>li
+     {
+     margin-left: 4%;
+     position: relative;
+     display: inline-block;
+     font-size: x-large;
+     list-style: none;
+     }
+     .menu>li:nth-child(1)
+     {
+         margin-left: 0%;
+     }
+     .menu > li > a{
+     display: block;
+     padding: 5px 2px;
+     font-family: 'open sans';
+     text-decoration: none;
+     list-style: none;
+     }
+     .menu li a:hover{
+     color: yellow;
+     transition: all .3s;
+     }
+     .decada{
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    display: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 30px;
+    text-align: left;
+    }
+    .pulsador{
+    background-color: rgba(2, 1, 77, 0.625);
+    width: 120px;
+    text-align: center;
+    margin-left: -45px;
+    font-size: 50%;
+    }
+    .decada li a{
+    display: block;
+    color: #fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    font-size: 50%;
+    }
+     .menu li:hover .decada{
+     display: block;
+     visibility: visible;
+     list-style: none;
+     opacity: 1;
+     }
+     #argumentos
+     {
+     margin-left: 5%;
+     margin-top: 10px;
+     float: left;
+     width: 90%;
+     height: 150px;
+     background-color: rgba(2, 1, 77, 0.425);
+     }
+     #trama
+     {
+     text-align: left;
+     font-size: 40%;
+     margin-left: 5%;
+     margin-right: 5%;
+     height: 200px;
+     color: white;
+     }
+     #tiempo
+     {
+     height: 40px;
+     text-align: center;
+     font-size: 90%;
+     }
+     #fecha{
+     color:white;
+     float: left;
+     width: 100%;
+     height: 20px;
+     font-size: 100%;
+     background-color: rgb(3, 3, 49);
+     }
+    /**** CSS DEL PIE DE LA PAGINA ****/
+   /**** CREACION DEL PIE DE LA PAGINA ****/
+   #piePrincipal
+   {
+       position:relative;
+       margin-top: 0px;
+       width:100%;
+       height: 150px;
+       background-color: rgba(0, 0, 0, 0.87);
+       color: yellow;
+   }
+   #zocalo
+   {
+       font-size:xx-small;
+       height: 70px;
+   }
+   .pie
+   {
+       height: 0px;
+       font-size:xx-small;
+   }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}

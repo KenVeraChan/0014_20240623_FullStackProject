@@ -1,0 +1,1215 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+@media all and (min-width: 769px) and (max-width: 7800px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 165px;
+        background-color: rgba(3, 19, 0, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(1, 19, 0, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .areaPrivada{ 
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 90px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 19, 1, 0.89);
+            text-align: center;
+            font-size: medium;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta
+    {
+        position: relative;
+        width: 100%;
+        height: 2100px;
+        background-color: rgba(2, 19, 0, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    /**********************************************/
+    /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
+    /**********************************************/
+        .seccionPrincipal{
+            margin-top: 20px;
+            padding-left: 5%;
+            width:100%;
+            height: 400px;
+            border: 2px;
+            border-style: solid;
+            border-color:rgba(79, 80, 3, 0.87);
+            background-color: rgba(8, 46, 1, 0.329);
+        }
+        .noticia{
+            float: left;
+            margin-top: 3px;
+            margin-left: 2%;
+            width:22%;
+            height: 400px;
+            border: 2px;
+            text-align: center;
+            color: rgb(165, 165, 19);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-style: solid;
+            border-color:rgba(79, 80, 3, 0.87);
+            background-color: rgba(1, 18, 0, 0.89);
+        }
+        .noticia:nth-child(1)
+        {
+            margin-left: 0%;
+        }
+        .noticia:nth-child(5)
+        {
+            margin-left: 0%;
+        }
+        .fila:nth-child(1)
+        {
+            position: relative;
+            width: 100%;
+            height: 50px;
+        }
+        .imgBloques{
+            width:40%;
+        }
+        .fila:nth-child(2)
+        {
+            position: relative;
+            width: 100%;
+            height: 20px; 
+            text-align: center;
+            font-size: small;  
+        }
+        .fila:nth-child(3)
+        {
+            position: relative;
+            padding-top: 10px;
+            width: 100%;
+            height: 30px;  
+            font-size: small;
+        }
+        .fila:nth-child(4)
+        {
+            position: relative;
+            margin-top: 10px;
+            width: 100%;
+            height: 10px;  
+        }
+        .acceder
+        {
+            margin-top:90px;
+            width: 100%;
+            height: 30px;
+            background-color: rgb(3, 43, 1);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: yellow;
+            border: none;
+        }
+        .parrafo
+        {
+            margin-top: 10px;
+            width:100%;
+            height: 20px;
+            float: left;
+        }
+        .tablaInterna
+        {
+            float: left;
+            width: 100%;
+            height: 400px;
+        }
+
+    /***********************************************/
+    /*** MOSTRADOR DETALLADO DE TODAS LAS VENTAS ***/
+    /***********************************************/
+        .seccionDET{
+            margin-top: 20px;
+            padding-left: 13%;
+            width: 100%;
+            height: 1000px;
+            border: 2px;
+            border-style: solid;
+            border-color:rgba(79, 80, 3, 0.87);
+            background-color: rgba(8, 46, 1, 0.425);
+        }
+        .noticiaDET{
+            float: left;
+            margin-top: 3px;
+            margin-left: 2%;
+            height: 980px;
+            border: 2px;
+            text-align: center;
+            color: rgb(165, 165, 19);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-style: solid;
+            border-color:rgba(79, 80, 3, 0.87);
+            background-color: rgb(8, 46, 3);
+        }
+        .noticiaDET:nth-child(1)
+        {
+            margin-left: 0px;
+            width: 265px;
+        }
+        .noticiaDET:nth-child(2)
+        {
+            margin-left: 2%;
+            width: 48%;
+        }
+        .filaDET
+        {
+            width: 150px;
+            margin-left: 20px;
+        }
+        .botonAc
+        {
+            width: 100%;
+            height: 30px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: rgb(3, 27, 2);
+            font-size: medium;
+            color: yellow;
+            text-align: center;
+            text-decoration: none;
+        }
+        .botonAc:hover
+        {
+            transition-property: 1.75s;
+            background-color: white;
+            text-align: center;
+            color: black;
+            box-shadow: rgba(255, 255, 255, 0.568) 1px 0 40px;
+            border: solid 2px rgba(5, 19, 0, 0.89);
+            border-Radius:5px 0px 5px 0px;
+        }
+        .contenedorEnlace{
+            width:100%;
+            height: 20px;
+            margin-top: 5px;
+            background-color: rgb(6, 27, 2);
+            border: solid 1px;
+            color: yellow;
+        }
+        .imgBloquesDET{
+            margin-left: 10px;
+            width:100px;
+        }
+        .imgBloquesDES{
+            margin-left: 10px;
+            width:150px;
+        }
+        .parrafoDET
+        {
+            float: left;
+            width:100px;
+            height: 20px;
+        }
+        .tablaInternaDET
+        {
+            float: left;
+            width: 100%;
+            height: 50%;
+        }
+        .comprar
+        {
+            height: 70px;
+            width: 70px;
+            background-color: transparent;
+            background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+            background-size: 65px;
+            font-size: x-small;
+            color:transparent;
+        }
+        .cajaCantidad
+        {
+            margin-left: -4px;
+            font-size: medium;
+        }
+        .despliegue
+        {
+            margin-top: 5px;
+            width: 70px;
+            text-align: center;
+        }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: 0px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(2, 19, 0, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(4, 19, 0, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+}
+@media all and (min-width: 550px) and (max-width: 769px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 165px;
+        background-color: rgba(3, 19, 0, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(1, 19, 0, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 20px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 80px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            float: left;
+            width: 16.5%;
+            height: 30px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: small;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        position: relative;
+        width: 100%;
+        height: 2100px;
+        background-color: rgba(2, 19, 0, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    /**********************************************/
+    /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
+    /**********************************************/
+    .seccionPrincipal{
+        margin-top: 20px;
+        padding-left: 4%;
+        width:100%;
+        height: 400px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(8, 46, 1, 0.425);
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 2%;
+        width:22%;
+        height: 400px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(1, 18, 0, 0.89);
+    }
+    .noticia:nth-child(1)
+    {
+        margin-left: 0%;
+    }
+    .noticia:nth-child(5)
+    {
+        margin-left: 0%;
+    }
+    .fila:nth-child(1)
+    {
+        position: relative;
+        width: 100%;
+        height: 20px;
+    }
+    .imgBloques{
+        width:40%;
+    }
+    .fila:nth-child(2)
+    {
+        position: relative;
+        width: 100%;
+        height: 10px; 
+        text-align: center;
+        font-size: x-small;  
+    }
+    .fila:nth-child(3)
+    {
+        position: relative;
+        width: 100%;
+        height: 30px;  
+        font-size: 60%;
+    }
+    .fila:nth-child(4)
+    {
+        position: relative;
+        padding-top: 10px;
+        width: 100%;
+        height: 30px;  
+        font-size: 50%;
+    }
+    .acceder
+    {
+        margin-top:90px;
+        width: 100%;
+        height: 30px;
+        background-color: rgb(3, 27, 2);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: x-small;
+        color: yellow;
+        border: none;
+    }
+    .parrafo
+    {
+        margin-top: 10px;
+        width:100%;
+        height: 20px;
+        float: left;
+    }
+    .tablaInterna
+    {
+        float: left;
+        width: 100%;
+        height: 400px;
+    }
+/***********************************************/
+/*** MOSTRADOR DETALLADO DE TODAS LAS VENTAS ***/
+/***********************************************/
+    .seccionDET{
+        margin-top: 20px;
+        padding-left: 13%;
+        width: 100%;
+        height: 1000px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(8, 46, 1, 0.425);
+    }
+    .noticiaDET{
+        float: left;
+        margin-top: 3px;
+        margin-left: 2%;
+        height: 980px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(8, 46, 3);
+    }
+    .noticiaDET:nth-child(1)
+    {
+        margin-left: 0px;
+        width: 165px;
+    }
+    .noticiaDET:nth-child(2)
+    {
+        margin-left: 2%;
+        width: 48%;
+    }
+    .filaDET
+    {
+        width: 150px;
+        margin-left: 20px;
+        font-size: small;
+    }
+    .botonAc
+    {
+        width: 100%;
+        height: 30px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        background-color: rgb(3, 27, 2);
+        font-size: small;
+        color: yellow;
+        text-align: center;
+        text-decoration: none;
+    }
+    .botonAc:hover
+    {
+        transition-property: 1.75s;
+        background-color: white;
+        text-align: center;
+        color: black;
+        box-shadow: rgba(255, 255, 255, 0.568) 1px 0 40px;
+        border: solid 2px rgba(5, 19, 0, 0.89);
+        border-Radius:5px 0px 5px 0px;
+    }
+    .contenedorEnlace{
+        width:100%;
+        height: 20px;
+        margin-top: 5px;
+        background-color: rgb(6, 27, 2);
+        border: solid 1px;
+        color: yellow;
+    }
+    .imgBloquesDET{
+        margin-left: 20px;
+        width:90px;
+    }
+    .imgBloquesDES{
+        margin-left: 10px;
+        width:120px;
+    }
+    .parrafoDET
+    {
+        float: left;
+        width:100px;
+        height: 20px;
+    }
+    .tablaInternaDET
+    {
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    .comprar
+    {
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+        background-size: 65px;
+        font-size: x-small;
+        color:transparent;
+    }
+    .cajaCantidad
+    {
+        margin-left: -4px;
+        font-size: small;
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        width: 70px;
+        text-align: center;
+    }
+    /*********** FIN CSS DEL CUERPO ********/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(2, 19, 0, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(4, 19, 0, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 300px) and (max-width: 550px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 280px;
+        background-color: rgba(3, 19, 0, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(1, 19, 0, 0.89);
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 5px; 
+            margin-top:-60px; 
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 50px; 
+            margin-top:-60px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: small;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla
+        {
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 3800px;
+        background-color: rgba(2, 19, 0, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+     /**********************************************/
+    /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
+    /**********************************************/
+    .seccionPrincipal{
+        margin-top: 20px;
+        padding-left: 3%;
+        width:100%;
+        height: 400px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(8, 46, 1, 0.425);
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 22%;
+        width:50%;
+        height: 230px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(1, 18, 0, 0.89);
+    }
+    .fila:nth-child(1)
+    {
+        position: relative;
+        width: 100%;
+        height: 10px;
+    }
+    .imgBloques{
+        width:40%;
+    }
+    .fila:nth-child(2)
+    {
+        position: relative;
+        width: 100%;
+        height: 10px; 
+        text-align: center;
+        font-size: 80%;  
+    }
+    .fila:nth-child(3)
+    {
+        position: relative;
+        margin-top: -10px;
+        width: 100%;
+        height: 30px;  
+        font-size: 70%;
+    }
+    .fila:nth-child(4)
+    {
+        position: relative;
+        padding-top: 10px;
+        width: 100%;
+        height: 15px;  
+        font-size: 50%;
+    }
+    .acceder
+    {
+        margin-top:0px;
+        width: 100%;
+        height: 15px;
+        background-color: rgb(3, 27, 2);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: yellow;
+        border: none;
+    }
+    .parrafo
+    {
+        margin-top: -30px;
+        width:100%;
+        height: 20px;
+        float: left;
+    }
+    .tablaInterna
+    {
+        float: left;
+        width: 100%;
+        height: 230px;
+    }
+/***********************************************/
+/*** MOSTRADOR DETALLADO DE TODAS LAS VENTAS ***/
+/***********************************************/
+    .seccionDET{
+        margin-top: 20px;
+        padding-left: 3%;
+        width:100%;
+        height: 350px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(8, 46, 1, 0.425);
+    }
+    .noticiaDET{
+        float: left;
+        margin-top: 3px;
+        margin-left: 15%;
+        width:65%;
+        height: 850px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(8, 46, 3);
+    }
+    .noticiaDET:nth-child(2)
+    {
+        margin-left: 5%;
+        width: 85%;
+    }
+    .filaDET
+    {
+        width: 150px;
+        margin-left: 20px;
+    }
+    .botonAc
+    {
+        width: 100%;
+        height: 30px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: rgb(3, 27, 2);
+        font-size: medium;
+        color: yellow;
+        text-align: center;
+        text-decoration: none;
+    }
+    .botonAc:hover
+    {
+        transition-property: 1.75s;
+        background-color: white;
+        text-align: center;
+        color: black;
+        box-shadow: rgba(255, 255, 255, 0.568) 1px 0 40px;
+        border: solid 2px rgba(5, 19, 0, 0.89);
+        border-Radius:5px 0px 5px 0px;
+    }
+    .contenedorEnlace{
+        width:100%;
+        height: 20px;
+        margin-top: 5px;
+        background-color: rgb(6, 27, 2);
+        border: solid 1px;
+        color: yellow;
+    }
+    .imgBloquesDET{
+        margin-left: 20px;
+        width:120px;
+    }
+    .imgBloquesDES{
+        margin-left: 10px;
+        width:150px;
+    }
+    .parrafoDET
+    {
+        float: left;
+        width:100px;
+        height: 20px;
+    }
+    .tablaInternaDET
+    {
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    .comprar
+    {
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+        background-size: 65px;
+        font-size: x-small;
+        color:transparent;
+    }
+    .cajaCantidad
+    {
+        margin-left: -4px;
+        font-size: medium;
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        width: 70px;
+        text-align: center;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(2, 19, 0, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(4, 19, 0, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 145px;
+        background-color: rgba(1, 19, 0, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 140px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(1, 19, 0, 0.89);
+        }
+        .areaPrivada{
+            float:right;
+            margin-right: 15%; 
+            margin-top: -55px;
+        }
+        .areaPrivada:nth-child(2){ 
+            float:right;
+            margin-right: 60%; 
+            margin-top: -55px; 
+        }
+        .bloque_opciones{
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+            width: 100%;
+            height: 15px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: x-small;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 4550px;
+        background-color: rgba(2, 19, 0, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+        padding-top: 20px;
+    }
+    /**********************************************/
+    /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
+    /**********************************************/
+    .seccionPrincipal{
+        margin-top: 20px;
+        padding-left: 3%;
+        width:100%;
+        height: 400px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(8, 46, 1, 0.425);
+    }
+    .noticia{
+        float: left;
+        margin-top: 3px;
+        margin-left: 8%;
+        width:80%;
+        height: 350px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(1, 18, 0, 0.89);
+    }
+    .fila:nth-child(1)
+    {
+        position: relative;
+        width: 100%;
+        height: 20px;
+    }
+    .imgBloques{
+        width:40%;
+    }
+    .fila:nth-child(2)
+    {
+        position: relative;
+        width: 100%;
+        height: 10px; 
+        text-align: center;
+        font-size: 85%;  
+    }
+    .fila:nth-child(3)
+    {
+        position: relative;
+        width: 100%;
+        height: 50px;  
+        font-size: 80%;
+    }
+    .fila:nth-child(4)
+    {
+        position: relative;
+        width: 100%;
+        height: 20px;  
+    }
+    .acceder
+    {
+        margin-top:0px;
+        width: 100%;
+        height: 15px;
+        background-color: rgb(3, 27, 2);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: yellow;
+        border: none;
+    }
+    .parrafo
+    {
+        margin-top: -55px;
+        width:100%;
+        height: 20px;
+        float: left;
+    }
+    .tablaInterna
+    {
+        float: left;
+        width: 100%;
+        height: 350px;
+    }
+/***********************************************/
+/*** MOSTRADOR DETALLADO DE TODAS LAS VENTAS ***/
+/***********************************************/
+    .seccionDET{
+        margin-top: 20px;
+        padding-left: 3%;
+        width:100%;
+        height: 650px;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(8, 46, 1, 0.425);
+    }
+    .noticiaDET{
+        float: left;
+        margin-top: 3px;
+        margin-left: 5%;
+        width:85%;
+        height: 690px;
+        border: 2px;
+        text-align: center;
+        color: rgb(165, 165, 19);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgb(8, 46, 3);
+    }
+    .noticiaDET:nth-child(2)
+    {
+        margin-left: 5%;
+        width: 85%;
+    }
+    .filaDET
+    {
+        width: 80%;
+        margin-left: 20px;
+        font-size: small;
+    }
+    .botonAc
+    {
+        width: 100%;
+        height: 30px;
+        background-color: rgb(3, 27, 2);
+        font-size: x-small;
+        color: yellow;
+        text-align: center;
+        text-decoration: none;
+    }
+    .botonAc:hover
+    {
+        transition-property: 1.75s;
+        background-color: white;
+        text-align: center;
+        color: black;
+        box-shadow: rgba(255, 255, 255, 0.568) 1px 0 40px;
+        border: solid 2px rgba(5, 19, 0, 0.89);
+        border-Radius:5px 0px 5px 0px;
+    }
+    .contenedorEnlace{
+        width:100%;
+        height: 20px;
+        margin-top: 5px;
+        background-color: rgb(6, 27, 2);
+        border: solid 1px;
+        color: yellow;
+    }
+    .imgBloquesDET
+    {
+        width:60%;
+    }
+    .imgBloquesDES{
+        margin-left: 0px;
+        width:70%;
+    }
+    .parrafoDET
+    {
+        float: left;
+        width:100px;
+        height: 20px;
+    }
+    .tablaInternaDET
+    {
+        float: left;
+        width: 100%;
+        height: 50%;
+    }
+    .comprar
+    {
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png");
+        background-size: 65px;
+        font-size: x-small;
+        color:transparent;
+    }
+    .cajaCantidad
+    {
+        margin-left: -4px;
+        font-size: medium;
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        width: 70px;
+        text-align: center;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: yellow;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(2, 19, 0, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(4, 19, 0, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:xx-small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}

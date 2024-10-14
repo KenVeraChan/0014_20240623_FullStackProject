@@ -1,24 +1,7 @@
 <?php
-    function compararCARGARvsACTUALIZAR($registroCarga,$registroActualiza)
-    {
-        foreach($registroCarga as $valor)
-        {
-            if(!strcmp($registroCarga[$valor],$registroActualiza[$valor]))
-            {
-                //AMBOS VALORES SON IGUALES DE MANERA QUE PASA AL SIGUIENTE
-                // PUES SE SUPONE QUE ES UN VALOR QUE COMO YA ESTABA NO FORMA PARTE
-                // DE LA ACTUALIZACIÓN
-            }
-            else
-            {
-                echo ("<script>alert('<br>Se quiere sustituir ".$registroCarga[$valor]." por el valor: ".$registroActualiza[$valor]."<br>')</script>");
-            }
-        }
-    }
-
-    //Se utiliza un objeto para poder guardar lo que se CARGA respecto a lo que 
-    // luego se compara a fin de ver qué elemento o elementos son los que cambian
-    // y efectuar los considerables cambios
+//Se utiliza un objeto para poder guardar lo que se CARGA respecto a lo que 
+// luego se compara a fin de ver qué elemento o elementos son los que cambian
+// y efectuar los considerables cambios
     class UsuarioCompararActualizar implements JsonSerializable
     {
         private $RegID;

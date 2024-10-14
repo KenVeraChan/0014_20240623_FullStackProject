@@ -1,0 +1,1113 @@
+*{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.base{ /*para la tabla de estadisticas*/
+    position: absolute;
+    background-color: transparent;
+    width:95%;
+    height: 700px;
+    margin-left: -8500px;
+}
+.base2{ /*para la añadidura de tareas*/
+    position: absolute;
+    background-color: transparent;
+    width:95%;
+    height: 700px;
+    margin-left: -8500px;
+}
+.base3{ /*para el tratamiento de candidatos*/
+    position: absolute;
+    background-color: transparent;
+    width:95%;
+    height: 700px;
+    margin-left: -8500px;
+}
+#tablaPaginacion
+{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: -7500px;
+    width: 1116px;
+    height: 100px;
+}
+#tablaEstadisticas
+{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -7500px;
+    width: 700px;
+    height: 100px;
+}
+.cajaT
+{
+    background-color: rgba(238, 229, 222, 0.521);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 200px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaT:nth-child(3)
+{
+    width:150px;
+}
+.cajaT:nth-child(4)
+{
+    width:250px;
+}
+.caja{
+    float: left;
+    background-color:rgb(255, 255, 255);
+    text-align: center;
+    font-size: medium;
+    width: 200px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.caja:nth-child(3)
+{
+    width:150px;
+}
+.caja:nth-child(4)
+{
+    width:250px;
+}
+.cajaE
+{
+    background-color: rgba(238, 229, 222, 0.521);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 200px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.cajaS
+{
+    background-color: rgba(238, 229, 222, 0.521);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 110px;
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+@media all and (min-width: 769px) and (max-width: 7800px) 
+{
+     /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 240px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 20%;
+            margin-top: 10px;
+            float: left;
+            width: 60%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: medium;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+        #tabla{
+            float: left;
+            width:100%;
+            height: 80px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        position: relative;
+        width: 100%;
+        height: 1400px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:250px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1230px;
+        background-color: transparent;
+    }
+    .tablaBBDD2{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:350px;
+        margin-top: 300px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD2 #tablaEstadisticas
+    {
+        width: 778px;
+        background-color: transparent;
+    }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:40%; 
+        height:750px;
+        margin-top: 70px;
+        margin-left: 15%;
+        padding-left: 180px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 200px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 50px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+     /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -15px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+}
+@media all and (min-width: 481px) and (max-width: 768px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 240px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 300px;   /*ICONO CUADRADO*/
+            height: 100px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 20%;
+            margin-top: 10px;
+            float: left;
+            width: 60%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 70%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #elecciones{
+        margin-left:45%;
+    }
+    .consulta{
+        width: 100%;
+        height: 1400px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        position: relative;
+        width: 100%;
+        height: 110%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:250px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1230px;
+        background-color: transparent;
+    }
+    .tablaBBDD2{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:350px;
+        margin-top: 300px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD2 #tablaEstadisticas
+    {
+        width: 778px;
+        background-color: transparent;
+    }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:80%; 
+        height:750px;
+        margin-top: 70px;
+        margin-left: 5%;
+        padding-left: 40px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 200px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 50px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 300px) and (max-width: 480px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 240px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 15%;
+            margin-top: 10px;
+            float: left;
+            width: 80%;
+            height: 50px;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 50%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 1400px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:250px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1230px;
+        background-color: transparent;
+    }
+    .tablaBBDD2{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:350px;
+        margin-top: 300px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD2 #tablaEstadisticas
+    {
+        width: 778px;
+        background-color: transparent;
+    }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:80%; 
+        height:750px;
+        margin-top: 70px;
+        margin-left: 2%;
+        padding-left: 30px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 250px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 50px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        margin-top: -35px;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: small;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 230px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        #iconoEmpresa{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 80px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+        .LlenobotonesPrincipal{
+            width: 450px;
+            height: 60px;
+            padding-bottom: 5px;
+        }
+        .bloque_opciones{
+            margin-left: 15%;
+            margin-top: 10px;
+            float: left;
+            width: 80%;
+            height: 60%;
+            background-color:  rgba(0, 0, 19, 0.89);
+            text-align: center;
+            font-size: 20%;
+            border-radius: 10px;
+            box-shadow: rgb(150,150,150) 5px 5px 20px 10px;
+        }
+        #cajaBotonera
+        {
+            width: 50%;
+            height: 100px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .consulta{
+        width: 100%;
+        height: 1400px;
+        background-color: rgba(0, 0, 19, 0.89);
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    #imagenPortada{
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .tablaBBDD{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:250px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD #tablaPaginacion
+    {
+        width: 1230px;
+        background-color: transparent;
+    }
+    .tablaBBDD2{
+        position: absolute;
+        margin-left: 8%;
+        overflow: scroll;
+        width:85%; 
+        height:350px;
+        margin-top: 300px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD2 #tablaEstadisticas
+    {
+        width: 778px;
+        background-color: transparent;
+    }
+    .tablaBBDD3{
+        position: absolute;
+        overflow: scroll;
+        width:80%; 
+        height:750px;
+        margin-top: 70px;
+        margin-left: 2%;
+        padding-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD3 #tablaIntroTareas
+    {
+        width: 100px;
+        background-color: transparent;
+    }
+    .tablaBBDD4{
+        position: absolute;
+        overflow: scroll;
+        width:90%; 
+        height:450px;
+        margin-top: 70px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    .tablaBBDD4 #tablaCandidatura
+    {
+        width: 1500px;
+        background-color: transparent;
+    }
+    /* CUADRO DE INTRODUCCION DE DATOS */
+    .tablaAcciones{
+        position:absolute;
+        margin-top: 50px;
+        margin-left: 50%;
+        padding-left: 30px;
+        padding-right: 20px;
+        width: 500px;
+        height: 330px;
+        background-color: rgba(26, 26, 68, 0.89);
+        box-shadow: rgb(255, 255, 255) 5px 5px 20px 10px;
+        z-index: 1;
+    }
+    .tablaAcciones:hover{
+        /*AL PASAR POR ENCIMA CAMBIA DE COLOR EL BORDE*/
+        box-shadow: rgb(148, 148, 148) 5px 5px 20px 10px;
+    }
+    .celda{
+        float: left;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width: 310px;
+        height:10px;
+        text-align:left;
+        margin-top: 12px;
+        z-index: 1;
+    }
+    .celdas{
+        float:right;
+        width: 150px;
+        height:12px;
+        background-color: white;
+        z-index: 1;
+    }
+    .boton{
+        float: left;
+        margin-top: 25px;
+        margin-left: 20px;
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+    }
+    .separacion{
+        width: 310px;
+        height: 50px;
+        z-index: 1;
+    }
+    .desplegable{
+        float:right;
+        width: 155px;
+        height: 16px;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: white;
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:xx-small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
