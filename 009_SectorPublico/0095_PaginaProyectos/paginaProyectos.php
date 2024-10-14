@@ -27,7 +27,7 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0095_PaginaProyectos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
         <div class="VaciobotonesPrincipal">
             <a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../009_SectorPublico/0095_PaginaProyectos/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
-            <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0095_PaginaProyectos/images/CARRITO.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
+            <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0095_PaginaProyectos/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
         </div>
         <table id="tabla">
             <tr class="cajaBotonera">
@@ -47,128 +47,128 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(1);?>"></td>
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(1);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">ASTRONOMIA</div></td>
+                            <td><div style="margin-left:2%">AGRICULTURA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("ASTRONOMIA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("AGRICULTURA")?></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="ASTRONOMIA" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="AGRICULTURA" value="CATALOGO"></td>
                         </tr>
                     </table>
                 </td>
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(2);?>"></td>
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(2);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">AUTOMATIZACION</div></td>
+                            <td><div style="margin-left:2%">ATMOSFERA</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("AUTOMATIZACION")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("ATMOSFERA")?></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="AUTOMATIZACION" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="ATMOSFERA" value="CATALOGO"></td>
                         </tr>
                     </table>    
                 </td>
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(3);?>"></td>
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(3);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">ECOLOGIA</div></td>
+                            <td><div style="margin-left:2%">CARRETERAS</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("ECOLOGIA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("CARRETERAS")?></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="ECOLOGIA" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="CARRETERAS" value="CATALOGO"></td>
                         </tr>
                     </table> 
                 </td>
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(4);?>"></td>
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(4);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">INFRAESTRUCTURAS</div></td>
+                            <td><div style="margin-left:2%">COLONIZACION</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("INFRAESTRUCTURAS")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("COLONIZACION")?></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="INFRAESTRUCTURAS" value="CATALOGO"></td>
-                        </tr>
-                    </table>  
-                </td>
-                <td class="noticia">
-                    <table class="tablaInterna">
-                        <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(5);?>"></td>
-                        </tr>
-                        <tr class="fila">
-                            <td><div style="margin-left:2%">MEDICINA</div></td>
-                        </tr>
-                        <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("MEDICINA")?></p></td>
-                        </tr>
-                        <tr class="fila">
-                            <td><input type="submit" class="acceder" name="MEDICINA" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="COLONIZACION" value="CATALOGO"></td>
                         </tr>
                     </table>  
                 </td>
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(6);?>"></td>
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(5);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">OCEANOGRAFIA</div></td>
+                            <td><div style="margin-left:2%">METEORITO</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("OCEANOGRAFIA")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("METEORITO")?></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="OCEANOGRAFIA" value="CATALOGO"></td>
-                        </tr>
-                    </table>  
-                </td>
-                <td class="noticia">
-                    <table class="tablaInterna">
-                        <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(7);?>"></td>
-                        </tr>
-                        <tr class="fila">
-                            <td><div style="margin-left:2%">TELECOMUNICACIONES</div></td>
-                        </tr>
-                        <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("TELECOMUNICACIONES")?></p></td>
-                        </tr>
-                        <tr class="fila">
-                            <td><input type="submit" class="acceder" name="TELECOMUNICACIONES" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="METEORITO" value="CATALOGO"></td>
                         </tr>
                     </table>  
                 </td>
                 <td class="noticia">
                     <table class="tablaInterna">
                         <tr class="fila">
-                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaServicios(8);?>"></td>
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(6);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div style="margin-left:2%">EDUCACION</div></td>
+                            <td><div style="margin-left:2%">PROFUNDIDADES</div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesServicios("EDUCACION")?></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("PROFUNDIDADES")?></p></td>
                         </tr>
                         <tr class="fila">
-                            <td><input type="submit" class="acceder" name="EDUCACION" value="CATALOGO"></td>
+                            <td><input type="submit" class="acceder" name="PROFUNDIDADES" value="CATALOGO"></td>
+                        </tr>
+                    </table>  
+                </td>
+                <td class="noticia">
+                    <table class="tablaInterna">
+                        <tr class="fila">
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(7);?>"></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><div style="margin-left:2%">PROGRAMACION</div></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("PROGRAMACION")?></p></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><input type="submit" class="acceder" name="PROGRAMACION" value="CATALOGO"></td>
+                        </tr>
+                    </table>  
+                </td>
+                <td class="noticia">
+                    <table class="tablaInterna">
+                        <tr class="fila">
+                            <td><img class="imgBloques" src="projectsCategory/<?php echo extraccionCategoriaProyectos(8);?>"></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><div style="margin-left:2%">SUBMARINISMO</div></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraeDetallesProyectos("SUBMARINISMO")?></p></td>
+                        </tr>
+                        <tr class="fila">
+                            <td><input type="submit" class="acceder" name="SUBMARINISMO" value="CATALOGO"></td>
                         </tr>
                     </table>  
                 </td>

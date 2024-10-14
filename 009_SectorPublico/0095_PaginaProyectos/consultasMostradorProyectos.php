@@ -1,64 +1,64 @@
 <?php
 require "../../005_Login/conexionPHP.php";
 error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-$conexionServicios=ConexionPHP::getConexionCLIENTES();
+$conexionProyectos=ConexionPHP::getConexionCLIENTES();
 $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
 
 //DESCARGA DE LAS FOTOGRAFIAS DE LAS CATEGORÍAS DE PRODUCTOS
-$consServicios=$conexionServicios->query("SELECT NOMBRE FROM $BD_tabla WHERE DESTINO='CATEGORIA SERVICIOS'");
-$resulServicios=$consServicios->fetchAll(PDO::FETCH_OBJ);
+$consProyectos=$conexionProyectos->query("SELECT NOMBRE FROM $BD_tabla WHERE DESTINO='CATEGORIA PROYECTOS'");
+$resulProyectos=$consProyectos->fetchAll(PDO::FETCH_OBJ);
 $k=0; //inicio de la variable puntero al array generado de almacenaje
-foreach($resulServicios as $carServicios)
+foreach($resulProyectos as $carProyectos)
 {
-    if(isset($carServicios->NOMBRE))
+    if(isset($carProyectos->NOMBRE))
     {
-        $_SESSION["CATEGORIASERV"][$k]=$carServicios->NOMBRE;
+        $_SESSION["CATEGORIAPROY"][$k]=$carProyectos->NOMBRE;
         $k++;
     }
 }
-$consServicios->closeCursor();
-function extraccionCategoriaServicios($eleccion)
+$consProyectos->closeCursor();
+function extraccionCategoriaProyectos($eleccion)
 {
     switch($eleccion)
     {
         case 1:
             {
-                $valor=array_search("ASTRONOMIA.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("AGRICULTURA.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 2:
             {
-                $valor=array_search("AUTOMATIZACION.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("ATMOSFERA.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 3:
             {
-                $valor=array_search("ECOLOGIA.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("CARRETERAS.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 4:
             {
-                $valor=array_search("INFRAESTRUCTURAS.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("COLONIZACION.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 5:
             {
-                $valor=array_search("MEDICINA.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("METEORITO.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 6:
             {
-                $valor=array_search("OCEANOGRAFIA.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("PROFUNDIDADES.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 7:
             {
-                $valor=array_search("TELECOMUNICACIONES.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("PROGRAMACION.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         case 8:
             {
-                $valor=array_search("EDUCACION.png",$_SESSION["CATEGORIASERV"],true);
+                $valor=array_search("SUBMARINISMO.png",$_SESSION["CATEGORIAPROY"],true);
                 break;
             }
         default:
@@ -67,25 +67,25 @@ function extraccionCategoriaServicios($eleccion)
                 break;
             }
     }
-    return $_SESSION["CATEGORIASERV"][$valor];
+    return $_SESSION["CATEGORIAPROY"][$valor];
 }
-function extraeDetallesServicios($stringNombre)
+function extraeDetallesProyectos($stringNombre)
 {
-    $conexionServicios=ConexionPHP::getConexionCLIENTES();
+    $conexionProyectos=ConexionPHP::getConexionCLIENTES();
     $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
-    $consServicios=$conexionServicios->query("SELECT NOMBRE,DETALLES FROM $BD_tabla WHERE DESTINO='CATEGORIA SERVICIOS'");
-    $resulServicios=$consServicios->fetchAll(PDO::FETCH_OBJ);
+    $consProyectos=$conexionProyectos->query("SELECT NOMBRE,DETALLES FROM $BD_tabla WHERE DESTINO='CATEGORIA PROYECTOS'");
+    $resulProyectos=$consProyectos->fetchAll(PDO::FETCH_OBJ);
     $k=0; //Es el puntero que guarda la coleccion de datos extraidos del servidor en referente a NOMBRE y DETALLES
-    foreach($resulServicios as $carServicios)
+    foreach($resulProyectos as $carProyectos)
     {
-        if(isset($carServicios->NOMBRE))
+        if(isset($carProyectos->NOMBRE))
         {
-            $_SESSION["NOMSERV"][$k]=substr($carServicios->NOMBRE,0,-4);
-            $_SESSION["DETSERV"][$k]=$carServicios->DETALLES;
+            $_SESSION["NOMPROY"][$k]=substr($carProyectos->NOMBRE,0,-4);
+            $_SESSION["DETPROY"][$k]=$carProyectos->DETALLES;
             $k++;
         }
     }
-    $consServicios->closeCursor();  //Cierra la consulta realiada
-    return $_SESSION["DETSERV"][array_search($stringNombre,$_SESSION["NOMSERV"],true)];
+    $consProyectos->closeCursor();  //Cierra la consulta realiada
+    return $_SESSION["DETPROY"][array_search($stringNombre,$_SESSION["NOMPROY"],true)];
 }
 ?>

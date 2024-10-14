@@ -71,7 +71,7 @@ function cargarPagina()
                     })
             elemento5[i].addEventListener('mouseleave',function(){
                 elemento5[i].style.transitionDuration = "0.5s";
-                elemento5[i].style.background= "rgb(3, 43, 1)";
+                elemento5[i].style.background= "rgb(60, 4, 4)";
                 elemento5[i].style.color="rgb(211,218,19)";  
                     })
         }

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2024 a las 19:08:04
+-- Tiempo de generación: 14-10-2024 a las 11:21:19
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -212,7 +212,10 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (72, 'AGRICULTURA.png', 'image/png', '26379', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
 (73, 'COLONIZACION.png', 'image/png', '29643', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
 (74, 'SUBMARINISMO.png', 'image/png', '279171', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
-(75, 'ATMOSFERA.png', 'image/png', '12947', 'CATEGORIA PROYECTOS', '', 0, 0, '');
+(75, 'ATMOSFERA.png', 'image/png', '12947', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(76, 'CARRETERAS.png', 'image/png', '43133', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(77, 'METEORITO.png', 'image/png', '35467', 'CATEGORIA PROYECTOS', '', 0, 0, ''),
+(78, 'PROFUNDIDADES.png', 'image/png', '46965', 'CATEGORIA PROYECTOS', '', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -271,7 +274,7 @@ ALTER TABLE `historias`
 -- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
 ALTER TABLE `imagenesinterfazweb`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`

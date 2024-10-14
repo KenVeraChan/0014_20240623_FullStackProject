@@ -2,14 +2,14 @@
 session_start();
 require "../../005_Login/conexionPHP.php";
 error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-$conexionServicios=ConexionPHP::getConexionCLIENTES();
+$conexionProyectos=ConexionPHP::getConexionCLIENTES();
 $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
 
-//CASO DE QUE EL AREA SEA DE ASTRONOMIA
-if(isset($_GET["ASTRONOMIA"]))
+//CASO DE QUE EL AREA SEA DE AGRICULTURA
+if(isset($_GET["AGRICULTURA"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='ASTRONOMIA'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='ASTRONOMIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -19,24 +19,24 @@ if(isset($_GET["ASTRONOMIA"]))
         {
             if(isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE AUTOMATIZACION
-if(isset($_GET["AUTOMATIZACION"]))
+//CASO DE QUE EL AREA SEA DE ATMOSFERA
+if(isset($_GET["ATMOSFERA"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='AUTOMATIZACION'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='AUTOMATIZACION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -46,24 +46,24 @@ if(isset($_GET["AUTOMATIZACION"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE ECOLOGIA
-if(isset($_GET["ECOLOGIA"]))
+//CASO DE QUE EL AREA SEA DE CARRETERAS
+if(isset($_GET["CARRETERAS"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='ECOLOGIA'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='ECOLOGIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -73,24 +73,24 @@ if(isset($_GET["ECOLOGIA"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE INFRAESTRUCTURAS
-if(isset($_GET["INFRAESTRUCTURAS"]))
+//CASO DE QUE EL AREA SEA DE COLONIZACION
+if(isset($_GET["COLONIZACION"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='INFRAESTRUCTURAS'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='INFRAESTRUCTURAS'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -100,24 +100,24 @@ if(isset($_GET["INFRAESTRUCTURAS"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE MEDICINA
-if(isset($_GET["MEDICINA"]))
+//CASO DE QUE EL AREA SEA DE METEORITO
+if(isset($_GET["METEORITO"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='MEDICINA'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='MEDICINA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -127,24 +127,24 @@ if(isset($_GET["MEDICINA"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE OCEANOGRAFIA
-if(isset($_GET["OCEANOGRAFIA"]))
+//CASO DE QUE EL AREA SEA DE PROFUNDIDADES
+if(isset($_GET["PROFUNDIDADES"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='OCEANOGRAFIA'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='OCEANOGRAFIA'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -154,24 +154,24 @@ if(isset($_GET["OCEANOGRAFIA"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE TELECOMUNICACIONES
-if(isset($_GET["TELECOMUNICACIONES"]))
+//CASO DE QUE EL AREA SEA DE PROGRAMACION
+if(isset($_GET["PROGRAMACION"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='TELECOMUNICACIONES'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='TELECOMUNICACIONES'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -181,24 +181,24 @@ if(isset($_GET["TELECOMUNICACIONES"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
-//CASO DE QUE EL AREA SEA DE EDUCACION
-if(isset($_GET["EDUCACION"]))
+//CASO DE QUE EL AREA SEA DE SUBMARINISMO
+if(isset($_GET["SUBMARINISMO"]))
 {
-    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE SERVICIOS
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE DESTINO='SERVICIOS' AND SECTOR='EDUCACION'");
+    //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='EDUCACION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -208,83 +208,83 @@ if(isset($_GET["EDUCACION"]))
         {
             if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
             {
-                $_SESSION["IDSERV"][$i]=$cargaVentas->ID;
-                $_SESSION["NOMBRESERV"][$i]=substr($cargaVentas->NOMBRE,0,-4);
-                $_SESSION["SECTORSERV"][$i]=$cargaVentas->SECTOR;
-                $_SESSION["STOCKSERV"][$i]=$cargaVentas->STOCK;
-                $_SESSION["COSTESERV"][$i]=$cargaVentas->COSTE;
-                $_SESSION["DETSERV"][$i]=$cargaVentas->DETALLES;
+                $_SESSION["IDPROY"][$i]=$cargaVentas->ID;
+                $_SESSION["NOMBREPROY"][$i]=substr($cargaVentas->NOMBRE,0,-4);
+                $_SESSION["SECTORPROY"][$i]=$cargaVentas->SECTOR;
+                $_SESSION["STOCKPROY"][$i]=$cargaVentas->STOCK;
+                $_SESSION["COSTEPROY"][$i]=$cargaVentas->COSTE;
+                $_SESSION["DETPROY"][$i]=$cargaVentas->DETALLES;
                 $i++;
             }
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
 if(!empty($_GET["ID"]))
 {
     $ID=$_GET["ID"];
     //Se guarda el destino de la carpeta de los productos del servidor
-    $carpeta_destino="../../009_SectorPublico/0094_PaginaServicios/servicesImages/";
+    $carpeta_destino="../../009_SectorPublico/0095_PaginaProyectos/projectsImages/";
     $_SESSION["DESTINO"]=$carpeta_destino;
     //Se realiza la consulta correspondiente
-    $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE ID='$ID'");
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE ID='$ID'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
-    $numeroServicios=$consultaVentas->rowCount();
+    $numeroProyectos=$consultaVentas->rowCount();
     foreach($resultadoVentas as $cargaVentas)
     {
         if(isset($cargaVentas->ID) && isset($cargaVentas->NOMBRE))
         {
-            $_SESSION["ID_SERV"]=$cargaVentas->ID;
-            $_SESSION["NOMBRE_SERV"]=$cargaVentas->NOMBRE;
-            $_SESSION["SECTOR_SERV"]=$cargaVentas->SECTOR;
-            $_SESSION["STOCK_SERV"]=$cargaVentas->STOCK;
-            $_SESSION["COSTE_SERV"]=$cargaVentas->COSTE;
-            $_SESSION["DETALLES_SERV"]=$cargaVentas->DETALLES;
+            $_SESSION["ID_PROY"]=$cargaVentas->ID;
+            $_SESSION["NOMBRE_PROY"]=$cargaVentas->NOMBRE;
+            $_SESSION["SECTOR_PROY"]=$cargaVentas->SECTOR;
+            $_SESSION["STOCK_PROY"]=$cargaVentas->STOCK;
+            $_SESSION["COSTE_PROY"]=$cargaVentas->COSTE;
+            $_SESSION["DETALLES_PROY"]=$cargaVentas->DETALLES;
         }
     }
-    if($numeroServicios<1)
+    if($numeroProyectos<1)
     {
         //NO se han encontrado productos con ese ID
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
     }
-    if($numeroServicios>0)
+    if($numeroProyectos>0)
     {
         //SI se han encontrado productos con ese ID
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
-        if(strcmp($_SESSION["SECTOR_SERV"],"ASTRONOMIA")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"AGRICULTURA")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"AUTOMATIZACION")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"ATMOSFERA")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"ECOLOGIA")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"CARRETERAS")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"INFRAESTRUCTURAS")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"COLONIZACION")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"MEDICINA")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"METEORITO")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"OCEANOGRAFIA")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"PROFUNDIDADES")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"TELECOMUNICACIONES")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"PROGRAMACION")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        if(strcmp($_SESSION["SECTOR_SERV"],"EDUCACION")==0)
+        if(strcmp($_SESSION["SECTOR_PROY"],"SUBMARINISMO")==0)
         {
             $_SESSION["concesion"]=1;  //carga la categoria de cuyos productos se consultó
         }
-        header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
     }
 }
 ?>
