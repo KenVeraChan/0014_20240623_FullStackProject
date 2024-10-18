@@ -42,7 +42,7 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
         <div class="VaciobotonesPrincipal"></div>
     </header>  
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0095_PaginaProyectos/images/PROYECTOS.jpg); background-size: 100% 100%;">    
-    <form action="../../009_SectorPublico/0094_PaginaServicios/consultasServicios.php" method="GET">
+    <form action="../../009_SectorPublico/0095_PaginaProyectos/consultasProyectos.php" method="GET">
         <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
                 <td class="noticia">
                     <table class="tablaInterna">
@@ -179,21 +179,21 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                 <td class="noticiaDET">
                     <table class="tablaInternaDET">
                         <tr class="filaDET">
-                            <td><img class="imgBloquesDET" src="projectsCategory/<?php echo($_SESSION["SECTORSERV"][0]);?>.png"></td>
+                            <td><img class="imgBloquesDET" src="projectsCategory/<?php echo($_SESSION["SECTORPROY"][0]);?>.png"></td>
                         </tr>
                         <tr class="filaDET">
-                            <td><div style="margin-left:2%"><?php echo($_SESSION["SECTORSERV"][0]);?></div></td>
+                            <td><div style="margin-left:2%"><?php echo($_SESSION["SECTORPROY"][0]);?></div></td>
                         </tr>
                         <?php $i=0; for($i=0;$i<$_SESSION["MAX"];$i++)
                                     {
-                                        if(!empty($_SESSION["NOMBRESERV"][$i]))  //Comprueba si la variable de la celda del ARRAY NO está vacío
+                                        if(!empty($_SESSION["NOMBREPROY"][$i]))  //Comprueba si la variable de la celda del ARRAY NO está vacío
                                         {
                                         ?>
                         <tr class="filaDET">
                             <td>
                                 <p class="contenedorEnlace">
-                                    <a href="../../009_SectorPublico/0095_PaginaProyectos/consultasProyectos.php?ID=<?php echo $_SESSION["IDSERV"][$i];?>" class="botonAc">
-                                        <?php echo $_SESSION["NOMBRESERV"][$i];?>
+                                    <a href="../../009_SectorPublico/0095_PaginaProyectos/consultasProyectos.php?ID=<?php echo $_SESSION["IDPROY"][$i];?>" class="botonAc">
+                                        <?php echo $_SESSION["NOMBREPROY"][$i];?>
                                     </a>
                                 </p>    
                             </td>
@@ -207,27 +207,27 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                         <table class="tablaInternaDET">
                             <tr class="filaDET">
                                 <td>
-                                    <br><img class="imgBloquesDES" src="<?php echo $_SESSION["DESTINO"].$_SESSION["NOMBRE_SERV"];?>" alt="Imagen servicio">
+                                    <br><img class="imgBloquesDES" src="<?php echo $_SESSION["DESTINO"].$_SESSION["NOMBRE_PROY"];?>" alt="Imagen servicio">
                                 </td>
                             </tr>
                             <tr class="filaDET">
-                                <td><div name="idPEDIDO" style="margin-left:2%"><br><br><strong>ID:<br></strong><?php echo $_SESSION["ID_SERV"];?><br></div></td>
+                                <td><div name="idPEDIDO" style="margin-left:2%"><br><br><strong>ID:<br></strong><?php echo $_SESSION["ID_PROY"];?><br></div></td>
                             </tr>
                             <tr class="filaDET">
-                                <td><div name="nombrePEDIDO" style="margin-left:2%"><br><strong>NOMBRE:<br></strong><?php echo substr($_SESSION["NOMBRE_SERV"],0,-4);?><br><br></div></td>
+                                <td><div name="nombrePEDIDO" style="margin-left:2%"><br><strong>NOMBRE:<br></strong><?php echo substr($_SESSION["NOMBRE_PROY"],0,-4);?><br><br></div></td>
                             </tr>
                             <tr class="filaDET">
-                                <td><div name="stockPEDIDO" style="margin-left:2%"><strong>STOCK DISPONIBLE:<br></strong><?php echo $_SESSION["STOCK_SERV"];?><br><br></div></td>
+                                <td><div name="stockPEDIDO" style="margin-left:2%"><strong>STOCK DISPONIBLE:<br></strong><?php echo $_SESSION["STOCK_PROY"];?><br><br></div></td>
                             </tr>
                             <tr class="filaDET">
-                                <td><div name="costePEDIDO" style="margin-left:2%"><strong>COSTE UNIDAD:<br></strong><?php echo $_SESSION["COSTE_SERV"];?><br><br></div></td>
+                                <td><div name="costePEDIDO" style="margin-left:2%"><strong>COSTE UNIDAD:<br></strong><?php echo $_SESSION["COSTE_PROY"];?><br><br></div></td>
                             </tr>
                             <tr class="filaDET">
-                                <td><div name="detallePEDIDO" style="margin-left:2%"><strong>DETALLES PRODUCTO:<br></strong><?php echo $_SESSION["DETALLES_SERV"];?><br><br></div></td>
+                                <td><div name="detallePEDIDO" style="margin-left:2%"><strong>DETALLES PRODUCTO:<br></strong><?php echo $_SESSION["DETALLES_PROY"];?><br><br></div></td>
                             </tr>
                             <tr class="filaDET">
                                 <td>
-                                    <br><br><input type="submit" class="comprar" name="comprar" value="<?php echo $_SESSION["ID_SERV"];?>" title="Accionar para añadir a la cesta">
+                                    <br><br><input type="submit" class="comprar" name="comprar" value="<?php echo $_SESSION["ID_PROY"];?>" title="Accionar para añadir a la cesta">
                                 </td>
                             </tr>
                             <tr class="filaDET">
@@ -240,6 +240,9 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                     </form>   
                 </td>
             </table>
+    <?php } ?>
+    <?php  if($_SESSION["concesion"]==0){ ?>    <!-- EN EL CASO DE QUE SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
+        <!-- NO MUESTRA NADA AL NO ENCONTRARSE NADA -->
     <?php } ?>
     </div>
     <div class="piePagina">

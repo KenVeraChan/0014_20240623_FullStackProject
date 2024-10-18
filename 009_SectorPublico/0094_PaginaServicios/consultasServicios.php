@@ -246,6 +246,7 @@ if(!empty($_GET["ID"]))
     if($numeroServicios<1)
     {
         //NO se han encontrado productos con ese ID
+        $_SESSION["concesion"]=0;
         header("location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
     }
     if($numeroServicios>0)

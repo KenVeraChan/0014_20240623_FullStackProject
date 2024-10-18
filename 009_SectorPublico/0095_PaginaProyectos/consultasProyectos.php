@@ -30,10 +30,6 @@ if(isset($_GET["AGRICULTURA"]))
         }
         $consultaVentas->closeCursor(); //Cierra la conexion y la consulta
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
-
-        $pc = new C_PhpChartX(array(array(11, 9, 5, 12, 14)),‘basic_chart’);
-        $pc->draw();
-
         header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
 //CASO DE QUE EL AREA SEA DE ATMOSFERA
@@ -94,7 +90,7 @@ if(isset($_GET["CARRETERAS"]))
 if(isset($_GET["COLONIZACION"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
-    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='INFRAESTRUCTURAS'");
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='COLONIZACION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -121,7 +117,7 @@ if(isset($_GET["COLONIZACION"]))
 if(isset($_GET["METEORITO"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
-    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='MEDICINA'");
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='METEORITO'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -148,7 +144,7 @@ if(isset($_GET["METEORITO"]))
 if(isset($_GET["PROFUNDIDADES"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
-    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='OCEANOGRAFIA'");
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='PROFUNDIDADES'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -175,7 +171,7 @@ if(isset($_GET["PROFUNDIDADES"]))
 if(isset($_GET["PROGRAMACION"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
-    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='TELECOMUNICACIONES'");
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='PROGRAMACION'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -202,7 +198,7 @@ if(isset($_GET["PROGRAMACION"]))
 if(isset($_GET["SUBMARINISMO"]))
 {
     //GENERA LA CONSULTA SELECCIONANDO SOLO LA PARTE DE PROYECTOS
-    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='EDUCACION'");
+    $consultaVentas=$conexionProyectos->query("SELECT * FROM $BD_tabla WHERE DESTINO='PROYECTOS' AND SECTOR='SUBMARINISMO'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);
     $filasDescargadas=$consultaVentas->rowCount();
     $_SESSION["MAX"]=$filasDescargadas;
@@ -225,6 +221,7 @@ if(isset($_GET["SUBMARINISMO"]))
         $_SESSION["concesion"]=1;   //Semaforo de concesion de activacion del catalogo
         header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
 }
+
 if(!empty($_GET["ID"]))
 {
     $ID=$_GET["ID"];
@@ -250,6 +247,7 @@ if(!empty($_GET["ID"]))
     if($numeroProyectos<1)
     {
         //NO se han encontrado productos con ese ID
+        $_SESSION["concesion"]=0;
         header("location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
     }
     if($numeroProyectos>0)

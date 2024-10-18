@@ -95,10 +95,14 @@
                                 <td class="celdaInterfaz">ANTERIOR: <br><?php echo $_SESSION["sectorDown"][0];?><br>ACTUAL:
                                     <select type="text" class="despliegue" name="SECTOR">
                                         <option></option>
-                                        <option>INCLUSIÓN VIS4C</option>
-                                        <option>AGRUCULTURA VERTICAL</option>
-                                        <option>SATELITES CON IA</option>
-                                        <option>COLONIZACION SUBMARINA</option>
+                                        <option>AGRICULTURA</option>
+                                        <option>ATMOSFERA</option>
+                                        <option>CARRETERAS</option>
+                                        <option>COLONIZACION</option>
+                                        <option>METEORITO</option>
+                                        <option>PROFUNDIDADES</option>
+                                        <option>PROGRAMACION</option>
+                                        <option>SUBMARINISMO</option>
                                     </select> 
                                 </td>
                             <?php } ?>

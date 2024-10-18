@@ -177,6 +177,9 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                 </td>
             </table>
     <?php } ?>
+    <?php  if($_SESSION["concesion"]==0){ ?>    <!-- EN EL CASO DE QUE SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
+        <!-- NO MUESTRA NADA AL NO ENCONTRARSE NADA -->
+    <?php } ?>
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
