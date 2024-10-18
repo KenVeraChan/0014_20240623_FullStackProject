@@ -226,7 +226,7 @@ if(!empty($_GET["ID"]))
     $ID=$_GET["ID"];
     //Se guarda el destino de la carpeta de los productos del servidor
     $carpeta_destino="../../009_SectorPublico/0094_PaginaServicios/servicesImages/";
-    $_SESSION["DESTINO"]=$carpeta_destino;
+    $_SESSION["DESTINOSERV"]=$carpeta_destino;
     //Se realiza la consulta correspondiente
     $consultaVentas=$conexionServicios->query("SELECT * FROM $BD_tabla WHERE ID='$ID'");
     $resultadoVentas=$consultaVentas->fetchAll(PDO::FETCH_OBJ);

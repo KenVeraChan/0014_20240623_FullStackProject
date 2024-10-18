@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2024 a las 21:05:01
+-- Tiempo de generación: 18-10-2024 a las 14:35:20
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -48,7 +48,12 @@ INSERT INTO `clientescarrito` (`ID`, `NOMBRE`, `DEPARTAMENTO`, `CANTIDAD`, `COST
 (32, 'SOFTWARE', 'PRODUCTOS', 1, 454, 454),
 (31, 'ROBOT', 'PRODUCTOS', 4, 201.23, 804.92),
 (31, 'ROBOT', 'PRODUCTOS', 3, 201.23, 603.69),
-(37, 'PROCESADOR', 'PRODUCTOS', 9, 110.25, 992.25);
+(37, 'PROCESADOR', 'PRODUCTOS', 9, 110.25, 992.25),
+(81, 'HIDROGENO', 'PROYECTOS', 1, 95000, 95000),
+(34, 'TUNELADORA', 'SERVICIOS', 2, 201.23, 402.46),
+(58, 'TRACTOR', 'SERVICIOS', 3, 151.75, 455.25),
+(35, 'TRANSPORTE ELECTRICO', 'PRODUCTOS', 3, 50.2, 150.6),
+(81, 'HIDROGENO', 'PROYECTOS', 3, 95000, 285000);
 
 -- --------------------------------------------------------
 
@@ -215,7 +220,20 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (75, 'ATMOSFERA.png', 'image/png', '12947', 'CATEGORIA PROYECTOS', '', 0, 0, 'Proyecto vigente en el tratamiento del helio como formato 5x1, levanta 5 kilogramos con un 1 kg de helio'),
 (76, 'CARRETERAS.png', 'image/png', '43133', 'CATEGORIA PROYECTOS', '', 0, 0, 'Proyecto vigente con la empresa eléctrica AMPERGYA para ampliar su red de transporte eléctrico por las vías férreas y de carreteras tanto de forma terrestre como en vías de circulación submarinas'),
 (77, 'METEORITO.png', 'image/png', '35467', 'CATEGORIA PROYECTOS', '', 0, 0, 'Proyecto en curso sobre el estudio in situ de las características químicas de los cometas que deambulan por el sistema solar, en la búsqueda de material orgánico presente en sus suelos físicos'),
-(78, 'PROFUNDIDADES.png', 'image/png', '46965', 'CATEGORIA PROYECTOS', '', 0, 0, 'Proyecto vigente en el estudio de los ecosistemas marinos para el trazado futuro de redes ferroviarias sin obstruir ni cambiar el curso de la vida submarina');
+(78, 'PROFUNDIDADES.png', 'image/png', '46965', 'CATEGORIA PROYECTOS', '', 0, 0, 'Proyecto vigente en el estudio de los ecosistemas marinos para el trazado futuro de redes ferroviarias sin obstruir ni cambiar el curso de la vida submarina'),
+(79, 'SEMILLAS.png', 'image/png', '31743', 'PROYECTOS', 'AGRICULTURA', 1, 99000, 'Proyecto de investigación basado en la modificación genética de las semillas comunes para acelerar su crecimiento y reforzar sus defensas biológicas en ambientes climáticos hostiles'),
+(80, 'VERTICALIDAD.png', 'image/png', '82072', 'PROYECTOS', 'AGRICULTURA', 2, 80000, 'Segunda fase de investigación en la germinación natural modificada de semillas con raíces angulares para la proliferación de su crecimiento en la agricultura vertical'),
+(81, 'HIDROGENO.png', 'image/png', '22223', 'PROYECTOS', 'ATMOSFERA', 1, 95000, 'Estudio del hidrógeno como fuente energética y lanazamiento a la estratósfera para su producción teórica de lluvias al reaccionar con el oxígeno'),
+(82, 'NUBES.png', 'image/png', '95544', 'PROYECTOS', 'ATMOSFERA', 2, 93000, 'Tratamiento e investigación de atmósferas ácidas del planeta Manpertos para reducir su acidez a la nulidad con la filtración de sulfuros y carburos naturales presentes en su atmósfera'),
+(83, 'SEGUIMIENTO.png', 'image/png', '12211', 'PROYECTOS', 'CARRETERAS', 3, 72000, 'estudio de composición férrea de asfaltos para emplazamientos con movimientos sísmicos severos, evitando resquebrajamiento superficial, rotura por fatiga y otorgando flexibilidad al desprenderse el terreno sobre la que se construye la carretera'),
+(84, 'COLONOS.png', 'image/png', '37264', 'PROYECTOS', 'COLONIZACION', 4, 99500, 'Proyecto del estudio de atmósferas planetarias para condicionar la vida en sus superficies. '),
+(85, 'PIEDRA.png', 'image/png', '137785', 'PROYECTOS', 'COLONIZACION', 12, 30111, 'estudio geológico y geográfico de terrenos planetarios para el asentamiento de bases de investigación y desarrollo. Aplicación en tambien en suelos subterráneos '),
+(86, 'ASENTAMIENTO.png', 'image/png', '57952', 'PROYECTOS', 'METEORITO', 2, 99950, 'Investigación del espacio profundo instalando emplazamientos fijos satelitales en los meteoritos más reconocidos del sistema solar'),
+(87, 'BIOQUIMICA.png', 'image/png', '19350', 'PROYECTOS', 'METEORITO', 5, 81344, 'Analsis de muestras bioquímicas del suelo de los meteoritos durante su trayectoria más cercana al planeta base de estudio. Sistema de alcance de hasta una semana luz'),
+(88, 'HIDRONAVES.png', 'image/png', '32606', 'PROYECTOS', 'SUBMARINISMO', 3, 88810, 'Investigación estructural en el diseño de naves submarinas para alcanzar los 15 kilómetros de profundidad sin sufrir las consecuencias de la presión hidrostática'),
+(89, 'PROFUNDO.png', 'image/png', '27079', 'PROYECTOS', 'SUBMARINISMO', 3, 99111, 'Estudio de la instalación de asentamientos fijos a más de 10000 metros de profundidad submarina'),
+(90, 'AUTONOMIA.png', 'image/png', '10716', 'PROYECTOS', 'PROGRAMACION', 6, 41333, 'Investigación en inteligencia artificial para la plena autonomía de satélites espaciales en la búsqueda de vida orgánica en el espacio profundo'),
+(91, 'CAMINOS.png', 'image/png', '37648', 'PROYECTOS', 'PROFUNDIDADES', 2, 65599, 'Investigación submarina para el trazado de autopistas flotantes qu crucen los océanos con refuerzo estructural para seismos y tsunamis de magnitud moderada, sin afectar al ecosistema marino');
 
 -- --------------------------------------------------------
 
@@ -274,7 +292,7 @@ ALTER TABLE `historias`
 -- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
 ALTER TABLE `imagenesinterfazweb`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`

@@ -18,6 +18,12 @@ class ConexionPHP
     private static $BD_tablaCarrito="clientescarrito"; //TABLA IMAGENES: SLIDER, PRODUCTOS, SERVICIOS Y PROYECTOS
     private static $BD_tablaHistoria="historias";  //TABLA HISTORIAS de los acontecimientos históricos empresariales sector público
     private static $BD_charset="utf8";
+    private static $IR_inicio="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php";
+    private static $IR_historia="../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.php";
+    private static $IR_productos="../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php";
+    private static $IR_servicios="../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php";
+    private static $IR_proyectos="../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php";
+    private static $IR_clientes="../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php";
 
     public function ConexionPHP()
     {
@@ -91,6 +97,19 @@ class ConexionPHP
     {
         mysqli_report(MYSQLI_REPORT_ERROR|MYSQLI_REPORT_STRICT);
         return error_reporting(0);
+    }
+    public static function IR_departamento($departamento)
+    {
+        switch($departamento)
+        {
+            case 1: $texto=self::$IR_inicio; break;
+            case 2: $texto=self::$IR_historia; break;
+            case 3: $texto=self::$IR_productos; break;
+            case 4: $texto=self::$IR_servicios; break;
+            case 5: $texto=self::$IR_proyectos; break;
+            case 6: $texto=self::$IR_clientes; break;
+        }
+        return $texto;
     }
     public static function getConexionJEFES_RRHH()
     {

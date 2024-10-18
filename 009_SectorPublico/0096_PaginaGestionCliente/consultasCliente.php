@@ -38,8 +38,25 @@ if(isset($_GET["comprar"]) && $_GET["cantidad"]!="")
     $costeCarritoTotal=$costeCarrito*$cantidadCarrito;
     $comCarrito=$conexionProductos->query("INSERT INTO $BD_tablaCarrito(ID,NOMBRE,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL)VALUES('$idCarrito','$nombreCarrito','$destinoCarrito','$cantidadCarrito','$costeCarrito','$costeCarritoTotal')");
     $comCarrito->closeCursor();
-    header("Location:../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php");
-    $_SESSION["senalImagen"]=1;
+
+    //REGRESA A LA PAGINA DE PRODUCTOS
+    if(strcmp($destinoCarrito,"PRODUCTOS")==0)
+    {
+        header("Location:../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php");
+        $_SESSION["senalImagen"]=1;
+    }
+    //REGRESA A LA PAGINA DE SERVICIOS
+    if(strcmp($destinoCarrito,"SERVICIOS")==0)
+    {
+        header("Location:../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php");
+        $_SESSION["senalImagen"]=1;
+    }
+    //REGRESA A LA PAGINA DE PROYECTOS
+    if(strcmp($destinoCarrito,"PROYECTOS")==0)
+    {
+        header("Location:../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php");
+        $_SESSION["senalImagen"]=1;
+    }
 }
 if($_GET["cantidad"]=="")
 {
