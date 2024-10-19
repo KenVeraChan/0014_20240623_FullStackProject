@@ -108,7 +108,7 @@ function letreroConfirmado(tipoLetrero)
         {
             //LETRERO DE CARGA IMÁGENES SLIDER
             letrero.innerHTML="NO PUEDE DEJAR SIN SELECCIONAR LA CANTIDAD DE PRODUCTOS PARA COMPRAR!";
-            letrero.style.color="rgb(178,6,6)";
+            letrero.style.color="rgb(255,21,21)";
         }
     if(tipoLetrero>0 && tipoLetrero<3)
     {

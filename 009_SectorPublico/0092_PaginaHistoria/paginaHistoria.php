@@ -16,7 +16,7 @@ include_once "consultasHistoria.php";
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0092_PaginaHistoria/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
         <div class="VaciobotonesPrincipal">
             <a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../009_SectorPublico/0092_PaginaHistoria/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
-            <a href="" class="areaPrivada"><img src="../../009_SectorPublico/0092_PaginaHistoria/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
+            <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0092_PaginaHistoria/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
         </div>        
         <table id="tabla">
             <tr class="cajaBotonera">
