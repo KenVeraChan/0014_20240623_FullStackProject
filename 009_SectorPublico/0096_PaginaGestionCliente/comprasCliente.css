@@ -58,6 +58,10 @@
             float: left;
             width:100%;
         }
+        .letreroOK
+        {
+            width:100%; 
+        }
     /*********** FIN CSS DE LA CABECERA ********/
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
@@ -67,6 +71,7 @@
         width: 100%;
         height: 2100px;
         background-color: rgba(0, 0, 19, 0.89);
+        background-size: 100% 100%;
         text-align: center;
         text-shadow: 5px;
         text-justify: kashida;
@@ -96,14 +101,25 @@
             font-size: medium;
             color:yellow;
         }
-        .celdaCompra
+        .celdaC
+        {
+            color:chocolate;
+            height: 30px;   
+        }   
+        .filaVenta
         {
             text-align: center;
             width: 50%;
-            height: 20px;
-            font-size: large;
+            font-size: medium;
             color:yellow;
-            background-color: rgba(2, 1, 66, 0.342);
+        }
+        .celdaV
+        {
+            height:80px;
+        }
+        .img
+        {
+            height:75px;
         }
         .pulsadorDescarga
         {
@@ -115,7 +131,6 @@
             font-size: x-small;
             color:transparent;
         }
-
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -205,6 +220,10 @@
             float: left;
             width:100%;
         }
+        .letreroOK
+        {
+            width:100%; 
+        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
@@ -214,6 +233,7 @@
         width: 100%;
         height: 2100px;
         background-color: rgba(0, 0, 19, 0.89);
+        background-size: 100% 100%;
         text-align: center;
         text-shadow: 5px;
         text-justify: kashida;
@@ -223,13 +243,61 @@
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
     /**********************************************/
     .seccionPrincipal{
-        margin-top: 40px;
+        margin-top: 20px;
         width:100%;
-        height: 1200px;
         border: 2px;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal:nth-child(1){
+        height: 30px;
+    }
+    .seccionPrincipal:nth-child(2){
+        height: 100px;
+        overflow: scroll;
+    }
+    .filaCompra
+    {
+        text-align: center;
+        width: 50%;
+        font-size: medium;
+        color:yellow;
+    }
+    .celdaCompra
+    {
+        font-size: 75%;
+    }
+    .celdaC
+    {
+        color:chocolate;
+        font-size: xx-small;
+        height: 30px;   
+    }   
+    .filaVenta
+    {
+        text-align: center;
+        width: 50%;
+        font-size: x-small;
+        color:yellow;
+    }
+    .celdaV
+    {
+        height:80px;
+    }
+    .img
+    {
+        height:45px;
+    }
+    .pulsadorDescarga
+    {
+        height: 40px;
+        width: 40px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+        background-size: 35px;
+        font-size: x-small;
+        color:transparent;
     }
     /*********** FIN CSS DEL CUERPO ********/
 
@@ -273,13 +341,13 @@
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
-        width: 100%;
-        height: 20px;
+        width: 481px;
+        height: 285px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
             float: left;
-            width: 100%;   /*ICONO CUADRADO*/
+            width: 481px;
             height: 80px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
@@ -292,9 +360,10 @@
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
-            width: 100%;   /*ICONO CUADRADO*/
+            width: 481px;
             height: 13px;  
-            background-color: rgba(0, 0, 39, 0.89);
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
         .areaPrivada{
             float:right;
@@ -311,7 +380,7 @@
             padding-top: 10px;
             padding-bottom: 5px;
             float: left;
-            width: 100%;
+            width: 481px;
             height: 15px;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
@@ -327,14 +396,20 @@
             float: left;
             width:100%;
         }
+        .letreroOK
+        {
+            font-size: x-small;
+            width: 481px;
+        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
-        width: 100%;
+        width: 481px;
         height: 2950px;
         background-color: rgba(0, 0, 19, 0.89);
+        background-size: 481px 100%;
         text-align: center;
         text-shadow: 5px;
         text-justify: kashida;
@@ -344,13 +419,62 @@
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
     /**********************************************/
     .seccionPrincipal{
-        margin-top: 40px;
-        width:100%;
-        height: 1200px;
+        width: 481px;
         border: 2px;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal:nth-child(1){
+        margin-top: 30px;
+        height: 30px;
+    }
+    .seccionPrincipal:nth-child(2){
+        height: 100px;
+        overflow: scroll;
+    }
+    .filaCompra
+    {
+        text-align: center;
+        width: 50%;
+        font-size: medium;
+        color:yellow;
+    }
+    .celdaCompra
+    {
+        font-size: 50%;
+    }
+    .celdaC
+    {
+        color:chocolate;
+        font-size: 50%;
+        height: 30px;   
+    }   
+    .filaVenta
+    {
+        text-align: center;
+        width: 50%;
+        font-size: 60%;
+        color:yellow;
+    }
+    .celdaV
+    {
+        height:80px;
+        font-size: 85%;
+    }
+    .img
+    {
+        height:35px;
+    }
+    .pulsadorDescarga
+    {
+        height: 30px;
+        width: 30px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+        background-size: 29px;
+        font-size: x-small;
+        color:transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -394,28 +518,29 @@
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
-        width: 100%;
-        height: 145px;
+        width: 300px;
+        height: 345px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
             float: left;
-            width: 100%;   /*ICONO CUADRADO*/
+            width: 300px;   /*ICONO CUADRADO*/
             height: 140px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
         }
         #iconoEmpresa{
             float: left;
-            width: 100%;   /*ICONO CUADRADO*/
+            width: 300px;   /*ICONO CUADRADO*/
             height: 80px;   
         }
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
-            width: 100%;   /*ICONO CUADRADO*/
+            width: 300px;   /*ICONO CUADRADO*/
             height: 13px;  
             background-color: rgba(0, 0, 39, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
         .areaPrivada{
             float:right;
@@ -432,7 +557,7 @@
             padding-top: 10px;
             padding-bottom: 5px;
             float: left;
-            width: 100%;
+            width: 300px;
             height: 15px;
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
@@ -445,32 +570,87 @@
         }
         #tabla{
             float: left;
-            width:100%;
+            width:300px;
+        }
+        .letreroOK
+        {
+            font-size: x-small;
+            width:300px; 
         }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
-        width: 100%;
+        width: 300px;
         height: 3100px;
         background-color: rgba(0, 0, 19, 0.89);
+        background-size: 100% 100%;
         text-align: center;
         text-shadow: 5px;
         text-justify: kashida;
         padding-top: 20px;
     }
-    /**********************************************/
+     /**********************************************/
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
     /**********************************************/
     .seccionPrincipal{
         margin-top: 20px;
-        width:100%;
-        height: 1200px;
+        width:300px;
         border: 2px;
         border-style: solid;
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
+    }
+    .seccionPrincipal:nth-child(1){
+        height: 30px;
+    }
+    .seccionPrincipal:nth-child(2){
+        height: 100px;
+        overflow: scroll;
+    }
+    .filaCompra
+    {
+        text-align: center;
+        width: 50%;
+        font-size: medium;
+        color:yellow;
+    }
+    .celdaCompra
+    {
+        font-size: 50%;
+    }
+    .celdaC
+    {
+        color:chocolate;
+        font-size: 35%;
+        height: 30px;   
+    }   
+    .filaVenta
+    {
+        text-align: center;
+        width: 50%;
+        font-size: 60%;
+        color:yellow;
+    }
+    .celdaV
+    {
+        height:80px;
+        font-size: 50%;
+    }
+    .img
+    {
+        height:35px;
+    }
+    .pulsadorDescarga
+    {
+        height: 30px;
+        width: 30px;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+        background-size: 29px;
+        font-size: x-small;
+        color:transparent;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

@@ -15,50 +15,50 @@ $destino=$_POST["destinoImagen"];
 if(strcmp($destino,"SLIDER")==0)
 {
 //CASO 1: SI SON IMAGENES DEL SLIDER DEL MENU PRINCIPAL
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/sliderImages/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(1);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 
 if(strcmp($destino,"PRODUCTOS")==0)
 {
 //CASO 2: SI SON IMAGENES DE PRODUCTOS
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0093_PaginaProductos/productImages/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(2);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 if(strcmp($destino,"SERVICIOS")==0)
 {
 //CASO 3: SI SON IMAGENES DE SERVICIOS
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0094_PaginaServicios/servicesImages/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(3);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 if(strcmp($destino,"PROYECTOS")==0)
 {
 //CASO 4: SI SON IMAGENES DE PROYECTOS OFERTADOS
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0095_PaginaProyectos/projectsImages/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(4);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 if(strcmp($destino,"NOVEDADES")==0)
 {
 //CASO 5: SI SON IMAGENES DE LAS NOVEDADES DE LA PAGINA INICIAL DE LA WEB
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/newsImages/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(5);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 if(strcmp($destino,"CATEGORIA PRODUCTOS")==0)
 {
 //CASO 6: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS PRODUCTOS EN VENTA
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0093_PaginaProductos/productCategory/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(6);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 if(strcmp($destino,"CATEGORIA SERVICIOS")==0)
 {
 //CASO 7: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS SERVICIOS OFERTADOS
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0094_PaginaServicios/servicesCategory/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(7);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 if(strcmp($destino,"CATEGORIA PROYECTOS")==0)
 {
 //CASO 8: SI SON IMAGENES DE LAS CATEGORÍAS DISPONIBLES DE LA PAGINA DE LOS PROYECTOS EN CURSO
-$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0095_PaginaProyectos/projectsCategory/';
+$carpeta_destino=$_SERVER["DOCUMENT_ROOT"].ConexionPHP::IR_RUTA_departamento(8);
 $_SESSION["rutaImagen"]=$carpeta_destino;  //SE GUADA LA RUTA DE ALMACENAJE DE LAS IMAGENES
 }
 

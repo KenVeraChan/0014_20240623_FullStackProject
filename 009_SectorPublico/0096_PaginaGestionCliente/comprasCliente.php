@@ -15,7 +15,6 @@ require "../../005_Login/conexionPHP.php";
 <body onload="cargarPagina()">
         <div class="letreroOK" style=
                "position:absolute;
-                width:100%; 
                 height: 30px; 
                 text-align: center;
                 color: white;
@@ -41,7 +40,7 @@ require "../../005_Login/conexionPHP.php";
         </table>
         <div class="VaciobotonesPrincipal"></div>
     </header>  
-    <div class="consulta" style="background-image: url(../../009_SectorPublico/0096_PaginaGestionCliente/images/CLIENTE.jpg); background-size: 100% 100%;">    
+    <div class="consulta" style="background-image: url(../../009_SectorPublico/0096_PaginaGestionCliente/images/CLIENTE.jpg)">    
         <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
             <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
                 <tr class="filaCompra" style="height:10px">
@@ -54,21 +53,24 @@ require "../../005_Login/conexionPHP.php";
         <?php if($_SESSION["senalCarrito"]==2){?>
             <table class="seccionPrincipal">
                     <tr class="filaCompra">
-                        <td>ID ARTÍCULO</td>
-                        <td>NOMBRE ARTÍCULO</td>
-                        <td>DEPARTAMENTO</td>
-                        <td>CANTIDAD</td>
-                        <td>COSTE UNITARIO</td>
-                        <td>COSTE TOTAL</td>        
+                        <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
+                        <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
+                        <td class="celdaC"><strong>CANTIDAD</strong></td>
+                        <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
+                        <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
                     </tr>
+                    <br><br>
                 <?php for($i=0;$i<count($_SESSION["IDC"]);$i++){ ?>
-                    <tr class="filaCompra">
-                        <td><?php echo $_SESSION["IDC"][$i];?></td>
-                        <td><?php echo $_SESSION["NOMBREC"][$i];?></td>
-                        <td><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
-                        <td><?php echo $_SESSION["CANTIDADC"][$i];?></td>
-                        <td><?php echo $_SESSION["COSTEUNITC"][$i];?></td>
-                        <td><?php echo $_SESSION["COSTETOTC"][$i];?></td>
+                    <tr class="filaVenta">
+                        <td class="celdaV"><?php echo $_SESSION["IDC"][$i];?></td>
+                        <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"][$i];?>"></td>
+                        <td class="celdaV"><?php echo $_SESSION["NOMBREC"][$i];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"][$i]."€";?></td>
+                        <td class="celdaV"><?php echo $_SESSION["COSTETOTC"][$i]."€";?></td>
                     </tr>
                 <?php } ?>
             </table>

@@ -70,7 +70,7 @@ if(isset($_GET["descargar"]))
 //PRIMERO SE CONSULTA EN LA TABLA OFICIAL DEL CARRITO DE LA COMPRA DEL CLIENTE ANONIMO (PRODUCTOS, SERVICIOS, PROYECTOS)
 //TABLA DEL CARRITO OFICIAL
 
-$consCarrito=$conexionProductos->query("SELECT * FROM $BD_tablaCarrito");
+$consCarrito=$conexionProductos->query("SELECT ID,NOMBRE,DEPARTAMENTO,SUM(CANTIDAD) AS CANTIDAD,COSTE_UNITARIO,ROUND(SUM(COSTE_TOTAL),2) AS COSTE_TOTAL FROM $BD_tablaCarrito GROUP BY NOMBRE");
 $carritoCompras=$consCarrito->fetchAll(PDO::FETCH_OBJ);
 $numeroCompras=$consCarrito->rowCount();
 
@@ -88,13 +88,25 @@ $numeroCompras=$consCarrito->rowCount();
         {
             if(isset($cargas->ID) && isset($cargas->NOMBRE))
             {
-            $_SESSION["IDC"][$i]=$cargas->ID;
-            $_SESSION["NOMBREC"][$i]=$cargas->NOMBRE;
-            $_SESSION["DEPARTAMENTOC"][$i]=$cargas->DEPARTAMENTO;
-            $_SESSION["CANTIDADC"][$i]=$cargas->CANTIDAD;
-            $_SESSION["COSTEUNITC"][$i]=$cargas->COSTE_UNITARIO;
-            $_SESSION["COSTETOTC"][$i]=$cargas->COSTE_TOTAL;
-            $i++;  //Para el siguiente conjunto de datos guardado
+                if(strcmp( $cargas->DEPARTAMENTO,"PRODUCTOS")==0)
+                {
+                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(2).$_SESSION["NOMBREC"][$i].".png";
+                }
+                if(strcmp( $cargas->DEPARTAMENTO,"SERVICIOS")==0)
+                {
+                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(3).$_SESSION["NOMBREC"][$i].".png";
+                }
+                if(strcmp( $cargas->DEPARTAMENTO,"PROYECTOS")==0)
+                {
+                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(4).$_SESSION["NOMBREC"][$i].".png";
+                }
+                    $_SESSION["IDC"][$i]=$cargas->ID;
+                    $_SESSION["NOMBREC"][$i]=$cargas->NOMBRE;
+                    $_SESSION["DEPARTAMENTOC"][$i]=$cargas->DEPARTAMENTO;
+                    $_SESSION["CANTIDADC"][$i]=$cargas->CANTIDAD;
+                    $_SESSION["COSTEUNITC"][$i]=$cargas->COSTE_UNITARIO;
+                    $_SESSION["COSTETOTC"][$i]=$cargas->COSTE_TOTAL;
+                $i++;  //Para el siguiente conjunto de datos guardado
             }
         }
         $consCarrito->closeCursor(); //Cierra la conexion y la consulta

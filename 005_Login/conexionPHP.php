@@ -24,6 +24,14 @@ class ConexionPHP
     private static $IR_servicios="../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php";
     private static $IR_proyectos="../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php";
     private static $IR_clientes="../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php";
+    private static $IR_RUTA_SLIDER="/009_SectorPublico/0091_PaginaPrincipal/sliderImages/";  //CARPETA SLIDER DEL SERVIDOR
+    private static $IR_RUTA_PRODUCTOS="/009_SectorPublico/0093_PaginaProductos/productImages/";  //CARPETA PRODUCTOS DEL SERVIDOR
+    private static $IR_RUTA_SERVICIOS="/009_SectorPublico/0094_PaginaServicios/servicesImages/";  //CARPETA SERVICIOS DEL SERVIDOR
+    private static $IR_RUTA_PROYECTOS="/009_SectorPublico/0095_PaginaProyectos/projectsImages/";  //CARPETA PROYECTOS DEL SERVIDOR
+    private static $IR_RUTA_NOVEDADES="/009_SectorPublico/0091_PaginaPrincipal/newsImages/";  //CARPETA NOVEDADES DEL SERVIDOR
+    private static $IR_RUTA_CATEGORIA_PRODUCTOS="/009_SectorPublico/0093_PaginaProductos/productCategory/";  //CARPETA CATEGORIA PRODUCTOS DEL SERVIDOR
+    private static $IR_RUTA_CATEGORIA_SERVICIOS="/009_SectorPublico/0094_PaginaServicios/servicesCategory/";  //CARPETA CATEGORIA SERVICIOS DEL SERVIDOR
+    private static $IR_RUTA_CATEGORIA_PROYECTOS="/009_SectorPublico/0095_PaginaProyectos/projectsCategory/";  //CARPETA CATEGORIA PROYECTOS DEL SERVIDOR
 
     public function ConexionPHP()
     {
@@ -110,6 +118,21 @@ class ConexionPHP
             case 6: $texto=self::$IR_clientes; break;
         }
         return $texto;
+    }
+    public static function IR_RUTA_departamento($ruta)
+    {
+        switch($ruta)
+        {
+            case 1: $texto=self::$IR_RUTA_SLIDER; break;
+            case 2: $texto=self::$IR_RUTA_PRODUCTOS; break;
+            case 3: $texto=self::$IR_RUTA_SERVICIOS; break;
+            case 4: $texto=self::$IR_RUTA_PROYECTOS; break;
+            case 5: $texto=self::$IR_RUTA_NOVEDADES; break;
+            case 6: $texto=self::$IR_RUTA_CATEGORIA_PRODUCTOS; break;
+            case 7: $texto=self::$IR_RUTA_CATEGORIA_SERVICIOS; break;
+            case 8: $texto=self::$IR_RUTA_CATEGORIA_PROYECTOS; break;
+        }
+        return $texto;    
     }
     public static function getConexionJEFES_RRHH()
     {
