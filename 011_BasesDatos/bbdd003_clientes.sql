@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2024 a las 14:35:20
+-- Tiempo de generación: 22-10-2024 a las 14:33:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -233,7 +233,8 @@ INSERT INTO `imagenesinterfazweb` (`ID`, `NOMBRE`, `TIPO`, `TAMANIO`, `DESTINO`,
 (88, 'HIDRONAVES.png', 'image/png', '32606', 'PROYECTOS', 'SUBMARINISMO', 3, 88810, 'Investigación estructural en el diseño de naves submarinas para alcanzar los 15 kilómetros de profundidad sin sufrir las consecuencias de la presión hidrostática'),
 (89, 'PROFUNDO.png', 'image/png', '27079', 'PROYECTOS', 'SUBMARINISMO', 3, 99111, 'Estudio de la instalación de asentamientos fijos a más de 10000 metros de profundidad submarina'),
 (90, 'AUTONOMIA.png', 'image/png', '10716', 'PROYECTOS', 'PROGRAMACION', 6, 41333, 'Investigación en inteligencia artificial para la plena autonomía de satélites espaciales en la búsqueda de vida orgánica en el espacio profundo'),
-(91, 'CAMINOS.png', 'image/png', '37648', 'PROYECTOS', 'PROFUNDIDADES', 2, 65599, 'Investigación submarina para el trazado de autopistas flotantes qu crucen los océanos con refuerzo estructural para seismos y tsunamis de magnitud moderada, sin afectar al ecosistema marino');
+(91, 'CAMINOS.png', 'image/png', '37648', 'PROYECTOS', 'PROFUNDIDADES', 2, 65599, 'Investigación submarina para el trazado de autopistas flotantes qu crucen los océanos con refuerzo estructural para seismos y tsunamis de magnitud moderada, sin afectar al ecosistema marino'),
+(92, 'ROBOTIZADO.png', 'image/png', '34183', 'SERVICIOS', 'ECOLOGIA', 30, 141.75, 'Servicios de automatización de las labores del campo con inteligencia artificial para localizar zonas pendientes de procesar');
 
 -- --------------------------------------------------------
 
@@ -292,7 +293,7 @@ ALTER TABLE `historias`
 -- AUTO_INCREMENT de la tabla `imagenesinterfazweb`
 --
 ALTER TABLE `imagenesinterfazweb`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT de la tabla `loginclientes`
