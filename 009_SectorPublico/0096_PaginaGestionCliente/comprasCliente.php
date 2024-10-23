@@ -46,7 +46,7 @@ require "../../005_Login/conexionPHP.php";
                 <tr class="filaCompra" style="height:10px">
                     <td class="celdaCompra" colspan="2">CARRITO DE LA COMPRA</td>
                     <td class="celdaCompra" colspan="3">FECHA ACTUAL: <?php echo date("D d-M-Y H:i:s");?></td>
-                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorDescarga" name="descargar"></td>
+                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorDescarga" name="descargar" title="Descarga de la selección de compras"></td>
                 </tr>
             </table>
         </form>
@@ -74,6 +74,22 @@ require "../../005_Login/conexionPHP.php";
                     </tr>
                 <?php } ?>
             </table>
+            <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
+            <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
+                <tr class="filaCompra" style="height:10px; background-color: rgba(6,2,37,0.87)">
+                    <td class="celdaCompra" colspan="2">TOTA COMPRA (sin I.V.A.):
+                        <?php for($i=0;$i<count($_SESSION["COSTETOTC"]);$i++)
+                              {
+                                $total+=$_SESSION["COSTETOTC"][$i];
+                              }
+                              echo $total."€";
+                        ?>
+                    </td>
+                    <td class="celdaCompra" colspan="3" style="float:left; padding-top:27px">TOTA COMPRA (+21% I.V.A.): <?php echo round($total*1.21,2)."€";?></td>
+                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorCompra" name="realizarCompra" title="Realizar Compra"></td>
+                </tr>
+            </table>
+        </form>
         <?php } ?>
     </div>
     <div class="piePagina">

@@ -4,9 +4,9 @@
 
 var elemento1= document.getElementsByClassName("bloque_opciones");
 var elemento2= document.getElementsByClassName("filaVenta");
+var elemento3= document.getElementsByClassName("pulsadorCompra");
 var elemento4= document.getElementsByClassName("areaPrivada");
-var elemento5= document.getElementsByClassName("acceder");
-var elemento6= document.getElementsByClassName("comprar");
+var elemento5= document.getElementsByClassName("pulsadorDescarga");
 
 function cargarPagina()
 {
@@ -59,38 +59,34 @@ function cargarPagina()
             elemento4[i].style.boxShadow="none";
                 })
     }
-    //BOTONES DEL CATALOGO DE OPCIONES
     for(let i=0;i<elemento5.length;i++)
         {
+            //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
             elemento5[i].addEventListener('mouseenter',function(){
                 elemento5[i].style.transitionDuration = "0.5s";
-                elemento5[i].style.background= "rgb(211,218,19)";
-                elemento5[i].style.color="rgb(12,12,68)";          
+                elemento5[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
+                elemento5[i].style.boxShadow="white 1px 0 40px";
                     })
             elemento5[i].addEventListener('mouseleave',function(){
                 elemento5[i].style.transitionDuration = "0.5s";
-                elemento5[i].style.background= "rgb(2, 2, 27)";
-                elemento5[i].style.color="rgb(211,218,19)";  
+                elemento5[i].style.border="none";
+                elemento5[i].style.boxShadow="none";
                     })
         }
-    //BOTON DE COMPRAR
-    for(let i=0;i<elemento6.length;i++)
-        {
-            elemento6[i].addEventListener('mouseenter',function(){
-                elemento6[i].style.transitionDuration = "0.5s";
-                elemento6[i].style.backgroundImage= "url('../../009_SectorPublico/0093_PaginaProductos/images/CARRITO.png')";
-                elemento6[i].innerHTML="COMPRAR";
-                elemento6[i].style.boxShadow="white 1px 0 40px";        
-                    })
-            elemento6[i].addEventListener('mouseleave',function(){
-                elemento6[i].style.transitionDuration = "0.5s";
-                elemento6[i].style.backgroundImage= "url('../../009_SectorPublico/0093_PaginaProductos/images/CESTA.png')";
-                elemento6[i].style.backgroundSize="65px"
-                elemento6[i].style.backgroundColor="transparent"; 
-                elemento6[i].innerHTML=""; 
-                elemento6[i].style.boxShadow="none";   
-                    })
-        }
+        for(let i=0;i<elemento3.length;i++)
+            {
+                //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
+                elemento3[i].addEventListener('mouseenter',function(){
+                    elemento3[i].style.transitionDuration = "0.5s";
+                    elemento3[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
+                    elemento3[i].style.boxShadow="white 1px 0 40px";
+                        })
+                elemento3[i].addEventListener('mouseleave',function(){
+                    elemento3[i].style.transitionDuration = "0.5s";
+                    elemento3[i].style.border="none";
+                    elemento3[i].style.boxShadow="none";
+                        })
+            }
 }
 //LETRERO DE OKEY
 function letreroConfirmado(tipoLetrero)

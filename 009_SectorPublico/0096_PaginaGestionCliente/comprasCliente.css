@@ -131,6 +131,17 @@
             font-size: x-small;
             color:transparent;
         }
+        .pulsadorCompra
+        {
+            height: 70px;
+            width: 70px;
+            float: left;
+            background-color: transparent;
+            background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+            background-size: 65px;
+            font-size: x-small;
+            color:transparent;    
+        }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -298,6 +309,17 @@
         background-size: 35px;
         font-size: x-small;
         color:transparent;
+    }
+    .pulsadorCompra
+    {
+        height: 40px;
+        width: 40px;
+        float: left;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+        background-size: 65px;
+        font-size: x-small;
+        color:transparent;    
     }
     /*********** FIN CSS DEL CUERPO ********/
 
@@ -476,6 +498,17 @@
         font-size: x-small;
         color:transparent;
     }
+    .pulsadorCompra
+    {
+        height: 30px;
+        width: 30px;
+        float: left;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+        background-size: 29px;
+        font-size: x-small;
+        color:transparent;    
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
     /**** CSS DEL PIE DE LA PAGINA ****/
@@ -651,6 +684,17 @@
         background-size: 29px;
         font-size: x-small;
         color:transparent;
+    }
+    .pulsadorCompra
+    {
+        height: 30px;
+        width: 30px;
+        float: left;
+        background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+        background-size: 29px;
+        font-size: x-small;
+        color:transparent;    
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
