@@ -144,9 +144,9 @@
             }
             if($numeroRegistroClientes>0)
             {
-                $_SESSION["logeando"]=1;  //Datos BIEN metidos  cambiar el header (SEGUIR DESDE AQUI)
+                $_SESSION["logeando"]=1;  //Datos BIEN metidos
                 $_SESSION["semaforo"]=1;  //No saca ningun letrero
-                header("location: ../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+                header("location: ../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/personalCliente.php");
             }
         }
     }catch(Exception $e){

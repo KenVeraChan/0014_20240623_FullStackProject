@@ -14,13 +14,9 @@
                 <td>
                     <div id="eleccionesJEFE" onclick="location.href='../../005_Login/0052_LoginJEFES/loginJEFES.php'">JEFES</div>
                 </td>
-            </tr>
-            <tr class="filaBoton">
                 <td>
                     <div id="eleccionesRRHH" onclick="location.href='../../005_Login/0051_LoginRRHH/loginRRHH.php'">RR.HH.</div>
                 </td>
-            </tr>
-            <tr class="filaBoton">
                 <td>
                     <div id="eleccionesVOLVER" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER</div>
                 </td>

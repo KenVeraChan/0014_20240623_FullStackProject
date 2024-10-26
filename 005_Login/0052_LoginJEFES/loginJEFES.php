@@ -29,14 +29,14 @@ $_SESSION["loginCLIENTES"]=0;   //Se identifica que no ha sido un individuo del 
         <div id="iconoAdorno"><img src="../0052_LoginJEFES/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>     
         <div class="VaciobotonesPrincipal"></div>
             <form action="../../005_Login/compruebaLogin.php" method="POST" id="formularioLogin">
-                <table>
+                <table id="tablaLogin">
                     <tr id="izqTitulo" style="color: rgb(204, 0, 255)">AREA DE JEFES</tr>
                     <tr><td class="izq"></td></tr>
                     <tr><td class="izq" style="color: rgb(204, 0, 255);">LOGIN: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
                     <tr><td class="izq"></td></tr>
                     <tr><td class="izq" style="color: rgb(204, 0, 255);">PASSWORD: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
                     <tr><td class="izq"></td></tr>
-                    <tr>
+                    <tr id="botoneslog">
                         <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
                         <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" name="enviar" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>

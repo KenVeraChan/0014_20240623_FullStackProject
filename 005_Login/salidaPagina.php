@@ -20,6 +20,12 @@
             header("location:../005_Login/0052_LoginJEFES/loginJEFES.php");
             //Se pone el doble punto para partir del directorio RAIZ
         }
+        if($_SESSION["loginCLIENTES"]==1)
+        {
+            session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN JEFES
+            header("location:../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+            //Se pone el doble punto para partir del directorio RAIZ
+        }
     ?>
 </body>
 </html>

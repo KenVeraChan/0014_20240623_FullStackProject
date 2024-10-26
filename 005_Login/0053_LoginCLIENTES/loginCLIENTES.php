@@ -26,30 +26,31 @@ $_SESSION["loginCLIENTES"]=1;   //Se identifica que SI ha sido un individuo del 
                 box-shadow: none">
         </div>
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../0052_LoginJEFES/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>     
+        <div id="iconoAdorno"><img src="../0053_LoginCLIENTES/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>     
         <div class="VaciobotonesPrincipal"></div>
             <form action="../../005_Login/compruebaLogin.php" method="POST" id="formularioLogin">
-                <table>
+                <table id="tablaLogin">
                     <tr id="izqTitulo" style="color: rgb(204, 0, 255)">AREA DE CLIENTES</tr>
                     <tr><td class="izq"></td></tr>
                     <tr><td class="izq" style="color: rgb(204, 0, 255);">LOGIN: </td><td class="der"><input type="text" class="cajaForm" name="login" placeholder="Usuario"></td></tr>
                     <tr><td class="izq"></td></tr>
                     <tr><td class="izq" style="color: rgb(204, 0, 255);">PASSWORD: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
                     <tr><td class="izq"></td></tr>
-                    <tr>
+                    <tr id="botoneslog">
                         <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
-                        <td><a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" name="enviar" class="returned"><strong>VOLVER</strong></a></td>
+                        <td><input type="submit" class="logear" name="registrar" value="REGISTRAR"></td>
+                        <td><a href="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php" name="enviar" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>
                 </table>
             </form> 
                 <table id="indicaciones">
-                    <tr><td class="der" style="color: rgb(204, 0, 255)">FUNCIONES DESEMPEÑADAS</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255)">BIENVENIDO CLIENTE</td></tr>
                     <tr><td class="der"></td></tr>
-                    <tr><td class="der" style="color: rgb(204, 0, 255);">Compras de PRODUCTOS tecnológicos de la empresa</td></tr>
-                    <tr><td class="der" style="color: rgb(204, 0, 255);">Compras de SERVICIOS tecnológicos de la empresa</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Si aun no es cliente, regístrese y empiece a disfrutar de las ventajas de tener al alcance toda la tecnología punta</td></tr>
+                    <tr><td class="der" style="color: rgb(204, 0, 255);">Si ya es cliente disfrute de las ventajas actuales de compras de productos, servicios y proyectos</td></tr>
                     <tr><td class="der"></td></tr>
                 </table>
-        <img id="imagenPortada" src="../0052_LoginJEFES/images/JEFES.jpg" alt="Imagen Despacho JEFES">    
+        <img id="imagenPortada" src="../0053_LoginCLIENTES/images/VENTAS.jpg" alt="Imagen clientes">    
     </header>
     <div class="piePagina">
         <footer id="piePrincipal">

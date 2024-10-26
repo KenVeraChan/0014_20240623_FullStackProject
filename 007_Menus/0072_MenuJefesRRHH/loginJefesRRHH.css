@@ -4,7 +4,7 @@
     margin-right: 0px;
     margin-bottom: 0px;
 }
-@media all and (min-width: 769px) and (max-width: 7800px) 
+@media all and (min-width: 1100px) and (max-width: 7800px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -39,7 +39,7 @@
     }
     #tablaBotones
     {
-        margin-left: 40%;
+        margin-left: 0%;
         position: absolute;
         margin-top: 200px;
         height: 600px;
@@ -124,7 +124,7 @@
         text-align: center; 
     }
 }
-@media all and (min-width: 481px) and (max-width: 768px) 
+@media all and (min-width: 768px) and (max-width: 1100px) 
 {
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -160,7 +160,7 @@
     }
     #tablaBotones
     {
-        margin-left: 40%;
+        margin-left: 0%;
         position: absolute;
         margin-top: 200px;
         height: 450px;
@@ -181,7 +181,8 @@
         height:150px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
-        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
         z-index: 1;
     }
     #eleccionesRRHH{
@@ -194,7 +195,8 @@
         height:150px;
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
-        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
         z-index: 1;
     }
     #eleccionesVOLVER{
@@ -207,7 +209,8 @@
         height:150px;
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
-        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
         z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
@@ -246,7 +249,132 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 300px) and (max-width: 480px)
+@media all and (min-width: 555px) and (max-width: 768px) 
+{
+      /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 1500px;        
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #imagenPortada{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    #tablaBotones
+    {
+        margin-left: 0%;
+        position: absolute;
+        margin-top: 200px;
+        height: 80px;
+        width: 80px;
+        z-index: 1;
+    }
+    .filaBoton{
+        height: 80px;
+        width: 80px;
+    }
+    #eleccionesJEFE{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(255, 255, 255);
+        width:140px; 
+        height:40px;    
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+        background-repeat: no-repeat;
+        background-size: 70% 70%;
+        z-index: 1;
+    }
+    #eleccionesRRHH{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(255, 255, 255);
+        width:140px; 
+        height:40px;      
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
+        background-repeat: no-repeat;
+        background-size: 70% 70%;
+        z-index: 1;
+    }
+    #eleccionesVOLVER{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: x-large;
+        color: rgb(255, 255, 255);
+        width:140px; 
+        height:40px;   
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
+        background-repeat: no-repeat;
+        background-size: 70% 70%;
+        z-index: 1;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width:100%;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color:rgb(204, 0, 255);
+    }
+    #zocalo
+    {
+        float: left;
+        width:100%;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:small;
+        text-align: center;
+    }
+    .pie
+    {
+        margin-bottom: 0px;
+        width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 481px) and (max-width: 555px)
 {   
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -371,9 +499,9 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 100px) and (max-width:299px)
-{
-          /** DISPOSITIVOS ORDENADOR **/
+@media all and (min-width: 300px) and (max-width: 481px)
+{   
+      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
@@ -426,39 +554,42 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: medium;
         color: rgb(255, 255, 255);
-        width:120px; 
-        height:90px; 
+        width:80px; 
+        height:30px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
-        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
         z-index: 1;
     }
     #eleccionesRRHH{
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: medium;
         color: rgb(255, 255, 255);
-        width:120px; 
-        height:90px; 
+        width:80px; 
+        height:30px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
-        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
         z-index: 1;
     }
     #eleccionesVOLVER{
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: medium;
         color: rgb(255, 255, 255);
-        width:120px; 
-        height:90px; 
+        width:80px; 
+        height:30px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
-        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
         z-index: 1;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
@@ -468,6 +599,7 @@
     #piePrincipal
     {
         position:relative;
+        margin-top: -35px;
         width:100%;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
@@ -481,12 +613,140 @@
         background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:oblique;
-        font-size:xx-small;
+        font-size:small;
         text-align: center;
     }
     .pie
     {
         width: 100%;
+        height: 32px;
+        background-color:  rgba(0, 0, 19, 0.89); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:normal;
+        font-size:small;
+        text-align: center; 
+    }
+        /****** FIN CSS DEL PIE DE LA PAGINA ******/
+}
+@media all and (min-width: 100px) and (max-width:299px)
+{
+          /** DISPOSITIVOS ORDENADOR **/
+    /************ CSS DE LA CABECERA ********/
+    #cabeceraPrincipal
+    {
+        width: 300px;
+        height: 1500px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 300px;            /*ICONO CUADRADO*/
+            height: 60px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .imagenIcono{
+            width: 200px;   /*ICONO CUADRADO*/
+            height: 60px;   
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 300px;            /*ICONO CUADRADO*/
+            height: 13px;  
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    #imagenPortada{
+        margin-top: 0px;
+        width: 300px;
+        height: 100%;
+    }
+    #tablaBotones
+    {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 200px;
+        height: 270px;
+        width: 120px;
+        z-index: 1;
+    }
+    .filaBoton{
+        height: 100px;
+        width: 120px;
+    }
+    #eleccionesJEFE{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width:80px; 
+        height:30px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/JEFE.png");
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
+        z-index: 1;
+    }
+    #eleccionesRRHH{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width:80px; 
+        height:30px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/RRHH.png");
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
+        z-index: 1;
+    }
+    #eleccionesVOLVER{
+        margin-left: -1200%;
+        padding-top: 150px;
+        text-align: center;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        width:80px; 
+        height:30px; 
+        background-color:rgba(0, 0, 19, 0.89);
+        background-image: url("../../007_Menus/0072_MenuJefesRRHH/images/VOLVER.png");
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
+        z-index: 1;
+    }
+    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+
+    /**** CSS DEL PIE DE LA PAGINA ****/
+    /**** CREACION DEL PIE DE LA PAGINA ****/
+    #piePrincipal
+    {
+        position:relative;
+        width: 300px;
+        height: 160px;
+        background-color: rgba(0, 0, 0, 0.87);
+        color: rgb(204, 0, 255);
+    }
+    #zocalo
+    {
+        float: left;
+        width: 300px;
+        height: 90px; 
+        background-color:  rgba(0, 0, 19, 0.89);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:oblique;
+        font-size:xx-small;
+        text-align: center;
+    }
+    .pie
+    {
+        width: 300px;
         height: 32px;
         background-color:  rgba(0, 0, 19, 0.89); 
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
