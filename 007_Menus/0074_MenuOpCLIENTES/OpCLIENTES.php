@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
+            header("Location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
         }
 ?>
 
@@ -14,13 +14,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Operaciones de RRHH</title>
-    <link rel="stylesheet" href="OpJEFES.css">
-    <script src="OpJEFES.js"></script>
+    <title>Menú de Operaciones del Cliente</title>
+    <link rel="stylesheet" href="OpCLIENTES.css">
+    <script src="OpCLIENTES.js"></script>
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../../007_Menus/0071_MenuOpRRHH/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../../007_Menus/0074_MenuOpCLIENTES/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -34,16 +34,13 @@
         <div class="cajaPortadora">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">CONTROL DE VENTAS</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">AREA DE DATOS PERSONALES</button></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">CONTROL TAREAS</button></td>
-                </tr>   
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
+                </tr>    
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php'">CONTROL DE PROYECTOS</button></td>
-                </tr>  
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php'">CONTROL DE LA INTERFAZ</button></td>  <!-- SLIDER IMAGENES DEL SECTOR PÚBLICO Y LAS IMAGENES DE PRODUCTOS Y SERVICIOS -->
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  
                 </tr>               
             </table>
         </div>

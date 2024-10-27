@@ -226,4 +226,15 @@ function cargarPagina()
                         }  
                 })
     }
+        //ANIMACION DEL PERFIL DE USUARIO CLIENTE
+        var clienteLogin= document.getElementById("cerrarSesion");
+        var clienteNombre= document.getElementById("bienvenido");
+        clienteNombre.addEventListener("mouseenter",function(){
+                clienteLogin.style.color="yellow";
+                clienteNombre.style.color="yellow";
+        });
+        clienteNombre.addEventListener("mouseleave",function(){
+                clienteLogin.style.color="white";
+                clienteNombre.style.color="white";
+        });
 }

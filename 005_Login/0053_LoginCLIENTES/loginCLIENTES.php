@@ -3,6 +3,16 @@ session_start();
 $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
 $_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
 $_SESSION["loginCLIENTES"]=1;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
+
+if(!isset($_SESSION["usuario"]))
+{
+    //SI HA CERRADO LA SESIÓN ENTONCES SE LE DEJARÁ ENTRAR EN ESTA PAGINA WEB
+}
+if(isset($_SESSION["usuario"]))
+{
+    //SI EL USUARIO NO HA CERRADO SESSIÓN ENTRARÁ EN EL MENÚ DE OPCIONES DEL PROPIO CLIENTE
+    header("Location:../../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
+}
 ?>
 
 <!DOCTYPE html>

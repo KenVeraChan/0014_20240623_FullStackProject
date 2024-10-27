@@ -1,6 +1,8 @@
 <?php
-session_start();   //Uso de la variable GLOBAL
-require "consultasSlider.php";
+        //INICIA LA SESION DE ENTRADA
+        session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
+                          //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+        require "consultasSlider.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +14,38 @@ require "consultasSlider.php";
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsMenu.js"></script>
 </head>
 <body onload="cargarPagina()">
+        <div class="letreroOK" style=
+            "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: rgb(255, 0, 0);
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0091_PaginaPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
+        <?php if(isset($_SESSION["usuario"])) {?>
+            <div id="areaSesion">
+                <table style="width:100%">
+                    <tr>
+                        <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+                        <a href="../../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+                    </tr>
+                </table>
+            </div>   
+        <?php }?>
+        <?php if(!isset($_SESSION["usuario"])) {?>
+            <div id="areaSesion">
+                <table style="width:100%">
+                    <tr>
+                        <div id="bienvenido" style="margin-top:15px"><strong>Bienvenido: Cliente Invitado</strong></div>                    
+                        <div id="cerrarSesion"></div>
+                    </tr>
+                </table>
+            </div>   
+        <?php }?>
         <div class="VaciobotonesPrincipal">
             <a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../009_SectorPublico/0091_PaginaPrincipal/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
             <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0091_PaginaPrincipal/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
@@ -80,5 +112,34 @@ require "consultasSlider.php";
             </div>
         </footer>
     </div>
+    <script>
+        if(<?php echo $_SESSION["privado"]?>==1)
+        {
+            //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA
+            letreroConfirmadaEntrada(1);
+        }
+        function letreroConfirmadaEntrada(seleccion)
+        {        
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            if(seleccion==1)
+            {
+                letrero.innerHTML="AREA PRIVADA NO PARA CLIENTES"; 
+            }
+            letrero.style.paddingTop="10px";
+            letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="0px";
+
+            document.addEventListener("mousemove",function(){
+            let temporizador=setTimeout(function(){
+                var letrero= document.getElementsByClassName("letreroOK")[0];
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginTop="-50px";
+            },3500);
+            })
+            clearTimeout(temporizador);
+        }
+    </script>
+    <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER?>
 </body>
 </html>

@@ -25,6 +25,26 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
         </div>
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0093_PaginaProductos/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
+        <?php if(isset($_SESSION["usuario"])) {?>
+            <div id="areaSesion">
+                <table style="width:100%">
+                    <tr>
+                        <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+                        <a href="../../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+                    </tr>
+                </table>
+            </div>   
+        <?php }?>
+        <?php if(!isset($_SESSION["usuario"])) {?>
+            <div id="areaSesion">
+                <table style="width:100%">
+                    <tr>
+                        <div id="bienvenido" style="margin-top:15px"><strong>Bienvenido: Cliente Invitado</strong></div>                    
+                        <div id="cerrarSesion"></div>
+                    </tr>
+                </table>
+            </div>   
+        <?php }?>
         <div class="VaciobotonesPrincipal">
             <a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
             <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>

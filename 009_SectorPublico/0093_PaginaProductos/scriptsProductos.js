@@ -126,4 +126,15 @@ function letreroConfirmado(tipoLetrero)
         })
         clearTimeout(temporizador);
     }
+        //ANIMACION DEL PERFIL DE USUARIO CLIENTE
+        var clienteLogin= document.getElementById("cerrarSesion");
+        var clienteNombre= document.getElementById("bienvenido");
+        clienteNombre.addEventListener("mouseenter",function(){
+                clienteLogin.style.color="rgb(28,153,236)";
+                clienteNombre.style.color="rgb(28,153,236)";
+        });
+        clienteNombre.addEventListener("mouseleave",function(){
+                clienteLogin.style.color="white";
+                clienteNombre.style.color="white";
+        });
 }

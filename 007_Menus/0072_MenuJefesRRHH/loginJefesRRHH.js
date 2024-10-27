@@ -82,7 +82,7 @@ function cargarPagina()
     {
         var entrada=document.getElementById("tablaBotones");
         entrada.style.transitionDuration="1.3s";
-        entrada.style.marginLeft= "7%";
+        entrada.style.marginLeft= "15%";
                 
         var entradaJEFES=document.getElementById("eleccionesJEFE");
         entradaJEFES.style.transitionDuration="1.3s";
@@ -115,35 +115,36 @@ function cargarPagina()
         entradaVOLVER.style.marginLeft= "10%";
     }
 
-
-
+    var JEFES = document.getElementById("eleccionesJEFE");
     //REACCION DEL BOTON DE JEFES
-    entradaJEFES.addEventListener('mouseenter',function(){
-        entradaJEFES.style.transitionDuration="1s";
-        entradaJEFES.style.textShadow="white 1px 0 40px";
+    JEFES.addEventListener('mouseenter',function(){
+        JEFES.style.transitionDuration="0.25s";
+        JEFES.style.boxShadow="18px 18px 18px white";
     })
-    entradaJEFES.addEventListener('mouseleave',function(){
-        entradaJEFES.style.transitionDuration="1s";
-        entradaJEFES.style.textShadow="none";
+    JEFES.addEventListener('mouseleave',function(){
+        JEFES.style.transitionDuration="0.25s";
+        JEFES.style.boxShadow="none";
     })
 
+    var RRHH= document.getElementById("eleccionesRRHH");
     //REACCION DEL BOTON DE RRHH
-    entradaRRHH.addEventListener('mouseenter',function(){
-        entradaRRHH.style.transitionDuration="1s";
-        entradaRRHH.style.textShadow="white 1px 0 40px";
+    RRHH.addEventListener('mouseenter',function(){
+        RRHH.style.transitionDuration="0.25s";
+        RRHH.style.boxShadow="18px 18px 18px white";
     })
-    entradaRRHH.addEventListener('mouseleave',function(){
-        entradaRRHH.style.transitionDuration="1s";
-        entradaRRHH.style.textShadow="none";
+    RRHH.addEventListener('mouseleave',function(){
+        RRHH.style.transitionDuration="0.25s";
+        RRHH.style.boxShadow="none";
     })
 
+    var volver= document.getElementById("eleccionesVOLVER");
     //REACCION DEL BOTON DE VUELTA
-    entradaVOLVER.addEventListener('mouseenter',function(){
-        entradaVOLVER.style.transitionDuration="1s";
-        entradaVOLVER.style.textShadow="white 1px 0 40px";
+    volver.addEventListener('mouseenter',function(){
+        volver.style.transitionDuration="0.25s";
+        volver.style.boxShadow="18px 18px 18px white";
     })
-    entradaVOLVER.addEventListener('mouseleave',function(){
-        entradaVOLVER.style.transitionDuration="1s";
-        entradaVOLVER.style.textShadow="none";
+    volver.addEventListener('mouseleave',function(){
+        volver.style.transitionDuration="0.25s";
+        volver.style.boxShadow="none";
     })
 }

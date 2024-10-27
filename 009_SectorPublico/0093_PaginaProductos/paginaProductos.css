@@ -8,10 +8,43 @@
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 165px;
+        height: 215px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -32,12 +65,12 @@
         .areaPrivada{ 
             float:right;
             margin-right: 20px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 90px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .bloque_opciones{
             position: relative;
@@ -310,10 +343,43 @@
 {
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 165px;
+        height: 215px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -334,12 +400,12 @@
         .areaPrivada{
             float:right;
             margin-right: 20px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 80px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .bloque_opciones{
             position: relative;
@@ -612,6 +678,39 @@
 {   
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
@@ -640,12 +739,12 @@
         .areaPrivada{
             float:right;
             margin-right: 5px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 50px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .bloque_opciones{
             position: relative;
@@ -697,11 +796,12 @@
     .noticia{
         float: left;
         margin-top: 3px;
-        margin-left: 22%;
-        width:50%;
+        margin-left: 5%;
+        width:80%;
         height: 230px;
         border: 2px;
         text-align: center;
+        font-size: small;
         color: rgb(165, 165, 19);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         border-style: solid;
@@ -734,7 +834,7 @@
     }
     .parrafo
     {
-        margin-top: -40px;
+        margin-top: -20px;
         width:100%;
         height: 20px;
         float: left;
@@ -893,6 +993,39 @@
 {
           /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(0, 0, 19, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
@@ -921,12 +1054,12 @@
         .areaPrivada{
             float:right;
             margin-right: 15%; 
-            margin-top: -55px;
+            margin-top: -100px;
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 60%; 
-            margin-top: -55px; 
+            margin-top: -100px; 
         }
         .bloque_opciones{
             position: relative;
@@ -1034,6 +1167,7 @@
         width:100%;
         height: 20px;
         float: left;
+        font-size: small;
     }
     .tablaInterna
     {

@@ -8,10 +8,43 @@
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(19, 0, 0, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 165px;
+        height: 215px;
         background-color: rgba(19, 0, 0, 0.89);
     }
         #iconoAdorno{
@@ -26,18 +59,18 @@
             position: relative;
             width: 100%;   /*ICONO CUADRADO*/
             height: 13px;  
-            background-color: rgba(19, 0, 0, 0.89);
+            background-color: rgba(54, 1, 1, 0.89);
             box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
         .areaPrivada{ 
             float:right;
             margin-right: 20px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 90px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .bloque_opciones{
             position: relative;
@@ -314,10 +347,43 @@
 {
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(19, 0, 0, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 165px;
+        height: 215px;
         background-color: rgba(19, 0, 0, 0.89);
     }
         #iconoAdorno{
@@ -332,18 +398,18 @@
             position: relative;
             width: 100%;   /*ICONO CUADRADO*/
             height: 13px;  
-            background-color: rgba(19, 0, 0, 0.89);
+            background-color: rgba(54, 1, 1, 0.89);
             box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
         }
         .areaPrivada{
             float:right;
             margin-right: 20px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 80px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .bloque_opciones{
             position: relative;
@@ -622,10 +688,43 @@
 {   
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(19, 0, 0, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 280px;
+        height: 335px;
         background-color: rgba(19, 0, 0, 0.89);
     }
         #iconoAdorno{
@@ -645,17 +744,17 @@
             position: relative;
             width: 100%;   /*ICONO CUADRADO*/
             height: 13px;  
-            background-color: rgba(19, 0, 0, 0.89);
+            background-color: rgba(54, 1, 1, 0.89);
         }
         .areaPrivada{
             float:right;
             margin-right: 5px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 50px; 
-            margin-top:-60px; 
+            margin-top:-105px; 
         }
         .bloque_opciones{
             position: relative;
@@ -689,7 +788,7 @@
         text-align: center;
         text-shadow: 5px;
         text-justify: kashida;
-        padding-top: 20px;
+        padding-top: 5px;
     }
      /**********************************************/
     /* MOSTRADOR DE VENTAS AL PÚBLICO TECNOLÓGICO */
@@ -707,8 +806,8 @@
     .noticia{
         float: left;
         margin-top: 3px;
-        margin-left: 22%;
-        width:50%;
+        margin-left: 5%;
+        width:85%;
         height: 230px;
         border: 2px;
         text-align: center;
@@ -721,15 +820,16 @@
     .fila:nth-child(1)
     {
         position: relative;
-        width: 100%;
+        width: 40%;
         height: 10px;
     }
     .imgBloques{
-        width:40%;
+        width:25%;
     }
     .fila:nth-child(2)
     {
         position: relative;
+        margin-top: 0px;
         width: 100%;
         height: 10px; 
         text-align: center;
@@ -741,7 +841,7 @@
         margin-top: -10px;
         width: 100%;
         height: 30px;  
-        font-size: 70%;
+        font-size: 60%;
     }
     .fila:nth-child(4)
     {
@@ -922,6 +1022,39 @@
 {
           /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
+    #areaSesion{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        background-color:  rgba(19, 0, 0, 0.89);
+        text-align: center;
+        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
+        text-align: right;
+        color: white;
+    }
+    #bienvenido{
+        float: right;
+        font-size: medium;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        margin-top: 8px;
+        margin-right: 20px;
+        width: 100%;
+        height: 20px;
+    }
+    #cerrarSesion{
+        float: right;
+        background-color: transparent;
+        text-align: center;
+        font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
     #cabeceraPrincipal
     {
         width: 100%;
@@ -945,17 +1078,17 @@
             position: relative;
             width: 100%;   /*ICONO CUADRADO*/
             height: 13px;  
-            background-color: rgba(19, 0, 0, 0.89);
+            background-color: rgba(54, 1, 1, 0.89);
         }
         .areaPrivada{
             float:right;
             margin-right: 15%; 
-            margin-top: -55px;
+            margin-top: -100px;
         }
         .areaPrivada:nth-child(2){ 
             float:right;
             margin-right: 60%; 
-            margin-top: -55px; 
+            margin-top: -100px; 
         }
         .bloque_opciones{
             position: relative;
@@ -1039,7 +1172,7 @@
         position: relative;
         width: 100%;
         height: 50px;  
-        font-size: 80%;
+        font-size: 70%;
     }
     .fila:nth-child(4)
     {

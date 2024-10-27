@@ -13,7 +13,7 @@ class ConexionPHP
     private static $BD_tablaIDClientes="loginclientes"; //TABLA Clientes
     private static $BD_tablaJefesTareas="gestionpeticiones"; //TABLA Jefes Y RRHH
     private static $BD_tablaJefesGannt="diagrama_gannt"; //TABLA Jefes Gannt
-    private static $BD_tablaClientes="clientes"; //TABLA Pedidos Clientes
+    private static $BD_tablaClientes="clientespedidos"; //TABLA Pedidos Clientes
     private static $BD_tablaInterfazImagenes="imagenesinterfazweb"; //TABLA IMAGENES: SLIDER, PRODUCTOS, SERVICIOS Y PROYECTOS
     private static $BD_tablaCarrito="clientescarrito"; //TABLA IMAGENES: SLIDER, PRODUCTOS, SERVICIOS Y PROYECTOS
     private static $BD_tablaHistoria="historias";  //TABLA HISTORIAS de los acontecimientos históricos empresariales sector público

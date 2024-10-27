@@ -5,7 +5,7 @@
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
+            header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
         }
 ?>
 
