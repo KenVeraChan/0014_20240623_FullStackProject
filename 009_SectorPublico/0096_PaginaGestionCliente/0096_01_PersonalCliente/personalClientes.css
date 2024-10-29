@@ -61,36 +61,10 @@
             height: 10px;  
             background-color: rgba(0, 0, 19, 0.89);
         }
-        .bloque_opciones{
-            margin-left: 20%;
-            margin-top: 10px;
-            float: left;
-            width: 60%;
-            height: 100px;
-            background-color:  rgba(0, 0, 19, 0.89);
-            text-align: center;
-            font-size: large;
-            border-radius: 10px;
-        }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 200px;
-        }
-        #tabla{
-            padding-top: 120px;
-            float: left;
-            width:100%;
-            height: 800px;
-            margin-top: 0px;
-        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    #elecciones{
-        margin-left:45%;
-    }
     .cajaPortadora{
         position: relative;
         float: left;
@@ -110,12 +84,6 @@
         border-style: solid;
         border-color:rgba(114, 112, 0, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
-    }
-    .seccionPrincipal:nth-child(1){
-        height: 30px;
-    }
-    .seccionPrincipal:nth-child(2){
-        height: 40px;
     }
     .filaCompra
     {
@@ -201,7 +169,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 185px;
+        height: 188px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -218,36 +186,10 @@
             height: 10px;  
             background-color: rgba(0, 0, 19, 0.89);
         }
-        .bloque_opciones{
-            margin-left: 20%;
-            margin-top: 10px;
-            float: left;
-            width: 60%;
-            height: 100px;
-            background-color:  rgba(0, 0, 19, 0.89);
-            text-align: center;
-            font-size: medium;
-            border-radius: 10px;
-        }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 200px;
-        }
-        #tabla{
-            float: left;
-            padding-top: 120px;
-            width:100%;
-            height: 800px;
-            margin-top: 0px;
-        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    #elecciones{
-        margin-left:45%;
-    }
     .cajaPortadora{
         position: relative;
         float: left;
@@ -268,24 +210,13 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal:nth-child(1){
-        height: 30px;
-    }
-    .seccionPrincipal:nth-child(2){
-        height: 100px;
-        overflow: scroll;
-    }
     .filaCompra
     {
         text-align: center;
         width: 50%;
-        font-size: medium;
+        font-size: small;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
-    }
-    .celdaCompra
-    {
-        font-size: 75%;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -341,7 +272,7 @@
     }
     #bienvenido{
         float: right;
-        font-size: medium;
+        font-size: small;
         background-color: transparent;
         text-align: right;
         color: white;
@@ -354,7 +285,7 @@
         float: right;
         background-color: transparent;
         text-align: center;
-        font-size: 60%;
+        font-size: 50%;
         margin-top: 3px;
         color: white;
         width: 120px;
@@ -364,7 +295,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 181px;
+        height: 182px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -386,36 +317,10 @@
             height: 10px;  
             background-color: rgba(0, 0, 19, 0.89);
         }
-        .bloque_opciones{
-            margin-left: 20%;
-            margin-top: 10px;
-            float: left;
-            width: 60%;
-            height: 100px;
-            background-color:  rgba(0, 0, 19, 0.89);
-            text-align: center;
-            font-size: medium;
-            border-radius: 10px;
-        }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 200px;
-        }
-        #tabla{
-            float: left;
-            padding-top: 120px;
-            width:100%;
-            height: 800px;
-            margin-top: 0px;
-        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    #elecciones{
-        margin-left:45%;
-    }
     .cajaPortadora{
         position: relative;
         float: left;
@@ -435,24 +340,12 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal:nth-child(1){
-        margin-top: 30px;
-        height: 30px;
-    }
-    .seccionPrincipal:nth-child(2){
-        height: 100px;
-        overflow: scroll;
-    }
     .filaCompra
     {
         text-align: center;
-        font-size: medium;
+        font-size: 60%;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
-    }
-    .celdaCompra
-    {
-        font-size: 60%;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -532,7 +425,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 180px;
+        height: 150px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -554,38 +447,13 @@
             height: 10px;  
             background-color: rgba(0, 0, 19, 0.89);
         }
-        .bloque_opciones{
-            margin-left: 20%;
-            margin-top: 10px;
-            float: left;
-            width: 60%;
-            height: 100px;
-            background-color:  rgba(0, 0, 19, 0.89);
-            text-align: center;
-            font-size: medium;
-            border-radius: 10px;
-        }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 200px;
-        }
-        #tabla{
-            float: left;
-            padding-top: 120px;
-            width:100%;
-            height: 800px;
-            margin-top: 0px;
-        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    #elecciones{
-        margin-left:45%;
-    }
     .cajaPortadora{
         position: relative;
+        margin-top: -10px;
         float: left;
         width: 100%;
         height: 1300px;
@@ -604,24 +472,17 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal:nth-child(1){
-        height: 30px;
-    }
-    .seccionPrincipal:nth-child(2){
-        height: 100px;
-        overflow: scroll;
-    }
     .filaCompra
     {
         text-align: center;
         width: 50%;
-        font-size: medium;
+        font-size: 40%;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
     .celdaCompra
     {
-        font-size: 50%;
+        font-size: 45%;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -701,7 +562,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 190px;
+        height: 185px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -723,36 +584,10 @@
             height: 10px;  
             background-color: rgba(0, 0, 19, 0.89);
         }
-        .bloque_opciones{
-            margin-left: 20%;
-            margin-top: 10px;
-            float: left;
-            width: 60%;
-            height: 100px;
-            background-color:  rgba(0, 0, 19, 0.89);
-            text-align: center;
-            font-size: x-small;
-            border-radius: 10px;
-        }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 200px;
-        }
-        #tabla{
-            float: left;
-            padding-top: 120px;
-            width:100%;
-            height: 800px;
-            margin-top: 0px;
-        }
     /*********** FIN CSS DE LA CABECERA ********/
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    #elecciones{
-        margin-left:45%;
-    }
     .cajaPortadora{
         position: relative;
         float: left;
@@ -773,24 +608,13 @@
         border-color:rgba(79, 80, 3, 0.87);
         background-color: rgba(2, 1, 46, 0.425);
     }
-    .seccionPrincipal:nth-child(1){
-        height: 30px;
-    }
-    .seccionPrincipal:nth-child(2){
-        height: 100px;
-        overflow: scroll;
-    }
     .filaCompra
     {
         text-align: center;
         width: 50%;
-        font-size: medium;
+        font-size: 30%;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
-    }
-    .celdaCompra
-    {
-        font-size: 50%;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

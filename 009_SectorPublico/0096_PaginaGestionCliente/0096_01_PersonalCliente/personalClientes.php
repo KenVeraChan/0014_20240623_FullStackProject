@@ -14,13 +14,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Operaciones del Cliente</title>
-    <link rel="stylesheet" href="OpCLIENTES.css">
-    <script src="OpCLIENTES.js"></script>
+    <title>Area Personal Cliente</title>
+    <link rel="stylesheet" href="personalClientes.css">
+    <script src="scriptsPersonalCliente.js"></script>
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
-        <div id="iconoAdorno"><img src="../../007_Menus/0074_MenuOpCLIENTES/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
+        <div id="iconoAdorno"><img src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
             <tr>
@@ -37,62 +37,63 @@
                 <?php 
                     if(date("G")>=7 && date("G")<13)  //Por la mañana
                     {
-                        echo "Buenos días, ".date("D d-M-Y H:i:s");
+                        echo "Buenos DÍAS, ".date("D d-M-Y H:i:s");
                     }
                     if(date("G")>=13 && date("G")<21)  //Por la tarde
                     {
-                        echo "Buenos días, ".date("D d-M-Y H:i:s");
+                        echo "Buenas TARDES, ".date("D d-M-Y H:i:s");
                     }
                     if(date("G")>=21 || date("G")<7)  //Por la noche
                     {
-                        echo "Buenos días, ".date("D d-M-Y H:i:s");
+                        echo "Buenas NOCHES, ".date("D d-M-Y H:i:s");
                     }
                 ?>
             </td>
         </tr>
     </table>
     </header>
+                    
         <?php if(date("G")>=7 && date("G")<13){  //POR LA MAÑANA: CARGA FOTO DE POR LA MAÑANA?>
-        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESDIA.png')">
+        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/CLIENTESDIA.png')">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/personalClientes.php'">AREA DE DATOS PERSONALES</button></td>
+                    <td></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
+                    <td></td>
                 </tr>    
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  
+                    <td></td>
                 </tr>               
             </table>
         </div>
         <?php } ?>
         <?php if(date("G")>=13 && date("G")<21){  //POR LA TARDE: CARGA FOTO DE POR LA TARDE?>
-        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESTARDE.png')">
+        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/CLIENTESTARDE.png')">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">AREA DE DATOS PERSONALES</button></td>
+                    <td></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
+                    <td></td>
                 </tr>    
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  
+                    <td></td>
                 </tr>               
             </table>
         </div>
         <?php } ?>
         <?php if(date("G")>=21 || date("G")<7){  //POR LA NOCHE: CARGA FOTO DE POR LA NOCHE?>
-        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESNOCHE.png')">
+        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/CLIENTESNOCHE.png')">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">AREA DE DATOS PERSONALES</button></td>
+                    <td></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
+                    <td></td>
                 </tr>    
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  
+                    <td></td>
                 </tr>               
             </table>
         </div>
