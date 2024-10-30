@@ -55,32 +55,122 @@
                     
         <?php if(date("G")>=7 && date("G")<13){  //POR LA MAÑANA: CARGA FOTO DE POR LA MAÑANA?>
         <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/CLIENTESDIA.png')">
-            <table id="tabla">
-                <tr class="cajaBotonera">
-                    <td></td>
-                </tr>
-                <tr class="cajaBotonera">
-                    <td></td>
-                </tr>    
-                <tr class="cajaBotonera">
-                    <td></td>
-                </tr>               
-            </table>
+            <div class="cuadro">
+                <table id="tabla">
+                    <tr class="cajaBotonera">
+                        <td>
+                            <div class="filaNombre"><img class="fotoPerfil" src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/juan.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">NOMBRE:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">TELÉFONO:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">DIRECCIÓN:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">ENTIDAD:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">TARJETA DE CRÉDITO:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">CORREO:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr> 
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">NÚMERO DE COMPRAS:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>               
+                </table>
+                <div class="accionamientos">
+                        <input type="submit" class="boton" name="cargar" value="CARGAR">
+                        <input type="submit" class="boton" name="actualizar" value="ACTUALIZAR">
+                        <input type="submit" class="boton" name="volver" value="VOLVER">
+                </div>       
+            </div>
         </div>
         <?php } ?>
         <?php if(date("G")>=13 && date("G")<21){  //POR LA TARDE: CARGA FOTO DE POR LA TARDE?>
         <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/CLIENTESTARDE.png')">
-            <table id="tabla">
-                <tr class="cajaBotonera">
-                    <td></td>
-                </tr>
-                <tr class="cajaBotonera">
-                    <td></td>
-                </tr>    
-                <tr class="cajaBotonera">
-                    <td></td>
-                </tr>               
-            </table>
+        <div class="cuadro">
+                <table id="tabla">
+                    <tr class="cajaBotonera">
+                        <td>
+                            <div class="filaNombre"><img class="fotoPerfil" src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/images/juan.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">NOMBRE:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">TELÉFONO:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">DIRECCIÓN:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">ENTIDAD:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">TARJETA DE CRÉDITO:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">CORREO:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr> 
+                    <tr class="cajaBotonera">
+                        <td>
+                            <label class="filaformulario">NÚMERO DE COMPRAS:</label>
+                            <input type="text" class="filaNombre">
+                        </td>
+                    </tr>               
+                </table>
+                <div class="accionamientos">
+                        <input type="submit" class="boton" name="cargar" value="CARGAR">
+                        <input type="submit" class="boton" name="actualizar" value="ACTUALIZAR">
+                        <input type="submit" class="boton" name="volver" value="VOLVER">
+                </div>       
+            </div>
         </div>
         <?php } ?>
         <?php if(date("G")>=21 || date("G")<7){  //POR LA NOCHE: CARGA FOTO DE POR LA NOCHE?>
