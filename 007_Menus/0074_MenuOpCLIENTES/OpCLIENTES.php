@@ -8,7 +8,6 @@
             header("Location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
         }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,15 +36,15 @@
                 <?php 
                     if(date("G")>=7 && date("G")<13)  //Por la mañana
                     {
-                        echo "Buenos días, ".date("D d-M-Y H:i:s");
+                        echo "Buenos Días, ".date("D d-M-Y H:i:s");
                     }
                     if(date("G")>=13 && date("G")<21)  //Por la tarde
                     {
-                        echo "Buenos días, ".date("D d-M-Y H:i:s");
+                        echo "Buenas Tardes, ".date("D d-M-Y H:i:s");
                     }
                     if(date("G")>=21 || date("G")<7)  //Por la noche
                     {
-                        echo "Buenos días, ".date("D d-M-Y H:i:s");
+                        echo "Buenas Noches, ".date("D d-M-Y H:i:s");
                     }
                 ?>
             </td>
@@ -54,6 +53,13 @@
     </header>
         <?php if(date("G")>=7 && date("G")<13){  //POR LA MAÑANA: CARGA FOTO DE POR LA MAÑANA?>
         <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESDIA.png')">
+        <?php } ?>
+        <?php if(date("G")>=13 && date("G")<21){  //POR LA TARDE: CARGA FOTO DE POR LA TARDE?>
+        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESTARDE.png')">
+        <?php } ?>
+        <?php if(date("G")>=21 || date("G")<7){  //POR LA NOCHE: CARGA FOTO DE POR LA NOCHE?>
+        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESNOCHE.png')">
+        <?php } ?>
             <table id="tabla">
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/personalClientes.php'">AREA DE DATOS PERSONALES</button></td>
@@ -66,37 +72,6 @@
                 </tr>               
             </table>
         </div>
-        <?php } ?>
-        <?php if(date("G")>=13 && date("G")<21){  //POR LA TARDE: CARGA FOTO DE POR LA TARDE?>
-        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESTARDE.png')">
-            <table id="tabla">
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">AREA DE DATOS PERSONALES</button></td>
-                </tr>
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
-                </tr>    
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  
-                </tr>               
-            </table>
-        </div>
-        <?php } ?>
-        <?php if(date("G")>=21 || date("G")<7){  //POR LA NOCHE: CARGA FOTO DE POR LA NOCHE?>
-        <div class="cajaPortadora" style="background-image: url('../../007_Menus/0074_MenuOpCLIENTES/images/CLIENTESNOCHE.png')">
-            <table id="tabla">
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">AREA DE DATOS PERSONALES</button></td>
-                </tr>
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
-                </tr>    
-                <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  
-                </tr>               
-            </table>
-        </div>
-        <?php } ?>
         <div class="VaciobotonesPrincipal"></div>
     <div class="piePagina">
         <footer id="piePrincipal">

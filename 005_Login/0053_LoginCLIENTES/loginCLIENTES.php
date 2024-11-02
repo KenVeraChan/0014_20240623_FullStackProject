@@ -4,11 +4,7 @@ $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se
 $_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
 $_SESSION["loginCLIENTES"]=1;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
 
-if(!isset($_SESSION["usuario"]))
-{
-    //SI HA CERRADO LA SESIÓN ENTONCES SE LE DEJARÁ ENTRAR EN ESTA PAGINA WEB
-}
-if(isset($_SESSION["usuario"]))
+if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usuario"]!="")
 {
     //SI EL USUARIO NO HA CERRADO SESSIÓN ENTRARÁ EN EL MENÚ DE OPCIONES DEL PROPIO CLIENTE
     header("Location:../../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
@@ -20,7 +16,7 @@ if(isset($_SESSION["usuario"]))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN Jefes</title>
+    <title>LOGIN Clientes</title>
     <link rel="stylesheet" href="loginCLIENTES.css">
     <script src="loginCLIENTES.js"></script>
 </head>
@@ -90,6 +86,11 @@ if(isset($_SESSION["usuario"]))
             //En el caso de que un JEFE quiera acceder al área de RRHH y lo tiene prohibido
             letreroConfirmadaEntrada(2);
         }
+        if(<?php echo $_SESSION["activadorPersonal"]?>==1)
+        {
+            //En el caso de que el CLIENTE haya decidido eliminar su propia cuenta
+            letreroConfirmadaEntrada(3);     
+        }
         function letreroConfirmadaEntrada(seleccion)
         {        
             var letrero= document.getElementsByClassName("letreroOK")[0];
@@ -100,6 +101,10 @@ if(isset($_SESSION["usuario"]))
             if(seleccion==2)
             {
                 letrero.innerHTML="BIEN DISEÑADO TODO OKEY";   
+            }
+            if(seleccion==3)
+            {
+                letrero.innerHTML="USUARIO ELIMINADO CORRECTAMENTE DE LA BBDD";   
             }
             letrero.style.paddingTop="10px";
             letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
