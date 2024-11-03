@@ -2,11 +2,28 @@
 /********* 0) RATON ENTRANDO EN AREA DE BOTONES DEL MENU **********/
 /******************************************************************/
 
+var elemento1= document.getElementsByClassName("boton");
 var elemento2= document.getElementsByClassName("filaVenta");
 var elemento4= document.getElementsByClassName("areaPrivada");
 
 function cargarPagina()
 {
+    for(let i=0;i<elemento1.length;i++)
+    {
+        //BOTONES de opciones
+        elemento1[i].style.visibility="visible";
+        elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento1[i].addEventListener('mouseenter',function(){
+            elemento1[i].style.transitionDuration = "0.5s";
+            elemento1[i].style.background= "yellow";
+            elemento1[i].style.color="rgb(13,9,77)";
+                })
+        elemento1[i].addEventListener('mouseleave',function(){
+            elemento1[i].style.transitionDuration = "0.5s";
+            elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
+            elemento1[i].style.color="yellow";
+        })   
+    } 
     for(let i=0;i<elemento2.length;i++)
     {
         //FILAS DE LAS VENTAS SELECCIONADAS
@@ -50,17 +67,47 @@ function letreroConfirmado(tipoLetrero)
         }
     if(tipoLetrero==1)
         {
-            //LETRERO DE QUE NO SE HAN DETECTADO UNIDADES EN EL CARRITO DE LA COMPRA
-            letrero.innerHTML="NO SE HAN DETECTADO PRODUCTOS, SERVICIOS O PROYECTOS EN EL CARRITO DE LA COMPRA!";
-            letrero.style.color="rgb(255,21,21)";
+            //LETRERO DE DATOS ACTUALIZADOS CORRECTAMENTE
+            letrero.innerHTML="DATOS DEL SOCIO ACTUALIZADOS CORRECTAMENTE SIN FOTO!";
+            letrero.style.color="rgb(45,255,21)";
         }
     if(tipoLetrero==2)
         {
-            //LETRERO DE CARGA COMPLETA DE TODOS LAS UNIDADES DETECTADAS EN EL CARRITO DE LA COMPRA
-            letrero.innerHTML="CARRITO DE LA COMPRA CARGADO EXITOSAMENTE!";
+            //LETRERO DE DATOS INTRODUCIDOS INCORRECTAMENTE
+            letrero.innerHTML="DATOS INTRODUCIDOS INCORRECTAMENTE!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero==3)
+        {
+            //LETRERO DE DADA DE BAJA UN USUSARIO
+            letrero.innerHTML="CUENTA DADA DE BAJA CORRECTAMENTE!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero==4)
+        {
+            //LETRERO DE DATOS CARGADOS CORRECTAMENTE
+            letrero.innerHTML="DATOS CARGADOS CORRECTAMENTE!";
             letrero.style.color="rgb(45,255,21)";
         }
-    if(tipoLetrero>0 && tipoLetrero<3)
+    if(tipoLetrero==5)
+        {
+            //LETRERO DE DATOS CARGADOS CORRECTAMENTE
+            letrero.innerHTML="ERROR! LA IMAGEN QUE SE PRETENDE SUBIR NO ES JPG/PNG/JPEG/GIF!";
+            letrero.style.color="rgb(255,21,21)";
+        } 
+    if(tipoLetrero==6)
+        {
+            //LETRERO DE DATOS CARGADOS CORRECTAMENTE
+            letrero.innerHTML="ERROR! LA IMAGEN QUE SE PRETENDE SUBIR SUPERA LOS 3MB!";
+            letrero.style.color="rgb(255,21,21)";
+        }  
+    if(tipoLetrero==7)
+        {
+            //LETRERO DE DATOS ACTUALIZADOS CORRECTAMENTE
+            letrero.innerHTML="DATOS DEL SOCIO ACTUALIZADOS CORRECTAMENTE CON FOTO!";
+            letrero.style.color="rgb(45,255,21)";
+        }  
+    if(tipoLetrero>0 && tipoLetrero<8)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

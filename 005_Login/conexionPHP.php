@@ -17,6 +17,7 @@ class ConexionPHP
     private static $BD_tablaInterfazImagenes="imagenesinterfazweb"; //TABLA IMAGENES: SLIDER, PRODUCTOS, SERVICIOS Y PROYECTOS
     private static $BD_tablaCarrito="clientescarrito"; //TABLA IMAGENES: SLIDER, PRODUCTOS, SERVICIOS Y PROYECTOS
     private static $BD_tablaHistoria="historias";  //TABLA HISTORIAS de los acontecimientos históricos empresariales sector público
+    private static $BD_tablaDatosBancarios="datosbancarios";
     private static $BD_charset="utf8";
     private static $IR_inicio="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php";
     private static $IR_historia="../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.php";
@@ -92,6 +93,10 @@ class ConexionPHP
     public static function getBD_TablaCarrito()
     {
         return self::$BD_tablaCarrito;
+    }
+    public static function getBD_DatosBancarios()
+    {
+        return self::$BD_tablaDatosBancarios;
     }
     public static function getBD_TablaHistoria()
     {

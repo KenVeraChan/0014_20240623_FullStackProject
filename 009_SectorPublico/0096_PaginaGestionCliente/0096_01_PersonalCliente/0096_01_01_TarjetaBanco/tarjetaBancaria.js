@@ -123,3 +123,67 @@ formulario.inputCCV.addEventListener('keyup', () => {
 
 	ccv.textContent = formulario.inputCCV.value;
 });
+
+//FUNCION DE CARGA DEL PANEL INFORMATIVO
+function letreroConfirmado(tipoLetrero)
+{
+    var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(tipoLetrero==1)
+        {
+            //LETRERO DE DATOS SUBIDOS A LA BBDD
+            letrero.innerHTML="DATOS DE LA TARJETA ACTUALIZADOS";
+            letrero.style.color="rgb(19,229,61)";
+        }
+    if(tipoLetrero==2)
+        {
+            //LETRERO DE CARGA IMÁGENES PRODUCTOS
+            letrero.innerHTML="ERROR! SIN DATOS DETECTADOS PARA ACTUALIZAR";
+            letrero.style.color="rgb(239,4,4)";
+        }
+	if(tipoLetrero==3)
+		{
+			//LETRERO DE DATOS SUBIDOS A LA BBDD
+			letrero.innerHTML="DATOS DE LA TARJETA CARGADOS";
+			letrero.style.color="rgb(19,229,61)";
+		}
+	if(tipoLetrero==4)
+		{
+			//LETRERO DE DATOS SUBIDOS A LA BBDD
+			letrero.innerHTML="TARJETA DE SOCIO ACTIVADA CORRECTAMENTE";
+			letrero.style.color="rgb(19,229,61)";
+		}
+	if(tipoLetrero==5)
+		{
+			//LETRERO DE NO SE HA ACTIVADO ALGO QUE YA ESTABA REGISTRADO
+            letrero.innerHTML="ERROR! NO SE HA ACTIVADO PORQUE YA ESTABA ACTIVADA. ELIJA ACTUALIZAR EN ESTE CASO!";
+            letrero.style.color="rgb(239,4,4)";
+		}
+	if(tipoLetrero==6)
+		{
+			//LETRERO DE NO SE HA ACTUALIZADO PORQUE NO EXISTIA EL REGISTRO
+			letrero.innerHTML="ERROR! NO SE HA ACTUALIZADO PORQUE NO ESTABA REGISTRADO. ELIJA ACTIVAR EN ESTE CASO!";
+			letrero.style.color="rgb(239,4,4)";
+		}
+	if(tipoLetrero==7)
+		{
+			//LETRERO DE NO SE HA ACTUALIZADO PORQUE NO EXISTIA EL REGISTRO
+			letrero.innerHTML="ERROR! NO SE HAN CARGADO LOS DATOS PORQUE NO EXISTEN. PROCEDA A ACTIVAR SU TARJETA DE SOCIO!";
+			letrero.style.color="rgb(239,4,4)";
+		}
+    if(tipoLetrero>0 && tipoLetrero<8)
+    {
+        letrero.style.paddingTop="10px";
+        letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        letrero.style.transitionDuration = "1s";
+        letrero.style.marginTop="0px";
+    
+        document.addEventListener("mousemove",function(){
+        let temporizador=setTimeout(function(){
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="-100px";
+        },3500);
+        })
+        clearTimeout(temporizador);
+    }
+}

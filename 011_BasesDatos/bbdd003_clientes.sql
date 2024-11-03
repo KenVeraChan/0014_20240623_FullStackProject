@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2024 a las 14:33:56
+-- Tiempo de generación: 03-11-2024 a las 23:57:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -73,6 +73,27 @@ CREATE TABLE `clientespedidos` (
   `ENTREGADO` varchar(15) DEFAULT NULL,
   `IMAGEN_PRODUCTO` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `datosbancarios`
+--
+
+CREATE TABLE `datosbancarios` (
+  `NOMBRE` varchar(40) DEFAULT NULL,
+  `NUMERO` varchar(19) DEFAULT NULL,
+  `MES` int(2) DEFAULT NULL,
+  `ANIO` int(4) DEFAULT NULL,
+  `CCV` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `datosbancarios`
+--
+
+INSERT INTO `datosbancarios` (`NOMBRE`, `NUMERO`, `MES`, `ANIO`, `CCV`) VALUES
+('Juan Perez', '3313 2332 3232 3233', 6, 2027, 221);
 
 -- --------------------------------------------------------
 
@@ -246,16 +267,20 @@ CREATE TABLE `loginclientes` (
   `ID` int(3) NOT NULL,
   `USUARIO` varchar(40) DEFAULT NULL,
   `CONTRASENIA` varchar(40) DEFAULT NULL,
-  `TELEFONO` int(12) DEFAULT NULL
+  `TELEFONO` int(12) DEFAULT NULL,
+  `DIRECCION` varchar(100) NOT NULL,
+  `ENTIDAD` varchar(15) NOT NULL,
+  `CORREO` varchar(40) NOT NULL,
+  `FOTO` text NOT NULL,
+  `NUMERO_COMPRAS` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `loginclientes`
 --
 
-INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`) VALUES
-(1, 'Juan', 'zetas', 983223309),
-(2, 'Laura', 'tintosginos', 983002110);
+INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`, `DIRECCION`, `ENTIDAD`, `CORREO`, `FOTO`, `NUMERO_COMPRAS`) VALUES
+(1, 'Juan Perez', 'zetas', 678002352, '11324 ROCKWELL AVENUE', 'ASOCIADO', 'juanperez@outlook.com', 'juan.png', 3);
 
 --
 -- Índices para tablas volcadas
