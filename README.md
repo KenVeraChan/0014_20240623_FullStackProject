@@ -8,3 +8,4 @@ Comentarios:
 7) La carpeta numerada como 009 es la que corresponde a la gestión de las páginas que verá un cliente que visite la página web.
 8) La carpeta numerada como 010 es una carpeta de documentos aún obsoletos (pendiente de eliminar tras finalizado el proyecto)
 9) FALTA DETERMINAR UN TIEMPO DE SESIÓN LIMITADO PARA QUE NO SE QUEDE ABIERTO INDEFINIDAMENTE
+10) CAMBIAR EL SLIDER DE LA PÁGINA PRINCIPAL PARA QUE GUARDE LAS IMÁGENES EN VEZ DE CARGAR CADA IMAGEN POR CADA CARGA DE PÁGINA, GUARDAR NOMBRES EN UN ARRAY Y LISTO
