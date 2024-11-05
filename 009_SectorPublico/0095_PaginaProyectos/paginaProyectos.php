@@ -284,6 +284,19 @@ include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalImagen"])?>);</script>
     <?php $_SESSION["senalImagen"]=0; //Reiniciar variable ?> 
+    <?php session_start(); if($_SESSION["concesion"]==1)
+    {
+      echo  "<script type='text/javascript'>
+            document.addEventListener('DOMContentLoaded',function(event){
+                let temporizador=setTimeout(function(){
+                    window.scrollTo(0,1050);
+                },0);
+            });
+            clearTimeout(temporizador);
+            </script>"; 
+            $_SESSION["concesion"]=0;   //Se inhabilita la opción de bajar hasta el nuevo accionamiento 
+    } 
+    ?>
 </body>
 </html>
 <?php echo $_SESSION["concesion"];?>

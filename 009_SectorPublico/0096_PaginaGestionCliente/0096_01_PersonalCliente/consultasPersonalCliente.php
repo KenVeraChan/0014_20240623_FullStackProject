@@ -111,14 +111,14 @@ if(isset($_POST["eliminar"]))
         }
         //EN CASO DE HABER ELIMINADO AL USUARIO DE LA BBDD
         $_SESSION["activadorPersonal"]=3; //SE ACTIVA LETRERO EN LA ZONA DE LA PAGINA PRINCIPAL COMO USUARIO ELIMINADO
-        
+        $_SESSION["loginCLIENTES"]=1;  //Sale del todo de la zona del cliente y destruye la sesión
         //Borrado de la base de datos completa
         $resulCliente=$conexionClientes->query("DELETE FROM $BD_tabla WHERE USUARIO='$usuarioOnline'");
         unlink($carpeta_destino.$_SESSION["fotoPersonal"]);  //Elimina el fichero tambien de la carpeta de WINDOWS afectada
         $resulCliente->closeCursor();
 
         //Borrado de la base de datos de los datos bancarios
-        $resulCliente=$conexionClientes->query("DELETE FROM $tablaDatosBancarios WHERE USUARIO='$usuarioOnline'");
+        $resulCliente=$conexionClientes->query("DELETE FROM $tablaDatosBancarios WHERE NOMBRE='$usuarioOnline'");
         $resulCliente->closeCursor();
         header("Location:../../../005_Login/salidaPagina.php");
     }

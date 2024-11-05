@@ -119,12 +119,9 @@ if(!isset($_SESSION["usuario"]))
                         <tr class="cajaBotonera">
                             <td>
                                 <label class="filaformulario">SUBIR Y CAMBIAR FOTO:</label>
-                                <input type="file" name="imagenfile" style="
+                                <input type="file" class="filaNombreFoto" name="imagenfile" style="
                                         float:left;
                                         margin-top: 30px;
-                                        margin-left: 70px;
-                                        width: 405px;
-                                        height:21px;
                                         background-color: white;
                                         z-index: 1; 
                                 ">

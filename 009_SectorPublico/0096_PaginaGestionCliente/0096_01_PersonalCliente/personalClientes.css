@@ -4,7 +4,7 @@
     margin-right: 0px;
     margin-bottom: 0px;
 }
-@media all and (min-width: 769px) and (max-width: 7800px) 
+@media all and (min-width: 1200px) and (max-width: 7800px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -126,6 +126,14 @@
         margin-left: 500px;
         width:390px;
     }
+    .filaNombreFoto
+    {
+        display: flex;
+        margin-top:30px;
+        margin-left: 70px;
+        width:400px;
+        height:21px;
+    }
     .accionamientos
     {
         margin-top:100px;
@@ -180,7 +188,7 @@
         text-align: center; 
     }
 }
-@media all and (min-width: 481px) and (max-width: 768px) 
+@media all and (min-width: 800px) and (max-width: 1200px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -269,6 +277,66 @@
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
+        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+        #tabla
+        {
+            padding-top: 60px;
+            width: 100%;
+        }
+        .cuadro
+        {
+            margin-left: 5%;
+            margin-top:5%;
+            width:90%;
+            height: 1200px;
+            background-color: rgba(3, 3, 53,0.7);
+            border: solid;
+            border: 15px;
+            border-color:rgb(114, 112, 0);
+        }
+        .filaformulario
+        {
+            float: left;
+            text-align: right;
+            padding-top: 30px;
+            margin-left: 10px;
+            width:200px; 
+            font-size:120%;
+            color: white;
+        }
+        .filaNombre
+        {
+            display: flex;
+            margin-top:30px;
+            margin-left: 280px;
+            width: 400px;
+        }
+        .filaNombreFoto
+        {
+            display: flex;
+            margin-top:30px;
+            margin-left: 70px;
+            width:400px;
+            height:21px;
+        }
+        .accionamientos
+        {
+            margin-top:50px;
+        }
+        .boton
+        {
+            width:140px;
+            height: 30px;
+            margin-left: 20px;
+            background: rgba(0, 0, 19, 0.89);
+            color: yellow;
+        }
+        .fotoPerfil
+        {
+            margin-left: -80px;
+            width: 400px;
+            height: 400px;
+        }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -306,8 +374,9 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 300px) and (max-width: 480px)
-{   
+
+@media all and (min-width: 600px) and (max-width: 800px) 
+{
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #areaSesion{
@@ -323,7 +392,7 @@
     }
     #bienvenido{
         float: right;
-        font-size: small;
+        font-size: medium;
         background-color: transparent;
         text-align: right;
         color: white;
@@ -335,69 +404,130 @@
     #cerrarSesion{
         float: right;
         background-color: transparent;
-        text-align: center;
-        font-size: 50%;
-        margin-top: 3px;
-        color: white;
-        width: 120px;
-        height: 20px;
-        text-decoration: none;
-    }
-    #cabeceraPrincipal
-    {
-        width: 100%;
-        height: 182px;
-        background-color: rgba(0, 0, 19, 0.89);
-    }
-        #iconoAdorno{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 100px;
-            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
-            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
-        }
-        #iconoEmpresa{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 100px;
-        }
-        .VaciobotonesPrincipal{
-            float: left;
-            position: relative;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 10px;  
-            background-color: rgba(0, 0, 19, 0.89);
-        }
-    /*********** FIN CSS DE LA CABECERA ********/
-
-     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    .cajaPortadora{
-        position: relative;
-        float: left;
-        width: 100%;
-        height: 1300px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% 100%;   /*Ocupa el largo y ancho de toda la etiqueta*/
-        text-align: center;
-        text-shadow: 5px;
-        text-justify: kashida;
-    }
-    .seccionPrincipal{
-        width: 100%;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .filaCompra
-    {
         text-align: center;
         font-size: 60%;
+        margin-top: 3px;
+        color: white;
+        width: 120px;
+        height: 20px;
+        text-decoration: none;
+    }
+    #cabeceraPrincipal
+    {
+        width: 100%;
+        height: 188px;
+        background-color: rgba(0, 0, 19, 0.89);
+    }
+        #iconoAdorno{
+            float: left;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 100px;
+            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
+            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        }
+        .VaciobotonesPrincipal{
+            float: left;
+            position: relative;
+            width: 100%;   /*ICONO CUADRADO*/
+            height: 10px;  
+            background-color: rgba(0, 0, 19, 0.89);
+        }
+    /*********** FIN CSS DE LA CABECERA ********/
+
+     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    .cajaPortadora{
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 1300px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% 100%;   /*Ocupa el largo y ancho de toda la etiqueta*/
+        text-align: center;
+        text-shadow: 5px;
+        text-justify: kashida;
+    }
+    .seccionPrincipal{
+        margin-top: 20px;
+        width:100%;
+        border: 2px;
+        border-style: solid;
+        border-color:rgba(79, 80, 3, 0.87);
+        background-color: rgba(2, 1, 46, 0.425);
+    }
+    .filaCompra
+    {
+        text-align: center;
+        width: 50%;
+        font-size: small;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
+        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: -10px;
+        }
+        .cuadro
+        {
+            margin-left: 5%;
+            margin-top:5%;
+            width:90%;
+            height: 1200px;
+            background-color: rgba(3, 3, 53,0.7);
+            border: solid;
+            border: 15px;
+            border-color:rgb(114, 112, 0);
+        }
+        .filaformulario
+        {
+            float: left;
+            text-align: right;
+            padding-top: 30px;
+            margin-left: 5px;
+            width:200px; 
+            font-size:120%;
+            color: white;
+        }
+        .filaNombre
+        {
+            display: flex;
+            margin-top:30px;
+            margin-left: 250px;
+            width: 260px;
+        }
+        .filaNombre:nth-child(1)
+        {
+            margin-left: 160px;
+        }
+        .filaNombreFoto
+        {
+            display: flex;
+            margin-top:30px;
+            margin-left: 45px;
+            width: 270px;
+            height:21px;
+        }
+        .accionamientos
+        {
+            margin-top:50px;
+        }
+        .boton
+        {
+            width:140px;
+            height: 30px;
+            margin-left: 20px;
+            background: rgba(0, 0, 19, 0.89);
+            color: yellow;
+        }
+        .fotoPerfil
+        {
+            margin-left: -80px;
+            width: 400px;
+            height: 400px;
+        }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -435,9 +565,9 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 240px) and (max-width:299px)
+@media all and (min-width: 300px) and (max-width: 600px) 
 {
-      /** DISPOSITIVOS ORDENADOR **/
+     /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #areaSesion{
         float: left;
@@ -452,7 +582,7 @@
     }
     #bienvenido{
         float: right;
-        font-size: small;
+        font-size: medium;
         background-color: transparent;
         text-align: right;
         color: white;
@@ -464,9 +594,8 @@
     #cerrarSesion{
         float: right;
         background-color: transparent;
-        text-align: right;
-        margin-right: 20px;
-        font-size: 50%;
+        text-align: center;
+        font-size: 60%;
         margin-top: 3px;
         color: white;
         width: 120px;
@@ -476,7 +605,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 150px;
+        height: 200px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -485,148 +614,6 @@
             height: 100px;
             /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
             /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
-        }
-        #iconoEmpresa{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 100px;
-        }
-        .VaciobotonesPrincipal{
-            float: left;
-            position: relative;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 10px;  
-            background-color: rgba(0, 0, 19, 0.89);
-        }
-    /*********** FIN CSS DE LA CABECERA ********/
-
-     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    .cajaPortadora{
-        position: relative;
-        margin-top: -10px;
-        float: left;
-        width: 100%;
-        height: 1300px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% 100%;   /*Ocupa el largo y ancho de toda la etiqueta*/
-        text-align: center;
-        text-shadow: 5px;
-        text-justify: kashida;
-    }
-    .seccionPrincipal{
-        margin-top: 20px;
-        width:100%;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .filaCompra
-    {
-        text-align: center;
-        width: 50%;
-        font-size: 40%;
-        font-family:sans-serif;
-        color:rgb(255, 255, 255);
-    }
-    .celdaCompra
-    {
-        font-size: 45%;
-    }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
-     /**** CSS DEL PIE DE LA PAGINA ****/
-    /**** CREACION DEL PIE DE LA PAGINA ****/
-    #piePrincipal
-    {
-        position:relative;
-        float: left;
-        margin-top: -8px;
-        width:100%;
-        height: 160px;
-        background-color: rgba(0, 0, 0, 0.87);
-        color: white;
-    }
-    #zocalo
-    {
-        float: left;
-        width:100%;
-        height: 85px; 
-        background-color:  rgba(0, 0, 19, 0.89);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style:oblique;
-        font-size:small;
-        text-align: center;
-    }
-    .pie
-    {
-        width: 100%;
-        height: 32px;
-        background-color:  rgba(0, 0, 19, 0.89); 
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style:normal;
-        font-size:small;
-        text-align: center; 
-    }
-        /****** FIN CSS DEL PIE DE LA PAGINA ******/
-}
-@media all and (min-width: 100px) and (max-width:299px)
-{
-      /** DISPOSITIVOS ORDENADOR **/
-    /************ CSS DE LA CABECERA ********/
-    #areaSesion{
-        float: left;
-        margin-top: 0px;
-        width: 100%;
-        height: 50px;
-        background-color:  rgba(0, 0, 19, 0.89);
-        text-align: center;
-        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
-        text-align: right;
-        color: white;
-    }
-    #bienvenido{
-        float: right;
-        font-size: small;
-        background-color: transparent;
-        text-align: right;
-        color: white;
-        margin-top: 8px;
-        margin-right: 20px;
-        width: 100%;
-        height: 20px;
-    }
-    #cerrarSesion{
-        float: right;
-        background-color: transparent;
-        text-align: right;
-        margin-right: 20px;
-        font-size: 50%;
-        margin-top: 3px;
-        color: white;
-        width: 120px;
-        height: 20px;
-        text-decoration: none;
-    }
-    #cabeceraPrincipal
-    {
-        width: 100%;
-        height: 185px;
-        background-color: rgba(0, 0, 19, 0.89);
-    }
-        #iconoAdorno{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 100px;
-            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
-            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
-        }
-        #iconoEmpresa{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 100px;
         }
         .VaciobotonesPrincipal{
             float: left;
@@ -663,10 +650,74 @@
     {
         text-align: center;
         width: 50%;
-        font-size: 30%;
+        font-size: 74%;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
+        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: -10px;
+        }
+        .cuadro
+        {
+            margin-left: 5%;
+            margin-top:5%;
+            width:90%;
+            height: 1200px;
+            background-color: rgba(3, 3, 53,0.7);
+            border: solid;
+            border: 15px;
+            border-color:rgb(114, 112, 0);
+        }
+        .filaformulario
+        {
+            float: left;
+            text-align: left;
+            padding-top: 25px;
+            margin-left: 45px;
+            width:200px; 
+            font-size:80%;
+            color: white;
+        }
+        .filaNombre
+        {
+            display: flex;
+            margin-top:30px;
+            margin-left: 40px;
+            width: 210px;
+            font-size: 50%;
+        }
+        .filaNombreFoto
+        {
+            display: flex;
+            margin-top:30px;
+            margin-left: 40px;
+            width: 210px;
+            height:15px;
+            font-size: 50%;
+        }
+        .accionamientos
+        {
+            margin-top:50px;
+        }
+        .boton
+        {
+            width:140px;
+            height: 30px;
+            margin-left: 5%;
+            margin-top:10px;
+            background: rgba(0, 0, 19, 0.89);
+            color: yellow;
+            font-size: 70%;
+        }
+        .fotoPerfil
+        {
+            margin-left: -80px;
+            width: 400px;
+            height: 400px;
+        }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -689,7 +740,7 @@
         background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:oblique;
-        font-size: xx-small;
+        font-size:small;
         text-align: center;
     }
     .pie
@@ -699,7 +750,7 @@
         background-color:  rgba(0, 0, 19, 0.89); 
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:normal;
-        font-size: xx-small;
+        font-size:small;
         text-align: center; 
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/

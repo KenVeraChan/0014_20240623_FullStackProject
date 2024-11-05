@@ -76,17 +76,12 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
         </footer>
     </div>
     <script>
-        if(<?php echo $_SESSION["logeando"]?>==0)
+        if(<?php echo $_SESSION["logeando"];?>==0)
         {
             //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA
             letreroConfirmadaEntrada(1);
         }
-        if(<?php echo $_SESSION["semaforo"]?>==1)
-        {
-            //En el caso de que un JEFE quiera acceder al área de RRHH y lo tiene prohibido
-            letreroConfirmadaEntrada(2);
-        }
-        if(<?php echo $_SESSION["activadorPersonal"]?>==1)
+        if(<?php echo $_SESSION["activadorPersonal"];?>==3)
         {
             //En el caso de que el CLIENTE haya decidido eliminar su propia cuenta
             letreroConfirmadaEntrada(3);     
@@ -98,13 +93,9 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
             {
                 letrero.innerHTML="Lo siento. Ususario o contraseña del cliente INCORRECTOS"; 
             }
-            if(seleccion==2)
-            {
-                letrero.innerHTML="BIEN DISEÑADO TODO OKEY";   
-            }
             if(seleccion==3)
             {
-                letrero.innerHTML="USUARIO ELIMINADO CORRECTAMENTE DE LA BBDD";   
+                letrero.innerHTML="SU CUENTA PERSONAL HA SIDO ELIMINADA!";   
             }
             letrero.style.paddingTop="10px";
             letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
