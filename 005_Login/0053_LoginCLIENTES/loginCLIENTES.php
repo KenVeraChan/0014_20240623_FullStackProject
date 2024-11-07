@@ -43,9 +43,9 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
                     <tr><td class="izq" style="color: rgb(204, 0, 255);">PASSWORD: </td><td class="der"><input type="password" class="cajaForm" name="password" placeholder="Contraseña"></td></tr>
                     <tr><td class="izq"></td></tr>
                     <tr id="botoneslog">
-                        <td><input type="submit" class="logear" name="enviar" value="ENTRAR"></td>
+                        <td><input type="submit" class="logear" name="entrar" value="ENTRAR"></td>
                         <td><input type="submit" class="logear" name="registrar" value="REGISTRAR"></td>
-                        <td><a href="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php" name="enviar" class="returned"><strong>VOLVER</strong></a></td>
+                        <td><a href="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php" name="volver" class="returned"><strong>VOLVER</strong></a></td>
                     </tr>
                 </table>
             </form> 

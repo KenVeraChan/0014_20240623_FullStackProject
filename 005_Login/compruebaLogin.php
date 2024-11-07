@@ -120,37 +120,44 @@
         }
         if($_SESSION["loginCLIENTES"]==1)
         {
-            //PARA LA CONSULTA DE LA BUSQUEDA DEL INDIVIDUO COMO CLIENTE //
-            // CLIENTES //
-            //////////////
-            $baseClientes= ConexionPHP::getConexionCLIENTES();  //Conexion establecida desde la clase ConexionPHP
-            $BBDDClientes=ConexionPHP::getBD_TablaIDClientes(); //Solicita nombre BBDD de los CLIENTES
-            $sqlClientes="SELECT * FROM $BBDDClientes WHERE USUARIO= :login AND CONTRASENIA= :password"; //uso de marcadores
+            if(isset($_POST["entrar"]))
+            {
+                //PARA LA CONSULTA DE LA BUSQUEDA DEL INDIVIDUO COMO CLIENTE //
+                // CLIENTES //
+                //////////////
+                $baseClientes= ConexionPHP::getConexionCLIENTES();  //Conexion establecida desde la clase ConexionPHP
+                $BBDDClientes=ConexionPHP::getBD_TablaIDClientes(); //Solicita nombre BBDD de los CLIENTES
+                $sqlClientes="SELECT * FROM $BBDDClientes WHERE USUARIO= :login AND CONTRASENIA= :password"; //uso de marcadores
 
-            //COMPRUEBA SI EL REGISTRO ESTA EN LA BBDD//
-            $resultadoClientes=$baseClientes->prepare($sqlClientes);  
-            $loginClientes=htmlentities(addslashes($_POST["login"]));
-            $passwordClientes=htmlentities(addslashes($_POST["password"]));
-                    //htmlentities() lo que hace es: Convert all applicable characters to HTML entities
-                    //addslashes() lo que hace es: escapar de evitar entradas de teclado raras o bien inyecciones SQL
-            $resultadoClientes->bindValue(":login",$loginClientes);
-            $resultadoClientes->bindValue(":password",$passwordClientes);
-            $resultadoClientes->execute();
-            $numeroRegistroClientes=$resultadoClientes->rowCount();  //Si el usuario existe detectará una fila encontrada, sino dará cero filas
-            
-            $resultadoClientes->closeCursor();   //Se deja libre el cursor para la siguiente consulta en la BBDD
-            if($numeroRegistroClientes==0)   //No existe el usuario como cliente en la BBDD
-            {
-                $_SESSION["logeando"]=0;  //Datos mal metidos
-                $_SESSION["semaforo"]=0;  //Letrero de fallo
-                header("location: ../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+                //COMPRUEBA SI EL REGISTRO ESTA EN LA BBDD//
+                $resultadoClientes=$baseClientes->prepare($sqlClientes);  
+                $loginClientes=htmlentities(addslashes($_POST["login"]));
+                $passwordClientes=htmlentities(addslashes($_POST["password"]));
+                        //htmlentities() lo que hace es: Convert all applicable characters to HTML entities
+                        //addslashes() lo que hace es: escapar de evitar entradas de teclado raras o bien inyecciones SQL
+                $resultadoClientes->bindValue(":login",$loginClientes);
+                $resultadoClientes->bindValue(":password",$passwordClientes);
+                $resultadoClientes->execute();
+                $numeroRegistroClientes=$resultadoClientes->rowCount();  //Si el usuario existe detectará una fila encontrada, sino dará cero filas
+                
+                $resultadoClientes->closeCursor();   //Se deja libre el cursor para la siguiente consulta en la BBDD
+                if($numeroRegistroClientes==0)   //No existe el usuario como cliente en la BBDD
+                {
+                    $_SESSION["logeando"]=0;  //Datos mal metidos
+                    $_SESSION["semaforo"]=0;  //Letrero de fallo
+                    header("location: ../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+                }
+                if($numeroRegistroClientes>0)
+                {
+                    $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
+                    $_SESSION["logeando"]=1;  //Datos BIEN metidos
+                    $_SESSION["semaforo"]=1;  //No saca ningun letrero
+                    header("location: ../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
+                }
             }
-            if($numeroRegistroClientes>0)
+            if(isset($_POST["registrar"]))
             {
-                $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
-                $_SESSION["logeando"]=1;  //Datos BIEN metidos
-                $_SESSION["semaforo"]=1;  //No saca ningun letrero
-                header("location: ../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
+                header("location: ../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/registroCliente.php");
             }
         }
     }catch(Exception $e){
