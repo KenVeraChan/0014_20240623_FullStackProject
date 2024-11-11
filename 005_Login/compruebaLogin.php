@@ -149,10 +149,20 @@
                 }
                 if($numeroRegistroClientes>0)
                 {
-                    $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
-                    $_SESSION["logeando"]=1;  //Datos BIEN metidos
-                    $_SESSION["semaforo"]=1;  //No saca ningun letrero
-                    header("location: ../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
+                    if($_SESSION["detectadaEntrada"]==1)    //Si entra con el botón de realizar compra
+                    {
+                        $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
+                        $_SESSION["logeando"]=1;  //Datos BIEN metidos
+                        $_SESSION["semaforo"]=1;  //No saca ningun letrero
+                        header("location: ../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php");
+                    }
+                    else
+                    {
+                        $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
+                        $_SESSION["logeando"]=1;  //Datos BIEN metidos
+                        $_SESSION["semaforo"]=1;  //No saca ningun letrero
+                        header("location: ../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
+                    }
                 }
             }
             if(isset($_POST["registrar"]))

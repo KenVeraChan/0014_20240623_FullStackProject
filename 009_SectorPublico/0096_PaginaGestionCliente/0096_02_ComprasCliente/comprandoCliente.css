@@ -146,14 +146,6 @@
         background: rgba(0, 0, 19, 0.89);
         color: yellow;
     }
-    .boton:nth-child(3)
-    {
-        visibility: hidden;
-    }
-    .boton:nth-child(4)
-    {
-        visibility: hidden;
-    }
     .fotoPerfil
     {
         margin-left: -80px;

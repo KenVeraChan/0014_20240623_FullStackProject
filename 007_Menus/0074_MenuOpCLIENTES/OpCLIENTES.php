@@ -65,7 +65,7 @@
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/personalClientes.php'">AREA DE DATOS PERSONALES</button></td>
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">COMPRAS REALIZADAS</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php'">COMPRAS REALIZADAS</button></td>
                 </tr>    
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  

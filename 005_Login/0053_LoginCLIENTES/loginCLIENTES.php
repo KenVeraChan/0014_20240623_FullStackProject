@@ -91,25 +91,28 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
             var letrero= document.getElementsByClassName("letreroOK")[0];
             if(seleccion==1)
             {
-                letrero.innerHTML="Lo siento. Ususario o contraseña del cliente INCORRECTOS"; 
+                letrero.innerHTML="Lo siento. Usuario o contraseña del cliente INCORRECTOS"; 
             }
             if(seleccion==3)
             {
                 letrero.innerHTML="SU CUENTA PERSONAL HA SIDO ELIMINADA!";   
             }
-            letrero.style.paddingTop="10px";
-            letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
-            letrero.style.transitionDuration = "1s";
-            letrero.style.marginTop="0px";
-
-            document.addEventListener("mousemove",function(){
-            let temporizador=setTimeout(function(){
-                var letrero= document.getElementsByClassName("letreroOK")[0];
+            if(seleccion==1 || seleccion==3)
+            {
+                letrero.style.paddingTop="10px";
+                letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
                 letrero.style.transitionDuration = "1s";
-                letrero.style.marginTop="-50px";
-            },3500);
-            })
-            clearTimeout(temporizador);
+                letrero.style.marginTop="0px";
+
+                document.addEventListener("mousemove",function(){
+                let temporizador=setTimeout(function(){
+                    var letrero= document.getElementsByClassName("letreroOK")[0];
+                    letrero.style.transitionDuration = "1s";
+                    letrero.style.marginTop="-50px";
+                },3500);
+                })
+                clearTimeout(temporizador);
+            }
         }
     </script>
     <?php $_SESSION["logeando"]=1; //Para el BORRADO IMPERIOSO DEL BUFFER 

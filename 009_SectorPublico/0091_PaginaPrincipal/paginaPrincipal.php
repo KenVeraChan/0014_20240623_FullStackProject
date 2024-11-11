@@ -63,18 +63,19 @@
         <div class="VaciobotonesPrincipal"></div>
     </header>  
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0091_PaginaPrincipal/images/DIGITALIZACION.jpg); background-size: 100% 100%;">
-    <table id="seccionSlider">
-      <form action="consultasSlider.php" method="GET">
-        <tr id="bandaSlider">
-            <td class="bandasPasaSlider"><input type="submit" class="pasaIzquierda" name="pasaIzquierda" value=""></td>
-            <?php
-                $i=$_SESSION["PUNTERO"]; 
-            ?>  <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en consultasSlider -->
-            <td class="imagenCargada" style="background-image: url('../../009_SectorPublico/0091_PaginaPrincipal/sliderImages/<?php echo $_SESSION["NOMBRESLIDER"][$i];?>');"></td>
-            <td class="bandasPasaSlider"><input type="submit" class="pasaDerecha" name="pasaDerecha" value=""></td>
-        </tr>
-        </form>
-    </table>
+    <div id="slideContainer">
+            <button id="prev" class="sliderBtn">&lt;</button>
+            <button id="next" class="sliderBtn">&gt;</button>
+                <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en consultasSlider -->
+            <div class="slide show">
+                <img src="./sliderImages/<?php echo $_SESSION["NOMBRESLIDER"][0];?>" width="99.5%">
+            </div>    
+            <?php for($i=1;$i<count($_SESSION["NOMBRESLIDER"]);$i++){ ?>
+                <div class="slide">
+                    <img src="./sliderImages/<?php echo $_SESSION["NOMBRESLIDER"][$i];?>" width="99.5%">
+                </div>            
+            <?php } ?>
+    </div>
     <?php for($j=0;$j<4;$j++){ ?>     
         <table class="seccionPrincipal">   <!-- PRIMERA BANDA DE NOVEDADES EN PAGINA WEB -->
             <?php for($i=1;$i<5;$i++){ ?>
@@ -140,6 +141,7 @@
             clearTimeout(temporizador);
         }
     </script>
+    <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsSlider.js"></script>
     <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER?>
 </body>
 </html>

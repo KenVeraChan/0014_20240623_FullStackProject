@@ -93,31 +93,58 @@
         }
     /*********** FIN CSS DE LA CABECERA ********/
     /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-        width:100%;
-        height: 200px;
-    }
-    .bandasPasaSlider{
-        width: 60px;
-    }
-    .imagenCargada 
-    {
-        background-color: transparent;
-        max-width: fit-content;
-        background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 300px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 300px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-    }
+    .sliderBtn {
+        margin-top: -10px;
+        width: 50px;
+        height: 70px;
+        position: relative;
+        background-color: rgba(5, 12, 50, 0.5);
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 1rem;
+        top: calc(100% - 1rem - 27px);
+        z-index: 999;
+        font-family: Nunito;
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
+        outline: none;
+      }
+      .sliderBtn:hover {
+        background-color: rgb(5, 13, 50);
+      }
+      #slideContainer {
+        width: 100%;
+        height: 350px;
+        left: 50%;
+        top: 50%;
+      }
+      #prev {
+        position: absolute;
+        margin-top: -1950px;
+        left: 0;
+      }
+      #next {
+        position: absolute;
+        margin-top: -1950px;
+        right: 0;
+      }
+      .slide {
+        display: none;
+      }
+      .show {
+        display: block;
+        animation: fadein 1s ease-in-out 0s 1 normal forwards;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
@@ -130,37 +157,84 @@
         text-justify: kashida;
         padding-top: 5px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -15px;
-        width: 100%;
-        height: 100%;
+    @media all and (min-width:769px) and (max-width:1000px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:-100px;
+        }
+        #prev {
+            position: absolute;
+            margin-top: -2000px;
+            left: 0;
+          }
+          #next {
+            position: absolute;
+            margin-top: -2000px;
+            right: 0;
+          }
     }
-    .separacion{
-        height: 12px;
-        z-index: 1;
+    @media all and (min-width:1000px) and (max-width:1200px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:-70px;
+        }
     }
-    .tablaContenidos{
-         margin-top: 60px; 
-         width:80%; 
-         margin-left: 10%;
+    @media all and (min-width:1200px) and (max-width:1400px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:-10px;
+        }
     }
-    .botones{
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:60%;
+    @media all and (min-width:1400px) and (max-width:1500px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:10px;
+        }
     }
-    #seccionSlider{
-        margin-top: 10px;
-        padding-left: 0px;
-        width:100%;
-        height: 300px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
+    @media all and (min-width:1500px) and (max-width:1600px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top: 50px;
+        }
     }
+    @media all and (min-width:1600px) and (max-width:1900px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top: 100px;
+        }
+    }
+    @media all and (min-width:1900px) and (max-width:2100px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top: 150px;
+        }
+    }
+    @media all and (min-width:2100px) and (max-width:2500px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top: 250px;
+        }
+    }
+    @media all and (min-width:2500px) and (max-width:2600px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top: 300px;
+        }
+        .consulta
+        {
+            height: 2500px;
+        }
+    }
+
     .seccionPrincipal{
         margin-top: 20px;
         padding-left: 13%;
@@ -349,34 +423,91 @@
 
      /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-    width:100%;
-    height: 200px;
-    }
-    .bandasPasaSlider{
-        width: 60px;
-    }
-    .imagenCargada 
-    {
-    background-color: transparent;
-    max-width: fit-content;
-    background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 180px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-        background-size: 100% 100%;
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 180px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-        background-size: 100% 100%;
-    }
+    .sliderBtn {
+        margin-top: -10px;
+        width: 50px;
+        height: 70px;
+        position: relative;
+        background-color: rgba(5, 12, 50, 0.5);
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 1rem;
+        top: calc(100% - 1rem - 27px);
+        z-index: 999;
+        font-family: Nunito;
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
+        outline: none;
+      }
+      .sliderBtn:hover {
+        background-color: rgb(5, 8, 50);
+      }
+      #slideContainer {
+        width: 100%;
+        height: 400px;
+        left: 50%;
+        top: 50%;
+      }
+      #prev {
+        position: absolute;
+        margin-top: -2000px;
+        left: 0;
+      }
+      #next {
+        position: absolute;
+        margin-top: -2000px;
+        right: 0;
+      }
+      .slide {
+        display: none;
+      }
+      .show {
+        display: block;
+        animation: fadein 1s ease-in-out 0s 1 normal forwards;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
+    @media all and (min-width:481px) and (max-width:500px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:-250px;
+        }
+        #prev {
+            margin-top: -2030px;
+          }
+          #next {
+            margin-top: -2030px;
+          }
+    }
+    @media all and (min-width:500px) and (max-width:650px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:-250px;
+        }
+        #prev {
+            margin-top: -2030px;
+          }
+          #next {
+            margin-top: -2030px;
+          }
+    }
+    @media all and (min-width:650px) and (max-width:769px)
+    {
+        .seccionPrincipal:nth-child(2)
+        {
+            margin-top:-200px;
+        }
+    }
     .consulta{
         position: relative;
         width: 100%;
@@ -386,32 +517,6 @@
         text-shadow: 5px;
         text-justify: kashida;
         padding-top: 5px;
-    }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .botones
-    {
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:160px;
-    }
-    #seccionSlider{
-        margin-top: 10px;
-        width:100%;
-        height: 180px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
     }
     .seccionPrincipal{
         margin-top: 20px;
@@ -511,7 +616,7 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 300px) and (max-width: 481px)
+@media all and (min-width: 100px) and (max-width: 481px)
 {   
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -553,6 +658,15 @@
         width: 100%;
         height: 320px;
         background-color: rgba(0, 0, 19, 0.89);
+    }
+    @media all and (min-width: 100px) and (max-width: 300px)
+    {   
+        #cabeceraPrincipal
+        {
+            width: 300px;
+            height: 320px;
+            background-color: rgba(0, 0, 19, 0.89);
+        }
     }
         #iconoAdorno{
             float: left;
@@ -606,36 +720,71 @@
         }
     /*********** FIN CSS DE LA CABECERA ********/
 
-     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
+    /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
     /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-    width:100%;
-    height: 100px;
-    }
-    .bandasPasaSlider{
-        width: 30px;
-        height: 100px;
-    }
-    .imagenCargada 
-    {
-    background-color: transparent;
-    max-width: fit-content;
-    background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 100px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-        background-size: 120% 100%;
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 100px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-        background-size: 120% 100%;
-    }
+    .sliderBtn {
+        width: 50px;
+        height: 70px;
+        position: relative;
+        background-color: rgba(5, 12, 50, 0.15);
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 1rem;
+        top: calc(100% - 1rem - 27px);
+        z-index: 999;
+        font-family: Nunito;
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
+        outline: none;
+      }
+      .sliderBtn:hover {
+        background-color: rgba(5, 8, 50,0.15);
+      }
+      #slideContainer {
+        width: 100%;
+        height: 130px;
+        left: 50%;
+        top: 50%;
+      }
+      #prev {
+        position: relative;
+        margin-top: -2500px;
+        left: 0;
+      }
+      #next {
+        position: relative;
+        margin-top: -2500px;
+        right: 0;
+      }
+      .slide {
+        display: none;
+      }
+      .show {
+        display: block;
+        animation: fadein 1s ease-in-out 0s 1 normal forwards;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @media all and (min-width:350px) and (max-width:481px)
+      {
+          .seccionPrincipal:nth-child(2)
+          {
+              margin-top:50px;
+          }
+          #prev {
+              margin-top: -2430px;
+            }
+          #next {
+              margin-top: -2430px;
+            }
+      }
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
@@ -646,31 +795,17 @@
         text-justify: kashida;
         padding-top: 3px;
     }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .botones
-    {
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:100px;
-    }
-    #seccionSlider{
-        margin-top: 40px;
-        width:100%;
-        height: 120px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
+    @media all and (min-width: 100px) and (max-width: 300px)
+    {  
+        .consulta{
+            width: 300px;
+            height: 2100px;
+            background-color: rgba(0, 0, 19, 0.89);
+            text-align: center;
+            text-shadow: 5px;
+            text-justify: kashida;
+            padding-top: 3px;
+        }
     }
     .seccionPrincipal{
         margin-top: 20px;
@@ -734,8 +869,11 @@
         width: 100%;
         height: 50%;
     }
+    .parrafo
+    {
+        font-size: 30%;
+    }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
@@ -768,267 +906,38 @@
         font-size:small;
         text-align: center; 
     }
-        /****** FIN CSS DEL PIE DE LA PAGINA ******/
-}
-@media all and (min-width: 100px) and (max-width:299px)
-{
-          /** DISPOSITIVOS ORDENADOR **/
-    /************ CSS DE LA CABECERA ********/
-    #areaSesion{
-        float: left;
-        margin-top: 0px;
-        width: 100%;
-        height: 50px;
-        background-color:  rgba(0, 0, 19, 0.89);
-        text-align: center;
-        box-shadow: rgb(150,150,150) inset 2px 2px 10px 5px;
-        text-align: right;
-        color: white;
-    }
-    #bienvenido{
-        float: right;
-        font-size: medium;
-        background-color: transparent;
-        text-align: right;
-        color: white;
-        margin-top: 8px;
-        margin-right: 20px;
-        width: 100%;
-        height: 20px;
-    }
-    #cerrarSesion{
-        float: right;
-        background-color: transparent;
-        text-align: center;
-        font-size: 60%;
-        margin-top: 3px;
-        color: white;
-        width: 120px;
-        height: 20px;
-        text-decoration: none;
-    }
-    #cabeceraPrincipal
-    {
-        width: 100%;
-        height: 145px;
-        background-color: rgba(0, 0, 19, 0.89);
-    }
-        #iconoAdorno{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 140px;
-            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
-            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
+        @media all and (min-width: 100px) and (max-width: 300px)
+        { 
+            #piePrincipal
+            {
+                position:relative;
+                margin-top: -35px;
+                width:300px;
+                height: 160px;
+                background-color: rgba(0, 0, 0, 0.87);
+                color: yellow;
+            }
+            #zocalo
+            {
+                float: left;
+                width:300px;
+                height: 90px; 
+                background-color:  rgba(0, 0, 19, 0.89);
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-style:oblique;
+                font-size:small;
+                text-align: center;
+            }
+            .pie
+            {
+                width: 300px;
+                height: 32px;
+                background-color:  rgba(0, 0, 19, 0.89); 
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-style:normal;
+                font-size:small;
+                text-align: center; 
+            }
         }
-        #iconoEmpresa{
-            float: left;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 80px;   
-        }
-        .VaciobotonesPrincipal{
-            float: left;
-            position: relative;
-            width: 100%;   /*ICONO CUADRADO*/
-            height: 13px;  
-            background-color: rgba(0, 0, 39, 0.89);
-        }
-        .areaPrivada{
-            float:right;
-            margin-right: 15%; 
-            margin-top: -100px;
-        }
-        .areaPrivada:nth-child(2){ 
-            float:right;
-            margin-right: 60%; 
-            margin-top: -100px; 
-        }
-        .bloque_opciones{
-            position: relative;
-            padding-top: 10px;
-            padding-bottom: 5px;
-            float: left;
-            width: 100%;
-            height: 15px;
-            background-color:  rgba(0, 0, 19, 0.89);
-            text-align: center;
-            font-size: x-small;
-        }
-        #cajaBotonera
-        {
-            width: 50%;
-            height: 100px;
-        }
-        #tabla{
-            float: left;
-            width:100%;
-        }
-    /*********** FIN CSS DE LA CABECERA ********/
-
-     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL SLIDER DE IMAGENES  *****/
-    #bandaSlider{
-        width:100%;
-        height: 50px;
-    }
-    .bandasPasaSlider{
-        width: 20px;
-    }
-    .imagenCargada 
-    {
-    background-color: transparent;
-    max-width: fit-content;
-    background-size: 100% 100%;
-    }
-    .pasaIzquierda{
-        width:100%;
-        height: 90px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-IzquierdaSlider.png");
-        background-size: 120% 100%;
-    }
-    .pasaDerecha{
-        width:100%;
-        height: 90px;
-        background-color: transparent;
-        background-image: url("../0091_PaginaPrincipal/sliderImages/Sfer4D-Flecha-DerechaSlider.png");
-        background-size: 120% 100%;
-    }
-    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    .consulta{
-        width: 100%;
-        height: 2100px;
-        background-color: rgba(0, 0, 19, 0.89);
-        text-align: center;
-        text-shadow: 5px;
-        text-justify: kashida;
-        padding-top: 110px;
-    }
-    #imagenPortada{
-        position: relative;
-        margin-top: -37px;
-        width: 100%;
-        height: 100%;
-    }
-    .separacion{
-        height: 12px;
-        z-index: 1;
-    }
-    .botones
-    {
-        width:150px; 
-        height:25px; 
-        margin-top:30px; 
-        margin-left:20px;
-    }
-    #seccionSlider{
-        position:absolute;
-        margin-top: 150px;
-        width:100%;
-        height: 90px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .seccionPrincipal{
-        position: relative;
-        margin-top: 60px;
-        padding-left: 8%;
-        width:100%;
-        height: 265px;
-        border: 2px;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgba(2, 1, 46, 0.425);
-    }
-    .seccionPrincipal:nth-child(2){
-        margin-top: 280px;
-    }
-    .noticia{
-        float: left;
-        margin-top: 3px;
-        margin-left: 2%;
-        width:20%;
-        height: 245px;
-        border: 2px;
-        text-align: center;
-        color: rgb(165, 165, 19);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        border-style: solid;
-        border-color:rgba(79, 80, 3, 0.87);
-        background-color: rgb(2, 2, 27);
-    }
-    .noticia:nth-child(1){
-        margin-left: 0%;
-    }
-    .fila:nth-child(1){
-        position: relative;
-        width: 100%;
-        height: 50px;
-    }
-    .imgBloques{
-        margin-top: 130px;  /*SE PONE EN EL CENTRO LA IMAGEN Y LUEGO CON JAVASCRIPT SUBE PARA MOSRAR CONTENIDO*/
-        width:50%;
-    }
-    .fila:nth-child(2){
-        position: relative;
-        width: 100%;
-        height: 20px; 
-        text-align: center;
-        font-size: 15%;  
-    }
-    .fila:nth-child(3){
-        position: relative;
-        padding-top: 12px;
-        width: 100%;
-        height: 70px;  
-        font-size: 2%;
-    }
-    .textoBloque{
-        margin-left: 2%;
-        position: relative;
-        float: left;
-        height: 20%;
-        width:100%;
-    }
-    .tablaInterna{
-        float: left;
-        width: 100%;
-        height: 50%;
-    }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
-    /**** CSS DEL PIE DE LA PAGINA ****/
-    /**** CREACION DEL PIE DE LA PAGINA ****/
-    #piePrincipal
-    {
-        position:relative;
-        margin-top: -35px;
-        width:100%;
-        height: 160px;
-        background-color: rgba(0, 0, 0, 0.87);
-        color: yellow;
-    }
-    #zocalo
-    {
-        float: left;
-        width:100%;
-        height: 90px; 
-        background-color:  rgba(0, 0, 19, 0.89);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style:oblique;
-        font-size:xx-small;
-        text-align: center;
-    }
-    .pie
-    {
-        width: 100%;
-        height: 32px;
-        background-color:  rgba(0, 0, 19, 0.89); 
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style:normal;
-        font-size:xx-small;
-        text-align: center; 
-    }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }

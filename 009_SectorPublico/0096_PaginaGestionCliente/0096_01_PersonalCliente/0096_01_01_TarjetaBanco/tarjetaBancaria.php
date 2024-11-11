@@ -40,16 +40,16 @@ if(!isset($_SESSION["usuario"]))
 				<div class="datos">
 					<div class="grupo" id="numero">
 						<p class="label">Número Tarjeta</p>
-						<p class="numero">#### #### #### ####</p>
+						<p class="numero"><?php if(isset($_SESSION["NUMERODB"])){echo $_SESSION["NUMERODB"];}else{echo "#### #### #### ####";}?></p>
 					</div>
 					<div class="flexbox">
 						<div class="grupo" id="nombre">
 							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">RWR</p>
+							<p class="nombre"><?php if(isset($_SESSION["NOMBREDB"])){echo $_SESSION["NOMBREDB"];}else{echo "RWR";}?></p>
 						</div>
 						<div class="grupo" id="expiracion">
 							<p class="label">Expiracion</p>
-							<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+							<p class="expiracion"><span class="mes"><?php if(isset($_SESSION["MESDB"])){echo $_SESSION["MESDB"];}else{echo "MM";}?></span> / <span class="year"><?php if(isset($_SESSION["ANIODB"])){echo$_SESSION["ANIODB"];}else{echo "AA";}?></span></p>
 						</div>
 					</div>
 				</div>
@@ -59,11 +59,11 @@ if(!isset($_SESSION["usuario"]))
 				<div class="datos">
 					<div class="grupo" id="firma">
 						<p class="label">Firma</p>
-						<div class="firma"><p></p></div>
+						<div class="firma"><p><?php if(isset($_SESSION["NOMBREDB"])){echo $_SESSION["NOMBREDB"];}else{echo "RWR";}?></p></div>
 					</div>
 					<div class="grupo" id="ccv">
 						<p class="label">CCV</p>
-						<p class="ccv"></p>
+						<p class="ccv"><?php if(isset($_SESSION["CCVDB"])){echo $_SESSION["CCVDB"];}else{echo "";}?></p>
 					</div>
 				</div>
 				<p class="leyenda">Tarjeta socio para compras, servicios y proyectos. Corporación comprometida con el medio ambiente y el bienestar social del planeta, construyendo un equilibrio tecnológico favorable</p>

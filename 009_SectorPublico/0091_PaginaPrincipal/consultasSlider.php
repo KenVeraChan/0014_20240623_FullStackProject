@@ -27,34 +27,6 @@
             }
         }
     }
-    if(isset($_GET["pasaIzquierda"]))
-    {
-        session_start();
-        if($_SESSION["PUNTERO"]<1)
-        {
-            $_SESSION["PUNTERO"]=count($_SESSION["NOMBRESLIDER"])-1;
-            header("location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
-        }
-        else{
-            $_SESSION["PUNTERO"]--;
-            header("location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
-        }
-    }
-    if(isset($_GET["pasaDerecha"]))
-    {
-        session_start();
-        if($_SESSION["PUNTERO"]>count($_SESSION["NOMBRESLIDER"])-2)
-        {
-            $_SESSION["PUNTERO"]=0;
-            header("location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
-        }
-        else
-        {
-            $_SESSION["PUNTERO"]++;
-            header("location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
-        }
-    }
-
     function extraccionNovedad($eleccion)
     {
         switch($eleccion)

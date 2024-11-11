@@ -3,7 +3,6 @@
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
                     //También permite rescatar la información almancenada en la variable superglobal $_SESSION
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,13 +39,13 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
     </header>
                     
         <?php if(date("G")>=7 && date("G")<13){  //POR LA MAÑANA: CARGA FOTO DE POR LA MAÑANA?>
-        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/images/CLIENTESDIA.png')">
+        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/images/REGISTRODIA.png')">
         <?php } ?>
         <?php if(date("G")>=13 && date("G")<21){  //POR LA TARDE: CARGA FOTO DE POR LA TARDE?>
-        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/images/CLIENTESTARDE.png')">
+        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/images/REGISTROTARDE.png')">
         <?php } ?>
         <?php if(date("G")>=21 || date("G")<7){  //POR LA NOCHE: CARGA FOTO DE POR LA NOCHE?>
-        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/images/CLIENTESNOCHE.png')">
+        <div class="cajaPortadora" style="background-image: url('../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/images/REGISTRONOCHE.png')">
         <?php } ?>
             <form action="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_03_RegistroCliente/consultasRegistroCliente.php" method="POST" enctype="multipart/form-data">
                 <div class="cuadro">
@@ -55,6 +54,18 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
                             <td>
                                 <label class="filaformulario">NOMBRE:</label>
                                 <input type="text" class="filaNombre" name="nombre">
+                            </td>
+                        </tr>
+                        <tr class="cajaBotonera">
+                            <td>
+                                <label class="filaformulario">CONTRASENIA:</label>
+                                <input type="password" minlength="9" maxlength="30" class="filaNombre" name="contrasenia">  <!-- Solo se pueden añadir 9 digitos comprendidos entre 0 y 9 -->
+                            </td>
+                        </tr>
+                        <tr class="cajaBotonera">
+                            <td>
+                                <label class="filaformulario">CONFIRMAR CONTRASENIA:</label>
+                                <input type="password" minlength="9" maxlength="30" class="filaNombre" name="contraseniaagain">  <!-- Solo se pueden añadir 9 digitos comprendidos entre 0 y 9 -->
                             </td>
                         </tr>
                         <tr class="cajaBotonera">
@@ -87,16 +98,10 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
                                 <label class="filaformulario">CORREO:</label>
                                 <input type="email" class="filaNombre" name="correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">  <!--Con el pattern obliga a que sea un correo legible -->
                             </td>
-                        </tr> 
-                        <tr class="cajaBotonera">
-                            <td>
-                                <label class="filaformulario">NÚMERO DE COMPRAS:</label>
-                                <input type="number" min="0" max="100" class="filaNombre" name="numCompras">
-                            </td>
                         </tr>             
                     </table>
                     <div class="accionamientos">
-                            <input type="submit" class="boton" name="eliminar" value="DARSE DE ALTA">
+                            <input type="submit" class="boton" name="registrar" value="DARSE DE ALTA">
                             <input type="submit" class="boton" name="volver" value="VOLVER">
                     </div>       
                 </div>

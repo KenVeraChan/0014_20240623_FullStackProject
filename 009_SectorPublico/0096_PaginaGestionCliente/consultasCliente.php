@@ -119,6 +119,14 @@ $numeroCompras=$consCarrito->rowCount();
 // Y SE ORDENDARÁN EN UNA TABLA JUNTANDO COMPRAS QUE TENGAN ID IGUALES PARA SIMPLFICAR LA PARTE DE LA FACTURA
 if(isset($_GET["realizarCompra"]))
 {
-    header("location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+    if(isset($_SESSION["usuario"]))
+    {
+        header("location:../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php");
+    }
+    else
+    {
+        $_SESSION["detectadaEntrada"]=1;   //El usuario se va a registrar para hacer la compra
+        header("location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php"); 
+    }
 }
 ?>

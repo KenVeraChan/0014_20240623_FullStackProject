@@ -11,7 +11,6 @@ function cargarPagina()
     for(let i=0;i<elemento1.length;i++)
     {
         //BOTONES de opciones
-        elemento1[i].style.visibility="visible";
         elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
         elemento1[i].addEventListener('mouseenter',function(){
             elemento1[i].style.transitionDuration = "0.5s";
@@ -60,6 +59,7 @@ function cargarPagina()
 //LETRERO DE OKEY
 function letreroConfirmado(tipoLetrero)
 {
+    var elemento1= document.getElementsByClassName("boton");
     var letrero= document.getElementsByClassName("letreroOK")[0];
     if(tipoLetrero==0)
         {
@@ -88,6 +88,8 @@ function letreroConfirmado(tipoLetrero)
             //LETRERO DE DATOS CARGADOS CORRECTAMENTE
             letrero.innerHTML="DATOS CARGADOS CORRECTAMENTE!";
             letrero.style.color="rgb(45,255,21)";
+            elemento1[2].style.visibility="visible";
+            elemento1[3].style.visibility="visible";
         }
     if(tipoLetrero==5)
         {
