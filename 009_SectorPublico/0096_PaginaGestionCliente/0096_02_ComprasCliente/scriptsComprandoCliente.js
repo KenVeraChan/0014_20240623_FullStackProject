@@ -3,7 +3,6 @@
 /******************************************************************/
 
 var elemento1= document.getElementsByClassName("boton");
-var elemento2= document.getElementsByClassName("filaVenta");
 var elemento4= document.getElementsByClassName("areaPrivada");
 
 function cargarPagina()
@@ -24,22 +23,6 @@ function cargarPagina()
             elemento1[i].style.color="yellow";
         })   
     } 
-    for(let i=0;i<elemento2.length;i++)
-    {
-        //FILAS DE LAS VENTAS SELECCIONADAS
-        elemento2[i].style.visibility="visible";
-        elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
-        elemento2[i].addEventListener('mouseenter',function(){
-            elemento2[i].style.transitionDuration = "0.5s";
-            elemento2[i].style.background= "yellow";
-            elemento2[i].style.color="rgb(13,9,77)";
-                })
-        elemento2[i].addEventListener('mouseleave',function(){
-            elemento2[i].style.transitionDuration = "0.5s";
-            elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
-            elemento2[i].style.color="yellow";
-                })   
-    }
     for(let i=0;i<elemento4.length;i++)
     {
         //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
@@ -98,5 +81,17 @@ function letreroConfirmado(tipoLetrero)
         },3500);
         })
         clearTimeout(temporizador);
+    }
+}
+function cargaModelo(desplegables_totales)
+{
+    const numeros=desplegables_totales;
+    for(var i=0;i<numeros;i++)
+    {
+        const menu = document.getElementsByClassName("elegirMenu")[i];
+        const boton = document.getElementsByClassName("menuBoton")[i];
+        boton.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        });
     }
 }

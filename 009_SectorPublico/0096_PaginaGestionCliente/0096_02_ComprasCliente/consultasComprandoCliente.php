@@ -3,9 +3,9 @@
 session_start();
 require "../../../005_Login/conexionPHP.php";
 $conexionClientes=ConexionPHP::getConexionCLIENTES();
-$BD_tabla=ConexionPHP::getBD_TablaIDClientes();
+$BD_tabla=ConexionPHP::getBD_TablaClientes();
 
-if(isset($_POST["registrar"]))
+if(isset($_POST["cargar"]))
 {
     $registroNombre=$_POST["nombre"];
     $registroContrasenia=$_POST["contrasenia"];

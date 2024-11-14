@@ -10,7 +10,7 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area de Compras Realizadas Cliente</title>
     <link rel="stylesheet" href="comprandoCliente.css">
-    <script src="scriptComprandoCliente.js"></script>
+    <script src="scriptsComprandoCliente.js"></script>
 </head>
 <body onload="cargarPagina()">
         <div class="letreroOK" style=
@@ -56,58 +56,87 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
             <form action="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/consultasComprandoCliente.php" method="POST" enctype="multipart/form-data">
                 <div class="cuadro">
                     <table id="tabla">
-                        <tr class="cajaBotonera">
+                        <tr class="cajaBotonera">  <!-- ZONA DE DATOS PERSONALES PARA MOSTRAR COMPRAS REALIZADAS -->
                             <td>
-                                <label class="filaformulario">NOMBRE:</label>
-                                <input type="text" class="filaNombre" name="nombre">
+                                <label class="filaformulario">NOMBRE</label>
                             </td>
-                        </tr>
-                        <tr class="cajaBotonera">
                             <td>
-                                <label class="filaformulario">CONTRASENIA:</label>
-                                <input type="password" minlength="9" maxlength="30" class="filaNombre" name="contrasenia">  <!-- Solo se pueden añadir 9 digitos comprendidos entre 0 y 9 -->
+                                <label class="filaformulario">CUENTA</label>
                             </td>
-                        </tr>
-                        <tr class="cajaBotonera">
                             <td>
-                                <label class="filaformulario">CONFIRMAR CONTRASENIA:</label>
-                                <input type="password" minlength="9" maxlength="30" class="filaNombre" name="contraseniaagain">  <!-- Solo se pueden añadir 9 digitos comprendidos entre 0 y 9 -->
+                                <label class="filaformulario">TELEFONO</label>
                             </td>
-                        </tr>
-                        <tr class="cajaBotonera">
                             <td>
-                                <label class="filaformulario">TELÉFONO:</label>
-                                <input type="tel" minlength="9" maxlength="9" class="filaNombre" name="telefono">  <!-- Solo se pueden añadir 9 digitos comprendidos entre 0 y 9 -->
+                                <label class="filaformulario">DIRECCION</label>
                             </td>
-                        </tr>
-                        <tr class="cajaBotonera">
                             <td>
-                                <label class="filaformulario">DIRECCIÓN:</label>
-                                <input type="text" class="filaNombre" name="direccion">
+                                <label class="filaformulario">CORREO</label>
                             </td>
-                        </tr>
-                        <tr class="cajaBotonera">
+                        </tr>  
+                        <tr class="cajaBotonera">  <!-- ZONA DE DATOS PERSONALES PARA MOSTRAR COMPRAS REALIZADAS -->
                             <td>
-                                <label class="filaformulario">ENTIDAD:</label>
-                                <select type="text" class="filaNombre" name="entidad">
-                                    <option></option>
-                                    <option>PARTICULAR</option>
-                                    <option>EMPRESA</option>
-                                    <option>ASOCIADO</option>
-                                    <option>CASUAL</option>
-                                    <option>AUTÓNOMO</option>
-                                </select>
+                                <label class="filaformulario">-------</label>
                             </td>
-                        </tr>
-                        <tr class="cajaBotonera">
                             <td>
-                                <label class="filaformulario">CORREO:</label>
-                                <input type="email" class="filaNombre" name="correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">  <!--Con el pattern obliga a que sea un correo legible -->
+                                <label class="filaformulario">-------</label>
                             </td>
-                        </tr>             
+                            <td>
+                                <label class="filaformulario">-------</label>
+                            </td>
+                            <td>
+                                <label class="filaformulario">-------</label>
+                            </td>
+                            <td>
+                                <label class="filaformulario">-------</label>
+                            </td>
+                        </tr>  
                     </table>
+                    <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
+                        <div class="menuBoton">
+                            <span class="textoBoton">COMPRA 1</span>
+                        </div>
+                        <ul class="options">
+                            <span class="opcionesTexto">
+                                <table>
+                                    <tr>
+                                        <td>CONCEPTO DE LA COMPRA</td>
+                                        <td>DEPARTAMENTO DE COMPRAS</td>
+                                        <td>CANTIDAD ADQUIRIDA</td>
+                                        <td>COSTE UNITARIO</td>
+                                        <td>COSTE TOTAL</td>
+                                        <td>FECHA DEL PEDIDO</td>
+                                        <td>ESTADO DE ENTREGA</td>
+                                    </tr>
+                                </table>
+                            </span>
+                        </ul>
+                    </div>
+                    <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
+                        <div class="menuBoton">
+                            <span class="textoBoton">COMPRA 2</span>
+                        </div>
+                        <ul class="options">
+                            <span class="opcionesTexto">
+                                <table>
+                                    <tr>
+                                        <td>CONCEPTO DE LA COMPRA</td>
+                                        <td>DEPARTAMENTO DE COMPRAS</td>
+                                        <td>CANTIDAD ADQUIRIDA</td>
+                                        <td>COSTE UNITARIO</td>
+                                        <td>COSTE TOTAL</td>
+                                        <td>FECHA DEL PEDIDO</td>
+                                        <td>ESTADO DE ENTREGA</td>
+                                    </tr>
+                                </table>
+                            </span>
+                        </ul>
+                    </div>
+                    <script>cargaModelo(2);</script>
+
+
+
                     <div class="accionamientos">
-                            <input type="submit" class="boton" name="registrar" value="DARSE DE ALTA">
+                            <input type="submit" class="boton" name="cargar" value="CARGAR COMPRAS">
                             <input type="submit" class="boton" name="volver" value="VOLVER">
                     </div>       
                 </div>
