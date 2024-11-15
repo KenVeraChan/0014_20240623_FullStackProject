@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2024 a las 23:57:58
+-- Tiempo de generación: 15-11-2024 a las 12:54:38
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -62,17 +62,28 @@ INSERT INTO `clientescarrito` (`ID`, `NOMBRE`, `DEPARTAMENTO`, `CANTIDAD`, `COST
 --
 
 CREATE TABLE `clientespedidos` (
-  `ID` int(3) DEFAULT NULL,
+  `ID` int(3) NOT NULL,
   `NOMBRE` varchar(30) DEFAULT NULL,
-  `APELLIDOS` varchar(30) DEFAULT NULL,
-  `PRODUCTO` varchar(40) DEFAULT NULL,
-  `CANTIDAD` int(6) DEFAULT NULL,
-  `COSTE_UNITARIO` float UNSIGNED DEFAULT NULL,
-  `COSTE_TOTAL` float UNSIGNED DEFAULT NULL,
+  `NUMERO` varchar(19) DEFAULT NULL,
+  `TELEFONO` int(12) DEFAULT NULL,
+  `DIRECCION` varchar(100) DEFAULT NULL,
+  `CORREO` varchar(40) DEFAULT NULL,
+  `CONCEPTO` varchar(30) DEFAULT NULL,
+  `DEPARTAMENTO` varchar(20) NOT NULL,
+  `CANTIDAD` int(3) NOT NULL,
+  `COSTE_UNITARIO` float NOT NULL,
+  `COSTE_TOTAL` float NOT NULL,
   `FECHA_PEDIDO` date DEFAULT NULL,
-  `ENTREGADO` varchar(15) DEFAULT NULL,
-  `IMAGEN_PRODUCTO` varchar(200) NOT NULL
+  `REFERENCIA` varchar(20) NOT NULL,
+  `ENTREGADO` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clientespedidos`
+--
+
+INSERT INTO `clientespedidos` (`ID`, `NOMBRE`, `NUMERO`, `TELEFONO`, `DIRECCION`, `CORREO`, `CONCEPTO`, `DEPARTAMENTO`, `CANTIDAD`, `COSTE_UNITARIO`, `COSTE_TOTAL`, `FECHA_PEDIDO`, `REFERENCIA`, `ENTREGADO`) VALUES
+(1, 'Juan Perez', '3313 2332 3232 3233', 678002352, '11324 ROCKWELL AVENUE', 'juanperez@outlook.com', 'SOFTWARE', 'PRODUCTOS', 3, 23.45, 70.35, '2024-11-16', 'JP2352-20241116', 'PENDIENTE');
 
 -- --------------------------------------------------------
 
@@ -280,11 +291,18 @@ CREATE TABLE `loginclientes` (
 --
 
 INSERT INTO `loginclientes` (`ID`, `USUARIO`, `CONTRASENIA`, `TELEFONO`, `DIRECCION`, `ENTIDAD`, `CORREO`, `FOTO`, `NUMERO_COMPRAS`) VALUES
-(1, 'Juan Perez', 'zetas', 678002352, '11324 ROCKWELL AVENUE', 'ASOCIADO', 'juanperez@outlook.com', 'juan.png', 3);
+(1, 'Juan Perez', 'zetas', 678002352, '11324 ROCKWELL AVENUE', 'ASOCIADO', 'juanperez@outlook.com', 'juan.png', 3),
+(3, 'Vitrea horiz', 'vitreitasal3611', 661120211, 'nuevos horizontes 43', 'CASUAL', ' danzasballet@gmail.com', '', 0);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `clientespedidos`
+--
+ALTER TABLE `clientespedidos`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `historias`
@@ -309,6 +327,12 @@ ALTER TABLE `loginclientes`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `clientespedidos`
+--
+ALTER TABLE `clientespedidos`
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `historias`
 --
 ALTER TABLE `historias`
@@ -324,7 +348,7 @@ ALTER TABLE `imagenesinterfazweb`
 -- AUTO_INCREMENT de la tabla `loginclientes`
 --
 ALTER TABLE `loginclientes`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

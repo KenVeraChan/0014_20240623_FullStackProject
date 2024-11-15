@@ -3,6 +3,8 @@
 /******************************************************************/
 
 var elemento1= document.getElementsByClassName("boton");
+var elemento2= document.getElementsByClassName("filaformulario");
+var elemento3= document.getElementsByClassName("filaCliente");
 var elemento4= document.getElementsByClassName("areaPrivada");
 
 function cargarPagina()
@@ -23,6 +25,28 @@ function cargarPagina()
             elemento1[i].style.color="yellow";
         })   
     } 
+    for(let i=0;i<elemento2.length;i++)
+        {
+            //BOTONES de opciones
+            elemento2[i].addEventListener('mouseenter',function(){
+                elemento2[i].style.transitionDuration = "0.5s";
+                elemento2[i].style.background= "rgb(1, 2, 46)";
+                elemento2[i].style.color="rgb(235, 231, 0)";
+
+                elemento3[i].style.transitionDuration = "0.5s";
+                elemento3[i].style.background= "rgb(1, 2, 46)";
+                elemento3[i].style.color="rgb(235, 231, 0)";
+                    })
+            elemento2[i].addEventListener('mouseleave',function(){
+                elemento2[i].style.transitionDuration = "0.5s";
+                elemento2[i].style.background= "rgba(197, 184, 7, 0.404)";
+                elemento2[i].style.color="white";
+
+                elemento3[i].style.transitionDuration = "0.5s";
+                elemento3[i].style.background= "rgba(197, 184, 7, 0.404)";
+                elemento3[i].style.color="white";
+            })   
+        } 
     for(let i=0;i<elemento4.length;i++)
     {
         //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
@@ -51,22 +75,10 @@ function letreroConfirmado(tipoLetrero)
     if(tipoLetrero==1)
         {
             //LETRERO DE DATOS ACTUALIZADOS CORRECTAMENTE
-            letrero.innerHTML="HA SIDO DADO DE ALTA Y SUS DATOS HAN SIDO REGISTRADOS CORRECTAMENTE!";
+            letrero.innerHTML="COMPRAS CARGADAS EXITOSAMENTE!";
             letrero.style.color="rgb(45,255,21)";
         }
-    if(tipoLetrero==2)
-        {
-            //LETRERO DE DATOS INTRODUCIDOS INCORRECTAMENTE
-            letrero.innerHTML="LAS CONTRASENIAS NO COINCIDEN, VUELVA A INTENTARLO!";
-            letrero.style.color="rgb(255,21,21)";
-        } 
-    if(tipoLetrero==3)
-        {
-            //LETRERO DE DATOS INTRODUCIDOS INCORRECTAMENTE
-            letrero.innerHTML="FALTAN DATOS QUE RELLENAR EN EL REGSITRO!";
-            letrero.style.color="rgb(255,21,21)";
-        } 
-    if(tipoLetrero>0 && tipoLetrero<4)
+    if(tipoLetrero>0 && tipoLetrero<2)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
