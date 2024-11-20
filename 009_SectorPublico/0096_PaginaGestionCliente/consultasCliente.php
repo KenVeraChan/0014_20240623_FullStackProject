@@ -3,8 +3,12 @@ session_start();
 //error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 require "../../005_Login/conexionPHP.php";
 $conexionProductos=ConexionPHP::getConexionCLIENTES();
-$BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
-$BD_tablaCarrito=ConexionPHP::getBD_TablaCarrito();
+$BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();   //Para la descarga de las imágenes de las compras en el carrito
+$BD_tablaCarrito=ConexionPHP::getBD_TablaCarrito();     //Para la descarga de lo que hay en el carrito sin comprar
+
+$BD_tablaDatosBancarios=ConexionPHP::getBD_DatosBancarios();  //Para la descarga de los datos bancarios
+$BD_tablaLoginUsuario=ConexionPHP::getBD_TablaIDClientes();  //Para la descarga de datos personales
+$BD_tablaPedidos=ConexionPHP::getBD_TablaClientes();   //Para la introduccion de las compras de un cliente
 
 // ----- SECTOR DE PAGINA PRODUCTOS COMPLETA ------ //
 
@@ -121,7 +125,61 @@ if(isset($_GET["realizarCompra"]))
 {
     if(isset($_SESSION["usuario"]))
     {
-        header("location:../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php");
+        //PRIMERO SE DESCARGA LA INFORMACIÓN DEL USUARIO: NUMERO DE TARJETA BANCARIA USUARIO
+        $usarioCompra=$_SESSION["usuario"];  //NOMBRE
+        $consLogin=$conexionVentas->query("SELECT NUMERO FROM $BD_tablaDatosBancarios WHERE NOMBRE='$usarioCompra'");
+        $datoBancario=$consLogin->fetchAll(PDO::FETCH_OBJ);
+        $datoContado=$consLogin->rowCount();
+
+        if($datoContado==0)
+        {
+            $consLogin->closeCursor(); //Cierra la conexion y la consulta
+            $_SESSION["senalCarrito"]=3;  //Señal de que NO SE HA REGISTRADO NINGUNA TARJETA DE PAGO DE COMPRAS
+            header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+        }
+        else
+        {
+            foreach($datoBancario as $dato)
+            {
+                $numeroBancario=$dato->NUMERO;  //NUMERO
+            }
+            $consLogin->closeCursor(); //Cierra la conexion y la consulta
+            //SEGUNDO SE DESCARGA LA INFORMACIÓN DEL USUARIO: TELEFONO,DIRECCION,CORREO
+            $consLogin=$conexionVentas->query("SELECT TELEFONO,DIRECCION,CORREO FROM $BD_tablaLoginUsuario WHERE NOMBRE='$usarioCompra'");
+            $datosPersonales=$consLogin->fetchAll(PDO::FETCH_OBJ);
+            $datoPersonalesContado=$consLogin->rowCount();
+            if($datoPersonalesContado==0)
+            {
+                $consLogin->closeCursor(); //Cierra la conexion y la consulta
+                $_SESSION["senalCarrito"]=4;  //Señal de que NO SE HA REGISTRADO NINGUNA TARJETA DE PAGO DE COMPRAS
+                header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");  
+            }
+            else
+            {
+                foreach($datoPersonalesContado as $datoPersonal)
+                {
+                    $telefono=$datoPersonal->TELEFONO;  //NUMERO DE TELEFONO
+                    $direccion=$datoPersonal->DIRECCION; //DIRECCION
+                    $correo=$datoPersonal->CORREO;  //CORREO
+                }
+                $consLogin->closeCursor(); //Cierra la conexion y la consulta
+                //TERCERO SE RELLENAN COHESIONANDOSE DATOS PERSONALES CON LA INFORMACIÓN DEL CARRITO DE LA COMPRA    
+                //GUARDAR EN LA TABLA DE CLIENTES PEDIDOS LO QUE SE TUVO EN ESTE CARRITO
+
+                for($i=0;$i<count($_SESSION["IDC"]);$i++)
+                {
+                    $NOMBRE=$_SESSION["NOMBREC"][$i];
+                    $DEPARTAMENTO=$_SESSION["DEPARTAMENTOC"][$i];
+                    $CANTIDAD=$_SESSION["CANTIDADC"][$i];
+                    $COSTEUN=$_SESSION["COSTEUNITC"][$i];
+                    $COSTETOT=$_SESSION["COSTETOTC"][$i];
+
+                    $consComprando=$conexionVentas->query("INSERT INTO $BD_tablaPedidos(NOMBRE,NUMERO,TELEFONO,DIRECCION,CORREO,CONCEPTO,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL,FECHA_PEDIDO,REFERENCIA,ENTREGADO)VALUES()");
+                    //FALTA DETERMINAR VALORES DE LA CONSULTA
+                }
+                header("location:../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php");
+            }
+        }
     }
     else
     {

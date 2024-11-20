@@ -108,7 +108,19 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="CARRITO DE LA COMPRA CARGADO EXITOSAMENTE!";
             letrero.style.color="rgb(45,255,21)";
         }
-    if(tipoLetrero>0 && tipoLetrero<3)
+    if(tipoLetrero==3)
+        {
+            //LETRERO DE ES NECESARIO REGISTRAR UN MÉTODO DE PAGO DE COMPRAS
+            letrero.innerHTML="NO SE HA DETECTADO NINGUNA TARJETA DE COMPRA. ACTUALICE SU PERFIL DE USUARIO!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero==4)
+        {
+            //LETRERO DE ES NECESARIO REGISTRAR UN MÉTODO DE PAGO DE COMPRAS
+            letrero.innerHTML="INSUFICIENTES DATOS PERSONALES PARA REALZAR LA COMPRA. ACTUALICE SU PERFIL DE USUARIO!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<5)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
