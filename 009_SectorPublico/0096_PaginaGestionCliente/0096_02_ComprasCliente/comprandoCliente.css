@@ -98,6 +98,42 @@
     {
         padding-top: 60px;
     }
+    @media all and (min-width:1200px) and (max-width:1300px)
+    {
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: 20px;
+        }
+        .elegirMenu {
+            width: 1000px;
+            margin-bottom: 5px;
+            margin-left:50px;
+            margin-top: 10px;
+          }
+          .elegirMenu:nth-child(2)
+          {
+              margin-top: 40px;
+          }
+    }
+    @media all and (min-width:1300px) and (max-width:7800px)
+    {
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: 10%;
+        }
+        .elegirMenu{
+            width: 1000px;
+            margin-bottom: 5px;
+            margin-left:50px;
+            margin-top: 10px;
+          }
+          .elegirMenu:nth-child(2)
+          {
+              margin-top: 40px;
+          }
+    }
     .cuadro
     {
         margin-left: 5%;
@@ -150,16 +186,6 @@
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
 /* DESPLEGABLE EN TRATAMIENTO */
-.elegirMenu {
-  width: 1000px;
-  margin-bottom:  5px;
-  margin-left:50px;
-  margin-top: 10px;
-}
-.elegirMenu:nth-child(2)
-{
-    margin-top: 40px;
-}
 .elegirMenu .menuBoton {
   display: flex;
   align-items: center;
@@ -180,7 +206,7 @@
 .elegirMenu.open .menuBoton i {
   transform: rotate(180deg);
 }
-.options {
+.opciones {
   position: relative;
   padding: 20px;
   margin-top: 10px;
@@ -189,10 +215,10 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   display: none;
 }
-.elegirMenu.open .options {
+.elegirMenu.open .opciones {
   display: block;
 }
-.options .opcion {
+.opciones .opcion {
   display: flex;
   height: 55px;
   padding: 0 16px;
@@ -208,6 +234,21 @@
 .opcion i {
   font-size: 25px;
   margin-right: 12px;
+}
+.filaCompra
+{
+
+    background-color: rgba(10, 1, 51, 0.575);
+}
+.filaCompra:nth-child(1)
+{
+    height: 40px;
+    background-color: rgba(43, 48, 3, 0.767);
+}
+.celdaCompra
+{
+    height: 25px;
+    font-size: 80%;
 }
 /* FIN DESPLEGABLE EN TRATAMIENTO */
 
@@ -335,45 +376,224 @@
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
-        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
-        #tabla
-        {
-            padding-top: 60px;
-            width: 100%;
+    /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+    #tabla
+    {
+        padding-top: 60px;
+        margin-left: 10%;
+    }
+    .elegirMenu{
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 10px;
         }
-        .cuadro
+        .elegirMenu:nth-child(2)
         {
-            margin-left: 5%;
-            margin-top:5%;
-            width:90%;
-            height: 1200px;
-            background-color: rgba(3, 3, 53,0.7);
-            border: solid;
-            border: 15px;
-            border-color:rgb(114, 112, 0);
+            margin-top: 40px;
         }
+    .cuadro
+    {
+        margin-left: 5%;
+        margin-top:5%;
+        width:90%;
+        height: 1200px;
+        background-color: rgba(3, 3, 53,0.7);
+        border: solid;
+        border: 15px;
+        border-color:rgb(114, 112, 0);
+    }
+    .cuadro
+    {
+        margin-left: 5%;
+        margin-top:5%;
+        width:90%;
+        height: 1200px;
+        background-color: rgba(3, 3, 53,0.7);
+        border: solid;
+        border: 15px;
+        border-color:rgb(114, 112, 0);
+        overflow-y: scroll;
+    }
+    .filaformulario
+    {
+        float: left;
+        text-align: center;
+        margin-left: 10px;
+        padding-top: 5px;
+        width:180px; 
+        height: 23px;
+        font-size:90%;
+        color: white;
+        background-color: rgba(197, 184, 7, 0.404);
+    }
+    @media all and (min-width:800px) and (max-width:900px)
+    {
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 20px;
+            padding-top: 5px;
+            width:400px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+    @media all and (min-width:1000px) and (max-width:1200px)
+    {
         .filaformulario
         {
             float: left;
-            text-align: right;
-            padding-top: 30px;
+            text-align: center;
             margin-left: 10px;
-            width:200px; 
-            font-size:120%;
+            padding-top: 5px;
+            width:180px; 
+            height: 23px;
+            font-size:90%;
             color: white;
+            background-color: rgba(197, 184, 7, 0.404);
         }
-        .accionamientos
+        .filaCliente
         {
-            margin-top:50px;
-        }
-        .boton
-        {
-            width:140px;
-            height: 30px;
+            float: left;
+            text-align: center;
             margin-left: 20px;
-            background: rgba(0, 0, 19, 0.89);
-            color: yellow;
+            padding-top: 5px;
+            width: 560px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
         }
+    }
+    @media all and (min-width:900px) and (max-width:1000px)
+    {
+        .filaformulario
+        {
+            float: left;
+            text-align: center;
+            margin-left: 10px;
+            padding-top: 5px;
+            width:180px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 20px;
+            padding-top: 5px;
+            width: 430px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+
+    .accionamientos
+    {
+        margin-top:100px;
+    }
+    .boton
+    {
+        width:140px;
+        height: 30px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        background: rgba(0, 0, 19, 0.89);
+        color: yellow;
+    }
+/* DESPLEGABLE EN TRATAMIENTO */
+.elegirMenu .menuBoton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #a09d008f;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .menuBoton i {
+    font-size: 25px;
+    transition: 0.3s;
+  }
+  .elegirMenu.open .menuBoton i {
+    transform: rotate(180deg);
+  }
+  .opciones {
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #d3cf078f;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  .elegirMenu.open .opciones {
+    display: block;
+  }
+  .opciones .opcion {
+    display: flex;
+    height: 55px;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #c5d3078f;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .opcion:hover {
+    background-color: #f2f2f2;
+  }
+  .opcion i {
+    font-size: 25px;
+    margin-right: 12px;
+  }
+  .filaCompra
+  {
+      background-color: rgba(10, 1, 51, 0.575);
+  }
+  .filaCompra:nth-child(1)
+  {
+      height: 40px;
+      background-color: rgba(43, 48, 3, 0.767);
+  }
+  .celdaCompra
+  {
+      height: 25px;
+      font-size: 80%;
+  }
+  @media all and (min-width:945px) and (max-width:1200px)
+  {
+    .filaCompra
+    {
+        background-color: rgba(10, 1, 51, 0.575);
+    }
+    .filaCompra:nth-child(1)
+    {
+        height: 40px;
+        background-color: rgba(43, 48, 3, 0.767);
+    }
+    .celdaCompra
+    {
+        height: 25px;
+        width: 120px;
+        font-size: 90%;
+    } 
+  }
+
+  /* FIN DESPLEGABLE EN TRATAMIENTO */
+  
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -452,7 +672,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 188px;
+        height: 190px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -501,47 +721,219 @@
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
-        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+    /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+    @media all and (min-width:600px) and (max-width:700px)
+    {
         #tabla
         {
             padding-top: 60px;
-            margin-left: -10px;
+            margin-left: 0%;
         }
-        .cuadro
+    }
+    @media all and (min-width:700px) and (max-width:730px)
+    {
+        #tabla
         {
-            margin-left: 5%;
-            margin-top:5%;
-            width:90%;
-            height: 1200px;
-            background-color: rgba(3, 3, 53,0.7);
-            border: solid;
-            border: 15px;
-            border-color:rgb(114, 112, 0);
+            padding-top: 60px;
+            margin-left: 0%;
         }
+    }
+    @media all and (min-width:730px) and (max-width:760px)
+    {
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: 2%;
+        }
+    }
+    @media all and (min-width:760px) and (max-width:780px)
+    {
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: 4%;
+        }
+    }
+    @media all and (min-width:780px) and (max-width:800px)
+    {
+        #tabla
+        {
+            padding-top: 60px;
+            margin-left: 8%;
+        }
+    }
+    .elegirMenu{
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        }
+        .elegirMenu:nth-child(2)
+        {
+            margin-top: 40px;
+        }
+    .cuadro
+    {
+        margin-left: 5%;
+        margin-top:5%;
+        width:90%;
+        height: 1200px;
+        background-color: rgba(3, 3, 53,0.7);
+        border: solid;
+        border: 15px;
+        border-color:rgb(114, 112, 0);
+        overflow-y: scroll;
+    }
+    @media all and (min-width:700px) and (max-width:800px)
+    {
         .filaformulario
         {
             float: left;
-            text-align: right;
-            padding-top: 30px;
-            margin-left: 5px;
-            width:200px; 
-            font-size:120%;
+            text-align: center;
+            margin-left: 0px;
+            padding-top: 5px;
+            width:140px; 
+            height: 23px;
+            font-size:70%;
             color: white;
+            background-color: rgba(197, 184, 7, 0.404);
         }
-        .accionamientos
+        .filaCliente
         {
-            margin-top:50px;
-        }
-        .boton
-        {
-            width:140px;
-            height: 30px;
+            float: left;
+            text-align: center;
             margin-left: 20px;
-            margin-top: 10px;
-            background: rgba(0, 0, 19, 0.89);
-            color: yellow;
+            padding-top: 5px;
+            width: 460px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
         }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+    }
+    @media all and (min-width:600px) and (max-width:700px)
+    {
+        .filaformulario
+        {
+            float: left;
+            text-align: center;
+            margin-left: 0px;
+            padding-top: 5px;
+            width:170px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 0px;
+            padding-top: 5px;
+            width: 360px; 
+            height: 23px;
+            font-size:90%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+
+    .accionamientos
+    {
+        margin-top:100px;
+    }
+    .boton
+    {
+        width:140px;
+        height: 30px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        background: rgba(0, 0, 19, 0.89);
+        color: yellow;
+    }
+/* DESPLEGABLE EN TRATAMIENTO */
+.elegirMenu .menuBoton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #a09d008f;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .menuBoton i {
+    font-size: 25px;
+    transition: 0.3s;
+  }
+  .elegirMenu.open .menuBoton i {
+    transform: rotate(180deg);
+  }
+  .opciones {
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #d3cf078f;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  .elegirMenu.open .opciones {
+    display: block;
+  }
+  .opciones .opcion {
+    display: flex;
+    height: 55px;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #c5d3078f;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .opcion:hover {
+    background-color: #f2f2f2;
+  }
+  .opcion i {
+    font-size: 25px;
+    margin-right: 12px;
+  }
+  .filaCompra
+  {
+      background-color: rgba(10, 1, 51, 0.575);
+  }
+  .filaCompra:nth-child(1)
+  {
+      height: 40px;
+      background-color: rgba(43, 48, 3, 0.767);
+  }
+  .celdaCompra
+  {
+      height: 25px;
+      font-size: 80%;
+  }
+  @media all and (min-width:645px) and (max-width:800px)
+  {
+    .filaCompra
+    {
+        background-color: rgba(10, 1, 51, 0.575);
+    }
+    .filaCompra:nth-child(1)
+    {
+        height: 40px;
+        background-color: rgba(43, 48, 3, 0.767);
+    }
+    .celdaCompra
+    {
+        height: 25px;
+        width: 120px;
+        font-size: 90%;
+    } 
+  }
+  /* FIN DESPLEGABLE EN TRATAMIENTO */
 
      /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
@@ -618,7 +1010,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 190px;
+        height: 200px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -666,72 +1058,210 @@
     {
         text-align: center;
         width: 50%;
-        font-size: 74%;
+        font-size: small;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
-        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
-        #tabla
-        {
-            padding-top: 60px;
-            margin-left: -10px;
+    /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+    #tabla
+    {
+        padding-top: 60px;
+        margin-left: 0%;
+    }
+    .elegirMenu{
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 10px;
         }
-        .cuadro
+        .elegirMenu:nth-child(2)
         {
-            margin-top:5%;
-            width:370px;
-            height: 1200px;
-            background-color: rgba(3, 3, 53,0.7);
-            border: solid;
-            border: 15px;
-            border-color:rgb(114, 112, 0);
+            margin-top: 40px;
         }
-        @media all and (min-width:550px) and (max-width:600px)
-        {
-            .cuadro
-            {
-                margin-left:20%;
-            }
-        }
-        @media all and (min-width:500px) and (max-width:550px)
-        {
-            .cuadro
-            {
-                margin-left:15%;
-            }
-        }
-        @media all and (min-width:400px) and (max-width:500px)
-        {
-            .cuadro
-            {
-                margin-left:8%;
-                width:350px;
-            }
-        }
+    .cuadro
+    {
+        margin-left: 5%;
+        margin-top:5%;
+        width:90%;
+        height: 1200px;
+        background-color: rgba(3, 3, 53,0.7);
+        border: solid;
+        border: 15px;
+        border-color:rgb(114, 112, 0);
+        overflow-y: scroll;
+    }
+    @media all and (min-width:500px) and (max-width:600px)
+    {
         .filaformulario
         {
             float: left;
-            text-align: left;
-            padding-top: 25px;
-            margin-left: 45px;
-            width:200px; 
-            font-size:80%;
-            color: white;
-        }
-        .accionamientos
-        {
-            margin-top:50px;
-        }
-        .boton
-        {
-            width:140px;
-            height: 30px;
+            text-align: center;
             margin-left: 5%;
-            margin-top:10px;
-            background: rgba(0, 0, 19, 0.89);
-            color: yellow;
-            font-size: 70%;
+            padding-top: 5px;
+            width:150px; 
+            height: 23px;
+            font-size:70%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
         }
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 10%;
+            padding-top: 5px;
+            width: 260px; 
+            height: 23px;
+            font-size:70%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+    @media all and (min-width:400px) and (max-width:500px)
+    {
+        .filaformulario
+        {
+            float: left;
+            text-align: center;
+            margin-left: 5%;
+            padding-top: 5px;
+            width:150px; 
+            height: 23px;
+            font-size:60%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 10px;
+            padding-top: 5px;
+            width: 190px; 
+            height: 23px;
+            font-size:60%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+
+    .accionamientos
+    {
+        margin-top:100px;
+    }
+    .boton
+    {
+        width:140px;
+        height: 30px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        background: rgba(0, 0, 19, 0.89);
+        color: yellow;
+    }
+/* DESPLEGABLE EN TRATAMIENTO */
+.elegirMenu .menuBoton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #a09d008f;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .menuBoton i {
+    font-size: 25px;
+    transition: 0.3s;
+  }
+  .elegirMenu.open .menuBoton i {
+    transform: rotate(180deg);
+  }
+  .opciones {
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #d3cf078f;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  .elegirMenu.open .opciones {
+    display: block;
+  }
+  .opciones .opcion {
+    display: flex;
+    height: 55px;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #c5d3078f;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .opcion:hover {
+    background-color: #f2f2f2;
+  }
+  .opcion i {
+    font-size: 25px;
+    margin-right: 12px;
+  }
+  .filaCompra
+  {
+      background-color: rgba(10, 1, 51, 0.575);
+  }
+  .filaCompra:nth-child(1)
+  {
+      height: 40px;
+      background-color: rgba(43, 48, 3, 0.767);
+  }
+  .celdaCompra
+  {
+      height: 25px;
+      font-size: 60%;
+  }
+  @media all and (min-width:500px) and (max-width:600px)
+  {
+    .filaCompra
+    {
+        background-color: rgba(10, 1, 51, 0.575);
+    }
+    .filaCompra:nth-child(1)
+    {
+        height: 40px;
+        background-color: rgba(43, 48, 3, 0.767);
+    }
+    .celdaCompra
+    {
+        height: 25px;
+        width: 120px;
+        font-size: 60%;
+    } 
+  }
+  @media all and (min-width:400px) and (max-width:500px)
+  {
+    .filaCompra
+    {
+        background-color: rgba(10, 1, 51, 0.575);
+    }
+    .filaCompra:nth-child(1)
+    {
+        height: 40px;
+        background-color: rgba(43, 48, 3, 0.767);
+    }
+    .celdaCompra
+    {
+        height: 25px;
+        width: 120px;
+        font-size: 40%;
+    } 
+    .textoBoton
+    {
+        font-size: 70%;
+    }
+  }
+  /* FIN DESPLEGABLE EN TRATAMIENTO */
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
      /**** CSS DEL PIE DE LA PAGINA ****/
@@ -769,7 +1299,7 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 300px) and (max-width: 400px) 
+@media all and (min-width: 250px) and (max-width: 400px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
@@ -810,7 +1340,7 @@
     #cabeceraPrincipal
     {
         width: 100%;
-        height: 145px;
+        height: 155px;
         background-color: rgba(0, 0, 19, 0.89);
     }
         #iconoAdorno{
@@ -858,68 +1388,222 @@
     {
         text-align: center;
         width: 50%;
-        font-size: 54%;
+        font-size: small;
         font-family:sans-serif;
         color:rgb(255, 255, 255);
     }
-        /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+    /*ZONA DE MUESTRA DE DATOS DEL PERFIL USUARIO*/
+
+    @media all and (min-width:380px) and (max-width: 400px)
+    {
         #tabla
         {
             padding-top: 60px;
-            margin-left: -10px;
+            margin-left: 10%;
         }
-        .cuadro
+    }
+    @media all and (min-width:300px) and (max-width: 380px)
+    {
+        #tabla
         {
-
-            margin-top:5%;
-            width:270px;
-            height: 1200px;
-            background-color: rgba(3, 3, 53,0.7);
-            border: solid;
-            border: 15px;
-            border-color:rgb(114, 112, 0);
+            padding-top: 60px;
+            margin-left: 5%;
         }
-        @media all and (min-width:350px) and (max-width:400px)
+    }
+    @media all and (min-width:250px) and (max-width: 300px)
+    {
+        #tabla
         {
-            .cuadro
-            {
-                margin-left:15%;
-            }
+            padding-top: 60px;
+            margin-left: 2%;
         }
-        @media all and (min-width:300px) and (max-width:350px)
+    }
+    .elegirMenu{
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        }
+        .elegirMenu:nth-child(2)
         {
-            .cuadro
-            {
-                margin-left:10%;
-                width:250px;
-            }
+            margin-top: 40px;
         }
+    .cuadro
+    {
+        margin-left: 5%;
+        margin-top:5%;
+        width:90%;
+        height: 1200px;
+        background-color: rgba(3, 3, 53,0.7);
+        border: solid;
+        border: 15px;
+        border-color:rgb(114, 112, 0);
+        overflow-y: scroll;
+    }
+    @media all and (min-width:250px) and (max-width:300px)
+    {
         .filaformulario
         {
             float: left;
-            text-align: left;
-            padding-top: 25px;
-            margin-left: 30px;
-            margin-bottom: 5px;
-            width:200px; 
-            font-size:80%;
-            color: white;
-        }
-        .accionamientos
-        {
-            margin-top:50px;
-        }
-        .boton
-        {
-            width:140px;
-            height: 30px;
+            text-align: center;
             margin-left: 5%;
-            margin-top:10px;
-            background: rgba(0, 0, 19, 0.89);
-            color: yellow;
-            font-size: 70%;
+            padding-top: 5px;
+            width:120px; 
+            height: 18px;
+            font-size:40%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
         }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 10%;
+            padding-top: 5px;
+            width: 150px; 
+            height: 18px;
+            font-size:40%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+    @media all and (min-width:300px) and (max-width:400px)
+    {
+        .filaformulario
+        {
+            float: left;
+            text-align: center;
+            margin-left: 2%;
+            padding-top: 5px;
+            width:130px; 
+            height: 18px;
+            font-size:50%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+        .filaCliente
+        {
+            float: left;
+            text-align: center;
+            margin-left: 2px;
+            padding-top: 5px;
+            width: 140px; 
+            height: 18px;
+            font-size:50%;
+            color: white;
+            background-color: rgba(197, 184, 7, 0.404);
+        }
+    }
+
+    .accionamientos
+    {
+        margin-top:100px;
+    }
+    .boton
+    {
+        width:140px;
+        height: 30px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        background: rgba(0, 0, 19, 0.89);
+        color: yellow;
+        font-size: x-small;
+    }
+/* DESPLEGABLE EN TRATAMIENTO */
+.elegirMenu .menuBoton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #a09d008f;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .menuBoton i {
+    font-size: 25px;
+    transition: 0.3s;
+  }
+  .elegirMenu.open .menuBoton i {
+    transform: rotate(180deg);
+  }
+  .opciones {
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #d3cf078f;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  .elegirMenu.open .opciones {
+    display: block;
+  }
+  .opciones .opcion {
+    display: flex;
+    height: 55px;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #c5d3078f;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .opcion:hover {
+    background-color: #f2f2f2;
+  }
+  .opcion i {
+    font-size: 25px;
+    margin-right: 12px;
+  }
+  @media all and (min-width:300px) and (max-width:400px)
+  {
+    .filaCompra
+    {
+        background-color: rgba(10, 1, 51, 0.575);
+    }
+    .filaCompra:nth-child(1)
+    {
+        height: 30px;
+        font-size: 10%;
+        background-color: rgba(43, 48, 3, 0.767);
+    }
+    .celdaCompra
+    {
+        height: 20px;
+        width: 120px;
+        font-size: 10%;
+    } 
+    .textoBoton
+    {
+        font-size: 50%;
+    }
+  }
+  @media all and (min-width:250px) and (max-width:300px)
+  {
+    .filaCompra
+    {
+        background-color: rgba(10, 1, 51, 0.575);
+    }
+    .filaCompra:nth-child(1)
+    {
+        height: 30px;
+        font-size: 10%;
+        background-color: rgba(43, 48, 3, 0.767);
+    }
+    .celdaCompra
+    {
+        height: 25px;
+        width: 120px;
+        font-size: 10%;
+    } 
+    .textoBoton
+    {
+        font-size: 40%;
+    }
+  }
 
      /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
@@ -956,7 +1640,7 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 100px) and (max-width: 300px) 
+@media all and (min-width: 100px) and (max-width: 250px) 
 {
      /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/

@@ -68,7 +68,7 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
                         </tr>
                         <tr class="cajaBotonera">  <!-- ZONA DE DATOS PERSONALES PARA MOSTRAR COMPRAS REALIZADAS -->
                             <td>
-                                <label class="filaformulario">CUENTA</label>
+                                <label class="filaformulario">CUENTA DE COMPRA</label>
                             </td>
                             <td>
                                 <label class="filaCliente"><?php if(isset($_SESSION["numeroCompra"])){echo $_SESSION["numeroCompra"];}else{echo"-------";}?></label>
@@ -99,151 +99,40 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
                             </td>
                         </tr>  
                     </table>
-                    <?php if(isset($_SESSION["despliegue"])){ //CARGA EL COMPENDIO DE COMPRAS?>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 1</span>
+                    <?php $puntero=0; if(isset($_SESSION["despliegue"])){ //CARGA EL COMPENDIO DE COMPRAS?>
+                        <?php for($puntero=0;$puntero<count($_SESSION["referenciaR"]);$puntero++){?>
+                            <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
+                                <div class="menuBoton">
+                                    <span class="textoBoton">COMPRA <?php echo ($puntero+1).": ".$_SESSION["referenciaR"][$puntero]?></span>
+                                </div>
+                                <ul class="opciones">
+                                    <span class="opcionesTexto">
+                                        <table>
+                                            <tr class="filaCompra">
+                                                <td class="celdaCompra">CONCEPTO DE LA COMPRA</td>
+                                                <td class="celdaCompra">DEPARTAMENTO DE COMPRAS</td>
+                                                <td class="celdaCompra">CANTIDAD ADQUIRIDA</td>
+                                                <td class="celdaCompra">COSTE UNITARIO</td>
+                                                <td class="celdaCompra">COSTE TOTAL</td>
+                                                <td class="celdaCompra">FECHA DEL PEDIDO</td>
+                                                <td class="celdaCompra">ESTADO DE ENTREGA</td>
+                                            </tr>
+                                            <tr class="filaCompra">
+                                                <td class="celdaCompra"><?php echo $_SESSION["conceptoC"][$puntero]?></td>
+                                                <td class="celdaCompra"><?php echo $_SESSION["departamentoC"][$puntero]?></td>
+                                                <td class="celdaCompra"><?php echo $_SESSION["cantidadC"][$puntero]?></td>
+                                                <td class="celdaCompra"><?php echo $_SESSION["costeUC"][$puntero]?></td>
+                                                <td class="celdaCompra"><?php echo $_SESSION["costeTC"][$puntero]?></td>
+                                                <td class="celdaCompra"><?php echo $_SESSION["fechaPedidoC"][$puntero]?></td>
+                                                <td class="celdaCompra"><?php echo $_SESSION["entregadoC"][$puntero]?></td>
+                                            </tr>
+                                        </table>
+                                    </span>
+                                </ul>
                             </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 2</span>
-                            </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 3</span>
-                            </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 4</span>
-                            </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 5</span>
-                            </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 6</span>
-                            </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                            <div class="menuBoton">
-                                <span class="textoBoton">COMPRA 7</span>
-                            </div>
-                            <ul class="options">
-                                <span class="opcionesTexto">
-                                    <table>
-                                        <tr>
-                                            <td>CONCEPTO DE LA COMPRA</td>
-                                            <td>DEPARTAMENTO DE COMPRAS</td>
-                                            <td>CANTIDAD ADQUIRIDA</td>
-                                            <td>COSTE UNITARIO</td>
-                                            <td>COSTE TOTAL</td>
-                                            <td>FECHA DEL PEDIDO</td>
-                                            <td>ESTADO DE ENTREGA</td>
-                                        </tr>
-                                    </table>
-                                </span>
-                            </ul>
-                        </div>
-                        <script>cargaModelo(7);</script>
+                        <?php }?>
                     <?php } ?>
-
-
+                    <script>cargaModelo(<?php echo count($_SESSION["referenciaR"])?>);</script>
                     <div class="accionamientos">
                             <input type="submit" class="boton" name="cargar" value="CARGAR COMPRAS">
                             <input type="submit" class="boton" name="volver" value="VOLVER">
@@ -271,22 +160,21 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
     </div>
     <script>letreroConfirmado(<?php echo $_SESSION["activadorPersonal"]; ?>);</script>
 	<?php 
-        function cambiaFranjaHoraria()
+    function cambiaFranjaHoraria()
+    {
+        if(date("G")>=7 && date("G")<13)  //Por la mañana
         {
-            if(date("G")>=7 && date("G")<13)  //Por la mañana
-            {
-                echo "Buenos Días, ".date("D d-M-Y H:i:s");
-            }
-            if(date("G")>=13 && date("G")<21)  //Por la tarde
-            {
-                echo "Buenas Tardes, ".date("D d-M-Y H:i:s");
-            }
-            if(date("G")>=21 || date("G")<7)  //Por la noche
-            {
-                echo "Buenas Noches, ".date("D d-M-Y H:i:s");
-            }
+            echo "Buenos Días, ".date("D d-M-Y H:i:s");
         }
-        $_SESSION["letreroCompras"]=0; //Reiniciar variable
+        if(date("G")>=13 && date("G")<21)  //Por la tarde
+        {
+            echo "Buenas Tardes, ".date("D d-M-Y H:i:s");
+        }
+        if(date("G")>=21 || date("G")<7)  //Por la noche
+        {
+            echo "Buenas Noches, ".date("D d-M-Y H:i:s");
+        }
+    }
         unset($_SESSION["despliegue"]);  //Destrue la variable para que no se quede la lista de compra cargada
         $_SESSION["activadorPersonal"]=0; //Reinicio de la variable del letrero
     ?> 

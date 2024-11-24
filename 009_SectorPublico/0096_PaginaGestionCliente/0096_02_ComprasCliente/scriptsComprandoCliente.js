@@ -6,6 +6,8 @@ var elemento1= document.getElementsByClassName("boton");
 var elemento2= document.getElementsByClassName("filaformulario");
 var elemento3= document.getElementsByClassName("filaCliente");
 var elemento4= document.getElementsByClassName("areaPrivada");
+var elemento5= document.getElementsByClassName("filaCompra");
+var elemento6= document.getElementsByClassName("menuBoton");
 
 function cargarPagina()
 {
@@ -63,6 +65,34 @@ function cargarPagina()
             elemento4[i].style.boxShadow="none";
                 })
     }
+    for(let i=0;i<elemento5.length;i++)   //Cabecera sin animar
+        {
+            //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
+            elemento5[i].addEventListener('mouseenter',function(){
+                elemento5[i].style.transitionDuration = "0.5s";
+                elemento5[i].style.boxShadow="white 1px 0 40px";
+                    })
+            elemento5[i].addEventListener('mouseleave',function(){
+                elemento5[i].style.transitionDuration = "0.5s";
+                elemento5[i].style.boxShadow="none";
+                    })
+        }
+    for(let i=0;i<elemento6.length;i++)   //Cabecera sin animar
+    {
+        //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
+        elemento6[i].addEventListener('mouseenter',function(){
+            elemento6[i].style.transitionDuration = "0.25s";
+            elemento6[i].style.border="solid 1px rgba(216, 240, 0, 0.89)";
+            elemento6[i].style.background= "rgb(1, 2, 46)";
+            elemento6[i].style.color="rgb(235, 231, 0)";
+                })
+        elemento6[i].addEventListener('mouseleave',function(){
+            elemento6[i].style.transitionDuration = "0.25s";
+            elemento6[i].style.border="none";
+            elemento6[i].style.background= "rgba(197, 184, 7, 0.404)";
+            elemento6[i].style.color="white";
+                })
+    }
 }
 //LETRERO DE OKEY
 function letreroConfirmado(tipoLetrero)
@@ -77,6 +107,12 @@ function letreroConfirmado(tipoLetrero)
             //LETRERO DE DATOS ACTUALIZADOS CORRECTAMENTE
             letrero.innerHTML="COMPRAS CARGADAS EXITOSAMENTE!";
             letrero.style.color="rgb(45,255,21)";
+        }
+    if(tipoLetrero==2)
+        {
+            //LETRERO DE DATOS ACTUALIZADOS CORRECTAMENTE
+            letrero.innerHTML="NO HAY COMPRAS REGISTRADAS!";
+            letrero.style.color="rgb(215,5,5)";
         }
     if(tipoLetrero>0 && tipoLetrero<2)
     {
