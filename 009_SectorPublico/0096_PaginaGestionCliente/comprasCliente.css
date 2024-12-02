@@ -192,9 +192,17 @@
             width: 31px;
             float: center;
             text-decoration: none;
-            color: yellow;
             background-color: transparent;
+            background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/OK.png");
+            background-repeat: no-repeat;
             background-size: 30px;   
+        }
+        .despliegue
+        {
+            margin-top: 5px;
+            text-align: center;
+            height: 15px;
+            font-size: small;  
         }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -425,14 +433,17 @@
         width: 31px;
         float: center;
         text-decoration: none;
-        color: yellow;
         background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/OK.png");
+        background-repeat: no-repeat;
         background-size: 30px;   
     }
     .despliegue
     {
-        height: 10px;
-        font-size: small;
+        margin-top: 5px;
+        text-align: center;
+        height: 8px;
+        font-size: x-small;  
     }
     /*********** FIN CSS DEL CUERPO ********/
 
@@ -672,14 +683,17 @@
         width: 31px;
         float: center;
         text-decoration: none;
-        color: yellow;
         background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/OK.png");
+        background-repeat: no-repeat;
         background-size: 30px;   
     }
     .despliegue
     {
-        height: 7px;
-        font-size: small;
+        margin-top: 5px;
+        text-align: center;
+        height: 8px;
+        font-size: x-small;  
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -918,9 +932,17 @@
         width: 31px;
         float: center;
         text-decoration: none;
-        color: yellow;
         background-color: transparent;
+        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/OK.png");
+        background-repeat: no-repeat;
         background-size: 30px;   
+    }
+    .despliegue
+    {
+        margin-top: 5px;
+        text-align: center;
+        height: 6px;
+        font-size: xx-small;  
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 

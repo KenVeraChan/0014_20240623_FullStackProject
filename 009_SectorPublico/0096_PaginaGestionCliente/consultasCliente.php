@@ -75,69 +75,57 @@ $costeCarrito=$_SESSION["COSTECARRITO"];
 if(isset($_GET["descargar"]))
 {
     //ANTES DE NADA SE DESTRUYEN LAS VARIABLES QUE PUEDAN EXISTIR POR COMPLETO
-        unset($_SESSION["IDC"]);
-        unset($_SESSION["NOMBREC"]);
-        unset($_SESSION["IMAGENC"]);
-        unset($_SESSION["DEPARTAMENTOC"]);
-        unset($_SESSION["CANTIDADC"]);
-        unset($_SESSION["COSTEUNITC"]);
-        unset($_SESSION["COSTETOTC"]);
+    unset($_SESSION["IDC"]);
+    unset($_SESSION["NOMBREC"]);
+    unset($_SESSION["IMAGENC"]);
+    unset($_SESSION["DEPARTAMENTOC"]);
+    unset($_SESSION["CANTIDADC"]);
+    unset($_SESSION["COSTEUNITC"]);
+    unset($_SESSION["COSTETOTC"]);
 
-    if($_GET["cantidad"]=="")   //NO SE HA MODIFICADO LA CANTIDAD ADICIONAL MODIFICADA EN LA CESTA DE LA COMPRA DE UN ELEMENTO INTRODUCIDO
+    //PRIMERO SE CONSULTA EN LA TABLA OFICIAL DEL CARRITO DE LA COMPRA DEL CLIENTE ANONIMO (PRODUCTOS, SERVICIOS, PROYECTOS)
+    //TABLA DEL CARRITO OFICIAL
+    $consCarrito=$conexionProductos->query("SELECT ID,NOMBRE,DEPARTAMENTO,SUM(CANTIDAD) AS CANTIDAD,COSTE_UNITARIO,ROUND(SUM(COSTE_TOTAL),2) AS COSTE_TOTAL FROM $BD_tablaCarrito GROUP BY NOMBRE");
+    $carritoCompras=$consCarrito->fetchAll(PDO::FETCH_OBJ);
+    $numeroCompras=$consCarrito->rowCount();
+
+    if($numeroCompras==0)
     {
-        //PRIMERO SE CONSULTA EN LA TABLA OFICIAL DEL CARRITO DE LA COMPRA DEL CLIENTE ANONIMO (PRODUCTOS, SERVICIOS, PROYECTOS)
-        //TABLA DEL CARRITO OFICIAL
-        $consCarrito=$conexionProductos->query("SELECT ID,NOMBRE,DEPARTAMENTO,SUM(CANTIDAD) AS CANTIDAD,COSTE_UNITARIO,ROUND(SUM(COSTE_TOTAL),2) AS COSTE_TOTAL FROM $BD_tablaCarrito GROUP BY NOMBRE");
-        $carritoCompras=$consCarrito->fetchAll(PDO::FETCH_OBJ);
-        $numeroCompras=$consCarrito->rowCount();
-
-        if($numeroCompras==0)
+        $_SESSION["senalCarrito"]=1;  //Señal de que NO se han encontrado datos descargados del carrito de la compra del cliente
+        $consCarrito->closeCursor(); //Cierra la conexion y la consulta
+        header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+    }
+    if($numeroCompras>0)
+    {
+        $i=0;   //Puntero de recolecta de datos de la BBDD del servidor
+        //DESCARGA DATOS DE LA CONSULTA
+        foreach($carritoCompras as $cargas)
         {
-            $_SESSION["senalCarrito"]=1;  //Señal de que NO se han encontrado datos descargados del carrito de la compra del cliente
-            $consCarrito->closeCursor(); //Cierra la conexion y la consulta
-            header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
-        }
-        if($numeroCompras>0)
-        {
-            $i=0;   //Puntero de recolecta de datos de la BBDD del servidor
-            //DESCARGA DATOS DE LA CONSULTA
-            foreach($carritoCompras as $cargas)
+            if(isset($cargas->ID) && isset($cargas->NOMBRE))
             {
-                if(isset($cargas->ID) && isset($cargas->NOMBRE))
+                    $_SESSION["IDC"][$i]=$cargas->ID;
+                    $_SESSION["NOMBREC"][$i]=$cargas->NOMBRE;
+                    $_SESSION["DEPARTAMENTOC"][$i]=$cargas->DEPARTAMENTO;
+                    $_SESSION["CANTIDADC"][$i]=$cargas->CANTIDAD;
+                    $_SESSION["COSTEUNITC"][$i]=$cargas->COSTE_UNITARIO;
+                    $_SESSION["COSTETOTC"][$i]=$cargas->COSTE_TOTAL;
+                if(strcmp( $cargas->DEPARTAMENTO,"PRODUCTOS")==0)
                 {
-                        $_SESSION["IDC"][$i]=$cargas->ID;
-                        $_SESSION["NOMBREC"][$i]=$cargas->NOMBRE;
-                        $_SESSION["DEPARTAMENTOC"][$i]=$cargas->DEPARTAMENTO;
-                        $_SESSION["CANTIDADC"][$i]=$cargas->CANTIDAD;
-                        $_SESSION["COSTEUNITC"][$i]=$cargas->COSTE_UNITARIO;
-                        $_SESSION["COSTETOTC"][$i]=$cargas->COSTE_TOTAL;
-                    if(strcmp( $cargas->DEPARTAMENTO,"PRODUCTOS")==0)
-                    {
-                        $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(2).$_SESSION["NOMBREC"][$i].".png";
-                    }
-                    if(strcmp( $cargas->DEPARTAMENTO,"SERVICIOS")==0)
-                    {
-                        $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(3).$_SESSION["NOMBREC"][$i].".png";
-                    }
-                    if(strcmp( $cargas->DEPARTAMENTO,"PROYECTOS")==0)
-                    {
-                        $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(4).$_SESSION["NOMBREC"][$i].".png";
-                    }
-                    $i++;  //Para el siguiente conjunto de datos guardado
+                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(2).$_SESSION["NOMBREC"][$i].".png";
                 }
+                if(strcmp( $cargas->DEPARTAMENTO,"SERVICIOS")==0)
+                {
+                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(3).$_SESSION["NOMBREC"][$i].".png";
+                }
+                if(strcmp( $cargas->DEPARTAMENTO,"PROYECTOS")==0)
+                {
+                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(4).$_SESSION["NOMBREC"][$i].".png";
+                }
+                $i++;  //Para el siguiente conjunto de datos guardado
             }
-            $consCarrito->closeCursor(); //Cierra la conexion y la consulta
-            $_SESSION["senalCarrito"]=2;  //Señal de que SI se han encontrado datos descargados del carrito de la compra del cliente
-            header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
         }
-    }
-    if($_GET["cantidad"]==0)
-    {
-
-    }
-    if($_GET["cantidad"]>0)
-    {
-
+        $consCarrito->closeCursor(); //Cierra la conexion y la consulta
+        $_SESSION["senalCarrito"]=2;  //Señal de que SI se han encontrado datos descargados del carrito de la compra del cliente
         header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
     }
 }
@@ -147,6 +135,7 @@ if(isset($_GET["descargar"]))
 
 if(isset($_GET["realizarCompra"]))
 {
+    //Realiza la compra según el usuario reigstrado en la página del pedido
     if(isset($_SESSION["usuario"]))
     {
         //PRIMERO SE DESCARGA LA INFORMACIÓN DEL USUARIO: NUMERO DE TARJETA BANCARIA USUARIO
@@ -232,9 +221,40 @@ if(isset($_GET["realizarCompra"]))
 }
 if(isset($_GET["borrarCarrito"]))
 {  
+    //Borra la tabla completa del carrito de la compra pero no elimina dicha tabla con sus encabezados
     $consLogin=$conexionProductos->query("TRUNCATE TABLE $BD_tablaCarrito");
     $consLogin->closeCursor(); //Cierra la conexion y la consulta
     $_SESSION["senalCarrito"]=6;  //Señal de que se ha eliminado el carrito de la compra de la BBDD
     header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+}
+if(isset($_GET["actualizar"]))
+{
+    //Primero busca el elemento afectado del carrito de la compra
+    for($i=0;$i<count($_SESSION["NOMBREC"]);$i++)
+    {
+        if(strcmp($_SESSION["NOMBREC"][$i],$_GET["nombreElemento"])==0)
+        {
+        //Elemento encontrado y se empezará a gestionar la nueva cantidad de elementos de éste solicitados
+            //Boton para actualizar el input de la cantidad para el carrito de la compra
+            if($_GET["cantidad"]=="")
+            {
+                //No hace nada ni cambia la cantidad que ya tenía
+            }
+            if($_GET["cantidad"]==0)
+            {
+                //Elimina el artículo del carrito de la compra
+            }
+            if($_GET["cantidad"]>0)
+            {
+                //Modifica la cantidad que ya existe en el carrito de la compra
+                header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+            }
+        }
+        else
+        {
+            //El elemento no se encuentra por un fallo desconocido pues ni siquiera tendría sentido
+            header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+        }
+    }
 }
 ?>

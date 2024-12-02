@@ -71,46 +71,48 @@ require "../../005_Login/conexionPHP.php";
             </table>
         </form>
         <?php if($_SESSION["senalCarrito"]==2){?>
-            <table class="seccionPrincipal">
-                    <tr class="filaCompra">
-                        <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
-                        <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
-                        <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
-                        <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
-                        <td class="celdaC"><strong>CANTIDAD</strong></td>
-                        <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
-                        <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
-                    </tr>
-                    <br><br>
-                <?php for($i=0;$i<count($_SESSION["IDC"]);$i++){ ?>
-                    <tr class="filaVenta">
-                        <td class="celdaV"><?php echo $_SESSION["IDC"][$i];?></td>
-                        <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"][$i];?>"></td>
-                        <td class="celdaV"><?php echo $_SESSION["NOMBREC"][$i];?></td>
-                        <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
-                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><a href="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php?articulo=<?php echo $_SESSION["NOMBREC"][$i];?>" name="okey" value="" class="pulsadorActualizar">ACTUALIZAR</a></td>
-                        <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"][$i]."€";?></td>
-                        <td class="celdaV"><?php echo $_SESSION["COSTETOTC"][$i]."€";?></td>
-                    </tr>
-                <?php } ?>
-            </table>
             <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
-            <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
-                <tr class="filaCompra" style="height:10px; background-color: rgba(6,2,37,0.87)">
-                    <td class="celdaCompra" colspan="2">TOTA COMPRA (sin I.V.A.):
-                        <?php for($i=0;$i<count($_SESSION["COSTETOTC"]);$i++)
-                              {
-                                $total+=$_SESSION["COSTETOTC"][$i];
-                              }
-                              echo $total."€";
-                        ?>
-                    </td>
-                    <td class="celdaCompra" colspan="3" style="float:left; padding-top:27px">TOTA COMPRA (+21% I.V.A.): <?php echo round($total*1.21,2)."€";?></td>
-                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorCompra" name="realizarCompra" title="Realizar Compra"></td>
-                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorEliminacion" name="borrarCarrito" title="Borrar Carrito Compra"></td>
-                </tr>
-            </table>
-        </form>
+                <table class="seccionPrincipal">
+                        <tr class="filaCompra">
+                            <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
+                            <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
+                            <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
+                            <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
+                            <td class="celdaC"><strong>CANTIDAD</strong></td>
+                            <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
+                            <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
+                        </tr>
+                        <br><br>
+                    <?php for($i=0;$i<count($_SESSION["IDC"]);$i++){ ?>
+                        <tr class="filaVenta">
+                            <td class="celdaV"><?php echo $_SESSION["IDC"][$i];?></td>
+                            <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"][$i];?>"></td>
+                            <td class="celdaV" name="nombreElemento"><?php echo $_SESSION["NOMBREC"][$i];?></td>
+                            <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
+                            <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"][$i];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="actualizar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
+                            <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"][$i]."€";?></td>
+                            <td class="celdaV"><?php echo $_SESSION["COSTETOTC"][$i]."€";?></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </form>
+            <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
+                <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
+                    <tr class="filaCompra" style="height:10px; background-color: rgba(6,2,37,0.87)">
+                        <td class="celdaCompra" colspan="2">TOTA COMPRA (sin I.V.A.):
+                            <?php for($i=0;$i<count($_SESSION["COSTETOTC"]);$i++)
+                                {
+                                    $total+=$_SESSION["COSTETOTC"][$i];
+                                }
+                                echo $total."€";
+                            ?>
+                        </td>
+                        <td class="celdaCompra" colspan="3">TOTA COMPRA (+21% I.V.A.): <?php echo round($total*1.21,2)."€";?></td>
+                        <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorCompra" name="realizarCompra" title="Realizar Compra"></td>
+                        <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorEliminacion" name="borrarCarrito" title="Borrar Carrito Compra"></td>
+                    </tr>
+                </table>
+            </form>
         <?php } ?>
     </div>
     <div class="piePagina">
