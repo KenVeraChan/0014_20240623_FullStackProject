@@ -2,7 +2,7 @@
 //INICIA LA SESION DE ENTRADA
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
                     //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php";
+require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/consultasComprandoCliente.php";
 //Para cargar los datos personales del cliente en la cabecera de la pagina web
 ?>
 <!DOCTYPE html>
@@ -131,12 +131,12 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
                                 </ul>
                             </div>
                         <?php }?>
+                      <script>cargaModelo(<?php echo count($_SESSION["referenciaR"])?>)</script>   
                     <?php } ?>
-                    <script>cargaModelo(<?php echo count($_SESSION["referenciaR"])?>);</script>
                     <div class="accionamientos">
                             <input type="submit" class="boton" name="cargar" value="CARGAR COMPRAS">
                             <input type="submit" class="boton" name="volver" value="VOLVER">
-                    </div>       
+                    </div>    
                 </div>
             </form>
         </div>

@@ -66,7 +66,7 @@ require "../../005_Login/conexionPHP.php";
                 <tr class="filaCompra" style="height:10px">
                     <td class="celdaCompra" colspan="2">CARRITO DE LA COMPRA</td>
                     <td class="celdaCompra" colspan="3">FECHA ACTUAL: <?php echo date("D d-M-Y H:i:s");?></td>
-                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorDescarga" name="descargar" title="Descarga de la selección de compras"></td>
+                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorDescarga" name="descargar" title="actualizar y/o cargar carrito"></td>
                 </tr>
             </table>
         </form>
@@ -88,7 +88,7 @@ require "../../005_Login/conexionPHP.php";
                         <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"][$i];?>"></td>
                         <td class="celdaV"><?php echo $_SESSION["NOMBREC"][$i];?></td>
                         <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
-                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><a href="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php?articulo=<?php echo $_SESSION["NOMBREC"][$i];?>" name="okey" value="" class="pulsadorActualizar">ACTUALIZAR</a></td>
                         <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"][$i]."€";?></td>
                         <td class="celdaV"><?php echo $_SESSION["COSTETOTC"][$i]."€";?></td>
                     </tr>
@@ -107,6 +107,7 @@ require "../../005_Login/conexionPHP.php";
                     </td>
                     <td class="celdaCompra" colspan="3" style="float:left; padding-top:27px">TOTA COMPRA (+21% I.V.A.): <?php echo round($total*1.21,2)."€";?></td>
                     <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorCompra" name="realizarCompra" title="Realizar Compra"></td>
+                    <td class="celdaCompra" colspan="1"><input type="submit" class="pulsadorEliminacion" name="borrarCarrito" title="Borrar Carrito Compra"></td>
                 </tr>
             </table>
         </form>
@@ -130,6 +131,7 @@ require "../../005_Login/conexionPHP.php";
         </footer>
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
-    <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable ?> 
+    <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable 
+    for($i=0;$i<count($_SESSION["NOMBREC"]);$i++)?>
 </body>
 </html>

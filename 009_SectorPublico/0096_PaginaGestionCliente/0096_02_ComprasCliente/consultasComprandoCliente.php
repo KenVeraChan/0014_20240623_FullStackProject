@@ -1,6 +1,4 @@
 <?php
-//error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-session_start();
 require "../../../005_Login/conexionPHP.php";
 $conexionClientes=ConexionPHP::getConexionCLIENTES();
 $BD_tabla=ConexionPHP::getBD_TablaClientes();
@@ -21,17 +19,19 @@ $conectar->closeCursor();   //Para habilitar las siguientes busquedas
 
 if(isset($_POST["cargar"]))
 { 
+    session_start();   //Se pone aqui para no interferir con la primera carga de la pagina web
     //Primero se hace un sondeo de la cantidad de referencias que se han detectado de compras
-    $usuario="Juan Perez"; //$_SESSION["usuario"];
+    $usuario=$_SESSION["usuario"];
     $conectar=$conexionClientes->query("SELECT CONCEPTO,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL,FECHA_PEDIDO,REFERENCIA,ENTREGADO FROM $BD_tabla WHERE NOMBRE='$usuario'");
     $datosPersonales=$conectar->fetchAll(PDO::FETCH_OBJ);
     $conectar->closeCursor();
 
     //Segundo se descargan las compras realizadas por el usuario mencionado
     $encontrado=$conectar->rowCount();
-    $i=0; //puntero de relleno de la descarga de las compras
+    $_SESSION["uno"]=$$encontrado;
     if($encontrado>0)
     {
+        $i=0; //puntero de relleno de la descarga de las compras
         //Tercero se hace una descarga de todas las fechas de pedidos realizadas para la generación del registro
         $conectarRef=$conexionClientes->query("SELECT REFERENCIA FROM $BD_tabla WHERE NOMBRE='$usuario'");
         $datosRefer=$conectarRef->fetchAll(PDO::FETCH_OBJ);
@@ -42,6 +42,7 @@ if(isset($_POST["cargar"]))
             $i++; //Para guardar el siguiente elemento
         }
         //Cuarto LOS PRODUCTOS BAJO UNA MISMA REFERENCIA
+        $i=0;  //Reiniciando variable puntero
         foreach($datosPersonales as $datosFilas)
         {
             $_SESSION["conceptoC"][$i]=$datosFilas->CONCEPTO;
@@ -66,6 +67,7 @@ if(isset($_POST["cargar"]))
 }
 if(isset($_POST["volver"]))
 {
+    session_start();   //Se pone aqui para no interferir con la primera carga de la pagina web
     //EN CASO DE TENER QUE VOLVER
     $_SESSION["activadorPersonal"]=0; //NO SE ACTIVA NINGUNA INFORMACIÓN NI LETRERO
     header("location:../../../../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");

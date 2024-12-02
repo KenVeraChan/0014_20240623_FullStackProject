@@ -154,7 +154,7 @@
                         $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
                         $_SESSION["logeando"]=1;  //Datos BIEN metidos
                         $_SESSION["semaforo"]=1;  //No saca ningun letrero
-                        header("location: ../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/comprandoCliente.php");
+                        header("location: ../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
                     }
                     else
                     {
