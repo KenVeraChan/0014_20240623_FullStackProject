@@ -46,7 +46,7 @@ require "../../005_Login/conexionPHP.php";
         <?php }?>
         <div class="VaciobotonesPrincipal">
             <a href="../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
-            <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0093_PaginaProductos/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
+            <a href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../009_SectorPublico/0096_PaginaGestionCliente/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
         </div>
         <table id="tabla">
             <tr class="cajaBotonera">
@@ -71,31 +71,29 @@ require "../../005_Login/conexionPHP.php";
             </table>
         </form>
         <?php if($_SESSION["senalCarrito"]==2){?>
-            <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
-                <table class="seccionPrincipal">
-                        <tr class="filaCompra">
-                            <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
-                            <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
-                            <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
-                            <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
-                            <td class="celdaC"><strong>CANTIDAD</strong></td>
-                            <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
-                            <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
-                        </tr>
-                        <br><br>
-                    <?php for($i=0;$i<count($_SESSION["IDC"]);$i++){ ?>
-                        <tr class="filaVenta">
-                            <td class="celdaV"><?php echo $_SESSION["IDC"][$i];?></td>
-                            <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"][$i];?>"></td>
-                            <td class="celdaV" name="nombreElemento"><?php echo $_SESSION["NOMBREC"][$i];?></td>
-                            <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
-                            <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"][$i];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="actualizar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
-                            <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"][$i]."€";?></td>
-                            <td class="celdaV"><?php echo $_SESSION["COSTETOTC"][$i]."€";?></td>
-                        </tr>
-                    <?php } ?>
-                </table>
-            </form>
+            <table class="seccionPrincipal">
+                    <tr class="filaCompra">
+                        <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
+                        <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
+                        <td class="celdaC"><strong>CANTIDAD</strong></td>
+                        <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
+                        <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
+                    </tr>
+                    <br><br>
+                <?php for($i=0;$i<count($_SESSION["IDC"]);$i++){ ?>
+                    <tr class="filaVenta">
+                        <td class="celdaV"><?php echo $_SESSION["IDC"][$i];?></td>
+                        <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"][$i];?>"></td>
+                        <td class="celdaV"><?php echo $_SESSION["NOMBREC"][$i];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"][$i];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"][$i];?><div><br></div><a href="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php?id=<?php echo $_SESSION["IDC"][$i];?>&nombre=<?php echo $_SESSION["NOMBREC"][$i];?>&actualizar=aceptado" class="pulsadorActualizar" title="Pulsar para modificar este elemento">MODIFICAR</a></td>
+                        <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"][$i]."€";?></td>
+                        <td class="celdaV"><?php echo $_SESSION["COSTETOTC"][$i]."€";?></td>
+                    </tr>
+                <?php } ?>
+            </table>
             <form action="../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
                 <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
                     <tr class="filaCompra" style="height:10px; background-color: rgba(6,2,37,0.87)">
@@ -133,7 +131,6 @@ require "../../005_Login/conexionPHP.php";
         </footer>
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
-    <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable 
-    for($i=0;$i<count($_SESSION["NOMBREC"]);$i++)?>
+    <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
 </body>
 </html>

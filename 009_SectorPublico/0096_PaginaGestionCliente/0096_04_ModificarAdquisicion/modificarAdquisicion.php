@@ -1,0 +1,112 @@
+<?php
+session_start();   //Uso de la variable GLOBAL
+error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
+require "../../../005_Login/conexionPHP.php";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area de Modificación Adquisición del producto</title>
+    <link rel="stylesheet" href="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/modificarAdquisicion.css">
+    <script src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/scriptsModificarAdquisicion.js"></script>
+</head>
+<body onload="cargarPagina()">
+        <div class="letreroOK" style=
+               "position:absolute;
+                height: 30px; 
+                text-align: center;
+                color: white;
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
+    <header id="cabeceraPrincipal">
+        <div id="iconoAdorno"><img src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
+        <?php if(isset($_SESSION["usuario"])) {?>
+            <div id="areaSesion">
+                <table style="width:100%">
+                    <tr>
+                        <div id="bienvenido"><strong><?php echo"Bienvenido/a: ".$_SESSION["usuario"];?></strong></div>
+                        <a href="../../../005_Login/salidaPagina.php" id="cerrarSesion"><strong>CERRAR SESION</strong></a>
+                    </tr>
+                </table>
+            </div>   
+        <?php }?>
+        <?php if(!isset($_SESSION["usuario"])) {?>
+            <div id="areaSesion">
+                <table style="width:100%">
+                    <tr>
+                        <div id="bienvenido" style="margin-top:15px"><strong>Bienvenido: Cliente Invitado</strong></div>                    
+                        <div id="cerrarSesion"></div>
+                    </tr>
+                </table>
+            </div>   
+        <?php }?>
+        <div class="VaciobotonesPrincipal">
+            <a href="../../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHH.php" class="areaPrivada"><img src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/CANDADO.png" title="Area Privada" alt="Area Privada" width="40px" height="40px"></a>
+            <a href="../../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php" class="areaPrivada"><img src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/COMPRAS.png" title="Ver Carrito de Compra" alt="Ver Carrito de Compra" width="40px" height="40px"></a>
+        </div>
+        <table id="tabla">
+            <tr class="cajaBotonera">
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(1);?>'">INICIO</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(2);?>'">HISTORIA</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(3);?>'">PRODUCTOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(4);?>'">SERVICIOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(5);?>'">PROYECTOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(6);?>'">CLIENTES</div>
+            </tr>
+        </table>
+        <div class="VaciobotonesPrincipal"></div>
+    </header>  
+    <div class="consulta" style="background-image: url(../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/CLIENTE.jpg)">    
+        <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
+            <tr class="filaCompra" style="height:10px">
+                <td class="celdaCompra" colspan="2">MODIFICAR CANTIDAD DE ADQUISICIONES</td>
+                <td class="celdaCompra" colspan="3">FECHA ACTUAL: <?php echo date("D d-M-Y H:i:s");?></td>
+            </tr>
+        </table>
+        <table class="seccionPrincipal">
+                <tr class="filaCompra">
+                    <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
+                    <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
+                    <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
+                    <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
+                    <td class="celdaC"><strong>CANTIDAD</strong></td>
+                    <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
+                    <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
+                </tr>
+                <br><br>
+                <tr class="filaVenta">
+                    <td class="celdaV"><?php echo $_SESSION["IDC"];?></td>
+                    <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
+                    <td class="celdaV"><?php echo $_SESSION["NOMBREC"];?></td>
+                    <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
+                    <td class="celdaV"><?php echo $_SESSION["CANTIDADC"];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="actualizar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
+                    <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"]."€";?></td>
+                    <td class="celdaV"><?php echo $_SESSION["COSTETOTC"]."€";?></td>
+                </tr>
+        </table>
+    </div>
+    <div class="piePagina">
+        <footer id="piePrincipal">
+            <div id="zocalo">
+                -------- Fundadores --------
+                <br><strong>William Wissangel</strong></br>
+                <strong>Sharyllín Rousher</strong>
+                <br>---- Correo Electrónico ----</br>
+                <strong>sfer4D_corporation@outlook.com</strong>
+            </div>
+            <div class="pie">
+                Asociado: <strong>BioGenTech Corp</strong><br>
+                Competidor: <strong>Techeimer Corp</strong><br>
+                Inversor: <strong>Medigraria Corporation</strong><br>
+                Registro 2024: <strong>Registro C4321</strong>
+            </div>
+        </footer>
+    </div>
+    <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
+    <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
+</body>
+</html>

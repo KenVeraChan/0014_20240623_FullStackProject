@@ -208,6 +208,11 @@ if(isset($_GET["realizarCompra"]))
                     //FALTA DETERMINAR VALORES DE LA CONSULTA
                 }
                 $consLogin->closeCursor(); //Cierra la conexion y la consulta
+
+                //POR ÚLTIMO SE ELIMINA EL CONTENIDO DE LA TABLA DE CARRITO DE LA COMPRA PORQUE AHORA SON PRODUCTOS DEL CLIENTE NO DEL CARRITO EN CURSO
+                //Borra la tabla completa del carrito de la compra pero no elimina dicha tabla con sus encabezados
+                $consLogin=$conexionProductos->query("TRUNCATE TABLE $BD_tablaCarrito");
+                $consLogin->closeCursor(); //Cierra la conexion y la consulta
                 $_SESSION["senalCarrito"]=5;  //Señal de que se ha realizado la compra correctamente y guardada en la BBDD
                 header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
             }
@@ -227,31 +232,98 @@ if(isset($_GET["borrarCarrito"]))
     $_SESSION["senalCarrito"]=6;  //Señal de que se ha eliminado el carrito de la compra de la BBDD
     header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
 }
+//ACCEDIENDO A LA PAGINA DE LA MODIFICACIÓN DE LA CANTIDAD DEL PRODUCTO ADQUIRIDO EN EL CARRITO DE LA COMPRA
 if(isset($_GET["actualizar"]))
 {
+   //PRIMERO: ANTES DE NADA SE ELIMINAN LAS VARIABLES QUE YA EXISTÍAN
+       //ANTES DE NADA SE DESTRUYEN LAS VARIABLES QUE PUEDAN EXISTIR POR COMPLETO
+       unset($_SESSION["IDC"]);
+       unset($_SESSION["NOMBREC"]);
+       unset($_SESSION["IMAGENC"]);
+       unset($_SESSION["DEPARTAMENTOC"]);
+       unset($_SESSION["CANTIDADC"]);
+       unset($_SESSION["COSTEUNITC"]);
+       unset($_SESSION["COSTETOTC"]);
+   //SEGUNDO: SE DECLARAN LAS VARIABLES QUE HAN LLEGADO DESDE LA PAGINA ANTERIOR DEL CARRITO
+   $idModificar=$_GET["id"];  //Se necesita el ID para buscarlo en la BBDD
+   //TERCERO: SE CONSULTA EN LA TABLA OFICIAL DEL CARRITO DE LA COMPRA DEL CLIENTE
+   //TABLA DEL CARRITO OFICIAL
+   $consCarrito=$conexionProductos->query("SELECT * FROM $BD_tablaCarrito WHERE ID='$idModificar'");
+   $carritoCompras=$consCarrito->fetchAll(PDO::FETCH_OBJ);
+   $numeroCompras=$consCarrito->rowCount();
+   if($numeroCompras==0)
+   {
+       $_SESSION["senalCarrito"]=9;  //Señal de que NO se ha encontrado el producto del carrito por fallo externo y no se puede modificar
+       $consCarrito->closeCursor(); //Cierra la conexion y la consulta
+       header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+   }
+   if($numeroCompras>0)
+   {
+       //DESCARGA DATOS DE LA CONSULTA
+       foreach($carritoCompras as $cargas)
+       {
+           if(isset($cargas->ID) && isset($cargas->NOMBRE))
+           {
+                   $_SESSION["IDC"]=$cargas->ID;
+                   $_SESSION["NOMBREC"]=$cargas->NOMBRE;
+                   $_SESSION["DEPARTAMENTOC"]=$cargas->DEPARTAMENTO;
+                   $_SESSION["CANTIDADC"]=$cargas->CANTIDAD;
+                   $_SESSION["COSTEUNITC"]=$cargas->COSTE_UNITARIO;
+                   $_SESSION["COSTETOTC"]=$cargas->COSTE_TOTAL;
+                if(strcmp( $cargas->DEPARTAMENTO,"PRODUCTOS")==0)
+                {
+                    $_SESSION["IMAGENC"]="../../..".ConexionPHP::IR_RUTA_departamento(2).$_SESSION["NOMBREC"].".png";
+                }
+                if(strcmp( $cargas->DEPARTAMENTO,"SERVICIOS")==0)
+                {
+                    $_SESSION["IMAGENC"]="../../..".ConexionPHP::IR_RUTA_departamento(3).$_SESSION["NOMBREC"].".png";
+                }
+                if(strcmp( $cargas->DEPARTAMENTO,"PROYECTOS")==0)
+                {
+                    $_SESSION["IMAGENC"]="../../..".ConexionPHP::IR_RUTA_departamento(4).$_SESSION["NOMBREC"].".png";
+                }
+                $i++;  //Para el siguiente conjunto de datos guardado
+           }
+       }
+       $consCarrito->closeCursor(); //Cierra la conexion y la consulta
+       header("location:../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/modificarAdquisicion.php");
+    }
+}
+
+if(isset($_GET["modificar"]))
+{    
+    //PRIMERO DECLARACION DE VARIABLES
+    $idCambiado=$_GET["idElemento"];
+    $cantidadCambiada=$_GET["cantidad"];
+    $nombreCambiado=$_GET["nombreElemento"];
+    //SEGUNDO SE HACE LA COMPARATIVA PARA VER QUÉ PRODUCTO ES EL QUE SE TENDRÁ QUE CAMBIAR SU CANTIDAD
     //Primero busca el elemento afectado del carrito de la compra
     for($i=0;$i<count($_SESSION["NOMBREC"]);$i++)
     {
-        if(strcmp($_SESSION["NOMBREC"][$i],$_GET["nombreElemento"])==0)
+        if(strcmp($_SESSION["NOMBREC"][$i],$nombreCambiado)==0)
         {
         //Elemento encontrado y se empezará a gestionar la nueva cantidad de elementos de éste solicitados
             //Boton para actualizar el input de la cantidad para el carrito de la compra
-            if($_GET["cantidad"]=="")
+            if($cantidadCambiada=="")
             {
                 //No hace nada ni cambia la cantidad que ya tenía
             }
-            if($_GET["cantidad"]==0)
+            if($cantidadCambiada==0)
             {
                 //Elimina el artículo del carrito de la compra
             }
-            if($_GET["cantidad"]>0)
+            if($cantidadCambiada>0)
             {
+                $consLogin=$conexionProductos->query("UPDATE $BD_tablaCarrito SET CANTIDAD='$cantidadCambiada' WHERE NOMBRE='$nombreCambiado'");
+                $consLogin->closeCursor(); //Cierra la conexion y la consulta
+                $_SESSION["senalCarrito"]=7;  //Señal de que se ha eliminado el carrito de la compra de la BBDD
                 //Modifica la cantidad que ya existe en el carrito de la compra
                 header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
             }
         }
         else
         {
+            $_SESSION["senalCarrito"]=8;  //Señal de que se ha eliminado el carrito de la compra de la BBDD
             //El elemento no se encuentra por un fallo desconocido pues ni siquiera tendría sentido
             header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
         }

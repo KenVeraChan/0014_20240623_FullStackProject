@@ -180,13 +180,7 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="ERROR EN EL CAMBIO DE LA CANTIDAD DE UN PRODUCTO!";
             letrero.style.color="rgb(255,21,21)";
         }
-    if(tipoLetrero==9)
-        {
-            //LETRERO DE CARGA COMPLETA DE TODOS LAS UNIDADES DETECTADAS EN EL CARRITO DE LA COMPRA
-            letrero.innerHTML="ERROR NO SE PUEDE MODIFICAR LA CANTIDAD DE UN PRODUCTO QUE NO EXISTE!";
-            letrero.style.color="rgb(255,21,21)";
-        }
-    if(tipoLetrero>0 && tipoLetrero<10)
+    if(tipoLetrero>0 && tipoLetrero<9)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

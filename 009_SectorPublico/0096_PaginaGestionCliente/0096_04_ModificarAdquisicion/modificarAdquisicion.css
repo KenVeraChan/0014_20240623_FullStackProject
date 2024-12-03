@@ -159,7 +159,7 @@
             height: 70px;
             width: 70px;
             background-color: transparent;
-            background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+            background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/DESCARGA.png");
             background-size: 65px;
             font-size: x-small;
             color:transparent;
@@ -170,7 +170,7 @@
             width: 70px;
             float: left;
             background-color: transparent;
-            background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+            background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/TARJETA.png");
             background-size: 65px;
             font-size: x-small;
             color:transparent;    
@@ -181,7 +181,7 @@
             width: 70px;
             float: left;
             background-color: transparent;
-            background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/ELIMINAR_CARRITO.png");
+            background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/ELIMINAR_CARRITO.png");
             background-size: 65px;
             font-size: x-small;
             color:transparent;      
@@ -192,8 +192,9 @@
             width: 31px;
             float: center;
             text-decoration: none;
-            color: yellow;
             background-color: transparent;
+            background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/OK.png");
+            background-repeat: no-repeat;
             background-size: 30px;   
         }
         .despliegue
@@ -399,7 +400,7 @@
         height: 40px;
         width: 40px;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/DESCARGA.png");
         background-size: 35px;
         font-size: x-small;
         color:transparent;
@@ -410,7 +411,7 @@
         width: 40px;
         float: left;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/TARJETA.png");
         background-size: 65px;
         font-size: x-small;
         color:transparent;    
@@ -421,7 +422,7 @@
         width: 40px;
         float: left;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/ELIMINAR_CARRITO.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/ELIMINAR_CARRITO.png");
         background-size: 65px;
         font-size: x-small;
         color:transparent;      
@@ -432,9 +433,10 @@
         width: 31px;
         float: center;
         text-decoration: none;
-        color: yellow;
         background-color: transparent;
-        background-size: 30px;   
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/OK.png");
+        background-repeat: no-repeat;
+        background-size: 30px;    
     }
     .despliegue
     {
@@ -648,7 +650,7 @@
         height: 30px;
         width: 30px;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/DESCARGA.png");
         background-size: 29px;
         font-size: x-small;
         color:transparent;
@@ -659,7 +661,7 @@
         width: 30px;
         float: left;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/TARJETA.png");
         background-size: 29px;
         font-size: x-small;
         color:transparent;    
@@ -670,7 +672,7 @@
         width: 30px;
         float: left;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/ELIMINAR_CARRITO.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/ELIMINAR_CARRITO.png");
         background-size: 29px;
         font-size: x-small;
         color:transparent;      
@@ -681,9 +683,10 @@
         width: 31px;
         float: center;
         text-decoration: none;
-        color: yellow;
         background-color: transparent;
-        background-size: 30px;   
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/OK.png");
+        background-repeat: no-repeat;
+        background-size: 30px;  
     }
     .despliegue
     {
@@ -896,7 +899,7 @@
         height: 30px;
         width: 30px;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/DESCARGA.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/DESCARGA.png");
         background-size: 29px;
         font-size: x-small;
         color:transparent;
@@ -907,7 +910,7 @@
         width: 30px;
         float: left;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/TARJETA.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/TARJETA.png");
         background-size: 29px;
         font-size: x-small;
         color:transparent;    
@@ -918,7 +921,7 @@
         width: 30px;
         float: left;
         background-color: transparent;
-        background-image: url("../../009_SectorPublico/0096_PaginaGestionCliente/images/ELIMINAR_CARRITO.png");
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/ELIMINAR_CARRITO.png");
         background-size: 29px;
         font-size: x-small;
         color:transparent;       
@@ -929,9 +932,10 @@
         width: 31px;
         float: center;
         text-decoration: none;
-        color: yellow;
         background-color: transparent;
-        background-size: 30px;   
+        background-image: url("../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/OK.png");
+        background-repeat: no-repeat;
+        background-size: 30px;    
     }
     .despliegue
     {
