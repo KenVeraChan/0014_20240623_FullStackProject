@@ -50,12 +50,12 @@ require "../../../005_Login/conexionPHP.php";
         </div>
         <table id="tabla">
             <tr class="cajaBotonera">
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(1);?>'">INICIO</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(2);?>'">HISTORIA</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(3);?>'">PRODUCTOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(4);?>'">SERVICIOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(5);?>'">PROYECTOS</div>
-                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento(6);?>'">CLIENTES</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento_lejos(1);?>'">INICIO</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento_lejos(2);?>'">HISTORIA</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento_lejos(3);?>'">PRODUCTOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento_lejos(4);?>'">SERVICIOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento_lejos(5);?>'">PROYECTOS</div>
+                <div class="bloque_opciones" style="color: yellow" onclick="location.href='<?php echo ConexionPHP::IR_departamento_lejos(6);?>'">CLIENTES</div>
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
@@ -67,27 +67,29 @@ require "../../../005_Login/conexionPHP.php";
                 <td class="celdaCompra" colspan="3">FECHA ACTUAL: <?php echo date("D d-M-Y H:i:s");?></td>
             </tr>
         </table>
-        <table class="seccionPrincipal">
-                <tr class="filaCompra">
-                    <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
-                    <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
-                    <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
-                    <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
-                    <td class="celdaC"><strong>CANTIDAD</strong></td>
-                    <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
-                    <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
-                </tr>
-                <br><br>
-                <tr class="filaVenta">
-                    <td class="celdaV"><?php echo $_SESSION["IDC"];?></td>
-                    <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
-                    <td class="celdaV"><?php echo $_SESSION["NOMBREC"];?></td>
-                    <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
-                    <td class="celdaV"><?php echo $_SESSION["CANTIDADC"];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="actualizar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
-                    <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"]."€";?></td>
-                    <td class="celdaV"><?php echo $_SESSION["COSTETOTC"]."€";?></td>
-                </tr>
-        </table>
+        <form action="../../../009_SectorPublico/0096_PaginaGestionCliente/consultasCliente.php" method="GET">
+            <table class="seccionPrincipal">
+                    <tr class="filaCompra">
+                        <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
+                        <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
+                        <td class="celdaC"><strong>CANTIDAD</strong></td>
+                        <td class="celdaC"><strong>COSTE UNITARIO</strong></td>
+                        <td class="celdaC"><strong>COSTE TOTAL</strong></td>        
+                    </tr>
+                    <br><br>
+                    <tr class="filaVenta">
+                        <td class="celdaV"><input type="text" name="identificadorVENTA" value="<?php echo $_SESSION["IDC"];?>" disabled></td>
+                        <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
+                        <td class="celdaV"><?php echo $_SESSION["NOMBREC"];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
+                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="modificar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
+                        <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"]."€";?></td>
+                        <td class="celdaV"><?php echo $_SESSION["COSTETOTC"]."€";?></td>
+                    </tr>
+            </table>
+        </form>
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">

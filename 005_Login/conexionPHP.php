@@ -25,6 +25,12 @@ class ConexionPHP
     private static $IR_servicios="../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php";
     private static $IR_proyectos="../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php";
     private static $IR_clientes="../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php";
+    private static $IR_inicio_lejos="../../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php";
+    private static $IR_historia_lejos="../../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.php";
+    private static $IR_productos_lejos="../../../009_SectorPublico/0093_PaginaProductos/paginaProductos.php";
+    private static $IR_servicios_lejos="../../../009_SectorPublico/0094_PaginaServicios/paginaServicios.php";
+    private static $IR_proyectos_lejos="../../../009_SectorPublico/0095_PaginaProyectos/paginaProyectos.php";
+    private static $IR_clientes_lejos="../../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php";
     private static $IR_RUTA_SLIDER="/009_SectorPublico/0091_PaginaPrincipal/sliderImages/";  //CARPETA SLIDER DEL SERVIDOR
     private static $IR_RUTA_PRODUCTOS="/009_SectorPublico/0093_PaginaProductos/productImages/";  //CARPETA PRODUCTOS DEL SERVIDOR
     private static $IR_RUTA_SERVICIOS="/009_SectorPublico/0094_PaginaServicios/servicesImages/";  //CARPETA SERVICIOS DEL SERVIDOR
@@ -121,6 +127,19 @@ class ConexionPHP
             case 4: $texto=self::$IR_servicios; break;
             case 5: $texto=self::$IR_proyectos; break;
             case 6: $texto=self::$IR_clientes; break;
+        }
+        return $texto;
+    }
+    public static function IR_departamento_lejos($departamento)
+    {
+        switch($departamento)
+        {
+            case 1: $texto=self::$IR_inicio_lejos; break;
+            case 2: $texto=self::$IR_historia_lejos; break;
+            case 3: $texto=self::$IR_productos_lejos; break;
+            case 4: $texto=self::$IR_servicios_lejos; break;
+            case 5: $texto=self::$IR_proyectos_lejos; break;
+            case 6: $texto=self::$IR_clientes_lejos; break;
         }
         return $texto;
     }

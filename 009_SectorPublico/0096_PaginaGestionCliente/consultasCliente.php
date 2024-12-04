@@ -97,35 +97,57 @@ if(isset($_GET["descargar"]))
     }
     if($numeroCompras>0)
     {
+        //PRIMERO CIERRA LA CONEXIÓN DE LA CONSULTA ANTERIOR PARA PROCEDER CON MAS CONSULTAS
         $i=0;   //Puntero de recolecta de datos de la BBDD del servidor
-        //DESCARGA DATOS DE LA CONSULTA
-        foreach($carritoCompras as $cargas)
-        {
-            if(isset($cargas->ID) && isset($cargas->NOMBRE))
-            {
-                    $_SESSION["IDC"][$i]=$cargas->ID;
-                    $_SESSION["NOMBREC"][$i]=$cargas->NOMBRE;
-                    $_SESSION["DEPARTAMENTOC"][$i]=$cargas->DEPARTAMENTO;
-                    $_SESSION["CANTIDADC"][$i]=$cargas->CANTIDAD;
-                    $_SESSION["COSTEUNITC"][$i]=$cargas->COSTE_UNITARIO;
-                    $_SESSION["COSTETOTC"][$i]=$cargas->COSTE_TOTAL;
-                if(strcmp( $cargas->DEPARTAMENTO,"PRODUCTOS")==0)
-                {
-                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(2).$_SESSION["NOMBREC"][$i].".png";
-                }
-                if(strcmp( $cargas->DEPARTAMENTO,"SERVICIOS")==0)
-                {
-                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(3).$_SESSION["NOMBREC"][$i].".png";
-                }
-                if(strcmp( $cargas->DEPARTAMENTO,"PROYECTOS")==0)
-                {
-                    $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(4).$_SESSION["NOMBREC"][$i].".png";
-                }
-                $i++;  //Para el siguiente conjunto de datos guardado
-            }
-        }
+
+       //SEGUNDO DESCARGA DATOS DE LA CONSULTA ANTERIOR
+       foreach($carritoCompras as $cargas)
+       {
+           if(isset($cargas->ID) && isset($cargas->NOMBRE))
+           {
+                   $_SESSION["IDC"][$i]=$cargas->ID;
+                   $_SESSION["NOMBREC"][$i]=$cargas->NOMBRE;
+                   $_SESSION["DEPARTAMENTOC"][$i]=$cargas->DEPARTAMENTO;
+                   $_SESSION["CANTIDADC"][$i]=$cargas->CANTIDAD;
+                   $_SESSION["COSTEUNITC"][$i]=$cargas->COSTE_UNITARIO;
+                   $_SESSION["COSTETOTC"][$i]=$cargas->COSTE_TOTAL;
+               if(strcmp( $cargas->DEPARTAMENTO,"PRODUCTOS")==0)
+               {
+                   $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(2).$_SESSION["NOMBREC"][$i].".png";
+               }
+               if(strcmp( $cargas->DEPARTAMENTO,"SERVICIOS")==0)
+               {
+                   $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(3).$_SESSION["NOMBREC"][$i].".png";
+               }
+               if(strcmp( $cargas->DEPARTAMENTO,"PROYECTOS")==0)
+               {
+                   $_SESSION["IMAGENC"][$i]="../..".ConexionPHP::IR_RUTA_departamento(4).$_SESSION["NOMBREC"][$i].".png";
+               }
+               $i++;  //Para el siguiente conjunto de datos guardado
+           }
+       }
+       $consCarrito->closeCursor(); //Cierra la conexion y la consulta
+       $_SESSION["senalCarrito"]=2;  //Señal de que SI se han encontrado datos descargados del carrito de la compra del cliente
+
+        //TERCERO ELIMINA, CON UNA SIGUIENTE CONSULTA, LOS DATOS DE LA TABLA PARA SER REEMPLAZADOS CON LOS DATOS DESCARGADOS SIN PRODUCTOS, SERVICIOS O PROYECTOS REPETIDOS EN LA TABLA
+        //Borra la tabla completa del carrito de la compra pero no elimina dicha tabla con sus encabezados
+        $consCarrito=$conexionProductos->query("TRUNCATE TABLE $BD_tablaCarrito");
         $consCarrito->closeCursor(); //Cierra la conexion y la consulta
-        $_SESSION["senalCarrito"]=2;  //Señal de que SI se han encontrado datos descargados del carrito de la compra del cliente
+
+        //CUARTO RELLENA DE NUEVO LA TABLA CON LOS DATOS DESCARGADOS Y SIN PRODUCTOS, SERVICIOS O PROYECTOS REPETIDOS
+        
+        for($i=0;$i<count($_SESSION["IDC"]);$i++)
+        {
+            $idNUEVO=$_SESSION["IDC"][$i];
+            $nombreNUEVO=$_SESSION["NOMBREC"][$i];
+            $departamentoNUEVO=$_SESSION["DEPARTAMENTOC"][$i];
+            $cantidadNUEVO=$_SESSION["CANTIDADC"][$i];
+            $costeUnitarioNUEVO=$_SESSION["COSTEUNITC"][$i];
+            $costeTotalNUEVO=$_SESSION["COSTETOTC"][$i];
+
+            $consCarrito=$conexionProductos->query("INSERT INTO $BD_tablaCarrito(ID,NOMBRE,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL)VALUES('$idNUEVO','$nombreNUEVO','$departamentoNUEVO','$cantidadNUEVO','$costeUnitarioNUEVO','$costeTotalNUEVO')");
+        }
+        $consCarrito->closeCursor(); //Cierra la conexion y la consulta 
         header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
     }
 }
@@ -290,43 +312,45 @@ if(isset($_GET["actualizar"]))
     }
 }
 
-if(isset($_GET["modificar"]))
-{    
-    //PRIMERO DECLARACION DE VARIABLES
-    $idCambiado=$_GET["idElemento"];
-    $cantidadCambiada=$_GET["cantidad"];
-    $nombreCambiado=$_GET["nombreElemento"];
-    //SEGUNDO SE HACE LA COMPARATIVA PARA VER QUÉ PRODUCTO ES EL QUE SE TENDRÁ QUE CAMBIAR SU CANTIDAD
-    //Primero busca el elemento afectado del carrito de la compra
-    for($i=0;$i<count($_SESSION["NOMBREC"]);$i++)
+if(isset($_GET["modificar"])) //Dentro de la pagina de modificación de las adquisiciones pendientes
+{     
+    if(isset($_GET["identificadorVENTA"]))
     {
-        if(strcmp($_SESSION["NOMBREC"][$i],$nombreCambiado)==0)
-        {
+        //PRIMERO DECLARACION DE VARIABLES
+        $idCambiado=$_GET["identificadorVENTA"];
+        $cantidadCambiada=$_GET["cantidad"];
+        //SEGUNDO SE COMPRUEBA LA CANTIDAD QUE SE HA ESPECIFICADO
         //Elemento encontrado y se empezará a gestionar la nueva cantidad de elementos de éste solicitados
             //Boton para actualizar el input de la cantidad para el carrito de la compra
-            if($cantidadCambiada=="")
-            {
-                //No hace nada ni cambia la cantidad que ya tenía
-            }
-            if($cantidadCambiada==0)
-            {
-                //Elimina el artículo del carrito de la compra
-            }
-            if($cantidadCambiada>0)
-            {
-                $consLogin=$conexionProductos->query("UPDATE $BD_tablaCarrito SET CANTIDAD='$cantidadCambiada' WHERE NOMBRE='$nombreCambiado'");
-                $consLogin->closeCursor(); //Cierra la conexion y la consulta
-                $_SESSION["senalCarrito"]=7;  //Señal de que se ha eliminado el carrito de la compra de la BBDD
-                //Modifica la cantidad que ya existe en el carrito de la compra
-                header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
-            }
-        }
-        else
+        if($cantidadCambiada=="")
         {
-            $_SESSION["senalCarrito"]=8;  //Señal de que se ha eliminado el carrito de la compra de la BBDD
-            //El elemento no se encuentra por un fallo desconocido pues ni siquiera tendría sentido
-            header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+            //No hace nada ni cambia la cantidad que ya tenía
+            $_SESSION["senalCarrito"]=10;  //Señal de que NO se ha cambiado la cantidad de un elemento del carrito de la compra de la BBDD
+            header("location:../../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
         }
+        if($cantidadCambiada==0)
+        {
+            //Elimina el artículo del carrito de la compra
+            $consLogin=$conexionProductos->query("DELETE FROM $BD_tablaCarrito WHERE ID='$idCambiado'");
+            $consLogin->closeCursor(); //Cierra la conexion y la consulta
+            $_SESSION["senalCarrito"]=11;  //Señal de que se ha ELIMINADO el elemento del carrito de la compra de la BBDD
+            header("location:../../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+        
+        }
+        if($cantidadCambiada>0)
+        {
+            $consLogin=$conexionProductos->query("UPDATE $BD_tablaCarrito SET CANTIDAD='$cantidadCambiada' WHERE ID='$idCambiado'");
+            $consLogin->closeCursor(); //Cierra la conexion y la consulta
+            $_SESSION["senalCarrito"]=7;  //Señal de que se ha modigicado la cantidad de un elemento del carrito de la compra de la BBDD
+            //Modifica la cantidad que ya existe en el carrito de la compra
+            header("location:../../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+        }
+    }
+    else
+    {
+        $_SESSION["senalCarrito"]=8;  //Señal de que NO EXISTE EL ID SELECCIONADO DEL ITEM DEL CARRITO NI SU CANTIDAD
+        //El elemento no se encuentra por un fallo desconocido pues ni siquiera tendría sentido
+        header("location:../../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
     }
 }
 ?>

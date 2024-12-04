@@ -176,17 +176,29 @@ function letreroConfirmado(tipoLetrero)
         }
     if(tipoLetrero==8)
         {
-            //LETRERO DE CARGA COMPLETA DE TODOS LAS UNIDADES DETECTADAS EN EL CARRITO DE LA COMPRA
-            letrero.innerHTML="ERROR EN EL CAMBIO DE LA CANTIDAD DE UN PRODUCTO!";
+            //LETRERO DE ERROR EN EL CAMBIO DE LA CANTIDAD DE UN PRODUCTO
+            letrero.innerHTML="ERROR NO EXSTE ESE ITEM NI SU CANTIDAD!";
             letrero.style.color="rgb(255,21,21)";
         }
     if(tipoLetrero==9)
         {
-            //LETRERO DE CARGA COMPLETA DE TODOS LAS UNIDADES DETECTADAS EN EL CARRITO DE LA COMPRA
+            //LETRERO DE ERROR NO SE PUEDE MODIFICAR LA CANTIDAD DE UN PRODUCTO QUE NO EXISTE
             letrero.innerHTML="ERROR NO SE PUEDE MODIFICAR LA CANTIDAD DE UN PRODUCTO QUE NO EXISTE!";
             letrero.style.color="rgb(255,21,21)";
         }
-    if(tipoLetrero>0 && tipoLetrero<10)
+    if(tipoLetrero==10)
+        {
+            //LETRERO DE QUE SE NO SE HA CAMBIADO LA CANTIDAD DE UN ELEMENTO SELECCIONADO
+            letrero.innerHTML="NO SE HA MODIFICADO LA CANTIDAD DEL PRODUCTO ELEGIDO!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero==11)
+        {
+            //LETRERO DE QUE SE NO SE HA CAMBIADO LA CANTIDAD DE UN ELEMENTO SELECCIONADO
+            letrero.innerHTML="SE HA ELIMINADO EL ELEMENTO ELEGIDO DEL CARRITO DE LA COMPRA!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<12)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
