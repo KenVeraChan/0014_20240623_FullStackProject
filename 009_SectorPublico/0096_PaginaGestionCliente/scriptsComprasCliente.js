@@ -177,7 +177,7 @@ function letreroConfirmado(tipoLetrero)
     if(tipoLetrero==8)
         {
             //LETRERO DE ERROR EN EL CAMBIO DE LA CANTIDAD DE UN PRODUCTO
-            letrero.innerHTML="ERROR NO EXSTE ESE ITEM NI SU CANTIDAD!";
+            letrero.innerHTML="ERROR NO EXISTE ESE ITEM NI SU CANTIDAD!";
             letrero.style.color="rgb(255,21,21)";
         }
     if(tipoLetrero==9)

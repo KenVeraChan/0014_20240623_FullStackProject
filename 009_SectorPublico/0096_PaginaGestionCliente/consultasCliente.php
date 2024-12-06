@@ -9,6 +9,7 @@ $BD_tablaCarrito=ConexionPHP::getBD_TablaCarrito();     //Para la descarga de lo
 $BD_tablaDatosBancarios=ConexionPHP::getBD_DatosBancarios();  //Para la descarga de los datos bancarios
 $BD_tablaLoginUsuario=ConexionPHP::getBD_TablaIDClientes();  //Para la descarga de datos personales
 $BD_tablaPedidos=ConexionPHP::getBD_TablaClientes();   //Para la introduccion de las compras de un cliente
+$BD_tablaStock=ConexionPHP::getBD_TablaInterfazImagenes();  //Para la consulta del STOCK de productos, servicios o proyectos consultados
 
 // ----- SECTOR DE PAGINA PRODUCTOS COMPLETA ------ //
 // ----- TRAS HABER DADO A COMPRAR EN CUALQUIERA DE LAS PÁGINAS ANTERIORES: PRODUCTOS, SERVICIOS, PROYECTOS ------//
@@ -308,16 +309,32 @@ if(isset($_GET["actualizar"]))
            }
        }
        $consCarrito->closeCursor(); //Cierra la conexion y la consulta
+
+       //CUARTO: SE CONSULTA LA TABLA DE IMAGENESINTERFAZ PARA PODER OBTENER EL STOCK DEL PRODUCTO, SERVICIO O PROYECTO SOLICITADO Y VER LA COMPARATIVA
+        //TABLA DE IMAGENESINTERFAZ EN DONDE ESTA EL STOCK DE TODOS LOS PRODUCTOS, SERVICIOS Y PROYECTOS OFERTADOS
+            $consCarrito=$conexionProductos->query("SELECT * FROM $BD_tablaStock WHERE ID='$idModificar'");
+            $carritoCompras=$consCarrito->fetchAll(PDO::FETCH_OBJ);
+            $numeroStock=$consCarrito->rowCount();
+            foreach($carritoCompras as $stock)
+            {
+                if(isset($stock->ID) && isset($stock->DETALLES))
+                {
+                        $_SESSION["IDSTOCK"]=$stock->ID;
+                        $_SESSION["ALMACENSTOCK"]=$stock->STOCK;
+                        $_SESSION["DETALLESSTOCK"]=$stock->DETALLES;
+                }
+            }
+        $consCarrito->closeCursor(); //Cierra la conexion y la consulta
        header("location:../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/modificarAdquisicion.php");
     }
 }
 
 if(isset($_GET["modificar"])) //Dentro de la pagina de modificación de las adquisiciones pendientes
 {     
-    if(isset($_GET["identificadorVENTA"]))
+    if(isset($_SESSION["IDC"]))
     {
         //PRIMERO DECLARACION DE VARIABLES
-        $idCambiado=$_GET["identificadorVENTA"];
+        $idCambiado=$_SESSION["IDC"];    //Se hereda de la anterior consulta de ACTUALIZAR proveniente de la página anterior a esta de modificar adquisicion
         $cantidadCambiada=$_GET["cantidad"];
         //SEGUNDO SE COMPRUEBA LA CANTIDAD QUE SE HA ESPECIFICADO
         //Elemento encontrado y se empezará a gestionar la nueva cantidad de elementos de éste solicitados

@@ -63,7 +63,7 @@ require "../../../005_Login/conexionPHP.php";
     <div class="consulta" style="background-image: url(../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/images/CLIENTE.jpg)">    
         <table class="seccionPrincipal">   <!-- PRIMERA BANDA COMO MOSTRADOR DE VENTAS -->
             <tr class="filaCompra" style="height:10px">
-                <td class="celdaCompra" colspan="2">MODIFICAR CANTIDAD DE ADQUISICIONES</td>
+                <td class="celdaCompra" colspan="2">MODIFICAR CANTIDAD ADQUIRIDA</td>
                 <td class="celdaCompra" colspan="3">FECHA ACTUAL: <?php echo date("D d-M-Y H:i:s");?></td>
             </tr>
         </table>
@@ -80,13 +80,33 @@ require "../../../005_Login/conexionPHP.php";
                     </tr>
                     <br><br>
                     <tr class="filaVenta">
-                        <td class="celdaV"><input type="text" name="identificadorVENTA" value="<?php echo $_SESSION["IDC"];?>" disabled></td>
+                        <td class="celdaV"><input type="text" name="identificadorVENTA" class="idTexto" value="<?php echo $_SESSION["IDC"];?>" disabled></td>
                         <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
                         <td class="celdaV"><?php echo $_SESSION["NOMBREC"];?></td>
                         <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
                         <td class="celdaV"><?php echo $_SESSION["CANTIDADC"];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="modificar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
                         <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"]."€";?></td>
                         <td class="celdaV"><?php echo $_SESSION["COSTETOTC"]."€";?></td>
+                    </tr>
+            </table>
+            <br><br>
+            <table class="seccionPrincipal">
+                    <tr class="filaCompraStock">
+                        <td class="celdaC"><strong>ID ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>IMAGEN PRODUCTO</strong></td>
+                        <td class="celdaC"><strong>NOMBRE ARTÍCULO</strong></td>
+                        <td class="celdaC"><strong>DEPARTAMENTO</strong></td>
+                        <td class="celdaC"><strong>EN STOCK</strong></td>
+                        <td class="celdaC"><strong>DESCRICIÓN TÉCNICA</strong></td>     
+                    </tr>
+                    <br><br>
+                    <tr class="filaVentaStock">
+                        <td class="celdaS"><input type="text" class="idTextoStock" value="<?php echo $_SESSION["IDC"];?>" disabled></td>
+                        <td class="celdaS"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
+                        <td class="celdaS"><?php echo $_SESSION["NOMBREC"];?></td>
+                        <td class="celdaS"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
+                        <td class="celdaS"><?php echo $_SESSION["ALMACENSTOCK"];?></td>
+                        <td class="celdaS"><?php echo $_SESSION["DETALLESSTOCK"];?></td>
                     </tr>
             </table>
         </form>

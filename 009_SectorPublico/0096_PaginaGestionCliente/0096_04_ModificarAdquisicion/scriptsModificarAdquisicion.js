@@ -4,11 +4,11 @@
 
 var elemento1= document.getElementsByClassName("bloque_opciones");
 var elemento2= document.getElementsByClassName("filaVenta");
-var elemento3= document.getElementsByClassName("pulsadorCompra");
+var elemento3= document.getElementsByClassName("idTexto");
 var elemento4= document.getElementsByClassName("areaPrivada");
-var elemento5= document.getElementsByClassName("pulsadorDescarga");
-var elemento6= document.getElementsByClassName("pulsadorEliminacion");
-var elemento7= document.getElementsByClassName("pulsadorActualizar");
+var elemento5= document.getElementsByClassName("pulsadorActualizar");
+var elemento6= document.getElementsByClassName("filaVentaStock");
+var elemento7= document.getElementsByClassName("idTextoStock");
 
 function cargarPagina()
 {
@@ -37,30 +37,22 @@ function cargarPagina()
         elemento2[i].addEventListener('mouseenter',function(){
             elemento2[i].style.transitionDuration = "0.5s";
             elemento2[i].style.background= "yellow";
+            elemento6[i].style.background= "yellow";
             elemento2[i].style.color="rgb(13,9,77)";
+            elemento6[i].style.color="rgb(13,9,77)";
+            elemento3[i].style.color="rgb(13,9,77)";
             elemento7[i].style.color="rgb(13,9,77)";
                 })
         elemento2[i].addEventListener('mouseleave',function(){
             elemento2[i].style.transitionDuration = "0.5s";
             elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
+            elemento6[i].style.background= "rgba(0, 0, 19, 0.89)";
             elemento2[i].style.color="yellow";
+            elemento6[i].style.color="yellow";
+            elemento3[i].style.color="yellow";
             elemento7[i].style.color="yellow";
                 })   
     }
-    for(let i=0;i<elemento3.length;i++)
-        {
-            //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
-            elemento3[i].addEventListener('mouseenter',function(){
-                elemento3[i].style.transitionDuration = "0.5s";
-                elemento3[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
-                elemento3[i].style.boxShadow="white 1px 0 40px";
-                    })
-            elemento3[i].addEventListener('mouseleave',function(){
-                elemento3[i].style.transitionDuration = "0.5s";
-                elemento3[i].style.border="none";
-                elemento3[i].style.boxShadow="none";
-                    })
-        }
     for(let i=0;i<elemento4.length;i++)
     {
         //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
@@ -82,45 +74,17 @@ function cargarPagina()
             //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
             elemento5[i].addEventListener('mouseenter',function(){
                 elemento5[i].style.transitionDuration = "0.5s";
-                elemento5[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
-                elemento5[i].style.boxShadow="white 1px 0 40px";
+                elemento5[i].style.backgroundColor="black";    
+                elemento5[i].style.color="yellow";
+                elemento5[i].style.boxShadow="black 1px 0 20px";
+                elemento5[i].style.borderRadius="30%";
                     })
             elemento5[i].addEventListener('mouseleave',function(){
                 elemento5[i].style.transitionDuration = "0.5s";
-                elemento5[i].style.border="none";
+                elemento5[i].style.backgroundColor="transparent";
                 elemento5[i].style.boxShadow="none";
-                    })
-        }
-    for(let i=0;i<elemento6.length;i++)
-        {
-            //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
-            elemento6[i].addEventListener('mouseenter',function(){
-                elemento6[i].style.transitionDuration = "0.5s";
-                elemento6[i].style.border="solid 2px rgba(0, 0, 19, 0.89)";
-                elemento6[i].style.boxShadow="white 1px 0 40px";
-                    })
-            elemento6[i].addEventListener('mouseleave',function(){
-                elemento6[i].style.transitionDuration = "0.5s";
-                elemento6[i].style.border="none";
-                elemento6[i].style.boxShadow="none";
-                    })
-        }
-    for(let i=0;i<elemento7.length;i++)
-        {
-            //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
-            elemento7[i].addEventListener('mouseenter',function(){
-                elemento7[i].style.transitionDuration = "0.5s";
-                elemento7[i].style.backgroundColor="black";    
-                elemento7[i].style.color="yellow";
-                elemento7[i].style.boxShadow="black 1px 0 20px";
-                elemento7[i].style.borderRadius="30%";
-                    })
-            elemento7[i].addEventListener('mouseleave',function(){
-                elemento7[i].style.transitionDuration = "0.5s";
-                elemento7[i].style.backgroundColor="transparent";
-                elemento7[i].style.boxShadow="none";
-                elemento7[i].style.color="black";
-                elemento7[i].style.borderRadius="30%";
+                elemento5[i].style.color="black";
+                elemento5[i].style.borderRadius="30%";
                     })
         }
 }
