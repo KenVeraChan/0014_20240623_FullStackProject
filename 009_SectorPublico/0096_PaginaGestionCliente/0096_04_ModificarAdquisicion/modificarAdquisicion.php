@@ -128,7 +128,7 @@ require "../../../005_Login/conexionPHP.php";
             </div>
         </footer>
     </div>
-    <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
+    <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>); cambiaStock(<?php echo $_SESSION["ALMACENSTOCK"];?>);</script>
     <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
 </body>
 </html>

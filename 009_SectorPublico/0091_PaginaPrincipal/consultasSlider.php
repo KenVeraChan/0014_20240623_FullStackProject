@@ -1,7 +1,6 @@
 <?php
     require "../../005_Login/conexionPHP.php";
     error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-    $_SESSION["PUNTERO"];
     $conexion=ConexionPHP::getConexionCLIENTES();   //Ahora se necesita la conexión con la BBDD de los clientes
     $BD_tabla=ConexionPHP::getBD_TablaInterfazImagenes();
     //FICHERO PRINCIPAL DE INICIO DE EJECUCIÓN BACKEND

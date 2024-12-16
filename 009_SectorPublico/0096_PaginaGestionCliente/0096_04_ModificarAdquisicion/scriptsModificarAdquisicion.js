@@ -3,11 +3,11 @@
 /******************************************************************/
 
 var elemento1= document.getElementsByClassName("bloque_opciones");
-var elemento2= document.getElementsByClassName("filaVenta");
+var elemento2= document.getElementsByClassName("celdaV");
 var elemento3= document.getElementsByClassName("idTexto");
 var elemento4= document.getElementsByClassName("areaPrivada");
 var elemento5= document.getElementsByClassName("pulsadorActualizar");
-var elemento6= document.getElementsByClassName("filaVentaStock");
+var elemento6= document.getElementsByClassName("celdaS");
 var elemento7= document.getElementsByClassName("idTextoStock");
 
 function cargarPagina()
@@ -29,30 +29,25 @@ function cargarPagina()
             elemento1[i].style.color="yellow";
                 })
     }
-    for(let i=0;i<elemento2.length;i++)
-    {
-        //FILAS DE LAS VENTAS SELECCIONADAS
-        elemento2[i].style.visibility="visible";
-        elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
-        elemento2[i].addEventListener('mouseenter',function(){
-            elemento2[i].style.transitionDuration = "0.5s";
-            elemento2[i].style.background= "yellow";
-            elemento6[i].style.background= "yellow";
-            elemento2[i].style.color="rgb(13,9,77)";
-            elemento6[i].style.color="rgb(13,9,77)";
-            elemento3[i].style.color="rgb(13,9,77)";
-            elemento7[i].style.color="rgb(13,9,77)";
-                })
-        elemento2[i].addEventListener('mouseleave',function(){
-            elemento2[i].style.transitionDuration = "0.5s";
-            elemento2[i].style.background= "rgba(0, 0, 19, 0.89)";
-            elemento6[i].style.background= "rgba(0, 0, 19, 0.89)";
-            elemento2[i].style.color="yellow";
-            elemento6[i].style.color="yellow";
-            elemento3[i].style.color="yellow";
-            elemento7[i].style.color="yellow";
-                })   
-    }
+    //FILAS DE LAS VENTAS SELECCIONADAS
+    elemento2[4].addEventListener('mouseenter',function(){
+        elemento2[4].style.transitionDuration = "0.5s";
+        elemento2[4].style.background= "yellow";
+        elemento6[4].style.background= "yellow";
+        elemento2[4].style.color="rgb(13,9,77)";
+        elemento6[4].style.color="rgb(13,9,77)";
+        elemento3[i].style.color="rgb(13,9,77)";
+        elemento7[i].style.color="rgb(13,9,77)";
+            })
+    elemento2[4].addEventListener('mouseleave',function(){
+        elemento2[4].style.transitionDuration = "0.5s";
+        elemento2[4].style.background= "rgba(0, 0, 19, 0.89)";
+        elemento6[4].style.background= "rgba(1, 1, 22, 0)";
+        elemento2[4].style.color="yellow";
+        elemento6[4].style.color="yellow";
+        elemento3[i].style.color="yellow";
+        elemento7[i].style.color="yellow";
+            })   
     for(let i=0;i<elemento4.length;i++)
     {
         //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
@@ -171,4 +166,14 @@ function letreroConfirmado(tipoLetrero)
                 clienteLogin.style.color="white";
                 clienteNombre.style.color="white";
         });
+}
+function cambiaStock(datoStock)
+{
+let compra=document.getElementsByClassName("despliegue")[0].value;
+let stock=document.getElementsByClassName("celdaS")[4].value;
+compra.addEventListener("change",function()
+    {
+        stock=datoStock-compra;
+    });
+    document.getElementsByClassName("celdaS")[4].innerHTML=stock;
 }

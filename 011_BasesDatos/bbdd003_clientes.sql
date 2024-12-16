@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-12-2024 a las 14:05:02
+-- Tiempo de generación: 16-12-2024 a las 13:46:26
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -41,9 +41,10 @@ CREATE TABLE `clientescarrito` (
 --
 
 INSERT INTO `clientescarrito` (`ID`, `NOMBRE`, `DEPARTAMENTO`, `CANTIDAD`, `COSTE_UNITARIO`, `COSTE_TOTAL`) VALUES
-(81, 'HIDROGENO', 'PROYECTOS', 11, 95000, 1045000),
-(29, 'INSTRUMENTACION', 'PRODUCTOS', 38, 8.25, 313.5),
-(30, 'PANEL SOLAR', 'PRODUCTOS', 6, 4560.21, 27361.3);
+(57, 'CULTIVOS', 'SERVICIOS', 10, 71.75, 358.75),
+(29, 'INSTRUMENTACION', 'PRODUCTOS', 5, 8.25, 313.5),
+(30, 'PANEL SOLAR', 'PRODUCTOS', 6, 4560.21, 27361.3),
+(31, 'ROBOT', 'PRODUCTOS', 6, 201.23, 1207.38);
 
 -- --------------------------------------------------------
 
