@@ -167,13 +167,17 @@ function letreroConfirmado(tipoLetrero)
                 clienteNombre.style.color="white";
         });
 }
-function cambiaStock(datoStock)
+
+let uno=document.querySelectorAll(".despliegue")[0];
+alert(uno);
+document.getElementsByClassName("despliegue")[0].addEventListener("input",cambiaStock());
+function cambiaStock()
 {
-let compra=document.getElementsByClassName("despliegue")[0].value;
-let stock=document.getElementsByClassName("celdaS")[4].value;
-compra.addEventListener("change",function()
-    {
-        stock=datoStock-compra;
-    });
-    document.getElementsByClassName("celdaS")[4].innerHTML=stock;
+    let compra=document.getElementsByClassName("despliegue")[0].value;
+    let stock=document.getElementsByClassName("celdaS")[4].value;
+    let datoStock;
+    datoStock=stock-compra;
+    alert(datoStock);
+    document.getElementsByClassName("celdaS")[4].value=datoStock;
 }
+
