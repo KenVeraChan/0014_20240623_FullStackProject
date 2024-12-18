@@ -2,16 +2,16 @@
 /********* 0) RATON ENTRANDO EN AREA DE BOTONES DEL MENU **********/
 /******************************************************************/
 
+
 var elemento1= document.getElementsByClassName("bloque_opciones");
 var elemento2= document.getElementsByClassName("celdaV");
-var elemento3= document.getElementsByClassName("idTexto");
 var elemento4= document.getElementsByClassName("areaPrivada");
 var elemento5= document.getElementsByClassName("pulsadorActualizar");
 var elemento6= document.getElementsByClassName("celdaS");
-var elemento7= document.getElementsByClassName("idTextoStock");
 
 function cargarPagina()
 {
+    var elemento3= document.getElementById("trasCompra");   //Los de tipo ID se tienen que declarar dentro de la función
     //PONER DE COLOR DORADO TODOS LOS BOTONES PRESENTES
     for(let i=0;i<elemento1.length;i++)
     {
@@ -36,8 +36,7 @@ function cargarPagina()
         elemento6[4].style.background= "yellow";
         elemento2[4].style.color="rgb(13,9,77)";
         elemento6[4].style.color="rgb(13,9,77)";
-        elemento3[i].style.color="rgb(13,9,77)";
-        elemento7[i].style.color="rgb(13,9,77)";
+        elemento3.style.color="rgb(13,9,77)";
             })
     elemento2[4].addEventListener('mouseleave',function(){
         elemento2[4].style.transitionDuration = "0.5s";
@@ -45,8 +44,7 @@ function cargarPagina()
         elemento6[4].style.background= "rgba(1, 1, 22, 0)";
         elemento2[4].style.color="yellow";
         elemento6[4].style.color="yellow";
-        elemento3[i].style.color="yellow";
-        elemento7[i].style.color="yellow";
+        elemento3.style.color="yellow";
             })   
     for(let i=0;i<elemento4.length;i++)
     {
@@ -139,13 +137,26 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="ERROR EN EL CAMBIO DE LA CANTIDAD DE UN PRODUCTO!";
             letrero.style.color="rgb(255,21,21)";
         }
-    if(tipoLetrero>0 && tipoLetrero<9)
+    if(tipoLetrero==9)
+        {
+            //LETRERO DE CARGA COMPLETA DE TODOS LAS UNIDADES DETECTADAS EN EL CARRITO DE LA COMPRA
+            letrero.innerHTML="NO QUEDARÍAN MAS UNIDADES EN EL ALMACEN PARA VENDER!";
+            letrero.style.color="rgb(255,21,21)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<10)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
         letrero.style.transitionDuration = "1s";
-        letrero.style.marginTop="0px";
-    
+        if(tipoLetrero==9)
+        {
+            letrero.style.zIndex="10";
+            letrero.style.marginTop="500px";
+        }
+        else
+        {
+            letrero.style.marginTop="0px";
+        }
         document.addEventListener("mousemove",function(){
         let temporizador=setTimeout(function(){
             var letrero= document.getElementsByClassName("letreroOK")[0];
@@ -167,17 +178,17 @@ function letreroConfirmado(tipoLetrero)
                 clienteNombre.style.color="white";
         });
 }
-
-let uno=document.querySelectorAll(".despliegue")[0];
-alert(uno);
-document.getElementsByClassName("despliegue")[0].addEventListener("input",cambiaStock());
-function cambiaStock()
+//AREA DE CAMBIO DE STOCK CUANDO SE VAN SACANDO UNIDADES DEL ALMACEN
+let datoStock=0;
+function cambiaStock(actualStock)
 {
-    let compra=document.getElementsByClassName("despliegue")[0].value;
-    let stock=document.getElementsByClassName("celdaS")[4].value;
-    let datoStock;
-    datoStock=stock-compra;
-    alert(datoStock);
-    document.getElementsByClassName("celdaS")[4].value=datoStock;
-}
+    const uno=document.getElementById("despliegue");
+    datoStock=actualStock-uno.value;
+    document.getElementById("trasCompra").value=datoStock;
 
+    if(datoStock<=0)
+    {
+        //Se avisa de que no quedan mas unidades en el STOCK
+        letreroConfirmado(9);
+    }
+}

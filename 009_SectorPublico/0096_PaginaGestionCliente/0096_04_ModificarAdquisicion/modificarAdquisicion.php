@@ -84,7 +84,7 @@ require "../../../005_Login/conexionPHP.php";
                         <td class="celdaV"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
                         <td class="celdaV"><?php echo $_SESSION["NOMBREC"];?></td>
                         <td class="celdaV"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
-                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"];?><br><input type="number" class="despliegue" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="modificar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
+                        <td class="celdaV"><?php echo $_SESSION["CANTIDADC"];?><br><input type="number" id="despliegue" onchange="cambiaStock(<?php echo $_SESSION['ALMACENSTOCK'];?>)" min="0" max="999" name="cantidad" value="<?php echo $_SESSION["CANTIDADC"];?>" title="cantidad: 0, elimina el elemento del carrito. Otra cantidad, modifica lo establecido"><div><br></div><input type="submit" name="modificar" value="" class="pulsadorActualizar" title="Al pulsar se actualizará la cantidad y el precio cargados"></td>
                         <td class="celdaV"><?php echo $_SESSION["COSTEUNITC"]."€";?></td>
                         <td class="celdaV"><?php echo $_SESSION["COSTETOTC"]."€";?></td>
                     </tr>
@@ -105,7 +105,7 @@ require "../../../005_Login/conexionPHP.php";
                         <td class="celdaS"><img class="img" src="<?php echo $_SESSION["IMAGENC"];?>"></td>
                         <td class="celdaS"><?php echo $_SESSION["NOMBREC"];?></td>
                         <td class="celdaS"><?php echo $_SESSION["DEPARTAMENTOC"];?></td>
-                        <td class="celdaS"><?php echo $_SESSION["ALMACENSTOCK"];?></td>
+                        <td class="celdaS">EN STOCK<br><br><?php echo $_SESSION["ALMACENSTOCK"];?><br><br>TRAS COMPRA<br><br><input type="text" id="trasCompra" value="<?php echo $_SESSION["ALMACENSTOCK"];?>" disabled></td>                               
                         <td class="celdaS"><?php echo $_SESSION["DETALLESSTOCK"];?></td>
                     </tr>
             </table>
