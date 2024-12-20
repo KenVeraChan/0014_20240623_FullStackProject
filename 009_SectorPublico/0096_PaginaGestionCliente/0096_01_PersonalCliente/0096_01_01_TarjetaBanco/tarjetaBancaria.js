@@ -170,7 +170,13 @@ function letreroConfirmado(tipoLetrero)
 			letrero.innerHTML="ERROR! NO SE HAN CARGADO LOS DATOS PORQUE NO EXISTEN. PROCEDA A ACTIVAR SU TARJETA DE SOCIO!";
 			letrero.style.color="rgb(239,4,4)";
 		}
-    if(tipoLetrero>0 && tipoLetrero<8)
+	if(tipoLetrero==8)
+		{
+			//LETRERO DE NO SE HA ACTUALIZADO PORQUE NO EXISTIA EL REGISTRO
+			letrero.innerHTML="ERROR! NO SE HA ACTIVADO PORQUE NO SE HAN COMPLETADO TODOS LOS CAMPOS DEL FORMULARIO!";
+			letrero.style.color="rgb(239,4,4)";
+		}
+    if(tipoLetrero>0 && tipoLetrero<9)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

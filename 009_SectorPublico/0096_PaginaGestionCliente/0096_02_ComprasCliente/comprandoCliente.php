@@ -99,43 +99,47 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
                             </td>
                         </tr>  
                     </table>
-                    <?php $puntero=0; if(isset($_SESSION["despliegue"])){ //CARGA EL COMPENDIO DE COMPRAS?>
+                    <?php $puntero=0; $filasCompra=0; $celdasCompra=0; if(isset($_SESSION["despliegue"])){ //CARGA EL COMPENDIO DE COMPRAS?>
                         <?php for($puntero=0;$puntero<count($_SESSION["referenciaR"]);$puntero++){?>
-                            <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
-                                <div class="menuBoton">
-                                    <span class="textoBoton">COMPRA <?php echo ($puntero+1).": ".$_SESSION["referenciaR"][$puntero]?></span>
-                                </div>
-                                <ul class="opciones">
-                                    <span class="opcionesTexto">
-                                        <table>
-                                            <tr class="filaCompra">
-                                                <td class="celdaCompra">CONCEPTO DE LA COMPRA</td>
-                                                <td class="celdaCompra">DEPARTAMENTO DE COMPRAS</td>
-                                                <td class="celdaCompra">CANTIDAD ADQUIRIDA</td>
-                                                <td class="celdaCompra">COSTE UNITARIO</td>
-                                                <td class="celdaCompra">COSTE TOTAL</td>
-                                                <td class="celdaCompra">FECHA DEL PEDIDO</td>
-                                                <td class="celdaCompra">ESTADO DE ENTREGA</td>
-                                            </tr>
-                                            <tr class="filaCompra">
-                                                <td class="celdaCompra"><?php echo $_SESSION["conceptoC"][$puntero]?></td>
-                                                <td class="celdaCompra"><?php echo $_SESSION["departamentoC"][$puntero]?></td>
-                                                <td class="celdaCompra"><?php echo $_SESSION["cantidadC"][$puntero]?></td>
-                                                <td class="celdaCompra"><?php echo $_SESSION["costeUC"][$puntero]?></td>
-                                                <td class="celdaCompra"><?php echo $_SESSION["costeTC"][$puntero]?></td>
-                                                <td class="celdaCompra"><?php echo $_SESSION["fechaPedidoC"][$puntero]?></td>
-                                                <td class="celdaCompra"><?php echo $_SESSION["entregadoC"][$puntero]?></td>
-                                            </tr>
-                                        </table>
-                                    </span>
-                                </ul>
-                            </div>
+                            <?php if(strcmp($_SESSION["referenciaR"][$puntero], $_SESSION["referenciaC"][$filasCompra])==0){  //COMPRUEBA QUE LAS REFERENCIAS SEAN IGUALES ?>    
+                                <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
+                                    <div class="menuBoton">
+                                        <span class="textoBoton">COMPRA <?php echo ($puntero+1).": ".$_SESSION["referenciaR"][$puntero]?></span>
+                                    </div>
+                                    <?php for($celdasCompra=0;$celdasCompra<count($_SESSION["conceptoC"]);$celdasCompra++){?>
+                                        <ul class="opciones">
+                                            <span class="opcionesTexto">
+                                                <table>
+                                                    <tr class="filaCompra">
+                                                        <td class="celdaCompra">CONCEPTO DE LA COMPRA</td>
+                                                        <td class="celdaCompra">DEPARTAMENTO DE COMPRAS</td>
+                                                        <td class="celdaCompra">CANTIDAD ADQUIRIDA</td>
+                                                        <td class="celdaCompra">COSTE UNITARIO</td>
+                                                        <td class="celdaCompra">COSTE TOTAL</td>
+                                                        <td class="celdaCompra">FECHA DEL PEDIDO</td>
+                                                        <td class="celdaCompra">ESTADO DE ENTREGA</td>
+                                                    </tr>
+                                                    <tr class="filaCompra">
+                                                        <td class="celdaCompra"><?php echo $_SESSION["conceptoC"][$celdasCompra]?></td>
+                                                        <td class="celdaCompra"><?php echo $_SESSION["departamentoC"][$celdasCompra]?></td>
+                                                        <td class="celdaCompra"><?php echo $_SESSION["cantidadC"][$celdasCompra]?></td>
+                                                        <td class="celdaCompra"><?php echo $_SESSION["costeUC"][$celdasCompra]?></td>
+                                                        <td class="celdaCompra"><?php echo $_SESSION["costeTC"][$celdasCompra]?></td>
+                                                        <td class="celdaCompra"><?php echo $_SESSION["fechaPedidoC"][$celdasCompra]?></td>
+                                                        <td class="celdaCompra"><?php echo $_SESSION["entregadoC"][$celdasCompra]?></td>
+                                                    </tr>
+                                                </table>
+                                            </span>
+                                        </ul>
+                                    <?php }?>    
+                                </div>          
+                            <?php } $filasCompra++;  //Para la siguiente comprobación ?>    
                         <?php }?>
                       <script>cargaModelo(<?php echo count($_SESSION["referenciaR"])?>)</script>   
                     <?php } ?>
                     <div class="accionamientos">
-                            <input type="submit" class="boton" name="cargar" value="CARGAR COMPRAS">
-                            <input type="submit" class="boton" name="volver" value="VOLVER">
+                            <input type="submit" class="boton" name="cargar" value="CARGAR COMPRAS" title="cargar datos de la compra">
+                            <input type="submit" class="boton" name="volver" value="VOLVER" title="volver al menú principal">
                     </div>    
                 </div>
             </form>

@@ -114,7 +114,7 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="NO HAY COMPRAS REGISTRADAS!";
             letrero.style.color="rgb(215,5,5)";
         }
-    if(tipoLetrero>0 && tipoLetrero<2)
+    if(tipoLetrero>0 && tipoLetrero<3)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

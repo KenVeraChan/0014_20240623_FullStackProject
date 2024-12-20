@@ -45,7 +45,7 @@ if(isset($_POST["actualizar"]))
     $tipoImagen=$_FILES["imagenfile"]["type"];
     $tamanioImagen=$_FILES["imagenfile"]["size"];
 
-    if(!empty($nombrePersonal) && !empty($telefonoPersonal) && !empty($direccionPersonal) && !empty($correoPersonal) && !empty($numeroComprasPersonal))
+    if(!empty($nombrePersonal) && !empty($telefonoPersonal) && !empty($direccionPersonal) && !empty($correoPersonal))
     {
         if(empty($nombreImagen))
         {

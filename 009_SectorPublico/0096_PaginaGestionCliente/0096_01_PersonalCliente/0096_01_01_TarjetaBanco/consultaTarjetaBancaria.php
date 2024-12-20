@@ -59,13 +59,13 @@ if(isset($_POST["activar"]))
             //Carga datos de la BBDD para rellenar automaticamente el formulario si es que existen sus datos
             $consultaDatos=$conexion->query("INSERT INTO $tablaDatosBancarios(NOMBRE,NUMERO,MES,ANIO,CCV)VALUES('$nombreTarjetaDB','$numTarjetaDB','$mesTarjetaDB','$anioTarjetaDB','$ccvTarjetaDB')");
             $consultaDatos->closeCursor();
-            $_SESSION["indicador"]=1;  //datos actualizados correctamente
+            $_SESSION["indicador"]=4;  //datos actualizados correctamente
             header("Location:../../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/0096_01_01_TarjetaBanco/tarjetaBancaria.php");  
         }
         else
         {
             $consultaDatos->closeCursor();
-            $_SESSION["indicador"]=4;  //datos no introducidos correctamente, es un error
+            $_SESSION["indicador"]=8;  //datos no introducidos correctamente, es un error NO SE HA ACTIVADO
             header("Location:../../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/0096_01_01_TarjetaBanco/tarjetaBancaria.php");  
         }
     }
@@ -110,7 +110,7 @@ if(isset($_POST["actualizar"]))
         }
         else
         {
-            $_SESSION["indicador"]=2;  //datos no introducidos correctamente, es un error
+            $_SESSION["indicador"]=2;  //datos no introducidos correctamente, es un error NO SE HA ACTUALIZADO
             header("Location:../../../../009_SectorPublico/0096_PaginaGestionCliente/0096_01_PersonalCliente/0096_01_01_TarjetaBanco/tarjetaBancaria.php");  
         }
     }

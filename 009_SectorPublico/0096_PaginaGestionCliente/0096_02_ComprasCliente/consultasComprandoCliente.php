@@ -2,15 +2,17 @@
 require "../../../005_Login/conexionPHP.php";
 $conexionClientes=ConexionPHP::getConexionCLIENTES();
 $BD_tabla=ConexionPHP::getBD_TablaClientes();
+$BD_tablaLogin=ConexionPHP::getBD_TablaIDClientes();
+$BD_tablaBanco=ConexionPHP::getBD_DatosBancarios();
 
 //CARGA NATURAL TRAS CARGAR LA MISMA PAGINA WEB
-$usuario="Juan Perez"; //$_SESSION["usuario"];
-$conectar=$conexionClientes->query("SELECT NOMBRE,NUMERO,TELEFONO,DIRECCION,CORREO FROM $BD_tabla WHERE NOMBRE='$usuario'");
+$usuario=$_SESSION["usuario"];
+$conectar=$conexionClientes->query("SELECT USUARIO,(SELECT NUMERO FROM $BD_tablaBanco WHERE NOMBRE=IDENTIDAD.USUARIO) AS CUENTA,TELEFONO,DIRECCION,CORREO FROM $BD_tablaLogin AS IDENTIDAD WHERE USUARIO='$usuario'");
 $datosPersonales=$conectar->fetchAll(PDO::FETCH_OBJ);
     foreach($datosPersonales as $puntero)
     {
-        $_SESSION["nombreCompra"]=$puntero->NOMBRE;
-        $_SESSION["numeroCompra"]=$puntero->NUMERO;
+        $_SESSION["nombreCompra"]=$puntero->USUARIO;
+        $_SESSION["numeroCompra"]=$puntero->CUENTA;
         $_SESSION["telefonoCompra"]=$puntero->TELEFONO;
         $_SESSION["direccionCompra"]=$puntero->DIRECCION;
         $_SESSION["correoCompra"]=$puntero->CORREO;
@@ -24,11 +26,9 @@ if(isset($_POST["cargar"]))
     $usuario=$_SESSION["usuario"];
     $conectar=$conexionClientes->query("SELECT CONCEPTO,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL,FECHA_PEDIDO,REFERENCIA,ENTREGADO FROM $BD_tabla WHERE NOMBRE='$usuario'");
     $datosPersonales=$conectar->fetchAll(PDO::FETCH_OBJ);
-    $conectar->closeCursor();
-
     //Segundo se descargan las compras realizadas por el usuario mencionado
     $encontrado=$conectar->rowCount();
-    $_SESSION["uno"]=$$encontrado;
+    $conectar->closeCursor();
     if($encontrado>0)
     {
         $i=0; //puntero de relleno de la descarga de las compras
@@ -41,6 +41,7 @@ if(isset($_POST["cargar"]))
             $_SESSION["referenciaR"][$i]=$datosR->REFERENCIA;
             $i++; //Para guardar el siguiente elemento
         }
+        $_SESSION["referenciaR"]=array_unique( $_SESSION["referenciaR"]);
         //Cuarto LOS PRODUCTOS BAJO UNA MISMA REFERENCIA
         $i=0;  //Reiniciando variable puntero
         foreach($datosPersonales as $datosFilas)
