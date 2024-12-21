@@ -24,7 +24,7 @@ if(isset($_POST["cargar"]))
     session_start();   //Se pone aqui para no interferir con la primera carga de la pagina web
     //Primero se hace un sondeo de la cantidad de referencias que se han detectado de compras
     $usuario=$_SESSION["usuario"];
-    $conectar=$conexionClientes->query("SELECT CONCEPTO,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL,FECHA_PEDIDO,REFERENCIA,ENTREGADO FROM $BD_tabla WHERE NOMBRE='$usuario'");
+    $conectar=$conexionClientes->query("SELECT CONCEPTO,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL,FECHA_PEDIDO,REFERENCIA,ENTREGADO FROM $BD_tabla WHERE NOMBRE='$usuario' ORDER BY REFERENCIA ASC");
     $datosPersonales=$conectar->fetchAll(PDO::FETCH_OBJ);
     //Segundo se descargan las compras realizadas por el usuario mencionado
     $encontrado=$conectar->rowCount();
@@ -33,15 +33,16 @@ if(isset($_POST["cargar"]))
     {
         $i=0; //puntero de relleno de la descarga de las compras
         //Tercero se hace una descarga de todas las fechas de pedidos realizadas para la generación del registro
-        $conectarRef=$conexionClientes->query("SELECT REFERENCIA FROM $BD_tabla WHERE NOMBRE='$usuario'");
+        $conectarRef=$conexionClientes->query("SELECT REFERENCIA FROM $BD_tabla WHERE NOMBRE='$usuario' GROUP BY REFERENCIA ORDER BY REFERENCIA ASC");
         $datosRefer=$conectarRef->fetchAll(PDO::FETCH_OBJ);
         $conectarRef->closeCursor();
         foreach($datosRefer as $datosR)
         {
-            $_SESSION["referenciaR"][$i]=$datosR->REFERENCIA;
+            $_SESSION["referenciaBorrador"][$i]=$datosR->REFERENCIA;
             $i++; //Para guardar el siguiente elemento
         }
-        $_SESSION["referenciaR"]=array_unique( $_SESSION["referenciaR"]);
+        //Se procede a filtar la matriz extraida de la BBDD para que solo se queden las REFERENCIAS de compras únicas
+        $_SESSION["referenciaR"]=array_unique( $_SESSION["referenciaBorrador"]);
         //Cuarto LOS PRODUCTOS BAJO UNA MISMA REFERENCIA
         $i=0;  //Reiniciando variable puntero
         foreach($datosPersonales as $datosFilas)
