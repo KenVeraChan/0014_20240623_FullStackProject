@@ -99,6 +99,7 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
                             </td>
                         </tr>  
                     </table>
+                    <?php $objeto= new tipoDepartamento();  //Se crea una instancia del objeto diseñado?>
                     <?php $semaforoCambio=0; $filasCompra=0; $celdasCompra=0; if(isset($_SESSION["despliegue"])){ //CARGA EL COMPENDIO DE COMPRAS?>
                         <?php for($filasCompra=0;$filasCompra<count( $_SESSION["referenciaR"]);$filasCompra++){?>
                                 <div class="elegirMenu">   <!-- NÚMERO DE COMPRAS EJECUTADAS DEL USUARIO -->
@@ -128,12 +129,40 @@ require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_Compr
                                                     <td class="celdaCompra"><?php echo $_SESSION["fechaPedidoC"][$celdasCompra]?></td>
                                                     <td class="celdaCompra"><?php echo $_SESSION["entregadoC"][$celdasCompra]?></td>
                                                 </tr>
+                                    <?php $objeto->getVentaRealizada($_SESSION["departamentoC"][$celdasCompra],$_SESSION["costeTC"][$celdasCompra]);?>
                                 <?php } //Se cierra la añadidura de la tarea en cuestión de una misma REFERENCIA?>
                             <?php } //Se añadira cada celda de la compra realizada segun una misma REFERENCIA?>
                                             </table>
+                                            <br><br>
+                                            <table>
+                                                <tr class="filaCompra">
+                                                    <td class="celdaCompra" colspan="29">RESUMEN DETALLADO DE LA COMPRA</td>
+                                                </tr>
+                                                <tr class="filaCompra">
+                                                    <td class="celdaCompra" colspan="3">Nº PRODUCTOS</td>                              
+                                                    <td class="celdaCompra" colspan="4">COSTES EN PRODUCTOS</td>
+                                                    <td class="celdaCompra" colspan="3">Nº SERVICIOS</td>   
+                                                    <td class="celdaCompra" colspan="4">COSTES EN SERVICIOS</td>
+                                                    <td class="celdaCompra" colspan="3">Nº PROYECTOS</td>   
+                                                    <td class="celdaCompra" colspan="4">COSTES EN PROYECTOS</td>
+                                                    <td class="celdaCompra" colspan="4">COSTE COMPLETO</td>
+                                                    <td class="celdaCompra" colspan="4">COSTE COMPLETO (+21% DE I.V.A.) </td>
+                                                </tr>
+                                                <tr class="filaCompra">
+                                                    <td class="celdaCompra" colspan="3"><?php echo $objeto->contadorProductos();?></td>  
+                                                    <td class="celdaCompra" colspan="4"><?php echo $objeto->costeTotalProductos();?></td>
+                                                    <td class="celdaCompra" colspan="3"><?php echo $objeto->contadorServicios();?></td> 
+                                                    <td class="celdaCompra" colspan="4"><?php echo $objeto->costeTotalServicios();?></td>
+                                                    <td class="celdaCompra" colspan="3"><?php echo $objeto->contadorProyectos();?></td> 
+                                                    <td class="celdaCompra" colspan="4"><?php echo $objeto->costeTotalProyectos();?></td>
+                                                    <td class="celdaCompra" colspan="4"><?php echo $objeto->costesCompletos();?></td>
+                                                    <td class="celdaCompra" colspan="4"><?php echo $objeto->costesCompletosConIVA();?></td>
+                                                </tr>
+                                            </table>
                                         </span>
                                     </ul>   
-                                </div>  
+                                </div> 
+                            <?php $objeto->borrarResultados(); //Eliminación de datos para la nueva recogida de datos de la siguiehte fila de compra registrada?>  
                         <?php } //Aqui acaba el bucle de recorrido de las compras por REFERENCIA?>
                       <script>cargaModelo(<?php echo count($_SESSION["referenciaR"])?>)</script>   
                     <?php } ?>

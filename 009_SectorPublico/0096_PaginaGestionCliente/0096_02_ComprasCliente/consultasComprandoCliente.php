@@ -74,4 +74,78 @@ if(isset($_POST["volver"]))
     $_SESSION["activadorPersonal"]=0; //NO SE ACTIVA NINGUNA INFORMACIÓN NI LETRERO
     header("location:../../../../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
 }
+
+//Para la gestión de cada compra en conabilidad por departamentos y coste desde cada uno de ellos
+class tipoDepartamento
+{
+    private static $productos=0;
+    private static $costeProductos=0;
+    private static $servicios=0;
+    private static $costeServicios=0;
+    private static $proyectos=0;
+    private static $costeProyectos=0;
+    function __construct()
+    {
+        //No hace nada
+    }
+    public function getVentaRealizada($ventaRealizada,$costeVentaRealizada):void
+    {
+        if(strcmp($ventaRealizada,"PRODUCTOS")==0)  //Contabilidad de PRODUCTOS comprados
+        {
+            Self::$productos++;
+            Self::$costeProductos+=+$costeVentaRealizada;  //Se incrementa la cantidad del presente departamento en donde se ha hecho la venta
+        }
+        if(strcmp($ventaRealizada,"SERVICIOS")==0)  //Contabilidad de PRODUCTOS comprados
+        {
+            Self::$servicios++;
+            Self::$costeServicios+=+$costeVentaRealizada;  //Se incrementa la cantidad del presente departamento en donde se ha hecho la venta
+        }
+        if(strcmp($ventaRealizada,"PROYECTOS")==0)  //Contabilidad de PRODUCTOS comprados
+        {
+            Self::$proyectos++;
+            Self::$costeProyectos+=+$costeVentaRealizada;  //Se incrementa la cantidad del presente departamento en donde se ha hecho la venta
+        }
+    }
+    public function contadorProductos()
+    {
+        return Self::$productos;
+    }
+    public function contadorServicios()
+    {
+        return Self::$servicios;
+    }
+    public function contadorProyectos()
+    {
+        return Self::$proyectos;
+    }
+    public function costeTotalProductos()
+    {
+        return Self::$costeProductos;
+    }
+    public function costeTotalServicios()
+    {
+        return Self::$costeServicios;
+    }
+    public function costeTotalProyectos()
+    {
+        return Self::$costeProyectos;
+    }
+    public function costesCompletos()
+    {
+        return Self::$costeProductos+Self::$costeServicios+self::$costeProyectos;
+    }
+    public function costesCompletosConIVA()
+    {
+        return (Self::$costeProductos+Self::$costeServicios+self::$costeProyectos)*1.21;
+    }
+    public function borrarResultados()
+    {
+        Self::$productos=0;
+        Self::$servicios=0;
+        Self::$proyectos=0;
+        Self::$costeProductos=0;
+        Self::$costeServicios=0;
+        Self::$costeProyectos=0;
+    }
+}
 ?>
