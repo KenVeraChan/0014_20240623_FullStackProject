@@ -8,6 +8,7 @@ var elemento2= document.getElementsByClassName("celdaV");
 var elemento4= document.getElementsByClassName("areaPrivada");
 var elemento5= document.getElementsByClassName("pulsadorActualizar");
 var elemento6= document.getElementsByClassName("celdaS");
+var elemento7= document.getElementsByClassName("pulsadorVolver");
 
 function cargarPagina()
 {
@@ -78,6 +79,24 @@ function cargarPagina()
                 elemento5[i].style.boxShadow="none";
                 elemento5[i].style.color="black";
                 elemento5[i].style.borderRadius="30%";
+                    })
+        }
+    for(let i=0;i<elemento7.length;i++)
+        {
+            //BOTONES DE AREAS DE RRHH, JEFES Y CLIENTES
+            elemento7[i].addEventListener('mouseenter',function(){
+                elemento7[i].style.transitionDuration = "0.5s";
+                elemento7[i].style.backgroundColor="black";    
+                elemento7[i].style.color="yellow";
+                elemento7[i].style.boxShadow="black 1px 0 20px";
+                elemento7[i].style.borderRadius="30%";
+                    })
+            elemento7[i].addEventListener('mouseleave',function(){
+                elemento7[i].style.transitionDuration = "0.5s";
+                elemento7[i].style.backgroundColor="transparent";
+                elemento7[i].style.boxShadow="none";
+                elemento7[i].style.color="black";
+                elemento7[i].style.borderRadius="30%";
                     })
         }
 }

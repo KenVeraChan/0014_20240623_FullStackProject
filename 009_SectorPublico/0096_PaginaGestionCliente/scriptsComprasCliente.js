@@ -194,11 +194,17 @@ function letreroConfirmado(tipoLetrero)
         }
     if(tipoLetrero==11)
         {
-            //LETRERO DE QUE SE NO SE HA CAMBIADO LA CANTIDAD DE UN ELEMENTO SELECCIONADO
+            //LETRERO DE QUE SE HA ELIMINADO UN ELEMENTO DEL CARRITO DE LA COMPRA
             letrero.innerHTML="SE HA ELIMINADO EL ELEMENTO ELEGIDO DEL CARRITO DE LA COMPRA!";
             letrero.style.color="rgb(255,21,21)";
         }
-    if(tipoLetrero>0 && tipoLetrero<12)
+    if(tipoLetrero==12)
+        {
+            //LETRERO DE QUE SE NO SE HAN HECHO MODIFICACIONES EN EL CARRITO DE LA COMPRA, SE DIO AL BOTÓN VOLVER
+            letrero.innerHTML="SIN MODIFICACIONES EN EL CARRITO DE LA COMPRA. SE ELIGIÓ VOLVER!";
+            letrero.style.color="rgb(255, 251, 21)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<13)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

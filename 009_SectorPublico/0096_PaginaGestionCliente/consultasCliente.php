@@ -370,4 +370,9 @@ if(isset($_GET["modificar"])) //Dentro de la pagina de modificación de las adqu
         header("location:../../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
     }
 }
+if(isset($_GET["volver"]))
+{
+    $_SESSION["senalCarrito"]=12;  //Señal de que no se ha modificado el carrito de la compra al darle al botón de volver
+    header("location:../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
+}
 ?>
