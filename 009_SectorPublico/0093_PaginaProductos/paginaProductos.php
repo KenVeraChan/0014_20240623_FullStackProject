@@ -1,6 +1,6 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
-//error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
+error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENTE
 ?>
 <!DOCTYPE html>
@@ -189,7 +189,7 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <tr class="filaDET">
                                 <td>
                                     <div style="margin-left:2%"><strong class="cajaCantidad">CANTIDAD</strong></div>
-                                    <input type="number" class="despliegue" min="1" max="9999" name="cantidad">
+                                    <input type="number" class="despliegue" min="0" max="<?php echo $_SESSION["STOCK_PROD"];?>" name="cantidad">
                                 </td>
                             </tr>
                         </table>

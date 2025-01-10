@@ -158,6 +158,11 @@ if(isset($_GET["descargar"]))
 
 if(isset($_GET["realizarCompra"]))
 {
+    //PRIMERO destruye las variables para la modificación del STOCK de ventas disponible
+    unset($_SESSION["NOMBREVENTA"]);
+    unset($_SESSION["DEPARTAMENTOVENTA"]);
+    unset($_SESSION["CANTIDADVENTA"]);
+
     //Realiza la compra según el usuario reigstrado en la página del pedido
     if(isset($_SESSION["usuario"]))
     {
@@ -228,10 +233,35 @@ if(isset($_GET["realizarCompra"]))
                     $COSTETOT=$_SESSION["COSTETOTC"][$i];
 
                 $consComprando=$conexionProductos->query("INSERT INTO $BD_tablaPedidos(NOMBRE,NUMERO,TELEFONO,DIRECCION,CORREO,CONCEPTO,DEPARTAMENTO,CANTIDAD,COSTE_UNITARIO,COSTE_TOTAL,FECHA_PEDIDO,REFERENCIA,ENTREGADO)VALUES('$usuarioCompra','$numeroBancario','$telefono','$direccion','$correo','$NOMBRE','$DEPARTAMENTO','$CANTIDAD','$COSTEUN','$COSTETOT','$fechaHoy','$referenciaFinal',' $situacionCompra')");
-                    //FALTA DETERMINAR VALORES DE LA CONSULTA
                 }
                 $consLogin->closeCursor(); //Cierra la conexion y la consulta
 
+                //ANTES DE TERMINAR LA EJECUCIÓN SE TIENE QUE RETIRAR DEL STOCK LA DEMANDA DE COMPRAS REALIZADAS
+                    $consLogin=$conexionProductos->query("SELECT NOMBRE,DEPARTAMENTO,CANTIDAD FROM $BD_tablaCarrito");
+                    $datosCarrito=$consLogin->fetchAll(PDO::FETCH_OBJ);
+                    $datosCarritoFilas=$consLogin->rowCount();
+                        //DESCARGA DATOS DE LA CONSULTA
+                        $i=0; //inicio del puntero del vector de almacenamiento
+                        foreach($datosCarrito as $cargaCarrito)
+                        {
+                            if(isset($cargaCarrito->NOMBRE))
+                            {
+                                $_SESSION["NOMBREVENTA"][$i]=$cargaCarrito->NOMBRE;
+                                $_SESSION["DEPARTAMENTOVENTA"][$i]=$cargaCarrito->DEPARTAMENTO;
+                                $_SESSION["CANTIDADVENTA"][$i]=$cargaCarrito->CANTIDAD;
+                                $i++;
+                            }
+                        }
+                        $consLogin->closeCursor(); //Cierra la conexion y la consulta
+                        //SE HACE LA BUSQUEDA EN LA TABLA DE INTERFAZPRODUCTOS PARA RESTAR LAS CANTIDADES COMPRADAS
+                        for($i=0;$i<count($_SESSION["NOMBREVENTA"]);$i++)
+                        {
+                            $venta=$_SESSION["NOMBREVENTA"][$i];
+                            $departamento=$_SESSION["DEPARTAMENTOVENTA"][$i];
+                            $cantidad=$_SESSION["CANTIDADVENTA"][$i];   
+                            $consLogin=$conexionProductos->query("UPDATE $BD_tablaStock SET STOCK=(SELECT STOCK FROM  $BD_tablaStock WHERE (NOMBRE='$venta.png' OR NOMBRE='$venta.jpeg' or NOMBRE='$venta.jpg') AND DESTINO='$departamento')-$cantidad WHERE (NOMBRE='$venta.png' OR NOMBRE='$venta.jpeg' or NOMBRE='$venta.jpg') AND DESTINO='$departamento'");
+                            $consLogin->closeCursor(); //Cierra la conexion y la consulta                    
+                        }
                 //POR ÚLTIMO SE ELIMINA EL CONTENIDO DE LA TABLA DE CARRITO DE LA COMPRA PORQUE AHORA SON PRODUCTOS DEL CLIENTE NO DEL CARRITO EN CURSO
                 //Borra la tabla completa del carrito de la compra pero no elimina dicha tabla con sus encabezados
                 $consLogin=$conexionProductos->query("TRUNCATE TABLE $BD_tablaCarrito");

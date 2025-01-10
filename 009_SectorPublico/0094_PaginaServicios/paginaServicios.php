@@ -253,7 +253,7 @@ include "consultasMostradorServicios.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                             <tr class="filaDET">
                                 <td>
                                     <div style="margin-left:2%"><strong class="cajaCantidad">CANTIDAD</strong></div>
-                                    <input type="number" class="despliegue" min="1" max="9999" name="cantidad">
+                                    <input type="number" class="despliegue" min="0" max="<?php echo $_SESSION["STOCK_SERV"];?>" name="cantidad">
                                 </td>
                             </tr>
                         </table>
