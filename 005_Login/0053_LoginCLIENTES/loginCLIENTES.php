@@ -17,6 +17,7 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="loginCLIENTES.css">
     <script src="loginCLIENTES.js"></script>
 </head>
@@ -60,6 +61,17 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
     </header>
     <div class="piePagina">
         <footer id="piePrincipal">
+            <div id="redesSociales">  <!-- TRAYENDO LOS ICONOS DE LAS REDES SOCIALES Y DÁNDOLES DECOARION -->
+                <i class="fa fa-apple" id="apple"></i>
+                <i class="fa fa-twitter-square" id="twitter"></i>
+                <i class="fa fa-github-square" id="github"></i>
+                <i class="fa fa-facebook-square" id="facebook"></i> 
+                <i class="fa fa-youtube-square" id="youtube"></i> 
+                <i class="fa fa-linkedin-square" id="linkedin"></i> 
+                <i class="fa fa-whatsapp" id="whatsapp"></i> 
+                <i class="fa fa-instagram" id="instagram"></i> 
+                <i class="fa fa-map-marker" id="mapsg"></i>
+            </div>
             <div id="zocalo">
                 -------- Fundadores --------
                 <br><strong>William Wissangel</strong></br>

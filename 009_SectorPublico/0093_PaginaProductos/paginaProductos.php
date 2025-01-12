@@ -9,6 +9,7 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Principal Corporación Sfer4D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="../../009_SectorPublico/0093_PaginaProductos/paginaProductos.css">
     <script src="../../009_SectorPublico/0093_PaginaProductos/scriptsProductos.js"></script>
 </head>
@@ -197,12 +198,23 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
                 </td>
             </table>
     <?php } ?>
-    <?php  if($_SESSION["concesion"]==0){ ?>    <!-- EN EL CASO DE QUE SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
+    <?php  if($_SESSION["concesion"]==0){ ?>    <!-- EN EL CASO DE QUE NO SE HAYA ACCIONADO CUALQUIER BOTON DEL MOSTRADOR-->
         <!-- NO MUESTRA NADA AL NO ENCONTRARSE NADA -->
     <?php } ?>
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
+            <div id="redesSociales">  <!-- TRAYENDO LOS ICONOS DE LAS REDES SOCIALES Y DÁNDOLES DECOARION -->
+                <i class="fa fa-apple" id="apple"></i>
+                <i class="fa fa-twitter-square" id="twitter"></i>
+                <i class="fa fa-github-square" id="github"></i>
+                <i class="fa fa-facebook-square" id="facebook"></i> 
+                <i class="fa fa-youtube-square" id="youtube"></i> 
+                <i class="fa fa-linkedin-square" id="linkedin"></i> 
+                <i class="fa fa-whatsapp" id="whatsapp"></i> 
+                <i class="fa fa-instagram" id="instagram"></i> 
+                <i class="fa fa-map-marker" id="mapsg"></i>
+            </div>
             <div id="zocalo">
                 -------- Fundadores --------
                 <br><strong>William Wissangel</strong></br>

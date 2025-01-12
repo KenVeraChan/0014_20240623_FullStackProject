@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Principal Corporación Sfer4D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.css">
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsMenu.js"></script>
 </head>
@@ -82,13 +83,13 @@
                 <td class="noticia">    
                     <table class="tablaInterna">
                         <tr class="fila">   <!-- COMO SON CUATRO PANELES SE USARÁ $j PARA CADA UNO E $i PARA LAS CELDAS DEL INTERIOR DE CADA PANEL-->
-                            <td><img class="imgBloques" src="newsImages/<?php $fila=$i+4*$j; echo extraccionNovedad($fila);?>"></td>
+                            <td><img class="imgBloques" src="newsImages/<?php $fila=$i+4*$j; echo extraccionNovedad($fila-1,1);?>"></td>
                         </tr>
                         <tr class="fila">
-                            <td><div class="textoTitulo" style="margin-left:2%"></div></td>
+                            <td><div class="textoTitulo" style="margin-left:2%; visibility:hidden"><?php echo extraccionNovedad($fila-1,2);?></div></td>
                         </tr>
                         <tr class="fila">
-                            <td><p class="parrafo"></p></td>
+                            <td><p class="parrafo" style="visibility:hidden"><?php echo extraccionNovedad($fila-1,3);?></p></td>
                         </tr>
                     </table>
                 </td>
@@ -98,6 +99,17 @@
     </div>
     <div class="piePagina">
         <footer id="piePrincipal">
+            <div id="redesSociales">  <!-- TRAYENDO LOS ICONOS DE LAS REDES SOCIALES Y DÁNDOLES DECOARION -->
+                <i class="fa fa-apple" id="apple"></i>
+                <i class="fa fa-twitter-square" id="twitter"></i>
+                <i class="fa fa-github-square" id="github"></i>
+                <i class="fa fa-facebook-square" id="facebook"></i> 
+                <i class="fa fa-youtube-square" id="youtube"></i> 
+                <i class="fa fa-linkedin-square" id="linkedin"></i> 
+                <i class="fa fa-whatsapp" id="whatsapp"></i> 
+                <i class="fa fa-instagram" id="instagram"></i> 
+                <i class="fa fa-map-marker" id="mapsg"></i>
+            </div>
             <div id="zocalo">
                 -------- Fundadores --------
                 <br><strong>William Wissangel</strong></br>

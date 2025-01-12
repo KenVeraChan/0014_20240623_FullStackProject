@@ -6,7 +6,7 @@
     //FICHERO PRINCIPAL DE INICIO DE EJECUCIÓN BACKEND
     //Se le comunica al servidor a dónde se quieren subir las imagenes, LA RUTA
     $carpeta_destino=$_SERVER["DOCUMENT_ROOT"].'/009_SectorPublico/0091_PaginaPrincipal/sliderImages/';
-    $consulta=$conexion->query("SELECT NOMBRE,DESTINO FROM $BD_tabla WHERE DESTINO='SLIDER' OR DESTINO='NOVEDADES'"); //SELECCIONA SLIDER O NOVEDADES UNICAMENTE
+    $consulta=$conexion->query("SELECT NOMBRE,DESTINO,DETALLES FROM $BD_tabla WHERE DESTINO='SLIDER' OR DESTINO='NOVEDADES'"); //SELECCIONA SLIDER O NOVEDADES UNICAMENTE
     $resultado=$consulta->fetchAll(PDO::FETCH_OBJ);
     $i=0; //Puntero de recorrido del ARRAY SLIDER
     $j=0; //Puntero de recorrido del ARRAY NOVEDADES
@@ -16,106 +16,35 @@
         {
             if(strcmp($carga->DESTINO,"SLIDER")==0)
             {
-                $_SESSION["NOMBRESLIDER"][$i]=$carga->NOMBRE;
+                $_SESSION["NOMBRESLIDER"][$i]=$carga->NOMBRE;  //Descarga las imágenes del SLIDER PRINCIPAL
                 $i++;
             }
             if(strcmp($carga->DESTINO,"NOVEDADES")==0)
             {
-                $_SESSION["NOVEDADES"][$j]=$carga->NOMBRE;
+                $_SESSION["NOVEDADES"][$j]=$carga->NOMBRE;    //Descarga las imágenes PNG o JPG de las NOVEDADES
+                $_SESSION["DETALLESNOVED"][$j]=$carga->DETALLES;   //Descarga los párrafos detalles de las NOVEDADES
                 $j++;
             }
         }
     }
-    function extraccionNovedad($eleccion)
+    function extraccionNovedad($eleccion,$modalidad)
     {
-        switch($eleccion)
+        if($modalidad==1)
         {
-            case 1:
-                {
-                    $valor=array_search("NOVEDADES.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 2:
-                {
-                    $valor=array_search("NOTICIAS.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 3:
-                {
-                    $valor=array_search("SERVICIOS.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 4:
-                {
-                    $valor=array_search("PRODUCTOS.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 5:
-                {
-                    $valor=array_search("SERVIDORES.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 6:
-                {
-                    $valor=array_search("DINERO.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 7:
-                {
-                    $valor=array_search("INVESTIGACION.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 8:
-                {
-                    $valor=array_search("BASURA.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 9:
-                {
-                    $valor=array_search("BARCO.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 10:
-                {
-                    $valor=array_search("ANTENA.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 11:
-                {
-                    $valor=array_search("PLANETA.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 12:
-                {
-                    $valor=array_search("NATURALEZA.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 13:
-                {
-                    $valor=array_search("PIZARRA.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 14:
-                {
-                    $valor=array_search("HIELO.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 15:
-                {
-                    $valor=array_search("EDIFICIO.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            case 16:
-                {
-                    $valor=array_search("ROBOT.png",$_SESSION["NOVEDADES"],true);
-                    break;
-                }
-            default:
-                {
-                    $valor=0;
-                    break;
-                }
+            //Devuelve la imagen correspondiente al puntero señalando a la casilla $eleccion del ARRAY NOVEDADES
+            return $_SESSION["NOVEDADES"][$eleccion];
         }
-        return $_SESSION["NOVEDADES"][$valor];
+        if($modalidad==2)
+        {
+            //Devuelve el título correspondiente al puntero señalando a la casilla $eleccion del ARRAY NOVEDADES
+            //Pero hay que eliminar el formato de la imagen para que sólo quede el título
+            return strtoupper(str_replace(substr($_SESSION["NOVEDADES"][$eleccion],-4,4),'',$_SESSION["NOVEDADES"][$eleccion]));
+        }
+        if($modalidad==3)
+        {
+            //Devuelve el párrafo correspondiente al puntero señalando a la casilla $eleccion del ARRAY NOVEDADES
+            //Que corresponde con la descripción del contenido de la novedades seleccionada
+            return $_SESSION["DETALLESNOVED"][$eleccion];
+        }       
     }
 ?>
