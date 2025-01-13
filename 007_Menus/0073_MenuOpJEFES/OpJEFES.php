@@ -34,7 +34,7 @@
         <div class="cajaPortadora">
             <table id="tabla">
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">CONTROL DE STOCK</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">CONTROL DE STOCK</button></td>  <!-- AREA DE REPOSICIÓN DE UNIDADES Y ACTUALIZACIÓN DE DETALLES DE CADA UNIDAD-->
                 </tr>
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">CONTROL TAREAS</button></td>
@@ -44,7 +44,10 @@
                 </tr>  
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0084_ControldeInterfaz/controldeInterfaz.php'">CONTROL DE LA INTERFAZ</button></td>  <!-- SLIDER IMAGENES DEL SECTOR PÚBLICO Y LAS IMAGENES DE PRODUCTOS Y SERVICIOS -->
-                </tr>               
+                </tr>    
+                <tr class="cajaBotonera">
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0085_ControldeVentas/controlVentas.php'">CONTROL DE VENTAS</button></td>  <!-- AREA DE REPOSICIÓN DE UNIDADES Y ACTUALIZACIÓN DE DETALLES DE CADA UNIDAD-->
+                </tr>           
             </table>
         </div>
         <div class="VaciobotonesPrincipal"></div>
