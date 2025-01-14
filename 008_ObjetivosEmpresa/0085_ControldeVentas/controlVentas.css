@@ -8,14 +8,14 @@
     position: absolute;
     background-color: transparent;
     width:95%;
-    height: 700px;
+    height: 1000px;
     margin-left: -8500px;
 }
 .base2{ /*para el tratamiento de ventas*/
     position: absolute;
     background-color: transparent;
     width:95%;
-    height: 3000px;
+    height: 2000px;
     margin-left: -8500px;
 }
 .cajaT
@@ -71,7 +71,7 @@
 }
 .cajaT:nth-child(14)  /*TRAMITACION PEDIDO*/
 {
-    width:270px;
+    width:300px;
 }
 .caja{
     float: left;
@@ -125,7 +125,8 @@
 }
 .caja:nth-child(14)  /*TRAMITACION PEDIDO*/
 {
-    width:270px;
+    width:300px;
+    background-color: transparent;
 }
 
 @media all and (min-width: 769px) and (max-width: 7800px) 
@@ -220,7 +221,7 @@
     .consulta{
         position: relative;
         width: 100%;
-        height: 1400px;
+        height: 2100px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -250,7 +251,7 @@
         position: absolute;
         overflow: scroll;
         width:90%; 
-        height:450px;
+        height:1800px;
         margin-top: 70px;
         margin-left: 20px;
         z-index: 1;
@@ -444,7 +445,7 @@
     }
     .consulta{
         width: 100%;
-        height: 1400px;
+        height: 2100px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -453,35 +454,35 @@
     #imagenPortada{
         position: relative;
         width: 100%;
-        height: 110%;
+        height: 100%;
     }
     .tablaBBDD1{
         position: absolute;
         overflow: scroll;
-        width:80%; 
+        width: 40%; 
         height:750px;
         margin-top: 70px;
-        margin-left: 5%;
-        padding-left: 40px;
+        margin-left: 15%;
+        padding-left: 180px;
         z-index: 1;
     }
     .tablaBBDD1 #tablaIntroTareas
     {
-        width: 200px;
+        width: 1000px;
         background-color: transparent;
     }
     .tablaBBDD2{
         position: absolute;
         overflow: scroll;
         width:90%; 
-        height:450px;
+        height:1800px;
         margin-top: 70px;
         margin-left: 20px;
         z-index: 1;
     }
     .tablaBBDD2 #tablaCandidatura
     {
-        width: 1500px;
+        width: 2700px;
         background-color: transparent;
     }
     /* CUADRO DE INTRODUCCION DE DATOS */
@@ -665,7 +666,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 1400px;
+        height: 2100px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -679,32 +680,47 @@
     .tablaBBDD1{
         position: absolute;
         overflow: scroll;
-        width:80%; 
+        width: 40%; 
         height:750px;
         margin-top: 70px;
-        margin-left: 2%;
-        padding-left: 30px;
+        margin-left: 15%;
+        padding-left: 180px;
         z-index: 1;
     }
     .tablaBBDD1 #tablaIntroTareas
     {
-        width: 250px;
+        width: 1000px;
         background-color: transparent;
     }
-    .tablaBBDD2
-    {
+    .tablaBBDD2{
         position: absolute;
         overflow: scroll;
         width:90%; 
-        height:450px;
+        height:1800px;
         margin-top: 70px;
         margin-left: 20px;
         z-index: 1;
     }
     .tablaBBDD2 #tablaCandidatura
     {
-        width: 1500px;
+        width: 2700px;
         background-color: transparent;
+    }
+    .cajaT
+    {
+        font-size: 80%;
+    }
+    .caja
+    {
+        font-size: 80%;
+    }
+    .cajaT:nth-child(14)
+    {
+        font-size: 86%;
+    }
+    .caja:nth-child(14)
+    {
+        font-size: 86%;
     }
     /* CUADRO DE INTRODUCCION DE DATOS */
     .tablaAcciones{
@@ -888,7 +904,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     .consulta{
         width: 100%;
-        height: 1400px;
+        height: 2100px;
         background-color: rgba(0, 0, 19, 0.89);
         text-align: center;
         text-shadow: 5px;
@@ -902,31 +918,47 @@
     .tablaBBDD1{
         position: absolute;
         overflow: scroll;
-        width:80%; 
+        width: 40%; 
         height:750px;
         margin-top: 70px;
-        margin-left: 2%;
-        padding-left: 20px;
+        margin-left: 15%;
+        padding-left: 180px;
         z-index: 1;
     }
     .tablaBBDD1 #tablaIntroTareas
     {
-        width: 100px;
+        width: 1000px;
         background-color: transparent;
     }
     .tablaBBDD2{
         position: absolute;
         overflow: scroll;
         width:90%; 
-        height:450px;
+        height:1800px;
         margin-top: 70px;
         margin-left: 20px;
         z-index: 1;
     }
     .tablaBBDD2 #tablaCandidatura
     {
-        width: 1500px;
+        width: 2700px;
         background-color: transparent;
+    }
+    .cajaT
+    {
+        font-size: 80%;
+    }
+    .caja
+    {
+        font-size: 80%;
+    }
+    .cajaT:nth-child(14)
+    {
+        font-size: 86%;
+    }
+    .caja:nth-child(14)
+    {
+        font-size: 86%;
     }
     /* CUADRO DE INTRODUCCION DE DATOS */
     .tablaAcciones{

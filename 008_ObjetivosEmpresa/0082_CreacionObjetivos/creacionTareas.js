@@ -139,11 +139,13 @@ function letreroConfirmado(tipoLetrero)
         {
             //LETRERO DE TAREA AÑADIDA A LA BBDD DE LOS DEPARTAMENTOS
             letrero.innerHTML="Se ha APROBADO la inclusión en plantilla del usuario";
+            letrero.style.color="rgb(45,255,21)";
         }
     if(tipoLetrero==3)
         {
             //LETRERO DE TAREA AÑADIDA A LA BBDD DE LOS DEPARTAMENTOS
             letrero.innerHTML="Se ha DESESTIMADO la inclusión en plantilla del usuario";
+            letrero.style.color="rgb(215,5,5)";
         }
     letrero.style.paddingTop="10px";
     letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

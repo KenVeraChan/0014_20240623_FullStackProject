@@ -83,11 +83,13 @@ function letreroConfirmado(tipoLetrero)
         {
             //LETRERO DE TAREA AÑADIDA A LA BBDD DE LOS DEPARTAMENTOS
             letrero.innerHTML="Se ha CONFIRMADO el pedido registrado";
+            letrero.style.color="rgb(45,255,21)";
         }
     if(tipoLetrero==3)
         {
             //LETRERO DE TAREA AÑADIDA A LA BBDD DE LOS DEPARTAMENTOS
             letrero.innerHTML="Se ha CANCELADO el pedido registrado";
+            letrero.style.color="rgb(215,5,5)";
         }
     if(tipoLetrero>0 && tipoLetrero<4)
     {

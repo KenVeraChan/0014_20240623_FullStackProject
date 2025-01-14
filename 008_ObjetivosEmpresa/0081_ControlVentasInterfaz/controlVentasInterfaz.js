@@ -1,5 +1,6 @@
 var elemento1= document.getElementsByClassName("boton");
 var elemento2= document.getElementsByClassName("filaBBDD");
+var elemento3= document.getElementsByName("DETALLES");
 
 function cargarPagina()
 {

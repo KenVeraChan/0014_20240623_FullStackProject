@@ -135,23 +135,23 @@
                         <td class="caja"><?php echo($candidato->CONCEPTO);?></td>
                         <td class="caja"><?php echo($candidato->DEPARTAMENTO);?></td>
                         <td class="caja"><?php echo($candidato->CANTIDAD);?></td>
-                        <td class="caja"><?php echo($candidato->COSTE_UNITARIO);?></td>
-                        <td class="caja"><?php echo($candidato->COSTE_TOTAL);?></td>
+                        <td class="caja"><?php echo($candidato->COSTE_UNITARIO)."€";?></td>
+                        <td class="caja"><?php echo($candidato->COSTE_TOTAL)."€";?></td>
                         <td class="caja"><?php echo($candidato->FECHA_PEDIDO);?></td>
                         <td class="caja"><?php echo($candidato->REFERENCIA);?></td>
                         
                         <?php if($candidato->ENTREGADO=="PENDIENTE"):?>  <!-- Redireccionamiento a otra página de aceptación o denegación de la candidatura -->
-                        <td class="caja">
-                            <div class="caja" style="width:95px; text-align:center; padding-top: 3px; color:white; background-color:rgb(125,132,17); font-size:86%; float:left"><?php echo($candidato->ENTREGADO);?></div>
-                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=1"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(13,101,37); width:40px; float:left; position:relative; font-size:86%" value="ENTREGAR!"></a>
-                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=0"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(121,15,15); width:63px; float:left; position:relative; font-size:86%" value="CANCELAR!"></a>
-                        </td>
-                            <?php endif; ?>
+                            <td class="caja">
+                                <div class="caja" style="width:95px; text-align:center; padding-top: 3px; color:white; background-color:rgb(125,132,17); font-size:86%; float:left"><?php echo($candidato->ENTREGADO);?></div>
+                                <a href="gestionVentas.php?id=<?php echo($candidato->ID);?>&validez=1"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(13,101,37); width:101.5px; float:left; position:relative; font-size:86%" value="ENTREGAR!" title="Accionar para ENVIAR el PEDIDO al cliente"></a>
+                                <a href="gestionVentas.php?id=<?php echo($candidato->ID);?>&validez=0"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(121,15,15); width:101.5px; float:left; position:relative; font-size:86%" value="CANCELAR!" title="Accionar para CANCELAR el PEDIDO del cliente"></a>
+                            </td>
+                        <?php endif; ?>
                         <?php if($candidato->ENTREGADO=="ENTREGADO"):?>
-                        <td class="caja" style="text-align:center; color:white; background-color:rgb(13,101,37); font-size:86%; padding-top: 3px"><?php echo($candidato->ENTREGADO);?></td>
+                            <td class="caja" style="text-align:center; color:white; background-color:rgb(13,101,37); font-size:90%; padding-top: 3px"><?php echo("PEDIDO ".$candidato->ENTREGADO);?></td>
                         <?php endif; ?>
                         <?php if($candidato->ENTREGADO=="CANCELADO"):?>
-                        <td class="caja" style="text-align:center; color:white; background-color:rgb(121,15,15); width:200px; font-size:86%; padding-top: 3px"><?php echo($candidato->ENTREGADO);?></td>
+                            <td class="caja" style="text-align:center; color:white; background-color:rgb(121,15,15); font-size:90%; padding-top: 3px"><?php echo("PEDIDO ".$candidato->ENTREGADO);?></td>
                         <?php endif; ?>
                     </tr>
                 <?php
