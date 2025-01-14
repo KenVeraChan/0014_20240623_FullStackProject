@@ -13,16 +13,12 @@ function cargarPagina()
             elemento1[i].style.color="black";
             elemento1[i].style.boxShadow="5px 10px 15px white";
             elemento1[i].style.transitionDuration="1s";
-            elemento1[i].style.marginLeft="30%";
-            elemento1[i].style.width="40%";
                 })
         elemento1[i].addEventListener('mouseleave',function(){
             elemento1[i].style.background= "rgba(0, 0, 19, 0.89)";
             elemento1[i].style.color="white";
             elemento1[i].style.boxShadow="none";
             elemento1[i].style.transitionDuration="1s";
-            elemento1[i].style.marginLeft="20%";
-            elemento1[i].style.width="60%";
                 })
         }
 }

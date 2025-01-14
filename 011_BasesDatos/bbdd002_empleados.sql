@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2024 a las 19:15:19
+-- Tiempo de generación: 14-01-2025 a las 13:58:43
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,14 +46,33 @@ INSERT INTO `contactos_empresa` (`ID`, `NOMBRE`, `APELLIDOS`, `DIRECCION`, `POBL
 (1, 'Rasselín', 'Wissangel Rousher', 'calle fuente plateada 32', 'Valencia', 'Estudiante', 234000, 'APROBADA'),
 (2, 'Vitrea', 'Horiz', 'Calle cirios cruzados 82', 'Barcelona', 'Oficial', 3144, 'DENEGADA'),
 (3, 'Emiliam', 'Bastreriz', 'calle musicalizacion 32', 'Northwith', 'Oficial', 30922, 'APROBADA'),
-(4, 'Verduliz', 'Sainz', 'Calle Vilnus 12', 'Tarragona', 'Profesor/a', 32312, 'PENDIENTE'),
-(5, 'Veddina', 'Henion', 'calle arbolados 9', 'Northwith', 'Camarero/a', 34021, 'DENEGADA'),
-(6, 'Samira', 'Savadez', 'Calle Manuel Azaña 64', 'Northwith', 'Recepcionista', 12121, 'DENEGADA'),
-(7, 'Christal', 'Gedishen', 'nuevos atos', 'Madrid', 'Funcionario/a', 20000, 'APROBADA'),
-(8, 'Jill', 'Anherson', 'nuevos ministerios', 'Tarragona', 'Profesor/a', 234000, 'APROBADA'),
-(9, 'Shail', 'Matsiz', 'arces 3', 'Barcelona', 'Profesor/a', 120000, 'APROBADA'),
-(10, 'Ken', 'Horiz', 'Calle Manuel Azaña 64', 'Barcelona', 'Taxista', 12121, 'DENEGADA'),
-(11, 'Neth', 'Horiz', 'nuevas platas', 'Barcelona', 'Profesor/a', 12121, 'APROBADA');
+(4, 'Verduliz', 'Sainz', 'Calle Vilnus 12', 'Tarragona', 'Profesor/a', 32312, 'APROBADA'),
+(5, 'Veddina', 'Henion', 'calle arbolados 9', 'Northwith', 'Camarero/a', 34021, 'APROBADA'),
+(6, 'Samira', 'Savadez', 'Calle Manuel Azaña 64', 'Northwith', 'Recepcionista', 12121, 'APROBADA'),
+(7, 'Christal', 'Gedishen', 'nuevos atos', 'Madrid', 'Funcionario/a', 20000, 'PENDIENTE'),
+(8, 'Jill', 'Anherson', 'nuevos ministerios', 'Tarragona', 'Profesor/a', 234000, 'PENDIENTE'),
+(9, 'Shail', 'Matsiz', 'arces 3', 'Barcelona', 'Profesor/a', 120000, 'PENDIENTE'),
+(10, 'Ken', 'Horiz', 'Calle Manuel Azaña 64', 'Barcelona', 'Taxista', 12121, 'PENDIENTE'),
+(11, 'Neth', 'Horiz', 'nuevas platas', 'Barcelona', 'Profesor/a', 12121, 'PENDIENTE'),
+(13, 'Pedro', 'Calvo Osucro', 'Calle nuevos ministerios 4', 'Madrid', 'Asesor/a fiscal', 34000, 'PENDIENTE');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleados_empresa`
+--
+
+CREATE TABLE `empleados_empresa` (
+  `ID` int(5) NOT NULL,
+  `NOMBRE` varchar(40) NOT NULL,
+  `APELLIDOS` varchar(40) NOT NULL,
+  `DIRECCION` varchar(60) NOT NULL,
+  `OFICIO_ANTERIOR` varchar(40) NOT NULL,
+  `FECHA_ASIGNACION` date NOT NULL,
+  `DIAS_TRABAJADOS` int(6) NOT NULL,
+  `ROL` varchar(40) NOT NULL,
+  `CONTRASENIA` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -66,6 +85,12 @@ ALTER TABLE `contactos_empresa`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `empleados_empresa`
+--
+ALTER TABLE `empleados_empresa`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -73,7 +98,13 @@ ALTER TABLE `contactos_empresa`
 -- AUTO_INCREMENT de la tabla `contactos_empresa`
 --
 ALTER TABLE `contactos_empresa`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de la tabla `empleados_empresa`
+--
+ALTER TABLE `empleados_empresa`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

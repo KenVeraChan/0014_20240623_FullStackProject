@@ -246,8 +246,8 @@
                         <?php if($candidato->CONTRATACION=="PENDIENTE"):?>  <!-- Redireccionamiento a otra página de aceptación o denegación de la candidatura -->
                         <td class="caja">
                             <div class="caja" style="width:95px; text-align:center; padding-top: 3px; color:white; background-color:rgb(125,132,17); font-size:86%; float:left"><?php echo($candidato->CONTRATACION);?></div>
-                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=1"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(13,101,37); width:40px; float:left; position:relative; font-size:86%" value="OK!"></a>
-                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=0"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(121,15,15); width:63px; float:left; position:relative; font-size:86%" value="NO OK!"></a>
+                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=1"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(13,101,37); width:40px; float:left; position:relative; font-size:86%" value="OK!" title="Acceso a la asignación del tipo de Oficio"></a>
+                            <a href="gestionTareas.php?id=<?php echo($candidato->ID);?>&validez=0"><input type="submit" class="cajaPendidente" style="text-align:center;  color:white; background-color:rgb(121,15,15); width:63px; float:left; position:relative; font-size:86%" value="NO OK!" title="Desestimar la candidatura"></a>
                         </td>
                             <?php endif; ?>
                         <?php if($candidato->CONTRATACION=="APROBADA"):?>

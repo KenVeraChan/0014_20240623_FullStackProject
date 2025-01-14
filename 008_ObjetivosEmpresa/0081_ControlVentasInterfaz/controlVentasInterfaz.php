@@ -126,7 +126,7 @@
                                    class="BBDD" 
                                    name="DETALLES" 
                                    value="ACTUALIZAR"
-                                   style="text-decoration:none; background-color:transparent">OK
+                                   style="text-decoration:none; background-color:transparent" title="Accionar para ir a Actualizar">OK
                                 </a>
                             </td>
                         </tr>

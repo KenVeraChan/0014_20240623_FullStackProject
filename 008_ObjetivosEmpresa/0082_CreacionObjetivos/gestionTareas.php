@@ -111,6 +111,9 @@ if(isset($_GET["id"]))  //PRIMERO COMPRUEBA QUE SE LE HA DADO AL ACCIONAMIENTO D
         $base=$conexion->query($sql);
         $base->closeCursor();  //Cierra la conexion y la consulta
         session_start();
+            //AHORA HAY QUE IR A LA PAGINA DE DECISIÓN DE ASIGNACIÓN DE DEPARTAMENTO: EMPLEADO, RR.HH. O JEFES
+            header("Location:../0082_CreacionObjetivos/0082_01_AsignacionDepartamental/asignandoDepartamentos.php");
+            //Y luego se vuelve al menu de apartados de asignacion de candidatos
         $_SESSION["semaforo"]=2; //Para la generacion del letrero de CANDIDATO ACEPTADO
     }
     if($_GET["validez"]==0)
@@ -120,7 +123,34 @@ if(isset($_GET["id"]))  //PRIMERO COMPRUEBA QUE SE LE HA DADO AL ACCIONAMIENTO D
         $base->closeCursor();  //Cierra la conexion y la consulta
         session_start();
         $_SESSION["semaforo"]=3; //Para la generacion del letrero de CANDIDATO DENEGADO
+        header("Location:../0082_CreacionObjetivos/creacionTareas.php");
     }
-    header("Location:../0082_CreacionObjetivos/creacionTareas.php");
+}
+function asignadoRRHH()
+{
+    //CODIGO DE ADICIÓN DE UN EMPLEADO COMO RRHH
+    $conexion=ConexionPHP::getConexionJEFES_RRHH();
+    $BD_tabla=ConexionPHP::getBD_TablaJefes();
+    //RESTO DE CARGAS DE LA PAGINA WEB
+    $base=$conexion->query("SELECT * FROM $BD_tabla");
+    $base->closeCursor();  //Cierra la conexion y la consulta
+}
+function asignadoJEFES()
+{
+    //CODIGO DE ADICIÓN DE UN EMPLEADO COMO RRHH
+    $conexion=ConexionPHP::getConexionJEFES_RRHH();
+    $BD_tabla=ConexionPHP::getBD_TablaJefes();
+    //RESTO DE CARGAS DE LA PAGINA WEB
+    $base=$conexion->query("SELECT * FROM $BD_tabla");
+    $base->closeCursor();  //Cierra la conexion y la consulta
+}
+function asignadoEMPLEADOS()
+{
+    //CODIGO DE ADICIÓN DE UN EMPLEADO COMO RRHH
+    $conexion=ConexionPHP::getConexionEMPLEADOS();
+    $BD_tabla=ConexionPHP::getBD_TablaEmpleadosActuales();
+    //RESTO DE CARGAS DE LA PAGINA WEB
+    $base=$conexion->query("SELECT * FROM $BD_tabla");
+    $base->closeCursor();  //Cierra la conexion y la consulta
 }
 ?>

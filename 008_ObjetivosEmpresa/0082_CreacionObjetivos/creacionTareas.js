@@ -147,17 +147,20 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="Se ha DESESTIMADO la inclusión en plantilla del usuario";
             letrero.style.color="rgb(215,5,5)";
         }
-    letrero.style.paddingTop="10px";
-    letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
-    letrero.style.transitionDuration = "1s";
-    letrero.style.marginTop="0px";
-
-    document.addEventListener("mousemove",function(){
-    let temporizador=setTimeout(function(){
-        var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(tipoLetrero>0 && tipoLetrero<4)
+    {
+        letrero.style.paddingTop="10px";
+        letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
         letrero.style.transitionDuration = "1s";
-        letrero.style.marginTop="-50px";
-    },3500);
-    })
-    clearTimeout(temporizador);
+        letrero.style.marginTop="0px";
+
+        document.addEventListener("mousemove",function(){
+        let temporizador=setTimeout(function(){
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="-50px";
+        },3500);
+        })
+        clearTimeout(temporizador);
+    }
 }

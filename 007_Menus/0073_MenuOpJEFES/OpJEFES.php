@@ -37,7 +37,7 @@
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0081_ControlVentasInterfaz/controlVentasInterfaz.php'">CONTROL DE STOCK</button></td>  <!-- AREA DE REPOSICIÓN DE UNIDADES Y ACTUALIZACIÓN DE DETALLES DE CADA UNIDAD-->
                 </tr>
                 <tr class="cajaBotonera">
-                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">CONTROL TAREAS</button></td>
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0082_CreacionObjetivos/CreacionTareas.php'">CONTROL TAREAS Y CANDIDATURAS DEPARTAMENTALES</button></td>
                 </tr>   
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0083_ControlProyectos/controlProyectos.php'">CONTROL DE PROYECTOS</button></td>

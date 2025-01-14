@@ -8,8 +8,9 @@ class ConexionPHP
     private static $BD_nombreJEFES_RRHH="bbdd001_jefes_rrhh"; //BBDD de los JEFES y de RRHH
     private static $BD_nombreEMPLEADOS="bbdd002_empleados"; //BBDD de los EMPLEADOS
     private static $BD_nombreCLIENTES="bbdd003_clientes"; //BBDD de los CLIENTES
-    private static $BD_tablaEmpleados="contactos_empresa"; //TABLA Empleados
+    private static $BD_tablaEmpleados="contactos_empresa"; //TABLA Posibles Empleados como candidatos
     private static $BD_tablaJefes="login"; //TABLA Jefes Y RRHH
+    private static $BD_tablaEmpleadosActuales="empleados_empresa";  //TABLA Empleados Actuales
     private static $BD_tablaIDClientes="loginclientes"; //TABLA Clientes
     private static $BD_tablaJefesTareas="gestionpeticiones"; //TABLA Jefes Y RRHH
     private static $BD_tablaJefesGannt="diagrama_gannt"; //TABLA Jefes Gannt
@@ -71,6 +72,10 @@ class ConexionPHP
     public static function getBD_TablaJefes()
     {
         return self::$BD_tablaJefes;
+    }
+    public static function getBD_TablaEmpleadosActuales()
+    {
+        return self::$BD_tablaEmpleadosActuales;
     }
     public static function getBD_TablaIDClientes()
     {
