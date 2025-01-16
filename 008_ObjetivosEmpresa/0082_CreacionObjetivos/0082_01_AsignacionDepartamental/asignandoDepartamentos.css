@@ -52,7 +52,7 @@
     }
     #eleccionesJEFE{
         margin-left: -1200%;
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center;
         font-size: x-large;
         color: rgb(255, 255, 255);
@@ -65,7 +65,7 @@
     }
     #eleccionesRRHH{
         margin-left: -1200%;
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center;
         font-size: x-large;
         color: rgb(255, 255, 255);
@@ -78,7 +78,7 @@
     }
     #eleccionesEMPLEADO{
         margin-left: -1200%;
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center;
         font-size: x-large;
         color: rgb(255, 255, 255);
@@ -88,6 +88,102 @@
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/EMPLEADO.png");
         background-size: 100% 100%;
         z-index: 1;
+    }
+    /*FORMULARIO DE JEFES*/
+    .consultaJEFES
+    {
+        position: relative;
+        margin-top: -920px;
+        margin-left: -1200%;
+        width: 908px;
+        height:100px;
+        background-color:rgba(0, 0, 19, 0.89);
+        z-index: 10;
+    }
+    .separacion
+    {
+        height: 20px;
+    }
+    .celdaJEFES
+    {
+        margin-left: 10%;
+        padding-top: 20px;
+        padding-left: 20px;
+        color: yellow;
+    }
+    .desplegableJEFES
+    {
+        margin-left:40px;
+        width: 240px;
+    }
+    .celdasJEFES
+    {
+        margin-left:64px;
+        width: 233px;
+    }
+    /*FORMULARIO DE RRHH*/
+    .consultaRRHH
+    {
+        position: relative;
+        margin-top: -100px;
+        margin-left: -1200%;
+        width: 908px;
+        height:100px;
+        background-color:rgba(0, 0, 19, 0.89);
+        z-index: 20;
+    }
+    .separacion
+    {
+        height: 20px;
+    }
+    .celdaRRHH
+    {
+        margin-left: 10%;
+        padding-top: 20px;
+        padding-left: 20px;
+        color: yellow;
+    }
+    .desplegableRRHH
+    {
+        margin-left: 90px;
+        width: 240px;
+    }
+    .celdasRRHH
+    {
+        margin-left:28px;
+        width: 233px;
+    }
+    /*FORMULARIO DE EMPLEADOS*/
+    .consultaEMPLEADOS
+    {
+        position: relative;
+        margin-top: -100px;
+        margin-left: -1200%;
+        width: 908px;
+        height:100px;
+        background-color:rgba(0, 0, 19, 0.89);
+        z-index: 30;
+    }
+    .separacion
+    {
+        height: 20px;
+    }
+    .celdaEMPLEADOS
+    {
+        margin-left: 10%;
+        padding-top: 20px;
+        padding-left: 20px;
+        color: yellow;
+    }
+    .desplegableEMPLEADOS
+    {
+        margin-left:40px;
+        width: 240px;
+    }
+    .celdasEMPLEADOS
+    {
+        margin-left:46px;
+        width: 233px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
@@ -221,7 +317,7 @@
     {
         position:relative;
         width:100%;
-        height: 240px;
+        height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
         color:rgb(204, 0, 255);
     }
@@ -300,7 +396,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: large;
         color: rgb(255, 255, 255);
         width:140px; 
         height:40px;    
@@ -314,7 +410,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: large;
         color: rgb(255, 255, 255);
         width:140px; 
         height:40px;      
@@ -328,7 +424,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: large;
         color: rgb(255, 255, 255);
         width:140px; 
         height:40px;   
@@ -346,7 +442,7 @@
     {
         position:relative;
         width:100%;
-        height: 240px;
+        height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
         color:rgb(204, 0, 255);
     }
@@ -429,7 +525,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: medium;
         color: rgb(255, 255, 255);
         width:120px; 
         height:90px; 
@@ -442,6 +538,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
+        font-size: medium;
         color: rgb(255, 255, 255);
         width:120px; 
         height:90px; 
@@ -454,7 +551,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: x-large;
+        font-size: medium;
         color: rgb(255, 255, 255);
         width:120px; 
         height:90px; 
@@ -472,7 +569,7 @@
         position:relative;
         margin-top: -35px;
         width:100%;
-        height: 240px;
+        height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
         color: rgb(204, 0, 255);
     }
@@ -554,7 +651,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
         width:90px; 
         height:40px; 
@@ -568,7 +665,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
         width:90px; 
         height:40px; 
@@ -582,7 +679,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
         width:90px; 
         height:40px; 
@@ -600,15 +697,15 @@
     {
         position:relative;
         margin-top: -35px;
-        width:100%;
-        height: 250px;
+        width: 100%;
+        height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
         color: rgb(204, 0, 255);
     }
     #zocalo
     {
         float: left;
-        width:100%;
+        width: 100%;
         height: 90px; 
         background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -634,7 +731,7 @@
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
-        width: 300px;
+        width: 400px;
         height: 1500px;
         background-color: rgba(0, 0, 19, 0.89);
     }
@@ -652,7 +749,7 @@
         .VaciobotonesPrincipal{
             float: left;
             position: relative;
-            width: 300px;            /*ICONO CUADRADO*/
+            width: 400px;
             height: 13px;  
             background-color: rgba(0, 0, 19, 0.89);
             box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
@@ -663,7 +760,7 @@
     /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
     #imagenPortada{
         margin-top: 0px;
-        width: 300px;
+        width: 400px;
         height: 100%;
     }
     #tablaBotones
@@ -685,7 +782,7 @@
         text-align: center;
         font-size: medium;
         color: rgb(255, 255, 255);
-        width:80px; 
+        width:105px; 
         height:30px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/JEFE.png");
@@ -699,7 +796,7 @@
         text-align: center;
         font-size: medium;
         color: rgb(255, 255, 255);
-        width:80px; 
+        width:105px; 
         height:30px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/RRHH.png");
@@ -713,7 +810,7 @@
         text-align: center;
         font-size: medium;
         color: rgb(255, 255, 255);
-        width:80px; 
+        width: 105px; 
         height:30px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/EMPLEADO.png");
@@ -728,7 +825,7 @@
     #piePrincipal
     {
         position:relative;
-        width: 300px;
+        width: 400px;
         height: 240px;
         background-color: rgba(0, 0, 0, 0.87);
         color: rgb(204, 0, 255);
@@ -736,7 +833,7 @@
     #zocalo
     {
         float: left;
-        width: 300px;
+        width: 400px;
         height: 90px; 
         background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -746,7 +843,7 @@
     }
     .pie
     {
-        width: 300px;
+        width: 400px;
         height: 32px;
         background-color:  rgba(0, 0, 19, 0.89); 
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
