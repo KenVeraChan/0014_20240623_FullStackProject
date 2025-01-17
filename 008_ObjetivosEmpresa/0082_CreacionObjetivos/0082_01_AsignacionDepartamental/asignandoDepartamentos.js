@@ -146,7 +146,15 @@ function cargaFormularios(indice)
         document.getElementById("eleccionesJEFE").style.backgroundColor="rgba(0, 78, 5, 0.85)";
         document.getElementById("eleccionesJEFE").style.color="rgba(115, 255, 0, 0.85)";
         document.getElementById("eleccionesJEFE").style.textShadow = "20px 20px 1px rgba(255, 255, 255, 0.65)"
-
+            //AL ENTRAR EN EL BOTON DE REGISTRO
+            document.getElementsByClassName("confirmaJEFES")[0].addEventListener("mouseenter",function(){
+                document.getElementsByClassName("confirmaJEFES")[0].style.boxShadow = "3px 3px 3px 3px rgba(51, 255, 0, 0.65)";
+                document.getElementsByClassName("confirmaJEFES")[0].style.filter = "brightness(120%)";
+            });
+            document.getElementsByClassName("confirmaJEFES")[0].addEventListener("mouseleave",function(){
+                document.getElementsByClassName("confirmaJEFES")[0].style.boxShadow = "none";
+                document.getElementsByClassName("confirmaJEFES")[0].style.filter = "brightness(100%)";
+            });
     }
     if(indice==2)
     {
@@ -175,6 +183,15 @@ function cargaFormularios(indice)
         document.getElementById("eleccionesRRHH").style.backgroundColor="rgba(77, 75, 0, 0.85)";
         document.getElementById("eleccionesRRHH").style.color="rgba(255, 247, 0, 0.85)";
         document.getElementById("eleccionesRRHH").style.textShadow = "20px 20px 1px rgba(255, 255, 255, 0.65)";
+            //AL ENTRAR EN EL BOTON DE REGISTRO
+            document.getElementsByClassName("confirmaRRHH")[0].addEventListener("mouseenter",function(){
+                document.getElementsByClassName("confirmaRRHH")[0].style.boxShadow = "3px 3px 3px 3px rgba(255, 251, 0, 0.65)";
+                document.getElementsByClassName("confirmaRRHH")[0].style.filter = "brightness(120%)";
+            });
+            document.getElementsByClassName("confirmaRRHH")[0].addEventListener("mouseleave",function(){
+                document.getElementsByClassName("confirmaRRHH")[0].style.boxShadow = "none";
+                document.getElementsByClassName("confirmaRRHH")[0].style.filter = "brightness(100%)";
+            });
     }
     if(indice==3)
     {
@@ -204,5 +221,53 @@ function cargaFormularios(indice)
         document.getElementById("eleccionesEMPLEADO").style.backgroundColor="rgba(92, 0, 0, 0.85)";
         document.getElementById("eleccionesEMPLEADO").style.color="rgba(255, 0, 0, 0.85)";
         document.getElementById("eleccionesEMPLEADO").style.textShadow = "20px 20px 1px rgba(255, 255, 255, 0.65)";
+            //AL ENTRAR EN EL BOTON DE REGISTRO
+            document.getElementsByClassName("confirmaRRHH")[0].addEventListener("mouseenter",function(){
+                document.getElementsByClassName("confirmaRRHH")[0].style.boxShadow = "3px 3px 3px 3px rgba(255, 0, 0, 0.65)";
+                document.getElementsByClassName("confirmaRRHH")[0].style.filter = "brightness(120%)";
+            });
+            document.getElementsByClassName("confirmaRRHH")[0].addEventListener("mouseleave",function(){
+                document.getElementsByClassName("confirmaRRHH")[0].style.boxShadow = "none";
+                document.getElementsByClassName("confirmaRRHH")[0].style.filter = "brightness(100%)";
+            });
+    }
+}
+//LETRERO DE OKEY
+function letreroConfirmado(tipoLetrero)
+{
+    var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(tipoLetrero==1)
+        {
+            //LETRERO DE FALLO DE NO HABER ASIGNADO UN ROL DE JEFE
+            letrero.innerHTML="JEFE SIN ROL NO ES VÁLIDO";
+            letrero.style.color="rgb(215,5,5)";
+        }
+    if(tipoLetrero==2)
+        {
+            //LETRERO DE FALLO DE NO HABER ASIGNADO UN ROL DE RRHH
+            letrero.innerHTML="PERSONAL DE RRHH SIN ROL NO ES VÁLIDO";
+            letrero.style.color="rgb(215,5,5)";
+        }
+    if(tipoLetrero==3)
+        {
+            //LETRERO DE FALLO DE NO HABER ASIGNADO UN TIPO DE CONTRATO AL EMPLEADO
+            letrero.innerHTML="EMPLEADO SIN CONTRATO ESPECÍFICO NO VÁLIDO";
+            letrero.style.color="rgb(215,5,5)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<4)
+    {
+        letrero.style.paddingTop="10px";
+        letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        letrero.style.transitionDuration = "1s";
+        letrero.style.marginTop="0px";
+
+        document.addEventListener("mousemove",function(){
+        let temporizador=setTimeout(function(){
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="-50px";
+        },3500);
+        })
+        clearTimeout(temporizador);
     }
 }

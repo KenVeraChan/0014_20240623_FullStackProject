@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-01-2025 a las 13:58:43
+-- Tiempo de generación: 17-01-2025 a las 15:08:54
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -49,10 +49,10 @@ INSERT INTO `contactos_empresa` (`ID`, `NOMBRE`, `APELLIDOS`, `DIRECCION`, `POBL
 (4, 'Verduliz', 'Sainz', 'Calle Vilnus 12', 'Tarragona', 'Profesor/a', 32312, 'APROBADA'),
 (5, 'Veddina', 'Henion', 'calle arbolados 9', 'Northwith', 'Camarero/a', 34021, 'APROBADA'),
 (6, 'Samira', 'Savadez', 'Calle Manuel Azaña 64', 'Northwith', 'Recepcionista', 12121, 'APROBADA'),
-(7, 'Christal', 'Gedishen', 'nuevos atos', 'Madrid', 'Funcionario/a', 20000, 'PENDIENTE'),
-(8, 'Jill', 'Anherson', 'nuevos ministerios', 'Tarragona', 'Profesor/a', 234000, 'PENDIENTE'),
+(7, 'Christal', 'Gedishen', 'nuevos atos', 'Madrid', 'Funcionario/a', 20000, 'APROBADA'),
+(8, 'Jill', 'Anherson', 'nuevos ministerios', 'Tarragona', 'Profesor/a', 234000, 'APROBADA'),
 (9, 'Shail', 'Matsiz', 'arces 3', 'Barcelona', 'Profesor/a', 120000, 'PENDIENTE'),
-(10, 'Ken', 'Horiz', 'Calle Manuel Azaña 64', 'Barcelona', 'Taxista', 12121, 'PENDIENTE'),
+(10, 'Ken', 'Horiz', 'Calle Manuel Azaña 64', 'Barcelona', 'Taxista', 12121, 'APROBADA'),
 (11, 'Neth', 'Horiz', 'nuevas platas', 'Barcelona', 'Profesor/a', 12121, 'PENDIENTE'),
 (13, 'Pedro', 'Calvo Osucro', 'Calle nuevos ministerios 4', 'Madrid', 'Asesor/a fiscal', 34000, 'PENDIENTE');
 
@@ -69,10 +69,17 @@ CREATE TABLE `empleados_empresa` (
   `DIRECCION` varchar(60) NOT NULL,
   `OFICIO_ANTERIOR` varchar(40) NOT NULL,
   `FECHA_ASIGNACION` date NOT NULL,
-  `DIAS_TRABAJADOS` int(6) NOT NULL,
   `ROL` varchar(40) NOT NULL,
+  `CONTRATO` varchar(30) NOT NULL,
   `CONTRASENIA` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `empleados_empresa`
+--
+
+INSERT INTO `empleados_empresa` (`ID`, `NOMBRE`, `APELLIDOS`, `DIRECCION`, `OFICIO_ANTERIOR`, `FECHA_ASIGNACION`, `ROL`, `CONTRATO`, `CONTRASENIA`) VALUES
+(1, 'Ken', 'Horiz', 'Calle Manuel Azaña 64', 'Taxista', '2025-01-17', 'EMPLEADO', 'INDEFINIDO', 'nuevasmetas2');
 
 --
 -- Índices para tablas volcadas
@@ -104,7 +111,7 @@ ALTER TABLE `contactos_empresa`
 -- AUTO_INCREMENT de la tabla `empleados_empresa`
 --
 ALTER TABLE `empleados_empresa`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

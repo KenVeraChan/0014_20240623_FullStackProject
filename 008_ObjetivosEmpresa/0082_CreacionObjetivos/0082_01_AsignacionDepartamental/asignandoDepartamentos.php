@@ -18,6 +18,16 @@
     <script src="asignandoDepartamentos.js"></script>
 </head>
 <body onload="cargarPagina()">
+        <div class="letreroOK" style=
+               "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: white;
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none">
+        </div>
     <header id="cabeceraPrincipal"> 
         <table id="tablaBotones">
             <tr class="filaBoton">
@@ -55,6 +65,8 @@
                 <p class="separacion"></p>
                 <label class="celdaJEFES">CONTRASEÑA ASIGNADA:<input type="text" class="celdasJEFES" name="contraseniaAsignada" required minlength="4" maxlength="28"></label> <!--CONTRASENIA ASIGNADA-->
                 <p class="separacion"></p>
+                <input type="submit" class="confirmaJEFES" name="confirmaJEFES" value="" title="Accionar para registrar el rol de jefe"> <!--CONTRASENIA ASIGNADA-->
+                <p class="separacion"></p>
             </form>
         </div>
         <div class="consultaRRHH">
@@ -71,6 +83,8 @@
                     </label>
                 <p class="separacion"></p>
                 <label class="celdaRRHH">CONTRASEÑA ASIGNADA:<input type="text" class="celdasRRHH" name="contraseniaAsignada" required minlength="4" maxlength="28"></label> <!--CONTRASENIA ASIGNADA-->
+                <p class="separacion"></p>
+                <input type="submit" class="confirmaRRHH" name="confirmaRRHH" value="" title="Accionar para registrar el rol de jefe"> <!--CONTRASENIA ASIGNADA-->
                 <p class="separacion"></p>
             </form>
         </div>
@@ -94,6 +108,8 @@
                 <p class="separacion"></p>
                 <label class="celdaEMPLEADOS">CONTRASEÑA ASIGNADA:<input type="text" class="celdasEMPLEADOS" name="contraseniaAsignada" required minlength="4" maxlength="28"></label> <!--CONTRASENIA ASIGNADA-->
                 <p class="separacion"></p>
+                <input type="submit" class="confirmaEMPLEADOS" name="confirmaEMPLEADOS" value="" title="Accionar para registrar el rol de jefe"> <!--CONTRASENIA ASIGNADA-->
+                <p class="separacion"></p>
             </form>
         </div>
     </header>
@@ -114,5 +130,7 @@
             </div>
         </footer>
     </div>
+    <script>letreroConfirmado(<?php echo($_SESSION["semaforo"])?>);</script>
+    <?php $_SESSION["semaforo"]=0; //Reiniciar variable ?> 
 </body>
 </html>

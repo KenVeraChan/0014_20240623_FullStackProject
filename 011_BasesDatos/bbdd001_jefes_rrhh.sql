@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2024 a las 19:14:24
+-- Tiempo de generación: 17-01-2025 a las 15:09:25
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,8 +46,8 @@ INSERT INTO `diagrama_gannt` (`ID`, `PROYECTO`, `DURACION`, `INICIO`, `COSTE`) V
 (6, 'Reciclaje de residuos', 6, '2024-09-12', 1500),
 (7, 'Logísitica de material', 8, '2024-09-20', 5200),
 (8, 'Parada de produccion', 10, '2024-08-15', 12000),
-(12, 'nuevas entregas', 8, '2024-08-25', 200),
-(13, 'entregas nuevas', 5, '2024-09-02', 3000);
+(13, 'entregas nuevas', 5, '2024-09-02', 3000),
+(20, 'Sintesis de material anómalo', 4, '2024-09-20', -340);
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,10 @@ INSERT INTO `gestionpeticiones` (`ID`, `TAREA`, `DEPARTAMENTO`, `TECNICOS`, `COS
 (91, 'Compras material laboratorio', 'I+D+I', 6, -2211, '2024-09-04', 'PENDIENTE'),
 (92, 'Llegada material', 'LOGISTICAS', 1, -2000, '2024-09-05', 'PENDIENTE'),
 (93, 'Llegada biometricas', 'I+D+I', 5, -2000, '2024-08-31', 'PENDIENTE'),
-(94, 'Reunión con innovadores', 'I+D+I', 3, -3213, '2024-08-31', 'PENDIENTE');
+(94, 'Reunión con innovadores', 'I+D+I', 3, -3213, '2024-08-31', 'PENDIENTE'),
+(95, 'Inspección técnica de producto', 'DIRECTIVO', 5, -3333, '2024-09-27', 'PENDIENTE'),
+(96, 'Pedido Juan Perez no procesado', 'PRODUCCION', 6, 345, '2025-01-13', 'PENDIENTE'),
+(97, 'Reponer mas placas solares', 'I+D+I', 7, 300, '2025-01-14', 'APROBADO');
 
 -- --------------------------------------------------------
 
@@ -119,19 +122,23 @@ INSERT INTO `gestionpeticiones` (`ID`, `TAREA`, `DEPARTAMENTO`, `TECNICOS`, `COS
 CREATE TABLE `login` (
   `ID` int(3) NOT NULL,
   `USUARIO` varchar(30) DEFAULT NULL,
-  `CONTRASENIA` varchar(300) DEFAULT NULL,
-  `ROL` varchar(30) NOT NULL
+  `CONTRASENIA` varchar(30) DEFAULT NULL,
+  `ROL` varchar(30) NOT NULL,
+  `DEPARTAMENTO` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`ID`, `USUARIO`, `CONTRASENIA`, `ROL`) VALUES
-(1, 'Rasselin', 'manzanasdulces', 'JEFE'),
-(2, 'Vitrea', 'bailarinainquieta', 'JEFE'),
-(3, 'Emiliam', 'pianovsviolin', 'JEFE'),
-(4, 'Verduliz', 'cultivosprosperos', 'RRHH');
+INSERT INTO `login` (`ID`, `USUARIO`, `CONTRASENIA`, `ROL`, `DEPARTAMENTO`) VALUES
+(1, 'Rasselin', 'manzanasdulces', 'JEFE', 'CONSULTOR'),
+(2, 'Vitrea', 'bailarinainquieta', 'JEFE', 'PRODUCCION'),
+(3, 'Emiliam', 'pianovsviolin', 'JEFE', 'I+D+I'),
+(4, 'Verduliz', 'cultivosprosperos', 'RRHH', 'RRHH'),
+(7, 'Jill', 'ministerios2025', 'RRHH', 'RRHH'),
+(8, 'Jill', 'ministerios2025', 'RRHH', 'RRHH'),
+(9, 'Jill', 'ministerios2025', 'RRHH', 'RELACIONES PUBLICAS');
 
 --
 -- Índices para tablas volcadas
@@ -163,19 +170,19 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de la tabla `diagrama_gannt`
 --
 ALTER TABLE `diagrama_gannt`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `gestionpeticiones`
 --
 ALTER TABLE `gestionpeticiones`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

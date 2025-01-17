@@ -147,7 +147,25 @@ function letreroConfirmado(tipoLetrero)
             letrero.innerHTML="Se ha DESESTIMADO la inclusión en plantilla del usuario";
             letrero.style.color="rgb(215,5,5)";
         }
-    if(tipoLetrero>0 && tipoLetrero<4)
+    if(tipoLetrero==4)
+        {
+            //LETRERO DE ROL ASIGNADO A JEFE CORRECTAMENTE
+            letrero.innerHTML="ASIGNACIÓN correcta de ROL al JEFE";
+            letrero.style.color="rgb(45,255,21)";
+        }
+    if(tipoLetrero==5)
+        {
+            //LETRERO DE ROL ASIGNADO A RRHH CORRECTAMENTE
+            letrero.innerHTML="ASIGNACIÓN correcta de ROL al personal de RRHH";
+            letrero.style.color="rgb(45,255,21)";
+        }
+    if(tipoLetrero==6)
+        {
+            //LETRERO DE CONTRATO DEFINIDO AL EMPLEADO
+            letrero.innerHTML="ASIGNACIÓN correcta del tipo de CONTRATO al EMPLEADO";
+            letrero.style.color="rgb(45,255,21)";
+        }
+    if(tipoLetrero>0 && tipoLetrero<7)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

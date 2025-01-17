@@ -57,7 +57,7 @@
         font-size: x-large;
         color: rgb(255, 255, 255);
         width:300px; 
-        height:200px; 
+        height:300px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/JEFE.png");
         background-size: 100% 100%;
@@ -70,7 +70,7 @@
         font-size: x-large;
         color: rgb(255, 255, 255);
         width:300px; 
-        height:200px; 
+        height:300px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/RRHH.png");
         background-size: 100% 100%;
@@ -83,17 +83,17 @@
         font-size: x-large;
         color: rgb(255, 255, 255);
         width:300px; 
-        height:200px; 
+        height:300px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/EMPLEADO.png");
         background-size: 100% 100%;
         z-index: 1;
     }
-    /*FORMULARIO DE JEFES*/
+    /******** FORMULARIO DE JEFES **********/
     .consultaJEFES
     {
         position: relative;
-        margin-top: -920px;
+        margin-top: -900px;
         margin-left: -1200%;
         width: 908px;
         height:100px;
@@ -121,7 +121,19 @@
         margin-left:64px;
         width: 233px;
     }
-    /*FORMULARIO DE RRHH*/
+    .confirmaJEFES
+    {
+        position: absolute;
+        margin-top: -84px;
+        margin-left: 750px;
+        width: 70px;
+        height: 70px;
+        background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 40px;
+    }
+    /********** FORMULARIO DE RRHH ************/
     .consultaRRHH
     {
         position: relative;
@@ -153,7 +165,19 @@
         margin-left:28px;
         width: 233px;
     }
-    /*FORMULARIO DE EMPLEADOS*/
+    .confirmaRRHH
+    {
+        position: absolute;
+        margin-top: -84px;
+        margin-left: 750px;
+        width: 70px;
+        height: 70px;
+        background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 40px;
+    }
+    /********** FORMULARIO DE EMPLEADOS *************/
     .consultaEMPLEADOS
     {
         position: relative;
@@ -184,6 +208,18 @@
     {
         margin-left:46px;
         width: 233px;
+    }
+    .confirmaEMPLEADOS
+    {
+        position: absolute;
+        margin-top: -84px;
+        margin-left: 750px;
+        width: 70px;
+        height: 70px;
+        background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 40px;
     }
     /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
 
