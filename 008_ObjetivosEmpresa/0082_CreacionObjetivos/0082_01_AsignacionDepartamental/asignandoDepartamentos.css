@@ -305,7 +305,7 @@
     }
     #eleccionesJEFE{
         margin-left: -1200%;
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center;
         font-size: x-large;
         color: rgb(255, 255, 255);
@@ -319,7 +319,7 @@
     }
     #eleccionesRRHH{
         margin-left: -1200%;
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center;
         font-size: x-large;
         color: rgb(255, 255, 255);
@@ -333,7 +333,7 @@
     }
     #eleccionesEMPLEADO{
         margin-left: -1200%;
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center;
         font-size: x-large;
         color: rgb(255, 255, 255);
@@ -345,8 +345,139 @@
         background-size: 90% 100%;
         z-index: 1;
     }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
+   /******** FORMULARIO DE JEFES **********/
+   .consultaJEFES
+   {
+       position: relative;
+       margin-top: -1050px;
+       margin-left: -1200%;
+       width: 600px;
+       height:100px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 10;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaJEFES
+   {
+       margin-left: 5%;
+       padding-top: 20px;
+       padding-left: 10px;
+       color: yellow;
+   }
+   .desplegableJEFES
+   {
+       margin-left:40px;
+       width: 150px;
+   }
+   .celdasJEFES
+   {
+       margin-left:64px;
+       width: 143px;
+   }
+   .confirmaJEFES
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 490px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /********** FORMULARIO DE RRHH ************/
+   .consultaRRHH
+   {
+       position: relative;
+       margin-top: -100px;
+       margin-left: -1200%;
+       width: 600px;
+       height:100px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 20;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaRRHH
+   {
+       margin-left: 4%;
+       padding-top: 20px;
+       padding-left: 10px;
+       color: yellow;
+   }
+   .desplegableRRHH
+   {
+        margin-left:100px;
+        width: 150px;
+   }
+   .celdasRRHH
+   {
+        margin-left:37px;
+        width: 143px;
+   }
+   .confirmaRRHH
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 490px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /********** FORMULARIO DE EMPLEADOS *************/
+   .consultaEMPLEADOS
+   {
+       position: relative;
+       margin-top: -100px;
+       margin-left: -1200%;
+       width: 600px;;
+       height:100px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 30;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaEMPLEADOS
+   {
+       margin-left: 4%;
+       padding-top: 20px;
+       padding-left: 10px;
+       color: yellow;
+   }
+   .desplegableEMPLEADOS
+   {
+       margin-left:40px;
+       width: 160px;
+   }
+   .celdasEMPLEADOS
+   {
+       margin-left:46px;
+       width: 155px;
+   }
+   .confirmaEMPLEADOS
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 500px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
@@ -432,7 +563,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: large;
+        font-size: medium;
         color: rgb(255, 255, 255);
         width:140px; 
         height:40px;    
@@ -446,7 +577,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: large;
+        font-size: medium;
         color: rgb(255, 255, 255);
         width:140px; 
         height:40px;      
@@ -460,7 +591,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: large;
+        font-size: medium;
         color: rgb(255, 255, 255);
         width:140px; 
         height:40px;   
@@ -470,8 +601,145 @@
         background-size: 70% 70%;
         z-index: 1;
     }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
+   /******** FORMULARIO DE JEFES **********/
+   .consultaJEFES
+   {
+       position: relative;
+       margin-top: -1200px;
+       margin-left: -1200%;
+       width: 430px;
+       height: 160px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 10;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaJEFES
+   {
+       margin-left: 5%;
+       padding-top: 20px;
+       padding-left: 10px;
+       color: yellow;
+   }
+   .desplegableJEFES
+   {
+       margin-left:52px;
+       margin-top: 10px;
+       width: 150px;
+   }
+   .celdasJEFES
+   {
+       margin-left:54px;
+       margin-top: 10px;
+       width: 143px;
+   }
+   .confirmaJEFES
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 300px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /********** FORMULARIO DE RRHH ************/
+   .consultaRRHH
+   {
+       position: relative;
+       margin-top: -160px;
+       margin-left: -1200%;
+       width: 430px;
+       height: 150px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 20;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaRRHH
+   {
+        margin-left: 5%;
+        padding-top: 20px;
+        padding-left: 10px;
+        color: yellow;
+   }
+   .desplegableRRHH
+   {
+        margin-left:30px;
+        margin-top: 10px;
+        width: 180px;
+   }
+   .celdasRRHH
+   {
+        margin-left:54px;
+        margin-top: 10px;
+        width: 143px;
+   }
+   .confirmaRRHH
+   {
+       position: absolute;
+       margin-top: -80px;
+       margin-left: 300px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /********** FORMULARIO DE EMPLEADOS *************/
+   .consultaEMPLEADOS
+   {
+       position: relative;
+       margin-top: -150px;
+       margin-left: -1200%;
+       width: 430px;
+       height: 160px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 30;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaEMPLEADOS
+   {
+       margin-left: 4%;
+       padding-top: 20px;
+       padding-left: 10px;
+       color: yellow;
+   }
+   .desplegableEMPLEADOS
+   {
+       margin-left:40px;
+       margin-top: 10px;
+       width: 160px;
+   }
+   .celdasEMPLEADOS
+   {
+       margin-left:46px;
+       margin-top: 10px;
+       width: 155px;
+   }
+   .confirmaEMPLEADOS
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 300px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
@@ -561,7 +829,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
         width:120px; 
         height:90px; 
@@ -574,7 +842,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
         width:120px; 
         height:90px; 
@@ -587,7 +855,7 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: medium;
+        font-size: small;
         color: rgb(255, 255, 255);
         width:120px; 
         height:90px; 
@@ -596,8 +864,149 @@
         background-size: 100% 100%;
         z-index: 1;
     }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
+   /******** FORMULARIO DE JEFES **********/
+   .consultaJEFES
+   {
+       position: relative;
+       margin-top: -1100px;
+       margin-left: -1200%;
+       width: 370px;
+       height: 160px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 10;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaJEFES
+   {
+       margin-left: 5%;
+       padding-top: 20px;
+       padding-left: 10px;
+       font-size: small;
+       color: yellow;
+   }
+   .desplegableJEFES
+   {
+       margin-left:28px;
+       margin-top: 10px;
+       font-size: small;
+       width: 180px;
+   }
+   .celdasJEFES
+   {
+       margin-left:28px;
+       margin-top: 10px;
+       width: 173px;
+   }
+   .confirmaJEFES
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 250px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /********** FORMULARIO DE RRHH ************/
+   .consultaRRHH
+   {
+       position: relative;
+       margin-top: -160px;
+       margin-left: -1200%;
+       width: 370px;
+       height: 150px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 20;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaRRHH
+   {
+        margin-left: 5%;
+        padding-top: 20px;
+        padding-left: 10px;
+        font-size: small;
+        color: yellow;
+   }
+   .desplegableRRHH
+   {
+        margin-left:30px;
+        margin-top: 10px;
+        width: 180px;
+   }
+   .celdasRRHH
+   {
+        margin-left:54px;
+        margin-top: 10px;
+        width: 143px;
+   }
+   .confirmaRRHH
+   {
+       position: absolute;
+       margin-top: -80px;
+       margin-left: 250px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /********** FORMULARIO DE EMPLEADOS *************/
+   .consultaEMPLEADOS
+   {
+       position: relative;
+       margin-top: -150px;
+       margin-left: -1200%;
+       width: 370px;
+       height: 150px;
+       background-color:rgba(0, 0, 19, 0.89);
+       z-index: 30;
+   }
+   .separacion
+   {
+       height: 20px;
+   }
+   .celdaEMPLEADOS
+   {
+       margin-left: 4%;
+       padding-top: 20px;
+       padding-left: 10px;
+       font-size: small;
+       color: yellow;
+   }
+   .desplegableEMPLEADOS
+   {
+       margin-left:28px;
+       margin-top: 10px;
+       width: 160px;
+   }
+   .celdasEMPLEADOS
+   {
+       margin-left:25px;
+       margin-top: 10px;
+       width: 155px;
+   }
+   .confirmaEMPLEADOS
+   {
+       position: absolute;
+       margin-top: -84px;
+       margin-left: 250px;
+       width: 70px;
+       height: 70px;
+       background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       border-radius: 40px;
+   }
+   /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
@@ -632,13 +1041,13 @@
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/
 }
-@media all and (min-width: 300px) and (max-width: 481px)
+@media all and (min-width: 100px) and (max-width: 481px)
 {   
       /** DISPOSITIVOS ORDENADOR **/
     /************ CSS DE LA CABECERA ********/
     #cabeceraPrincipal
     {
-        width: 100%;
+        width: 481px;
         height: 1500px;
         background-color: rgba(0, 0, 19, 0.89);
     }
@@ -687,9 +1096,9 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: small;
+        font-size: x-small;
         color: rgb(255, 255, 255);
-        width:90px; 
+        width:110px; 
         height:40px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/JEFE.png");
@@ -701,9 +1110,9 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: small;
+        font-size: x-small;
         color: rgb(255, 255, 255);
-        width:90px; 
+        width:110px; 
         height:40px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/RRHH.png");
@@ -715,9 +1124,9 @@
         margin-left: -1200%;
         padding-top: 150px;
         text-align: center;
-        font-size: small;
+        font-size: x-small;
         color: rgb(255, 255, 255);
-        width:90px; 
+        width:110px; 
         height:40px; 
         background-color:rgba(0, 0, 19, 0.89);
         background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/EMPLEADO.png");
@@ -725,15 +1134,156 @@
         background-size: 100% 80%;
         z-index: 1;
     }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
+/******** FORMULARIO DE JEFES **********/
+.consultaJEFES
+{
+    position: relative;
+    margin-top: -1100px;
+    margin-left: -1200%;
+    width: 346px;
+    height: 160px;
+    background-color:rgba(0, 0, 19, 0.89);
+    z-index: 10;
+}
+.separacion
+{
+    height: 20px;
+}
+.celdaJEFES
+{
+    margin-left: 5%;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: small;
+    color: yellow;
+}
+.desplegableJEFES
+{
+    margin-left:28px;
+    margin-top: 10px;
+    font-size: small;
+    width: 180px;
+}
+.celdasJEFES
+{
+    margin-left:28px;
+    margin-top: 10px;
+    width: 173px;
+}
+.confirmaJEFES
+{
+    position: absolute;
+    margin-top: -84px;
+    margin-left: 250px;
+    width: 70px;
+    height: 70px;
+    background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+}
+/********** FORMULARIO DE RRHH ************/
+.consultaRRHH
+{
+    position: relative;
+    margin-top: -160px;
+    margin-left: -1200%;
+    width: 346px;
+    height: 160px;
+    background-color:rgba(0, 0, 19, 0.89);
+    z-index: 20;
+}
+.separacion
+{
+    height: 20px;
+}
+.celdaRRHH
+{
+     margin-left: 5%;
+     padding-top: 20px;
+     padding-left: 10px;
+     font-size: small;
+     color: yellow;
+}
+.desplegableRRHH
+{
+     margin-left:30px;
+     margin-top: 10px;
+     width: 180px;
+}
+.celdasRRHH
+{
+    margin-left:28px;
+    margin-top: 10px;
+    width: 173px;
+}
+.confirmaRRHH
+{
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 250px;
+    width: 70px;
+    height: 70px;
+    background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+}
+/********** FORMULARIO DE EMPLEADOS *************/
+.consultaEMPLEADOS
+{
+    position: relative;
+    margin-top: -150px;
+    margin-left: -1200%;
+    width: 346px;
+    height: 160px;
+    background-color:rgba(0, 0, 19, 0.89);
+    z-index: 30;
+}
+.separacion
+{
+    height: 20px;
+}
+.celdaEMPLEADOS
+{
+    margin-left: 5%;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: small;
+    color: yellow;
+}
+.desplegableEMPLEADOS
+{
+    margin-left:28px;
+    margin-top: 10px;
+    width: 160px;
+}
+.celdasEMPLEADOS
+{
+    margin-left:25px;
+    margin-top: 10px;
+    width: 155px;
+}
+.confirmaEMPLEADOS
+{
+    position: absolute;
+    margin-top: -84px;
+    margin-left: 250px;
+    width: 70px;
+    height: 70px;
+    background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/REGISTRAR.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+}
+/****** FIN CSS DEL CUERPO DE LA PAGINA ******/
     /**** CSS DEL PIE DE LA PAGINA ****/
     /**** CREACION DEL PIE DE LA PAGINA ****/
     #piePrincipal
     {
         position:relative;
         margin-top: -35px;
-        width: 100%;
+        width: 481px;
         height: 160px;
         background-color: rgba(0, 0, 0, 0.87);
         color: rgb(204, 0, 255);
@@ -741,7 +1291,7 @@
     #zocalo
     {
         float: left;
-        width: 100%;
+        width: 481px;
         height: 90px; 
         background-color:  rgba(0, 0, 19, 0.89);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -751,140 +1301,12 @@
     }
     .pie
     {
-        width: 100%;
+        width: 481px;
         height: 32px;
         background-color:  rgba(0, 0, 19, 0.89); 
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style:normal;
         font-size:small;
-        text-align: center; 
-    }
-        /****** FIN CSS DEL PIE DE LA PAGINA ******/
-}
-@media all and (min-width: 100px) and (max-width:299px)
-{
-          /** DISPOSITIVOS ORDENADOR **/
-    /************ CSS DE LA CABECERA ********/
-    #cabeceraPrincipal
-    {
-        width: 400px;
-        height: 1500px;
-        background-color: rgba(0, 0, 19, 0.89);
-    }
-        #iconoAdorno{
-            float: left;
-            width: 300px;            /*ICONO CUADRADO*/
-            height: 60px;
-            /*CON ESOS DOS PUNTOS SE LE DICE A CSS QUE LA CARPETA DE LAS */
-            /* IMAGENES COMO ICONO DE LA EMPRESA ESTA EN OTRA CARPETA ADJUNTA*/
-        }
-        .imagenIcono{
-            width: 200px;   /*ICONO CUADRADO*/
-            height: 60px;   
-        }
-        .VaciobotonesPrincipal{
-            float: left;
-            position: relative;
-            width: 400px;
-            height: 13px;  
-            background-color: rgba(0, 0, 19, 0.89);
-            box-shadow: rgb(150,150,150) 5px 5px 10px 10px;
-        }
-    /*********** FIN CSS DE LA CABECERA ********/
-
-     /**** CSS DEL CUERPO DE LA PAGINA PRINCIPAL ****/
-    /*****  CREACION DEL CUERPO DE LA PAGINA  *****/
-    #imagenPortada{
-        margin-top: 0px;
-        width: 400px;
-        height: 100%;
-    }
-    #tablaBotones
-    {
-        margin-left: 40%;
-        position: absolute;
-        margin-top: 200px;
-        height: 270px;
-        width: 120px;
-        z-index: 1;
-    }
-    .filaBoton{
-        height: 100px;
-        width: 120px;
-    }
-    #eleccionesJEFE{
-        margin-left: -1200%;
-        padding-top: 150px;
-        text-align: center;
-        font-size: medium;
-        color: rgb(255, 255, 255);
-        width:105px; 
-        height:30px; 
-        background-color:rgba(0, 0, 19, 0.89);
-        background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/JEFE.png");
-        background-repeat: no-repeat;
-        background-size: 80% 80%;
-        z-index: 1;
-    }
-    #eleccionesRRHH{
-        margin-left: -1200%;
-        padding-top: 150px;
-        text-align: center;
-        font-size: medium;
-        color: rgb(255, 255, 255);
-        width:105px; 
-        height:30px; 
-        background-color:rgba(0, 0, 19, 0.89);
-        background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/RRHH.png");
-        background-repeat: no-repeat;
-        background-size: 80% 80%;
-        z-index: 1;
-    }
-    #eleccionesEMPLEADO{
-        margin-left: -1200%;
-        padding-top: 150px;
-        text-align: center;
-        font-size: medium;
-        color: rgb(255, 255, 255);
-        width: 105px; 
-        height:30px; 
-        background-color:rgba(0, 0, 19, 0.89);
-        background-image: url("../../../008_ObjetivosEmpresa/0082_CreacionObjetivos/0082_01_AsignacionDepartamental/images/EMPLEADO.png");
-        background-repeat: no-repeat;
-        background-size: 80% 80%;
-        z-index: 1;
-    }
-    /****** FIN CSS DEL CUERPO DE LA PAGINA ******/
-
-    /**** CSS DEL PIE DE LA PAGINA ****/
-    /**** CREACION DEL PIE DE LA PAGINA ****/
-    #piePrincipal
-    {
-        position:relative;
-        width: 400px;
-        height: 240px;
-        background-color: rgba(0, 0, 0, 0.87);
-        color: rgb(204, 0, 255);
-    }
-    #zocalo
-    {
-        float: left;
-        width: 400px;
-        height: 90px; 
-        background-color:  rgba(0, 0, 19, 0.89);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style:oblique;
-        font-size:xx-small;
-        text-align: center;
-    }
-    .pie
-    {
-        width: 400px;
-        height: 32px;
-        background-color:  rgba(0, 0, 19, 0.89); 
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style:normal;
-        font-size:xx-small;
         text-align: center; 
     }
         /****** FIN CSS DEL PIE DE LA PAGINA ******/

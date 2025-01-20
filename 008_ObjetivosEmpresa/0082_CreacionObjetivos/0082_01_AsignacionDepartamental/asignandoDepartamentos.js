@@ -10,7 +10,7 @@ function cargarPagina()
     {
         var entrada=document.getElementById("tablaBotones");
         entrada.style.transitionDuration="1.3s";
-        entrada.style.marginLeft= "10%";
+        entrada.style.marginLeft= "120px";
 
         var entradaJEFES=document.getElementById("eleccionesJEFE");
         entradaJEFES.style.transitionDuration="1.3s";
@@ -28,55 +28,55 @@ function cargarPagina()
     {
         var entrada=document.getElementById("tablaBotones");
         entrada.style.transitionDuration="1.3s";
-        entrada.style.marginLeft= "10%";
+        entrada.style.marginLeft= "109px";
                 
         var entradaJEFES=document.getElementById("eleccionesJEFE");
         entradaJEFES.style.transitionDuration="1.3s";
-        entradaJEFES.style.marginLeft= "10%";
+        entradaJEFES.style.marginLeft= "5%";
     
         var entradaRRHH=document.getElementById("eleccionesRRHH");
         entradaRRHH.style.transitionDuration="1.6s";
-        entradaRRHH.style.marginLeft= "10%";
+        entradaRRHH.style.marginLeft= "5%";
     
         var entradaVOLVER=document.getElementById("eleccionesEMPLEADO");
         entradaVOLVER.style.transitionDuration="1.9s";
-        entradaVOLVER.style.marginLeft= "10%";
+        entradaVOLVER.style.marginLeft= "5%";
     }
     if(window.screen.width>555 && window.screen.width<=768)
     {
         var entrada=document.getElementById("tablaBotones");
         entrada.style.transitionDuration="1.3s";
-        entrada.style.marginLeft= "10%";
+        entrada.style.marginLeft= "5%";
                 
         var entradaJEFES=document.getElementById("eleccionesJEFE");
         entradaJEFES.style.transitionDuration="1.3s";
-        entradaJEFES.style.marginLeft= "10%";
+        entradaJEFES.style.marginLeft= "5%";
     
         var entradaRRHH=document.getElementById("eleccionesRRHH");
         entradaRRHH.style.transitionDuration="1.6s";
-        entradaRRHH.style.marginLeft= "10%";
+        entradaRRHH.style.marginLeft= "5%";
     
         var entradaVOLVER=document.getElementById("eleccionesEMPLEADO");
         entradaVOLVER.style.transitionDuration="1.9s";
-        entradaVOLVER.style.marginLeft= "10%";
+        entradaVOLVER.style.marginLeft= "5%";
     }
     if(window.screen.width>100 && window.screen.width<=555)
     {
         var entrada=document.getElementById("tablaBotones");
         entrada.style.transitionDuration="1.3s";
-        entrada.style.marginLeft= "10%";
+        entrada.style.marginLeft= "50px";
                 
         var entradaJEFES=document.getElementById("eleccionesJEFE");
         entradaJEFES.style.transitionDuration="1.3s";
-        entradaJEFES.style.marginLeft= "10%";
+        entradaJEFES.style.marginLeft= "5%";
     
         var entradaRRHH=document.getElementById("eleccionesRRHH");
         entradaRRHH.style.transitionDuration="1.6s";
-        entradaRRHH.style.marginLeft= "10%";
+        entradaRRHH.style.marginLeft= "5%";
     
         var entradaVOLVER=document.getElementById("eleccionesEMPLEADO");
         entradaVOLVER.style.transitionDuration="1.9s";
-        entradaVOLVER.style.marginLeft= "10%";
+        entradaVOLVER.style.marginLeft= "5%";
     }
 
     var JEFES = document.getElementById("eleccionesJEFE");
