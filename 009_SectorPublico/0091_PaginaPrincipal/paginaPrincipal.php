@@ -9,22 +9,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pagina Principal Corporación Sfer4D</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.css">
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsMenu.js"></script>
 </head>
-<body onload="cargarPagina()">
-        <div class="letreroOK" style=
-            "position:absolute;
-                width:100%; 
-                height: 30px; 
-                text-align: center;
-                color: rgb(255, 0, 0);
-                margin-top:-40px;
-                background-color: rgba(0, 0, 19, 0.89);
-                box-shadow: none">
-        </div>
+<body onload="cargarPagina()"> 
+    <div class="letreroOK" style=
+        "position:absolute;
+            width:100%; 
+            height: 30px; 
+            text-align: center;
+            color: rgb(255, 0, 0);
+            margin-top:-40px;
+            background-color: rgba(0, 0, 19, 0.89);
+            box-shadow: none">
+    </div>
     <header id="cabeceraPrincipal">
         <div id="iconoAdorno"><img src="../../009_SectorPublico/0091_PaginaPrincipal/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>      
         <?php if(isset($_SESSION["usuario"])) {?>
@@ -125,35 +126,11 @@
             </div>
         </footer>
     </div>
-    <script>
-        if(<?php echo $_SESSION["privado"]?>==1)
-        {
-            //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA
-            letreroConfirmadaEntrada(1);
-        }
-        function letreroConfirmadaEntrada(seleccion)
-        {        
-            var letrero= document.getElementsByClassName("letreroOK")[0];
-            if(seleccion==1)
-            {
-                letrero.innerHTML="AREA PRIVADA NO PARA CLIENTES"; 
-            }
-            letrero.style.paddingTop="10px";
-            letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
-            letrero.style.transitionDuration = "1s";
-            letrero.style.marginTop="0px";
-
-            document.addEventListener("mousemove",function(){
-            let temporizador=setTimeout(function(){
-                var letrero= document.getElementsByClassName("letreroOK")[0];
-                letrero.style.transitionDuration = "1s";
-                letrero.style.marginTop="-50px";
-            },3500);
-            })
-            clearTimeout(temporizador);
-        }
-    </script>
+    <script>letreroConfirmadaEntrada(<?php echo $_SESSION["privado"]?>); //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA</script>
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsSlider.js"></script>
-    <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER?>
+    <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER ?>
+    <?php 
+        include_once "../0090_PaginaCookie/cookie.php";  //Area de inserccion de la COOKIE en la página principal
+    ?>
 </body>
 </html>

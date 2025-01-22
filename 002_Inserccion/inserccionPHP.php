@@ -119,9 +119,10 @@
                 </select>
            </label> <!--PROFESION-->
            <p class="separacion"></p>
-           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label> <!--AHORROS-->
+           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label>
            <p class="separacion"></p>
-           <input type="submit" value="INSERTAR" name="inserccion" class="boton"> <!--AHORROS-->
+           <input type="submit" value="INSERTAR" name="inserccion" class="boton">
+           <input type="submit" value="VOLVER" name="volver" class="boton">
         </form>
         <img id="imagenPortada" src="../002_Inserccion/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>

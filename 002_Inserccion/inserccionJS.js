@@ -27,12 +27,15 @@ function cargarPagina()
                 })
         }   
     //EFECTO COLOR DEL BOTON: INSERTAR, DEL CUADRO DEL FORMULARIO//
-    botonForm[0].addEventListener("mouseenter",function(){
-        botonForm[0].style.transitionDuration = "0.5s";
-        botonForm[0].style.backgroundColor="rgb(28,203,28)";
-    })
-    botonForm[0].addEventListener("mouseleave",function(){
-        botonForm[0].style.transitionDuration = "0.5s";
-        botonForm[0].style.backgroundColor="white";
-    })
+    for(let i=0;i<botonForm.length;i++)
+        {
+        botonForm[i].addEventListener("mouseenter",function(){
+            botonForm[i].style.transitionDuration = "0.5s";
+            botonForm[i].style.backgroundColor="rgb(28,203,28)";
+            })
+        botonForm[i].addEventListener("mouseleave",function(){
+                botonForm[i].style.transitionDuration = "0.5s";
+                botonForm[i].style.backgroundColor="white";
+            })
+        } 
 }

@@ -20,6 +20,17 @@
 </head>
 <body onload="cargarPagina()">
     <header id="cabeceraPrincipal">
+        <div class="letreroOK" style=
+               "position:absolute;
+                width:100%; 
+                height: 30px; 
+                text-align: center;
+                color: rgb(161, 119, 189);
+                margin-top:-40px;
+                background-color: rgba(0, 0, 19, 0.89);
+                box-shadow: none;
+                z-index:1">
+        </div>
         <div id="iconoAdorno"><img src="../../006_Paginacion/0061_PaginacionTareas/images/Sfer4D-IconoEmpresa.jpg" id="iconoEmpresa"></div>
     <div id="areaSesion">
         <table style="width:100%">
@@ -57,7 +68,7 @@
         <div class="VaciobotonesPrincipal"></div>
     </header>
     <div class="consulta">
-        <?php $_SESSION["semaforo"]=1; include "controlPend.php"; ?>
+        <?php $_SESSION["semaforoTABLA"]=1; include "controlPend.php";?>
         <div class="tablaBBDD">
             <table id="tablaPaginacion">
                 <tr class="cabecera">
@@ -69,7 +80,6 @@
                     <td class="cajaT">FECHA</td>
                     <td class="cajaT">RESOLUCION</td>
                 </tr>
-
                 <?php
                     foreach($registro as $persona):
                 ?>
@@ -107,6 +117,7 @@
                                 value='$i'></td>";
                     }
                     echo "<td class='nota'> Hay: ".$filasSQL." regitros detectados</td>";
+                    echo "<td><input type='submit' value='Volver al menú Principal' name='VolverDeTareasPend' class='nota'></td>";
                     echo "</tr></table></form>";
             ?>
         </div>
@@ -129,5 +140,7 @@
             </div>
         </footer>
     </div>
+    <script>letreroConfirmadoOK(<?php echo $_SESSION["semaforo"];?>);</script>
+    <?php $_SESSION["semaforo"]=0; //Limpieza de BUFFER imperiosa?>
 </body>
 </html>

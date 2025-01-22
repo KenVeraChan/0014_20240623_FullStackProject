@@ -23,6 +23,11 @@
             $paginaInicial=0;
             $_GET["enviar"]=true;
         }
+    if(isset($_GET["volver"]))
+        {
+            //Regresa al menú de opciones
+            header("location:../007_Menus/0071_MenuOpRRHH/OpRRHH.php");
+        }
     //RESTO DE CARGAS DE LA PAGINA WEB
     $conexion=$base->query("SELECT * FROM $BD_tabla LIMIT  $paginaInicial,$tamPagina");
     $registro=$conexion->fetchAll(PDO::FETCH_OBJ);
@@ -81,7 +86,22 @@
                                    text-align: center
                             '></td>";
                 }
-                echo "</tr></table></form>";
+                echo "</tr><tr>
+                           <td>
+                           <input type='submit' value='Volver al Menú principal' name='volver' class='accionamientos' 
+                            style='width: 180px; 
+                                   heigth: 5px;
+                                   margin-top: 10px;
+                                   margin-left: 120px; 
+                                   color: white; 
+                                   background-color: rgb(184, 88, 9);
+                                   . 
+                                   text-align: center
+                            '>
+                           </td>
+                     </tr>
+                    </table>
+                </form>";
         ?>
 </body>
 </html>

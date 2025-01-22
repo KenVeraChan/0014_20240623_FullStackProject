@@ -79,7 +79,7 @@
                 {
                     //Caso 2: Datos mal metidos y no pertenece a RRHH --> NO DEJA ENTRAR
                     $_SESSION["semaforo"]=0;  //Reconocido que el identificador es de RRHH
-                    $_SESSION["logeando"]=0;  //Fallido en entrada de datos
+                    $_SESSION["logeando"]=2;  //Fallido en entrada de datos
                     $resultado->closeCursor();  //Para futuras consultas que este libre el paso
                     $resultadoComprobar->closeCursor();  //Para futuras consultas que este libre el paso
                     //Se le redirige a la misma pagina propia de LOGIN
@@ -98,7 +98,7 @@
                     //COMPRUEBA SI ES JEFE//
                     $_SESSION["semaforo"]=1;  //No se le permitirá el acceso a JEFES al área de RRHH
                     //Para que no genere el letrero de entrada FALLIDA, pues no ha sido un fallo de login
-                    $_SESSION["logeando"]=1; 
+                    $_SESSION["logeando"]=3; 
                     $resultado->closeCursor();  //Para futuras consultas que este libre el paso
                     $resultadoComprobar->closeCursor();  //Para futuras consultas que este libre el paso
                     //Se le redirige a la misma pagina propia de LOGIN

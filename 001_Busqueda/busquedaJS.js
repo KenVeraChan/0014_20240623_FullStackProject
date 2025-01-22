@@ -27,14 +27,17 @@ function cargarPagina()
                 })
         }
      //EFECTO COLOR DEL BOTON: BUSCAR, DEL CUADRO DEL FORMULARIO//
-     botonForm[0].addEventListener("mouseenter",function(){
-        botonForm[0].style.transitionDuration = "0.5s";
-        botonForm[0].style.backgroundColor="yellow";
-    })
-    botonForm[0].addEventListener("mouseleave",function(){
-        botonForm[0].style.transitionDuration = "0.5s";
-        botonForm[0].style.backgroundColor="white";
-    })
+    for(let i=0;i<botonForm.length;i++)
+        {
+        botonForm[i].addEventListener("mouseenter",function(){
+            botonForm[i].style.transitionDuration = "0.5s";
+            botonForm[i].style.backgroundColor="yellow";
+            })
+        botonForm[i].addEventListener("mouseleave",function(){
+                botonForm[i].style.transitionDuration = "0.5s";
+                botonForm[i].style.backgroundColor="white";
+            })
+        }    
     //CAJAS DE DATOS Y DESPLEGABLES
     for(let i=0; i<4;i++)
         {
@@ -212,27 +215,3 @@ function opciones()
             }
         }
 }
-
-
-/*
-function desplaza()
-{
-    var elemento8= document.getElementById("canvas")
-    var elemento7= document.getElementById("canvas").getContext('2d');
-    var movimiento=0;
-    elemento8.style.color="yellow";
-    elemento7.fillText("HOLA MUNDO",4,10);
-
-
-    desplazamiento(movimiento);
-}
-function desplazamiento(movimiento)
-{    //DESPLAZA LA CINTA DE INFORMACION HASTA 240
-    if(movimiento<240)
-    {
-    document.getElementById("canvas").getContext('2d').translate((4+movimiento),10);
-    movimiento=movimiento+1;
-    setInterval(desplazamiento(movimiento),1000);
-    }
-}
-*/

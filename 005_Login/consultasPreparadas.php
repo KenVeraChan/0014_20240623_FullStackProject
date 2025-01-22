@@ -30,6 +30,7 @@ try{
     $eliminacion=$_GET["eliminacion"];
     $carga_elim=$_GET["carga_eliminacion"];
     $borrar_elim=$_GET["borrado_eliminacion"];
+    $volver_menu=$_GET["volver"];
     //Se inicia la matriz que luego se rellenara
     $datos_ACTUALIZACION= array(0,"","","","","",0);  //Array para la fase de ACTUALIZAR
     //Se inicia el ARRAY para ser rellenado despues
@@ -416,7 +417,10 @@ try{
                     }                
                 }
             }
-
+            if(isset($volver_menu))
+            {
+                header("location:../007_Menus/0071_MenuOpRRHH/OpRRHH.php");
+            }
     }catch(mysqli_sql_exception $error1)
     {
         echo "No se ha podido establecer conexión con la base de datos!";

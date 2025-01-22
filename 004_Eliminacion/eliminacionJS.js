@@ -28,7 +28,7 @@ function cargarPagina()
         } 
    //EFECTO COLOR DEL BOTONES DEL FORMULARIO ELIMINAR//
     //BOTON DE ACTUALIZAR(0)--CARGAR(1)--LIMPIAR(2)//
-    for(let i=0;i<3;i++)
+    for(let i=0;i<4;i++)
         {
             botonForm[i].addEventListener("mouseenter",function(){
             botonForm[i].style.transitionDuration = "0.5s";
@@ -39,9 +39,6 @@ function cargarPagina()
             botonForm[i].style.backgroundColor="white";
         })
     }
-    //TITULO PAGINA Y CABECERA
-    //elemento3[0].style.color="black";
-    //CAJAS DE DATOS Y DESPLEGABLES
     var i=0;
     //LA PRIMERA CELDA NO PUEDE ESTAR BLOQUEADA
     //CON EL ID SE PODRÁN ACTUALIZAR LOS DATOS DEL FORMULARIO

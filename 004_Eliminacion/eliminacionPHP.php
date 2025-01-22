@@ -119,11 +119,12 @@
                 </select>
            </label> <!--PROFESION-->
            <p class="separacion"></p>
-           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label> <!--AHORROS-->
+           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label>
            <p class="separacion"></p>
-           <input type="submit" value="ELIMINAR" name="eliminacion" class="boton"> <!--AHORROS-->
-           <input type="submit" value="CARGA" name="carga_eliminacion" class="boton"><!--AHORROS-->
-           <input type="submit" value="BORRA" name="borrado_eliminacion" class="boton"> <!--AHORROS-->
+           <input type="submit" value="ELIMINAR" name="eliminacion" class="boton">
+           <input type="submit" value="CARGA" name="carga_eliminacion" class="boton">
+           <input type="submit" value="BORRA" name="borrado_eliminacion" class="boton">
+           <input type="submit" value="VOLVER" name="volver" class="boton">
         </form>
         <img id="imagenPortada" src="../004_Eliminacion/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>

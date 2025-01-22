@@ -8,6 +8,7 @@ $BD_contrasenia=ConexionPHP::getBD_Contrasenia();
 $BD_nombre=ConexionPHP::getBD_NombreEMPLEADOS();
 $BD_tabla=ConexionPHP::getBD_TablaEmpleados();
 $modificar=$_GET["modificar"];
+$volver=$_GET["volver"];
 try{  
     //CONEXION PROCESO
     $conexion=mysqli_connect($BD_servidor,$BD_usuario,$BD_contrasenia);
@@ -35,6 +36,12 @@ try{
                 mysqli_stmt_close($resultado); 
                 $_SESSION["semaforo"]=3;
                 header("location:../003_Actualizacion/actualizacionPHP.php");   
+            }
+            if(strcmp($volver,"volver"))
+            {
+                //Regresa al formulario de actualización
+                $_SESSION["semaforo"]=4;
+                header("location:../003_Actualizacion/actualizacionPHP.php"); 
             }
         }
         catch(mysqli_sql_exception $error1)

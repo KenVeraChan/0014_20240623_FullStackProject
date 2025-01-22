@@ -133,7 +133,8 @@
                 </select>
             </label> <!--ELECCION-->
             <p class="separacion"></p> 
-           <input type="submit" value="BUSCAR" name="busqueda" class="boton"> <!--AHORROS-->
+           <input type="submit" value="BUSCAR" name="busqueda" class="boton">
+           <input type="submit" value="VOLVER" name="volver" class="boton">
         </form>
         <img id="imagenPortada" src="../001_Busqueda/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>

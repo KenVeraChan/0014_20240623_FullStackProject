@@ -55,20 +55,9 @@
             </tr>
         </table>
         <div class="VaciobotonesPrincipal"></div>
-        <div class="letreroOK" style=
-               "position:absolute;
-                width:100%; 
-                height: 30px; 
-                text-align: center;
-                color: rgb(161, 119, 189);
-                margin-top:-40px;
-                background-color: rgba(0, 0, 19, 0.89);
-                box-shadow: none;
-                z-index:1">
-        </div>
     </header>
     <div class="consulta">
-            <?php $_SESSION["semaforo"]=2; include "../../006_Paginacion/0061_PaginacionTareas/controlPend.php"; ?>
+            <?php $_SESSION["semaforoTABLA"]=2; include "../../006_Paginacion/0061_PaginacionTareas/controlPend.php"; ?>
         <div class="tablaBBDD">
             <div id="tablaPaginacion">
                 <table id="tabla">
@@ -99,7 +88,7 @@
                     <?php
                         endforeach;
                     ?>
-                    <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+                <form action="../../006_Paginacion/0061_PaginacionTareas/controlPend.php" method="POST">
                     <table id="tabla2">
                         <tr>
                             <td class="caja">ACTUAL: </td>
@@ -122,11 +111,12 @@
                         </tr>
                         <tr>
                             <td class="cajaB">
-                                    <input type="submit"  class="botonera" name="actualizar" value="Actualizar">
+                                <input type="submit" class="botonera" value="ACTUALIZAR" name="actualizar">
+                                <input type="submit" class="botonera" value="VOLVER" name="VolverDeActualizar">
                             </td>
                         </tr>
                     </table>
-                    </form>
+                </form>
             </div>
         </div>
       <img id="imagenPortada" src="../../006_Paginacion/0062_PaginacionTareasConfirmacion/images/DIGITALIZACION.jpg" alt="Imagen servidor">
@@ -148,38 +138,6 @@
             </div>
         </footer>
     </div>
-    <?php 
-        if(isset($_POST["actualizar"]))
-        {
-            $_SESSION["semaforo"]=3; include "../../006_Paginacion/0061_PaginacionTareas/controlPend.php"; 
-        }
-        else{
-            $_SESSION["semaforo"]=0; //Limpieza de BUFFER imperiosa
-        }       
-    ?>
-    <script>
-        if(<?php echo($_SESSION["semaforo"])?>==3)
-        {
-            letreroConfirmadoOK();
-        }
-        function letreroConfirmadoOK()
-            {
-                var letrero= document.getElementsByClassName("letreroOK")[0];
-                    letrero.innerHTML="Tarea Guardada y Registrada Ahora en la BBDD";
-                    letrero.style.paddingTop="10px";
-                    letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
-                    letrero.style.transitionDuration = "1s";
-                    letrero.style.marginTop="0px";
-
-                    document.addEventListener("mousemove",function(){
-                    let temporizador=setTimeout(function(){
-                        var letrero= document.getElementsByClassName("letreroOK")[0];
-                        letrero.style.transitionDuration = "1s";
-                        letrero.style.marginTop="-50px";
-                    },3500);
-                    })
-                    clearTimeout(temporizador);
-            }
-</script>
+    <?php $_SESSION["semaforo"]=0; //Limpieza de BUFFER imperiosa?>
 </body>
 </html>

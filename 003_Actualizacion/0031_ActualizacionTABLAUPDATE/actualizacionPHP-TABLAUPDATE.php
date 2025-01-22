@@ -97,6 +97,7 @@
         ?>
         <form action="../../003_Actualizacion/actualizacionPHP-Actualizado.php" method="GET">
             <input type="submit" class="botones" name="modificar" value="Confirme Modificar">
+            <input type="submit" value="Volver al formulario" name="volver" class="botones">
         </form>
     </div>
     <script>

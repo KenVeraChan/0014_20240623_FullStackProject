@@ -32,3 +32,31 @@ function muestraTabla()
     baseDatos.style.transitionDuration="1.5s";
     baseDatos.style.marginLeft="2%";
 }
+function letreroConfirmadoOK(selector)
+{
+    var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(selector==1)
+    {
+        letrero.innerHTML="Tarea Guardada y Registrada Ahora en la BBDD";
+    }
+    if(selector==2)
+    {
+        letrero.innerHTML="Sin cambios al accionar VOLVER";
+    }
+    if(selector>0 && selector<3)
+    {
+            letrero.style.paddingTop="10px";
+            letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="0px";
+
+            document.addEventListener("mousemove",function(){
+            let temporizador=setTimeout(function(){
+                var letrero= document.getElementsByClassName("letreroOK")[0];
+                letrero.style.transitionDuration = "1s";
+                letrero.style.marginTop="-50px";
+            },3500);
+            })
+            clearTimeout(temporizador);
+    }
+}

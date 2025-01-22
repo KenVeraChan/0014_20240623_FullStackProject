@@ -30,11 +30,6 @@ function cargarPagina()
         elemento4[i].style.fontsize= "small";
         elemento4[i].style.color="rgb(0,230,230)";
     }
-    
-    //TITULO PAGINA Y CABECERA
-    //elemento3[0].style.color="black";
-       //EFECTO COLOR DEL BOTONES DEL FORMULARIO//
-    //BOTON DE ACTUALIZAR(0)//
     for(let i=0;i<3;i++)
         {
             botonForm[i].addEventListener("mouseenter",function(){

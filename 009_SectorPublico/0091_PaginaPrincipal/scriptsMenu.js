@@ -1,5 +1,5 @@
 /******************************************************************/
-/********* 0) RATON ENTRANDO EN AREA DE BOTONES DEL MENU **********/
+/******* SCRIPT DEL MENU PRINCIPAL DE LA PÁGINA DE INICIO *********/
 /******************************************************************/
 
 var elemento1= document.getElementsByClassName("bloque_opciones");
@@ -74,4 +74,25 @@ function cargarPagina()
                 clienteLogin.style.color="white";
                 clienteNombre.style.color="white";
         });
+}
+function letreroConfirmadaEntrada(seleccion)
+{        
+    var letrero= document.getElementsByClassName("letreroOK")[0];
+    if(seleccion==1)
+    {
+        letrero.innerHTML="AREA PRIVADA NO PARA CLIENTES"; 
+        letrero.style.paddingTop="10px";
+        letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
+        letrero.style.transitionDuration = "1s";
+        letrero.style.marginTop="0px";
+
+        document.addEventListener("mousemove",function(){
+        let temporizador=setTimeout(function(){
+            var letrero= document.getElementsByClassName("letreroOK")[0];
+            letrero.style.transitionDuration = "1s";
+            letrero.style.marginTop="-50px";
+        },3500);
+        })
+        clearTimeout(temporizador);
+    }
 }

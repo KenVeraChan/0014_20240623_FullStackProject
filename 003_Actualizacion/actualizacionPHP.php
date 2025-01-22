@@ -119,11 +119,12 @@
                 </select>
            </label> <!--PROFESION-->
            <p class="separacion"></p>
-           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label> <!--AHORROS-->
+           <label class="celda">SALAR. ANT.:<input type="text" class="celdas" name="aho"></label>
            <p class="separacion"></p>
-           <input type="submit" value="ACTUALIZAR" name="actualizacion" class="boton"> <!--AHORROS-->
-           <input type="submit" value="CARGAR" name="carga" class="boton"><!--AHORROS-->
-           <input type="submit" value="BORRAR" name="borrado" class="boton"> <!--AHORROS-->
+           <input type="submit" value="ACTUALIZAR" name="actualizacion" class="boton">
+           <input type="submit" value="CARGAR" name="carga" class="boton">
+           <input type="submit" value="BORRAR" name="borrado" class="boton">
+           <input type="submit" value="VOLVER" name="volver" class="boton">
         </form>
         <img id="imagenPortada" src="../003_Actualizacion/images/SERVIDOR.jpg" alt="Imagen servidor">
     </div>
@@ -170,7 +171,12 @@
                     //ACCIONADO BOTON BORRAR FORMULARIO TRAS HABER ACTUALIZADO
                     limpiar();  //Limpia el formulario y luego actualiza
                     botonForm[0].disabled=true;  //DESACTIVADO PORQUE TODAVIA NO SE PUEDE EJECUTAR
-                    letreroConfirmadoActualizado();  //Sale el letrero de que ha sido ACTUALIZADO
+                    letreroConfirmadoActualizado(1);  //Sale el letrero de que ha sido ACTUALIZADO
+                }
+                if(<?php echo($_SESSION["semaforo"])?>==4)
+                {
+                    letreroConfirmadoActualizado(2);  //Sale el letrero de que no se han hecho modificaciones
+                    //No hace nada porque no se ha modificado ningún dato del candidato
                 }
                 function rellenar()
                 {
@@ -229,15 +235,21 @@
                             }
                         }
                 }
-                function letreroConfirmadoActualizado()
+                function letreroConfirmadoActualizado(selector)
                 {
                     var letrero= document.getElementsByClassName("letreroOK")[0];
-                    letrero.innerHTML="Candidato actualizado en la BBDD";
+                    if(selector==1)
+                    {
+                        letrero.innerHTML="Candidato actualizado en la BBDD";
+                    }
+                    if(selector==2)
+                    {
+                        letrero.innerHTML="Sin cambios en la BBDD al accionar VOLVER";
+                    }
                     letrero.style.paddingTop="10px";
                     letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
                     letrero.style.transitionDuration = "1s";
-                    letrero.style.marginTop="0px";
-
+                    letrero.style.marginTop="0px"; 
                     document.addEventListener("mousemove",function(){
                     let temporizador=setTimeout(function(){
                         var letrero= document.getElementsByClassName("letreroOK")[0];
