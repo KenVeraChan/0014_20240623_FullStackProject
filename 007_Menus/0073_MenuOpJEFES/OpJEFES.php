@@ -8,7 +8,6 @@
             header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
         }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +46,9 @@
                 </tr>    
                 <tr class="cajaBotonera">
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../008_ObjetivosEmpresa/0085_ControldeVentas/controlVentas.php'">CONTROL DE VENTAS</button></td>  <!-- AREA DE REPOSICIÓN DE UNIDADES Y ACTUALIZACIÓN DE DETALLES DE CADA UNIDAD-->
+                </tr>
+                <tr class="cajaBotonera">
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>  <!-- AREA DE REPOSICIÓN DE UNIDADES Y ACTUALIZACIÓN DE DETALLES DE CADA UNIDAD-->
                 </tr>           
             </table>
         </div>

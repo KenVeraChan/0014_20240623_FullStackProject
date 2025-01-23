@@ -1,15 +1,10 @@
 <?php
 session_start(); 
-if(!isset($_SESSION["usuario"]))
-{
-    //SI HA CERRADO LA SESIÓN ENTONCES SE LE PERMITIRÁ ACCEDER A RRHH O A JEFES
-    
-}
 if(isset($_SESSION["usuario"]))
 {
     //SI EL USUARIO NO HA CERRADO SESSIÓN NO SE LE PERMITIRÁ ENTRAR EN RRHH O JEFES COMO CLIENTE ACTIVO
-    $_SESSION["privado"]=1;   //Para que se active el letrero de aviso de zona privada
-    header("Location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
+    $_SESSION["entradaLogin"]=1;   //Para hacer referencia que se intentó entrar en el LOGIN DE JEFES Y RRHH  
+    header("Location:../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHHClientesCheck.php");
 }
 ?>
 <!DOCTYPE html>

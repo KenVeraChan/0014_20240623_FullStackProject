@@ -17,8 +17,8 @@
 </head>
 <body onload="cargarPagina()"> 
     <div class="letreroOK" style=
-        "position:absolute;
-            width:100%; 
+        "position:absolute;  
+            width:100%;
             height: 30px; 
             text-align: center;
             color: rgb(255, 0, 0);
