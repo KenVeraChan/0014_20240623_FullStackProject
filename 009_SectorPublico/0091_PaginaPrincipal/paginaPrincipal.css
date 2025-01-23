@@ -91,6 +91,7 @@ body {
     #bienvenido{
         float: right;
         font-size: medium;
+        font-family: serif;
         background-color: transparent;
         text-align: right;
         color: white;
@@ -104,6 +105,7 @@ body {
         background-color: transparent;
         text-align: center;
         font-size: 60%;
+        font-family: serif;
         margin-top: 3px;
         color: white;
         width: 120px;
@@ -150,6 +152,7 @@ body {
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
             font-size: medium;
+            font-family: serif;
         }
         #cajaBotonera
         {
@@ -303,7 +306,6 @@ body {
             height: 2500px;
         }
     }
-
     .seccionPrincipal{
         margin-top: 20px;
         padding-left: 13%;
@@ -515,6 +517,7 @@ body {
     #bienvenido{
         float: right;
         font-size: medium;
+        font-family: serif;
         background-color: transparent;
         text-align: right;
         color: white;
@@ -528,6 +531,7 @@ body {
         background-color: transparent;
         text-align: center;
         font-size: 60%;
+        font-family: serif;
         margin-top: 3px;
         color: white;
         width: 120px;
@@ -574,6 +578,7 @@ body {
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
             font-size: small;
+            font-family: serif;
         }
         #cajaBotonera
         {
@@ -895,6 +900,7 @@ body {
     #bienvenido{
         float: right;
         font-size: medium;
+        font-family: serif;
         background-color: transparent;
         text-align: right;
         color: white;
@@ -908,6 +914,7 @@ body {
         background-color: transparent;
         text-align: center;
         font-size: 60%;
+        font-family: serif;
         margin-top: 3px;
         color: white;
         width: 120px;
@@ -968,6 +975,7 @@ body {
             background-color:  rgba(0, 0, 19, 0.89);
             text-align: center;
             font-size: small;
+            font-family: serif;
         }
         #cajaBotonera
         {
