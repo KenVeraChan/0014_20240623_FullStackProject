@@ -1,10 +1,10 @@
 <?php
-session_start();
+session_start();  //para el gestionado del logeo y los carteles de intento de entrar
+//AL ESTAR YA REGISTRADO COMO EMPLEADO RRHH DENTRO DEL MENU DE RRHH SE ACTIVA EL LOGEO DE RRHH PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
 $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
-$_SESSION["loginRRHH"]=1;   //Se identifica el sector de RRHH intentando ENTRAR en el LOGIN
+$_SESSION["loginRRHH"]=1;   //Se identifica que ha sido un individuo del sector de RRHH
 $_SESSION["loginCLIENTES"]=0;   //Se identifica que no ha sido un individuo del sector de CLIENTES
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

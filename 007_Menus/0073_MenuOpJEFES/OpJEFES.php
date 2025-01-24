@@ -1,12 +1,17 @@
 <?php
         //INICIA LA SESION DE ENTRADA
         session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
-                          //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-        if(!isset($_SESSION["usuario"]))
-        {
-            //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
-        }
+    
+    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    //AL ESTAR YA REGISTRADO COMO JEFE DENTRO DEL MENU DE JEFE SE ACTIVA EL LOGEO DE JEFE PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
+    $_SESSION["loginJEFES"]=1;  //Se corrobora que el sector de JEFES es donde se intenta ENTRAR en el LOGIN
+    $_SESSION["loginRRHH"]=0;   //Se identifica que NO ha sido un individuo del sector de RRHH
+    $_SESSION["loginCLIENTES"]=0;   //Se identifica que NO ha sido un individuo del sector de CLIENTES
+    if(!isset($_SESSION["usuario"]))
+    {
+        //Si es falso que no se ha registrado nada en la sesion
+        header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

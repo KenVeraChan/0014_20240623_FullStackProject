@@ -80,12 +80,18 @@ function letreroConfirmadaEntrada(seleccion)
     var letrero= document.getElementsByClassName("letreroOK")[0];
     if(seleccion==1)
     {
-        letrero.innerHTML="AREA PRIVADA NO PARA CLIENTES"; 
+        letrero.innerHTML="LO SIENTO!, AREA PRIVADA NO DESTINADA PARA CLIENTES"; 
+    }
+    if(seleccion==2)
+    {
+        letrero.innerHTML="LO SIENTO!, AREA DESTINADA SOLO PARA CLIENTES"; 
+    }
+    if(seleccion>0 && seleccion<3)
+    {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
         letrero.style.transitionDuration = "1s";
         letrero.style.marginTop="0px";
-
         document.addEventListener("mousemove",function(){
         let temporizador=setTimeout(function(){
             var letrero= document.getElementsByClassName("letreroOK")[0];

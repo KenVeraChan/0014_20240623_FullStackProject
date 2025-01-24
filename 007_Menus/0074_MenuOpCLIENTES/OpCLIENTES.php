@@ -1,12 +1,16 @@
 <?php
         //INICIA LA SESION DE ENTRADA
         session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
-                          //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-        if(!isset($_SESSION["usuario"]))
-        {
-            //Si es falso que no se ha registrado nada en la sesion
-            header("Location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
-        }
+                        //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    //AL ESTAR YA REGISTRADO COMO CLIENTE DENTRO DEL MENU DE CLIENTES SE ACTIVA EL LOGEO DE CLIENTE PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
+    $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+    $_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
+    $_SESSION["loginCLIENTES"]=1;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
+    if(!isset($_SESSION["usuario"]))
+    {
+        //Si es falso que no se ha registrado nada en la sesion
+        header("Location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,8 +1,8 @@
 <?php
-        //INICIA LA SESION DE ENTRADA
-        session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
-                          //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-        require "consultasSlider.php";
+//INICIA LA SESION DE ENTRADA
+session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
+                    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+require "consultasSlider.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,8 +129,19 @@
     <script>letreroConfirmadaEntrada(<?php echo $_SESSION["privado"]?>); //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA</script>
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsSlider.js"></script>
     <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER ?>
-    <?php 
-        include_once "../0090_PaginaCookie/cookie.php";  //Area de inserccion de la COOKIE en la página principal
-    ?>
+    <?php
+    if(isset($_COOKIE["cookieVisitaPagina"]))
+    {
+        //Si existe la COOKIE no mostará el cartel de ACEPTAR LAS COOKIES al visitar la página por primera vez
+        //No hará nada si existe la misma COOKIE
+    }
+    else
+    {
+        //Si no existe la COOKIE, se crea la COOKIE para navegar en la página web
+        setcookie("cookieVisitaPagina",1,time()+10);  //Duracion de la COOKIE de 2 minutos.
+        // Si se establece a 0, o es omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+        include "../0090_PaginaCookie/cookie.php";  //Area de inserccion de la COOKIE en la página principal
+    }
+?>
 </body>
 </html>

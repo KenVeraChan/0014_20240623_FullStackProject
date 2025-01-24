@@ -1,10 +1,10 @@
 <?php
-session_start();
-$_SESSION["loginJEFES"]=1;      //Se identifica el sector de RRHH intentando ENTRAR en el LOGIN
-$_SESSION["loginRRHH"]=0;       //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
-$_SESSION["loginCLIENTES"]=0;   //Se identifica que no ha sido un individuo del sector de CLIENTES
+session_start();  //para el gestionado del logeo y los carteles de intento de entrar
+//AL ESTAR YA REGISTRADO COMO JEFE DENTRO DEL MENU DE JEFE SE ACTIVA EL LOGEO DE JEFE PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
+$_SESSION["loginJEFES"]=1;  //Se corrobora que el sector de JEFES es donde se intenta ENTRAR en el LOGIN
+$_SESSION["loginRRHH"]=0;   //Se identifica que NO ha sido un individuo del sector de RRHH
+$_SESSION["loginCLIENTES"]=0;   //Se identifica que NO ha sido un individuo del sector de CLIENTES
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

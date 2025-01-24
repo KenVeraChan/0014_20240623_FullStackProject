@@ -2,6 +2,10 @@
         //INICIA LA SESION DE ENTRADA
         session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
                           //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+        //AL ESTAR YA REGISTRADO COMO EMPLEADO RRHH DENTRO DEL MENU DE RRHH SE ACTIVA EL LOGEO DE RRHH PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
+        $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+        $_SESSION["loginRRHH"]=1;   //Se identifica que ha sido un individuo del sector de RRHH
+        $_SESSION["loginCLIENTES"]=0;   //Se identifica que no ha sido un individuo del sector de CLIENTES
         if(!isset($_SESSION["usuario"]))
         {
             //Si es falso que no se ha registrado nada en la sesion
@@ -50,6 +54,9 @@
                 </tr>   
                 <tr class="cajaBotonera">   
                     <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../006_Paginacion/0061_PaginacionTareas/tareasPendientes.php'">TAREAS PENDIENTES</button></td>
+                </tr>
+                <tr class="cajaBotonera">   
+                    <td><button class="bloque_opciones" style="color: white" onclick="location.href='../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php'">VOLVER A LA PÁGINA PRINCIPAL</button></td>
                 </tr>
             </table>
         </div>

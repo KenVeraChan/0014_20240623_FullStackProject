@@ -1,13 +1,14 @@
 <?php
-session_start();
+session_start();  //para el gestionado del logeo y los carteles de intento de entrar
+//AL ESTAR YA REGISTRADO COMO CLIENTE DENTRO DEL MENU DE CLIENTES SE ACTIVA EL LOGEO DE CLIENTE PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
 $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
 $_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
 $_SESSION["loginCLIENTES"]=1;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
-
 if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usuario"]!="")
 {
-    //SI EL USUARIO NO HA CERRADO SESSIÓN ENTRARÁ EN EL MENÚ DE OPCIONES DEL PROPIO CLIENTE
-    header("Location:../../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
+    //SI EL USUARIO NO HA CERRADO SESSIÓN NO SE LE PERMITIRÁ ENTRAR EN RRHH O JEFES COMO CLIENTE ACTIVO
+    $_SESSION["entradaLogin"]=2;   //Para hacer referencia que se intentó entrar en el LOGIN DE CLIENTES  
+    header("Location:../../007_Menus/0072_MenuJefesRRHH/loginJefesRRHHClientesCheck.php");
 }
 ?>
 
