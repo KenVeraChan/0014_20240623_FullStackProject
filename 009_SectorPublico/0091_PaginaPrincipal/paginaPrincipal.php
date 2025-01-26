@@ -1,7 +1,18 @@
 <?php
 //INICIA LA SESION DE ENTRADA
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
-                    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    if(isset($_COOKIE["cookieVisitaPagina"]))
+    {
+        //Si existe la COOKIE no mostará el cartel de ACEPTAR LAS COOKIES al visitar la página por primera vez
+        //No hará nada si existe la misma COOKIE
+    }
+    else
+    {
+        //Si no existe la COOKIE, se crea la COOKIE para navegar en la página web
+        setcookie("cookieVisitaPagina","Usuario",0,"/","localhost");   //Duracion de la COOKIE de 2 minutos, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+        // Si se establece a 0, o es omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+    }     
 require "consultasSlider.php";
 ?>
 <!DOCTYPE html>
@@ -66,8 +77,8 @@ require "consultasSlider.php";
     </header>  
     <div class="consulta" style="background-image: url(../../009_SectorPublico/0091_PaginaPrincipal/images/DIGITALIZACION.jpg); background-size: 100% 100%;">
     <div id="slideContainer">
-            <button id="prev" class="sliderBtn">&lt;</button>
-            <button id="next" class="sliderBtn">&gt;</button>
+            <button id="prev" class="sliderBtn">&lt;</button>   <!-- La expresión: &lt; es el símbolo < en HTML -->
+            <button id="next" class="sliderBtn">&gt;</button> <!-- La expresión: &gt; es el símbolo < en HTML -->
                 <!-- CARRUSEL DE SLIDER DE 20 IMAGENES COMO MÁXIMO ESTABLECIDO (se puede aumentar en consultasSlider -->
             <div class="slide show">
                 <img src="./sliderImages/<?php echo $_SESSION["NOMBRESLIDER"][0];?>" width="99.5%">
@@ -129,7 +140,8 @@ require "consultasSlider.php";
     <script>letreroConfirmadaEntrada(<?php echo $_SESSION["privado"]?>); //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA</script>
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsSlider.js"></script>
     <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER ?>
-    <?php
+<?php
+    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
     if(isset($_COOKIE["cookieVisitaPagina"]))
     {
         //Si existe la COOKIE no mostará el cartel de ACEPTAR LAS COOKIES al visitar la página por primera vez
@@ -137,9 +149,7 @@ require "consultasSlider.php";
     }
     else
     {
-        //Si no existe la COOKIE, se crea la COOKIE para navegar en la página web
-        setcookie("cookieVisitaPagina",1,time()+10);  //Duracion de la COOKIE de 2 minutos.
-        // Si se establece a 0, o es omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+        //Se invoca aquí el cuadro de las políticas de la COOKIE para no adelantarse a la carga de la página principal
         include "../0090_PaginaCookie/cookie.php";  //Area de inserccion de la COOKIE en la página principal
     }
 ?>

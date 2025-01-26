@@ -66,11 +66,15 @@
                     $resultadoComprobar->closeCursor();  //Para futuras consultas que este libre el paso
                     if($_SESSION["loginRRHH"]==1)
                     {
+                        //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
+                        setcookie("cookieRRHH","RRHH",time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location:../007_Menus/0071_MenuOpRRHH/OpRRHH.php");
                         //Se pone el doble punto para partir del directorio RAIZ
                     }
                     if($_SESSION["loginJEFES"]==1)
                     {
+                        //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
+                        setcookie("cookieJEFE","JEFE",time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location:../007_Menus/0073_MenuOpJEFES/OpJEFES.php");
                         //Se pone el doble punto para partir del directorio RAIZ
                     }
@@ -143,7 +147,7 @@
                 $resultadoClientes->closeCursor();   //Se deja libre el cursor para la siguiente consulta en la BBDD
                 if($numeroRegistroClientes==0)   //No existe el usuario como cliente en la BBDD
                 {
-                    $_SESSION["logeando"]=0;  //Datos mal metidos
+                    $_SESSION["logeando"]=2;  //Datos mal metidos NO DEJA ENTRAR
                     $_SESSION["semaforo"]=0;  //Letrero de fallo
                     header("location: ../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
                 }
@@ -154,6 +158,8 @@
                         $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
                         $_SESSION["logeando"]=1;  //Datos BIEN metidos
                         $_SESSION["semaforo"]=1;  //No saca ningun letrero
+                        //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
+                        setcookie("cookieCLIENTE","CLIENTE",time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location: ../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
                     }
                     else
@@ -161,6 +167,8 @@
                         $_SESSION["usuario"]=$_POST["login"];   //Identificado como cliente
                         $_SESSION["logeando"]=1;  //Datos BIEN metidos
                         $_SESSION["semaforo"]=1;  //No saca ningun letrero
+                        //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
+                        setcookie("cookieCLIENTE","CLIENTE",time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location: ../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
                     }
                 }

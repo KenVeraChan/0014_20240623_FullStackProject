@@ -88,47 +88,8 @@ if(isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"]) && $_SESSION["usu
             </div>
         </footer>
     </div>
-    <script>
-        if(<?php echo $_SESSION["logeando"];?>==0)
-        {
-            //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA
-            letreroConfirmadaEntrada(1);
-        }
-        if(<?php echo $_SESSION["activadorPersonal"];?>==3)
-        {
-            //En el caso de que el CLIENTE haya decidido eliminar su propia cuenta
-            letreroConfirmadaEntrada(3);     
-        }
-        function letreroConfirmadaEntrada(seleccion)
-        {        
-            var letrero= document.getElementsByClassName("letreroOK")[0];
-            if(seleccion==1)
-            {
-                letrero.innerHTML="Lo siento. Usuario o contraseña del cliente INCORRECTOS"; 
-            }
-            if(seleccion==3)
-            {
-                letrero.innerHTML="SU CUENTA PERSONAL HA SIDO ELIMINADA!";   
-            }
-            if(seleccion==1 || seleccion==3)
-            {
-                letrero.style.paddingTop="10px";
-                letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
-                letrero.style.transitionDuration = "1s";
-                letrero.style.marginTop="0px";
-
-                document.addEventListener("mousemove",function(){
-                let temporizador=setTimeout(function(){
-                    var letrero= document.getElementsByClassName("letreroOK")[0];
-                    letrero.style.transitionDuration = "1s";
-                    letrero.style.marginTop="-50px";
-                },3500);
-                })
-                clearTimeout(temporizador);
-            }
-        }
-    </script>
-    <?php $_SESSION["logeando"]=1; //Para el BORRADO IMPERIOSO DEL BUFFER 
+    <script>letreroConfirmadaEntrada(<?php echo $_SESSION["logeando"];?>);</script>
+    <?php $_SESSION["logeando"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER 
           $_SESSION["semaforo"]=0; //Asi no se saca ningun letrero?>
 </body>
 </html>

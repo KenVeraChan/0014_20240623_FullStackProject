@@ -101,6 +101,7 @@ if(isset($_POST["eliminar"]))
     {
         //SI EL USUARIO NO EXISTE COSA QUE IMPOSIBLE PORQUE NI SIQUIERA HABRÍA ENTRADO AQUI
         $_SESSION["loginCLIENTES"]=1;  //Sale del todo de la zona del cliente
+        $_SESSION["logeando"]=0;  //Para que no saque letrero de OK de dejar entrar
         header("location:../../../005_Login/salidaPagina.php");
     }
     else
@@ -110,8 +111,11 @@ if(isset($_POST["eliminar"]))
             $_SESSION["fotoPersonal"]=$clienteFila->FOTO;
         }
         //EN CASO DE HABER ELIMINADO AL USUARIO DE LA BBDD
-        $_SESSION["activadorPersonal"]=3; //SE ACTIVA LETRERO EN LA ZONA DE LA PAGINA PRINCIPAL COMO USUARIO ELIMINADO
+        //No hace falta trabajar con la variable $_SESSION["activadorPersonal"] aquí
+        //Porque para activar el LETRERO EN LA ZONA DE LA PAGINA PRINCIPAL COMO USUARIO ELIMINADO basta con 
+        //la variable $_SESSION["logeando"] poniéndolo al valor 3 l
         $_SESSION["loginCLIENTES"]=1;  //Sale del todo de la zona del cliente y destruye la sesión
+        $_SESSION["logeando"]=3;  //Para que no saque letrero de OK de dejar entrar
         //Borrado de la base de datos completa
         $resulCliente=$conexionClientes->query("DELETE FROM $BD_tabla WHERE USUARIO='$usuarioOnline'");
         unlink($carpeta_destino.$_SESSION["fotoPersonal"]);  //Elimina el fichero tambien de la carpeta de WINDOWS afectada

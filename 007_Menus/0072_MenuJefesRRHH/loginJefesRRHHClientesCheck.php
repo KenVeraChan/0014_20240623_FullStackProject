@@ -55,14 +55,14 @@ if($resultadoJefeRRHH==0 && $resultadoCliente==0)
 if($resultadoJefeRRHH==1 && $resultadoCliente==0)
 {
    //ES UN JEFE O UN EMPLEADO DE RRHH PERO NO UN CLIENTE
-   if($_SESSION["entradaLogin"]==1)
-   {
       //Intento de entrar en el login de JEFES Y RRHH: Se le dará paso porque es un usuario JEFE O RRHH logeado
       foreach($descargaJefeRRHH as $rol)
       {
-       //SE DISCIERNE SI ES JEFE O RRHH: DESCARGANDO EL ROL DE LA BBDD, PARA CONTRASTAR
-       $rolUsuario=$rol->ROL;
+      //SE DISCIERNE SI ES JEFE O RRHH: DESCARGANDO EL ROL DE LA BBDD, PARA CONTRASTAR
+      $rolUsuario=$rol->ROL;
       }
+   if($_SESSION["entradaLogin"]==1)
+   {
       if(strcmp($rolUsuario,string2: "JEFE")==0)
       {
         //ES UN JEFE EL IDENTIFICADO DESDE LA BBDD LUEGO ENTRARÁ EN EL MENU DE OPCIONES DE JEFE
@@ -77,6 +77,20 @@ if($resultadoJefeRRHH==1 && $resultadoCliente==0)
    if($_SESSION["entradaLogin"]==2)
    {
       //Intento de entrar en el login de CLIENTES: No se le dará paso porque ya estaba logeado
+      if(strcmp($rolUsuario,string2: "JEFE")==0)
+      {
+        //ES UN JEFE EL IDENTIFICADO: Se pone esto para que al cerrar la sesion del JEFE no muestre el LOGIN DEL CLIENTE sino del propio JEFE
+        $_SESSION["loginJEFES"]=1;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+        $_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
+        $_SESSION["loginCLIENTES"]=0;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
+      }
+      if(strcmp($rolUsuario,string2: "RRHH")==0)
+      {
+        //ES UNO DE RRHH IDENTIFICADO: Se pone esto para que al cerrar la sesion del RRHH no muestre el LOGIN DEL CLIENTE sino del propio empleado RRHH
+        $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
+        $_SESSION["loginRRHH"]=1;   //Se identifica que no ha sido un individuo del sector de RRHH
+        $_SESSION["loginCLIENTES"]=0;   //Se identifica que SI ha sido un individuo del sector de CLIENTES
+      }
       $_SESSION["privado"]=2;        //Para que se active el letrero de aviso de zona privada de los CLIENTES
       header("Location:../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.php");
    }
