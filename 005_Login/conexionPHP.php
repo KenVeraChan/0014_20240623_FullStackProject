@@ -40,6 +40,7 @@ class ConexionPHP
     private static $IR_RUTA_CATEGORIA_PRODUCTOS="/009_SectorPublico/0093_PaginaProductos/productCategory/";  //CARPETA CATEGORIA PRODUCTOS DEL SERVIDOR
     private static $IR_RUTA_CATEGORIA_SERVICIOS="/009_SectorPublico/0094_PaginaServicios/servicesCategory/";  //CARPETA CATEGORIA SERVICIOS DEL SERVIDOR
     private static $IR_RUTA_CATEGORIA_PROYECTOS="/009_SectorPublico/0095_PaginaProyectos/projectsCategory/";  //CARPETA CATEGORIA PROYECTOS DEL SERVIDOR
+    private static $COOKIE_GUARDADA=""; //SE GUARDARÁ EL VALOR DE LA COOKIE QUE SE HA REGISTRADO
 
     public function ConexionPHP()
     {
@@ -186,5 +187,15 @@ class ConexionPHP
         $ConexionClientes->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $ConexionClientes->exec("SET CHARACTER SET UTF8");
         return $ConexionClientes;
+    }
+    public static function setCookieUsuarioLogeado($cookieUser)
+    {
+        self::$COOKIE_GUARDADA=$cookieUser;
+    }
+    public static function getCookieUsuarioLogeado()
+    {
+        //Se separan en dos partes la información almacenada; tipo de usuario (JEFE, RRHH, CLIENTE), y nombre
+        $arrayDatosCookie=explode("|",self::$COOKIE_GUARDADA);
+        return $arrayDatosCookie;
     }
 }

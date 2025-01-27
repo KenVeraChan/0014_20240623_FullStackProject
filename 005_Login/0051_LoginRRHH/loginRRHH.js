@@ -88,10 +88,14 @@ function letreroConfirmadaEntrada(seleccion)
         letrero.innerHTML="Lo siento. Su ROL de JEFE no le permite el acceso al área de RRHH";   
     }
     if(seleccion==4)
-        {
-            letrero.innerHTML="Se ha cerrado la sesión de su cuenta de RRHH correctamente!";   
-        }
-    if(seleccion>1 && seleccion<5)
+    {
+        letrero.innerHTML="Se ha cerrado la sesión de su cuenta de RRHH correctamente!";   
+    }
+    if(seleccion==5)
+    {
+        letrero.innerHTML="HA CADUCADO la sesión de su cuenta CLIENTE!";   
+    }
+    if(seleccion>1 && seleccion<6)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";

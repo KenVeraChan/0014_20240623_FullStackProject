@@ -107,10 +107,14 @@ function letreroConfirmadaEntrada(seleccion)
         letrero.innerHTML="SU CUENTA PERSONAL HA SIDO ELIMINADA!";   
     }
     if(seleccion==4)
-        {
-            letrero.innerHTML="Se ha cerrado la sesión de su cuenta CLIENTE correctamente!";   
-        }
-    if(seleccion>0 && seleccion<5)
+    {
+        letrero.innerHTML="Se ha cerrado la sesión de su cuenta CLIENTE correctamente!";   
+    }
+    if(seleccion==5)
+    {
+        letrero.innerHTML="HA CADUCADO la sesión de su cuenta CLIENTE!";   
+    }
+    if(seleccion>0 && seleccion<6)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
