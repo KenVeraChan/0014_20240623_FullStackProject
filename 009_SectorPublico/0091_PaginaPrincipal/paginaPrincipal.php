@@ -2,6 +2,7 @@
 //INICIA LA SESION DE ENTRADA
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
     //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    require "consultasSlider.php";
     if(isset($_COOKIE["cookieVisitaPagina"]))
     {
         $_SESSION["activadorCookie"]=0;   //Queda desactivada el panel de información de la COOKIE
@@ -15,58 +16,56 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
         setcookie("cookieVisitaPagina","Usuario",0,"/","localhost");   //Duracion de la COOKIE de 2 minutos, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
         // Si se establece a 0, o es omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
     }   
-    require "consultasSlider.php";
-    if($_SESSION["loginJEFES"]==1)
+    if(!isset($_SESSION["usuario"])) 
     {
-        if(!isset($_COOKIE["cookieJEFE"]))
+        //SI NO HAY NI UN JEFE, NI UN EMPLEADO DE RRHH O UN CLIENTE CONECTADO SE PONE TODO A CERO
+        $_SESSION["loginJEFES"]=0;
+        $_SESSION["loginRRHH"]=0;
+        $_SESSION["loginCLIENTES"]=0;
+    }
+    else
+    {
+        if($_SESSION["loginJEFES"]==1)
         {
-          //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
-          $datosCookie=explode("|",$_COOKIE["cookieJEFE"]);
-            if($datosCookie[0]=="JEFE")
+            if(!isset($_COOKIE["cookieJEFE"]))
             {
+                //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
                 session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN JEFES
                 session_start();    //Se crea de nuevo la sesión
+                $_SESSION["loginJEFES"]=0;  //Se reinicia la variable para futuras conexiones en otras areas
                 $_SESSION["logeando"]=5;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
                 header("location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
                 //Se pone el doble punto para partir del directorio RAIZ
             }
         }
-    }
-    if($_SESSION["loginRRHH"]==1)
-    {
-        if(!isset($_COOKIE["cookieRRHH"]))
+        if($_SESSION["loginRRHH"]==1)
         {
-        //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
-        $datosCookie=explode("|",$_COOKIE["cookieRRHH"]);
-            if($datosCookie[0]=="RRHH")
+            if(!isset($_COOKIE["cookieRRHH"]))
             {
+                //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
                 session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN RRHH
                 session_start();    //Se crea de nuevo la sesión
+                $_SESSION["loginRRHH"]=0;  //Se reinicia la variable para futuras conexiones en otras areas
                 $_SESSION["logeando"]=5;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
                 header("location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
                 //Se pone el doble punto para partir del directorio RAIZ
             }
         }
-    }
-    if($_SESSION["loginCLIENTES"]==1)
-    {
-        if(!isset($_COOKIE["cookieCLIENTE"]))
+        if($_SESSION["loginCLIENTES"]==1)
         {
-        //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
-        $datosCookie=explode("|",$_COOKIE["cookieCLIENTE"]);
-            if($datosCookie[0]=="CLIENTE")
+            if(!isset($_COOKIE["cookieCLIENTE"]))
             {
+                //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
                 //Si viene de haber cerrado la sesión voluntariamente se procede con la destrucción de la SESSION y listo
                 session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN CLIENTES
                 session_start();    //Se crea de nuevo la sesión
+                $_SESSION["loginCLIENTES"]=0;  //Se reinicia la variable para futuras conexiones en otras areas
                 $_SESSION["logeando"]=5;  //Se crea de nuevo la sesión para dar el valor de SESIÓN CADUCADA AL USUARIO
                 header("location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
-                //Se pone el doble punto para partir del directorio RAIZ
+            //Se pone el doble punto para partir del directorio RAIZ
             }
         }
     }
-    else{//Si existe no hace nada al respecto en la pagina web
-        }
 ?>
 <!DOCTYPE html>
 <html lang="en">

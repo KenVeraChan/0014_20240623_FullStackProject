@@ -114,7 +114,7 @@ function letreroConfirmadaEntrada(seleccion)
     {
         letrero.innerHTML="HA CADUCADO la sesión de su cuenta CLIENTE!";   
     }
-    if(seleccion>0 && seleccion<6)
+    if(seleccion>1 && seleccion<6)
     {
         letrero.style.paddingTop="10px";
         letrero.style.boxShadow= "rgb(150,150,150) 5px 5px 20px 10px";
