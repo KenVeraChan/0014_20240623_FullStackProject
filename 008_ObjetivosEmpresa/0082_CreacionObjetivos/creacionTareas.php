@@ -7,6 +7,9 @@
             //Si es falso que no se ha registrado nada en la sesion
             header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
         }
+        require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+        $rutaPaginaCreacionTareas="location:../../005_Login/";   //Se pone la ruta desde la página creación tareas Jefe
+        cargaWebCookie($rutaPaginaCreacionTareas);   //Se ejecuta la función de carga página según cookie desde la página creación tareas Jefe    
         require "gestionTareas.php";
 ?>
 

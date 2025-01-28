@@ -2,11 +2,14 @@
 //INICIA LA SESION DE ENTRADA
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
                     //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-if(!isset($_SESSION["usuario"]))
-{
-    //Si es falso que no se ha registrado nada en la sesion
-    header("Location:../../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
-}
+    if(!isset($_SESSION["usuario"]))
+    {
+        //Si es falso que no se ha registrado nada en la sesion
+        header("Location:../../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
+    }
+    require "../../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaPerfilCliente="location:../../../005_Login/";   //Se pone la ruta desde la página Perfil Cliente
+    cargaWebCookie($rutaPaginaPerfilCliente);   //Se ejecuta la función de carga página según cookie desde la página Perfil Cliente
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,9 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
 include_once "consultasHistoria.php";
+    require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaHistoria="location:../../005_Login/";   //Se pone la ruta desde la página Historia
+    cargaWebCookie($rutaPaginaHistoria);   //Se ejecuta la función de carga página según cookie desde la página Historia
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -93,7 +93,7 @@ function letreroConfirmadaEntrada(seleccion)
         }
     if(seleccion==5)
         {
-            letrero.innerHTML="HA CADUCADO la sesión de su cuenta CLIENTE!"; 
+            letrero.innerHTML="HA CADUCADO la sesión de su cuenta JEFE!"; 
         }
     if(seleccion>1 && seleccion<6)
         {

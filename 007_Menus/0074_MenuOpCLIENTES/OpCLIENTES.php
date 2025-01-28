@@ -1,7 +1,7 @@
 <?php
-        //INICIA LA SESION DE ENTRADA
-        session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
-                        //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+    //INICIA LA SESION DE ENTRADA
+    session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
+                    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
     //AL ESTAR YA REGISTRADO COMO CLIENTE DENTRO DEL MENU DE CLIENTES SE ACTIVA EL LOGEO DE CLIENTE PARA LUEGO DETECTARLO EN LA SALIDA PAGINA
     $_SESSION["loginJEFES"]=0;  //Se corrobora que el sector de JEFES no es donde se intenta ENTRAR en el LOGIN
     $_SESSION["loginRRHH"]=0;   //Se identifica que no ha sido un individuo del sector de RRHH
@@ -11,6 +11,9 @@
         //Si es falso que no se ha registrado nada en la sesion
         header("Location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
     }
+    require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaOpClientes="location:../../005_Login/";   //Se pone la ruta desde la página Opciones Cliente
+    cargaWebCookie($rutaPaginaOpClientes);   //Se ejecuta la función de carga página según cookie desde la página Opciones Cliente
 ?>
 <!DOCTYPE html>
 <html lang="en">

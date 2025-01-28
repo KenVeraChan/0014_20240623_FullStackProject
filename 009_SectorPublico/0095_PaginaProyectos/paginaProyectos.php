@@ -2,6 +2,9 @@
 session_start();   //Uso de la variable GLOBAL
 //error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
 include "consultasMostradorProyectos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PRINCIPALMENTE
+    require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaProyectos="location:../../005_Login/";   //Se pone la ruta desde la página Proyectos
+    cargaWebCookie($rutaPaginaProyectos);   //Se ejecuta la función de carga página según cookie desde la página Proyectos
 ?>
 <!DOCTYPE html>
 <html lang="en">

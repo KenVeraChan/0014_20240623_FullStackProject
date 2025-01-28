@@ -7,6 +7,10 @@
         //Si es falso que no se ha registrado nada en la sesion
         header("Location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
     }
+    require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaModificaCandidato="location:../../005_Login/";   //Se pone la ruta desde la página modificar datos del candidato
+    cargaWebCookie($rutaPaginaModificaCandidato);   //Se ejecuta la función de carga página según cookie desde la página modificar datos del candidato
+
     //JSON: JavaScript Object Notation
     $LECTURA=json_decode($_SESSION["L"],true); //Para descarga como una matriz asociativa
     $ESCRITURA=json_decode($_SESSION["E"],true); //Para descarga como una matriz asociativa

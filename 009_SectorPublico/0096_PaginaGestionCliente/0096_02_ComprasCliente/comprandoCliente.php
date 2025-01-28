@@ -2,8 +2,11 @@
 //INICIA LA SESION DE ENTRADA
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
                     //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/consultasComprandoCliente.php";
-//Para cargar los datos personales del cliente en la cabecera de la pagina web
+    require_once "../../../009_SectorPublico/0096_PaginaGestionCliente/0096_02_ComprasCliente/consultasComprandoCliente.php";
+    //Para cargar los datos personales del cliente en la cabecera de la pagina web
+    require "../../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaComprasCliente="location:../../../005_Login/";   //Se pone la ruta desde la página Compras Cliente
+    cargaWebCookie($rutaPaginaComprasCliente);   //Se ejecuta la función de carga página según cookie desde la pagina Compras Cliente
 ?>
 <!DOCTYPE html>
 <html lang="en">

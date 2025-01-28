@@ -8,6 +8,9 @@
             header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
         }
         require "gestionVentas.php";
+        require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+        $rutaPaginaControlVentas="location:../../005_Login/";   //Se pone la ruta desde la página control Ventas Jefe
+        cargaWebCookie($rutaPaginaControlVentas);   //Se ejecuta la función de carga página según cookie desde la página control Ventas Jefe      
 ?>
 
 <!DOCTYPE html>

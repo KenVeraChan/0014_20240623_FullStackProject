@@ -1,7 +1,10 @@
 <?php
 session_start();   //Uso de la variable GLOBAL
-error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
-require "../../../005_Login/conexionPHP.php";
+    error_reporting(0);   //Permite aceptar la variable $_SESSION["PUNTERO"] sin necesidad de definirla sin que de WARNING
+    require "../../../005_Login/conexionPHP.php";
+    require "../../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaModificaCompra="location:../../../005_Login/";   //Se pone la ruta desde la página Modificar carrito de la compra
+    cargaWebCookie($rutaPaginaModificaCompra);   //Se ejecuta la función de carga página según cookie desde la página Modificar carrito de la compra
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -3,69 +3,9 @@
 session_start();  //Para reanudar la sesion creada si se ha iniciado sino creará una nueva
     //También permite rescatar la información almancenada en la variable superglobal $_SESSION
     require "consultasSlider.php";
-    if(isset($_COOKIE["cookieVisitaPagina"]))
-    {
-        $_SESSION["activadorCookie"]=0;   //Queda desactivada el panel de información de la COOKIE
-        //Si existe la COOKIE no mostará el cartel de ACEPTAR LAS COOKIES al visitar la página por primera vez
-        //No hará nada si existe la misma COOKIE
-    }
-    else
-    {
-        $_SESSION["activadorCookie"]=1; //Queda activada el panel de información de la COOKIE
-        //Si no existe la COOKIE, se crea la COOKIE para navegar en la página web
-        setcookie("cookieVisitaPagina","Usuario",0,"/","localhost");   //Duracion de la COOKIE de 2 minutos, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
-        // Si se establece a 0, o es omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
-    }   
-    if(!isset($_SESSION["usuario"])) 
-    {
-        //SI NO HAY NI UN JEFE, NI UN EMPLEADO DE RRHH O UN CLIENTE CONECTADO SE PONE TODO A CERO
-        $_SESSION["loginJEFES"]=0;
-        $_SESSION["loginRRHH"]=0;
-        $_SESSION["loginCLIENTES"]=0;
-    }
-    else
-    {
-        if($_SESSION["loginJEFES"]==1)
-        {
-            if(!isset($_COOKIE["cookieJEFE"]))
-            {
-                //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
-                session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN JEFES
-                session_start();    //Se crea de nuevo la sesión
-                $_SESSION["loginJEFES"]=0;  //Se reinicia la variable para futuras conexiones en otras areas
-                $_SESSION["logeando"]=5;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
-                header("location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
-                //Se pone el doble punto para partir del directorio RAIZ
-            }
-        }
-        if($_SESSION["loginRRHH"]==1)
-        {
-            if(!isset($_COOKIE["cookieRRHH"]))
-            {
-                //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
-                session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN RRHH
-                session_start();    //Se crea de nuevo la sesión
-                $_SESSION["loginRRHH"]=0;  //Se reinicia la variable para futuras conexiones en otras areas
-                $_SESSION["logeando"]=5;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
-                header("location:../../005_Login/0051_LoginRRHH/loginRRHH.php");
-                //Se pone el doble punto para partir del directorio RAIZ
-            }
-        }
-        if($_SESSION["loginCLIENTES"]==1)
-        {
-            if(!isset($_COOKIE["cookieCLIENTE"]))
-            {
-                //Si no existe se tiene que cerrar la sesión del usuario, sea quien sea
-                //Si viene de haber cerrado la sesión voluntariamente se procede con la destrucción de la SESSION y listo
-                session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN CLIENTES
-                session_start();    //Se crea de nuevo la sesión
-                $_SESSION["loginCLIENTES"]=0;  //Se reinicia la variable para futuras conexiones en otras areas
-                $_SESSION["logeando"]=5;  //Se crea de nuevo la sesión para dar el valor de SESIÓN CADUCADA AL USUARIO
-                header("location:../../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
-            //Se pone el doble punto para partir del directorio RAIZ
-            }
-        }
-    }
+    require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaPrincipal="location:../../005_Login/";   //Se pone la ruta desde la página principal
+    cargaWebCookie($rutaPaginaPrincipal);   //Se ejecuta la función de carga página según cookie desde la página principal
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -191,15 +131,14 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear�
     </div>
     <script>letreroConfirmadaEntrada(<?php echo $_SESSION["privado"]?>); //En el caso de que no esten bien escritas el USUARIO o la CONTRASENIA</script>
     <script src="../../009_SectorPublico/0091_PaginaPrincipal/scriptsSlider.js"></script>
-    <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER ?>
-<?php
-    //También permite rescatar la información almancenada en la variable superglobal $_SESSION
-    if($_SESSION["activadorCookie"]==1)
-    {
-        //Se invoca aquí el cuadro de las políticas de la COOKIE para no adelantarse a la carga de la página principal
-        include "../0090_PaginaCookie/cookie.php";  //Area de inserccion de la COOKIE en la página principal
-        $_SESSION["activadorCookie"]=0;  //Se desactiva de nuevo
-    }
-?>
+    <?php $_SESSION["privado"]=0; //Para el BORRADO IMPERIOSO DEL BUFFER 
+        //También permite rescatar la información almancenada en la variable superglobal $_SESSION
+        if($_SESSION["activadorCookie"]==1)
+        {
+            //Se invoca aquí el cuadro de las políticas de la COOKIE para no adelantarse a la carga de la página principal
+            include "../0090_PaginaCookie/cookie.php";  //Area de inserccion de la COOKIE en la página principal
+            $_SESSION["activadorCookie"]=0;  //Se desactiva de nuevo
+        }
+    ?>
 </body>
 </html>

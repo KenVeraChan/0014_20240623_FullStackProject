@@ -8,6 +8,9 @@
         header("Location:../../005_Login/0052_LoginJEFES/loginJEFES.php");
     }
     require "gestionProyectos.php";
+    require "../../005_Login/cierreSesionesCookie.php";   //Gestion de cierres de sesion tras consumirse la COOKIE
+    $rutaPaginaControlProyectos="location:../../005_Login/";   //Se pone la ruta desde la página control proyectos jefes
+    cargaWebCookie($rutaPaginaControlProyectos);   //Se ejecuta la función de carga página según cookie desde la página control proyectos jefes    
 ?>
 
 <!DOCTYPE html>
