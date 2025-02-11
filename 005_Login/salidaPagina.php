@@ -11,7 +11,7 @@
         if($_SESSION["loginRRHH"]==1)
         {
             session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN RRHH
-            setcookie("cookieRRHH",$_SESSION["usuario"],time()-1);  //Duracion de la COOKIE de -1 segundo, luego es destruida
+            setcookie("cookieRRHH","RRHH "."| ".$_SESSION["usuario"],time()-3600,"/","localhost");  //Duracion de la COOKIE de -1 segundo, luego es destruida
             session_start();    //Se crea de nuevo la sesión
             $_SESSION["logeando"]=4;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
             header("location:../005_Login/0051_LoginRRHH/loginRRHH.php");
@@ -20,7 +20,7 @@
         if($_SESSION["loginJEFES"]==1)
         {
             session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN JEFES
-            setcookie("cookieJEFE",$_SESSION["usuario"],time()-1);  //Duracion de la COOKIE de -1 sg.
+            setcookie("cookieJEFE","JEFE "."| ".$_SESSION["usuario"],time()-3600,"/","localhost");  //Duracion de la COOKIE de -1 sg.
             session_start();    //Se crea de nuevo la sesión
             $_SESSION["logeando"]=4;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
             header("location:../005_Login/0052_LoginJEFES/loginJEFES.php");
@@ -32,7 +32,7 @@
             {
                 //Si viene de haber cerrado la sesión al darse de baja como CLIENTE se procede con la destrucción de la SESSION y se crea otra para el logeado
                 session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN CLIENTES
-                setcookie("cookieCLIENTE",$_SESSION["usuario"],time()-1);  //Duracion de la COOKIE de -1 sg.
+                setcookie("cookieCLIENTE","CLIENTE "."| ".$_SESSION["usuario"],time()-3600,"/","localhost");  //Duracion de la COOKIE de -1 sg.
                 session_start();    //Se crea de nuevo la sesión
                 $_SESSION["logeando"]=3;  //Se crea de nuevo la sesión para dar valor al LOGEADO
                 header("location:../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");
@@ -42,7 +42,7 @@
             {
                 //Si viene de haber cerrado la sesión voluntariamente se procede con la destrucción de la SESSION y listo
                 session_destroy();  //Destruye la sesión y devuelve a la zona de LOGIN CLIENTES
-                setcookie("cookieCLIENTE",$_SESSION["usuario"],time()-1);  //Duracion de la COOKIE de -1 sg.
+                setcookie("cookieCLIENTE","CLIENTE "."| ".$_SESSION["usuario"],time()-3600,"/","localhost");  //Duracion de la COOKIE de -1 sg.
                 session_start();    //Se crea de nuevo la sesión
                 $_SESSION["logeando"]=4;  //Se crea de nuevo la sesión para dar valor al LOGEADO de confirmación de sesión usuario cerrada
                 header("location:../005_Login/0053_LoginCLIENTES/loginCLIENTES.php");

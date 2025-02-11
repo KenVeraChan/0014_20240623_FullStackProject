@@ -67,7 +67,7 @@
                     if($_SESSION["loginRRHH"]==1)
                     {
                         //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
-                        setcookie("cookieRRHH","RRHH"."|".$_SESSION["usuario"],time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+                        setcookie("cookieRRHH","RRHH "."| ".$_SESSION["usuario"],time()+24*3600,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                             //AREA DE COMPROBACION DE LA COOKIE CORRESPONDIENTE A JEFE, RRHH O CLIENTE:
                         header("location:../007_Menus/0071_MenuOpRRHH/OpRRHH.php");
                         //Se pone el doble punto para partir del directorio RAIZ
@@ -75,7 +75,7 @@
                     if($_SESSION["loginJEFES"]==1)
                     {
                         //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
-                        setcookie("cookieJEFE","JEFE"."|".$_SESSION["usuario"],time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+                        setcookie("cookieJEFE","JEFE "."| ".$_SESSION["usuario"],time()+24*3600,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location:../007_Menus/0073_MenuOpJEFES/OpJEFES.php");
                         //Se pone el doble punto para partir del directorio RAIZ
                     }
@@ -160,7 +160,7 @@
                         $_SESSION["logeando"]=1;  //Datos BIEN metidos
                         $_SESSION["semaforo"]=1;  //No saca ningun letrero
                         //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
-                        setcookie("cookieCLIENTE","CLIENTE"."|".$_SESSION["usuario"],time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+                        setcookie("cookieCLIENTE","CLIENTE "."| ".$_SESSION["usuario"],time()+24*3600,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location: ../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.php");
                     }
                     else
@@ -169,7 +169,7 @@
                         $_SESSION["logeando"]=1;  //Datos BIEN metidos
                         $_SESSION["semaforo"]=1;  //No saca ningun letrero
                         //Creación COOKIE para el tratamiento de una duración finita de la sesión del usuario interno
-                        setcookie("cookieCLIENTE","CLIENTE"."|".$_SESSION["usuario"],time()+60,"/","localhost");  //Duracion de la COOKIE de 1 minuto, si fuera omitido, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
+                        setcookie("cookieCLIENTE","CLIENTE "."| ".$_SESSION["usuario"],time()+24*3600,"/","localhost");  //Duracion de la COOKIE de 0, es decir, la cookie expirará al final de la sesión (cuando el navegador es cerrado).
                         header("location: ../007_Menus/0074_MenuOpCLIENTES/OpCLIENTES.php");
                     }
                 }
