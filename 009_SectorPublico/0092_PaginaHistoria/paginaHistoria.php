@@ -13,6 +13,8 @@ include_once "consultasHistoria.php";
     <title>Pagina Historia de la Corporación Sfer4D</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="../../009_SectorPublico/0092_PaginaHistoria/paginaHistoria.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
+    <script src="../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->
     <script src="../../009_SectorPublico/0092_PaginaHistoria/scriptsHistoria.js"></script>
 </head>
 <body onload="cargarPagina()">
@@ -181,5 +183,6 @@ include_once "consultasHistoria.php";
             </div>
         </footer>
     </div>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>

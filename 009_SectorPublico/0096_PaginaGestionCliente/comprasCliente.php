@@ -14,6 +14,8 @@ require "../../005_Login/conexionPHP.php";
     <title>Area de las compras del Cliente</title>
     <link rel="stylesheet" href="../../009_SectorPublico/0096_PaginaGestionCliente/comprasCliente.css">
     <script src="../../009_SectorPublico/0096_PaginaGestionCliente/scriptsComprasCliente.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
+    <script src="../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->
 </head>
 <body onload="cargarPagina()">
         <div class="letreroOK" style=
@@ -134,6 +136,7 @@ require "../../005_Login/conexionPHP.php";
         </footer>
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
-    <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
+  php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>
