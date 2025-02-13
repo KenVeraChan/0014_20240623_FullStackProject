@@ -20,6 +20,8 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear√
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Formulario Tarjeta Bancaria</title>
 	<link rel="stylesheet" href="tarjetaBancaria.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
+    <script src="../../../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->
 </head>
 <body>
 	<div class="contenedor">
@@ -121,5 +123,6 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear√
 	<script src="tarjetaBancaria.js"></script>
 	<script>letreroConfirmado(<?php echo $_SESSION["indicador"]; ?>);</script>
 	<?php $_SESSION["indicador"]=0; //Reiniciar variable ?> 
+	<script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>

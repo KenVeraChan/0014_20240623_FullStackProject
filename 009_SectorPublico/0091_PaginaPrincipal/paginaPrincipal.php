@@ -142,6 +142,10 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear√
             $_SESSION["activadorCookie"]=0;  //Se desactiva de nuevo
         }
     ?>
-    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
+    <script>
+        AddAlert(<?php echo $_SESSION["logeando"]?>,2); 
+        //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo
+        //Distancia 2 porque es dar dos saltos hasta el directorio ra√≠z
+    </script>
 </body>
 </html>

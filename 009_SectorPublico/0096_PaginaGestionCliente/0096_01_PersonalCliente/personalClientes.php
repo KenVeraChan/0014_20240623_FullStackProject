@@ -18,6 +18,8 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear√
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area Personal Cliente</title>
     <link rel="stylesheet" href="personalClientes.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
+    <script src="../../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->
     <script src="scriptsPersonalCliente.js"></script>
 </head>
 <body onload="cargarPagina()">
@@ -176,5 +178,6 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear√
         }
         $_SESSION["activadorPersonal"]=0; //Reiniciar variable 
     ?> 
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>
