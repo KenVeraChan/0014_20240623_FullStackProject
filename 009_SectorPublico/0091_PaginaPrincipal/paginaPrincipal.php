@@ -14,6 +14,7 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crear√
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pagina Principal Corporaci√≥n Sfer4D</title>
+    <link rel="shortcut icon" href="../0091_PaginaPrincipal/images/iconoPaginaPrincipal.ico">   <!-- ICONO DE LAPAGINA PRINCIPAL -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="../../009_SectorPublico/0091_PaginaPrincipal/paginaPrincipal.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
