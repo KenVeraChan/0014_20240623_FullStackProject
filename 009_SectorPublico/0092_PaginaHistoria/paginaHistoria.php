@@ -183,6 +183,6 @@ include_once "consultasHistoria.php";
             </div>
         </footer>
     </div>
-    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>,2); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>

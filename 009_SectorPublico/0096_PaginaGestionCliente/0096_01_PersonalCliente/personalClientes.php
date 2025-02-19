@@ -178,6 +178,6 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crearÃ
         }
         $_SESSION["activadorPersonal"]=0; //Reiniciar variable 
     ?> 
-    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>,3); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>

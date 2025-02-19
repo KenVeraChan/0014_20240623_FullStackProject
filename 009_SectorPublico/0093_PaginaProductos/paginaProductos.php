@@ -250,6 +250,6 @@ include "consultasMostradorProductos.php";  //CARGA EL MOSTRADOR DE PRODUCTOS PR
             $_SESSION["concesion"]=0;   //Se inhabilita la opción de bajar hasta el nuevo accionamiento 
     } 
     ?>
-    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>,2); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>

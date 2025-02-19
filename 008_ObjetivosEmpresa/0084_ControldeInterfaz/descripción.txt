@@ -1,4 +1,0 @@
-En este apartado, el sector de jefes podrá guardar en el servidor 
-(la ruta de las imágenes) las imágenes de los slider o la zona de productos y servicios
-que se mostrarán en el servidorposteriormente.
-En la tabla SQL, el destino se refiere a si es SLIDER, PRODUCTOS, SERVICIOS: total 3 campos

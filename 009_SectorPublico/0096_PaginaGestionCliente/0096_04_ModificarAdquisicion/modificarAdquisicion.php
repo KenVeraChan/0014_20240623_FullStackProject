@@ -14,6 +14,8 @@ session_start();   //Uso de la variable GLOBAL
     <title>Area de Modificación Adquisición del producto</title>
     <link rel="stylesheet" href="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/modificarAdquisicion.css">
     <script src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/scriptsModificarAdquisicion.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
+    <script src="../../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->
 </head>
 <body onload="cargarPagina()">
         <div class="letreroOK" style=
@@ -133,5 +135,6 @@ session_start();   //Uso de la variable GLOBAL
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
     <?php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>,3); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>

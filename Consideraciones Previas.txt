@@ -1,4 +1,0 @@
-Se cogerán datos de la carpeta de: 
-1) Las carpetas con la extensión PENDIENTE FUSION no formarán parte del proyecto,
-   tan sólo se extraerá el contenido y amoldará al proyecto general.
-

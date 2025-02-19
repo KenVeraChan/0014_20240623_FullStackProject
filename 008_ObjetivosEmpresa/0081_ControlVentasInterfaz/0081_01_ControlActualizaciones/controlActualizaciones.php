@@ -18,6 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar datos de una imagen</title>
     <link rel="stylesheet" href="controlActualizaciones.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
+    <script src="../../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->
     <script src="controlActualizaciones.js"></script>
 </head>
 <body onload="cargarPagina()">
@@ -169,5 +171,10 @@
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalImagen"])?>);</script>
     <?php $_SESSION["senalImagen"]=0; //Reiniciar variable ?> 
+    <script>
+        AddAlert(<?php echo $_SESSION["logeando"]?>,3); 
+        //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo
+        //Distancia 3 porque es dar tres saltos hasta el directorio raíz
+    </script>
 </body>
 </html>

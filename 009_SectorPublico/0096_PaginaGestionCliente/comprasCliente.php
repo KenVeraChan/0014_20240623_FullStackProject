@@ -137,6 +137,6 @@ require "../../005_Login/conexionPHP.php";
     </div>
     <script>letreroConfirmado(<?php echo($_SESSION["senalCarrito"])?>);</script>
   php $_SESSION["senalCarrito"]=0; //Reiniciar variable?>
-    <script>AddAlert(<?php echo $_SESSION["logeando"]?>); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
+    <script>AddAlert(<?php echo $_SESSION["logeando"]?>,2); //Para el comienzo de la deteccion de la inactividad en la pagina web pero no afecta sin usuario logeado de cualquier tipo</script>
 </body>
 </html>
