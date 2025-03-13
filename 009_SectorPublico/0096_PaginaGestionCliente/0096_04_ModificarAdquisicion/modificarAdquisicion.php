@@ -12,6 +12,7 @@ session_start();   //Uso de la variable GLOBAL
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area de Modificación Adquisición del producto</title>
+    <link rel="shortcut icon" href="../../../009_SectorPublico/iconoSectorCliente.ico">   <!-- ICONO DE LA PAGINA DE MODIFICACION COMPRAS -->
     <link rel="stylesheet" href="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/modificarAdquisicion.css">
     <script src="../../../009_SectorPublico/0096_PaginaGestionCliente/0096_04_ModificarAdquisicion/scriptsModificarAdquisicion.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->

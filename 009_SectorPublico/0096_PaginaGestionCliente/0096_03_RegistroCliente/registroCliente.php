@@ -9,6 +9,7 @@ session_start();  //Para reanudar la sesion creada si se ha iniciado sino crearÃ
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area de Registro Cliente</title>
+    <link rel="shortcut icon" href="../../../009_SectorPublico/iconoSectorCliente.ico">   <!-- ICONO DE LA PAGINA REGISTRO CLIENTE -->
     <link rel="stylesheet" href="registroCliente.css">
     <script src="scriptsRegistroCliente.js"></script>
 </head>

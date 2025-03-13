@@ -20,6 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tratamiento proyectos</title>
+    <link rel="shortcut icon" href="../../008_ObjetivosEmpresa/iconoSectorJefes.ico">   <!-- ICONO DE LA PAGINA CONTROL VENTAS -->
     <link rel="stylesheet" href="controlVentasInterfaz.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!-- CARGA LA JQUERY PARA EL JS CIERRE SESSION-->
     <script src="../../005_Login/scriptCierreSesion.js"></script>  <!-- carga del fichero desde LOGIN -->

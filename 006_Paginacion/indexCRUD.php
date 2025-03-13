@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBDD Empleados</title>
+    <link rel="shortcut icon" href="../007_Menus/iconoSectorRRHH.ico">
     <link rel="stylesheet" href="../006_Paginacion/estilosIndex.css">
 </head>
 <body>

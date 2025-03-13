@@ -11,6 +11,7 @@ $_SESSION["loginCLIENTES"]=0;   //Se identifica que no ha sido un individuo del 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN Recursos Humanos</title>
+    <link rel="shortcut icon" href="../../005_Login/iconoLoginGenerico.ico">
     <link rel="stylesheet" href="loginRRHH.css">
     <script src="loginRRHH.js"></script>
 </head>

@@ -13,6 +13,7 @@ if(isset($_SESSION["usuario"]))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area privada de la gestión Empresarial</title>
+    <link rel="shortcut icon" href="../../007_Menus/iconoMenuJefesRRHH.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ESTILOS CSS PARA TRAER DE LA URL LOS ICONOS DE LAS REDES SOCIALES -->
     <link rel="stylesheet" href="loginJefesRRHH.css">
     <script src="loginJefesRRHH.js"></script>
