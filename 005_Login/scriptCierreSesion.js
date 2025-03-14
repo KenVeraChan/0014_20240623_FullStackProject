@@ -1,6 +1,6 @@
 //// GESTION PARA TERMINAR SESION DE CUALQUIER JEFE, RRHH O CLIENTE POR INACTIVIDAD EN LAS PAGINAS WEB ////
 var mouseStop = null;
-var Time = 5000; //tiempo en milisegundos que espera para saefectuarse la funcion
+var timeCloseSession = 60000; //tiempo en milisegundos: 60 SEGUNDOS que espera para efectuarse la funcion CIERRE DE SESION
 var texto="";   //texto de devolucion
 var subdirectorios="../";
 var paginaExit="005_Login/salidaPagina.php";
@@ -12,7 +12,7 @@ function AddAlert(logeando,distancia_web)
     {
         $(document).on('mousemove', function() {
             clearTimeout(mouseStop);
-            mouseStop = setTimeout(Myfunction,Time,distancia_web);
+            mouseStop = setTimeout(Myfunction,timeCloseSession,distancia_web);
         });
     }
     else
